@@ -1,0 +1,23 @@
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
+
+.callout {
+  border-radius: var(--button-radius);
+  padding: .5rem 1rem;
+  margin: 1rem 0;
+
+  &.severity-info {
+    background: colors.color('blue', 'light');
+    color: colors.color('blue', 'dark');
+  }
+
+  &.severity-warning {
+    background: colors.color('yellow', 'light');
+    color: colors.color('yellow', 'dark');
+  }
+
+  &.severity-alert {
+    background: colors.color('red', 'light');
+    color: colors.color('red', 'dark');
+  }
+}

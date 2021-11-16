@@ -1,0 +1,26 @@
+@use 'src/styles/variables/placeholder' as *;
+
+.icon {
+  display: inline-block;
+
+  &.small-size {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  &.regular-size {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &.large-size {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+
+.loader {
+  border-radius: 50%;
+
+  @include placeholder;
+}

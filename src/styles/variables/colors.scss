@@ -1,0 +1,57 @@
+$colors: (
+  text: (
+    base: #fff,
+    light: #eee,
+    dark: #ccc
+  ),
+  background: #16161d,
+  inactive: #aaa,
+  hightlight: #007bff,
+  block: (
+    base: #000,
+    light: #24242e
+  ),
+  red: (
+    base: #ed4245,
+    light: lighten(#ed4245, 15%),
+    dark: darken(#ed4245, 25%)
+  ),
+  yellow: (
+    base: #fee75c,
+    light: lighten(#fee75c, 15%),
+    dark: darken(#fee75c, 35%)
+  ),
+  green: (
+    base: #57f287,
+    light: lighten(#57f287, 15%),
+    dark: darken(#57f287, 25%)
+  ),
+  blue: (
+    base: #5865f2,
+    light: lighten(#5865f2, 15%),
+    dark: darken(#5865f2, 25%)
+  ),
+  pink: (
+    base: #eb459e,
+    light: lighten(#eb459e, 15%),
+    dark: darken(#eb459e, 25%)
+  )
+);
+
+$color-prefix: --zetter-color-;
+
+@function color($color-name, $color-variant:null, $true-val:false) {
+  @if $true-val == true {
+    @if ($color-variant != null) {
+      @return map-get(map-get($colors, $color-name), $color-variant);
+    } @else {
+      @return map-get($colors, $color-name);
+    }
+  } @else {
+    @if ($color-variant != null) {
+      @return var(#{$color-prefix}#{$color-name}-#{$color-variant});
+    } @else {
+      @return var(#{$color-prefix}#{$color-name});
+    }
+  }
+}

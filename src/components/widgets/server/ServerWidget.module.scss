@@ -1,0 +1,35 @@
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
+
+.server-widget {
+  border: .25rem solid colors.color("green");
+  border-radius: var(--button-radius);
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+  min-width: 18rem;
+  width: 80%;
+
+  .favicon {
+    float: left;
+    padding: .5rem;
+    width: 64px;
+
+    img {
+      float: left;
+    }
+  }
+
+  .details {
+    padding: .5rem 1rem;
+
+    .server-name {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .server-ip {
+      display: block;
+    }
+  }
+}

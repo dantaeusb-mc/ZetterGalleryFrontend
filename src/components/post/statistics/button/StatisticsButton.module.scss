@@ -1,0 +1,32 @@
+.button {
+  align-items: center;
+  background: var(--background-color);
+  border-radius: var(--button-radius);
+  display: flex;
+  flex-direction: row;
+  padding: 0 0.5rem;
+
+  &.active {
+    &.green {
+      background: var(--zetter-color-green);
+      color: #000;
+    }
+
+    &.red {
+      background: var(--zetter-color-red);
+    }
+
+    &.yellow {
+      background: var(--zetter-color-yellow);
+      color: #000;
+    }
+
+    &.blue {
+      background: var(--zetter-color-blue);
+    }
+
+    &.pink {
+      background: var(--zetter-color-pink);
+    }
+  }
+}

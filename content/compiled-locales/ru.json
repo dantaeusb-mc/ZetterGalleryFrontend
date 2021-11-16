@@ -1,0 +1,32 @@
+{
+  "auth-check-title": [
+    {
+      "type": 0,
+      "value": "А как?"
+    }
+  ],
+  "auth-disclaimer-title": [
+    {
+      "type": 0,
+      "value": "А зачем?"
+    }
+  ],
+  "microsoft-auth-check-advice": [
+    {
+      "type": 0,
+      "value": "Кхм"
+    }
+  ],
+  "microsoft-auth-disclaimer-track": [
+    {
+      "type": 0,
+      "value": "Пук"
+    }
+  ],
+  "microsoft-auth-disclaimer-why": [
+    {
+      "type": 0,
+      "value": "Кок"
+    }
+  ]
+}

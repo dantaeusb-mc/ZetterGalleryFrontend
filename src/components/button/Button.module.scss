@@ -1,0 +1,9 @@
+@use 'src/styles/variables/colors' as colors;
+
+.button {
+  background: colors.color('hightlight');
+  border-radius: var(--button-radius);
+  color: colors.color('text');
+  padding: .5rem 1rem;
+  margin: .5rem auto;
+}

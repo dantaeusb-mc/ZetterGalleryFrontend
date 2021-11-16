@@ -1,0 +1,8 @@
+@use 'src/styles/variables/colors' as colors;
+
+.post {
+  background: colors.color('block', 'light');
+  border-radius: var(--button-radius);
+  box-shadow: var(--big-shadow);
+  margin-bottom: 2rem;
+}
