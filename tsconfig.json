@@ -19,7 +19,6 @@
       "@/*": ["*"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
       "@hooks/*": ["hooks/*"],
       "@interfaces/*": ["interfaces/*"],
       "@lib/*": ["lib/*"]

@@ -6,7 +6,6 @@ import styles from './Items.module.scss';
 //import {useUser} from '../../../hooks/user';
 
 export default function Items(): JSX.Element {
-  const { pathname } = useRouter();
 
   return (
     <ul className={ styles['items'] }>

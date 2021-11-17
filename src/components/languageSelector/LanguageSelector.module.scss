@@ -10,6 +10,7 @@
 
 .language-overlay {
   box-sizing: border-box;
+  cursor: pointer;
   text-align: center;
   padding: 3px;
   pointer-events: none;
@@ -20,9 +21,9 @@
 
 .language-select {
   background-color: transparent;
-  border: .25rem solid colors.color('red');
+  border: .25rem solid colors.color('inactive');
   //color: transparent;
-  cursor: inherit;
+  cursor: pointer;
   display: flex;
   font-family: inherit;
   font-size: inherit;
@@ -33,4 +34,8 @@
   text-align: center;
   height: 2rem;
   width: 3rem;
+
+  &:hover, &:focus {
+    border-color: colors.color('red');
+  }
 }

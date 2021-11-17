@@ -1,9 +1,6 @@
 @use 'src/styles/variables/colors' as colors;
 
 .auth-prompt {
-  background: colors.color('block', 'light');
-  border-radius: var(--button-radius);
-  box-shadow: var(--shadow);
   font-family: 'Raleway', sans-serif;
   padding: .5rem 1rem;
   margin: 1rem 0;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CleanLayout } from '@components/layout';
+import DefaultLayout, { CleanLayout } from '@components/layout';
 import Post from '@components/post';
 import Head from "next/head";
 import {
@@ -7,8 +7,10 @@ import {
   GetServerSidePropsContext, GetServerSidePropsResult
 } from "next";
 import {IPaintingProps} from "@components/post/Post.component";
+import Profile from "@components/profile";
+import {IProfileProps} from "@components/profile/Profile.component";
 
-export interface IPaintingResponse {
+export interface IProfileResponse {
   uuid: string,
   name: string,
   resolution: string,
@@ -18,28 +20,28 @@ export interface IPaintingResponse {
   authorName: string
 }
 
-export default function PaintingUuid(props: IPaintingProps): JSX.Element {
+export default function Player(props: IProfileProps): JSX.Element {
   return (<>
     <Head>
-      <title>Zetter Gallery Minecraft Authorization Prompt</title>
-      <meta name="description" content="Authorize Zetter Gallery to check your Minecraft Account" />
+      <title>Player Name profile at Zetter Gallery</title>
+      <meta name="description" content="Check out Player Name activity on Zetter Gallery" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <CleanLayout>
-      <Post { ...props } />
-    </CleanLayout>
+    <DefaultLayout>
+      <Profile {...props} />
+    </DefaultLayout>
   </>);
 }
 
 export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (context: GetServerSidePropsContext):
-  Promise<GetServerSidePropsResult<IPaintingProps>> => {
-  // @ts-ignore
-  const res = await fetch(`http://[::1]:3000/api/v1/paintings/${ context.params.uuid }`);
+  Promise<GetServerSidePropsResult<IProfileProps>> => {
+  /*// @ts-ignore
+  const res = await fetch(`http://[::1]:3000/api/v1/players/${ context.params.uuid }`);
   const post: IPaintingResponse = await res.json();
 
   return {
     props: {
-      uri: `http://localhost:3000/static/generated/${ post.uuid }`,
+      uri: `http://localhost:3000/static/generated/players/${ post.uuid }`,
       name: post.name,
       originalSize: {
         height: post.sizeH,
@@ -50,6 +52,12 @@ export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (con
         emeraldsPaid: 1,
         favoritesAdded: 1
       }
+    }
+  }*/
+
+  return {
+    props: {
+      nickname: 'test'
     }
   }
 }

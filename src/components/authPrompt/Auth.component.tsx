@@ -5,6 +5,7 @@ import Quote from 'inspirational-quotes';
 import Callout, {ESeverity} from '../widgets/callout/Callout.component';
 import Button from '../button/Button.component';
 import {FormattedMessage} from "react-intl";
+import {injectClassNames} from "@/utils/css";
 
 export interface IAuthAction {
   requester: string,
@@ -29,7 +30,7 @@ export default function AuthPrompt(props: IAuthPromptProps): JSX.Element {
   return (<>
     <Callout severity={ ESeverity.Warning }>{ 'If you don\'t see this message when connecting ' +
     'Zetter Gallery, there\'s a chance that someone trying to steal your info.' }</Callout>
-    <section className={ styles['auth-prompt'] }>
+    <section className={ injectClassNames('block', styles['auth-prompt']) }>
       <header className={ styles['heading'] }>
         <h1>You are going to allow <wbr />{ `${props.action.requester} to ${props.action.privileges} your ${props.action.resource}` }</h1>
       </header>
