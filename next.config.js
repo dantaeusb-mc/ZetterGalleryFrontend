@@ -1,5 +1,9 @@
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+module.exports = withBundleAnalyzer({
   // This is needed to get dynamic SVG import working
   webpack(config) {
     config.module.rules.push({
@@ -13,4 +17,4 @@ module.exports = {
   },
   webpack5: true,
   reactStrictMode: true
-}
+});

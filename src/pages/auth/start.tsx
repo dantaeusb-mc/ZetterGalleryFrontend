@@ -13,7 +13,7 @@ export default function Start(): JSX.Element {
     </Head>
     <CleanLayout>
       <AuthPrompt
-        disclaimer={ <React.Fragment>
+        disclaimer={ <>
           <p><FormattedMessage id="microsoft-auth-disclaimer-why" defaultMessage="We need this to make sure that you have
             access to the player account that can be used for submitting paintings. This allows you to have personal feed
             with your favorite paintings and check your paintings stats."
@@ -21,15 +21,15 @@ export default function Start(): JSX.Element {
           <p><FormattedMessage id="microsoft-auth-disclaimer-track" defaultMessage="This is also used track what paintings
             you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
           description="Explain how we track player activity" /></p>
-        </React.Fragment> }
-        check={ <React.Fragment>
+        </> }
+        check={ <>
           <p><FormattedMessage id="microsoft-auth-check-advice"
           defaultMessage="Good you asked! Always check the domain in your browser when writing passwords. On this step,
             you can be redirected to &quot;zettergallery.onmicrosoft.com&quot; or &quot;login.live.com&quot; first if
             you're not logged into microsoft account. If domain matches, everything is alright."
           description="Explain how to make sure it's not a phishing page" />
           </p>
-        </React.Fragment> }
+        </> }
         action={ { requester: 'Zetter Gallery', privileges: 'check', resource: 'Minecraft Account', execute: () => { return null; } } }
       />
     </CleanLayout>

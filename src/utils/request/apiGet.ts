@@ -1,20 +1,27 @@
 import handleFetchError from './handleFetchError';
-import {AuthValue} from '../../contexts/auth';
+import buildQuery, {IQueryParams} from "@/utils/request/buildQuery";
+import {IMessageResponse} from "@interfaces/response/common.interface";
 
-const apiGet = <T>(path: string, auth: AuthValue|null = null): Promise<T> => {
+const apiGet = <T>(path: string, queryParams: IQueryParams): Promise<T> => {
   const headers: HeadersInit = {
     'Content-Type': 'application/json'
   };
 
-  if (auth) {
+  /*if (auth) {
     headers['Authorization'] = 'Bearer ' + auth.token;
-  }
+  }*/
 
-  return fetch('http:[::1]:3000/api/v1/' + path, {
+  return fetch('http://[::1]:3000/api/v1' + path + buildQuery(queryParams), {
     method: 'GET',
     headers: headers
   })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw Promise.reject(res);
+      }
+
+      return res.json();
+    })
     .catch(handleFetchError);
 };
 

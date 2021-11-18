@@ -1,8 +1,10 @@
-import store from 'stores';
-import { showNotification } from 'stores/notifications';
+//import store from 'stores';
+//import { showNotification } from 'stores/notifications';
 
 const handleFetchError = (err: Error): Promise<any> => {
-  // eslint-disable-next-line
+  console.error(err);
+  return Promise.reject();
+  /*// eslint-disable-next-line
     console.error(err);
 
   store.dispatch(
@@ -12,7 +14,7 @@ const handleFetchError = (err: Error): Promise<any> => {
     })
   );
 
-  return Promise.reject();
+  return Promise.reject();*/
 };
 
 export default handleFetchError;

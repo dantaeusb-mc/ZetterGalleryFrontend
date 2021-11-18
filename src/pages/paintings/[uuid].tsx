@@ -7,16 +7,7 @@ import {
   GetServerSidePropsContext, GetServerSidePropsResult
 } from "next";
 import {IPaintingProps} from "@components/post/Post.component";
-
-export interface IPaintingResponse {
-  uuid: string,
-  name: string,
-  resolution: string,
-  sizeH: number,
-  sizeW: number,
-  color: string,
-  authorName: string
-}
+import {IPaintingResponse} from "@interfaces/response/painting.interface";
 
 export default function Painting(props: IPaintingProps): JSX.Element {
   return (<>
@@ -45,7 +36,7 @@ export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (con
         height: post.sizeH,
         width: post.sizeW
       },
-      authorName: post.authorName,
+      authorName: post.author.nickname,
       stats: {
         emeraldsPaid: 1,
         favoritesAdded: 1

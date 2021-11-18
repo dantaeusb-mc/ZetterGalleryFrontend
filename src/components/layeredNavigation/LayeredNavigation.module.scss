@@ -50,10 +50,19 @@
 }
 
 .sort-by-dir {
-  background: colors.color("block");
+  background-color: colors.color('block', 'light');
   border-radius: var(--border-small-radius);
+  box-shadow: var(--shadow);
+  color: colors.color('text');
+  display: block;
+  cursor: pointer;
   margin: 0 0 0 .5rem;
   padding: 1rem;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 .resolution-button {

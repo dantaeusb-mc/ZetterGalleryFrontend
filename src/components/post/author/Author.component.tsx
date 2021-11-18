@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './Author.module.scss';
-import { IPaintingProps } from "@pages/paintings/[uuid]";
+import {IPaintingProps} from "@components/post/Post.component";
 
 export default function Author(props: IPaintingProps): JSX.Element {
   return (

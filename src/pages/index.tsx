@@ -1,16 +1,18 @@
-import type { NextPage } from 'next'
+import type {NextPage, NextPageContext} from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import React, {Dispatch, SetStateAction, useState} from "react";
-import {AppContext} from "next/app";
+import React, {Dispatch, PropsWithChildren, SetStateAction, useCallback, useEffect, useRef, useState} from "react";
 import Post from "@components/post";
 import DefaultLayout from "@components/layout";
 import LayeredNavigation from "@components/layeredNavigation";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {IPaintingProps} from "@components/post/Post.component";
-import difference from "@/utils/difference";
 import lodash from "lodash";
 import {useRouter} from "next/router";
+import {apiGet} from "@/utils/request";
+import {IPaintingResponse} from "@interfaces/response/painting.interface";
+import {plainToClass, Type} from "class-transformer";
+import 'reflect-metadata';
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -30,6 +32,13 @@ export interface IPaintingListQuery {
   dir: Direction
 }
 
+class PaintingListQuery implements IPaintingListQuery {
+  page: number = 1
+  resolution: 16 | 32 | 64 = 16
+  sort: PaintingSorting = PaintingSorting.SCORE
+  dir: Direction = Direction.DESC
+}
+
 export type PaintingQueryUpdateFn = <K extends keyof IPaintingListQuery>(param: K, value: IPaintingListQuery[K]) => void;
 
 const defaultQuery: IPaintingListQuery = {
@@ -39,61 +48,96 @@ const defaultQuery: IPaintingListQuery = {
   dir: Direction.DESC
 };
 
-const newItems: IPaintingProps[] = Array(20).fill(
-  {
-    uri: 'http://[::1]:3000/static/generated/paintings/9866431a-da2a-489c-9b4f-50e4cd4e7ff0/original.png',
-    authorName: 'Test 1',
-    name: 'Wonderful Painting',
-    stats: {
-      emeraldsPaid: 1,
-      favoritesAdded: 1
-    },
+const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps => {
+  return {
+    uri: `http://[::1]:3000/static/generated/paintings/${response.uuid}/original.png`,
+    name: response.name,
     originalSize: {
-      height: 1,
-      width: 1
+      height: response.sizeH,
+      width: response.sizeW
+    },
+    authorName: response.author.nickname,
+    stats: {
+      favoritesAdded: 1,
+      emeraldsPaid: 1
     }
   }
-);
+}
 
-const Home: NextPage = () => {
+const fetchPaintings = async (queryParams: IPaintingListQuery): Promise<IPaintingProps[]> => {
+  const response = await apiGet<IPaintingResponse[]>('/paintings', queryParams);
+
+  return response.map(mapPaintingResponseToProps);
+}
+
+interface IPaintingsPageProps {
+  paintings: IPaintingProps[]
+}
+
+// pass page as prop so we'll know when to show "Jump to top" button
+const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintingsPageProps>) => {
   const router = useRouter();
+  const initPaintingsQuery = plainToClass(PaintingListQuery, router.query);
 
-  const [query, setQuery] = useState<IPaintingListQuery>(lodash.assign(lodash.clone(defaultQuery), router.query));
-  const [items, setItems] = useState<IPaintingProps[]>(newItems);
-  const [hasMore, setHasMore] = useState<boolean>(true);
+  console.log(initPaintingsQuery);
 
-  const updateRoute = (paintingListQuery: IPaintingListQuery) => {
-    const simplifiedQuery = lodash.pickBy(paintingListQuery, (v, k) => defaultQuery[k as keyof IPaintingListQuery] !== v);
+  // cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
+  const [paintings, setPaintings] = useState<{
+    query: IPaintingListQuery,
+    items: IPaintingProps[],
+    hasMore: boolean
+  }>({
+    query: initPaintingsQuery,
+    items: props.paintings,
+    hasMore: true
+  });
 
-    // @ts-ignore
-    router.replace({ query: simplifiedQuery }, undefined,{ shallow: true });
-  }
+  const queryRef = useRef(paintings.query);
 
   const updateQuery: PaintingQueryUpdateFn = (param, value) => {
-    const newQuery = lodash.extend(lodash.clone(query), { [param]: value });
+    const newQuery = lodash.extend(lodash.clone(paintings.query), { [param]: value });
 
-    console.log(newQuery);
-
-    if (lodash.isEqual(newQuery, query)) {
-      //return;
-    }
-
-    setQuery(newQuery);
-    setItems([]);
-    updateRoute(newQuery);
-    fetchPaintings();
-  }
-
-  const fetchPaintings = () => {
-    if (items.length >= 100) {
-      setHasMore(false);
+    if (lodash.isEqual(newQuery, paintings.query)) {
       return;
     }
 
-    setTimeout(() => {
-      setItems(items.concat(newItems));
-    }, 500);
+    if (param !== 'page') {
+      newQuery.page = 1;
+    }
+
+    setPaintings({
+      ...paintings,
+      query: newQuery,
+      items: param === 'page' ? paintings.items : [], // keep paintings if only page changed
+    });
   }
+
+  useEffect(() => {
+    const updateRouterQuery = (paintingListQuery: IPaintingListQuery) => {
+      const simplifiedQuery = lodash.pickBy(paintingListQuery, (v, k) => defaultQuery[k as keyof IPaintingListQuery] !== v);
+
+      // @ts-ignore
+      router.replace({ query: simplifiedQuery }, undefined,{ shallow: true });
+    }
+
+    const fetchNewPaintings = async () => {
+      // @todo: better make it cancelable
+      const newPaintings = await fetchPaintings(paintings.query);
+
+      setPaintings({
+        ... paintings,
+        hasMore: newPaintings.length >= 20,
+        items: paintings.items.concat(newPaintings)
+      });
+    }
+
+    if (!lodash.isEqual(queryRef.current, paintings.query)) {
+      updateRouterQuery(paintings.query);
+      fetchNewPaintings();
+
+      queryRef.current = paintings.query;
+    }
+  }, [paintings.query]);
 
   return (<>
     <Head>
@@ -102,17 +146,21 @@ const Home: NextPage = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <DefaultLayout>
-      <LayeredNavigation currentQuery={ query } updateLayer={ updateQuery } />
-      <InfiniteScroll next={ fetchPaintings } hasMore={ hasMore } loader={ 'Loading' } dataLength={ items.length } >
-        { items.map((paintingProps, index) => (<Post key={`painting-${index}`} { ...paintingProps } />)) }
+      <LayeredNavigation currentQuery={ paintings.query } updateLayer={ updateQuery } />
+      <InfiniteScroll next={ () => updateQuery('page', paintings.query.page + 1) } hasMore={ paintings.hasMore } loader={ 'Loading' } dataLength={ paintings.items.length } >
+        { paintings.items.map((paintingProps, index) => (<Post key={`painting-${index}`} { ...paintingProps } />)) }
       </InfiniteScroll>
     </DefaultLayout>
   </>)
 }
 
-export async function getServerSideProps(context: AppContext) {
+export async function getServerSideProps(context: NextPageContext) {
+  const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), context.query);
+
   return {
-    props: {}, // will be passed to the page component as props
+    props: {
+      paintings: await fetchPaintings(initPaintingsQuery)
+    }
   }
 }
 

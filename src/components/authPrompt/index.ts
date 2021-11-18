@@ -1,1 +1,1 @@
-export { default } from './Post.component';
+export { default } from './Auth.component';

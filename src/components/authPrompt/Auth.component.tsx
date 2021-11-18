@@ -3,7 +3,7 @@ import styles from './Auth.module.scss';
 // @ts-ignore
 import Quote from 'inspirational-quotes';
 import Callout, {ESeverity} from '../widgets/callout/Callout.component';
-import Button from '../button/Button.component';
+import { Button } from '@components/button';
 import {FormattedMessage} from "react-intl";
 import {injectClassNames} from "@/utils/css";
 

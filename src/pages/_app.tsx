@@ -22,6 +22,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   const messages = useMemo(() => {
     switch (locale) {
+      // @ts-ignore
       case 'ru':
         return Russian;
       case 'en':
