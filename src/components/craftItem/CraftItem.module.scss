@@ -1,0 +1,13 @@
+@use 'src/styles/variables/media';
+
+.item {
+  position: relative;
+  display: inline-block;
+}
+
+.sprite {
+  background-image: url("/assets/items-sprite.png");
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}

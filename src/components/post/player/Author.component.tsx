@@ -5,16 +5,16 @@ import {IPaintingProps} from "@components/post/Post.component";
 
 export default function Author(props: IPaintingProps): JSX.Element {
   return (
-    <Link href={ props.authorName }>
+    <Link href={ props.author.uri }>
       <a>
         <header className={ styles['post-header'] } >
           <div className={ styles['profile-picture-wrapper'] }>
             <picture>
-              <img src={ props.authorName } alt={ `${props.name}'s Profile Picture` } />
+              <img src={ props.author.nickname } title={ props.author.nickname } alt={ `${ props.author.nickname }'s Profile Picture` } />
             </picture>
           </div>
           <div className={ styles['profile-name-wrapper'] }>
-            <span>{ props.name }</span>
+            <span>{ props.author.nickname }</span>
           </div>
         </header>
       </a>

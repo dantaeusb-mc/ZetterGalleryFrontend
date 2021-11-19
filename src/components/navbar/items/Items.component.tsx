@@ -25,12 +25,12 @@ export default function Items(): JSX.Element {
         </a></Link>
       </li>
       <li>
-        <Link href="/sale"><a className={ styles['sale'] } >
+        <Link href="/feed"><a className={ styles['sale'] } >
           <Icon asset="sale" className={ styles['icon'] } />
         </a></Link>
       </li>
       <li>
-        <Link href="/profile"><a className={ styles['profile'] } >
+        <Link href="/auth/start"><a className={ styles['profile'] } >
           <Icon asset="profile" className={ styles['icon'] } />
           { /*<img src={ user.avatarUri } alt="Your Profile" />*/ }
           { /*<img src="/profile/placeholder.png" alt="Your Profile" />*/ }

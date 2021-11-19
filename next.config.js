@@ -15,6 +15,11 @@ module.exports = withBundleAnalyzer({
   images: {
     domains: ['[::1]'],
   },
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'en',
+    localeDetection: true,
+  },
   webpack5: true,
   reactStrictMode: true
 });

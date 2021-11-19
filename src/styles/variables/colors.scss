@@ -11,6 +11,16 @@ $colors: (
     base: #000,
     light: #24242e
   ),
+  minecraft-ui: (
+    base: #C6C6C6,
+    light: #DBDBDB,
+    dark: #5B5B5B
+  ),
+  minecraft-slot: (
+    base: #8B8B8B,
+    light: #FFF,
+    dark: #373737
+  ),
   red: (
     base: #ed4245,
     light: lighten(#ed4245, 15%),

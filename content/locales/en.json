@@ -1,4 +1,32 @@
 {
+  "about-title": {
+    "defaultMessage": "About Zetter",
+    "description": "Title for Zetter Gallery About Page"
+  },
+  "about-zetter-description": {
+    "defaultMessage": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-line UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for you home.",
+    "description": "Zetter Description"
+  },
+  "about-zetter-gallery": {
+    "defaultMessage": "What is Zetter Gallery",
+    "description": "Title for Zetter Gallery About Section"
+  },
+  "about-zetter-gallery-description": {
+    "defaultMessage": "Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to sell and purchase popular paintings on Zetter Gallery",
+    "description": "Zetter Gallery Description"
+  },
+  "about-zetter-gallery-mod-wiki-link": {
+    "defaultMessage": "Check out Zetter Gallery mod wiki page with recipes and manuals",
+    "description": "Link to Zetter Gallery wiki from About Zetter page"
+  },
+  "about-zetter-mod-wiki-link": {
+    "defaultMessage": "Check out Zetter mod wiki page with recipes and manuals",
+    "description": "Link to Zetter wiki from About Zetter page"
+  },
+  "about-zetter-title": {
+    "defaultMessage": "What is Zetter",
+    "description": "Title for Zetter About Section"
+  },
   "auth-check-title": {
     "defaultMessage": "How to make sure I am safe?",
     "description": "Title for security warning"
@@ -18,5 +46,145 @@
   "microsoft-auth-disclaimer-why": {
     "defaultMessage": "We need this to make sure that you have access to the player account that can be used for submitting paintings. This allows you to have personal feed with your favorite paintings and check your paintings stats.",
     "description": "Why do we need player to authorize us with Microsoft account"
+  },
+  "paintings-filter-resolution": {
+    "defaultMessage": "Resolution",
+    "description": "Filter paintings by resolution"
+  },
+  "paintings-sort-hot": {
+    "defaultMessage": "Hot",
+    "description": "Sort paintings by rating"
+  },
+  "paintings-sort-new": {
+    "defaultMessage": "New",
+    "description": "Sort paintings by creation date"
+  },
+  "paintings-sort-top": {
+    "defaultMessage": "Top",
+    "description": "Sort paintings by total sales count"
+  },
+  "profile-earnings-amount": {
+    "defaultMessage": "Earnings:",
+    "description": "Amount of total emeralds spent on player's paintings showing in player's profile"
+  },
+  "profile-favorites-count": {
+    "defaultMessage": "Favorites:",
+    "description": "Amount of favorite marks put on player's paintings in player's profile"
+  },
+  "profile-paintings-count": {
+    "defaultMessage": "Paintings:",
+    "description": "Amount of submitted paintings showing in player's profile"
+  },
+  "zetter-wiki-home-combining-interface-grid-dd": {
+    "defaultMessage": "Place your canvases here in order to glue them together. You can also just put one canvas here."
+  },
+  "zetter-wiki-home-combining-interface-grid-dt": {
+    "defaultMessage": "1) Canvas combination grid"
+  },
+  "zetter-wiki-home-combining-interface-name-dd": {
+    "defaultMessage": "Use it to name your painting."
+  },
+  "zetter-wiki-home-combining-interface-name-dt": {
+    "defaultMessage": "3) Name field"
+  },
+  "zetter-wiki-home-combining-interface-preview-dd": {
+    "defaultMessage": "Shows how combined painting will look like."
+  },
+  "zetter-wiki-home-combining-interface-preview-dt": {
+    "defaultMessage": "2) Preview"
+  },
+  "zetter-wiki-home-combining-interface-result-dd": {
+    "defaultMessage": "When you're happy with the result, grab your painting from there. Congratulations! First masterpiece is done."
+  },
+  "zetter-wiki-home-combining-interface-result-dt": {
+    "defaultMessage": "4) Result"
+  },
+  "zetter-wiki-home-combining-subsection": {
+    "defaultMessage": "Signing and combining canvases"
+  },
+  "zetter-wiki-home-combining-text-intro": {
+    "defaultMessage": "When you finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:",
+    "description": "Intro before combining interface explanation"
+  },
+  "zetter-wiki-home-crafting-subsection": {
+    "defaultMessage": "Crafting"
+  },
+  "zetter-wiki-home-crafting-text": {
+    "defaultMessage": "First, we need to craft some things. Some canvases, an easel to put canvas on, some paints and finally, palette.",
+    "description": "Explain first step, what we will be crafting"
+  },
+  "zetter-wiki-home-framing-subsection": {
+    "defaultMessage": "Creating a frame"
+  },
+  "zetter-wiki-home-framing-text-finish": {
+    "defaultMessage": "What are you waiting for? Place it on the wall!",
+    "description": "Call to action with first painting"
+  },
+  "zetter-wiki-home-framing-text-intro": {
+    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall.",
+    "description": "Intro before showing frame recipes"
+  },
+  "zetter-wiki-home-painting-interface-finish-dt": {
+    "defaultMessage": "6) Start drawing!"
+  },
+  "zetter-wiki-home-painting-interface-hex-dd": {
+    "defaultMessage": "If you know the code of the color you want to use, simply write or copy it there."
+  },
+  "zetter-wiki-home-painting-interface-hex-dt": {
+    "defaultMessage": "4) HEX color input"
+  },
+  "zetter-wiki-home-painting-interface-hsv-dd": {
+    "defaultMessage": "Drag sliders to adjust selected color."
+  },
+  "zetter-wiki-home-painting-interface-hsv-dt": {
+    "defaultMessage": "3) HSV color adjustment"
+  },
+  "zetter-wiki-home-painting-interface-palette-dd": {
+    "defaultMessage": "Colors are saved with palette item. Current palette slot is higlighted, you can save up to 14 colors in a single palette."
+  },
+  "zetter-wiki-home-painting-interface-palette-dt": {
+    "defaultMessage": "2) Click any slot to use and adjust color"
+  },
+  "zetter-wiki-home-painting-interface-palette-slot-dd": {
+    "defaultMessage": "Put your crafted palette here in order to start drawing."
+  },
+  "zetter-wiki-home-painting-interface-palette-slot-dt": {
+    "defaultMessage": "1) Palette slot"
+  },
+  "zetter-wiki-home-painting-interface-tool-dd": {
+    "defaultMessage": "You may want to start with bucket to create a background."
+  },
+  "zetter-wiki-home-painting-interface-tool-dt": {
+    "defaultMessage": "5) Select tool"
+  },
+  "zetter-wiki-home-painting-subsection": {
+    "defaultMessage": "Painting"
+  },
+  "zetter-wiki-home-painting-text-intro": {
+    "defaultMessage": "Time to create your first masterpiece! Let me introduce how drawing interface works. It's simple as old good MS Paint, here's the reference:",
+    "description": "Intro before painting interface explanation"
+  },
+  "zetter-wiki-home-preparing-subsection": {
+    "defaultMessage": "Preparing Workplace"
+  },
+  "zetter-wiki-home-preparing-text-mounting": {
+    "defaultMessage": "With canvas in hand, right-click on easel to mount it.",
+    "description": "Explain how to mount canvas"
+  },
+  "zetter-wiki-home-preparing-text-start": {
+    "defaultMessage": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place artist table somewhere nearby - we will need it later.",
+    "description": "Explain what we need to start drawing"
+  },
+  "zetter-wiki-home-preparing-text-workshop-title": {
+    "defaultMessage": "Our workshop should look like this:",
+    "description": "Title for workshop screenshot"
+  },
+  "zetter-wiki-home-title": {
+    "defaultMessage": "Zetter Wiki Home",
+    "description": "Title for Zetter Wiki Home Page"
+  },
+  "zetter-wiki-recipes-title": {
+    "defaultMessage": "Zetter Wiki Recipes Cheatsheet",
+    "description": "Title for Zetter Wiki Recipes Page"
   }
 }

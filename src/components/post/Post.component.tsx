@@ -1,5 +1,5 @@
 import React from 'react';
-import Author from './author';
+import Author from './player';
 import Painting from './painting';
 import Statistics from './statistics';
 import {IPaintingStatisticsProps} from './statistics/Statistics.component';
@@ -13,7 +13,10 @@ export interface IPaintingProps {
     height: number,
     width: number
   },
-  authorName: any,
+  author: {
+    uri: string,
+    nickname: string
+  },
   stats: IPaintingStatisticsProps
 }
 

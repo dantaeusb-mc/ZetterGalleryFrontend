@@ -9,12 +9,9 @@ export default function Painting(props: IPaintingProps): JSX.Element {
   const scaling = Math.floor(pageWidth / props.originalSize.width);
   const pictureWidth = props.originalSize.width * scaling;
 
-  console.log(pageWidth, scaling);
-
   return (
     <div className={ styles['painting-wrapper'] } >
-      <img src={ props.uri } alt={ `"${props.name}" by ${props.authorName}` } className={ styles['painting'] }
-             height={ 64 } width={ 64 }/>
+      <img src={ props.uri } alt={ `"${props.name}" by ${props.author.nickname}` } className={ styles['painting'] } />
     </div>
   );
 }

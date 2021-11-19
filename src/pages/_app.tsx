@@ -1,11 +1,9 @@
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import App, { AppProps } from 'next/app'
-import { IntlProvider } from "react-intl";
 import '../styles/main.scss'
-import {useMemo} from "react";
-import English from '../../content/compiled-locales/en.json';
-import Russian from '../../content/compiled-locales/ru.json';
+import {IntlProviderWrapper, Locale} from "@/context/Intl.context";
+import {useRouter} from "next/router";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -16,24 +14,11 @@ type AppPropsWithLayout = AppProps & {
 }
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Use the layout defined at the page level, if available
+  const router = useRouter();
   const getLayout = Component.getLayout ?? ((page) => page);
-  const locale = 'en';
 
-  const messages = useMemo(() => {
-    switch (locale) {
-      // @ts-ignore
-      case 'ru':
-        return Russian;
-      case 'en':
-      default:
-        return English;
-        return English;
-    }
-  }, [locale]);
-
-  return getLayout(<IntlProvider messages={ messages } locale={ locale } defaultLocale='en'>
+  return getLayout(<IntlProviderWrapper locale={ (router.locale ?? 'en') as Locale }>
     <Component {...pageProps} />
-  </IntlProvider>)
+  </IntlProviderWrapper>)
 }
 

@@ -13,6 +13,7 @@ import {apiGet} from "@/utils/request";
 import {IPaintingResponse} from "@interfaces/response/painting.interface";
 import {plainToClass, Type} from "class-transformer";
 import 'reflect-metadata';
+import conform from "@/utils/conform";
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -32,13 +33,6 @@ export interface IPaintingListQuery {
   dir: Direction
 }
 
-class PaintingListQuery implements IPaintingListQuery {
-  page: number = 1
-  resolution: 16 | 32 | 64 = 16
-  sort: PaintingSorting = PaintingSorting.SCORE
-  dir: Direction = Direction.DESC
-}
-
 export type PaintingQueryUpdateFn = <K extends keyof IPaintingListQuery>(param: K, value: IPaintingListQuery[K]) => void;
 
 const defaultQuery: IPaintingListQuery = {
@@ -56,7 +50,10 @@ const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps
       height: response.sizeH,
       width: response.sizeW
     },
-    authorName: response.author.nickname,
+    author: {
+      uri: `/players/${response.author.uuid}`,
+      nickname: response.author.nickname
+    },
     stats: {
       favoritesAdded: 1,
       emeraldsPaid: 1
@@ -77,11 +74,10 @@ interface IPaintingsPageProps {
 // pass page as prop so we'll know when to show "Jump to top" button
 const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintingsPageProps>) => {
   const router = useRouter();
-  const initPaintingsQuery = plainToClass(PaintingListQuery, router.query);
+  //const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), router.query);
+  const initPaintingsQuery = conform(defaultQuery, router.query);
 
-  console.log(initPaintingsQuery);
-
-  // cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
+  // @todo: cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
   const [paintings, setPaintings] = useState<{
     query: IPaintingListQuery,
     items: IPaintingProps[],
