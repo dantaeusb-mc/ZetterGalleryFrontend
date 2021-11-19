@@ -24,10 +24,15 @@ export default function Statistics(props: IPaintingProps): JSX.Element {
     return numeralInstance.format('0,0');
   };
 
+  let counter = props.stats.favoritesAdded;
+  if (favorite) {
+    counter++;
+  }
+
   return (<>
     <h3 className={ styles['painting-title'] }>{ props.name }</h3>
     <footer className={ styles['post-footer'] }>
-      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Blue } active={ favorite } action={ () => { setFavorite(!favorite); } } ><Icon asset="favorite" className={ styles['favorite-icon'] } /><span>{ formatNumber(props.stats.favoritesAdded) }</span></StatisticsButton>
+      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Blue } active={ favorite } action={ () => { setFavorite(!favorite); } } ><Icon asset="favorite" className={ styles['favorite-icon'] } /><span>{ formatNumber(counter) }</span></StatisticsButton>
       <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Green } className={ styles['emerald-button'] }><span>{ formatNumber(props.stats.emeraldsPaid) }</span><Icon asset="emerald" className={ styles['emerald-icon'] } /></StatisticsButton>
     </footer>
   </>);

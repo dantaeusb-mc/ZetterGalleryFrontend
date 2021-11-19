@@ -55,8 +55,8 @@ const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps
       nickname: response.author.nickname
     },
     stats: {
-      favoritesAdded: 1,
-      emeraldsPaid: 1
+      favoritesAdded: 164,
+      emeraldsPaid: 6834
     }
   }
 }

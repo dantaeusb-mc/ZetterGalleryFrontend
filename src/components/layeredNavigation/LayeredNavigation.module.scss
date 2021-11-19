@@ -1,10 +1,16 @@
-@use 'src/styles/variables/media';
+@use 'src/styles/variables/media' as media;
 @use 'src/styles/variables/colors' as colors;
 
 .layered-navigation-sort, .layered-navigation-resolution {
   display: flex;
   justify-content: stretch;
   margin: 1rem 0;
+
+  @include media.mobile {
+    margin: 1rem -1rem;
+    padding: 0 1rem;
+    overflow-x: scroll;
+  }
 }
 
 .button {
@@ -31,13 +37,13 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   transition: background .3s ease, box-shadow .3s ease;
   z-index: 1;
 
   .sort-icon {
     margin-right: .25rem;
     vertical-align: middle;
+    min-width: 2rem;
   }
 
   .sort-text {
@@ -46,6 +52,7 @@
   }
 
   &::before {
+    border-radius: var(--border-small-radius);
     content: "";
     position: absolute;
     top: 0;

@@ -8,7 +8,7 @@
   padding: 0 0.5rem;
   position: fixed;
   left: 50%;
-  bottom: 0.5rem;
+  bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
   transform: translateX(-50%);
   z-index: 1000;
 
