@@ -2,7 +2,7 @@
 @use 'src/styles/variables/colors' as colors;
 
 .header {
-  background: colors.color('block');
+  background: colors.color("block", "dark");
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   padding: 0 0.5rem;

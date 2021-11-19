@@ -2,7 +2,7 @@ import React, { memo, useEffect } from 'react';
 import styles from './Navbar.module.scss';
 import {EIconSize, Icon} from "@components/icon";
 import {useRouter} from "next/router";
-import NavbarItem from "./item";
+import {NavbarItem, NavbarProfileItem} from "./item";
 
 const {
   header,
@@ -35,7 +35,7 @@ export default memo(
               <NavbarItem name="Search" icon="search" uri="/search" active={ searchActive } className={ styles['icon'] } />
               <NavbarItem name="Home" icon="home" uri="/" active={ homeActive } className={ styles['icon'] } large={ true } />
               <NavbarItem name="Feed" icon="sale" uri="/feed" active={ feedActive } className={ styles['icon'] } />
-              <NavbarItem name="Profile" icon="profile" uri="/players/me" active={ profileActive } className={ styles['icon'] } />
+              <NavbarProfileItem name="Profile" icon="profile" uri="/players/me" active={ profileActive } className={ styles['icon'] } />
             </ul>
           </nav>
         </header>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import numeral from 'numeral';
 import {Icon} from 'components/icon';
 import StatisticsButton from './button';
@@ -12,6 +12,8 @@ export interface IPaintingStatisticsProps {
 }
 
 export default function Statistics(props: IPaintingProps): JSX.Element {
+  const [favorite, setFavorite] = useState<boolean>(false);
+
   const formatNumber = (number: number): string => {
     const numeralInstance = numeral(number);
 
@@ -25,8 +27,8 @@ export default function Statistics(props: IPaintingProps): JSX.Element {
   return (<>
     <h3 className={ styles['painting-title'] }>{ props.name }</h3>
     <footer className={ styles['post-footer'] }>
-      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Yellow } active={ true }><Icon asset="favorite" className={ styles['favorite-icon'] } /><span>{ formatNumber(props.stats.favoritesAdded) }</span></StatisticsButton>
-      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Yellow } className={ styles['emerald-button'] }><span>{ formatNumber(props.stats.emeraldsPaid) }</span><Icon asset="emerald" className={ styles['emerald-icon'] } /></StatisticsButton>
+      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Blue } active={ favorite } action={ () => { setFavorite(!favorite); } } ><Icon asset="favorite" className={ styles['favorite-icon'] } /><span>{ formatNumber(props.stats.favoritesAdded) }</span></StatisticsButton>
+      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Green } className={ styles['emerald-button'] }><span>{ formatNumber(props.stats.emeraldsPaid) }</span><Icon asset="emerald" className={ styles['emerald-icon'] } /></StatisticsButton>
     </footer>
   </>);
 }

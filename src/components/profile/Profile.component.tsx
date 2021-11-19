@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './Profile.module.scss';
-// @ts-ignore
-import Quote from 'inspirational-quotes';
 import {FormattedMessage} from "react-intl";
 import Badge from "@components/badge";
 import {EBadgeTier} from "@components/badge/Badge.component";
@@ -17,7 +15,7 @@ export default function Profile(props: IProfileProps): JSX.Element {
       <img className={ styles['userpic'] } title={`${ props.nickname }'s Minecraft avatar`} alt={ `Small picture depicting ${ props.nickname }'s Minecraft in-game character's face` }  />
       <div className={ styles['description'] }>
         <h1 className={ styles['nickname'] }>{ props.nickname }</h1>
-        <p className={ injectClassNames(styles['motto'], styles['editable']) }>{ Quote.getQuote().text }</p>
+        <p className={ injectClassNames(styles['motto'], styles['editable']) }>{ 'You miss 100 percent of the shots you don\'t take.' }</p>
       </div>
     </header>
     <div className={ styles['badge-wrapper'] }>

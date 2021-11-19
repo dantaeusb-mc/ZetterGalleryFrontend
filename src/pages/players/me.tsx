@@ -32,32 +32,3 @@ export default function Player(props: IProfileProps): JSX.Element {
     </DefaultLayout>
   </>);
 }
-
-export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (context: GetServerSidePropsContext):
-  Promise<GetServerSidePropsResult<IProfileProps>> => {
-  /*// @ts-ignore
-  const res = await fetch(`http://[::1]:3000/api/v1/players/${ context.params.uuid }`);
-  const post: IPaintingResponse = await res.json();
-
-  return {
-    props: {
-      uri: `http://localhost:3000/static/generated/players/${ post.uuid }`,
-      name: post.name,
-      originalSize: {
-        height: post.sizeH,
-        width: post.sizeW
-      },
-      authorName: post.authorName,
-      stats: {
-        emeraldsPaid: 1,
-        favoritesAdded: 1
-      }
-    }
-  }*/
-
-  return {
-    props: {
-      nickname: 'test'
-    }
-  }
-}

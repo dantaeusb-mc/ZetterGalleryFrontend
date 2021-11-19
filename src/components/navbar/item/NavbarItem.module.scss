@@ -41,7 +41,10 @@
 }
 
 .profile {
+  position: relative;
+
   .icon {
+    position: absolute;
     stroke: colors.color("inactive");
   }
 
@@ -51,4 +54,10 @@
       stroke: colors.color("pink");
     }
   }
+}
+
+.profile-avatar {
+  height: 2rem;
+  width: 2rem;
+  z-index: -1;
 }

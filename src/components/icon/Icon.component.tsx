@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React, {createElement, memo, useMemo} from 'react';
 import dynamic from 'next/dynamic';
 import { injectClassNames } from 'utils/css';
 import styles from './Icon.module.scss';
@@ -52,4 +52,4 @@ Icon.defaultProps = {
   size: EIconSize.Regular
 };
 
-export default Icon;
+export default memo(Icon);

@@ -26,11 +26,13 @@ const colorClasses = {
 };
 
 function StatisticsButton(props: PropsWithChildren<IStatisticsButtonProps>): JSX.Element {
+  const clickable = !!props.action;
+
   return (
-    <div className={ injectClassNames(styles['button'], props.className, [styles['active'], props.active], colorClasses[props.activeColor]) }
+    <button type="button" className={ injectClassNames(styles['button'], props.className, [styles['clickable'], clickable], [styles['active'], props.active], colorClasses[props.activeColor]) }
       onClick={ props.action }>
       { props.children }
-    </div>
+    </button>
   );
 }
 

@@ -5,6 +5,7 @@ import {Direction, IPaintingListQuery, PaintingQueryUpdateFn, PaintingSorting} f
 import SortAscIcon from 'assets/sort-asc.svg';
 import SortDescIcon from 'assets/sort-desc.svg';
 import {FormattedMessage} from "react-intl";
+import {Icon} from "@components/icon";
 
 export interface ILayeredNavigationProps {
   updateLayer: PaintingQueryUpdateFn,
@@ -22,18 +23,23 @@ export default function LayeredNavigation({ updateLayer, currentQuery }: ILayere
     <div className={ styles['layered-navigation-sort'] }>
       <button className={ injectClassNames(styles['button'], styles['sort-by-button'], styles['sort-by-hot'], (isActive('sort', PaintingSorting.SCORE) ? styles['active'] : undefined)) }
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.SCORE) }>
-        <FormattedMessage id="paintings-sort-hot" defaultMessage="Hot"
-                          description="Sort paintings by rating" />
+        <Icon className={ styles['sort-icon'] } asset="fire" />
+        <span className={ styles['sort-text'] }>
+          <FormattedMessage id="paintings-sort-hot" defaultMessage="Hot" description="Sort paintings by rating" />
+        </span>
       </button>
       <button className={ injectClassNames(styles['button'], styles['sort-by-button'], styles['sort-by-top'], (isActive('sort', PaintingSorting.SALES_TOTAL) ? styles['active'] : undefined)) }
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.SALES_TOTAL) }>
-        <FormattedMessage id="paintings-sort-top" defaultMessage="Top"
-                          description="Sort paintings by total sales count" />
+        <Icon className={ styles['sort-icon'] } asset="emerald" />
+        <span className={ styles['sort-text'] }>
+          <FormattedMessage id="paintings-sort-top" defaultMessage="Top" description="Sort paintings by total sales count" />
+        </span>
       </button>
       <button className={ injectClassNames(styles['button'], styles['sort-by-button'], styles['sort-by-new'], (isActive('sort', PaintingSorting.NEWEST) ? styles['active'] : undefined)) }
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.NEWEST) }>
-        <FormattedMessage id="paintings-sort-new" defaultMessage="New"
-                          description="Sort paintings by creation date" />
+        <span className={ styles['sort-text'] }>
+          <FormattedMessage id="paintings-sort-new" defaultMessage="New" description="Sort paintings by creation date" />
+        </span>
       </button>
       <div className={ styles['sort-by-dir'] } onClick={ (e) => updateLayer('dir', (isActive('dir', Direction.ASC) ? Direction.DESC : Direction.ASC)) }>
         { (isActive('dir', Direction.ASC) ? <SortAscIcon /> : <SortDescIcon />) }

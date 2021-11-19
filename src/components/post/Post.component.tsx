@@ -22,7 +22,7 @@ export interface IPaintingProps {
 
 export default function Post(props: IPaintingProps): JSX.Element {
   return (
-    <article className={ injectClassNames('block', styles['post']) }>
+    <article className={ injectClassNames('block', styles['post'], 'pixelated-images') }>
       <Author { ...props } />
       <Painting { ...props } />
       <Statistics { ...props } />

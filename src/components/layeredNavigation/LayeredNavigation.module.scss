@@ -8,7 +8,7 @@
 }
 
 .button {
-  background-color: colors.color('block', 'light');
+  background-color: colors.color('block', 'dark');
   border-radius: var(--border-small-radius);
   box-shadow: var(--shadow);
   color: colors.color('text');
@@ -27,10 +27,23 @@
 }
 
 .sort-by-button {
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   transition: background .3s ease, box-shadow .3s ease;
   z-index: 1;
+
+  .sort-icon {
+    margin-right: .25rem;
+    vertical-align: middle;
+  }
+
+  .sort-text {
+    margin-left: .25rem;
+    text-align: center;
+  }
 
   &::before {
     content: "";
