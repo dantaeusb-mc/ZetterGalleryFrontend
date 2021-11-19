@@ -1,40 +1,6 @@
 @use 'src/styles/variables/media';
 @use 'src/styles/variables/colors' as colors;
 
-.items {
-  align-items: center;
-  display: flex;
-  flex-flow: row;
-  list-style: none;
-  padding: 0;
-
-  @include media.after-mobile {
-    a {
-      display: inline-block;
-      padding: 1rem;
-    }
-
-    > li {
-      margin: 0 1rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-    padding: 0.5rem;
-
-    &:hover {
-      .icon {
-        margin-bottom: 0.125rem;
-      }
-    }
-  }
-
-  > li {
-    margin: 0 0.5rem;
-  }
-}
-
 .about {
   .icon {
     stroke: colors.color("inactive");

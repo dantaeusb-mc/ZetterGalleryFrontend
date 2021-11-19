@@ -14,7 +14,7 @@ const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
     </Head>
     <DefaultLayout>
       <h1>
-        <FormattedMessage id="about-title" defaultMessage="About Zetter"
+        <FormattedMessage id="about-title" defaultMessage="About Zetter Project"
                           description="Title for Zetter Gallery About Page" />
       </h1>
       <h2>
