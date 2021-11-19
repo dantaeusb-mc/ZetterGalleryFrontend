@@ -4,16 +4,6 @@ import Head from "next/head";
 import Profile from "@components/profile";
 import {IProfileProps} from "@components/profile/Profile.component";
 
-export interface IProfileResponse {
-  uuid: string,
-  name: string,
-  resolution: string,
-  sizeH: number,
-  sizeW: number,
-  color: string,
-  authorName: string
-}
-
 export default function Player(props: IProfileProps): JSX.Element {
   return (<>
     <Head>
@@ -22,7 +12,7 @@ export default function Player(props: IProfileProps): JSX.Element {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <DefaultLayout>
-      <Profile {...props} />
+      <Profile nickname="Fran" />
     </DefaultLayout>
   </>);
 }

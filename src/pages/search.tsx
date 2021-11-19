@@ -4,6 +4,7 @@ import AuthPrompt from '@components/authPrompt/Auth.component';
 import Head from "next/head";
 import {FormattedMessage} from "react-intl";
 import {NextPage} from "next";
+import ConstructionPlaceholder from "@components/constructionPlaceholder";
 
 const SearchPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
   return (<>
@@ -13,7 +14,7 @@ const SearchPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <DefaultLayout>
-
+      <ConstructionPlaceholder />
     </DefaultLayout>
   </>);
 }

@@ -18,7 +18,7 @@ function NavbarProfileItem(props: ItemProps): JSX.Element {
     <li>
       <Link href={ props.uri }><a title={ props.name } className={ injectClassNames(styles[props.icon], props.className, props.active ? styles['active'] : undefined) }>
         <Icon asset={ props.icon } className={ styles['icon'] } size={ props.large ? EIconSize.Large : EIconSize.Regular } />
-        <img src="/assets/herobrine.png" className={ injectClassNames(styles['profile-avatar'], 'pixelated-images') } />
+        <img src="/assets/fran.png" className={ injectClassNames(styles['profile-avatar'], 'pixelated-images') } />
       </a></Link>
     </li>
   );

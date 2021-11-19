@@ -14,6 +14,7 @@ import {IPaintingResponse} from "@interfaces/response/painting.interface";
 import {plainToClass, Type} from "class-transformer";
 import 'reflect-metadata';
 import conform from "@/utils/conform";
+import ConstructionPlaceholder from "@components/constructionPlaceholder";
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -41,31 +42,6 @@ const defaultQuery: IPaintingListQuery = {
   sort: PaintingSorting.SCORE,
   dir: Direction.DESC
 };
-
-const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps => {
-  return {
-    uri: `http://[::1]:3000/static/generated/paintings/${response.uuid}/original.png`,
-    name: response.name,
-    originalSize: {
-      height: response.sizeH,
-      width: response.sizeW
-    },
-    author: {
-      uri: `/players/${response.author.uuid}`,
-      nickname: response.author.nickname
-    },
-    stats: {
-      favoritesAdded: 164,
-      emeraldsPaid: 6834
-    }
-  }
-}
-
-const fetchPaintings = async (queryParams: IPaintingListQuery): Promise<IPaintingProps[]> => {
-  const response = await apiGet<IPaintingResponse[]>('/paintings', queryParams);
-
-  return response.map(mapPaintingResponseToProps);
-}
 
 interface IPaintingsPageProps {
   paintings: IPaintingProps[]
@@ -116,20 +92,8 @@ const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
       router.replace({ query: simplifiedQuery }, undefined,{ shallow: true });
     }
 
-    const fetchNewPaintings = async () => {
-      // @todo: better make it cancelable
-      const newPaintings = await fetchPaintings(paintings.query);
-
-      setPaintings({
-        ... paintings,
-        hasMore: newPaintings.length >= 20,
-        items: paintings.items.concat(newPaintings)
-      });
-    }
-
     if (!lodash.isEqual(queryRef.current, paintings.query)) {
       updateRouterQuery(paintings.query);
-      fetchNewPaintings();
 
       queryRef.current = paintings.query;
     }
@@ -143,21 +107,25 @@ const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
     </Head>
     <DefaultLayout>
       <LayeredNavigation currentQuery={ paintings.query } updateLayer={ updateQuery } />
-      <InfiniteScroll next={ () => updateQuery('page', paintings.query.page + 1) } hasMore={ paintings.hasMore } loader={ 'Loading' } dataLength={ paintings.items.length } >
-        { paintings.items.map((paintingProps, index) => (<Post key={`painting-${index}`} { ...paintingProps } />)) }
-      </InfiniteScroll>
+      <Post key={`painting-1`} { ...{
+        uri: `/assets/laura.png`,
+        name: 'Laura',
+        originalSize: {
+          height: 2,
+          width: 2
+        },
+        stats: {
+          favoritesAdded: 152,
+          emeraldsPaid: 2742
+        },
+        author: {
+          nickname: 'fran',
+          uri: 'fran'
+        }
+      } } />
+      <ConstructionPlaceholder />
     </DefaultLayout>
   </>)
-}
-
-export async function getServerSideProps(context: NextPageContext) {
-  const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), context.query);
-
-  return {
-    props: {
-      paintings: await fetchPaintings(initPaintingsQuery)
-    }
-  }
 }
 
 export default Home
