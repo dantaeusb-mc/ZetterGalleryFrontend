@@ -36,7 +36,10 @@ export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (con
         height: post.sizeH,
         width: post.sizeW
       },
-      authorName: post.author.nickname,
+      author: {
+        uri: `/player/${post.author.uuid}`,
+        nickname: post.author.nickname
+      },
       stats: {
         emeraldsPaid: 1,
         favoritesAdded: 1
