@@ -6,8 +6,15 @@
 }
 
 .sprite {
-  background-image: url("/assets/items-sprite.png");
   display: block;
   width: 2rem;
   height: 2rem;
+}
+
+.classic-sprite {
+  background-image: url("/assets/items-sprite.png");
+}
+
+.zetter-sprite {
+  background-image: url("/assets/zetter-items-sprite.png");
 }

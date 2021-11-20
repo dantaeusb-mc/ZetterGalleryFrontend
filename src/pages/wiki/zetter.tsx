@@ -3,7 +3,7 @@ import DefaultLayout, { CleanLayout } from '@components/layout';
 import AuthPrompt from '@components/authPrompt/Auth.component';
 import Head from "next/head";
 import CraftGrid from "@components/craftGrid";
-import {PaperItem, PlanksItem, PlanksSlabItem, StickItem} from "@/const/minecraftItems";
+import {PaperItem, AnyPlanksItem, PlanksSlabItem, StickItem} from "@/const/minecraftItems";
 import {ArtistTableItem, CanvasItem, EaselItem, PaintsItem, PaletteItem} from "@/const/zetterItems";
 import {FormattedMessage} from "react-intl";
 import Image from 'next/image';
@@ -31,11 +31,11 @@ export default function Start(): JSX.Element {
                             description="Explain first step, what we will be crafting" />
         </p>
         <div style={ { display: "grid", gridTemplateColumns: "1fr 1fr", gridGap: "2rem" } }>
-          <CraftGrid items={ [ PlanksItem, PlanksItem, null, PlanksItem, PlanksItem, null, StickItem, StickItem, null ] } output={ EaselItem } shapeless={ false } />
+          <CraftGrid items={ [ AnyPlanksItem, AnyPlanksItem, null, AnyPlanksItem, AnyPlanksItem, null, StickItem, StickItem, null ] } output={ EaselItem } shapeless={ false } />
           <CraftGrid items={ [ null, null, null, null, null, null, null, null, null ] } output={ PaintsItem } shapeless={ true } />
-          <CraftGrid items={ [ null, null, null, PaintsItem, PlanksItem, null, null, null, null ] } output={ PaletteItem } shapeless={ true } />
+          <CraftGrid items={ [ null, null, null, PaintsItem, AnyPlanksItem, null, null, null, null ] } output={ PaletteItem } shapeless={ true } />
           <CraftGrid items={ [ null, null, null, PaperItem, PaperItem, null, PaperItem, PaperItem, null ] } output={ CanvasItem } shapeless={ false } />
-          <CraftGrid items={ [ PlanksSlabItem, PlanksSlabItem, PlanksSlabItem, PlanksItem, PaintsItem, PlanksItem, PlanksItem, PaperItem, PlanksItem ] } output={ ArtistTableItem } shapeless={ false } />
+          <CraftGrid items={ [ PlanksSlabItem, PlanksSlabItem, PlanksSlabItem, AnyPlanksItem, PaintsItem, AnyPlanksItem, AnyPlanksItem, PaperItem, AnyPlanksItem ] } output={ ArtistTableItem } shapeless={ false } />
         </div>
         <h2 id="preparing">
           <FormattedMessage id="zetter-wiki-home-preparing-subsection" defaultMessage="Preparing Workplace" />
