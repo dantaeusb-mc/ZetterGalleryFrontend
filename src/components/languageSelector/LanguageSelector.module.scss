@@ -12,7 +12,9 @@
 .language-overlay {
   box-sizing: border-box;
   cursor: pointer;
+  font-weight: bold;
   text-align: center;
+  line-height: 1.5;
   padding: 3px;
   pointer-events: none;
   position: absolute;
@@ -25,9 +27,9 @@
   border: .25rem solid colors.color('inactive');
   //color: transparent;
   cursor: pointer;
-  display: flex;
   font-family: inherit;
   font-size: inherit;
+  display: flex;
   line-height: inherit;
   justify-content: center;
   align-content: center;

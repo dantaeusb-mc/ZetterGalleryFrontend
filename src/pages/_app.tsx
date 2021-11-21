@@ -14,7 +14,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
 }
 
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+const Zetter = ({ Component, pageProps }: AppPropsWithLayout) => {
   const router = useRouter();
   const getLayout = Component.getLayout ?? ((page) => page);
 
@@ -29,3 +29,4 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   </>);
 }
 
+export default Zetter;
