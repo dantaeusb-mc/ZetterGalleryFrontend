@@ -1,4 +1,4 @@
-{
+ {
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -24,6 +24,7 @@
       "@pages/*": ["pages/*"],
       "@hooks/*": ["hooks/*"],
       "@interfaces/*": ["interfaces/*"],
+      "@styles/*": ["styles/*"],
       "@lib/*": ["lib/*"]
     }
   },

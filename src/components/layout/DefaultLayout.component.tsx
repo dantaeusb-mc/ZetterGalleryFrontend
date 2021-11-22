@@ -2,17 +2,17 @@ import React, {PropsWithChildren} from 'react';
 import NavBar from '@components/navbar'
 import Footer from "@components/footer";
 import Header from "@components/header";
-import Main from "@components/layout/Main.component";
 import LayoutWrapper from "@components/layout/LayoutWrapper.component";
+import {injectClassNames} from "@/utils/css";
 
 function DefaultLayout(props: PropsWithChildren<any>): JSX.Element {
   return (
     <LayoutWrapper>
       <Header />
       <NavBar />
-      <Main>
+      <main className={ injectClassNames('content-thin', 'content-inner') }>
         { props.children }
-      </Main>
+      </main>
       <Footer />
     </LayoutWrapper>
   );

@@ -274,5 +274,11 @@
       "type": 0,
       "value": "Рецепты Zetter"
     }
+  ],
+  "zetter-wiki-home-painting-navigation": [
+    {
+      "type": 0,
+      "value": "Рисование"
+    }
   ]
 }

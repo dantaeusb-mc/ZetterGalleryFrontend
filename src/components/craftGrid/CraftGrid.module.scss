@@ -5,11 +5,14 @@
   background-color: colors.color("minecraft-ui");
   border: .125rem solid;
   border-color: colors.color("minecraft-ui", "light") colors.color("minecraft-ui", "dark") colors.color("minecraft-ui", "dark") colors.color("minecraft-ui", "light");
+  box-sizing: content-box;
   display: inline-flex;
   align-items: center;
+  margin: 0 auto;
   padding: .5rem;
   position: relative;
   vertical-align: bottom;
+  max-width: 201px;
 }
 
 .input {

@@ -113,6 +113,18 @@
       "value": "Paintings:"
     }
   ],
+  "under-construction": [
+    {
+      "type": 0,
+      "value": "Under Construction"
+    }
+  ],
+  "under-construction-description": [
+    {
+      "type": 0,
+      "value": "(and get a nice badge for your profile on Zetter Gallery)"
+    }
+  ],
   "zetter-wiki-home-combining-interface-grid-dd": [
     {
       "type": 0,
@@ -161,6 +173,12 @@
       "value": "4) Result"
     }
   ],
+  "zetter-wiki-home-combining-navigation": [
+    {
+      "type": 0,
+      "value": "Combining"
+    }
+  ],
   "zetter-wiki-home-combining-subsection": [
     {
       "type": 0,
@@ -173,6 +191,12 @@
       "value": "When you finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
     }
   ],
+  "zetter-wiki-home-crafting-navigation": [
+    {
+      "type": 0,
+      "value": "Crafting"
+    }
+  ],
   "zetter-wiki-home-crafting-subsection": [
     {
       "type": 0,
@@ -183,6 +207,12 @@
     {
       "type": 0,
       "value": "First, we need to craft some things. Some canvases, an easel to put canvas on, some paints and finally, palette."
+    }
+  ],
+  "zetter-wiki-home-framing-navigation": [
+    {
+      "type": 0,
+      "value": "Framing"
     }
   ],
   "zetter-wiki-home-framing-subsection": [
@@ -269,6 +299,12 @@
       "value": "5) Select tool"
     }
   ],
+  "zetter-wiki-home-painting-navigation": [
+    {
+      "type": 0,
+      "value": "Painting"
+    }
+  ],
   "zetter-wiki-home-painting-subsection": [
     {
       "type": 0,
@@ -279,6 +315,12 @@
     {
       "type": 0,
       "value": "Time to create your first masterpiece! Let me introduce how drawing interface works. It's simple as old good MS Paint, here's the reference:"
+    }
+  ],
+  "zetter-wiki-home-preparing-navigation": [
+    {
+      "type": 0,
+      "value": "Preparing"
     }
   ],
   "zetter-wiki-home-preparing-subsection": [
@@ -311,10 +353,82 @@
       "value": "Zetter Wiki Home"
     }
   ],
+  "zetter-wiki-recipes-artist-table": [
+    {
+      "type": 0,
+      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+    }
+  ],
+  "zetter-wiki-recipes-canvas": [
+    {
+      "type": 0,
+      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+    }
+  ],
+  "zetter-wiki-recipes-framing": [
+    {
+      "type": 0,
+      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+    }
+  ],
+  "zetter-wiki-recipes-golden-frame": [
+    {
+      "type": 0,
+      "value": "This is golden frame, which is much thicker than others and luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;"
+    }
+  ],
+  "zetter-wiki-recipes-iron-frame": [
+    {
+      "type": 0,
+      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+    }
+  ],
+  "zetter-wiki-recipes-painting": [
+    {
+      "type": 0,
+      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+    }
+  ],
+  "zetter-wiki-recipes-section-special-frames": [
+    {
+      "type": 0,
+      "value": "Special Frames"
+    }
+  ],
   "zetter-wiki-recipes-title": [
     {
       "type": 0,
       "value": "Zetter Wiki Recipes Cheatsheet"
+    }
+  ],
+  "zetter-wiki-recipes-title-framing": [
+    {
+      "type": 0,
+      "value": "Framing and Un-Framing Paintings"
+    }
+  ],
+  "zetter-wiki-recipes-title-gold-frame": [
+    {
+      "type": 0,
+      "value": "Golden Frame"
+    }
+  ],
+  "zetter-wiki-recipes-title-iron-frame": [
+    {
+      "type": 0,
+      "value": "Iron Frame"
+    }
+  ],
+  "zetter-wiki-recipes-title-wooden-frames": [
+    {
+      "type": 0,
+      "value": "Wooden Frames"
+    }
+  ],
+  "zetter-wiki-recipes-wooden-frames": [
+    {
+      "type": 0,
+      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
     }
   ]
 }

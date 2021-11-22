@@ -1,0 +1,7 @@
+@use 'src/styles/variables/media';
+
+.page {
+  @include media.desktop {
+    display: flex;
+  }
+}

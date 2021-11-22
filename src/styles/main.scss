@@ -24,8 +24,10 @@
   --border: 1px solid rgba(0, 0, 0, 0.1);
   --border-small-radius: 5px;
   --border-radius: 20px;
-  --content-max-width: 512px;
   --content-padding: 1rem;
+  --content-thin-width: 512px;
+  --content-wide-width: 712px;
+  --sidebar-width: calc(200px + var(--content-padding) * 2);
 
   --button-padding: 14px 22px;
   --button-radius: 5px;
@@ -34,6 +36,7 @@
 }
 
 html {
+  box-sizing: border-box;
   // Header
   --header-height: calc(var(--header-navigation-height)
   + var(--offline-notification-height)
@@ -52,6 +55,10 @@ html {
   --footer-height: calc(var(--footer-content-height) + 2 * var(--content-padding));
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background-color: colors.color('background');
   color: colors.color('text');
@@ -59,19 +66,47 @@ body {
   margin: 0;
 }
 
+dl {
+  dt {
+    margin: .5rem 0;
+  }
+
+  dd {
+    margin-inline-start: 2rem;
+  }
+}
+
 #__next {
   background-color: var(--background-color);
 }
 
-main {
+.content-thin {
   margin: 0 auto;
-  max-width: var(--content-max-width);
+  max-width: var(--content-thin-width);
+}
+
+.content-thin-plus-sidebar {
+  margin: 0 auto;
+  max-width: calc(var(--content-thin-width) + var(--sidebar-width));
+}
+
+.content-wide {
+  margin: 0 auto;
+  max-width: var(--content-wide-width);
+}
+
+.content-wide-plus-sidebar {
+  margin: 0 auto;
+  max-width: calc(var(--content-wide-width) + var(--sidebar-width));
+}
+
+.content-inner {
+  padding: var(--content-padding);
   min-height: calc(100vh
   - var(--header-items-height)
   - var(--header-height)
   - var(--footer-height)
   - 2 * var(--content-padding));
-  padding: var(--content-padding);
 }
 
 ul {
