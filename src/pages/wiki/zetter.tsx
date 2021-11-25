@@ -98,6 +98,7 @@ export default function ZetterWikiHome({ pages }: IZetterWikiHomeProps): JSX.Ele
                                 defaultMessage="Our workshop should look like this:"
                                 description="Title for workshop screenshot" />
             </p>
+            <Image src="/assets/wiki/workshop-screenshot.png" alt="Workshop" height={388} width={688} />
           </section>
           <section id="painting" ref={ addSection(intl.formatMessage({
             id: 'wiki.zetter.painting.section',
@@ -213,6 +214,7 @@ export default function ZetterWikiHome({ pages }: IZetterWikiHomeProps): JSX.Ele
                                 defaultMessage="What are you waiting for? Place it on the wall!"
                                 description="Call to action with first painting" />
             </p>
+            <Image src="/assets/wiki/showcase-screenshot.png" alt="Workshop" height={386} width={688} />
           </section>
         </article>);
       } }
