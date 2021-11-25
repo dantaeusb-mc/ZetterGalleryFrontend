@@ -1,284 +1,578 @@
 {
-  "auth-check-title": [
+  "about.title": [
+    {
+      "type": 0,
+      "value": "О проекте"
+    }
+  ],
+  "about.zetter.description": [
+    {
+      "type": 0,
+      "value": "Zetter это мод для игры Minecraft, который позволяет создавать картины в игре. Используя простой интерфейс игроки могут создавать картины размером до 4х4 блока и вешать их в рамки, чтобы добавить уюта в свой виртуальный дом."
+    }
+  ],
+  "about.zetter.gallery.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery это мод, а так же сервис (этот сайт), который позволяет делиться картинами из Zetter со всем миром. С этим модом в игру добавляется торговец картинами, "
+    }
+  ],
+  "about.zetter.gallery.mod-wiki-link": [
+    {
+      "type": 0,
+      "value": "Загляните на вики Zetter Gallery, чтобы найти инструкции и рецепты"
+    }
+  ],
+  "about.zetter.gallery.title": [
+    {
+      "type": 0,
+      "value": "Что такое Zetter Gallery"
+    }
+  ],
+  "about.zetter.mod-wiki-link": [
+    {
+      "type": 0,
+      "value": "Загляните на вики Zetter, чтобы найти инструкции и рецепты"
+    }
+  ],
+  "about.zetter.title": [
+    {
+      "type": 0,
+      "value": "Что такое Zetter"
+    }
+  ],
+  "auth-prompt.check.title": [
     {
       "type": 0,
       "value": "Как убедиться, что мои данные в безопасности?"
     }
   ],
-  "auth-disclaimer-title": [
+  "auth-prompt.disclaimer.title": [
     {
       "type": 0,
       "value": "Зачем это нужно?"
     }
   ],
-  "microsoft-auth-check-advice": [
+  "auth.microsoft.check.advice": [
     {
       "type": 0,
       "value": "Хороший вопрос! Всегда проверяйте адресную строку браузера перед тем как ввести пароль. На этом шаге, вы будете перенаправлены на \"zettergallery.onmicrosoft.com\" или \"login.live.com\" (если вы не вошли в аккаунт Microsoft в браузере ранее). Если домен совпадает, всё в порядке. Если нет, ваша версия Zetter Gallery взломана. Пожалуйста, качайте Zetter Gallery только на CurseForge."
     }
   ],
-  "microsoft-auth-disclaimer-track": [
+  "auth.microsoft.disclaimer.track": [
     {
       "type": 0,
       "value": "Так же мы используем ваш аккаунт, чтобы поддерживать раздел \"горячее\" в актуальном состоянии. Мы будем повышать рейтинг картин, которые вы покупаете. Не беспокойтесь, мы стираем эти данные через неделю."
     }
   ],
-  "microsoft-auth-disclaimer-why": [
+  "auth.microsoft.disclaimer.why": [
     {
       "type": 0,
       "value": "Нам это нужно, чтобы точно знать что это вы отправляете и покупаете картины на Zetter Gallery. Так же это позволит продавцам картин чаще продавать картины в ваших закладках, а вам видеть статистику своих картин."
     }
   ],
-  "paintings-filter-resolution": [
+  "microsoft-auth-check-advice": [
+    {
+      "type": 0,
+      "value": "Good you asked! Just check that server described below is the one that you're playing on right now."
+    }
+  ],
+  "microsoft-auth-disclaimer-why": [
+    {
+      "type": 0,
+      "value": "This allows server to purchase and submit paintings on your behalf when you trading with painting merchant."
+    }
+  ],
+  "paintings.layered-navigation.filter.resolution": [
     {
       "type": 0,
       "value": "Разрешение"
     }
   ],
-  "paintings-sort-hot": [
+  "paintings.layered-navigation.sort.hot": [
     {
       "type": 0,
-      "value": "Горячие"
+      "value": "Горячее"
     }
   ],
-  "paintings-sort-new": [
+  "paintings.layered-navigation.sort.new": [
     {
       "type": 0,
-      "value": "Новые"
+      "value": "Новое"
     }
   ],
-  "paintings-sort-top": [
+  "paintings.layered-navigation.sort.top": [
     {
       "type": 0,
       "value": "Топ"
     }
   ],
-  "profile-earnings-amount": [
+  "profile.count.earnings": [
     {
       "type": 0,
       "value": "Заработано:"
     }
   ],
-  "profile-favorites-count": [
+  "profile.count.favorites": [
     {
       "type": 0,
       "value": "В закладках:"
     }
   ],
-  "profile-paintings-count": [
+  "profile.count.paintings": [
     {
       "type": 0,
       "value": "Картин:"
     }
   ],
-  "zetter-wiki-home-combining-interface-grid-dd": [
+  "widgets.under-construction.description.": [
+    {
+      "type": 0,
+      "value": "(и получить бэйдж для вашего профиля в Zetter Gallery)"
+    }
+  ],
+  "widgets.under-construction.description.discord": [
+    {
+      "type": 0,
+      "value": "Загляните на наш Discord сервер чтобы быть среди первых, кто опубликует картины в Zetter Gallery"
+    }
+  ],
+  "widgets.under-construction.description.why": [
+    {
+      "type": 0,
+      "value": "Мы строим дом для картин созданных с Zetter"
+    }
+  ],
+  "widgets.under-construction.title": [
+    {
+      "type": 0,
+      "value": "В разработке"
+    }
+  ],
+  "wiki.zetter.combining.interface.grid-dd": [
     {
       "type": 0,
       "value": "Переместите холсты в эту сетку чтобы объеденить их. Вы так же можете просто положить один холст."
     }
   ],
-  "zetter-wiki-home-combining-interface-grid-dt": [
+  "wiki.zetter.combining.interface.grid-dt": [
     {
       "type": 0,
       "value": "1) Сетка склейки холстов"
     }
   ],
-  "zetter-wiki-home-combining-interface-name-dd": [
+  "wiki.zetter.combining.interface.name-dd": [
     {
       "type": 0,
-      "value": "Используйте его чтобы назвать поле."
+      "value": "Используйте его чтобы назвать картину."
     }
   ],
-  "zetter-wiki-home-combining-interface-name-dt": [
+  "wiki.zetter.combining.interface.name-dt": [
     {
       "type": 0,
       "value": "3) Поле для имени"
     }
   ],
-  "zetter-wiki-home-combining-interface-preview-dd": [
+  "wiki.zetter.combining.interface.preview-dd": [
     {
       "type": 0,
       "value": "Показывает как будет выглядеть картина после склейки."
     }
   ],
-  "zetter-wiki-home-combining-interface-preview-dt": [
+  "wiki.zetter.combining.interface.preview-dt": [
     {
       "type": 0,
       "value": "2) Предпросмотр"
     }
   ],
-  "zetter-wiki-home-combining-interface-result-dd": [
+  "wiki.zetter.combining.interface.result-dd": [
     {
       "type": 0,
       "value": "Когда вы будете довольны результатом, заберите картину из этого слота. Поздравляю! Ваш первый шедевр готов."
     }
   ],
-  "zetter-wiki-home-combining-interface-result-dt": [
+  "wiki.zetter.combining.interface.result-dt": [
     {
       "type": 0,
       "value": "4) Результат"
     }
   ],
-  "zetter-wiki-home-combining-subsection": [
+  "wiki.zetter.combining.section": [
     {
       "type": 0,
-      "value": "Подписывание и склейка холстов"
+      "value": "Склейка"
     }
   ],
-  "zetter-wiki-home-combining-text-intro": [
+  "wiki.zetter.combining.text-intro": [
     {
       "type": 0,
       "value": "Когда вы закончите работать над вашим холстом (или несколькими холстами), нужно будет склеить холсты и подписать картину за вашим авторством. С помощью Shift+правой кнопкой мыши вы можете забрать холст с мольберта назад в инвентарь. Нажмите правой кнопкой на стол художника, чтобы открыть интерфейс подписи и склеивания картин:"
     }
   ],
-  "zetter-wiki-home-crafting-subsection": [
+  "wiki.zetter.combining.title": [
+    {
+      "type": 0,
+      "value": "Подписывание и склейка холстов"
+    }
+  ],
+  "wiki.zetter.crafting.section": [
     {
       "type": 0,
       "value": "Крафт"
     }
   ],
-  "zetter-wiki-home-crafting-text": [
+  "wiki.zetter.crafting.text": [
     {
       "type": 0,
-      "value": "Для начала нужно скрафтить несколько предметов. Несколько холстов, мольберт для этих холстов, краски, и, наконец, палитру."
+      "value": "Для начала нужно скрафтить несколько предметов. Пару холстов, мольберт для этих холстов, краски и палитру."
     }
   ],
-  "zetter-wiki-home-framing-subsection": [
+  "wiki.zetter.crafting.title": [
+    {
+      "type": 0,
+      "value": "Крафт"
+    }
+  ],
+  "wiki.zetter.framing.section": [
     {
       "type": 0,
       "value": "Создание рамки"
     }
   ],
-  "zetter-wiki-home-framing-text-finish": [
+  "wiki.zetter.framing.text-finish": [
     {
       "type": 0,
       "value": "Чего же вы ждёте? Повесьте ваш шедевр на стену!"
     }
   ],
-  "zetter-wiki-home-framing-text-intro": [
+  "wiki.zetter.framing.text-intro": [
     {
       "type": 0,
-      "value": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall."
+      "value": "После подписи картины нужно её куда-нибудь повесить! Чтобы её повесить, сначала нужно поместить её в рамку, а уже рамка вешается на стену."
     }
   ],
-  "zetter-wiki-home-painting-interface-finish-dt": [
+  "wiki.zetter.painting.interface.finish-dd": [
     {
       "type": 0,
-      "value": "6) Начните рисовать!"
+      "value": "Начните рисовать!"
     }
   ],
-  "zetter-wiki-home-painting-interface-hex-dd": [
+  "wiki.zetter.painting.interface.finish-dt": [
+    {
+      "type": 0,
+      "value": "6) Окно для рисования"
+    }
+  ],
+  "wiki.zetter.painting.interface.hex-dd": [
     {
       "type": 0,
       "value": "Если вы знаете код нужного вам цвета, просто скопируйте или введите его сюда."
     }
   ],
-  "zetter-wiki-home-painting-interface-hex-dt": [
+  "wiki.zetter.painting.interface.hex-dt": [
     {
       "type": 0,
       "value": "4) Поле ввода для кода цвета (HEX)"
     }
   ],
-  "zetter-wiki-home-painting-interface-hsv-dd": [
+  "wiki.zetter.painting.interface.hsv-dd": [
     {
       "type": 0,
-      "value": "Тяните ползунки чтобы настроить цвет."
+      "value": "Тяните ползунки чтобы настроить тон, насыщенности и яркость цвета."
     }
   ],
-  "zetter-wiki-home-painting-interface-hsv-dt": [
+  "wiki.zetter.painting.interface.hsv-dt": [
     {
       "type": 0,
       "value": "3) Настройка цвета (HSV)"
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-dd": [
+  "wiki.zetter.painting.interface.palette-dd": [
     {
       "type": 0,
-      "value": "Цвета будут сохранены в палитре в слоте снизу. Текущий цвет обведен рамкой, вы можете сохранить и переносить до 14 цветов на одной палитре."
+      "value": "Кликните на любой слот чтобы выбрать цвет для его использования и настройки. Цвета будут сохранены в палитре в слоте снизу. Текущий цвет обведен рамкой, вы можете сохранить и переносить до 14 цветов на одной палитре."
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-dt": [
+  "wiki.zetter.painting.interface.palette-dt": [
     {
       "type": 0,
-      "value": "2) Кликните на любой слот чтобы выбрать цвет для использования и настройки"
+      "value": "2) Палитра"
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-slot-dd": [
+  "wiki.zetter.painting.interface.palette-slot-dd": [
     {
       "type": 0,
-      "value": "Чтобы начать рисовать переместите палитру в этот слот."
+      "value": "Чтобы начать рисовать, переместите палитру в этот слот."
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-slot-dt": [
+  "wiki.zetter.painting.interface.palette-slot-dt": [
     {
       "type": 0,
       "value": "1) Слот для палитры"
     }
   ],
-  "zetter-wiki-home-painting-interface-tool-dd": [
+  "wiki.zetter.painting.interface.tool-dd": [
     {
       "type": 0,
       "value": "Например, используйте заливку чтобы создать монотонный фон."
     }
   ],
-  "zetter-wiki-home-painting-interface-tool-dt": [
+  "wiki.zetter.painting.interface.tool-dt": [
     {
       "type": 0,
       "value": "5) Выберите инструмент"
     }
   ],
-  "zetter-wiki-home-painting-subsection": [
+  "wiki.zetter.painting.section": [
     {
       "type": 0,
       "value": "Рисование"
     }
   ],
-  "zetter-wiki-home-painting-text-intro": [
+  "wiki.zetter.painting.text-intro": [
     {
       "type": 0,
-      "value": "Time to create your first masterpiece! Let me introduce how drawing interface works. It's simple as old good MS Paint, here's the reference:"
+      "value": "Время творить! Позвольте рассказать, как работает интерфейс программы для рисования. Он очень прост и напоминает классический MS Paint, разберем его элементы:"
     }
   ],
-  "zetter-wiki-home-preparing-subsection": [
+  "wiki.zetter.painting.title": [
     {
       "type": 0,
-      "value": "Подготовка рабочего места"
+      "value": "Рисование"
     }
   ],
-  "zetter-wiki-home-preparing-text-mounting": [
+  "wiki.zetter.preparing.section": [
+    {
+      "type": 0,
+      "value": "Подготовка"
+    }
+  ],
+  "wiki.zetter.preparing.text-mounting": [
     {
       "type": 0,
       "value": "С холстом в руке, кликните правую кнопку мыши чтобы повесить его на мольберт."
     }
   ],
-  "zetter-wiki-home-preparing-text-start": [
+  "wiki.zetter.preparing.text-start": [
     {
       "type": 0,
       "value": "Прежде чем начать рисовать, нам нужно подготовить рабочее место. Поставьте мольберт, возьмите в руку холст, а палитру переместите в горячие слоты. Так же где-нибудь нужно поставть стол художника - он нам понадобится позже."
     }
   ],
-  "zetter-wiki-home-preparing-text-workshop-title": [
+  "wiki.zetter.preparing.text-workshop-title": [
     {
       "type": 0,
       "value": "Рабочее место должно выглядеть примерно так:"
     }
   ],
-  "zetter-wiki-home-title": [
+  "wiki.zetter.preparing.title": [
     {
       "type": 0,
-      "value": "Домашняя страница Zetter Wiki"
+      "value": "Подготовка рабочего места"
     }
   ],
-  "zetter-wiki-recipes-title": [
+  "wiki.zetter.recipes.artist-table": [
+    {
+      "type": 0,
+      "value": "Стол художника позволяет делать картины из холстов, объединяя и подписывая их. Чтобы совместить несколько холстов, расположите их в прямоугольной форме в сетке для крафта. Если форма правильная, предпросмотр будет обновлён. Если же секция предпросмотра пуста, скорее всего форма картины не поддерживается. Следующие размеры поддерживаются:"
+    }
+  ],
+  "wiki.zetter.recipes.artist-table.section": [
+    {
+      "type": 0,
+      "value": "Стол художника"
+    }
+  ],
+  "wiki.zetter.recipes.artist-table.title": [
+    {
+      "type": 0,
+      "value": "Стол художника"
+    }
+  ],
+  "wiki.zetter.recipes.canvas": [
+    {
+      "type": 0,
+      "value": "Холсты это промежуточный носитель для ваших картин. Вы можете увидеть, что нарисовано, поставив холст на мольберт, но если вы закончили работу лучше превратить его в картину на столе художника."
+    }
+  ],
+  "wiki.zetter.recipes.canvas.section": [
+    {
+      "type": 0,
+      "value": "Холст"
+    }
+  ],
+  "wiki.zetter.recipes.canvas.title": [
+    {
+      "type": 0,
+      "value": "Холст"
+    }
+  ],
+  "wiki.zetter.recipes.easel": [
+    {
+      "type": 0,
+      "value": "С мольберта начинаются все картины. Чтобы начать рисовать, вам нужно поставить мольберт и закрепить на нём холст с помощью клика правой кнопной мыши с холстом в руке. Обычный правый клик откроет интерфейс рисования. Не забудьте поставить палитру в соответствующий слот. Shift+правый клик позволит забрать холст с мольберта."
+    }
+  ],
+  "wiki.zetter.recipes.easel.section": [
+    {
+      "type": 0,
+      "value": "Мольберт"
+    }
+  ],
+  "wiki.zetter.recipes.easel.title": [
+    {
+      "type": 0,
+      "value": "Мольберт"
+    }
+  ],
+  "wiki.zetter.recipes.frames.section": [
+    {
+      "type": 0,
+      "value": "Рамки"
+    }
+  ],
+  "wiki.zetter.recipes.framing": [
+    {
+      "type": 0,
+      "value": "Прежде чем поставить картину в рамку, нужно подписать её на столе художника. Вы всегда можете достать картину из рамки. Просто положите картину в сетку крафта: вы можете забрать рамку, а на месте картины в рамке останется просто картина."
+    }
+  ],
+  "wiki.zetter.recipes.framing.title": [
+    {
+      "type": 0,
+      "value": "Использование рамки с картиной"
+    }
+  ],
+  "wiki.zetter.recipes.gold-frame.title": [
+    {
+      "type": 0,
+      "value": "Золотая рамка"
+    }
+  ],
+  "wiki.zetter.recipes.golden-frame": [
+    {
+      "type": 0,
+      "value": "Это золотая рамка, она значительно толще деревянных и выглядит солидно. Она инкрустирована изумурудами, так что они понадобятся для крафта. По умолчанию она крафтится без именной пластины, но её можно добавить:"
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame": [
+    {
+      "type": 0,
+      "value": "У этой рамки нет рамок, так что вы можете использовать её как декорацию или для создания больших картин из нескольких частей. Её толщина - 1 пиксель, такая же, как у обычной игровой картины."
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame.title": [
+    {
+      "type": 0,
+      "value": "Железная рамка"
+    }
+  ],
+  "wiki.zetter.recipes.painting": [
+    {
+      "type": 0,
+      "value": "Сама картина. Она создаётся только на столе художника путем подписи одного или нескольких холстов"
+    }
+  ],
+  "wiki.zetter.recipes.painting.section": [
+    {
+      "type": 0,
+      "value": "Картина"
+    }
+  ],
+  "wiki.zetter.recipes.painting.title": [
+    {
+      "type": 0,
+      "value": "Картина"
+    }
+  ],
+  "wiki.zetter.recipes.paints": [
+    {
+      "type": 0,
+      "value": "Краски используются для крафта и обновления палитры."
+    }
+  ],
+  "wiki.zetter.recipes.paints.section": [
+    {
+      "type": 0,
+      "value": "Краски"
+    }
+  ],
+  "wiki.zetter.recipes.paints.title": [
+    {
+      "type": 0,
+      "value": "Краски"
+    }
+  ],
+  "wiki.zetter.recipes.palette": [
+    {
+      "type": 0,
+      "value": "Палитра необходима, чтобы рисовать на холсте. Когда она расположена в спецаиальном слоте в интерфейсе мольберта, вы сможете управлять цветами. Для вашего удобства одну палитру можно использовать на нескольких холстах, и цвета сохранятся. Когда палитра закончится, вы не сможете продолжить рисовать. Однако она не исчезнет, и вы можете обновить её, используя краски, сохранив цвета палитры."
+    }
+  ],
+  "wiki.zetter.recipes.palette.section": [
+    {
+      "type": 0,
+      "value": "Палитра"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.section": [
+    {
+      "type": 0,
+      "value": "Особые рамки"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.title": [
+    {
+      "type": 0,
+      "value": "Особые рамки"
+    }
+  ],
+  "wiki.zetter.recipes.title": [
     {
       "type": 0,
       "value": "Рецепты Zetter"
     }
   ],
-  "zetter-wiki-home-painting-navigation": [
+  "wiki.zetter.recipes.title-palette": [
     {
       "type": 0,
-      "value": "Рисование"
+      "value": "Палитра"
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames": [
+    {
+      "type": 0,
+      "value": "Обычные рамки сделаны из дерева, кожи, палок и самородка по вашему выбору. Вы можете использовать любое дерево, и цвет рамки будет соответствовать дереву. Если вы используете золотой самородок, небольшая именная пластина будет видна внизу рамки, и имя картины будет отображаться по правому клику."
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames.title": [
+    {
+      "type": 0,
+      "value": "Деревянные рамки"
+    }
+  ],
+  "wiki.zetter.title": [
+    {
+      "type": 0,
+      "value": "Zetter Вики"
+    }
+  ],
+  "wiki.zetter.page": [
+    {
+      "type": 0,
+      "value": "Главная"
+    }
+  ],
+  "wiki.zetter.recipes.page": [
+    {
+      "type": 0,
+      "value": "Рецепты"
+    }
+  ],
+  "widgets.under-construction.description.dm": [
+    {
+      "type": 0,
+      "value": "Если у вас есть опыт в создании и управлении серверами в Discord, пожалуйста, напишите мне dantaeusb#9879"
     }
   ]
 }

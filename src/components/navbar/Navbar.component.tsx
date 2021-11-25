@@ -30,11 +30,11 @@ export default memo(
       <>
         <nav className={ header }>
           <ul className={ styles['items'] }>
-            <NavbarItem name="About" icon="about" uri="/about" active={ aboutActive } className={ styles['icon'] } />
-            <NavbarItem name="Search" icon="search" uri="/search" active={ searchActive } className={ styles['icon'] } />
-            <NavbarItem name="Home" icon="home" uri="/" active={ homeActive } className={ styles['icon'] } large={ true } />
-            <NavbarItem name="Feed" icon="sale" uri="/feed" active={ feedActive } className={ styles['icon'] } />
-            <NavbarProfileItem name="Profile" icon="profile" uri="/players/me" active={ profileActive } className={ styles['icon'] } />
+            <NavbarItem key="nav-about" name="About" icon="about" uri="/about" active={ aboutActive } className={ styles['icon'] } />
+            <NavbarItem key="nav-search" name="Search" icon="search" uri="/search" active={ searchActive } className={ styles['icon'] } />
+            <NavbarItem key="nav-home" name="Home" icon="home" uri="/" active={ homeActive } className={ styles['icon'] } large={ true } />
+            <NavbarItem key="nav-feed" name="Feed" icon="sale" uri="/feed" active={ feedActive } className={ styles['icon'] } />
+            <NavbarProfileItem key="nav-profile" name="Profile" icon="profile" uri="/players/me" active={ profileActive } className={ styles['icon'] } />
           </ul>
         </nav>
       </>

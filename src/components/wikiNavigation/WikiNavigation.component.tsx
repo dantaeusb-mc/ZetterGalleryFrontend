@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from './WikiNavigation.module.scss';
 import {IWikiPage, IWikiPageSections} from "@components/wikiLayout/WikiLayout.component";
 import {injectClassNames} from "@/utils/css";
+import {FormattedMessage} from "react-intl";
 
 export interface IWikiNavigationProps {
   pages: IWikiPage[]
@@ -17,7 +18,7 @@ const WikiNavigation = ({ pages, currentPage, pageSections }: IWikiNavigationPro
         { pages.map((page, index) => {
           const link = (<Link href={ page.path } key={ `wiki-page-${index}` }>
             <a className={ injectClassNames(styles['link'], styles['page-link'], [styles['active'], page.path === currentPage]) } >
-              { page.title }
+              <FormattedMessage id={ page.title } />
             </a>
           </Link>);
 

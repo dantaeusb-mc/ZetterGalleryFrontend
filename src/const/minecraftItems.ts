@@ -14,8 +14,8 @@ export const DarkOakPlanksItem: IItemProps = {
   name: 'Dark Oak Planks',
   uri: 'https://minecraft.fandom.com/wiki/Planks',
   spritePos: {
-    x: 192,
-    y: 896
+    x: 512,
+    y: 864
   },
   classic: true
 }
@@ -116,6 +116,86 @@ export const EmeraldItem: IItemProps = {
   spritePos: {
     x: 640,
     y: 3488
+  },
+  classic: true
+}
+
+export const RedDyeItem: IItemProps = {
+  name: 'Red Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Red_Dye',
+  spritePos: {
+    x: 0,
+    y: 3168
+  },
+  classic: true
+}
+
+export const GreenDyeItem: IItemProps = {
+  name: 'Green Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Green_Dye',
+  spritePos: {
+    x: 704,
+    y: 3136
+  },
+  classic: true
+}
+
+export const BlueDyeItem: IItemProps = {
+  name: 'Blue Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Blue_Dye',
+  spritePos: {
+    x: 224,
+    y: 2368
+  },
+  classic: true
+}
+
+export const CyanDyeItem: IItemProps = {
+  name: 'Cyan Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Cyan_Dye',
+  spritePos: {
+    x: 640,
+    y: 3136
+  },
+  classic: true
+}
+
+export const MagentaDyeItem: IItemProps = {
+  name: 'Magenta Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Magenta_Dye',
+  spritePos: {
+    x: 896,
+    y: 3136
+  },
+  classic: true
+}
+
+export const YellowDyeItem: IItemProps = {
+  name: 'Yellow Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Yellow_Dye',
+  spritePos: {
+    x: 32,
+    y: 3168
+  },
+  classic: true
+}
+
+export const WhiteDyeItem: IItemProps = {
+  name: 'White Dye',
+  uri: 'https://minecraft.fandom.com/wiki/White_Dye',
+  spritePos: {
+    x: 288,
+    y: 2368
+  },
+  classic: true
+}
+
+export const BlackDyeItem: IItemProps = {
+  name: 'Black Dye',
+  uri: 'https://minecraft.fandom.com/wiki/Black_Dye',
+  spritePos: {
+    x: 192,
+    y: 2368
   },
   classic: true
 }

@@ -1,434 +1,566 @@
 {
-  "about-title": [
+  "about.title": [
     {
       "type": 0,
       "value": "About Zetter Project"
     }
   ],
-  "about-zetter-description": [
+  "about.zetter.description": [
     {
       "type": 0,
-      "value": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-line UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for you home."
+      "value": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for you home."
     }
   ],
-  "about-zetter-gallery": [
-    {
-      "type": 0,
-      "value": "What is Zetter Gallery"
-    }
-  ],
-  "about-zetter-gallery-description": [
+  "about.zetter.gallery.description": [
     {
       "type": 0,
       "value": "Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to sell and purchase popular paintings on Zetter Gallery"
     }
   ],
-  "about-zetter-gallery-mod-wiki-link": [
+  "about.zetter.gallery.mod-wiki-link": [
     {
       "type": 0,
       "value": "Check out Zetter Gallery mod wiki page with recipes and manuals"
     }
   ],
-  "about-zetter-mod-wiki-link": [
+  "about.zetter.gallery.title": [
+    {
+      "type": 0,
+      "value": "What is Zetter Gallery"
+    }
+  ],
+  "about.zetter.mod-wiki-link": [
     {
       "type": 0,
       "value": "Check out Zetter mod wiki page with recipes and manuals"
     }
   ],
-  "about-zetter-title": [
+  "about.zetter.title": [
     {
       "type": 0,
       "value": "What is Zetter"
     }
   ],
-  "auth-check-title": [
+  "auth-prompt.check.title": [
     {
       "type": 0,
       "value": "How to make sure I am safe?"
     }
   ],
-  "auth-disclaimer-title": [
+  "auth-prompt.disclaimer.title": [
     {
       "type": 0,
       "value": "Why do I need that?"
     }
   ],
-  "microsoft-auth-check-advice": [
+  "auth.microsoft.check.advice": [
     {
       "type": 0,
       "value": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to &quot;zettergallery.onmicrosoft.com&quot; or &quot;login.live.com&quot; first if you're not logged into microsoft account. If domain matches, everything is alright."
     }
   ],
-  "microsoft-auth-disclaimer-track": [
+  "auth.microsoft.disclaimer.track": [
     {
       "type": 0,
       "value": "This is also used track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
     }
   ],
-  "microsoft-auth-disclaimer-why": [
+  "auth.microsoft.disclaimer.why": [
     {
       "type": 0,
       "value": "We need this to make sure that you have access to the player account that can be used for submitting paintings. This allows you to have personal feed with your favorite paintings and check your paintings stats."
     }
   ],
-  "paintings-filter-resolution": [
+  "microsoft-auth-check-advice": [
+    {
+      "type": 0,
+      "value": "Good you asked! Just check that server described below is the one that you're playing on right now."
+    }
+  ],
+  "microsoft-auth-disclaimer-why": [
+    {
+      "type": 0,
+      "value": "This allows server to purchase and submit paintings on your behalf when you trading with painting merchant."
+    }
+  ],
+  "paintings.layered-navigation.filter.resolution": [
     {
       "type": 0,
       "value": "Resolution"
     }
   ],
-  "paintings-sort-hot": [
+  "paintings.layered-navigation.sort.hot": [
     {
       "type": 0,
       "value": "Hot"
     }
   ],
-  "paintings-sort-new": [
+  "paintings.layered-navigation.sort.new": [
     {
       "type": 0,
       "value": "New"
     }
   ],
-  "paintings-sort-top": [
+  "paintings.layered-navigation.sort.top": [
     {
       "type": 0,
       "value": "Top"
     }
   ],
-  "profile-earnings-amount": [
+  "profile.count.earnings": [
     {
       "type": 0,
       "value": "Earnings:"
     }
   ],
-  "profile-favorites-count": [
+  "profile.count.favorites": [
     {
       "type": 0,
       "value": "Favorites:"
     }
   ],
-  "profile-paintings-count": [
+  "profile.count.paintings": [
     {
       "type": 0,
       "value": "Paintings:"
     }
   ],
-  "under-construction": [
+  "widgets.under-construction.description.dm": [
+    {
+      "type": 0,
+      "value": "If you know how to manage safe and inviting Discord communities, please DM me at dantaeusb#9879"
+    }
+  ],
+  "widgets.under-construction.description.why": [
+    {
+      "type": 0,
+      "value": "We are building home for Zetter paintings"
+    }
+  ],
+  "widgets.under-construction.title": [
     {
       "type": 0,
       "value": "Under Construction"
     }
   ],
-  "under-construction-description": [
-    {
-      "type": 0,
-      "value": "(and get a nice badge for your profile on Zetter Gallery)"
-    }
-  ],
-  "zetter-wiki-home-combining-interface-grid-dd": [
+  "wiki.zetter.combining.interface.grid-dd": [
     {
       "type": 0,
       "value": "Place your canvases here in order to glue them together. You can also just put one canvas here."
     }
   ],
-  "zetter-wiki-home-combining-interface-grid-dt": [
+  "wiki.zetter.combining.interface.grid-dt": [
     {
       "type": 0,
       "value": "1) Canvas combination grid"
     }
   ],
-  "zetter-wiki-home-combining-interface-name-dd": [
+  "wiki.zetter.combining.interface.name-dd": [
     {
       "type": 0,
       "value": "Use it to name your painting."
     }
   ],
-  "zetter-wiki-home-combining-interface-name-dt": [
+  "wiki.zetter.combining.interface.name-dt": [
     {
       "type": 0,
       "value": "3) Name field"
     }
   ],
-  "zetter-wiki-home-combining-interface-preview-dd": [
+  "wiki.zetter.combining.interface.preview-dd": [
     {
       "type": 0,
       "value": "Shows how combined painting will look like."
     }
   ],
-  "zetter-wiki-home-combining-interface-preview-dt": [
+  "wiki.zetter.combining.interface.preview-dt": [
     {
       "type": 0,
       "value": "2) Preview"
     }
   ],
-  "zetter-wiki-home-combining-interface-result-dd": [
+  "wiki.zetter.combining.interface.result-dd": [
     {
       "type": 0,
       "value": "When you're happy with the result, grab your painting from there. Congratulations! First masterpiece is done."
     }
   ],
-  "zetter-wiki-home-combining-interface-result-dt": [
+  "wiki.zetter.combining.interface.result-dt": [
     {
       "type": 0,
       "value": "4) Result"
     }
   ],
-  "zetter-wiki-home-combining-navigation": [
+  "wiki.zetter.combining.section": [
     {
       "type": 0,
       "value": "Combining"
     }
   ],
-  "zetter-wiki-home-combining-subsection": [
-    {
-      "type": 0,
-      "value": "Signing and combining canvases"
-    }
-  ],
-  "zetter-wiki-home-combining-text-intro": [
+  "wiki.zetter.combining.text-intro": [
     {
       "type": 0,
       "value": "When you finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
     }
   ],
-  "zetter-wiki-home-crafting-navigation": [
+  "wiki.zetter.combining.title": [
+    {
+      "type": 0,
+      "value": "Signing and combining canvases"
+    }
+  ],
+  "wiki.zetter.crafting.section": [
     {
       "type": 0,
       "value": "Crafting"
     }
   ],
-  "zetter-wiki-home-crafting-subsection": [
-    {
-      "type": 0,
-      "value": "Crafting"
-    }
-  ],
-  "zetter-wiki-home-crafting-text": [
+  "wiki.zetter.crafting.text": [
     {
       "type": 0,
       "value": "First, we need to craft some things. Some canvases, an easel to put canvas on, some paints and finally, palette."
     }
   ],
-  "zetter-wiki-home-framing-navigation": [
+  "wiki.zetter.crafting.title": [
     {
       "type": 0,
-      "value": "Framing"
+      "value": "Crafting"
     }
   ],
-  "zetter-wiki-home-framing-subsection": [
+  "wiki.zetter.framing.section": [
     {
       "type": 0,
       "value": "Creating a frame"
     }
   ],
-  "zetter-wiki-home-framing-text-finish": [
+  "wiki.zetter.framing.text-finish": [
     {
       "type": 0,
       "value": "What are you waiting for? Place it on the wall!"
     }
   ],
-  "zetter-wiki-home-framing-text-intro": [
+  "wiki.zetter.framing.text-intro": [
     {
       "type": 0,
       "value": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall."
     }
   ],
-  "zetter-wiki-home-painting-interface-finish-dt": [
+  "wiki.zetter.page": [
     {
       "type": 0,
-      "value": "6) Start drawing!"
+      "value": "Home"
     }
   ],
-  "zetter-wiki-home-painting-interface-hex-dd": [
+  "wiki.zetter.painting.interface.finish-dd": [
+    {
+      "type": 0,
+      "value": "Start drawing!"
+    }
+  ],
+  "wiki.zetter.painting.interface.finish-dt": [
+    {
+      "type": 0,
+      "value": "6) Drawing window"
+    }
+  ],
+  "wiki.zetter.painting.interface.hex-dd": [
     {
       "type": 0,
       "value": "If you know the code of the color you want to use, simply write or copy it there."
     }
   ],
-  "zetter-wiki-home-painting-interface-hex-dt": [
+  "wiki.zetter.painting.interface.hex-dt": [
     {
       "type": 0,
       "value": "4) HEX color input"
     }
   ],
-  "zetter-wiki-home-painting-interface-hsv-dd": [
+  "wiki.zetter.painting.interface.hsv-dd": [
     {
       "type": 0,
       "value": "Drag sliders to adjust selected color."
     }
   ],
-  "zetter-wiki-home-painting-interface-hsv-dt": [
+  "wiki.zetter.painting.interface.hsv-dt": [
     {
       "type": 0,
       "value": "3) HSV color adjustment"
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-dd": [
+  "wiki.zetter.painting.interface.palette-dd": [
     {
       "type": 0,
-      "value": "Colors are saved with palette item. Current palette slot is higlighted, you can save up to 14 colors in a single palette."
+      "value": "Colors are saved with palette item. Current palette slot is highlighted, you can save up to 14 colors in a single palette."
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-dt": [
+  "wiki.zetter.painting.interface.palette-dt": [
     {
       "type": 0,
-      "value": "2) Click any slot to use and adjust color"
+      "value": "2) Palette"
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-slot-dd": [
+  "wiki.zetter.painting.interface.palette-slot-dd": [
     {
       "type": 0,
       "value": "Put your crafted palette here in order to start drawing."
     }
   ],
-  "zetter-wiki-home-painting-interface-palette-slot-dt": [
+  "wiki.zetter.painting.interface.palette-slot-dt": [
     {
       "type": 0,
       "value": "1) Palette slot"
     }
   ],
-  "zetter-wiki-home-painting-interface-tool-dd": [
+  "wiki.zetter.painting.interface.tool-dd": [
     {
       "type": 0,
       "value": "You may want to start with bucket to create a background."
     }
   ],
-  "zetter-wiki-home-painting-interface-tool-dt": [
+  "wiki.zetter.painting.interface.tool-dt": [
     {
       "type": 0,
       "value": "5) Select tool"
     }
   ],
-  "zetter-wiki-home-painting-navigation": [
+  "wiki.zetter.painting.section": [
     {
       "type": 0,
       "value": "Painting"
     }
   ],
-  "zetter-wiki-home-painting-subsection": [
-    {
-      "type": 0,
-      "value": "Painting"
-    }
-  ],
-  "zetter-wiki-home-painting-text-intro": [
+  "wiki.zetter.painting.text-intro": [
     {
       "type": 0,
       "value": "Time to create your first masterpiece! Let me introduce how drawing interface works. It's simple as old good MS Paint, here's the reference:"
     }
   ],
-  "zetter-wiki-home-preparing-navigation": [
+  "wiki.zetter.painting.title": [
+    {
+      "type": 0,
+      "value": "Painting"
+    }
+  ],
+  "wiki.zetter.preparing.section": [
     {
       "type": 0,
       "value": "Preparing"
     }
   ],
-  "zetter-wiki-home-preparing-subsection": [
-    {
-      "type": 0,
-      "value": "Preparing Workplace"
-    }
-  ],
-  "zetter-wiki-home-preparing-text-mounting": [
+  "wiki.zetter.preparing.text-mounting": [
     {
       "type": 0,
       "value": "With canvas in hand, right-click on easel to mount it."
     }
   ],
-  "zetter-wiki-home-preparing-text-start": [
+  "wiki.zetter.preparing.text-start": [
     {
       "type": 0,
       "value": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place artist table somewhere nearby - we will need it later."
     }
   ],
-  "zetter-wiki-home-preparing-text-workshop-title": [
+  "wiki.zetter.preparing.text-workshop-title": [
     {
       "type": 0,
       "value": "Our workshop should look like this:"
     }
   ],
-  "zetter-wiki-home-title": [
+  "wiki.zetter.preparing.title": [
     {
       "type": 0,
-      "value": "Zetter Wiki Home"
+      "value": "Preparing Workplace"
     }
   ],
-  "zetter-wiki-recipes-artist-table": [
+  "wiki.zetter.recipes.artist-table": [
     {
       "type": 0,
-      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+      "value": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and output slot is empty, the shape is incorrect. Supported painting sizes listed below."
     }
   ],
-  "zetter-wiki-recipes-canvas": [
+  "wiki.zetter.recipes.artist-table.section": [
     {
       "type": 0,
-      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+      "value": "Artist Table"
     }
   ],
-  "zetter-wiki-recipes-framing": [
+  "wiki.zetter.recipes.artist-table.title": [
     {
       "type": 0,
-      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+      "value": "Artist Table"
     }
   ],
-  "zetter-wiki-recipes-golden-frame": [
+  "wiki.zetter.recipes.canvas": [
     {
       "type": 0,
-      "value": "This is golden frame, which is much thicker than others and luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;"
+      "value": "Canvases are intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there."
     }
   ],
-  "zetter-wiki-recipes-iron-frame": [
+  "wiki.zetter.recipes.canvas.section": [
     {
       "type": 0,
-      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+      "value": "Canvas"
     }
   ],
-  "zetter-wiki-recipes-painting": [
+  "wiki.zetter.recipes.canvas.title": [
     {
       "type": 0,
-      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+      "value": "Canvas"
     }
   ],
-  "zetter-wiki-recipes-section-special-frames": [
+  "wiki.zetter.recipes.easel": [
     {
       "type": 0,
-      "value": "Special Frames"
+      "value": "Easel is a starting point for all paintings. In order to start drawing, you would need to place one in the world, put canvas on it by right-clicking with canvas in hand. Simple right click will open easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel."
     }
   ],
-  "zetter-wiki-recipes-title": [
+  "wiki.zetter.recipes.easel.section": [
     {
       "type": 0,
-      "value": "Zetter Wiki Recipes Cheatsheet"
+      "value": "Easel"
     }
   ],
-  "zetter-wiki-recipes-title-framing": [
+  "wiki.zetter.recipes.easel.title": [
+    {
+      "type": 0,
+      "value": "Easel"
+    }
+  ],
+  "wiki.zetter.recipes.frames.section": [
+    {
+      "type": 0,
+      "value": "Frames"
+    }
+  ],
+  "wiki.zetter.recipes.framing": [
+    {
+      "type": 0,
+      "value": "In order to put painting in a frame, you need to combine them on crafting grid in any order. You can always get your painting back from the frame. To do that, just put framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in crafting grid."
+    }
+  ],
+  "wiki.zetter.recipes.framing.title": [
     {
       "type": 0,
       "value": "Framing and Un-Framing Paintings"
     }
   ],
-  "zetter-wiki-recipes-title-gold-frame": [
+  "wiki.zetter.recipes.gold-frame.title": [
     {
       "type": 0,
       "value": "Golden Frame"
     }
   ],
-  "zetter-wiki-recipes-title-iron-frame": [
+  "wiki.zetter.recipes.golden-frame": [
+    {
+      "type": 0,
+      "value": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;"
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame": [
+    {
+      "type": 0,
+      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame.title": [
     {
       "type": 0,
       "value": "Iron Frame"
     }
   ],
-  "zetter-wiki-recipes-title-wooden-frames": [
+  "wiki.zetter.recipes.page": [
+    {
+      "type": 0,
+      "value": "Recipes"
+    }
+  ],
+  "wiki.zetter.recipes.painting": [
+    {
+      "type": 0,
+      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+    }
+  ],
+  "wiki.zetter.recipes.painting.section": [
+    {
+      "type": 0,
+      "value": "Painting"
+    }
+  ],
+  "wiki.zetter.recipes.painting.title": [
+    {
+      "type": 0,
+      "value": "Painting"
+    }
+  ],
+  "wiki.zetter.recipes.paints": [
+    {
+      "type": 0,
+      "value": "Paints are used to create or recharge a palette."
+    }
+  ],
+  "wiki.zetter.recipes.paints.section": [
+    {
+      "type": 0,
+      "value": "Paints"
+    }
+  ],
+  "wiki.zetter.recipes.paints.title": [
+    {
+      "type": 0,
+      "value": "Paints"
+    }
+  ],
+  "wiki.zetter.recipes.palette": [
+    {
+      "type": 0,
+      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
+    }
+  ],
+  "wiki.zetter.recipes.palette.section": [
+    {
+      "type": 0,
+      "value": "Palette"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.section": [
+    {
+      "type": 0,
+      "value": "Special Frames"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.title": [
+    {
+      "type": 0,
+      "value": "Special Frames"
+    }
+  ],
+  "wiki.zetter.recipes.title": [
+    {
+      "type": 0,
+      "value": "Zetter Wiki Recipes"
+    }
+  ],
+  "wiki.zetter.recipes.title-palette": [
+    {
+      "type": 0,
+      "value": "Palette"
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames": [
+    {
+      "type": 0,
+      "value": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting."
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames.title": [
     {
       "type": 0,
       "value": "Wooden Frames"
     }
   ],
-  "zetter-wiki-recipes-wooden-frames": [
+  "wiki.zetter.title": [
     {
       "type": 0,
-      "value": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is."
+      "value": "Zetter Wiki Home"
     }
   ]
 }

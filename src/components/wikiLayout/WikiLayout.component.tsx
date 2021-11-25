@@ -41,7 +41,6 @@ export interface IWikiPageContentProps {
 const WikiLayout = ({ children, pages }: IWikiLayoutProps): JSX.Element => {
   const route = useRouter();
   const [sections, setSections] = useState<IWikiPageSections>(new Map());
-  const [activeSection, setActiveSection] = useState<string>('');
 
   let observer: IntersectionObserver;
 
@@ -88,7 +87,7 @@ const WikiLayout = ({ children, pages }: IWikiLayoutProps): JSX.Element => {
             })) as IWikiPageSections;
 
             if (newSections !==  sections) {
-              console.log(newSections, sections);
+              //console.log(newSections, sections);
               //setSections(newSections);
             }
           }

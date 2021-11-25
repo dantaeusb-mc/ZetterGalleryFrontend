@@ -35,12 +35,12 @@ export default function AuthPrompt(props: IAuthPromptProps): JSX.Element {
         <h1>You are going to allow <wbr />{ `${props.action.requester} to ${props.action.privileges} your ${props.action.resource}` }</h1>
       </header>
       <div className={ styles['disclaimer-wrapper'] }>
-        <h2><FormattedMessage id="auth-disclaimer-title" defaultMessage="Why do I need that?"
+        <h2><FormattedMessage id="auth-prompt.disclaimer.title" defaultMessage="Why do I need that?"
           description="Title for request explanation" /></h2>
         <div className={ styles['disclaimer'] }>{ props.disclaimer }</div>
       </div>
       <div className={ styles['check-wrapper'] }>
-        <h2><FormattedMessage id="auth-check-title" defaultMessage="How to make sure I am safe?"
+        <h2><FormattedMessage id="auth-prompt.check.title" defaultMessage="How to make sure I am safe?"
           description="Title for security warning" /></h2>
         <div className={ styles['check'] }>{ props.check }</div>
       </div>

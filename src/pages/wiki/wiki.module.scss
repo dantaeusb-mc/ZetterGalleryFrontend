@@ -10,3 +10,29 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.image-description {
+  background: colors.color('block');
+  border-radius: var(--border-small-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .description {
+    padding: 1rem;
+  }
+
+  @include media.desktop {
+    flex-direction: row;
+
+    .image {
+      padding: 1rem;
+      width: 50%;
+    }
+
+    .description {
+      width: 50%;
+    }
+  }
+}

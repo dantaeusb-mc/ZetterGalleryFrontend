@@ -5,7 +5,7 @@ import Russian from '../../content/compiled-locales/ru.json';
 
 export const languages = {
   en: 'English',
-  ru: 'Russian'
+  ru: 'Русский'
 }
 
 export type Locale = keyof typeof languages;

@@ -25,20 +25,20 @@ export default function LayeredNavigation({ updateLayer, currentQuery }: ILayere
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.SCORE) }>
         <Icon className={ styles['sort-icon'] } asset="fire" />
         <span className={ styles['sort-text'] }>
-          <FormattedMessage id="paintings-sort-hot" defaultMessage="Hot" description="Sort paintings by rating" />
+          <FormattedMessage id="paintings.layered-navigation.sort.hot" defaultMessage="Hot" description="Sort paintings by rating" />
         </span>
       </button>
       <button className={ injectClassNames(styles['button'], styles['sort-by-button'], styles['sort-by-top'], (isActive('sort', PaintingSorting.SALES_TOTAL) ? styles['active'] : undefined)) }
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.SALES_TOTAL) }>
         <Icon className={ styles['sort-icon'] } asset="emerald" />
         <span className={ styles['sort-text'] }>
-          <FormattedMessage id="paintings-sort-top" defaultMessage="Top" description="Sort paintings by total sales count" />
+          <FormattedMessage id="paintings.layered-navigation.sort.top" defaultMessage="Top" description="Sort paintings by total sales count" />
         </span>
       </button>
       <button className={ injectClassNames(styles['button'], styles['sort-by-button'], styles['sort-by-new'], (isActive('sort', PaintingSorting.NEWEST) ? styles['active'] : undefined)) }
               type="button" onClick={ (e) => updateLayer('sort', PaintingSorting.NEWEST) }>
         <span className={ styles['sort-text'] }>
-          <FormattedMessage id="paintings-sort-new" defaultMessage="New" description="Sort paintings by creation date" />
+          <FormattedMessage id="paintings.layered-navigation.sort.new" defaultMessage="New" description="Sort paintings by creation date" />
         </span>
       </button>
       <div className={ styles['sort-by-dir'] } onClick={ (e) => updateLayer('dir', (isActive('dir', Direction.ASC) ? Direction.DESC : Direction.ASC)) }>
@@ -47,7 +47,7 @@ export default function LayeredNavigation({ updateLayer, currentQuery }: ILayere
     </div>
     <div className={ styles['layered-navigation-resolution'] }>
       <div className={ styles['resolution-label'] }>
-        <FormattedMessage id="paintings-filter-resolution" defaultMessage="Resolution"
+        <FormattedMessage id="paintings.layered-navigation.filter.resolution" defaultMessage="Resolution"
                           description="Filter paintings by resolution" />
       </div>
       <button className={ injectClassNames(styles['button'], styles['resolution-button'], (isActive('resolution', 16) ? styles['active'] : undefined)) }

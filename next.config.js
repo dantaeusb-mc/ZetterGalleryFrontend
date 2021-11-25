@@ -10,6 +10,12 @@ module.exports = withBundleAnalyzer({
       test: /\.svg$/,
       use: ["@svgr/webpack"]
     });
+
+    // @see https://formatjs.io/docs/guides/advanced-usage/
+    /*config.module.resolve.alias = {
+      '@formatjs/icu-messageformat-parser': '@formatjs/icu-messageformat-parser/no-parser'
+    }*/
+
     return config;
   },
   images: {

@@ -25,19 +25,19 @@ export default function Profile(props: IProfileProps): JSX.Element {
     </div>
     <footer className={ styles['statistics'] }>
       <div className={ styles['statistics-element'] }>
-        <FormattedMessage id="profile-paintings-count" defaultMessage="Paintings:"
+        <FormattedMessage id="profile.count.paintings" defaultMessage="Paintings:"
           description="Amount of submitted paintings showing in player's profile" />
         <br />
         { 1 }
       </div>
       <div className={ styles['statistics-element'] }>
-        <FormattedMessage id="profile-favorites-count" defaultMessage="Favorites:"
+        <FormattedMessage id="profile.count.favorites" defaultMessage="Favorites:"
           description="Amount of favorite marks put on player's paintings in player's profile" />
         <br />
         152
       </div>
       <div className={ styles['statistics-element'] }>
-        <FormattedMessage id="profile-earnings-amount" defaultMessage="Earnings:"
+        <FormattedMessage id="profile.count.earnings" defaultMessage="Earnings:"
           description="Amount of total emeralds spent on player's paintings showing in player's profile" />
         <br />
         { 2742 }

@@ -6,10 +6,11 @@ import {FormattedMessage} from "react-intl";
 const ConstructionPlaceholder = (): JSX.Element => {
   return (
     <article className={ injectClassNames('block', styles['placeholder'], 'pixelated-images') }>
-      <h2><FormattedMessage id="under-construction" defaultMessage="Under Construction" /></h2>
-      <p><FormattedMessage id="under-construction-description" defaultMessage="We are building home for Zetter paintings" /></p>
-      <p><FormattedMessage id="under-construction-description" defaultMessage="Consider jumping on our Discord server to be among the first who shares their paintings with the world" /></p>
-      <p><FormattedMessage id="under-construction-description" defaultMessage="(and get a nice badge for your profile on Zetter Gallery)" /></p>
+      <h2><FormattedMessage id="widgets.under-construction.title" defaultMessage="Under Construction" /></h2>
+      <p><FormattedMessage id="widgets.under-construction.description.why" defaultMessage="We are building home for Zetter paintings" /></p>
+      <p><FormattedMessage id="widgets.under-construction.description.dm" defaultMessage="If you know how to manage safe and inviting Discord communities, please DM me at dantaeusb#9879" /></p>
+      { /** <p><FormattedMessage id="widgets.under-construction.description.discord" defaultMessage="Consider jumping on our Discord server to be among the first who shares their paintings with the world" /></p>
+      <p><FormattedMessage id="widgets.under-construction.description." defaultMessage="(and get a nice badge for your profile on Zetter Gallery)" /></p> **/ }
     </article>
   );
 }
