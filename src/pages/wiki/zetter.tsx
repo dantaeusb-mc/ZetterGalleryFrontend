@@ -9,7 +9,7 @@ import {
   PlanksSlabItem,
   StickItem,
   DarkOakPlanksItem,
-  IronNuggetItem, LeatherItem, GoldNuggetItem
+  IronNuggetItem, LeatherItem, GoldNuggetItem, RedDyeItem, GreenDyeItem, BlueDyeItem, WhiteDyeItem, BlackDyeItem
 } from "@/const/minecraftItems";
 import {
   ArtistTableItem,
@@ -68,7 +68,7 @@ export default function ZetterWikiHome({ pages }: IZetterWikiHomeProps): JSX.Ele
             </p>
             <div className={ styles['recipes-grid'] }>
               <CraftGrid items={ [ AnyPlanksItem, AnyPlanksItem, null, AnyPlanksItem, AnyPlanksItem, null, StickItem, StickItem, null ] } output={ EaselItem } shapeless={ false } />
-              <CraftGrid items={ [ null, null, null, null, null, null, null, null, null ] } output={ PaintsItem } shapeless={ true } />
+              <CraftGrid items={ [ RedDyeItem, GreenDyeItem, BlueDyeItem, WhiteDyeItem, BlackDyeItem, null, null, null, null ] } output={ PaintsItem } shapeless={ true } />
               <CraftGrid items={ [ null, null, null, PaintsItem, AnyPlanksItem, null, null, null, null ] } output={ PaletteItem } shapeless={ true } />
               <CraftGrid items={ [ null, null, null, PaperItem, PaperItem, null, PaperItem, PaperItem, null ] } output={ CanvasItem } shapeless={ false } />
               <CraftGrid items={ [ PlanksSlabItem, PlanksSlabItem, PlanksSlabItem, AnyPlanksItem, PaintsItem, AnyPlanksItem, AnyPlanksItem, PaperItem, AnyPlanksItem ] } output={ ArtistTableItem } shapeless={ false } />
