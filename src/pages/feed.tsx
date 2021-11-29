@@ -108,7 +108,7 @@ const Feed: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
     <DefaultLayout>
       <LayeredNavigation currentQuery={ paintings.query } updateLayer={ updateQuery } />
       <Post key={`painting-1`} { ...{
-        uri: `/`,
+        uri: `/assets/laura.png`,
         name: 'Laura',
         originalSize: {
           height: 2,
@@ -120,7 +120,7 @@ const Feed: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
         },
         author: {
           nickname: 'fran',
-          uri: 'fran'
+          uuid: '4aeffce3-8c4f-429a-81d5-3147611185b5'
         }
       } } />
       <ConstructionPlaceholder />

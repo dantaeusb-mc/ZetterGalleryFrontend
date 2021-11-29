@@ -5,7 +5,7 @@ import {IPaintingProps} from "@components/post/Post.component";
 
 export default function Author(props: IPaintingProps): JSX.Element {
   return (
-    <Link href={ props.author.uri }>
+    <Link href={ `/players/${props.author.uuid}` }>
       <a>
         <header className={ styles['post-header'] } >
           <div className={ styles['profile-picture-wrapper'] }>

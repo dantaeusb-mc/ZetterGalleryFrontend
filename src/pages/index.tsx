@@ -120,7 +120,7 @@ const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
         },
         author: {
           nickname: 'fran',
-          uri: 'fran'
+          uuid: '4aeffce3-8c4f-429a-81d5-3147611185b5'
         }
       } } />
       <ConstructionPlaceholder />
