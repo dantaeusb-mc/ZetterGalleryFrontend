@@ -1,9 +1,11 @@
 import React, {PropsWithChildren} from 'react';
 import DefaultLayout, { CleanLayout } from '@components/layout';
-import AuthPrompt from '@components/authPrompt/Auth.component';
 import Head from "next/head";
 import {FormattedMessage} from "react-intl";
 import {NextPage} from "next";
+import Link from 'next/link';
+import styles from './about.module.scss';
+import {injectClassNames} from "@/utils/css";
 
 const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
   return (<>
@@ -32,6 +34,18 @@ const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
         <FormattedMessage id="about.zetter.mod-wiki-link"
                           defaultMessage="Check out Zetter mod wiki page with recipes and manuals"
                           description="Link to Zetter wiki from About Zetter page" />
+      </a>
+      <Link href="/wiki/zetter">
+        <a title="Check Out Zetter Wiki" target="_self" className={ styles['button'] }>
+          <picture>
+            <img alt="Check Out Zetter Wiki" src="/assets/buttons/wiki-button.png" className={ injectClassNames('pixelated-images', styles['wiki-button']) } />
+          </picture>
+        </a>
+      </Link>
+      <a title="Download Zetter From CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/zetter" target="_blank" className={ styles['button'] }>
+        <picture>
+          <img alt="Download Zetter From CurseForge" src="/assets/buttons/download-button.png" className={ injectClassNames('pixelated-images', styles['download-button']) } />
+        </picture>
       </a>
       <h2>
         <FormattedMessage id="about.zetter.gallery.title" defaultMessage="What is Zetter Gallery"

@@ -1,0 +1,15 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+
+.button {
+  display: block;
+  margin: 1rem 0;
+}
+
+.download-button {
+  width: 232px;
+}
+
+.wiki-button {
+  width: 158px;
+}

@@ -25,7 +25,7 @@ import Image from 'next/image';
 import WikiLayout from "@components/wikiLayout";
 import {GetStaticProps, GetStaticPropsContext, GetStaticPropsResult, NextPageContext} from "next";
 import {IWikiLayoutProps, IWikiPageContentProps, IWikiPageProps} from "@components/wikiLayout/WikiLayout.component";
-import styles from './wiki.module.scss'
+import styles from './wiki.module.scss';
 
 defineMessage({
   id: 'wiki.zetter.page',
