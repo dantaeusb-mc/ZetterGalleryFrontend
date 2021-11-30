@@ -42,7 +42,7 @@ const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
           </picture>
         </a>
       </Link>
-      <a title="Download Zetter From CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/zetter" target="_blank" className={ styles['button'] }>
+      <a title="Download Zetter From CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/zetter" target="_blank"rel="noreferrer" className={ styles['button'] }>
         <picture>
           <img alt="Download Zetter From CurseForge" src="/assets/buttons/download-button.png" className={ injectClassNames('pixelated-images', styles['download-button']) } />
         </picture>
