@@ -19,6 +19,7 @@
     "@svgr/webpack": "^5.5.0",
     "@types/numeral": "^2.0.2",
     "class-transformer": "^0.4.0",
+    "cookies-next": "^2.0.3",
     "cross-env": "^7.0.3",
     "inspirational-quotes": "^2.0.1",
     "lodash": "^4.17.21",

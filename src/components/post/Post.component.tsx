@@ -9,6 +9,7 @@ import {injectClassNames} from "@/utils/css";
 export interface IPaintingProps {
   uri: string,
   name: string,
+  resolution: number,
   originalSize: {
     height: number,
     width: number

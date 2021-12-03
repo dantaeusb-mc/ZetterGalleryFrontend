@@ -5,6 +5,7 @@ import '../styles/main.scss'
 import {IntlProviderWrapper, Locale} from "@/context/Intl.context";
 import {useRouter} from "next/router";
 import Head from "next/head";
+import {AuthProviderWrapper} from "@/context/Auth.context";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -24,7 +25,9 @@ const Zetter = ({ Component, pageProps }: AppPropsWithLayout) => {
       <meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, viewport-fit=cover" />
     </Head>
     <IntlProviderWrapper locale={ (router.locale ?? 'en') as Locale }>
-      { getLayout(<Component {...pageProps} />) }
+      <AuthProviderWrapper>
+        { getLayout(<Component {...pageProps} />) }
+      </AuthProviderWrapper>
     </IntlProviderWrapper>
   </>);
 }

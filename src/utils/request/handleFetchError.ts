@@ -3,7 +3,7 @@
 
 const handleFetchError = (err: Error): Promise<any> => {
   console.error(err);
-  return Promise.reject();
+  return Promise.reject(err);
   /*// eslint-disable-next-line
     console.error(err);
 

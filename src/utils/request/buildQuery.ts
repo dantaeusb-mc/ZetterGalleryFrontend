@@ -2,10 +2,10 @@ export interface IQueryParams {
   [key: string]: any
 }
 
-const buildQuery = (queryParams: IQueryParams): string => {
+const buildQuery = (queryParams?: IQueryParams): string => {
   let queryString = '';
 
-  if (Object.keys(queryParams).length === 0) {
+  if (!queryParams || Object.keys(queryParams).length === 0) {
     return queryString;
   }
 

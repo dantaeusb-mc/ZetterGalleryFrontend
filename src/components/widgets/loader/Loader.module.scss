@@ -1,0 +1,52 @@
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
+
+$size: 3rem;
+
+.loader {
+  position: relative;
+  margin: 1rem auto;
+  overflow: hidden;
+  height: $size;
+  width: $size;
+  z-index: 0;
+
+  &:before {
+   background-image: linear-gradient(
+      to bottom,
+      colors.color('red') 0%, colors.color('red') calc(100% / 6),
+      colors.color('yellow') calc(100% / 6), colors.color('yellow') calc(100% / 6 * 2),
+      colors.color('green') calc(100% / 6 * 2), colors.color('green') calc(100% / 6 * 3),
+      colors.color('blue') calc(100% / 6 * 3), colors.color('blue') calc(100% / 6 * 4),
+      colors.color('pink') calc(100% / 6 * 4), colors.color('pink') calc(100% / 6 * 5),
+      colors.color('red') calc(100% / 6 * 5), colors.color('red') calc(100% / 6 * 6)
+    );
+    content: '';
+    position: absolute;
+    left: calc(#{$size} / 4);
+    right: calc(#{$size} / 4);
+    top: 0;
+    height: calc(#{$size} * 7);
+    width: auto;
+    z-index: -1;
+
+    animation: loader-color 5s linear infinite;
+  }
+
+  &:after {
+    background-image: url("/assets/logo-load-overlay.png");
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+@keyframes loader-color {
+  0%  { top: 0; }
+  100% { top: calc(-#{$size} * 6); }
+}

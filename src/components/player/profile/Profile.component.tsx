@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './Profile.module.scss';
 import {FormattedMessage} from "react-intl";
-import Badge from "@components/badge";
-import {EBadgeTier} from "@components/badge/Badge.component";
+import Badge from "@components/player/badge";
+import {EBadgeTier} from "@components/player/badge/Badge.component";
 import {injectClassNames} from "@/utils/css";
 
 export interface IProfileProps {

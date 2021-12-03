@@ -1,0 +1,65 @@
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
+
+.wrapper {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.stop-text {
+  cursor: pointer;
+  text-decoration: dotted;
+}
+
+.redirect-timer,
+.redirect-timer:after {
+  display: block;
+  margin: 0 auto;
+  width: 4rem;
+  height: 4rem;
+}
+
+.redirect-timer {
+  font-size: 2rem;
+  line-height: 4rem;
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    border-radius: 50%;
+    border-top: .25rem solid colors.color('block');
+    border-right: .25rem solid colors.color('block');
+    border-bottom: .25rem solid colors.color('block');
+    border-left: .25rem solid colors.color('red');
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+  }
+}
+
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

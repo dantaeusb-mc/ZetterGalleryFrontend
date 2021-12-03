@@ -1,5 +1,5 @@
-@use 'src/styles/variables/media';
-@use 'src/styles/variables/colors' as colors;
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
 
 .badge {
   border-radius: var(--border-small-radius);

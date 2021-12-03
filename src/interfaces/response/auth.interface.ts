@@ -27,3 +27,8 @@ export interface ITokenResponse {
   type: string,
   crossAuthorizationCode?: ICrossAuthorizationCodeResponse
 }
+
+export interface IActionResponse {
+  action: string,
+  actionPayload: any
+}

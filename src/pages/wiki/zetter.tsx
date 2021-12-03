@@ -1,6 +1,4 @@
 import React from 'react';
-import DefaultLayout, { CleanLayout } from '@components/layout';
-import AuthPrompt from '@components/authPrompt/Auth.component';
 import Head from "next/head";
 import CraftGrid from "@components/craftGrid";
 import {

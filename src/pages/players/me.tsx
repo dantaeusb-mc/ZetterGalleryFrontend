@@ -7,8 +7,8 @@ import {
   GetServerSidePropsContext, GetServerSidePropsResult
 } from "next";
 import {IPaintingProps} from "@components/post/Post.component";
-import Profile from "@components/profile";
-import {IProfileProps} from "@components/profile/Profile.component";
+import Profile from "@components/player/profile";
+import {IProfileProps} from "@components/player/profile/Profile.component";
 
 export default function Player(props: IProfileProps): JSX.Element {
   return (<>

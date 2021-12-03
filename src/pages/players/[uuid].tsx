@@ -1,8 +1,8 @@
 import React from 'react';
 import DefaultLayout from '@components/layout';
 import Head from "next/head";
-import Profile from "@components/profile";
-import {IProfileProps} from "@components/profile/Profile.component";
+import Profile from "@components/player/profile";
+import {IProfileProps} from "@components/player/profile/Profile.component";
 
 export default function Player(props: IProfileProps): JSX.Element {
   return (<>

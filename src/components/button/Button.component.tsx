@@ -5,11 +5,11 @@ import styles from './Button.module.scss';
 type ButtonProps = {
   title: string,
   action: CallableFunction,
-  className: string
+  className?: string
 };
 
-function Button(props: PropsWithChildren<ButtonProps>): JSX.Element {
-  return (<button className={ injectClassNames(styles['button'], props.className) } title={ props.title }>{ props.children }</button>);
+function Button({ title, action, className, children }: PropsWithChildren<ButtonProps>): JSX.Element {
+  return (<button className={ injectClassNames(styles['button'], className) } title={ title } onClick={ (e) => { action() } }>{ children }</button>);
 }
 
 export default Button;
