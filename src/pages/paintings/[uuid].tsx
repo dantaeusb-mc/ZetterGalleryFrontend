@@ -32,6 +32,7 @@ export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (con
     props: {
       uri: `http://localhost:3000/static/generated/paintings/${ post.uuid }`,
       name: post.name,
+      resolution: post.resolution,
       originalSize: {
         height: post.sizeH,
         width: post.sizeW

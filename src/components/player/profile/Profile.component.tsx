@@ -6,13 +6,14 @@ import {EBadgeTier} from "@components/player/badge/Badge.component";
 import {injectClassNames} from "@/utils/css";
 
 export interface IProfileProps {
+  uuid: string
   nickname: string
 }
 
 export default function Profile(props: IProfileProps): JSX.Element {
   return (<section className={ injectClassNames('block', styles['profile']) }>
     <header className={ styles['summary'] }>
-      <img src="/assets/fran.png" className={ injectClassNames('pixelated-images', styles['userpic']) } title={`${ props.nickname }'s Minecraft avatar`} alt={ `Small picture depicting ${ props.nickname }'s Minecraft in-game character's face` }  />
+      <img src={ `http://[::1]:3000/static/generated/players/${props.uuid}/original.png` } className={ injectClassNames('pixelated-images', styles['userpic']) } title={`${ props.nickname }'s Minecraft avatar`} alt={ `Small picture depicting ${ props.nickname }'s Minecraft in-game character's face` }  />
       <div className={ styles['description'] }>
         <h1 className={ styles['nickname'] }>{ props.nickname }</h1>
         <p className={ injectClassNames(styles['motto'], styles['editable']) }>{ 'You miss 100 percent of the shots you don\'t take.' }</p>

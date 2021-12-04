@@ -9,7 +9,7 @@ export default function Author(props: IPaintingProps): JSX.Element {
       <a>
         <header className={ styles['post-header'] } >
           <div className={ styles['profile-picture-wrapper'] }>
-            <span className={ styles['profile-picture'] } style={ { backgroundImage: `url(${ "/assets/fran.png" })` } }>
+            <span className={ styles['profile-picture'] } style={ { backgroundImage: `url(${ `http://[::1]:3000/static/generated/players/${props.author.uuid}/original.png` })` } }>
               { `${ props.author.nickname }'s Profile Picture` }
             </span>
           </div>

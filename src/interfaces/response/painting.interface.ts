@@ -5,6 +5,11 @@ export interface IPaintingResponse {
   sizeH: number,
   sizeW: number,
   color?: string,
+  statistics?: {
+    favorites: number,
+    salesTotal: number,
+    salesCount: number
+  }
   author: {
     uuid: string,
     nickname: string

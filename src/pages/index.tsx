@@ -28,10 +28,12 @@ export enum Direction {
 }
 
 export interface IPaintingListQuery {
-  page: number
-  resolution: 16 | 32 | 64
-  sort: PaintingSorting
-  dir: Direction
+  page: number,
+  resolution: 16 | 32 | 64,
+  sort: PaintingSorting,
+  dir: Direction,
+  withRawData: boolean
+  withStatistics: boolean
 }
 
 export type PaintingQueryUpdateFn = <K extends keyof IPaintingListQuery>(param: K, value: IPaintingListQuery[K]) => void;
@@ -40,7 +42,9 @@ const defaultQuery: IPaintingListQuery = {
   page: 1,
   resolution: 16,
   sort: PaintingSorting.SCORE,
-  dir: Direction.DESC
+  dir: Direction.DESC,
+  withRawData: true,
+  withStatistics: true
 };
 
 const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps => {
@@ -57,8 +61,9 @@ const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps
       nickname: response.author.nickname
     },
     stats: {
-      favoritesAdded: 164,
-      emeraldsPaid: 6834
+      favorites: response.statistics ? response.statistics.favorites : 0,
+      salesTotal: response.statistics ? response.statistics.salesTotal : 0,
+      salesCount: response.statistics ? response.statistics.salesCount : 0
     }
   }
 }
