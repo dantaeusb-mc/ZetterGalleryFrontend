@@ -62,7 +62,7 @@
   "auth.microsoft.disclaimer.track": [
     {
       "type": 0,
-      "value": "This is also used track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
+      "value": "This is also used to track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
     }
   ],
   "auth.microsoft.disclaimer.why": [
