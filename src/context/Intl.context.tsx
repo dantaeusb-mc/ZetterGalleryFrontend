@@ -2,10 +2,12 @@ import React, {PropsWithChildren, useMemo, useState} from "react";
 import { IntlProvider } from "react-intl";
 import English from '../../content/compiled-locales/en.json';
 import Russian from '../../content/compiled-locales/ru.json';
+import Polish from '../../content/compiled-locales/pl.json';
 
 export const languages = {
   en: 'English',
-  ru: 'Русский'
+  ru: 'Русский',
+  pl: 'Polski',
 }
 
 export type Locale = keyof typeof languages;
@@ -30,11 +32,12 @@ function IntlProviderWrapper(props: PropsWithChildren<IIntlProps>) {
   const messages = useMemo(() => {
     switch (locale) {
       // @ts-ignore
+      case 'pl':
+        return Polish;
       case 'ru':
         return Russian;
       case 'en':
       default:
-        return English;
         return English;
     }
   }, [locale]);
