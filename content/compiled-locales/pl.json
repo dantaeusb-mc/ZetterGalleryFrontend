@@ -1,0 +1,566 @@
+{
+  "about.title": [
+    {
+      "type": 0,
+      "value": "O projekcie Zetter"
+    }
+  ],
+  "about.zetter.description": [
+    {
+      "type": 0,
+      "value": "Zetter to mod do gry Minecraft, służący do tworzenia obrazów. Pozwala on graczom na malowanie obrazów za pomocą interfejsu przypominającego starego MS Paint. Obrazy te mogą być łączone, tworząc jedną całość o maksymalnych rozmiarach 4x4 bloki, oprawione w ramę i powieszone na ścianie. Powinno to sprawić, że w Twoim domu będzie jeszcze bardziej przytulnie."
+    }
+  ],
+  "about.zetter.gallery.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery to mod oraz miejsce do dzielenia się swoimi dziełami Zetter ze światem. Mod Zetter Gallery dodaje Handlarza Obrazami, który pozwoli Ci sprzedawać i kupować obrazy, które są popularne w Zetter Gallery."
+    }
+  ],
+  "about.zetter.gallery.mod-wiki-link": [
+    {
+      "type": 0,
+      "value": "Sprawdź stronę wiki moda Zetter Gallery z przepisami i instrukcjami"
+    }
+  ],
+  "about.zetter.gallery.title": [
+    {
+      "type": 0,
+      "value": "Czym jest Zetter Gallery"
+    }
+  ],
+  "about.zetter.mod-wiki-link": [
+    {
+      "type": 0,
+      "value": "Sprawdź stronę wiki moda Zetter z przepisami i instrukcjami"
+    }
+  ],
+  "about.zetter.title": [
+    {
+      "type": 0,
+      "value": "Czym jest Zetter"
+    }
+  ],
+  "auth-prompt.check.title": [
+    {
+      "type": 0,
+      "value": "Jak się upewnić, że jestem bezpieczny?"
+    }
+  ],
+  "auth-prompt.disclaimer.title": [
+    {
+      "type": 0,
+      "value": "Dlaczego tego potrzebuję?"
+    }
+  ],
+  "auth.microsoft.check.advice": [
+    {
+      "type": 0,
+      "value": "Dobrze, że pytasz! Zawsze sprawdzaj domenę w swojej wyszukiwarce, gdy wpisujesz hasła. Na tym etapie możesz wpierw zostać przekierowany do &quot;zettergallery.onmicrosoft.com&quot; lub &quot;login.live.com&quot; jeżeli nie jesteś zalogowany na konto Microsoft. Jeżeli domena się zgadza, wszystko jest w porządku."
+    }
+  ],
+  "auth.microsoft.disclaimer.track": [
+    {
+      "type": 0,
+      "value": "Jest to również używane w celu monitorowania, które obrazy kupujesz, aby przekazywać Ci istotne info. Nie obawiaj się, dane o Twojej aktywności przetrzymujemy jedynie przez tydzień."
+    }
+  ],
+  "auth.microsoft.disclaimer.why": [
+    {
+      "type": 0,
+      "value": "Potrzebujemy tego, aby mieć pewność, że masz dostęp do konta gracza, którego można użyć do zamieszczania nowych obrazów. Pozwala Ci to na dostęp do osobistego info o Twoich ulubionych obrazach i statystykach Twoich obrazów."
+    }
+  ],
+  "microsoft-auth-check-advice": [
+    {
+      "type": 0,
+      "value": "Dobrze, że pytasz! Sprawdź jedynie, czy serwer opisany poniżej jest tym, na którym obecnie grasz."
+    }
+  ],
+  "microsoft-auth-disclaimer-why": [
+    {
+      "type": 0,
+      "value": "Pozwala to serwerowi na kupno i zamieszczanie obrazów w Twoim imieniu, gdy handlujesz z Handlarzem Obrazami."
+    }
+  ],
+  "paintings.layered-navigation.filter.resolution": [
+    {
+      "type": 0,
+      "value": "Rozdzielczość"
+    }
+  ],
+  "paintings.layered-navigation.sort.hot": [
+    {
+      "type": 0,
+      "value": "Gorące"
+    }
+  ],
+  "paintings.layered-navigation.sort.new": [
+    {
+      "type": 0,
+      "value": "Nowe"
+    }
+  ],
+  "paintings.layered-navigation.sort.top": [
+    {
+      "type": 0,
+      "value": "Topowe"
+    }
+  ],
+  "profile.count.earnings": [
+    {
+      "type": 0,
+      "value": "Zarobki:"
+    }
+  ],
+  "profile.count.favorites": [
+    {
+      "type": 0,
+      "value": "Ulubione:"
+    }
+  ],
+  "profile.count.paintings": [
+    {
+      "type": 0,
+      "value": "Obrazy:"
+    }
+  ],
+  "widgets.under-construction.description.dm": [
+    {
+      "type": 0,
+      "value": "Jeżeli wiesz, jak zarządzać bezpieczną i zachęcającą społecznością Discord, napisz do mnie PW na: dantaeusb#9879"
+    }
+  ],
+  "widgets.under-construction.description.why": [
+    {
+      "type": 0,
+      "value": "Budujemy dom dla obrazów Zetter"
+    }
+  ],
+  "widgets.under-construction.title": [
+    {
+      "type": 0,
+      "value": "W budowie"
+    }
+  ],
+  "wiki.zetter.combining.interface.grid-dd": [
+    {
+      "type": 0,
+      "value": "Umieść tutaj swoje płótna, by połączyć je razem. Możesz również umieścić tutaj tylko jedno płótno."
+    }
+  ],
+  "wiki.zetter.combining.interface.grid-dt": [
+    {
+      "type": 0,
+      "value": "1) Siatka łączenia płócien"
+    }
+  ],
+  "wiki.zetter.combining.interface.name-dd": [
+    {
+      "type": 0,
+      "value": "Użyj, by nazwać swój obraz."
+    }
+  ],
+  "wiki.zetter.combining.interface.name-dt": [
+    {
+      "type": 0,
+      "value": "3) Pole z nazwą"
+    }
+  ],
+  "wiki.zetter.combining.interface.preview-dd": [
+    {
+      "type": 0,
+      "value": "Pokazuje, jak będzie wyglądał gotowy obraz."
+    }
+  ],
+  "wiki.zetter.combining.interface.preview-dt": [
+    {
+      "type": 0,
+      "value": "2) Podgląd"
+    }
+  ],
+  "wiki.zetter.combining.interface.result-dd": [
+    {
+      "type": 0,
+      "value": "Gdy będziesz zadowolony z rezultatu, zabierz stąd swój obraz. Gratulacje! Pierwsze arcydzieło gotowe."
+    }
+  ],
+  "wiki.zetter.combining.interface.result-dt": [
+    {
+      "type": 0,
+      "value": "4) Rezultat"
+    }
+  ],
+  "wiki.zetter.combining.section": [
+    {
+      "type": 0,
+      "value": "Łączenie"
+    }
+  ],
+  "wiki.zetter.combining.text-intro": [
+    {
+      "type": 0,
+      "value": "Gdy ukończyłeś już jedną lub kilka części swojego dzieła, czas połączyć płótna i podpisać się pod obrazem. Kliknięcie prawym przyciskiem myszy z przytrzymanym klawiszem Shift na sztaludze przeniesie płótno ze sztalugi do Twojego ekwipunku. Naciśnięcie prawym przyciskiem myszy na Stole Artysty otworzy menu łączenia i podpisywania:"
+    }
+  ],
+  "wiki.zetter.combining.title": [
+    {
+      "type": 0,
+      "value": "Podpisywanie i łączenie płócien"
+    }
+  ],
+  "wiki.zetter.crafting.section": [
+    {
+      "type": 0,
+      "value": "Wytwarzanie"
+    }
+  ],
+  "wiki.zetter.crafting.text": [
+    {
+      "type": 0,
+      "value": "Najpierw musimy stworzyć kilka rzeczy. Kilka płócien, sztalugę, na której umieścimy płótno, farby, a także paletę."
+    }
+  ],
+  "wiki.zetter.crafting.title": [
+    {
+      "type": 0,
+      "value": "Wytwarzanie"
+    }
+  ],
+  "wiki.zetter.framing.section": [
+    {
+      "type": 0,
+      "value": "Tworzenie ramy"
+    }
+  ],
+  "wiki.zetter.framing.text-finish": [
+    {
+      "type": 0,
+      "value": "Na co jeszcze czekasz? Powieś go na ścianie!"
+    }
+  ],
+  "wiki.zetter.framing.text-intro": [
+    {
+      "type": 0,
+      "value": "Po podpisaniu i nazwaniu Twojego obrazu, nadszedł wreszcie czas, byś powiesił go gdzieś w swoim eleganckim domu! Aby to zrobić, będziemy musieli stworzyć specjalną ramę i umieścić w niej obraz, następnie zaś powiesić go na ścianie."
+    }
+  ],
+  "wiki.zetter.page": [
+    {
+      "type": 0,
+      "value": "Strona główna"
+    }
+  ],
+  "wiki.zetter.painting.interface.finish-dd": [
+    {
+      "type": 0,
+      "value": "Zacznij malować!"
+    }
+  ],
+  "wiki.zetter.painting.interface.finish-dt": [
+    {
+      "type": 0,
+      "value": "6) Okno malowania"
+    }
+  ],
+  "wiki.zetter.painting.interface.hex-dd": [
+    {
+      "type": 0,
+      "value": "Jeżeli znasz kod koloru, którego chcesz użyć, wpisz lub wklej go tutaj."
+    }
+  ],
+  "wiki.zetter.painting.interface.hex-dt": [
+    {
+      "type": 0,
+      "value": "4) Wprowadzanie koloru HEX"
+    }
+  ],
+  "wiki.zetter.painting.interface.hsv-dd": [
+    {
+      "type": 0,
+      "value": "Przeciągaj suwaki aby dostosować wybrany kolor."
+    }
+  ],
+  "wiki.zetter.painting.interface.hsv-dt": [
+    {
+      "type": 0,
+      "value": "3) Dostosowywanie koloru HSV"
+    }
+  ],
+  "wiki.zetter.painting.interface.palette-dd": [
+    {
+      "type": 0,
+      "value": "Kolory zapisywane są na palecie. Przegródka z obecną paletą jest podświetlona, możesz zapisać do 14 kolorów na jednej palecie."
+    }
+  ],
+  "wiki.zetter.painting.interface.palette-dt": [
+    {
+      "type": 0,
+      "value": "2) Paleta"
+    }
+  ],
+  "wiki.zetter.painting.interface.palette-slot-dd": [
+    {
+      "type": 0,
+      "value": "Umieść tutaj stworzoną paletę, aby zacząć malować."
+    }
+  ],
+  "wiki.zetter.painting.interface.palette-slot-dt": [
+    {
+      "type": 0,
+      "value": "1) Slot na paletę"
+    }
+  ],
+  "wiki.zetter.painting.interface.tool-dd": [
+    {
+      "type": 0,
+      "value": "Może dobrze będzie zacząć od wiadra, by stworzyć tło."
+    }
+  ],
+  "wiki.zetter.painting.interface.tool-dt": [
+    {
+      "type": 0,
+      "value": "5) Wybór narzędzia"
+    }
+  ],
+  "wiki.zetter.painting.section": [
+    {
+      "type": 0,
+      "value": "Obraz"
+    }
+  ],
+  "wiki.zetter.painting.text-intro": [
+    {
+      "type": 0,
+      "value": "Czas, byś stworzył swoje pierwsze dzieło! Pozwól, że pokażę, jak działa interfejs malowania. Jest on prosty niczym stary, dobry MS Paint, oto odniesienie:"
+    }
+  ],
+  "wiki.zetter.painting.title": [
+    {
+      "type": 0,
+      "value": "Obraz"
+    }
+  ],
+  "wiki.zetter.preparing.section": [
+    {
+      "type": 0,
+      "value": "Przygotowania"
+    }
+  ],
+  "wiki.zetter.preparing.text-mounting": [
+    {
+      "type": 0,
+      "value": "Z płótnem w ręce, kliknij prawym przyciskiem myszy na sztaludze, by je na niej umieścić."
+    }
+  ],
+  "wiki.zetter.preparing.text-start": [
+    {
+      "type": 0,
+      "value": "Aby zacząć malować, musimy przygotować nasz  malarski warsztat. Ustaw sztalugę, chwyć za płótno, umieść paletę na pasku szybkiego dostępu. Możesz również postawić stół artysty gdzieś w okolicy - będziemy go później potrzebować."
+    }
+  ],
+  "wiki.zetter.preparing.text-workshop-title": [
+    {
+      "type": 0,
+      "value": "Nasz warsztat powinien wyglądać tak:"
+    }
+  ],
+  "wiki.zetter.preparing.title": [
+    {
+      "type": 0,
+      "value": "Pzygotowanie przestrzeni roboczej"
+    }
+  ],
+  "wiki.zetter.recipes.artist-table": [
+    {
+      "type": 0,
+      "value": "Stół artysty pozwala tworzyć obrazy z płócien poprzez łączenie i podpisywanie ich. Aby połączyć płótna, utwórz z nich kształt prostokąta na siatce. Jeżeli kształt jest poprawny, podgląd obrazu zostanie zaktualizowany. Jeżeli podgląd jest niewidoczny, a slot wyniku jest pusty, kształt jest nieprawidłowy. Wspierane rozmiary obrazów podano poniżej."
+    }
+  ],
+  "wiki.zetter.recipes.artist-table.section": [
+    {
+      "type": 0,
+      "value": "Stół Artysty"
+    }
+  ],
+  "wiki.zetter.recipes.artist-table.title": [
+    {
+      "type": 0,
+      "value": "Stól Artysty"
+    }
+  ],
+  "wiki.zetter.recipes.canvas": [
+    {
+      "type": 0,
+      "value": "Płótna stanowią pośredni dom dla Twoich dzieł. Są one widoczne, gdy umieścisz je na sztaludze prawym przyciskiem myszy, lecz gdy praca jest skończona, lepiej utworzyć z nich obraz za pomocą stołu artysty. Będziesz mógł zobaczyć tam podgląd połączonych płócien."
+    }
+  ],
+  "wiki.zetter.recipes.canvas.section": [
+    {
+      "type": 0,
+      "value": "Płótno"
+    }
+  ],
+  "wiki.zetter.recipes.canvas.title": [
+    {
+      "type": 0,
+      "value": "Płótno"
+    }
+  ],
+  "wiki.zetter.recipes.easel": [
+    {
+      "type": 0,
+      "value": "Sztaluga to punkt początkowy wszystkich obrazów. Aby zacząć malowanie, będziesz musiał ją gdzieś postawić, umieścić na niej płótno klikając ją prawym przyciskiem myszy z płótnem w ręce. Zwykłe kliknięcie prawym przyciskiem myszy otworzy interfejs sztalugi. Będziesz również musiał włożyć paletę do specjalnego slotu. Kliknij prawym przyciskiem myszy z wciśniętym Shift pustą ręką na sztaludze, a zdejmiesz z niej płótno ."
+    }
+  ],
+  "wiki.zetter.recipes.easel.section": [
+    {
+      "type": 0,
+      "value": "Sztaluga"
+    }
+  ],
+  "wiki.zetter.recipes.easel.title": [
+    {
+      "type": 0,
+      "value": "Sztaluga"
+    }
+  ],
+  "wiki.zetter.recipes.frames.section": [
+    {
+      "type": 0,
+      "value": "Ramy"
+    }
+  ],
+  "wiki.zetter.recipes.framing": [
+    {
+      "type": 0,
+      "value": "Aby oprawić obraz w ramę, musisz połączyć je na siatce w dowolnej kolejności. Możesz zawsze również wyciągnąć obraz z ramy. Aby to zrobić, po prostu umieść oprawiony obraz na siatce. Możesz zabrać ramę, a obraz bez ramy pojawi się na siatce."
+    }
+  ],
+  "wiki.zetter.recipes.framing.title": [
+    {
+      "type": 0,
+      "value": "Oprawianie obrazów i wyciąganie ich z ramy"
+    }
+  ],
+  "wiki.zetter.recipes.gold-frame.title": [
+    {
+      "type": 0,
+      "value": "Złota rama"
+    }
+  ],
+  "wiki.zetter.recipes.golden-frame": [
+    {
+      "type": 0,
+      "value": "To jest złota rama, która jest znacznie szersza od pozostałych i ma luksusowy wygląd. Jest wysadzana szmaragdami, które potrzebne są do jej stworzenia. Domyślnie nie ma tabliczki z nazwą, patrz niżej;"
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame": [
+    {
+      "type": 0,
+      "value": "Ta rama nie ma szerokich brzegów dookoła obrazu, więc możesz umieścić kilka obrazów, jeden obok drugiego, aby stworzyć ogromne obrazy, większe niż 4x4 lub po prostu pozbyć sie brzegów. Ma 1 piksel grubości, tak jak podstawowe obrazy."
+    }
+  ],
+  "wiki.zetter.recipes.iron-frame.title": [
+    {
+      "type": 0,
+      "value": "Żelazna Rama"
+    }
+  ],
+  "wiki.zetter.recipes.page": [
+    {
+      "type": 0,
+      "value": "Przepisy"
+    }
+  ],
+  "wiki.zetter.recipes.painting": [
+    {
+      "type": 0,
+      "value": "To jest właściwy obraz. Tworzy się go, podpisując jedno lub kilka połączonych płócien na stole artysty."
+    }
+  ],
+  "wiki.zetter.recipes.painting.section": [
+    {
+      "type": 0,
+      "value": "Obraz"
+    }
+  ],
+  "wiki.zetter.recipes.painting.title": [
+    {
+      "type": 0,
+      "value": "Obraz"
+    }
+  ],
+  "wiki.zetter.recipes.paints": [
+    {
+      "type": 0,
+      "value": "Farby służą do tworzenia oraz odnawiania palety."
+    }
+  ],
+  "wiki.zetter.recipes.paints.section": [
+    {
+      "type": 0,
+      "value": "Farby"
+    }
+  ],
+  "wiki.zetter.recipes.paints.title": [
+    {
+      "type": 0,
+      "value": "Farby"
+    }
+  ],
+  "wiki.zetter.recipes.palette": [
+    {
+      "type": 0,
+      "value": "Paleta jest niezbędna do malowania na płótnie. Gdy umieścisz ją w specjalnym slocie w interfejsie sztalugi, pojawią się kolory. Dla Twojej wygody, gdy malujesz wielo-płócienne dzieło, możesz używać jednej palety na wielu sztalugach, a Twoje kolory zostaną zapisane na palecie. Gdy pasek palety zmaleje, nie będziesz mógł dalej malować. Możesz zachować kolory i odnowić paletę, łącząc ją z farbami, jak na rysunku powyżej."
+    }
+  ],
+  "wiki.zetter.recipes.palette.section": [
+    {
+      "type": 0,
+      "value": "Paleta"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.section": [
+    {
+      "type": 0,
+      "value": "Ramy specjalne"
+    }
+  ],
+  "wiki.zetter.recipes.special-frames.title": [
+    {
+      "type": 0,
+      "value": "Ramy specjalne"
+    }
+  ],
+  "wiki.zetter.recipes.title": [
+    {
+      "type": 0,
+      "value": "Przepisy Wiki Zetter"
+    }
+  ],
+  "wiki.zetter.recipes.title-palette": [
+    {
+      "type": 0,
+      "value": "Paleta"
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames": [
+    {
+      "type": 0,
+      "value": "Podstawowe ramy stworzone są z drewna, patyków, skóry oraz dowolnej bryłki. Możesz użyć dowolnego rodzaju drewna z podstawowej gry, a otrzymasz ramę zależną od rodzaju drewna, którego użyłeś. Jeżeli przy tworzeniu użyjesz złotej bryłki, rama będzie miała dodatkowo małą złotą tabliczkę, a nazwa obrazu zostanie wyświetlona, gdy klikniesz na nim prawym przyciskiem myszy."
+    }
+  ],
+  "wiki.zetter.recipes.wooden-frames.title": [
+    {
+      "type": 0,
+      "value": "Drewniane Ramy"
+    }
+  ],
+  "wiki.zetter.title": [
+    {
+      "type": 0,
+      "value": "Strona Główna Wiki Zetter"
+    }
+  ]
+}
