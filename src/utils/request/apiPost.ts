@@ -1,7 +1,7 @@
 import handleFetchError from './handleFetchError';
 
 const apiGet = (path: string, post: any): Promise<any> => (
-  fetch('/api/v1/' + path, {
+  fetch('http://127.0.0.1/v1' + path, {
     method: 'POST',
     /*headers: {
       'Authorization': 'Bearer ' + auth.token,

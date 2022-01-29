@@ -28,7 +28,7 @@ const apiGet = <T>(path: string, queryParams?: IQueryParams, context?: NextPageC
     headers['Authorization'] = 'Bearer ' + token;
   }
 
-  return fetch('http://[::1]:3000/api/v1' + path + buildQuery(queryParams), {
+  return fetch('http://127.0.0.1/v1' + path + buildQuery(queryParams), {
     method: 'GET',
     headers: headers
   })

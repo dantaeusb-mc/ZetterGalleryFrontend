@@ -63,26 +63,25 @@ export default function AuthFinish(props: PropsWithChildren<IAuthFinishProps>): 
 }
 
 export async function getServerSideProps(context: NextPageContext) {
-  let token = getCookie('token', {req: context.req, res: context.res});
   let response: IMessageResponse & ITokenResponse & Partial<IActionResponse>;
 
   try {
-    if (token) {
-      response = await apiGet<IMessageResponse & ITokenResponse & Partial<IActionResponse>>('/auth/check', {
-        state: context.query.state
-      }, context);
-    } else {
-      response = await apiGet<IMessageResponse & ITokenResponse & Partial<IActionResponse>>('/auth/microsoft/finish', {
-        code: context.query.code,
-        state: context.query.state,
-        callbackTarget: 'frontend'
-      }, context);
+    response = await apiGet<IMessageResponse & ITokenResponse & Partial<IActionResponse>>('/auth/microsoft/finish', {
+      code: context.query.code,
+      state: context.query.state,
+      callbackTarget: 'frontend'
+    }, context);
 
-      setCookies('token', response.token, {req: context.req, res: context.res});
-    }
+    console.log(response);
+
+    setCookies('token', response.token, {req: context.req, res: context.res});
   } catch (e) {
     return {
-      redirect: '/'
+      redirect: {
+        permanent: false,
+        destination: "/error",
+      },
+      props: {}
     }
   }
 

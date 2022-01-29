@@ -49,7 +49,7 @@ const defaultQuery: IPaintingListQuery = {
 
 const mapPaintingResponseToProps = (response: IPaintingResponse): IPaintingProps => {
   return {
-    uri: `http://[::1]:3000/static/generated/paintings/${response.uuid}/original.png`,
+    uri: `http://127.0.0.1/static/generated/paintings/${response.uuid}/original.png`,
     name: response.name,
     resolution: response.resolution,
     originalSize: {
@@ -160,6 +160,8 @@ const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
 
 export async function getServerSideProps(context: NextPageContext) {
   const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), context.query);
+
+  console.log(initPaintingsQuery);
 
   return {
     props: {
