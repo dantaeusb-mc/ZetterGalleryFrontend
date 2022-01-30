@@ -99,7 +99,7 @@ export async function getServerSideProps(context: NextPageContext) {
   }
 
   try {
-    const result = await apiGet<IMessageResponse>('/auth/cross-authorization/check', { code: code }, context);
+    const result = await apiGet<IMessageResponse>('/auth/cross-authorization/check', { crossAuthorizationCode: code }, context);
   } catch (e) {
     if (e instanceof HttpCodeError) {
       return {

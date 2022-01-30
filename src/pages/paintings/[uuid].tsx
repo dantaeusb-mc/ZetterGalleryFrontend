@@ -42,8 +42,8 @@ export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (con
         nickname: post.author.nickname
       },
       stats: {
-        emeraldsPaid: 1,
-        favoritesAdded: 1
+        salesTotal: 1,
+        favorites: 1
       }
     }
   }

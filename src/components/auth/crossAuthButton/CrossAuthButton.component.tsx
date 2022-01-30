@@ -23,7 +23,7 @@ export default function CrossAuthButton({ code } : ICrossAuthButtonProps): JSX.E
   const confirm = async () => {
     setStatus(ECrossAuthStatus.WAITING);
 
-    apiGet('/auth/cross-authorization/elevate', { code: code })
+    apiGet('/auth/cross-authorization/elevate', { crossAuthorizationCode: code })
       .then(response => {
         setStatus(ECrossAuthStatus.CONFIRMED);
       })
