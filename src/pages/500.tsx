@@ -1,25 +1,53 @@
-import Head from "next/head";
-import DefaultLayout from "@components/layout";
-import ConstructionPlaceholder from "@components/constructionPlaceholder";
-import React from "react";
-import ErrorMessage from "@components/error/ErrorMessage.component";
-import {FormattedMessage} from "react-intl";
+import Head from 'next/head';
+import DefaultLayout from '@components/layouts/default';
+import React from 'react';
+import ErrorMessage from '@components/widgets/error-message';
+import { FormattedMessage, useIntl } from 'react-intl';
+import getTitle from '@/utils/page/getTitle';
 
 const InternalServerErrorPage = () => {
-  return (<>
-    <Head>
-      <title>Internal Server Error | Zetter Gallery</title>
-      <meta name="description" content="Internal Server Error" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <DefaultLayout>
-      <ErrorMessage title={
-        <FormattedMessage id={'error.bad-request.title'} defaultMessage={'Internal server error'} />
-      } description={
-        <FormattedMessage id={'error.not-found.description'} defaultMessage={'Sorry, something bad and unexpected happened while processing your request'} />
-      } />
-    </DefaultLayout>
-  </>);
-}
+  const intl = useIntl();
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'error.500.page.title',
+      defaultMessage: 'Error!',
+      description: '500 page title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'error.500.page.description',
+    defaultMessage: 'Internal server error page',
+    description: '500 page description',
+  });
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <DefaultLayout>
+        <ErrorMessage
+          title={
+            <FormattedMessage
+              id={'error.bad-request.title'}
+              defaultMessage={'Server error'}
+            />
+          }
+          description={
+            <FormattedMessage
+              id={'error.not-found.description'}
+              defaultMessage={
+                'Sorry, something bad and unexpected happened while processing your request'
+              }
+            />
+          }
+        />
+      </DefaultLayout>
+    </>
+  );
+};
 
 export default InternalServerErrorPage;

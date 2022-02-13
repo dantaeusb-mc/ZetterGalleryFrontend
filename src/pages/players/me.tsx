@@ -1,31 +1,53 @@
 import React from 'react';
-import DefaultLayout, { CleanLayout } from '@components/layout';
-import Post from '@components/post';
-import Head from "next/head";
-import {
-  GetServerSideProps,
-  GetServerSidePropsContext, GetServerSidePropsResult, NextPageContext
-} from "next";
-import {PaintingProps} from "@components/post/Post.component";
-import Profile from "@components/player/profile";
-import {ProfileProps} from "@components/player/profile/Profile.component";
-import {apiGet} from "@/utils/request";
-import {setCookies} from "cookies-next";
-import { MessageResponseDto } from '@/dto/response/message.dto';
+import DefaultLayout from '@components/layouts/default';
+import Head from 'next/head';
+import { NextPageContext } from 'next';
+import Profile from '@components/player/profile';
+import { ProfileProps } from '@components/player/profile/Profile.component';
+import { apiGet } from '@/utils/request';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { HttpCodeError } from '@/utils/request/apiGet';
+import { useIntl } from 'react-intl';
+import getTitle from '@/utils/page/getTitle';
+import ConstructionPlaceholder from '@components/construction-placeholder';
 
 export default function Player(props: ProfileProps): JSX.Element {
-  return (<>
-    <Head>
-      <title>Player Name profile at Zetter Gallery</title>
-      <meta name="description" content="Check out Player Name activity on Zetter Gallery" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <DefaultLayout>
-      <Profile uuid={ props.uuid } nickname={ props.nickname } />
-    </DefaultLayout>
-  </>);
+  const intl = useIntl();
+  const title = getTitle(
+    intl.formatMessage(
+      {
+        id: 'players.page.title',
+        defaultMessage: "{username}'s Profile",
+      },
+      {
+        username: props.nickname,
+      },
+    ),
+  );
+
+  const description = intl.formatMessage(
+    {
+      id: 'players.page.description',
+      defaultMessage: "{username}'s profile on Zetter Gallery",
+    },
+    {
+      username: props.nickname,
+    },
+  );
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <DefaultLayout>
+        <Profile uuid={props.uuid} nickname={props.nickname} />
+        <ConstructionPlaceholder />
+      </DefaultLayout>
+    </>
+  );
 }
 
 export async function getServerSideProps(context: NextPageContext) {
@@ -38,7 +60,7 @@ export async function getServerSideProps(context: NextPageContext) {
       return {
         redirect: {
           permanent: false,
-          destination: "/auth/start",
+          destination: '/auth/start',
         },
         props: {},
       };
@@ -49,7 +71,7 @@ export async function getServerSideProps(context: NextPageContext) {
     return {
       redirect: {
         permanent: false,
-        destination: "/500",
+        destination: '/500',
       },
       props: {},
     };
@@ -57,7 +79,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
-      ...response
+      ...response,
     },
   };
 }

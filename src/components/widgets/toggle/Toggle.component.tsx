@@ -1,6 +1,11 @@
-import React, { ChangeEvent, createElement, PropsWithChildren, ReactNode, useEffect, useRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  PropsWithChildren,
+  ReactNode,
+  useRef,
+  useState,
+} from 'react';
 import { injectClassNames } from 'utils/css';
-import { FormattedMessage } from 'react-intl';
 import styles from './Toggle.module.scss';
 
 type ToggleProps = {
@@ -10,6 +15,7 @@ type ToggleProps = {
   title: string | ReactNode;
   description: string | ReactNode;
 };
+
 // @todo: rename 'ToggleOption'
 function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
   const input = useRef(null);
@@ -24,20 +30,41 @@ function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
     setEnabled(event.target.checked);
   };
 
-  return (<label htmlFor={id}>
-      <div className={ injectClassNames(styles['option-wrapper'], 'sans-serif-font') }>
-        <div className={ styles['option-text'] }>
-          <p className={ styles['option-title'] }>{ props.title }</p>
-          <small className={ styles['option-description'] }>{props.description}</small>
+  return (
+    <label htmlFor={id}>
+      <div
+        className={injectClassNames(
+          styles['option-wrapper'],
+          'sans-serif-font',
+        )}
+      >
+        <div className={styles['option-text']}>
+          <p className={styles['option-title']}>{props.title}</p>
+          <small className={styles['option-description']}>
+            {props.description}
+          </small>
         </div>
-        <div className={ injectClassNames(styles['toggle-wrapper'], [styles['checked'], enabled]) }>
-          <div className={ styles['toggle'] }>
-            <div className={ styles['toggle-thumb'] } />
+        <div
+          className={injectClassNames(styles['toggle-wrapper'], [
+            styles['checked'],
+            enabled,
+          ])}
+        >
+          <div className={styles['toggle']}>
+            <div className={styles['toggle-thumb']} />
           </div>
         </div>
-        <input type="checkbox" className={styles['checkbox']} id={id} name={props.name} ref={input} onChange={handleChange} />
-    </div>
-  </label>);
+        <input
+          type="checkbox"
+          className={styles['checkbox']}
+          id={id}
+          name={props.name}
+          ref={input}
+          onChange={handleChange}
+        />
+      </div>
+    </label>
+  );
 }
 
 export default Toggle;

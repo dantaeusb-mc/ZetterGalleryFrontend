@@ -4,6 +4,8 @@ import { HttpCodeError } from '@/utils/request/apiGet';
  * @param e
  */
 const handleRequestErrors = (e: any): any => {
+  console.log(e);
+
   if (e instanceof HttpCodeError) {
     let redirectCode = 500;
 

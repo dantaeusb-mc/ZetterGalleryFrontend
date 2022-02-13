@@ -1,0 +1,29 @@
+@use 'src/styles/variables/media';
+
+.footer {
+  background-color: var(--primary-block-color);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: var(--content-padding) var(--content-padding) 6rem;
+  margin: 0 auto;
+  max-width: var(--content-thin-width);
+
+  @include media.after-mobile {
+    padding-bottom: 8rem;
+  }
+
+  p {
+    margin: 0 10px;
+  }
+
+  small {
+    display: block;
+    font-size: .75rem;
+  }
+
+  a {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+  }
+}
