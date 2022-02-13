@@ -1,16 +1,42 @@
 import handleFetchError from './handleFetchError';
+import buildQuery, { IQueryParams } from '@/utils/request/buildQuery';
+import { GetServerSidePropsContext, NextPageContext } from 'next';
+import { getCookie } from 'cookies-next';
+import { HttpCodeError } from '@/utils/request/apiGet';
 
-const apiGet = (path: string, post: any): Promise<any> => (
-  fetch('http://127.0.0.1/v1' + path, {
+const apiPost = <T>(path: string, body: any, queryParams?: IQueryParams, context?: NextPageContext|GetServerSidePropsContext): Promise<T> => {
+  const requestHeaders: HeadersInit = new Headers();
+  requestHeaders.set('Content-Type', 'application/json');
+
+  if (context?.locale) {
+    requestHeaders.set('Accept-Language', context?.locale);
+  }
+
+  let token: string;
+
+  if (context) {
+    token = <string>getCookie('token', {req: context.req, res: context.res});
+  } else {
+    token = <string>getCookie('token');
+  }
+
+  if (token) {
+    requestHeaders.set('Authorization', 'Bearer ' + token);
+  }
+
+  return fetch('http://127.0.0.1/v1' + path + buildQuery(queryParams), {
     method: 'POST',
-    /*headers: {
-      'Authorization': 'Bearer ' + auth.token,
-      'Content-Type': 'application/json'
-    },*/
-    body: JSON.stringify(post)
+    headers: requestHeaders,
+    body: body,
   })
-    .then(res => res.json())
-    .catch(handleFetchError)
-);
+    .then(res => {
+      if (!res.ok) {
+        throw new HttpCodeError(res);
+      }
 
-export default apiGet;
+      return res.json();
+    });
+  //.catch(handleFetchError);
+};
+
+export default apiPost;

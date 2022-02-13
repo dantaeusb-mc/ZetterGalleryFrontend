@@ -5,12 +5,12 @@ import Badge from "@components/player/badge";
 import {EBadgeTier} from "@components/player/badge/Badge.component";
 import {injectClassNames} from "@/utils/css";
 
-export interface IProfileProps {
+export interface ProfileProps {
   uuid: string
   nickname: string
 }
 
-export default function Profile(props: IProfileProps): JSX.Element {
+export default function Profile(props: ProfileProps): JSX.Element {
   return (<section className={ injectClassNames('block', styles['profile']) }>
     <header className={ styles['summary'] }>
       <img src={ `http://[::1]:3000/static/generated/players/${props.uuid}/original.png` } className={ injectClassNames('pixelated-images', styles['userpic']) } title={`${ props.nickname }'s Minecraft avatar`} alt={ `Small picture depicting ${ props.nickname }'s Minecraft in-game character's face` }  />

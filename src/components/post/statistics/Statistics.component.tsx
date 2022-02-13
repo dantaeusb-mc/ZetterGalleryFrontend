@@ -3,7 +3,7 @@ import numeral from 'numeral';
 import {Icon} from 'components/icon';
 import StatisticsButton from './button';
 import {EStatisticsButtonActiveColor} from './button/StatisticsButton.component';
-import {IPaintingProps} from '../Post.component';
+import {PaintingProps} from '../Post.component';
 import styles from './Statistics.module.scss';
 
 export interface IPaintingStatisticsProps {
@@ -12,7 +12,7 @@ export interface IPaintingStatisticsProps {
   salesCount: number
 }
 
-export default function Statistics(props: IPaintingProps): JSX.Element {
+export default function Statistics(props: PaintingProps): JSX.Element {
   const [favorite, setFavorite] = useState<boolean>(false);
 
   const formatNumber = (number: number): string => {

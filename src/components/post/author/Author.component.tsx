@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './Author.module.scss';
-import {IPaintingProps} from "@components/post/Post.component";
+import {PaintingProps} from "@components/post/Post.component";
 
-export default function Author(props: IPaintingProps): JSX.Element {
+export default function Author(props: PaintingProps): JSX.Element {
   return (
     <Link href={ `/players/${props.author.uuid}` }>
       <a>

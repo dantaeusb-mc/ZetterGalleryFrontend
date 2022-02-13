@@ -9,6 +9,8 @@
     var(--content-padding)
     var(--content-padding)
     6rem;
+  margin: 0 auto;
+  max-width: var(--content-thin-width);
 
   @include media.after-mobile {
     padding-bottom: 8rem;

@@ -6,6 +6,7 @@ import {NextPage} from "next";
 import Link from 'next/link';
 import styles from './about.module.scss';
 import {injectClassNames} from "@/utils/css";
+import { SliceButton } from '@components/sliceButton';
 
 const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
   return (<>
@@ -30,22 +31,24 @@ const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
                           blocks, wrapped in a frame and put on wall. This should add some cozy feeling for your virtual home."
                           description="Zetter Description" />
       </p>
-      <a>
+      <p>
         <FormattedMessage id="about.zetter.mod-wiki-link"
                           defaultMessage="Check out Zetter mod wiki page with recipes and manuals"
                           description="Link to Zetter wiki from About Zetter page" />
-      </a>
+      </p>
       <Link href="/wiki/zetter">
         <a title="Check Out Zetter Wiki" target="_self" className={ styles['button'] }>
-          <picture>
-            <img alt="Check Out Zetter Wiki" src="/assets/buttons/wiki-button.png" className={ injectClassNames('pixelated-images', styles['wiki-button']) } />
-          </picture>
+          <SliceButton title='Check Out Zetter Wiki' action={() => { return; }}>
+            <FormattedMessage id='about.zetter.button.wiki.check' defaultMessage='Check out' /><br />
+            <FormattedMessage id='about.zetter.button.wiki.what' defaultMessage='Zetter Wiki' />
+          </SliceButton>
         </a>
       </Link>
       <a title="Download Zetter From CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/zetter" target="_blank"rel="noreferrer" className={ styles['button'] }>
-        <picture>
-          <img alt="Download Zetter From CurseForge" src="/assets/buttons/download-button.png" className={ injectClassNames('pixelated-images', styles['download-button']) } />
-        </picture>
+        <SliceButton title='Download Zetter from CurseForge' action={() => { return; }}>
+          <FormattedMessage id='about.zetter.button.download.what' defaultMessage='Download Zetter' /><br />
+          <FormattedMessage id='about.zetter.button.download.from' defaultMessage='from CurseForge' />
+        </SliceButton>
       </a>
       <h2>
         <FormattedMessage id="about.zetter.gallery.title" defaultMessage="What is Zetter Gallery"
@@ -58,10 +61,24 @@ const AboutPage: NextPage<{ }> = (props: PropsWithChildren<{ }>) => {
                           popular paintings on Zetter Gallery"
                           description="Zetter Gallery Description" />
       </p>
-      <a>
+      <p>
         <FormattedMessage id="about.zetter.gallery.mod-wiki-link"
                           defaultMessage="Check out Zetter Gallery mod wiki page with recipes and manuals"
                           description="Link to Zetter Gallery wiki from About Zetter page" />
+      </p>
+      <Link href="/wiki/zetter-gallery">
+        <a title="Check Out Zetter Gallery Wiki" target="_self" className={ styles['button'] }>
+          <SliceButton title='Check Out Zetter Wiki' action={() => { return; }}>
+            <FormattedMessage id='about.zetter-gallery.button.wiki.check' defaultMessage='Check out' /><br />
+            <FormattedMessage id='about.zetter-gallery.button.wiki.what' defaultMessage='Zetter Gallery Wiki' />
+          </SliceButton>
+        </a>
+      </Link>
+      <a title="Download Zetter Gallery From CurseForge" href="https://www.curseforge.com/minecraft/mc-mods/zetter" target="_blank"rel="noreferrer" className={ styles['button'] }>
+        <SliceButton title='Download Zetter from CurseForge' action={() => { return; }}>
+          <FormattedMessage id='about.zetter-gallery.button.download.what' defaultMessage='Download Zetter Gallery' /><br />
+          <FormattedMessage id='about.zetter-gallery.button.download.from' defaultMessage='from CurseForge' />
+        </SliceButton>
       </a>
     </DefaultLayout>
   </>);

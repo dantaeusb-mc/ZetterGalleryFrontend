@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useRef, useState} from 'react';
+import React from 'react';
 import styles from './LanguageSelector.module.scss';
 import {languages, Locale, LocaleContext} from "@/context/Intl.context";
 

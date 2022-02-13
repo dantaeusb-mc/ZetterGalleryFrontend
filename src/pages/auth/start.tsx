@@ -18,8 +18,6 @@ export default function AuthStart(): JSX.Element {
    */
   const redirect = route.query.from ? route.query.from.toString() : undefined;
 
-  console.log(route.query, redirect);
-
   return (<>
     <Head>
       <title>Zetter Gallery Minecraft Authorization Prompt</title>

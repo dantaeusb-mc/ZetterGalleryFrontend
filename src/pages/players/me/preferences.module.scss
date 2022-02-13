@@ -1,0 +1,12 @@
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
+
+.preferences {
+  h1, h2, h3 {
+    margin: .5rem;
+  }
+}
+
+.description {
+  margin: .5rem;
+}

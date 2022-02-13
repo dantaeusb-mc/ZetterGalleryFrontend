@@ -6,16 +6,16 @@ import {
   GetServerSideProps,
   GetServerSidePropsContext, GetServerSidePropsResult, NextPageContext
 } from "next";
-import {IPaintingProps} from "@components/post/Post.component";
+import {PaintingProps} from "@components/post/Post.component";
 import Profile from "@components/player/profile";
-import {IProfileProps} from "@components/player/profile/Profile.component";
-import {IMessageResponse} from "../../../../zg-backend-2/src/interfaces/response/common.interface";
-import {ITokenResponse} from "@interfaces/response/auth.interface";
-import {IActionResponse} from "../../../../zg-backend-2/src/interfaces/response/auth.interface";
+import {ProfileProps} from "@components/player/profile/Profile.component";
 import {apiGet} from "@/utils/request";
 import {setCookies} from "cookies-next";
+import { MessageResponseDto } from '@/dto/response/message.dto';
+import { PlayerResponseDto } from '@/dto/response/player/player.dto';
+import { HttpCodeError } from '@/utils/request/apiGet';
 
-export default function Player(props: IProfileProps): JSX.Element {
+export default function Player(props: ProfileProps): JSX.Element {
   return (<>
     <Head>
       <title>Player Name profile at Zetter Gallery</title>
@@ -29,25 +29,35 @@ export default function Player(props: IProfileProps): JSX.Element {
 }
 
 export async function getServerSideProps(context: NextPageContext) {
-  let response: IMessageResponse & Partial<IActionResponse>;
+  let response: PlayerResponseDto;
 
   try {
-    response = await apiGet<IMessageResponse & ITokenResponse & Partial<IActionResponse>>('/players/me', {}, context);
+    response = await apiGet<PlayerResponseDto>('/players/me', {}, context);
   } catch (e) {
+    if (e instanceof HttpCodeError && e.response.status === 401) {
+      return {
+        redirect: {
+          permanent: false,
+          destination: "/auth/start",
+        },
+        props: {},
+      };
+    }
+
     console.log(e);
 
     return {
       redirect: {
         permanent: false,
-        destination: "/error",
+        destination: "/500",
       },
-      props: {}
-    }
+      props: {},
+    };
   }
 
   return {
     props: {
       ...response
-    }
+    },
   };
 }

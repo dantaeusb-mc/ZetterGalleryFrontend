@@ -1,55 +1,41 @@
 import React from 'react';
 import DefaultLayout from '@components/layout';
-import Head from "next/head";
-import Profile from "@components/player/profile";
-import {IProfileProps} from "@components/player/profile/Profile.component";
-import {GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult} from "next";
-import {IPlayerResponse} from "@interfaces/response/player.interface";
-import {apiGet} from "@/utils/request";
-import {IMessageResponse} from "../../../../zg-backend-2/src/interfaces/response/common.interface";
-import {ITokenResponse} from "@interfaces/response/auth.interface";
-import {IActionResponse} from "../../../../zg-backend-2/src/interfaces/response/auth.interface";
+import Head from 'next/head';
+import Profile from '@components/player/profile';
+import { ProfileProps } from '@components/player/profile/Profile.component';
+import { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import { apiGet } from '@/utils/request';
+import { HttpCodeError } from '@/utils/request/apiGet';
+import { MessageResponseDto } from '@/dto/response/message.dto';
+import { TokenResponseDto } from '@/dto/response/auth/token.dto';
+import handleRequestErrors from '@/utils/response/handleRequestErrors';
 
-interface IPlayerProps {
-  uuid: string,
-  nickname: string
-}
-
-export default function Player(props: IProfileProps): JSX.Element {
+export default function Player(props: ProfileProps): JSX.Element {
   return (<>
     <Head>
       <title>Player Name profile at Zetter Gallery</title>
-      <meta name="description" content="Check out Player Name activity on Zetter Gallery" />
-      <link rel="icon" href="/favicon.ico" />
+      <meta name='description' content='Check out Player Name activity on Zetter Gallery' />
+      <link rel='icon' href='/favicon.ico' />
     </Head>
     <DefaultLayout>
-      <Profile { ...props } />
+      <Profile {...props} />
     </DefaultLayout>
   </>);
 }
 
-export const getServerSideProps = async (context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<Partial<IPlayerProps>>> => {
-  let response: IMessageResponse & Partial<IPlayerProps>;
+export const getServerSideProps = async (context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<Partial<ProfileProps>>> => {
+  let response: MessageResponseDto & Partial<ProfileProps>;
 
   try {
-    // @ts-ignore
-    response = await apiGet<IMessageResponse & ITokenResponse & Partial<IPlayerProps>>(`/players/${ context.params.uuid }`, {}, context);
+    response = await apiGet<MessageResponseDto & TokenResponseDto & Partial<ProfileProps>>(`/players/${context.params?.uuid}`, {}, context);
   } catch (e) {
-    console.log(e);
-
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/error",
-      },
-      props: {}
-    }
+    return handleRequestErrors(e);
   }
 
   return {
     props: {
       uuid: response.uuid,
-      nickname: response.nickname
-    }
-  }
-}
+      nickname: response.nickname,
+    },
+  };
+};

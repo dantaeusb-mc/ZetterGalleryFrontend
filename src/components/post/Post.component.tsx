@@ -6,7 +6,7 @@ import {IPaintingStatisticsProps} from './statistics/Statistics.component';
 import styles from './Post.module.scss';
 import {injectClassNames} from "@/utils/css";
 
-export interface IPaintingProps {
+export interface PaintingProps {
   uri: string,
   name: string,
   resolution: number,
@@ -21,12 +21,12 @@ export interface IPaintingProps {
   stats: IPaintingStatisticsProps
 }
 
-export default function Post(props: IPaintingProps): JSX.Element {
+export default function Post(props: PaintingProps): JSX.Element {
   return (
-    <article className={ injectClassNames('block', styles['post'], 'pixelated-images') }>
-      <Author { ...props } />
-      <Painting { ...props } />
-      <Statistics { ...props } />
+    <article className={injectClassNames('block', styles['post'], 'pixelated-images')}>
+      <Author {...props} />
+      <Painting {...props} />
+      <Statistics {...props} />
     </article>
   );
 }

@@ -1,0 +1,22 @@
+@use 'src/styles/variables/colors' as colors;
+
+.slice-button {
+  border-image-source: url("/assets/buttons/button-9slices.png");
+  border-image-slice: 4 fill;
+  border-image-repeat: round;
+  border-image-width: 12px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #555;
+  image-rendering: crisp-edges;
+  padding: 16px;
+}
+
+.slice-button-inner {
+  display: flex;
+  align-items: center;
+}
+
+.slice-button-text {
+  padding: 0 1rem;
+  text-align: left;
+}

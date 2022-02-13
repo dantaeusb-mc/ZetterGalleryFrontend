@@ -6,14 +6,16 @@ import {
   GetServerSideProps,
   GetServerSidePropsContext, GetServerSidePropsResult
 } from "next";
-import {IPaintingProps} from "@components/post/Post.component";
-import {IPaintingResponse} from "@interfaces/response/painting.interface";
+import {PaintingProps} from "@components/post/Post.component";
+import {apiGet} from "@/utils/request";
+import {PaintingResponseDto} from "@/dto/response/paintings/painting.dto";
+import handleRequestErrors from '@/utils/response/handleRequestErrors';
 
-export default function Painting(props: IPaintingProps): JSX.Element {
+export default function Painting(props: PaintingProps): JSX.Element {
   return (<>
     <Head>
-      <title>Zetter Gallery Minecraft Authorization Prompt</title>
-      <meta name="description" content="Authorize Zetter Gallery to check your Minecraft Account" />
+      <title>Painting Name | Zetter Gallery</title>
+      <meta name="description" content="View painting called Painting Name at Zetter Gallery" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <CleanLayout>
@@ -22,29 +24,32 @@ export default function Painting(props: IPaintingProps): JSX.Element {
   </>);
 }
 
-export const getServerSideProps: GetServerSideProps<IPaintingProps> = async (context: GetServerSidePropsContext):
-  Promise<GetServerSidePropsResult<IPaintingProps>> => {
-  // @ts-ignore
-  const res = await fetch(`http://[::1]:3000/api/v1/paintings/${ context.params.uuid }`);
-  const post: IPaintingResponse = await res.json();
+export const getServerSideProps: GetServerSideProps<PaintingProps> = async (context: GetServerSidePropsContext):
+  Promise<GetServerSidePropsResult<PaintingProps>> => {
+  try {
+    const response = await apiGet<PaintingResponseDto>(`/paintings/${ context.params?.uuid }`, {}, context);
 
-  return {
-    props: {
-      uri: `http://localhost:3000/static/generated/paintings/${ post.uuid }`,
-      name: post.name,
-      resolution: post.resolution,
-      originalSize: {
-        height: post.sizeH,
-        width: post.sizeW
-      },
-      author: {
-        uuid: post.author.uuid,
-        nickname: post.author.nickname
-      },
-      stats: {
-        salesTotal: 1,
-        favorites: 1
+    return {
+      props: {
+        uri: `http://localhost/static/generated/paintings/${ response.uuid }/original.png`,
+        name: response.name,
+        resolution: response.resolution,
+        originalSize: {
+          height: response.sizeH,
+          width: response.sizeW
+        },
+        author: {
+          uuid: response.author.uuid,
+          nickname: response.author.nickname
+        },
+        stats: {
+          salesCount: response.statistics?.salesCount,
+          salesTotal: response.statistics?.salesTotal,
+          favorites: response.statistics?.favorites
+        }
       }
     }
+  } catch (e) {
+    return handleRequestErrors(e);
   }
 }

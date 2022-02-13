@@ -3,9 +3,10 @@ import { injectClassNames } from 'utils/css';
 import styles from './Button.module.scss';
 
 type ButtonProps = {
-  title: string,
-  action: CallableFunction,
-  className?: string
+  title: string;
+  action: CallableFunction;
+  className?: string;
+  type: 'submit' | 'reset' | 'button';
 };
 
 function Button({ title, action, className, children }: PropsWithChildren<ButtonProps>): JSX.Element {

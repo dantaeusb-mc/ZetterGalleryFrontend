@@ -6,7 +6,7 @@ import Post from "@components/post";
 import DefaultLayout from "@components/layout";
 import LayeredNavigation from "@components/layeredNavigation";
 import InfiniteScroll from "react-infinite-scroll-component";
-import {IPaintingProps} from "@components/post/Post.component";
+import {PaintingProps} from "@components/post/Post.component";
 import lodash from "lodash";
 import {useRouter} from "next/router";
 import {apiGet} from "@/utils/request";
@@ -44,7 +44,7 @@ const defaultQuery: IPaintingListQuery = {
 };
 
 interface IPaintingsPageProps {
-  paintings: IPaintingProps[]
+  paintings: PaintingProps[]
 }
 
 // pass page as prop so we'll know when to show "Jump to top" button
@@ -56,7 +56,7 @@ const Feed: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintings
   // @todo: cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
   const [paintings, setPaintings] = useState<{
     query: IPaintingListQuery,
-    items: IPaintingProps[],
+    items: PaintingProps[],
     hasMore: boolean
   }>({
     query: initPaintingsQuery,

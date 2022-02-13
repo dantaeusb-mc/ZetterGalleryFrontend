@@ -4,7 +4,7 @@ import {injectClassNames} from "@/utils/css";
 import {Button} from "@components/button";
 import Loader from "../../widgets/loader/Loader.component";
 import {apiGet} from "@/utils/request";
-import {IAuthMicrosoftStartResponse, ITokenResponse} from "@interfaces/response/auth.interface";
+import { ActionResponseDto } from '@/dto/response/action.dto';
 
 export interface IMicrosoftSignUpButtonProps {
   redirect?: string
@@ -14,7 +14,7 @@ export default function MicrosoftSignUpButton({ redirect }: IMicrosoftSignUpButt
   const [uri, setUri] = useState<string>();
 
   useEffect(() => {
-    let requestParams: {
+    const requestParams: {
       callbackTarget: 'frontend'
       redirect?: string
     } = {
@@ -27,7 +27,7 @@ export default function MicrosoftSignUpButton({ redirect }: IMicrosoftSignUpButt
 
     console.log(redirect, requestParams);
 
-    apiGet<IAuthMicrosoftStartResponse>('/auth/microsoft/start', requestParams)
+    apiGet<ActionResponseDto>('/auth/microsoft/start', requestParams)
       .then(response => {
         setUri(response.redirect);
       })
