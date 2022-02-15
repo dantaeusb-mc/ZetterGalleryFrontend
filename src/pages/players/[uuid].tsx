@@ -9,7 +9,7 @@ import { MessageResponseDto } from '@/dto/response/message.dto';
 import { TokenResponseDto } from '@/dto/response/auth/token.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
 import { useIntl } from 'react-intl';
-import getTitle from '@/utils/page/getTitle';
+import getTitle from '@/utils/page/get-title';
 import ConstructionPlaceholder from '@components/construction-placeholder';
 
 export default function Player(props: ProfileProps): JSX.Element {

@@ -36,6 +36,12 @@ export default function AuthStart(): JSX.Element {
             defaultMessage="If you don't see this message when connecting Zetter Gallery, there's a chance that someone trying to steal your info."
           />
         </Callout>
+        <Callout severity={CalloutSeverity.Info}>
+          <FormattedMessage
+            id="auth.microsoft.callout.alpha"
+            defaultMessage="This is a very early version of the service, provided as is. Issues may arise, content is not yet moderated."
+          />
+        </Callout>
         <section className={injectClassNames('block', styles['auth-prompt'])}>
           <header className={styles['heading']}>
             <h1>
@@ -93,11 +99,16 @@ export default function AuthStart(): JSX.Element {
           </div>
           <div className={styles['action-wrapper']}>
             <MicrosoftSignUpButton redirect={redirect} />
+            <p>
+              <FormattedMessage
+                id="auth.microsoft.button.agreement"
+                defaultMessage="By pressing the button, you confirm that you are in legal age and agree to the terms of service."
+                description="Explain what do you agree when starting using the service"
+              />
+            </p>
           </div>
           <footer className={styles['footer']}>
             {'Thank you for paying attention.'}
-            <br />
-            {" Here's your motivational quote: "}
           </footer>
         </section>
       </CleanLayout>

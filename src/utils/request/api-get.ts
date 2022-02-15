@@ -1,17 +1,20 @@
-import handleFetchError from './handleFetchError';
-import buildQuery, {IQueryParams} from "@/utils/request/buildQuery";
-import {getCookie} from "cookies-next";
+import buildQuery, { IQueryParams } from '@/utils/request/build-query';
+import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext, NextPageContext } from 'next';
 
 export class HttpCodeError {
-  response: Response
+  response: Response;
 
   constructor(response: Response) {
     this.response = response;
   }
 }
 
-const apiGet = <T>(path: string, queryParams?: IQueryParams, context?: NextPageContext|GetServerSidePropsContext): Promise<T> => {
+const apiGet = <T>(
+  path: string,
+  queryParams?: IQueryParams,
+  context?: NextPageContext | GetServerSidePropsContext,
+): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();
   requestHeaders.set('Content-Type', 'application/json');
 
@@ -22,7 +25,7 @@ const apiGet = <T>(path: string, queryParams?: IQueryParams, context?: NextPageC
   let token: string;
 
   if (context) {
-    token = <string>getCookie('token', {req: context.req, res: context.res});
+    token = <string>getCookie('token', { req: context.req, res: context.res });
   } else {
     token = <string>getCookie('token');
   }
@@ -34,14 +37,13 @@ const apiGet = <T>(path: string, queryParams?: IQueryParams, context?: NextPageC
   return fetch('http://127.0.0.1/v1' + path + buildQuery(queryParams), {
     method: 'GET',
     headers: requestHeaders,
-  })
-    .then(res => {
-      if (!res.ok) {
-        throw new HttpCodeError(res);
-      }
+  }).then((res) => {
+    if (!res.ok) {
+      throw new HttpCodeError(res);
+    }
 
-      return res.json();
-    });
+    return res.json();
+  });
   //.catch(handleFetchError);
 };
 

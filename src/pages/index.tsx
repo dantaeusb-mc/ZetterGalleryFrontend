@@ -13,7 +13,7 @@ import 'reflect-metadata';
 import conform from '@/utils/conform';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
 import { useIntl } from 'react-intl';
-import getTitle from '@/utils/page/getTitle';
+import getTitle from '@/utils/page/get-title';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 
 export enum PaintingSorting {
@@ -124,6 +124,10 @@ const Home: NextPage<PaintingsPageProps> = (
     const newQuery = lodash.extend(lodash.clone(paintings.query), {
       [param]: value,
     });
+
+    if (param !== 'from') {
+      delete newQuery['from'];
+    }
 
     if (lodash.isEqual(newQuery, paintings.query)) {
       return;

@@ -1,10 +1,14 @@
-import handleFetchError from './handleFetchError';
-import buildQuery, { IQueryParams } from '@/utils/request/buildQuery';
+import buildQuery, { IQueryParams } from '@/utils/request/build-query';
 import { GetServerSidePropsContext, NextPageContext } from 'next';
 import { getCookie } from 'cookies-next';
-import { HttpCodeError } from '@/utils/request/apiGet';
+import { HttpCodeError } from '@/utils/request/api-get';
 
-const apiPost = <T>(path: string, body: any, queryParams?: IQueryParams, context?: NextPageContext|GetServerSidePropsContext): Promise<T> => {
+const apiPost = <T>(
+  path: string,
+  body: any,
+  queryParams?: IQueryParams,
+  context?: NextPageContext | GetServerSidePropsContext,
+): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();
   requestHeaders.set('Content-Type', 'application/json');
 
@@ -15,7 +19,7 @@ const apiPost = <T>(path: string, body: any, queryParams?: IQueryParams, context
   let token: string;
 
   if (context) {
-    token = <string>getCookie('token', {req: context.req, res: context.res});
+    token = <string>getCookie('token', { req: context.req, res: context.res });
   } else {
     token = <string>getCookie('token');
   }
@@ -28,14 +32,13 @@ const apiPost = <T>(path: string, body: any, queryParams?: IQueryParams, context
     method: 'POST',
     headers: requestHeaders,
     body: body,
-  })
-    .then(res => {
-      if (!res.ok) {
-        throw new HttpCodeError(res);
-      }
+  }).then((res) => {
+    if (!res.ok) {
+      throw new HttpCodeError(res);
+    }
 
-      return res.json();
-    });
+    return res.json();
+  });
   //.catch(handleFetchError);
 };
 

@@ -9,9 +9,9 @@ import styles from '@pages/auth/auth.module.scss';
 import CrossAuthButton from '@components/auth/crossAuthButton';
 import { NextPageContext } from 'next';
 import { getCookie } from 'cookies-next';
-import buildQuery from '@/utils/request/buildQuery';
+import buildQuery from '@/utils/request/build-query';
 import { apiGet } from '@/utils/request';
-import { HttpCodeError } from '@/utils/request/apiGet';
+import { HttpCodeError } from '@/utils/request/api-get';
 import { MessageResponseDto } from '@/dto/response/message.dto';
 
 interface ICrossAuthStartProps {
@@ -101,6 +101,9 @@ export default function AuthCross(props: ICrossAuthStartProps): JSX.Element {
  * @param context
  */
 export async function getServerSideProps(context: NextPageContext) {
+  // @todo: redirect if token revoked
+  // @todo: helper function for token check
+  // @todo: notify if code outdated
   const token = getCookie('token', { req: context.req, res: context.res });
 
   if (!token) {

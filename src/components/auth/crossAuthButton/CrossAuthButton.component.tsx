@@ -1,33 +1,41 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import styles from './CrossAuthButton.module.scss';
-import {Button} from "@components/button";
-import {apiGet} from "@/utils/request";
-import Loader from "../../widgets/loader/Loader.component";
-import {HttpCodeError} from "@/utils/request/apiGet";
+import { Button } from '@components/button';
+import { apiGet } from '@/utils/request';
+import Loader from '../../widgets/loader/Loader.component';
+import { HttpCodeError } from '@/utils/request/api-get';
 
 enum ECrossAuthStatus {
   PENDING,
   WAITING,
   CONFIRMED,
-  ERROR
+  ERROR,
 }
 
 export interface ICrossAuthButtonProps {
-  code: string
+  code: string;
 }
 
-export default function CrossAuthButton({ code } : ICrossAuthButtonProps): JSX.Element {
-  const [status, setStatus] = useState<ECrossAuthStatus>(ECrossAuthStatus.PENDING);
-  const [errorMessage, setErrorMessage] = useState<string>('Something went wrong. Please try again.');
+export default function CrossAuthButton({
+  code,
+}: ICrossAuthButtonProps): JSX.Element {
+  const [status, setStatus] = useState<ECrossAuthStatus>(
+    ECrossAuthStatus.PENDING,
+  );
+  const [errorMessage, setErrorMessage] = useState<string>(
+    'Something went wrong. Please try again.',
+  );
 
   const confirm = async () => {
     setStatus(ECrossAuthStatus.WAITING);
 
-    apiGet('/auth/cross-authorization/elevate', { crossAuthorizationCode: code })
-      .then(response => {
+    apiGet('/auth/cross-authorization/elevate', {
+      crossAuthorizationCode: code,
+    })
+      .then((response) => {
         setStatus(ECrossAuthStatus.CONFIRMED);
       })
-      .catch(async e => {
+      .catch(async (e) => {
         if (e instanceof HttpCodeError) {
           const body = await e.response.json();
           setErrorMessage(body.message);
@@ -35,27 +43,35 @@ export default function CrossAuthButton({ code } : ICrossAuthButtonProps): JSX.E
 
         setStatus(ECrossAuthStatus.ERROR);
       });
-  }
+  };
 
   switch (status) {
     case ECrossAuthStatus.PENDING:
       return (
         <Button
           title="Allow Minecraft Server to act on behalf of your Zetter account"
-          className={ styles['action-button'] }
-          action={ confirm }>
-          { 'Allow server to use my account' }
+          className={styles['action-button']}
+          action={confirm}
+        >
+          {'Allow server to use my account'}
         </Button>
       );
     case ECrossAuthStatus.WAITING:
-      return (<>
-        <Loader />
-        <p>Waiting</p>
-      </>);
+      return (
+        <>
+          <Loader />
+          <p>Waiting</p>
+        </>
+      );
     case ECrossAuthStatus.CONFIRMED:
-      return (<p>You authorized Minecraft server. Feel free to close this window.</p>)
+      return (
+        <p>
+          You authorized Minecraft server. Feel free to close this window and
+          get back to game.
+        </p>
+      );
     case ECrossAuthStatus.ERROR:
     default:
-      return (<p>{ errorMessage }</p>);
+      return <p>{errorMessage}</p>;
   }
 }

@@ -50,11 +50,9 @@ defineMessage({
   defaultMessage: 'Home',
 });
 
-interface IZetterWikiHomeProps extends IWikiLayoutProps {}
-
 export default function ZetterWikiHome({
   pages,
-}: IZetterWikiHomeProps): JSX.Element {
+}: IWikiLayoutProps): JSX.Element {
   const intl = useIntl();
 
   return (

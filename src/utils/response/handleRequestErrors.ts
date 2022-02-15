@@ -1,4 +1,4 @@
-import { HttpCodeError } from '@/utils/request/apiGet';
+import { HttpCodeError } from '@/utils/request/api-get';
 
 /**\
  * @param e

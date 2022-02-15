@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
 import { apiGet } from '@/utils/request';
 import { PlayerPreferencesResponseDto } from '@/dto/response/player/preferences.dto';
-import { HttpCodeError } from '@/utils/request/apiGet';
+import { HttpCodeError } from '@/utils/request/api-get';
 import { Toggle } from '@components/widgets/toggle';
 import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto';
 import styles from './preferences.module.scss';

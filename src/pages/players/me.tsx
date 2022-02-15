@@ -6,9 +6,9 @@ import Profile from '@components/player/profile';
 import { ProfileProps } from '@components/player/profile/Profile.component';
 import { apiGet } from '@/utils/request';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
-import { HttpCodeError } from '@/utils/request/apiGet';
+import { HttpCodeError } from '@/utils/request/api-get';
 import { useIntl } from 'react-intl';
-import getTitle from '@/utils/page/getTitle';
+import getTitle from '@/utils/page/get-title';
 import ConstructionPlaceholder from '@components/construction-placeholder';
 
 export default function Player(props: ProfileProps): JSX.Element {

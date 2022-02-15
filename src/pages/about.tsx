@@ -1,18 +1,37 @@
 import React, { PropsWithChildren } from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import styles from './about.module.scss';
 import { SliceButton } from '@components/sliceButton';
+import getTitle from '@/utils/page/get-title';
 
-const AboutPage: NextPage<{}> = (props: PropsWithChildren<{}>) => {
+const AboutPage: NextPage<Record<string, unknown>> = (
+  props: PropsWithChildren<Record<string, unknown>>,
+) => {
+  const intl = useIntl();
+
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'about.page.title',
+      defaultMessage: 'About',
+      description: 'About page title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'about.page.description',
+    defaultMessage: 'What is Zetter and Zetter Gallery',
+    description: 'About page description',
+  });
+
   return (
     <>
       <Head>
-        <title>What is Zetter Gallery</title>
-        <meta name="description" content="Zetter Gallery About Page" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
