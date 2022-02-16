@@ -62,7 +62,7 @@
   "auth.microsoft.disclaimer.track": [
     {
       "type": 0,
-      "value": "This is also used track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
+      "value": "This is also used to track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
     }
   ],
   "auth.microsoft.disclaimer.why": [
@@ -512,7 +512,7 @@
   "wiki.zetter.recipes.palette": [
     {
       "type": 0,
-      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
+      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paints as shown above."
     }
   ],
   "wiki.zetter.recipes.palette.section": [
