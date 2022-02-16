@@ -131,12 +131,6 @@ const TermsPage: NextPage<Record<string, unknown>> = (
             defaultMessage="I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
           />
         </p>
-        <p>
-          <FormattedMessage
-            id="human-terms.complications.paragraph.1"
-            defaultMessage="Also, I am a Russian citizen, that means that it could be possible that by local law I'll be obligated to move service data to Russian service providers if there are enough Russian users. However, if this service grows big enough, I'll try to pass legal ownership to someone in EU borders who can work with this stuff."
-          />
-        </p>
         <br />
         <p>
           <FormattedMessage

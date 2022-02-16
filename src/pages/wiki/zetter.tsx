@@ -32,16 +32,16 @@ import {
 } from '@/const/zetter-items';
 import { defineMessage, FormattedMessage, useIntl } from 'react-intl';
 import Image from 'next/image';
-import WikiLayout from '@components/wikiLayout';
 import {
   GetStaticProps,
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from 'next';
 import {
-  IWikiLayoutProps,
-  IWikiPageProps,
-} from '@components/wikiLayout/WikiLayout.component';
+  WikiLayout,
+  WikiLayoutProps,
+  WikiPageProps,
+} from '@components/layouts/wiki';
 import styles from './wiki.module.scss';
 
 defineMessage({
@@ -52,7 +52,7 @@ defineMessage({
 
 export default function ZetterWikiHome({
   pages,
-}: IWikiLayoutProps): JSX.Element {
+}: WikiLayoutProps): JSX.Element {
   const intl = useIntl();
 
   return (
@@ -533,7 +533,7 @@ export default function ZetterWikiHome({
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<IWikiPageProps>> => {
+): Promise<GetStaticPropsResult<WikiPageProps>> => {
   context.locale;
 
   return {
