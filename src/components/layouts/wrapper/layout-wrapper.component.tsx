@@ -1,4 +1,4 @@
-import { Locale, LocaleContext } from '@/context/Intl.context';
+import { Locale, LocaleContext } from '@/context/intl.context';
 import { PropsWithChildren } from 'react';
 
 const FontSupportedLocales: Locale[] = ['en'];

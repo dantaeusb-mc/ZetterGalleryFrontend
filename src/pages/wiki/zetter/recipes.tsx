@@ -37,7 +37,7 @@ import {
   WarpedPlatedFrameItem,
   WarpedPlatedFrameWithPaintingItem,
 } from '@/const/zetter-items';
-import { defineMessage, FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import {
   GetStaticProps,
   GetStaticPropsContext,
@@ -49,23 +49,32 @@ import {
   WikiPageProps,
 } from '@components/layouts/wiki';
 import styles from '../wiki.module.scss';
-
-defineMessage({
-  id: 'wiki.zetter.recipes.page',
-  description: 'Zetter Wiki Recipes Page Navigation Title',
-  defaultMessage: 'Recipes',
-});
+import getTitle from '@/utils/page/get-title';
 
 export default function ZetterWikiRecipes({
   pages,
 }: WikiLayoutProps): JSX.Element {
   const intl = useIntl();
 
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'wiki.zetter.recipes.page.title',
+      defaultMessage: 'Zetter Recipes Wiki',
+      description: 'Zetter Recipes Wiki page title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'wiki.zetter.recipes.page.description',
+    defaultMessage: 'Find recipes for Zetter Mod in Minecraft',
+    description: 'Zetter Recipes Wiki page description',
+  });
+
   return (
     <>
       <Head>
-        <title>Zetter Wiki at Zetter Gallery</title>
-        <meta name="description" content="Zetter craft recipes and help" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WikiLayout pages={pages}>

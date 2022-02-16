@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './language-selector.module.scss';
-import { languages, Locale, LocaleContext } from '@/context/Intl.context';
+import { languages, Locale, LocaleContext } from '@/context/intl.context';
 
 export default function LanguageSelector(): JSX.Element {
   return (

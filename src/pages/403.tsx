@@ -32,13 +32,13 @@ const UnauthorizedPage = () => {
         <ErrorMessage
           title={
             <FormattedMessage
-              id={'error.unauthenticated.title'}
+              id={'error.forbidden.title'}
               defaultMessage={'Forbidden'}
             />
           }
           description={
             <FormattedMessage
-              id={'error.not-found.description'}
+              id={'error.forbidden.description'}
               defaultMessage={'Server said you cannot access this resource.'}
             />
           }

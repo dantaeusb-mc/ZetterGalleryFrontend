@@ -32,13 +32,13 @@ const InternalServerErrorPage = () => {
         <ErrorMessage
           title={
             <FormattedMessage
-              id={'error.bad-request.title'}
+              id={'error.server-error.title'}
               defaultMessage={'Server error'}
             />
           }
           description={
             <FormattedMessage
-              id={'error.not-found.description'}
+              id={'error.server-error.description'}
               defaultMessage={
                 'Sorry, something bad and unexpected happened while processing your request'
               }

@@ -144,13 +144,13 @@ const TermsPage: NextPage<Record<string, unknown>> = (
         </h2>
         <p>
           <FormattedMessage
-            id="terms.zetter.release.release-statement"
+            id="terms.zetter.release.release-statement.1"
             defaultMessage="You hereby expressly and irrevocably release and forever discharge Zetter Gallery from any and all actions, causes of action, suits, proceedings, liability, debts, judgments, claims, and demands whatsoever in law or equity which you ever had, now have, or hereafter can, shall or may have, for or by reason of, or arising directly or indirectly out of your use of the Site and the Services."
           />
         </p>
         <p>
           <FormattedMessage
-            id="terms.zetter.release.release-statement"
+            id="terms.zetter.release.release-statement.2"
             defaultMessage="You hereby agree to indemnify and hold harmless Zetter Gallery from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary, and indirect damages), and reasonable attorneys' fees, resulting from or arising out of (i) a breach of these Terms, (ii) Content posted on the Site, by you or any person using your account or Microsoft credentials, (iv) the licensing, distribution, or use of your Visual Content, or (v) any violation of any rights of a third party. Zetter Gallery reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you."
           />
         </p>

@@ -30,7 +30,7 @@ import {
   WarpedPlatedFrameItem,
   WarpedPlatedFrameWithPaintingItem,
 } from '@/const/zetter-items';
-import { defineMessage, FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import Image from 'next/image';
 import {
   GetStaticProps,
@@ -43,23 +43,32 @@ import {
   WikiPageProps,
 } from '@components/layouts/wiki';
 import styles from './wiki.module.scss';
-
-defineMessage({
-  id: 'wiki.zetter.page',
-  description: 'Zetter Wiki Home Page Navigation Title',
-  defaultMessage: 'Home',
-});
+import getTitle from '@/utils/page/get-title';
 
 export default function ZetterWikiHome({
   pages,
 }: WikiLayoutProps): JSX.Element {
   const intl = useIntl();
 
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'wiki.zetter.page.title',
+      defaultMessage: 'Zetter Wiki',
+      description: 'Zetter Wiki page title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'wiki.zetter.page.description',
+    defaultMessage: 'Get information about Zetter Mod for Minecraft',
+    description: 'Zetter Wiki page description',
+  });
+
   return (
     <>
       <Head>
-        <title>Zetter Wiki at Zetter Gallery</title>
-        <meta name="description" content="Zetter craft recipes and help" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WikiLayout pages={pages}>
@@ -434,7 +443,7 @@ export default function ZetterWikiHome({
               >
                 <h2 id="framing">
                   <FormattedMessage
-                    id={'wiki.zetter.framing.section'}
+                    id={'wiki.zetter.framing.title'}
                     defaultMessage="Creating a frame"
                   />
                 </h2>

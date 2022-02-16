@@ -31,7 +31,7 @@ export default function Painting(props: PaintingProps): JSX.Element {
 
   const description = intl.formatMessage(
     {
-      id: 'players.page.description',
+      id: 'paintings.page.description',
       defaultMessage:
         "Check out painting called {paintingName} created by {username}'s at Zetter Gallery",
     },

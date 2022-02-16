@@ -15,16 +15,16 @@ const TermsPage: NextPage<Record<string, unknown>> = (
 
   const title = getTitle(
     intl.formatMessage({
-      id: 'terms.page.title',
-      defaultMessage: 'Terms of Service',
-      description: 'ToS page title',
+      id: 'terms-for-humans.page.title',
+      defaultMessage: 'FAQ',
+      description: 'FAQ About Zetter Gallery page title',
     }),
   );
 
   const description = intl.formatMessage({
-    id: 'terms.page.description',
-    defaultMessage: 'Zetter Gallery terms of service',
-    description: 'ToS page description',
+    id: 'terms-for-humans.page.description',
+    defaultMessage: 'Zetter Gallery frequently asked questions',
+    description: 'FAQ About Zetter Gallery page description',
   });
 
   return (
@@ -109,13 +109,13 @@ const TermsPage: NextPage<Record<string, unknown>> = (
         </p>
         <p>
           <FormattedMessage
-            id="human-terms.moderation.paragraph.2"
+            id="human-terms.moderation.paragraph.3"
             defaultMessage="Moderators can make mistakes and discard or wrongly rate painting. Please be understanding that it's just people who put their free time for everyone's good. Be patient and talk to us if that happened."
           />
         </p>
         <p>
           <FormattedMessage
-            id="human-terms.moderation.paragraph.3"
+            id="human-terms.moderation.paragraph.4"
             defaultMessage="I strictly recommend this mod and service only for legal age players. Registering here without reaching legal age should not be possible by Microsoft oAuth rules and breaks ToS."
           />
         </p>
@@ -129,6 +129,18 @@ const TermsPage: NextPage<Record<string, unknown>> = (
           <FormattedMessage
             id="human-terms.complications.paragraph.1"
             defaultMessage="I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
+          />
+        </p>
+        <h2>
+          <FormattedMessage
+            id="human-terms.contribution.title"
+            defaultMessage="Can I contribute?"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="human-terms.contribution.paragraph.1"
+            defaultMessage="Yes! Well, partially. Zetter and Zetter Gallery mods are licensed under MPL2 and open-source. The front-end part of this service is also MPL2 and open-source. The API, however, is closed-source. This is because of my security concerns and because I would like to build a player base and avoid early forks. This, however, will likely be changed closer to release of 1.0 mods. I can open repository to particular contributors who proved their positive intents and have sufficient TypeScript/Nest.js skills."
           />
         </p>
         <br />

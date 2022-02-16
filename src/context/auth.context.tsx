@@ -1,37 +1,39 @@
-import React, {PropsWithChildren, useMemo, useState} from "react";
-import Russian from "../../content/compiled-locales/ru.json";
-import English from "../../content/compiled-locales/en.json";
-import {IntlProvider} from "react-intl";
-import {languages, LocaleContext} from "@/context/Intl.context";
+import React, { PropsWithChildren, useState } from 'react';
 
 export interface IAuthenticatedPlayer {
-  uuid: string,
-  nickname: string
+  uuid: string;
+  nickname: string;
 }
 
 export interface IAuthenticationContext {
-  player?: IAuthenticatedPlayer
-  setPlayer: (player: IAuthenticatedPlayer) => void
+  player?: IAuthenticatedPlayer;
+  setPlayer: (player: IAuthenticatedPlayer) => void;
 }
 
 const AuthContext = React.createContext<IAuthenticationContext>({
   player: undefined,
-  setPlayer: (player) => {}
+  setPlayer: (player) => {},
 });
 
 export interface IAuthenticationProps {
-  player?: IAuthenticatedPlayer
+  player?: IAuthenticatedPlayer;
 }
 
 function AuthProviderWrapper(props: PropsWithChildren<IAuthenticationProps>) {
-  const [player, setPlayer] = useState<IAuthenticatedPlayer | undefined>(props.player);
+  const [player, setPlayer] = useState<IAuthenticatedPlayer | undefined>(
+    props.player,
+  );
 
-  return (<AuthContext.Provider value={ {
-    player: player,
-    setPlayer: setPlayer
-  } }>
-    { props.children }
-  </AuthContext.Provider>)
+  return (
+    <AuthContext.Provider
+      value={{
+        player: player,
+        setPlayer: setPlayer,
+      }}
+    >
+      {props.children}
+    </AuthContext.Provider>
+  );
 }
 
 export { AuthProviderWrapper, AuthContext };

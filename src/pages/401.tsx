@@ -38,7 +38,7 @@ const UnauthorizedPage = () => {
           }
           description={
             <FormattedMessage
-              id={'error.not-found.description'}
+              id={'error.unauthenticated.description'}
               defaultMessage={
                 'Server said you cannot access this resource because you are not logged in as someone who have access.'
               }

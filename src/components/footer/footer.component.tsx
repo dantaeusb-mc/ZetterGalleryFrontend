@@ -27,11 +27,31 @@ export default function Footer(): JSX.Element {
           id="footer.legal.developer"
           defaultMessage="Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
         />
-        <Link href="/legal">
+      </small>
+      <small className={'sans-serif-font'}>
+        <Link href="/faq">
           <a>
             <FormattedMessage
               id="footer.legal.learn-more"
-              defaultMessage="Learn more."
+              defaultMessage="Learn more"
+            />
+          </a>
+        </Link>
+        <span> | </span>
+        <Link href="/terms">
+          <a>
+            <FormattedMessage
+              id="footer.legal.learn-more"
+              defaultMessage="Terms of service"
+            />
+          </a>
+        </Link>
+        <span> | </span>
+        <Link href="/credits">
+          <a>
+            <FormattedMessage
+              id="footer.legal.credits"
+              defaultMessage="Credits"
             />
           </a>
         </Link>

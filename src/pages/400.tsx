@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import DefaultLayout from '@components/layouts/default';
 import React from 'react';
-import ErrorMessage from '@components/widgets/error-message/ErrorMessage.component';
+import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage } from 'react-intl';
 
 const BadRequestPage = () => {
@@ -22,7 +22,7 @@ const BadRequestPage = () => {
           }
           description={
             <FormattedMessage
-              id={'error.not-found.description'}
+              id={'error.bad-request.description'}
               defaultMessage={'Sorry, server refused to process your request'}
             />
           }
