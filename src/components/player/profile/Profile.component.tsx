@@ -1,27 +1,62 @@
 import React from 'react';
 import styles from './Profile.module.scss';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import Badge from '@components/player/badge';
 import { EBadgeTier } from '@components/player/badge/Badge.component';
 import { injectClassNames } from '@/utils/css';
+import Link from 'next/link';
 
 export interface ProfileProps {
   uuid: string;
   nickname: string;
+  me: boolean;
 }
 
 export default function Profile(props: ProfileProps): JSX.Element {
+  const intl = useIntl();
+
   return (
     <section className={injectClassNames('block', styles['profile'])}>
       <header className={styles['summary']}>
         <img
-          src={`http://[::1]:3000/static/generated/players/${props.uuid}/original.png`}
+          src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.uuid}/original.png`}
           className={injectClassNames('pixelated-images', styles['userpic'])}
           title={`${props.nickname}'s Minecraft avatar`}
           alt={`${props.nickname}'s Minecraft in-game character's face`}
         />
         <div className={styles['description']}>
           <h1 className={styles['nickname']}>{props.nickname}</h1>
+          {props.me ? (
+            <>
+              <Link href="/players/me/preferences">
+                <a
+                  title={intl.formatMessage({
+                    id: 'profile.link.preferences',
+                    defaultMessage: 'Preferences',
+                  })}
+                >
+                  <FormattedMessage
+                    id="profile.link.preferences"
+                    defaultMessage="Preferences"
+                  />
+                </a>
+              </Link>
+              <span> | </span>
+              <Link href="/players/me/logout">
+                <a
+                  title={intl.formatMessage({
+                    id: 'profile.link.logout',
+                    defaultMessage: 'Log Out',
+                  })}
+                >
+                  <FormattedMessage
+                    id="profile.link.logout"
+                    defaultMessage="Log Out"
+                  />
+                </a>
+              </Link>
+            </>
+          ) : null}
           {/*<p className={injectClassNames(styles['motto'], styles['editable'])}>
             {"You miss 100 percent of the shots you don't take."}
           </p>*/}

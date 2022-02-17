@@ -1,7 +1,7 @@
 import React from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import styles from './auth.module.scss';
 import MicrosoftSignUpButton from '@components/auth/microsoftSignUpButton';
 import Callout, {
@@ -10,9 +10,25 @@ import Callout, {
 import { injectClassNames } from '@/utils/css';
 import { useRouter } from 'next/router';
 import { NextPageContext } from 'next';
+import getTitle from '@/utils/page/get-title';
 
 export default function AuthStart(): JSX.Element {
   const route = useRouter();
+  const intl = useIntl();
+
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'auth.start.page.title',
+      defaultMessage: 'Authenticate with Microsoft Account',
+      description: 'Auth start page title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'auth.start.page.description',
+    defaultMessage: 'Grant Zetter Gallery rights to access your account',
+    description: 'Auth start page description',
+  });
 
   /**
    * Pass redirect route to button, so we will remember where we started
@@ -22,11 +38,8 @@ export default function AuthStart(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Zetter Gallery Minecraft Authorization Prompt</title>
-        <meta
-          name="description"
-          content="Authorize Zetter Gallery to check your Minecraft Account"
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CleanLayout>

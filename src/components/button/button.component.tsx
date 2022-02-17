@@ -1,12 +1,21 @@
-import React, { PropsWithChildren } from 'react';
+import React, { MouseEventHandler, PropsWithChildren } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './button.module.scss';
 
-type ButtonProps = {
+export enum ButtonStyle {
+  CTA = 'cta',
+  SUCCESS = 'success',
+  SECONDARY = 'secondary',
+  DESTRUCTIVE = 'destructive',
+  LINK_BUTTON = 'link-button',
+}
+
+export type ButtonProps = {
   title: string;
-  action: CallableFunction;
+  action?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   type?: 'submit' | 'reset' | 'button';
+  style: ButtonStyle;
 };
 
 function Button({
@@ -14,15 +23,18 @@ function Button({
   action,
   className,
   type,
+  style,
   children,
 }: PropsWithChildren<ButtonProps>): JSX.Element {
   return (
     <button
-      className={injectClassNames(styles['button'], className)}
+      className={injectClassNames(styles['button'], className, styles[style])}
       title={title}
       type={type}
       onClick={(e) => {
-        action();
+        if (action) {
+          action(e);
+        }
       }}
     >
       {children}
@@ -32,6 +44,7 @@ function Button({
 
 Button.defaultProps = {
   type: 'button',
+  style: ButtonStyle.SUCCESS,
 };
 
 export default Button;

@@ -6,4 +6,23 @@
   color: colors.color('text');
   padding: .5rem 1rem;
   margin: .5rem auto;
+
+  &.cta {
+    background: colors.color('blue');
+  }
+
+  &.success {
+    background: colors.color('green', 'dark');
+  }
+
+  &.secondary {
+    background: colors.color('block', 'light');
+  }
+
+  &.destructive {
+    background: colors.color('red');
+  }
+
+  &.link-button {
+  }
 }

@@ -44,7 +44,7 @@ export default function Player(props: ProfileProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
-        <Profile uuid={props.uuid} nickname={props.nickname} />
+        <Profile uuid={props.uuid} nickname={props.nickname} me={false} />
         <ConstructionPlaceholder />
       </DefaultLayout>
     </>

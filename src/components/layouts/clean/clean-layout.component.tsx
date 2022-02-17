@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import Header from '@components/header';
-import Footer from '@components/footer';
+import Footer from '@components/layouts/elements/footer';
+import Header from '@components/layouts/elements/header';
 import LayoutWrapper from '@components/layouts/wrapper/layout-wrapper.component';
 import { injectClassNames } from '@/utils/css';
 

@@ -1,52 +1,52 @@
 $colors: (
-  text: (
-    base: #fff,
-    light: #eee,
-    dark: #ccc
-  ),
-  background: #16161d,
-  inactive: #aaa,
-  hightlight: #007bff,
-  block: (
-    base: #24242e,
-    light: #3a3a4a,
-    dark: #000
-  ),
-  minecraft-ui: (
-    base: #C6C6C6,
-    light: #DBDBDB,
-    dark: #5B5B5B
-  ),
-  minecraft-slot: (
-    base: #8B8B8B,
-    light: #FFF,
-    dark: #373737
-  ),
-  red: (
-    base: #ed4245,
-    light: lighten(#ed4245, 15%),
-    dark: darken(#ed4245, 25%)
-  ),
-  yellow: (
-    base: #fee75c,
-    light: lighten(#fee75c, 15%),
-    dark: darken(#fee75c, 35%)
-  ),
-  green: (
-    base: #57f287,
-    light: lighten(#57f287, 15%),
-    dark: darken(#57f287, 25%)
-  ),
-  blue: (
-    base: #5865f2,
-    light: lighten(#5865f2, 15%),
-    dark: darken(#5865f2, 25%)
-  ),
-  pink: (
-    base: #eb459e,
-    light: lighten(#eb459e, 15%),
-    dark: darken(#eb459e, 25%)
-  )
+        text: (
+                base: #fff,
+                light: #eee,
+                dark: #ccc
+        ),
+        background: #16161d,
+        inactive: #aaa,
+        hightlight: #007bff, // @todo: typo?
+        block: (
+                base: #24242e,
+                light: #3a3a4a,
+                dark: #000
+        ),
+        minecraft-ui: (
+                base: #C6C6C6,
+                light: #DBDBDB,
+                dark: #5B5B5B
+        ),
+        minecraft-slot: (
+                base: #8B8B8B,
+                light: #FFF,
+                dark: #373737
+        ),
+        red: (
+                base: #ed4245,
+                light: lighten(#ed4245, 15%),
+                dark: darken(#ed4245, 25%)
+        ),
+        yellow: (
+                base: #fee75c,
+                light: lighten(#fee75c, 15%),
+                dark: darken(#fee75c, 35%)
+        ),
+        green: (
+                base: #57f287,
+                light: lighten(#57f287, 15%),
+                dark: darken(#57f287, 25%)
+        ),
+        blue: (
+                base: #5865f2,
+                light: lighten(#5865f2, 15%),
+                dark: darken(#5865f2, 25%)
+        ),
+        pink: (
+                base: #eb459e,
+                light: lighten(#eb459e, 15%),
+                dark: darken(#eb459e, 25%)
+        )
 );
 
 $color-prefix: --zetter-color-;

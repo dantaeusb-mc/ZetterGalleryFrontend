@@ -1,34 +1,26 @@
 import React, {
-  ChangeEvent,
+  ChangeEventHandler,
   PropsWithChildren,
   ReactNode,
   useRef,
-  useState,
 } from 'react';
 import { injectClassNames } from 'utils/css';
-import styles from './Toggle.module.scss';
+import styles from './toggle.module.scss';
 
 type ToggleProps = {
   id: string;
   name: string;
   enabled: boolean;
+  unsaved: boolean;
   title: string | ReactNode;
   description: string | ReactNode;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
 // @todo: rename 'ToggleOption'
 function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
   const input = useRef(null);
-
-  const [enabled, setEnabled] = useState<boolean>(props.enabled);
-  const [saved, setSaved] = useState<boolean>(false);
-  const [focus, setFocus] = useState<boolean>(false);
   const id = `${props.id}Toggle`;
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.checked);
-    setEnabled(event.target.checked);
-  };
 
   return (
     <label htmlFor={id}>
@@ -36,6 +28,7 @@ function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
         className={injectClassNames(
           styles['option-wrapper'],
           'sans-serif-font',
+          [styles['unsaved'], props.unsaved],
         )}
       >
         <div className={styles['option-text']}>
@@ -47,7 +40,7 @@ function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
         <div
           className={injectClassNames(styles['toggle-wrapper'], [
             styles['checked'],
-            enabled,
+            props.enabled,
           ])}
         >
           <div className={styles['toggle']}>
@@ -60,7 +53,8 @@ function Toggle(props: PropsWithChildren<ToggleProps>): JSX.Element {
           id={id}
           name={props.name}
           ref={input}
-          onChange={handleChange}
+          checked={props.enabled}
+          onChange={props.onChange}
         />
       </div>
     </label>

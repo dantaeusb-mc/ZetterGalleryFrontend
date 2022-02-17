@@ -1,5 +1,5 @@
 export interface IQueryParams {
-  [key: string]: any
+  [key: string]: any;
 }
 
 const buildQuery = (queryParams?: IQueryParams): string => {
@@ -10,11 +10,21 @@ const buildQuery = (queryParams?: IQueryParams): string => {
   }
 
   queryString += '?';
-  queryString += Object.keys(queryParams).map(function(key) {
-    return key + '=' + queryParams[key].toString();
-  }).join('&');
+  queryString += Object.keys(queryParams)
+    .map(function (key) {
+      if (Array.isArray(queryParams[key])) {
+        return queryParams[key]
+          .map((value: string) => {
+            return key + '=' + value.toString();
+          })
+          .join('&');
+      }
+
+      return key + '=' + queryParams[key].toString();
+    })
+    .join('&');
 
   return queryString;
-}
+};
 
 export default buildQuery;

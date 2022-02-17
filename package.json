@@ -2,7 +2,7 @@
   "name": "zg-frontend-2",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8080",
+    "dev": "NODE_ENV=development next dev -p 8080",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",

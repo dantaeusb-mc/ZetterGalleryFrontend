@@ -1,27 +1,74 @@
-import { NextPageContext } from 'next';
+import { GetServerSidePropsResult, NextPageContext } from 'next';
 import Head from 'next/head';
 import DefaultLayout from '@components/layouts/default';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
-import { apiGet } from '@/utils/request';
+import { apiGet, apiPost } from '@/utils/request';
 import { PlayerPreferencesResponseDto } from '@/dto/response/player/preferences.dto';
 import { HttpCodeError } from '@/utils/request/api-get';
 import { Toggle } from '@components/widgets/toggle';
 import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto';
 import styles from './preferences.module.scss';
-import { Button } from '@components/button';
-import React from 'react';
+import { Button, ButtonStyle } from '@components/button';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { Callout, CalloutSeverity } from '@components/widgets/callout';
+import lodash from 'lodash';
+import { PlayerPreferencesBodyDto } from '@/dto/request/player/preferences.body.dto';
+import { NextActionProps, parseNextAction } from '@/const/next-action.type';
+import { useRouter } from 'next/router';
 
 export interface PreferencesProps {
   playerUuid: string;
-  isProfilePublic: string;
+  isProfilePublic: boolean;
   playerRatings: string[];
   allRatings: PaintingRatingResponseDto[];
+  nextAction?: NextActionProps;
+}
+
+interface PreferencesState {
+  isProfilePublic: boolean;
+  playerRatings: string[];
 }
 
 export default function Preferences(props: PreferencesProps): JSX.Element {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { playerUuid, allRatings, ...defaultState } = props;
+
+  const [savedPreferences, setSavedPreferences] = useState<PreferencesState>(
+    lodash.cloneDeep(defaultState),
+  );
+
+  const [preferences, setPreferences] = useState<PreferencesState>(
+    lodash.cloneDeep(defaultState),
+  );
+
   const intl = useIntl();
+  const router = useRouter();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const body: PlayerPreferencesBodyDto = {
+      isProfilePublic: preferences.isProfilePublic,
+      ratings: preferences.playerRatings,
+    };
+
+    apiPost(`/players/${playerUuid}/preferences`, body)
+      .then(() => {
+        setSavedPreferences(preferences);
+
+        if (props.nextAction) {
+          router.push(props.nextAction.path);
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
+
+  useEffect(() => {
+    console.log(savedPreferences, preferences);
+  }, [preferences]);
 
   return (
     <>
@@ -38,7 +85,10 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
           />
         </Callout>
         <section className={injectClassNames('block', styles['preferences'])}>
-          <form>
+          <form
+            action={`${process.env.NEXT_PUBLIC_API_URI}/players/me/preferences`}
+            onSubmit={handleSubmit}
+          >
             <h1>
               <FormattedMessage
                 id="player.preferences.title"
@@ -54,7 +104,10 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
             <Toggle
               id="isProfilePublic"
               name="isProfilePublic"
-              enabled={false}
+              enabled={preferences.isProfilePublic}
+              unsaved={
+                savedPreferences.isProfilePublic != preferences.isProfilePublic
+              }
               title={
                 <FormattedMessage
                   id="player.preferences.public.toggle.title"
@@ -69,6 +122,12 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
                   }
                 />
               }
+              onChange={(e) => {
+                setPreferences({
+                  ...preferences,
+                  ...{ isProfilePublic: e.currentTarget.checked },
+                });
+              }}
             />
             <h2>
               <FormattedMessage
@@ -86,10 +145,31 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
               return (
                 <Toggle
                   id={`rating${rating.code}`}
+                  key={`rating${rating.code}`}
                   name={`rating[${rating.code}]`}
-                  enabled={props.playerRatings.includes(rating.code)}
+                  enabled={preferences.playerRatings.includes(rating.code)}
+                  unsaved={
+                    savedPreferences.playerRatings.includes(rating.code) !==
+                    preferences.playerRatings.includes(rating.code)
+                  }
                   title={rating.title}
                   description={rating.description}
+                  onChange={(e) => {
+                    let newPlayerRatings = preferences.playerRatings;
+
+                    if (e.currentTarget.checked) {
+                      newPlayerRatings.push(rating.code);
+                    } else {
+                      newPlayerRatings = newPlayerRatings.filter(
+                        (ratingCode) => ratingCode !== rating.code,
+                      );
+                    }
+
+                    setPreferences({
+                      ...preferences,
+                      ...{ playerRatings: newPlayerRatings },
+                    });
+                  }}
                 />
               );
             })}
@@ -101,9 +181,11 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
                     defaultMessage: 'Reset',
                   })}
                   className={styles['reset-button']}
+                  style={ButtonStyle.SECONDARY}
                   type="reset"
-                  action={() => {
-                    return void 0;
+                  action={(e) => {
+                    e.preventDefault();
+                    setPreferences(lodash.cloneDeep(savedPreferences));
                   }}
                 >
                   <FormattedMessage
@@ -113,22 +195,37 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
                 </Button>
               </div>
               <div className={styles['right']}>
-                <Button
-                  title={intl.formatMessage({
-                    id: 'player.preferences.button.save',
-                    defaultMessage: 'Save',
-                  })}
-                  className={styles['save-button']}
-                  type="submit"
-                  action={() => {
-                    return void 0;
-                  }}
-                >
-                  <FormattedMessage
-                    id="player.preferences.button.save"
-                    defaultMessage="Save"
-                  />
-                </Button>
+                {props.nextAction ? (
+                  <Button
+                    title={intl.formatMessage({
+                      id: 'player.preferences.button.save',
+                      defaultMessage: 'Save',
+                    })}
+                    className={styles['save-button']}
+                    style={ButtonStyle.SUCCESS}
+                    type="submit"
+                  >
+                    <FormattedMessage
+                      id="player.preferences.button.save-and-continue"
+                      defaultMessage="Save and continue"
+                    />
+                  </Button>
+                ) : (
+                  <Button
+                    title={intl.formatMessage({
+                      id: 'player.preferences.button.save',
+                      defaultMessage: 'Save',
+                    })}
+                    className={styles['save-button']}
+                    style={ButtonStyle.SUCCESS}
+                    type="submit"
+                  >
+                    <FormattedMessage
+                      id="player.preferences.button.save"
+                      defaultMessage="Save"
+                    />
+                  </Button>
+                )}
               </div>
             </div>
           </form>
@@ -138,7 +235,13 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
   );
 }
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(
+  context: NextPageContext,
+): Promise<
+  GetServerSidePropsResult<PreferencesProps & Partial<NextActionProps>>
+> {
+  const nextAction = parseNextAction(context);
+
   let preferences: PlayerPreferencesResponseDto;
   let ratings: PaintingRatingResponseDto[];
 
@@ -158,7 +261,6 @@ export async function getServerSideProps(context: NextPageContext) {
           permanent: false,
           destination: '/auth/start',
         },
-        props: {},
       };
     }
 
@@ -167,20 +269,16 @@ export async function getServerSideProps(context: NextPageContext) {
         permanent: false,
         destination: '/500',
       },
-      props: {},
     };
   }
 
   return {
     props: {
-      ...{
-        playerUuid: preferences.playerUuid,
-        isProfilePublic: preferences.isProfilePublic,
-        playerRatings: preferences.paintingRatings,
-      },
-      ...{
-        allRatings: ratings,
-      },
+      playerUuid: preferences.playerUuid,
+      isProfilePublic: preferences.isProfilePublic,
+      playerRatings: preferences.paintingRatings,
+      allRatings: ratings,
+      ...(nextAction ? { nextAction: nextAction } : {}),
     },
   };
 }

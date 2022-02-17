@@ -1,5 +1,5 @@
-@use 'src/styles/variables/media';
-@use 'src/styles/variables/colors' as colors;
+@use '../../../../../styles/variables/media';
+@use '../../../../../styles/variables/colors' as colors;
 
 .about {
   .icon {
@@ -42,6 +42,8 @@
 
 .profile {
   position: relative;
+  height: 2rem;
+  width: 2rem;
 
   .icon {
     position: absolute;

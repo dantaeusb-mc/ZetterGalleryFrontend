@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
-import { NextPageContext } from 'next';
+import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { setCookies } from 'cookies-next';
 import { apiGet } from '@/utils/request';
 import { injectClassNames } from '@/utils/css';
@@ -12,14 +12,19 @@ import { RedirectTimer } from '@components/widgets/redirectTimer';
 import { TokenResponseDto } from '@/dto/response/auth/token.dto';
 import { ActionResponseDto } from '@/dto/response/action.dto';
 import { MessageResponseDto } from '@/dto/response/message.dto';
+import { NextActionProps } from '@/const/next-action.type';
+import { useRouter } from 'next/router';
+import buildQuery from '@/utils/request/build-query';
 
-interface IAuthFinishProps {
-  redirect?: string;
+export interface AuthFinishProps {
+  nextAction?: NextActionProps;
 }
 
 export default function AuthFinish(
-  props: PropsWithChildren<IAuthFinishProps>,
+  props: PropsWithChildren<AuthFinishProps>,
 ): JSX.Element {
+  const router = useRouter();
+
   return (
     <CleanLayout>
       <Head>
@@ -35,7 +40,7 @@ export default function AuthFinish(
           <h1>Successfully authorized Zetter to view your Minecraft account</h1>
         </header>
         <div className={styles['description-wrapper']}>
-          {props.redirect ? (
+          {props.nextAction ? (
             <>
               <h2>
                 <FormattedMessage
@@ -72,13 +77,13 @@ export default function AuthFinish(
           )}
         </div>
         <div className={styles['action-wrapper']}>
-          {props.redirect ? (
+          {props.nextAction ? (
             <>
-              <RedirectTimer redirect={props.redirect} />
+              <RedirectTimer redirect={props.nextAction.path} />
               <Button
-                title="Proceed now"
+                title="Continue"
                 action={() => {
-                  document.location.href = props.redirect as string;
+                  router.push((props.nextAction as NextActionProps).path);
                 }}
                 className={styles['action-button']}
               >
@@ -89,7 +94,7 @@ export default function AuthFinish(
             <Button
               title="Go to profile"
               action={() => {
-                return void 0;
+                router.push('/players/me');
               }}
               className={styles['action-button']}
             >
@@ -105,7 +110,9 @@ export default function AuthFinish(
   );
 }
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(
+  context: NextPageContext,
+): Promise<GetServerSidePropsResult<AuthFinishProps>> {
   let response: MessageResponseDto &
     TokenResponseDto &
     Partial<ActionResponseDto>;
@@ -123,26 +130,35 @@ export async function getServerSideProps(context: NextPageContext) {
       context,
     );
 
-    console.log(response);
-
     setCookies('token', response.token, { req: context.req, res: context.res });
   } catch (e) {
     return {
       redirect: {
         permanent: false,
-        destination: '/error',
+        destination: '/500',
       },
       props: {},
     };
   }
 
-  console.log(response);
+  let nextAction;
+
+  if (response.redirect) {
+    nextAction = {
+      path:
+        response.redirect + buildQuery({ then: '/players/me/preferences/' }),
+      description: 'Authorize server',
+    };
+  } else {
+    nextAction = {
+      path: '/players/me/preferences/',
+      description: 'Authorize server',
+    };
+  }
 
   return {
     props: {
-      ...(response.redirect && {
-        redirect: response.redirect,
-      }),
+      nextAction: nextAction,
     },
   };
 }

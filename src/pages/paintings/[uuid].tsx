@@ -70,7 +70,7 @@ export const getServerSideProps: GetServerSideProps<PaintingProps> = async (
     return {
       props: {
         uuid: response.uuid,
-        image: `/static/generated/paintings/${response.uuid}/original.png`,
+        image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
         name: response.name,
         resolution: response.resolution,
         originalSize: {

@@ -3,9 +3,7 @@ import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
-import Link from 'next/link';
-import styles from './about.module.scss';
-import { SliceButton } from '@components/sliceButton';
+import { SliceLink } from '@components/widgets/slice-link';
 import getTitle from '@/utils/page/get-title';
 
 const AboutPage: NextPage<Record<string, unknown>> = (
@@ -65,54 +63,40 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             description="Link to Zetter wiki from About Zetter page"
           />
         </p>
-        <Link href="/wiki/zetter">
-          <a
-            title="Check Out Zetter Wiki"
-            target="_self"
-            className={styles['button']}
-          >
-            <SliceButton
-              title="Check Out Zetter Wiki"
-              action={() => {
-                return;
-              }}
-            >
-              <FormattedMessage
-                id="about.zetter.button.wiki.check"
-                defaultMessage="Check out"
-              />
-              <br />
-              <FormattedMessage
-                id="about.zetter.button.wiki.what"
-                defaultMessage="Zetter Wiki"
-              />
-            </SliceButton>
-          </a>
-        </Link>
-        <a
-          title="Download Zetter From CurseForge"
-          href="https://www.curseforge.com/minecraft/mc-mods/zetter"
-          target="_blank"
-          rel="noreferrer"
-          className={styles['button']}
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'about.zetter.button.wiki',
+            defaultMessage: 'Check out Zetter Wiki',
+          })}
+          uri="/wiki/zetter"
         >
-          <SliceButton
-            title="Download Zetter from CurseForge"
-            action={() => {
-              return;
-            }}
-          >
-            <FormattedMessage
-              id="about.zetter.button.download.what"
-              defaultMessage="Download Zetter"
-            />
-            <br />
-            <FormattedMessage
-              id="about.zetter.button.download.from"
-              defaultMessage="from CurseForge"
-            />
-          </SliceButton>
-        </a>
+          <FormattedMessage
+            id="about.zetter.button.wiki.check"
+            defaultMessage="Check out"
+          />
+          <br />
+          <FormattedMessage
+            id="about.zetter.button.wiki.what"
+            defaultMessage="Zetter Wiki"
+          />
+        </SliceLink>
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'about.zetter.button.download',
+            defaultMessage: 'Download Zetter from CurseForge',
+          })}
+          uri="https://www.curseforge.com/minecraft/mc-mods/zetter"
+        >
+          <FormattedMessage
+            id="about.zetter.button.download.what"
+            defaultMessage="Download Zetter"
+          />
+          <br />
+          <FormattedMessage
+            id="about.zetter.button.download.from"
+            defaultMessage="from CurseForge"
+          />
+        </SliceLink>
         <h2>
           <FormattedMessage
             id="about.zetter.gallery.title"
@@ -136,54 +120,40 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             description="Link to Zetter Gallery wiki from About Zetter page"
           />
         </p>
-        <Link href="/wiki/zetter-gallery">
-          <a
-            title="Check Out Zetter Gallery Wiki"
-            target="_self"
-            className={styles['button']}
-          >
-            <SliceButton
-              title="Check Out Zetter Wiki"
-              action={() => {
-                return;
-              }}
-            >
-              <FormattedMessage
-                id="about.zetter-gallery.button.wiki.check"
-                defaultMessage="Check out"
-              />
-              <br />
-              <FormattedMessage
-                id="about.zetter-gallery.button.wiki.what"
-                defaultMessage="Zetter Gallery Wiki"
-              />
-            </SliceButton>
-          </a>
-        </Link>
-        <a
-          title="Download Zetter Gallery From CurseForge"
-          href="https://www.curseforge.com/minecraft/mc-mods/zetter"
-          target="_blank"
-          rel="noreferrer"
-          className={styles['button']}
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'about.zetter-gallery.button.wiki',
+            defaultMessage: 'Check out Zetter Gallery Wiki',
+          })}
+          uri="/wiki/zetter-gallery"
         >
-          <SliceButton
-            title="Download Zetter from CurseForge"
-            action={() => {
-              return;
-            }}
-          >
-            <FormattedMessage
-              id="about.zetter-gallery.button.download.what"
-              defaultMessage="Download Zetter Gallery"
-            />
-            <br />
-            <FormattedMessage
-              id="about.zetter-gallery.button.download.from"
-              defaultMessage="from CurseForge"
-            />
-          </SliceButton>
-        </a>
+          <FormattedMessage
+            id="about.zetter-gallery.button.wiki.check"
+            defaultMessage="Check out"
+          />
+          <br />
+          <FormattedMessage
+            id="about.zetter-gallery.button.wiki.what"
+            defaultMessage="Zetter Gallery Wiki"
+          />
+        </SliceLink>
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'about.zetter-gallery.button.download',
+            defaultMessage: 'Download Zetter Gallery from CurseForge',
+          })}
+          uri="https://www.curseforge.com/minecraft/mc-mods/zetter-gallery"
+        >
+          <FormattedMessage
+            id="about.zetter-gallery.button.download.what"
+            defaultMessage="Download Zetter Gallery"
+          />
+          <br />
+          <FormattedMessage
+            id="about.zetter-gallery.button.download.from"
+            defaultMessage="from CurseForge"
+          />
+        </SliceLink>
       </DefaultLayout>
     </>
   );

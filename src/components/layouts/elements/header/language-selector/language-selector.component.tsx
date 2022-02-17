@@ -21,10 +21,9 @@ export default function LanguageSelector(): JSX.Element {
                 }}
               >
                 {Object.keys(languages).map((option, iterator) => {
-                  // @ts-ignore
                   return (
                     <option key={iterator} value={option}>
-                      {languages[option]}
+                      {languages[option as Locale]}
                     </option>
                   );
                 })}

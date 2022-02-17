@@ -1,4 +1,5 @@
 import type { NextPage, NextPageContext } from 'next';
+import { GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import Post from '@components/post';
@@ -46,7 +47,7 @@ const mapPaintingResponseToProps = (
   return {
     uuid: response.uuid,
     uri: `/paintings/${response.uuid}`,
-    image: `http://127.0.0.1/static/generated/paintings/${response.uuid}/original.png`,
+    image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
     name: response.name,
     resolution: response.resolution,
     originalSize: {
@@ -203,7 +204,9 @@ const Home: NextPage<PaintingsPageProps> = (
   );
 };
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(
+  context: NextPageContext,
+): Promise<GetServerSidePropsResult<PaintingsPageProps>> {
   const initPaintingsQuery = lodash.assign(
     lodash.clone(defaultQuery),
     context.query,

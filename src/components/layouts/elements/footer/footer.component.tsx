@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const { footer } = styles;
 
-export default function Footer(): JSX.Element {
+const Footer = (): JSX.Element => {
   return (
     <footer className={footer}>
       <p>© Zetter — Minecraft™ Painting Mod</p>
@@ -58,4 +58,6 @@ export default function Footer(): JSX.Element {
       </small>
     </footer>
   );
-}
+};
+
+export default Footer;

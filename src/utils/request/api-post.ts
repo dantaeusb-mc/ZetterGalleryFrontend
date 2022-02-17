@@ -5,8 +5,8 @@ import { HttpCodeError } from '@/utils/request/api-get';
 
 const apiPost = <T>(
   path: string,
-  body: any,
-  queryParams?: IQueryParams,
+  body?: any | undefined,
+  queryParams?: IQueryParams | undefined,
   context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();
@@ -28,11 +28,14 @@ const apiPost = <T>(
     requestHeaders.set('Authorization', 'Bearer ' + token);
   }
 
-  return fetch('http://127.0.0.1/v1' + path + buildQuery(queryParams), {
-    method: 'POST',
-    headers: requestHeaders,
-    body: body,
-  }).then((res) => {
+  return fetch(
+    process.env.NEXT_PUBLIC_API_URI + path + buildQuery(queryParams),
+    {
+      method: 'POST',
+      headers: requestHeaders,
+      body: JSON.stringify(body),
+    },
+  ).then((res) => {
     if (!res.ok) {
       throw new HttpCodeError(res);
     }

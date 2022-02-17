@@ -12,14 +12,15 @@ export const languages = {
 
 export type Locale = keyof typeof languages;
 
-export interface ILocaleContext {
+export interface LocaleContextProps {
   locale: Locale;
   changeLocale: (locale: Locale) => void;
 }
 
-const LocaleContext = React.createContext<ILocaleContext>({
+const LocaleContext = React.createContext<LocaleContextProps>({
   locale: 'en',
-  changeLocale: (locale) => {},
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  changeLocale: () => {},
 });
 
 export interface IIntlProps {
@@ -31,7 +32,6 @@ function IntlProviderWrapper(props: PropsWithChildren<IIntlProps>) {
 
   const messages = useMemo(() => {
     switch (locale) {
-      // @ts-ignore
       case 'pl':
         return Polish;
       case 'ru':

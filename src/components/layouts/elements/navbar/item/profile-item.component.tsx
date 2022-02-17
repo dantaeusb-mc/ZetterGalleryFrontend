@@ -1,9 +1,10 @@
 import React, { memo } from 'react';
-import styles from './NavbarItem.module.scss';
+import styles from './item.module.scss';
 import Link from 'next/link';
-import { EIconSize, Icon } from '@components/icon';
+import { Icon, IconSize } from '@components/icon';
 import { injectClassNames } from '@/utils/css';
 import { AuthContext } from '@/context/auth.context';
+import { useIntl } from 'react-intl';
 
 export interface ItemProps {
   className: string;
@@ -14,7 +15,9 @@ export interface ItemProps {
   active: boolean;
 }
 
-function NavbarProfileItem(props: ItemProps): JSX.Element {
+const NavbarProfileItem = (props: ItemProps): JSX.Element => {
+  const intl = useIntl();
+
   return (
     <li>
       <AuthContext.Consumer>
@@ -32,10 +35,15 @@ function NavbarProfileItem(props: ItemProps): JSX.Element {
                 <Icon
                   asset={props.icon}
                   className={styles['icon']}
-                  size={props.large ? EIconSize.Large : EIconSize.Regular}
+                  size={props.large ? IconSize.Large : IconSize.Regular}
                 />
                 <img
-                  src={`/static/generated/players/${player.uuid}/avatar.png`}
+                  alt={intl.formatMessage({
+                    id: 'navbar.profile.avatar',
+                    defaultMessage: 'Your profile avatar',
+                  })}
+                  // @todo: load from js with retries to wait for queue processing for new players
+                  src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${player.uuid}/original.png`}
                   className={injectClassNames(
                     styles['profile-avatar'],
                     'pixelated-images',
@@ -56,10 +64,14 @@ function NavbarProfileItem(props: ItemProps): JSX.Element {
                 <Icon
                   asset={props.icon}
                   className={styles['icon']}
-                  size={props.large ? EIconSize.Large : EIconSize.Regular}
+                  size={props.large ? IconSize.Large : IconSize.Regular}
                 />
                 <img
-                  src="/assets/fran.png"
+                  alt={intl.formatMessage({
+                    id: 'navbar.profile.avatar.default',
+                    defaultMessage: 'Anonymous avatar',
+                  })}
+                  src="/assets/herobrine.png"
                   className={injectClassNames(
                     styles['profile-avatar'],
                     'pixelated-images',
@@ -72,7 +84,7 @@ function NavbarProfileItem(props: ItemProps): JSX.Element {
       </AuthContext.Consumer>
     </li>
   );
-}
+};
 
 NavbarProfileItem.defaultProps = {
   large: false,

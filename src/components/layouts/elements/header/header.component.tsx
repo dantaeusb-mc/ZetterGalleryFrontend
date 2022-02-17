@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './header.module.scss';
-import Logo from 'assets/logo.svg';
-import LanguageSelector from '@components/header/language-selector';
+import Logo from '@assets/logo.svg';
+import LanguageSelector from '@components/layouts/elements/header/language-selector';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
 
-export interface IHeaderProps {
+export interface HeaderProps {
   type: 'thin' | 'wide' | 'thin-plus-sidebar' | 'wide-plus-sidebar';
 }
 
-const Header = (props: IHeaderProps): JSX.Element => {
+const Header = (props: HeaderProps): JSX.Element => {
   return (
     <header
       className={injectClassNames(`content-${props.type}`, styles['header'])}

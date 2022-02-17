@@ -38,3 +38,6 @@ yarn-error.log*
 # sitemap generated post-build
 /public/robots.txt
 /public/sitemap.xml
+
+# Custom
+.env.*

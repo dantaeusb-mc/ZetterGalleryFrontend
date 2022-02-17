@@ -22,6 +22,7 @@ Error rules:
 Code style notes:
 
 * File names: hyphen-separated dot type (component/context, excluding pages as used for routing) dot ts.
+* No default export in components
 
 ### Things I need to remember
 

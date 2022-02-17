@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
 import getTitle from '@/utils/page/get-title';
 
-type CreditsGroups = 'general' | 'bugSmashers' | 'translators' | 'thanks';
+type CreditsGroups = 'general' | 'translators' | 'thanks'; // | 'bugSmashers'
 
 type CreditsProps = Record<
   CreditsGroups,
@@ -54,10 +54,6 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
           description: 'Artist, Zetter mod assets',
         },
       },
-    },
-    bugSmashers: {
-      title: 'Bug smashers',
-      people: {},
     },
     translators: {
       title: 'Translators',

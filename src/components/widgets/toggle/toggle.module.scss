@@ -11,6 +11,12 @@
   position: relative;
   padding: .5rem 1rem;
   margin: 1rem .5rem;
+
+  transition: .3s ease border-color;
+
+  &.unsaved {
+    border-color: colors.color('blue');
+  }
 }
 
 .option-text {

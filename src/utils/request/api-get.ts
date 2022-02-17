@@ -34,10 +34,13 @@ const apiGet = <T>(
     requestHeaders.set('Authorization', 'Bearer ' + token);
   }
 
-  return fetch('http://127.0.0.1/v1' + path + buildQuery(queryParams), {
-    method: 'GET',
-    headers: requestHeaders,
-  }).then((res) => {
+  return fetch(
+    process.env.NEXT_PUBLIC_API_URI + path + buildQuery(queryParams),
+    {
+      method: 'GET',
+      headers: requestHeaders,
+    },
+  ).then((res) => {
     if (!res.ok) {
       throw new HttpCodeError(res);
     }

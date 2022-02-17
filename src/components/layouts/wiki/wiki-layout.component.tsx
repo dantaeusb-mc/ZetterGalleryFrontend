@@ -1,12 +1,12 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import styles from './wiki-layout.module.scss';
 import WikiNavigation from '@components/wikiNavigation';
-import { useRouter } from 'next/router';
-import Header from '@components/header';
-import NavBar from '@components/navbar/Navbar.component';
-import Footer from '@components/footer';
+import Header from '@components/layouts/elements/header';
+import NavBar from '@components/layouts/elements/navbar';
+import Footer from '@components/layouts/elements/footer';
 import LayoutWrapper from '../wrapper';
 import { injectClassNames } from '@/utils/css';
+import { useRouter } from 'next/router';
 
 export interface WikiPage {
   title: string;

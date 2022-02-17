@@ -5,7 +5,7 @@ import '../styles/main.scss';
 import { IntlProviderWrapper, Locale } from '@/context/intl.context';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { AuthProviderWrapper } from '@/context/auth.context';
+import AuthProviderWrapper from '@/context/auth.context';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

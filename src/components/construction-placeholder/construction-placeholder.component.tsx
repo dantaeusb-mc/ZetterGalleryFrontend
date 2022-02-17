@@ -2,7 +2,7 @@ import React from 'react';
 import { injectClassNames } from '@/utils/css';
 import styles from './construction-placeholder.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { SliceButton } from '@components/sliceButton';
+import { SliceLink } from '@components/widgets/slice-link';
 
 const ConstructionPlaceholder = (): JSX.Element => {
   const intl = useIntl();
@@ -19,17 +19,15 @@ const ConstructionPlaceholder = (): JSX.Element => {
       <p>
         <FormattedMessage
           id="widgets.under-construction.description.updates"
-          defaultMessage="If you'd like to know about updates"
+          defaultMessage="If you'd like to know about updates:"
         />
       </p>
-      <SliceButton
+      <SliceLink
         title={intl.formatMessage({
           id: 'widgets.under-construction.description.discord-button',
           defaultMessage: 'Join our Discord server',
         })}
-        action={() => {
-          return;
-        }}
+        uri="https://discord.gg/thPEdjKE3h"
       >
         <FormattedMessage
           id="widgets.under-construction.description.discord-button.join"
@@ -40,7 +38,7 @@ const ConstructionPlaceholder = (): JSX.Element => {
           id="widgets.under-construction.description.discord-button.server"
           defaultMessage="Discord server"
         />
-      </SliceButton>
+      </SliceLink>
       {/** <p><FormattedMessage id="widgets.under-construction.description.discord" defaultMessage="Consider jumping on our Discord server to be among the first who shares their paintings with the world" /></p>
        <p><FormattedMessage id="widgets.under-construction.description." defaultMessage="(and get a nice badge for your profile on Zetter Gallery)" /></p> **/}
     </article>
