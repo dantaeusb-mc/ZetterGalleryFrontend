@@ -130,6 +130,7 @@ export default function AuthStart(): JSX.Element {
 }
 
 /**
+ * @todo: no we dont?
  * We have to do that in order to disable static caching
  * Which will provide empty query by default and
  * that will cause <MicrosoftSignUpButton /> to make useless
