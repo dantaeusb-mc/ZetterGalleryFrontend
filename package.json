@@ -6,6 +6,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
+    "start:staging": "next start -p 3200",
     "lint": "next lint",
     "i18n:extract": "formatjs extract \"src/**/*.{ts,tsx}\" --out-file content/locales/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
     "i18n:compile": "formatjs compile-folder --ast content/locales content/compiled-locales",

@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update secrets
-        run: 'echo "$STAGING_ENV" > .env.staging'
+        run: 'echo "$STAGING_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{secrets.PRODUCTION_ENV}}
       - name: Use Node.js ${{ matrix.node-version }}
