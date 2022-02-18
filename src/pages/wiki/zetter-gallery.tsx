@@ -63,7 +63,7 @@ export default function ZetterGalleryWikiHome({
                 <h2>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.painting-merchant.title'}
-                    defaultMessage="Preparing Workplace"
+                    defaultMessage="Painting Merchant"
                   />
                 </h2>
                 <p>
