@@ -19,7 +19,7 @@ jobs:
       - name: Update secrets
         run: 'echo "$STAGING_ENV" > .env.production'
         env:
-          PRODUCTION_ENV: ${{secrets.PRODUCTION_ENV}}
+          $STAGING_ENV: ${{secrets.$STAGING_ENV}}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:

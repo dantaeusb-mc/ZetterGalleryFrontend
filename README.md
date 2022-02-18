@@ -24,6 +24,14 @@ Code style notes:
 * File names: hyphen-separated dot type (component/context, excluding pages as used for routing) dot ts.
 * No default export in components
 
+Deployment:
+
+**SUPER DUMB**
+Nextjs forbids NODE_ENV except production, test and development. Suggest using APP_ENV, which has to be provided
+explicitly AND does not allow to use dotenv file declaration (including PORT variable).
+
+That means that on staging, we use NODE_ENV=production, but with staging secrets.
+
 ### Things I need to remember
 
 * Logo font: Fipps by Stefanie Koerner / pheist;
