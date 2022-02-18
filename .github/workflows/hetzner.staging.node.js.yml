@@ -7,10 +7,6 @@ on:
   push:
     branches: [ dev ]
 
-defaults:
-  run:
-    working-directory: staging
-
 jobs:
   build:
     runs-on: [ self-hosted, staging ]
