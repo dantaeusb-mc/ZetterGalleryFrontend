@@ -1,6 +1,5 @@
 import { TokenResponseDto } from './token.dto';
-import { RolesEnum } from '@app/auth/const/roles.enum';
-import { ActionResponseDto } from '@/apps/api/src/dto/response/action.dto';
+import { ActionResponseDto } from '@/dto/response/action.dto';
 
 export interface TokenStatusResponseDto extends TokenResponseDto {
   playerUuid: string;
@@ -8,6 +7,6 @@ export interface TokenStatusResponseDto extends TokenResponseDto {
     canBuy: boolean;
     canSell: boolean;
   };
-  role: RolesEnum;
+  role: string;
   state?: ActionResponseDto; // @todo: what?
 }

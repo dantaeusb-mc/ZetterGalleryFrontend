@@ -1,4 +1,4 @@
-import { CrossAuthCodeResponseDto } from '@/apps/api/src/dto/response/auth/cross-auth-code.dto';
+import { CrossAuthCodeResponseDto } from './cross-auth-code.dto';
 
 export class TokenResponseDto {
   token: string;

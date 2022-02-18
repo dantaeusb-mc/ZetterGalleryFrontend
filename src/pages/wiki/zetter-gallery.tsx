@@ -9,7 +9,7 @@ import {
 import {
   WikiLayout,
   WikiLayoutProps,
-  WikiPageProps,
+  WikiNavigationProps,
 } from '@components/layouts/wiki';
 import getTitle from '@/utils/page/get-title';
 
@@ -86,7 +86,7 @@ export default function ZetterGalleryWikiHome({
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<WikiPageProps>> => {
+): Promise<GetStaticPropsResult<WikiNavigationProps>> => {
   context.locale;
 
   return {

@@ -1,4 +1,4 @@
-import { TokenResponseDto } from '@/apps/api/src/dto/response/auth/token.dto';
+import { TokenResponseDto } from './token.dto';
 
 export class TokenCheckResponseDto extends TokenResponseDto {
   role: string;

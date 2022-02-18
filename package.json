@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@formatjs/cli": "^4.4.0",
+    "@next/eslint-plugin-next": "^12.1.0",
     "@types/lodash": "^4.14.177",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",

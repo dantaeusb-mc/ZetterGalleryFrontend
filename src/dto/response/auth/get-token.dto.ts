@@ -1,5 +1,5 @@
-import { CrossAuthCodeResponseDto } from '@/apps/api/src/dto/response/auth/cross-auth-code.dto';
-import { TokenResponseDto } from '@/apps/api/src/dto/response/auth/token.dto';
+import { CrossAuthCodeResponseDto } from './cross-auth-code.dto';
+import { TokenResponseDto } from './token.dto';
 
 export class GetTokenResponseDto extends TokenResponseDto {
   crossAuthorizationCode?: CrossAuthCodeResponseDto;

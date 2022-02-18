@@ -8,7 +8,7 @@ import LayoutWrapper from '../wrapper';
 import { injectClassNames } from '@/utils/css';
 import { useRouter } from 'next/router';
 
-export interface WikiPage {
+export interface WikiPageProps {
   title: string;
   path: string;
 }
@@ -27,11 +27,11 @@ type AddSectionHOF = (
   id: string,
 ) => (instance: HTMLElement) => void;
 
-export interface WikiPageProps {
-  pages: WikiPage[];
+export interface WikiNavigationProps {
+  pages: WikiPageProps[];
 }
 
-export interface WikiLayoutProps extends WikiPageProps {
+export interface WikiLayoutProps extends WikiNavigationProps {
   children: (sections: AddSectionHOF) => ReactNode;
 }
 

@@ -46,7 +46,7 @@ import {
 import {
   WikiLayout,
   WikiLayoutProps,
-  WikiPageProps,
+  WikiNavigationProps,
 } from '@components/layouts/wiki';
 import styles from '../wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
@@ -594,7 +594,7 @@ export default function ZetterWikiRecipes({
 
 export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<WikiPageProps>> => {
+): Promise<GetStaticPropsResult<WikiNavigationProps>> => {
   return {
     props: {
       pages: [
