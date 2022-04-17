@@ -10,11 +10,9 @@ on:
 jobs:
   build:
     runs-on: [ self-hosted, production ]
-
     strategy:
       matrix:
         node-version: [ 16.x ]
-
     steps:
       - uses: actions/checkout@v2
       - name: Update secrets

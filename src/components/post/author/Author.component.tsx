@@ -12,7 +12,7 @@ export default function Author(props: PaintingProps): JSX.Element {
             <span
               className={styles['profile-picture']}
               style={{
-                backgroundImage: `url(${`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.author.uuid}/original.png`})`,
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.author.uuid}/original.png)`,
               }}
             >
               {`${props.author.nickname}'s Profile Picture`}
