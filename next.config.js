@@ -1,6 +1,6 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
+  enabled: process.env.ANALYZE === 'true',
+});
 
 /** @type {import('next').NextConfig} */
 module.exports = withBundleAnalyzer({
@@ -8,7 +8,7 @@ module.exports = withBundleAnalyzer({
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ["@svgr/webpack"]
+      use: ['@svgr/webpack'],
     });
 
     // @see https://formatjs.io/docs/guides/advanced-usage/
@@ -27,5 +27,5 @@ module.exports = withBundleAnalyzer({
     localeDetection: true,
   },
   webpack5: true,
-  reactStrictMode: true
+  reactStrictMode: true,
 });

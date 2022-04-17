@@ -1,0 +1,44 @@
+@use '../../../../../styles/variables/colors' as colors;
+
+.fallback-label {
+  display: none;
+}
+
+.language-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.language-overlay {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+  padding: 3px;
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.language-select {
+  background-color: transparent;
+  border: .25rem solid colors.color('inactive');
+  //color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  display: flex;
+  line-height: inherit;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 2rem;
+  width: 3rem;
+
+  &:hover, &:focus {
+    border-color: colors.color('red');
+  }
+}

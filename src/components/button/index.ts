@@ -1,1 +1,2 @@
-export { default as Button } from './Button.component';
+export { default as Button, ButtonStyle } from './button.component';
+export type { ButtonProps } from './button.component';

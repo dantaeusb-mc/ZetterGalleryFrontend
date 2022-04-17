@@ -1,1 +1,1 @@
-export { default as Icon, EIconSize } from './Icon.component';
+export { default as Icon, IconSize } from './icon.component';

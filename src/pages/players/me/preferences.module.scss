@@ -1,0 +1,37 @@
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
+
+.preferences {
+  padding: .5rem 1rem;
+
+  h1, h2, h3 {
+    margin: .5rem;
+  }
+}
+
+.preferences-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .5rem;
+
+  .left {
+
+  }
+
+  .right {
+    
+  }
+}
+
+.reset-button {
+  background: colors.color('red');
+}
+
+.save-button {
+  background: colors.color('green');
+  justify-self: right;
+}
+
+.description {
+  margin: .5rem;
+}

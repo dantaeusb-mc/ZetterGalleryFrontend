@@ -1,131 +1,226 @@
-import type {NextPage, NextPageContext} from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import React, {Dispatch, PropsWithChildren, SetStateAction, useCallback, useEffect, useRef, useState} from "react";
-import Post from "@components/post";
-import DefaultLayout from "@components/layout";
-import LayeredNavigation from "@components/layeredNavigation";
-import InfiniteScroll from "react-infinite-scroll-component";
-import {IPaintingProps} from "@components/post/Post.component";
-import lodash from "lodash";
-import {useRouter} from "next/router";
-import {apiGet} from "@/utils/request";
-import {IPaintingResponse} from "@interfaces/response/painting.interface";
-import {plainToClass, Type} from "class-transformer";
+import type { NextPage, NextPageContext } from 'next';
+import { GetServerSidePropsResult } from 'next';
+import Head from 'next/head';
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import Post from '@components/post';
+import DefaultLayout from '@components/layouts/default';
+import LayeredNavigation from '@components/painting/layered-navigation';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import { PaintingProps } from '@components/post/Post.component';
+import lodash from 'lodash';
+import { useRouter } from 'next/router';
+import { apiGet } from '@/utils/request';
 import 'reflect-metadata';
-import conform from "@/utils/conform";
-import ConstructionPlaceholder from "@components/constructionPlaceholder";
+import conform from '@/utils/conform';
+import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
+import { useIntl } from 'react-intl';
+import getTitle from '@/utils/page/get-title';
+import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 
 export enum PaintingSorting {
   SCORE = 'score',
   SALES_TOTAL = 'sales_total',
-  NEWEST = 'newest'
+  NEWEST = 'newest',
 }
 
 export enum Direction {
   ASC = 'ASC',
-  DESC = 'DESC'
+  DESC = 'DESC',
 }
 
-export interface IPaintingListQuery {
-  page: number
-  resolution: 16 | 32 | 64
-  sort: PaintingSorting
-  dir: Direction
-}
+export type PaintingQueryUpdateFn = <K extends keyof PaintingListQueryDto>(
+  param: K,
+  value: PaintingListQueryDto[K],
+) => void;
 
-export type PaintingQueryUpdateFn = <K extends keyof IPaintingListQuery>(param: K, value: IPaintingListQuery[K]) => void;
-
-const defaultQuery: IPaintingListQuery = {
-  page: 1,
+const defaultQuery: PaintingListQueryDto = {
   resolution: 16,
   sort: PaintingSorting.SCORE,
-  dir: Direction.DESC
+  dir: Direction.DESC,
+  withRawData: true,
+  withStatistics: true,
 };
 
-interface IPaintingsPageProps {
-  paintings: IPaintingProps[]
+const mapPaintingResponseToProps = (
+  response: PaintingResponseDto,
+): PaintingProps => {
+  return {
+    uuid: response.uuid,
+    uri: `/paintings/${response.uuid}`,
+    image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
+    name: response.name,
+    resolution: response.resolution,
+    originalSize: {
+      height: response.sizeH,
+      width: response.sizeW,
+    },
+    author: {
+      uuid: response.author.uuid,
+      nickname: response.author.nickname,
+    },
+    stats: {
+      favorites: response.statistics ? response.statistics.favorites : 0,
+      salesTotal: response.statistics
+        ? parseInt(response.statistics.salesTotal)
+        : 0,
+      salesCount: response.statistics ? response.statistics.salesCount : 0,
+    },
+  };
+};
+
+const fetchPaintings = async (
+  queryParams: PaintingListQueryDto,
+): Promise<PaintingProps[]> => {
+  const response = await apiGet<PaintingResponseDto[]>(
+    '/paintings',
+    queryParams,
+  );
+
+  return response.map(mapPaintingResponseToProps);
+};
+
+interface PaintingsPageProps {
+  hasMore: boolean;
+  paintings: PaintingProps[];
 }
 
 // pass page as prop so we'll know when to show "Jump to top" button
-const Home: NextPage<IPaintingsPageProps> = (props: PropsWithChildren<IPaintingsPageProps>) => {
+const Home: NextPage<PaintingsPageProps> = (
+  props: PropsWithChildren<PaintingsPageProps>,
+) => {
+  const intl = useIntl();
+  const title = getTitle(
+    intl.formatMessage({
+      id: 'index.page.title',
+      defaultMessage: 'Home for Minecraft paintings',
+      description: 'Homepage title',
+    }),
+  );
+
+  const description = intl.formatMessage({
+    id: 'index.page.description',
+    defaultMessage:
+      'Zetter Gallery is a service that allows you to share your Zetter Minecraft paintings with the world',
+    description: 'Homepage description',
+  });
+
   const router = useRouter();
   //const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), router.query);
   const initPaintingsQuery = conform(defaultQuery, router.query);
 
   // @todo: cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
   const [paintings, setPaintings] = useState<{
-    query: IPaintingListQuery,
-    items: IPaintingProps[],
-    hasMore: boolean
+    query: PaintingListQueryDto;
+    items: PaintingProps[];
+    hasMore: boolean;
   }>({
     query: initPaintingsQuery,
     items: props.paintings,
-    hasMore: true
+    hasMore: props.hasMore,
   });
 
   const queryRef = useRef(paintings.query);
 
   const updateQuery: PaintingQueryUpdateFn = (param, value) => {
-    const newQuery = lodash.extend(lodash.clone(paintings.query), { [param]: value });
+    const newQuery = lodash.extend(lodash.clone(paintings.query), {
+      [param]: value,
+    });
+
+    if (param !== 'from') {
+      delete newQuery['from'];
+    }
 
     if (lodash.isEqual(newQuery, paintings.query)) {
       return;
     }
 
-    if (param !== 'page') {
-      newQuery.page = 1;
-    }
-
     setPaintings({
-      ...paintings,
       query: newQuery,
-      items: param === 'page' ? paintings.items : [], // keep paintings if only page changed
+      items: param === 'from' ? paintings.items : [], // keep paintings if only page changed
+      hasMore: true,
     });
-  }
+  };
 
   useEffect(() => {
-    const updateRouterQuery = (paintingListQuery: IPaintingListQuery) => {
-      const simplifiedQuery = lodash.pickBy(paintingListQuery, (v, k) => defaultQuery[k as keyof IPaintingListQuery] !== v);
+    const updateRouterQuery = (paintingListQuery: PaintingListQueryDto) => {
+      const simplifiedQuery = lodash.pickBy(
+        paintingListQuery,
+        (v, k) => defaultQuery[k as keyof PaintingListQueryDto] !== v,
+      );
 
-      // @ts-ignore
-      router.replace({ query: simplifiedQuery }, undefined,{ shallow: true });
-    }
+      router.replace({ query: simplifiedQuery }, undefined, { shallow: true });
+    };
+
+    const fetchNewPaintings = async () => {
+      // @todo: better make it cancelable
+      const newPaintings = await fetchPaintings(paintings.query);
+
+      setPaintings({
+        ...paintings,
+        hasMore: newPaintings.length >= 20,
+        items: paintings.items.concat(newPaintings),
+      });
+    };
 
     if (!lodash.isEqual(queryRef.current, paintings.query)) {
       updateRouterQuery(paintings.query);
+      fetchNewPaintings();
 
       queryRef.current = paintings.query;
     }
   }, [paintings.query]);
 
-  return (<>
-    <Head>
-      <title>Zetter Gallery - Home For Minecraft Paintings</title>
-      <meta name="description" content="Authorize Zetter Gallery to check your Minecraft Account" />
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <DefaultLayout>
-      <LayeredNavigation currentQuery={ paintings.query } updateLayer={ updateQuery } />
-      <Post key={`painting-1`} { ...{
-        uri: `/assets/laura.png`,
-        name: 'Laura',
-        originalSize: {
-          height: 2,
-          width: 2
-        },
-        stats: {
-          favoritesAdded: 152,
-          emeraldsPaid: 2742
-        },
-        author: {
-          nickname: 'fran',
-          uuid: '4aeffce3-8c4f-429a-81d5-3147611185b5'
-        }
-      } } />
-      <ConstructionPlaceholder />
-    </DefaultLayout>
-  </>)
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <DefaultLayout>
+        <LayeredNavigation
+          currentQuery={paintings.query}
+          updateLayer={updateQuery}
+        />
+        <InfiniteScroll
+          next={() => {
+            if (paintings.hasMore) {
+              updateQuery(
+                'from',
+                paintings.items[paintings.items.length - 1].uuid,
+              );
+            }
+          }}
+          hasMore={paintings.hasMore}
+          loader={'Loading'}
+          dataLength={paintings.items.length}
+        >
+          {paintings.items.map((paintingProps, index) => (
+            <Post key={`painting-${index}`} {...paintingProps} />
+          ))}
+        </InfiniteScroll>
+      </DefaultLayout>
+    </>
+  );
+};
+
+export async function getServerSideProps(
+  context: NextPageContext,
+): Promise<GetServerSidePropsResult<PaintingsPageProps>> {
+  const initPaintingsQuery = lodash.assign(
+    lodash.clone(defaultQuery),
+    context.query,
+  );
+
+  const paintings = await fetchPaintings(initPaintingsQuery);
+  const hasMore = paintings.length === 10;
+
+  return {
+    props: {
+      hasMore: hasMore,
+      paintings: await fetchPaintings(initPaintingsQuery),
+    },
+  };
 }
 
-export default Home
+export default Home;

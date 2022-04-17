@@ -1,5 +1,5 @@
 @use 'raleway/index' as raleway;
-@use 'minecraft/index' as minecraft;
+@use 'minecraftia/index' as minecraftia;
 @use 'equipmentpro/index' as equipmentpro;
 
 $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
@@ -60,10 +60,10 @@ $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
   );
 
   @include _include-fonts(
-    'Minecraft',
-    minecraft.$vfont,
-    minecraft.$fonts,
-    minecraft.$ext
+    'Minecraftia',
+    minecraftia.$vfont,
+    minecraftia.$fonts,
+    minecraftia.$ext
   );
 
   @include _include-fonts(

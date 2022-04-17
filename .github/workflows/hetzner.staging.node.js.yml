@@ -1,0 +1,32 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Hetzner Staging node.js
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: [ self-hosted, staging ]
+
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update secrets
+        run: 'echo "$STAGING_ENV" > .env.production'
+        env:
+          STAGING_ENV: ${{secrets.STAGING_ENV}}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build --if-present
+      - run: pm2 reload zg-frontend-staging
+        env:
+          CI: true

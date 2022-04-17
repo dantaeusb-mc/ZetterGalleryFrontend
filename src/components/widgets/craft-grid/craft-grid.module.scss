@@ -1,0 +1,49 @@
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
+
+.crafting-grid {
+  background-color: colors.color("minecraft-ui");
+  border: .125rem solid;
+  border-color: colors.color("minecraft-ui", "light") colors.color("minecraft-ui", "dark") colors.color("minecraft-ui", "dark") colors.color("minecraft-ui", "light");
+  box-sizing: content-box;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: .5rem;
+  position: relative;
+  vertical-align: bottom;
+  max-width: 201px;
+}
+
+.input {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.arrow {
+  background: url("/assets/arrow.webp") no-repeat;
+  width: 32px;
+  height: 26px;
+  margin: 0 .25rem;
+}
+
+.slot {
+  background-color: colors.color("minecraft-slot");
+  border: .125rem solid;
+  border-color: colors.color("minecraft-slot", "dark") colors.color("minecraft-slot", "light") colors.color("minecraft-slot", "light") colors.color("minecraft-slot", "dark");
+  height: 2rem;
+  width: 2rem;
+}
+
+.out-slot {
+  padding: .5rem;
+}
+
+.shapeless-icon {
+  background: url("/assets/shapeless.webp") no-repeat;
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  height: 15px;
+  width: 19px;
+}

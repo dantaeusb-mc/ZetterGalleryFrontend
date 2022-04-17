@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://zetter.gallery
+
+# Sitemaps
+Sitemap: https://zetter.gallery/sitemap.xml

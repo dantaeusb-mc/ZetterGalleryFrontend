@@ -3,15 +3,16 @@ import numeral from 'numeral';
 import {Icon} from 'components/icon';
 import StatisticsButton from './button';
 import {EStatisticsButtonActiveColor} from './button/StatisticsButton.component';
-import {IPaintingProps} from '../Post.component';
+import {PaintingProps} from '../Post.component';
 import styles from './Statistics.module.scss';
 
 export interface IPaintingStatisticsProps {
-  favoritesAdded: number,
-  emeraldsPaid: number
+  favorites: number,
+  salesTotal: number,
+  salesCount: number
 }
 
-export default function Statistics(props: IPaintingProps): JSX.Element {
+export default function Statistics(props: PaintingProps): JSX.Element {
   const [favorite, setFavorite] = useState<boolean>(false);
 
   const formatNumber = (number: number): string => {
@@ -24,7 +25,7 @@ export default function Statistics(props: IPaintingProps): JSX.Element {
     return numeralInstance.format('0,0');
   };
 
-  let counter = props.stats.favoritesAdded;
+  let counter = props.stats.favorites;
   if (favorite) {
     counter++;
   }
@@ -33,7 +34,7 @@ export default function Statistics(props: IPaintingProps): JSX.Element {
     <h3 className={ styles['painting-title'] }>{ props.name }</h3>
     <footer className={ styles['post-footer'] }>
       <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Blue } active={ favorite } action={ () => { setFavorite(!favorite); } } ><Icon asset="favorite" className={ styles['favorite-icon'] } /><span>{ formatNumber(counter) }</span></StatisticsButton>
-      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Green } className={ styles['emerald-button'] }><span>{ formatNumber(props.stats.emeraldsPaid) }</span><Icon asset="emerald" className={ styles['emerald-icon'] } /></StatisticsButton>
+      <StatisticsButton activeColor={ EStatisticsButtonActiveColor.Green } className={ styles['emerald-button'] }><span>{ formatNumber(props.stats.salesTotal) }</span><Icon asset="emerald" className={ styles['emerald-icon'] } /></StatisticsButton>
     </footer>
   </>);
 }
