@@ -35,7 +35,7 @@ export default function AuthFinish(
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={injectClassNames('block', styles['auth-prompt'])}>
+      <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
         <header className={styles['heading']}>
           <h1>Successfully authorized Zetter to view your Minecraft account</h1>
         </header>

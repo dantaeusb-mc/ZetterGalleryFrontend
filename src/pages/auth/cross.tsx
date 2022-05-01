@@ -34,7 +34,7 @@ export default function AuthCross(props: ICrossAuthStartProps): JSX.Element {
           {"If you don't see this message when connecting " +
             "Zetter Gallery, there's a chance that someone trying to steal your info."}
         </Callout>
-        <section className={injectClassNames('block', styles['auth-prompt'])}>
+        <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
           <header className={styles['heading']}>
             <h1>
               You are going to allow <wbr />

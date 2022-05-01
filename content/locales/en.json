@@ -11,11 +11,17 @@
     "defaultMessage": "About Zetter Project",
     "description": "Title for Zetter Gallery About Page"
   },
+  "about.zetter-gallery.button.download": {
+    "defaultMessage": "Download Zetter Gallery from CurseForge"
+  },
   "about.zetter-gallery.button.download.from": {
     "defaultMessage": "from CurseForge"
   },
   "about.zetter-gallery.button.download.what": {
     "defaultMessage": "Download Zetter Gallery"
+  },
+  "about.zetter-gallery.button.wiki": {
+    "defaultMessage": "Check out Zetter Gallery Wiki"
   },
   "about.zetter-gallery.button.wiki.check": {
     "defaultMessage": "Check out"
@@ -23,11 +29,17 @@
   "about.zetter-gallery.button.wiki.what": {
     "defaultMessage": "Zetter Gallery Wiki"
   },
+  "about.zetter.button.download": {
+    "defaultMessage": "Download Zetter from CurseForge"
+  },
   "about.zetter.button.download.from": {
     "defaultMessage": "from CurseForge"
   },
   "about.zetter.button.download.what": {
     "defaultMessage": "Download Zetter"
+  },
+  "about.zetter.button.wiki": {
+    "defaultMessage": "Check out Zetter Wiki"
   },
   "about.zetter.button.wiki.check": {
     "defaultMessage": "Check out"
@@ -113,11 +125,31 @@
     "defaultMessage": "You are signed up",
     "description": "Title for finish auth page"
   },
+  "auth.start.page.description": {
+    "defaultMessage": "Grant Zetter Gallery rights to access your account",
+    "description": "Auth start page description"
+  },
+  "auth.start.page.title": {
+    "defaultMessage": "Authenticate with Microsoft Account",
+    "description": "Auth start page title"
+  },
   "common.post.painting.alt": {
     "defaultMessage": "{paintingName} by {username}"
   },
   "common.post.painting.link.title": {
     "defaultMessage": "{paintingName} by {username}"
+  },
+  "credits.page.description": {
+    "defaultMessage": "Zetter Gallery credits",
+    "description": "Credits page description"
+  },
+  "credits.page.title": {
+    "defaultMessage": "Credits",
+    "description": "Credits page title"
+  },
+  "credits.title": {
+    "defaultMessage": "Credits",
+    "description": "Title for Zetter Gallery Credits Page"
   },
   "error.401.page.description": {
     "defaultMessage": "You are not logged in to access this resource",
@@ -184,11 +216,14 @@
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
   },
+  "footer.legal.credits": {
+    "defaultMessage": "Credits"
+  },
   "footer.legal.developer": {
     "defaultMessage": "Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
   },
   "footer.legal.learn-more": {
-    "defaultMessage": "Learn more."
+    "defaultMessage": "Terms of service"
   },
   "footer.legal.minecraft-copyright": {
     "defaultMessage": "Minecraft and associated Minecraft images are copyright of Mojang AB."
@@ -198,6 +233,12 @@
   },
   "human-terms.complications.title": {
     "defaultMessage": "What are the complications?"
+  },
+  "human-terms.contribution.paragraph.1": {
+    "defaultMessage": "Yes! Well, partially. Zetter and Zetter Gallery mods are licensed under MPL2 and open-source. The front-end part of this service is also MPL2 and open-source. The API, however, is closed-source. This is because of my security concerns and because I would like to build a player base and avoid early forks. This, however, will likely be changed closer to release of 1.0 mods. I can open repository to particular contributors who proved their positive intents and have sufficient TypeScript/Nest.js skills."
+  },
+  "human-terms.contribution.title": {
+    "defaultMessage": "Can I contribute?"
   },
   "human-terms.copyright.paragraph.1": {
     "defaultMessage": "I do not claim exclusive or ownership rights on your artworks by any means. Your work is owned by you and no one else. However, for the sake of being safe legally, I use very similar licensing to the sites like Instagram, DeviantArt or 500px. That means I am able to show and distribute your work."
@@ -256,6 +297,27 @@
     "defaultMessage": "Good you asked! Just check that server described below is the one that you're playing on right now.",
     "description": "Explain how to make sure it's not a phishing page"
   },
+  "navbar.about": {
+    "defaultMessage": "About"
+  },
+  "navbar.feed": {
+    "defaultMessage": "Feed"
+  },
+  "navbar.home": {
+    "defaultMessage": "Home"
+  },
+  "navbar.profile": {
+    "defaultMessage": "Profile"
+  },
+  "navbar.profile.avatar": {
+    "defaultMessage": "Your profile avatar"
+  },
+  "navbar.profile.avatar.default": {
+    "defaultMessage": "Anonymous avatar"
+  },
+  "navbar.search": {
+    "defaultMessage": "Search"
+  },
   "paintings.layered-navigation.filter.resolution": {
     "defaultMessage": "Resolution",
     "description": "Filter paintings by resolution"
@@ -284,6 +346,9 @@
   "player.preferences.button.save": {
     "defaultMessage": "Save"
   },
+  "player.preferences.button.save-and-continue": {
+    "defaultMessage": "Save and continue"
+  },
   "player.preferences.callout.alpha-warning": {
     "defaultMessage": "This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
   },
@@ -305,6 +370,20 @@
   "player.preferences.title": {
     "defaultMessage": "Preferences"
   },
+  "players.me.logout.description": {
+    "defaultMessage": "We will redirect you back to home page soon"
+  },
+  "players.me.logout.page.description": {
+    "defaultMessage": "Log out from Zetter gallery",
+    "description": "Player log out page description"
+  },
+  "players.me.logout.page.title": {
+    "defaultMessage": "Log Out",
+    "description": "Player log out page title"
+  },
+  "players.me.logout.title": {
+    "defaultMessage": "Successfully logged out from Zetter Gallery"
+  },
   "players.page.description": {
     "defaultMessage": "{username}'s profile on Zetter Gallery"
   },
@@ -322,6 +401,20 @@
   "profile.count.paintings": {
     "defaultMessage": "Paintings:",
     "description": "Amount of submitted paintings showing in player's profile"
+  },
+  "profile.link.logout": {
+    "defaultMessage": "Log Out"
+  },
+  "profile.link.preferences": {
+    "defaultMessage": "Preferences"
+  },
+  "terms-for-humans.page.description": {
+    "defaultMessage": "Zetter Gallery frequently asked questions",
+    "description": "FAQ About Zetter Gallery page description"
+  },
+  "terms-for-humans.page.title": {
+    "defaultMessage": "FAQ",
+    "description": "FAQ About Zetter Gallery page title"
   },
   "terms.acceptance.paragraph": {
     "defaultMessage": "BY USING THE SERVICES, YOU ARE AGREEING, ON BEHALF OF YOURSELF AND THOSE YOU REPRESENT, TO COMPLY WITH AND BE LEGALLY BOUND BY THESE TERMS AS WELL AS OUR PRIVACY POLICY AND ALL APPLICABLE LAWS. IF YOU, FOR YOURSELF OR ON BEHALF OF THOSE YOU REPRESENT, DO NOT AGREE TO ANY PROVISION OF THESE TERMS, YOU MUST, FOR YOURSELF AND ON BEHALF ANY SUCH PERSON(S), DISCONTINUE THE REGISTRATION PROCESS, DISCONTINUE YOUR USE OF THE SERVICES, AND, IF YOU ARE ALREADY REGISTERED, CANCEL YOUR ACCOUNT."
@@ -417,10 +510,119 @@
     "defaultMessage": "Discord server"
   },
   "widgets.under-construction.description.updates": {
-    "defaultMessage": "If you'd like to know about updates"
+    "defaultMessage": "If you'd like to know about updates:"
   },
   "widgets.under-construction.description.why": {
     "defaultMessage": "We are building home for Zetter paintings"
+  },
+  "wiki.zetter-gallery.page": {
+    "defaultMessage": "Zetter Gallery Wiki",
+    "description": "Zetter Gallery Wiki page"
+  },
+  "wiki.zetter-gallery.about-feed.description": {
+    "defaultMessage": "Feed is updated every 15 minutes and populated with trending, top and new paintings, if present.",
+    "description": "About feed description"
+  },
+  "wiki.zetter-gallery.about-feed.title": {
+    "defaultMessage": "About feed"
+  },
+  "wiki.zetter-gallery.login.description.mc-auth": {
+    "defaultMessage": "After that, if you logged into your account you will be prompted to allow the Minecraft server you opened link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you.",
+    "description": "Minecraft Server Authorization"
+  },
+  "wiki.zetter-gallery.login.description.ms-auth": {
+    "defaultMessage": "If you haven't logged in on this site, you will be asked to log in with your Microsoft account. Please check carefully that the URI in your address bar is zetter.gallery and read the message on that page. This will help you to secure account. Do not enter your Microsoft password outside of Microsoft websites.",
+    "description": "Microsoft Authorization"
+  },
+  "wiki.zetter-gallery.login.description.screen": {
+    "defaultMessage": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in.",
+    "description": "Login screen description"
+  },
+  "wiki.zetter-gallery.login.description.zg-auth": {
+    "defaultMessage": "To log in, you would need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site.",
+    "description": "Zetter Gallery Authorization"
+  },
+  "wiki.zetter-gallery.login.description.zg-requirements": {
+    "defaultMessage": "To log in, you would Minecraft to allow you to open links. You can check out if you are allowed to open links in Main Menu -> Preferences. You would also need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site.",
+    "description": "Login requirements"
+  },
+  "wiki.zetter-gallery.login.title": {
+    "defaultMessage": "Logging in"
+  },
+  "wiki.zetter-gallery.page.description": {
+    "defaultMessage": "Get information about Zetter Gallery Mod for Minecraft",
+    "description": "Zetter Wiki page description"
+  },
+  "wiki.zetter-gallery.page.title": {
+    "defaultMessage": "Zetter Gallery Wiki",
+    "description": "Zetter Gallery Wiki page title"
+  },
+  "wiki.zetter-gallery.painting-merchant.description.1": {
+    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed.",
+    "description": "What you need to start trading paintings"
+  },
+  "wiki.zetter-gallery.painting-merchant.description.2": {
+    "defaultMessage": "Check out the Minecraft wiki to see how villager occupation works.",
+    "description": "Check out Minecraft wiki about villager occupation"
+  },
+  "wiki.zetter-gallery.painting-merchant.section": {
+    "defaultMessage": "Painting Merchant"
+  },
+  "wiki.zetter-gallery.painting-merchant.title": {
+    "defaultMessage": "Painting Merchant"
+  },
+  "wiki.zetter-gallery.title": {
+    "defaultMessage": "Zetter Gallery Wiki Home",
+    "description": "Title for Zetter Gallery Wiki Home Page"
+  },
+  "wiki.zetter-gallery.trading-interface.description.pre": {
+    "defaultMessage": "After logging in and loading of current painting feed you will see unusual trading interface.",
+    "description": "Trading screen pre"
+  },
+  "wiki.zetter-gallery.trading-interface.title": {
+    "defaultMessage": "Trading paintings"
+  },
+  "wiki.zetter-gallery.trading.interface.checkout-dd": {
+    "defaultMessage": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will recieve your painting item or emeralds"
+  },
+  "wiki.zetter-gallery.trading.interface.checkout-dt": {
+    "defaultMessage": "5) Checkout button"
+  },
+  "wiki.zetter-gallery.trading.interface.pagination-buttons-dd": {
+    "defaultMessage": "Click on this buttons to switch painting in current feed."
+  },
+  "wiki.zetter-gallery.trading.interface.pagination-buttons-dt": {
+    "defaultMessage": "3) Previous & next buttons"
+  },
+  "wiki.zetter-gallery.trading.interface.pagination-dd": {
+    "defaultMessage": "Shouws amount of painting in current feed and current position."
+  },
+  "wiki.zetter-gallery.trading.interface.pagination-dt": {
+    "defaultMessage": "1) Painting feed pagination"
+  },
+  "wiki.zetter-gallery.trading.interface.preview-dd": {
+    "defaultMessage": "Shows currently selected painting."
+  },
+  "wiki.zetter-gallery.trading.interface.preview-dt": {
+    "defaultMessage": "2) Preview"
+  },
+  "wiki.zetter-gallery.trading.interface.result-dd": {
+    "defaultMessage": "Take your painting or emeralds from this slot after checkout."
+  },
+  "wiki.zetter-gallery.trading.interface.result-dt": {
+    "defaultMessage": "6) Result slot"
+  },
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.1": {
+    "defaultMessage": "This slot is used to pay for the current painting with emeralds, or to sell paintings."
+  },
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.2": {
+    "defaultMessage": "Placing painting it this slot will switch you to sell mode."
+  },
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.3": {
+    "defaultMessage": "In sell mode, you can submit your painting and receive emeralds for it."
+  },
+  "wiki.zetter-gallery.trading.interface.sell-slot-dt": {
+    "defaultMessage": "4) Selling slot"
   },
   "wiki.zetter.combining.interface.grid-dd": {
     "defaultMessage": "Place your canvases here in order to glue them together. You can also just put one canvas here."
@@ -480,9 +682,13 @@
   "wiki.zetter.framing.title": {
     "defaultMessage": "Creating a frame"
   },
-  "wiki.zetter.page": {
-    "defaultMessage": "Home",
-    "description": "Zetter Wiki Home Page Navigation Title"
+  "wiki.zetter.page.description": {
+    "defaultMessage": "Get information about Zetter Mod for Minecraft",
+    "description": "Zetter Wiki page description"
+  },
+  "wiki.zetter.page.title": {
+    "defaultMessage": "Zetter Wiki",
+    "description": "Zetter Wiki page title"
   },
   "wiki.zetter.painting.interface.finish-dd": {
     "defaultMessage": "Start drawing!"
@@ -602,9 +808,13 @@
   "wiki.zetter.recipes.iron-frame.title": {
     "defaultMessage": "Iron Frame"
   },
-  "wiki.zetter.recipes.page": {
-    "defaultMessage": "Recipes",
-    "description": "Zetter Wiki Recipes Page Navigation Title"
+  "wiki.zetter.recipes.page.description": {
+    "defaultMessage": "Find recipes for Zetter Mod in Minecraft",
+    "description": "Zetter Recipes Wiki page description"
+  },
+  "wiki.zetter.recipes.page.title": {
+    "defaultMessage": "Zetter Recipes Wiki",
+    "description": "Zetter Recipes Wiki page title"
   },
   "wiki.zetter.recipes.painting": {
     "defaultMessage": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table.",

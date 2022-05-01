@@ -1,14 +1,98 @@
 {
+  "about.page.description": [
+    {
+      "type": 0,
+      "value": "What is Zetter and Zetter Gallery"
+    }
+  ],
+  "about.page.title": [
+    {
+      "type": 0,
+      "value": "About"
+    }
+  ],
   "about.title": [
     {
       "type": 0,
       "value": "About Zetter Project"
     }
   ],
+  "about.zetter-gallery.button.download": [
+    {
+      "type": 0,
+      "value": "Download Zetter Gallery from CurseForge"
+    }
+  ],
+  "about.zetter-gallery.button.download.from": [
+    {
+      "type": 0,
+      "value": "from CurseForge"
+    }
+  ],
+  "about.zetter-gallery.button.download.what": [
+    {
+      "type": 0,
+      "value": "Download Zetter Gallery"
+    }
+  ],
+  "about.zetter-gallery.button.wiki": [
+    {
+      "type": 0,
+      "value": "Check out Zetter Gallery Wiki"
+    }
+  ],
+  "about.zetter-gallery.button.wiki.check": [
+    {
+      "type": 0,
+      "value": "Check out"
+    }
+  ],
+  "about.zetter-gallery.button.wiki.what": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery Wiki"
+    }
+  ],
+  "about.zetter.button.download": [
+    {
+      "type": 0,
+      "value": "Download Zetter from CurseForge"
+    }
+  ],
+  "about.zetter.button.download.from": [
+    {
+      "type": 0,
+      "value": "from CurseForge"
+    }
+  ],
+  "about.zetter.button.download.what": [
+    {
+      "type": 0,
+      "value": "Download Zetter"
+    }
+  ],
+  "about.zetter.button.wiki": [
+    {
+      "type": 0,
+      "value": "Check out Zetter Wiki"
+    }
+  ],
+  "about.zetter.button.wiki.check": [
+    {
+      "type": 0,
+      "value": "Check out"
+    }
+  ],
+  "about.zetter.button.wiki.what": [
+    {
+      "type": 0,
+      "value": "Zetter Wiki"
+    }
+  ],
   "about.zetter.description": [
     {
       "type": 0,
-      "value": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for you home."
+      "value": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for your virtual home."
     }
   ],
   "about.zetter.gallery.description": [
@@ -53,16 +137,46 @@
       "value": "Why do I need that?"
     }
   ],
+  "auth-prompt.microsoft.disclaimer.what-for": [
+    {
+      "type": 0,
+      "value": "This allows server to purchase and submit paintings on your behalf when you trading with painting merchant."
+    }
+  ],
+  "auth-prompt.microsoft.disclaimer.why": [
+    {
+      "type": 0,
+      "value": "To prove that you are the real player playing on a real server and it's not just automated requests."
+    }
+  ],
+  "auth.microsoft.button.agreement": [
+    {
+      "type": 0,
+      "value": "By pressing the button, you confirm that you are in legal age and agree to the terms of service."
+    }
+  ],
+  "auth.microsoft.callout.alpha": [
+    {
+      "type": 0,
+      "value": "This is a very early version of the service, provided as is. Issues may arise, content is not yet moderated."
+    }
+  ],
+  "auth.microsoft.callout.check-disclaimer": [
+    {
+      "type": 0,
+      "value": "If you don't see this message when connecting Zetter Gallery, there's a chance that someone trying to steal your info."
+    }
+  ],
   "auth.microsoft.check.advice": [
     {
       "type": 0,
-      "value": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to &quot;zettergallery.onmicrosoft.com&quot; or &quot;login.live.com&quot; first if you're not logged into microsoft account. If domain matches, everything is alright."
+      "value": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright."
     }
   ],
   "auth.microsoft.disclaimer.track": [
     {
       "type": 0,
-      "value": "This is also used to track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
+      "value": "This is also used track what paintings you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
     }
   ],
   "auth.microsoft.disclaimer.why": [
@@ -71,16 +185,398 @@
       "value": "We need this to make sure that you have access to the player account that can be used for submitting paintings. This allows you to have personal feed with your favorite paintings and check your paintings stats."
     }
   ],
+  "auth.microsoft.finish.description.callback.description": [
+    {
+      "type": 0,
+      "value": "We will redirect you soon to continue your action."
+    }
+  ],
+  "auth.microsoft.finish.description.callback.title": [
+    {
+      "type": 0,
+      "value": "Please do not close this page"
+    }
+  ],
+  "auth.microsoft.finish.description.description": [
+    {
+      "type": 0,
+      "value": "Now you'll be able to quickly authorize game server with your Minecraft account."
+    }
+  ],
+  "auth.microsoft.finish.description.title": [
+    {
+      "type": 0,
+      "value": "You are signed up"
+    }
+  ],
+  "auth.start.page.description": [
+    {
+      "type": 0,
+      "value": "Grant Zetter Gallery rights to access your account"
+    }
+  ],
+  "auth.start.page.title": [
+    {
+      "type": 0,
+      "value": "Authenticate with Microsoft Account"
+    }
+  ],
+  "common.post.painting.alt": [
+    {
+      "type": 1,
+      "value": "paintingName"
+    },
+    {
+      "type": 0,
+      "value": " by "
+    },
+    {
+      "type": 1,
+      "value": "username"
+    }
+  ],
+  "common.post.painting.link.title": [
+    {
+      "type": 1,
+      "value": "paintingName"
+    },
+    {
+      "type": 0,
+      "value": " by "
+    },
+    {
+      "type": 1,
+      "value": "username"
+    }
+  ],
+  "credits.page.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery credits"
+    }
+  ],
+  "credits.page.title": [
+    {
+      "type": 0,
+      "value": "Credits"
+    }
+  ],
+  "credits.title": [
+    {
+      "type": 0,
+      "value": "Credits"
+    }
+  ],
+  "error.401.page.description": [
+    {
+      "type": 0,
+      "value": "You are not logged in to access this resource"
+    }
+  ],
+  "error.401.page.title": [
+    {
+      "type": 0,
+      "value": "Unauthenticated"
+    }
+  ],
+  "error.403.page.description": [
+    {
+      "type": 0,
+      "value": "You are not allowed to access this resource"
+    }
+  ],
+  "error.403.page.title": [
+    {
+      "type": 0,
+      "value": "Forbidden"
+    }
+  ],
+  "error.404.page.description": [
+    {
+      "type": 0,
+      "value": "Page not found"
+    }
+  ],
+  "error.404.page.title": [
+    {
+      "type": 0,
+      "value": "Not Found"
+    }
+  ],
+  "error.500.page.description": [
+    {
+      "type": 0,
+      "value": "Internal server error page"
+    }
+  ],
+  "error.500.page.title": [
+    {
+      "type": 0,
+      "value": "Error!"
+    }
+  ],
+  "error.bad-request.description": [
+    {
+      "type": 0,
+      "value": "Sorry, server refused to process your request"
+    }
+  ],
+  "error.bad-request.title": [
+    {
+      "type": 0,
+      "value": "Bad request"
+    }
+  ],
+  "error.forbidden.description": [
+    {
+      "type": 0,
+      "value": "Server said you cannot access this resource."
+    }
+  ],
+  "error.forbidden.title": [
+    {
+      "type": 0,
+      "value": "Forbidden"
+    }
+  ],
+  "error.not-found.description": [
+    {
+      "type": 0,
+      "value": "Sorry, we were unable to locate the resource you're looking for"
+    }
+  ],
+  "error.not-found.title": [
+    {
+      "type": 0,
+      "value": "Not found"
+    }
+  ],
+  "error.server-error.description": [
+    {
+      "type": 0,
+      "value": "Sorry, something bad and unexpected happened while processing your request"
+    }
+  ],
+  "error.server-error.title": [
+    {
+      "type": 0,
+      "value": "Server error"
+    }
+  ],
+  "error.unauthenticated.description": [
+    {
+      "type": 0,
+      "value": "Server said you cannot access this resource because you are not logged in as someone who have access."
+    }
+  ],
+  "error.unauthenticated.title": [
+    {
+      "type": 0,
+      "value": "Unauthenticated"
+    }
+  ],
+  "footer.legal.affiliation": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
+    }
+  ],
+  "footer.legal.credits": [
+    {
+      "type": 0,
+      "value": "Credits"
+    }
+  ],
+  "footer.legal.developer": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
+    }
+  ],
+  "footer.legal.learn-more": [
+    {
+      "type": 0,
+      "value": "Terms of service"
+    }
+  ],
+  "footer.legal.minecraft-copyright": [
+    {
+      "type": 0,
+      "value": "Minecraft and associated Minecraft images are copyright of Mojang AB."
+    }
+  ],
+  "human-terms.complications.paragraph.1": [
+    {
+      "type": 0,
+      "value": "I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
+    }
+  ],
+  "human-terms.complications.title": [
+    {
+      "type": 0,
+      "value": "What are the complications?"
+    }
+  ],
+  "human-terms.contribution.paragraph.1": [
+    {
+      "type": 0,
+      "value": "Yes! Well, partially. Zetter and Zetter Gallery mods are licensed under MPL2 and open-source. The front-end part of this service is also MPL2 and open-source. The API, however, is closed-source. This is because of my security concerns and because I would like to build a player base and avoid early forks. This, however, will likely be changed closer to release of 1.0 mods. I can open repository to particular contributors who proved their positive intents and have sufficient TypeScript/Nest.js skills."
+    }
+  ],
+  "human-terms.contribution.title": [
+    {
+      "type": 0,
+      "value": "Can I contribute?"
+    }
+  ],
+  "human-terms.copyright.paragraph.1": [
+    {
+      "type": 0,
+      "value": "I do not claim exclusive or ownership rights on your artworks by any means. Your work is owned by you and no one else. However, for the sake of being safe legally, I use very similar licensing to the sites like Instagram, DeviantArt or 500px. That means I am able to show and distribute your work."
+    }
+  ],
+  "human-terms.copyright.paragraph.2": [
+    {
+      "type": 0,
+      "value": "Important notice: if you at any time would like to remove your work from Zetter Gallery, you are free to do that. But there's no mechanism to retract paintings from players' servers, and no guarantees that it will be implemented. I am not responsible for what people might do with your paintings."
+    }
+  ],
+  "human-terms.copyright.paragraph.3": [
+    {
+      "type": 0,
+      "value": "Things happen that someone might steal your work. That's bad because only you can decide where your work might appear. If that happened, please, contact me on Discord or email copyright@zetter.gallery, providing some proof that you own the work."
+    }
+  ],
+  "human-terms.copyright.title": [
+    {
+      "type": 0,
+      "value": "What about copyright?"
+    }
+  ],
+  "human-terms.end.thank-you": [
+    {
+      "type": 0,
+      "value": "Thank you for reading. Feel free to talk to me if you have any questions."
+    }
+  ],
+  "human-terms.introduction.paragraph.1": [
+    {
+      "type": 0,
+      "value": "First of all, Zetter Gallery is not some kind of legal entity, and created & provided solely by a single person so far. This adds some complications, but we'll talk about that later."
+    }
+  ],
+  "human-terms.introduction.paragraph.2": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery is created with single purpose — let people to create and share their artworks in a wonderful game called Minecraft. Advertising or selling things is not a purpose of this service."
+    }
+  ],
+  "human-terms.introduction.title": [
+    {
+      "type": 0,
+      "value": "Let me explain some details about Zetter Gallery"
+    }
+  ],
+  "human-terms.moderation.paragraph.1": [
+    {
+      "type": 0,
+      "value": "I understand that art means different things for different people. Also, I understand that different people would prefer to see different things. With this in mind, I came to a conclusion: the moderation will be performed, perfectly, by community moderators. Our rules won't be censoring anything specifically, rather creating a 'ratings' for paintings."
+    }
+  ],
+  "human-terms.moderation.paragraph.2": [
+    {
+      "type": 0,
+      "value": "I keep the right for moderators to retract or just deny your painting, if the content is very disruptive. I understand that its vague definition, but hopefully, the paintings will rarely be straight discarded. Instead, according ratings will be applied before approval. Those rating may include things like Gambling, Nudity, etc. — you can see the whole list at your player preferences page. This list is subject to extension, and the defaults will be rather 'family-friendly'. This by no means that this mod is good for kids, any kind of online activity needs parental guidance."
+    }
+  ],
+  "human-terms.moderation.paragraph.3": [
+    {
+      "type": 0,
+      "value": "Moderators can make mistakes and discard or wrongly rate painting. Please be understanding that it's just people who put their free time for everyone's good. Be patient and talk to us if that happened."
+    }
+  ],
+  "human-terms.moderation.paragraph.4": [
+    {
+      "type": 0,
+      "value": "I strictly recommend this mod and service only for legal age players. Registering here without reaching legal age should not be possible by Microsoft oAuth rules and breaks ToS."
+    }
+  ],
+  "human-terms.moderation.title": [
+    {
+      "type": 0,
+      "value": "What about moderation?"
+    }
+  ],
+  "human-terms.title": [
+    {
+      "type": 0,
+      "value": "Greetings,"
+    }
+  ],
+  "human-terms.title.callout.check-english": [
+    {
+      "type": 0,
+      "value": "These statements are not legally binding. This page provides short explanation of the terms of use and some details about intended usage of this service."
+    }
+  ],
+  "index.page.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery is a service that allows you to share your Zetter Minecraft paintings with the world"
+    }
+  ],
+  "index.page.title": [
+    {
+      "type": 0,
+      "value": "Home for Minecraft paintings"
+    }
+  ],
   "microsoft-auth-check-advice": [
     {
       "type": 0,
       "value": "Good you asked! Just check that server described below is the one that you're playing on right now."
     }
   ],
-  "microsoft-auth-disclaimer-why": [
+  "navbar.about": [
     {
       "type": 0,
-      "value": "This allows server to purchase and submit paintings on your behalf when you trading with painting merchant."
+      "value": "About"
+    }
+  ],
+  "navbar.feed": [
+    {
+      "type": 0,
+      "value": "Feed"
+    }
+  ],
+  "navbar.home": [
+    {
+      "type": 0,
+      "value": "Home"
+    }
+  ],
+  "navbar.profile": [
+    {
+      "type": 0,
+      "value": "Profile"
+    }
+  ],
+  "navbar.profile.avatar": [
+    {
+      "type": 0,
+      "value": "Your profile avatar"
+    }
+  ],
+  "navbar.profile.avatar.default": [
+    {
+      "type": 0,
+      "value": "Anonymous avatar"
+    }
+  ],
+  "navbar.search": [
+    {
+      "type": 0,
+      "value": "Search"
     }
   ],
   "paintings.layered-navigation.filter.resolution": [
@@ -107,6 +603,146 @@
       "value": "Top"
     }
   ],
+  "paintings.page.description": [
+    {
+      "type": 0,
+      "value": "Check out painting called "
+    },
+    {
+      "type": 1,
+      "value": "paintingName"
+    },
+    {
+      "type": 0,
+      "value": " created by "
+    },
+    {
+      "type": 1,
+      "value": "username"
+    },
+    {
+      "type": 0,
+      "value": "'s at Zetter Gallery"
+    }
+  ],
+  "paintings.page.title": [
+    {
+      "type": 1,
+      "value": "paintingName"
+    },
+    {
+      "type": 0,
+      "value": " by "
+    },
+    {
+      "type": 1,
+      "value": "username"
+    }
+  ],
+  "player.preferences.button.reset": [
+    {
+      "type": 0,
+      "value": "Reset"
+    }
+  ],
+  "player.preferences.button.save": [
+    {
+      "type": 0,
+      "value": "Save"
+    }
+  ],
+  "player.preferences.button.save-and-continue": [
+    {
+      "type": 0,
+      "value": "Save and continue"
+    }
+  ],
+  "player.preferences.callout.alpha-warning": [
+    {
+      "type": 0,
+      "value": "This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
+    }
+  ],
+  "player.preferences.public.profile": [
+    {
+      "type": 0,
+      "value": "Profile"
+    }
+  ],
+  "player.preferences.public.toggle.description": [
+    {
+      "type": 0,
+      "value": "Is you disable this, your nickname and avatar still will be visible, but players won't be able to view paintings and badges in your profile"
+    }
+  ],
+  "player.preferences.public.toggle.title": [
+    {
+      "type": 0,
+      "value": "Make your profile visible to other players"
+    }
+  ],
+  "player.preferences.ratings.description": [
+    {
+      "type": 0,
+      "value": "This section allows you to control what kind of paintings you may see in your feed"
+    }
+  ],
+  "player.preferences.ratings.title": [
+    {
+      "type": 0,
+      "value": "Ratings"
+    }
+  ],
+  "player.preferences.title": [
+    {
+      "type": 0,
+      "value": "Preferences"
+    }
+  ],
+  "players.me.logout.description": [
+    {
+      "type": 0,
+      "value": "We will redirect you back to home page soon"
+    }
+  ],
+  "players.me.logout.page.description": [
+    {
+      "type": 0,
+      "value": "Log out from Zetter gallery"
+    }
+  ],
+  "players.me.logout.page.title": [
+    {
+      "type": 0,
+      "value": "Log Out"
+    }
+  ],
+  "players.me.logout.title": [
+    {
+      "type": 0,
+      "value": "Successfully logged out from Zetter Gallery"
+    }
+  ],
+  "players.page.description": [
+    {
+      "type": 1,
+      "value": "username"
+    },
+    {
+      "type": 0,
+      "value": "'s profile on Zetter Gallery"
+    }
+  ],
+  "players.page.title": [
+    {
+      "type": 1,
+      "value": "username"
+    },
+    {
+      "type": 0,
+      "value": "'s Profile"
+    }
+  ],
   "profile.count.earnings": [
     {
       "type": 0,
@@ -125,10 +761,214 @@
       "value": "Paintings:"
     }
   ],
-  "widgets.under-construction.description.dm": [
+  "profile.link.logout": [
     {
       "type": 0,
-      "value": "If you know how to manage safe and inviting Discord communities, please DM me at dantaeusb#9879"
+      "value": "Log Out"
+    }
+  ],
+  "profile.link.preferences": [
+    {
+      "type": 0,
+      "value": "Preferences"
+    }
+  ],
+  "terms-for-humans.page.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery frequently asked questions"
+    }
+  ],
+  "terms-for-humans.page.title": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "terms.acceptance.paragraph": [
+    {
+      "type": 0,
+      "value": "BY USING THE SERVICES, YOU ARE AGREEING, ON BEHALF OF YOURSELF AND THOSE YOU REPRESENT, TO COMPLY WITH AND BE LEGALLY BOUND BY THESE TERMS AS WELL AS OUR PRIVACY POLICY AND ALL APPLICABLE LAWS. IF YOU, FOR YOURSELF OR ON BEHALF OF THOSE YOU REPRESENT, DO NOT AGREE TO ANY PROVISION OF THESE TERMS, YOU MUST, FOR YOURSELF AND ON BEHALF ANY SUCH PERSON(S), DISCONTINUE THE REGISTRATION PROCESS, DISCONTINUE YOUR USE OF THE SERVICES, AND, IF YOU ARE ALREADY REGISTERED, CANCEL YOUR ACCOUNT."
+    }
+  ],
+  "terms.acceptance.title": [
+    {
+      "type": 0,
+      "value": "Acceptance of Terms"
+    }
+  ],
+  "terms.description.paragraph": [
+    {
+      "type": 0,
+      "value": "Dmitry Burlakov (“Zetter Gallery“, “we”, “us” or “our”) provides a platform via its website, Application Programming Interface and an independent, user-made modification to the Mojang video game Minecraft, to a community of registered users (“users” or “you”) to engage in a variety of activities, including to upload and display digital paintings (“Visual Content”). The following are the terms of use (“Terms”) for using the Site and the Services."
+    }
+  ],
+  "terms.description.title": [
+    {
+      "type": 0,
+      "value": "Description of Service"
+    }
+  ],
+  "terms.page.description": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery terms of service"
+    }
+  ],
+  "terms.page.title": [
+    {
+      "type": 0,
+      "value": "Terms of Service"
+    }
+  ],
+  "terms.title": [
+    {
+      "type": 0,
+      "value": "Terms of Service"
+    }
+  ],
+  "terms.title.callout.check-english": [
+    {
+      "type": 0,
+      "value": "Translations of the terms are provided by community and are not legally binding. Please refer to english version of this page if you have any questions."
+    }
+  ],
+  "terms.zetter.copyright-complaints.dmca": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery reserves the right to remove any Content that allegedly infringes another person’s copyright. In appropriate circumstances, Zetter Gallery will terminate the accounts of users who infringe copyright. Notices to Zetter Gallery regarding any alleged copyright infringement should be directed to Zetter Gallery via email at: copyright@zetter.gallery."
+    }
+  ],
+  "terms.zetter.copyright-complaints.title": [
+    {
+      "type": 0,
+      "value": "Copyright Complaints"
+    }
+  ],
+  "terms.zetter.liability.title": [
+    {
+      "type": 0,
+      "value": "Limitation of Liability"
+    }
+  ],
+  "terms.zetter.licensing.paragraph": [
+    {
+      "type": 0,
+      "value": "By submitting Visual Content to Zetter Gallery you grant a non-exclusive, transferable, worldwide license to use, sublicense, distribute, reproduce, modify, adapt, publicly perform and publicly display such Visual Content in connection with the Services. This license will exist for the period during which the Visual Content is posted on the Site and will automatically terminate upon the removal of the Visual Content from the Site. Zetter Gallery is not responsible for the copies that were created and distributed during period that Visual Content was available on service. Zetter Gallery does not provide way to retract copies of your Visual Content after it's distribution. Zetter Gallery does not claim ownership of your Visual Content."
+    }
+  ],
+  "terms.zetter.licensing.title": [
+    {
+      "type": 0,
+      "value": "Licensing"
+    }
+  ],
+  "terms.zetter.modification.interruptions": [
+    {
+      "type": 0,
+      "value": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+    }
+  ],
+  "terms.zetter.modification.replace": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery reserves the right, at its sole discretion, to modify or replace the Terms at any time. What constitutes a material change will be determined at Zetter Gallery sole discretion. You are responsible for reviewing and becoming familiar with any such modifications. Using any Service or viewing any Visual Content constitutes your acceptance of the Terms as modified."
+    }
+  ],
+  "terms.zetter.modification.title": [
+    {
+      "type": 0,
+      "value": "Modification of Terms"
+    }
+  ],
+  "terms.zetter.registration.paragraph": [
+    {
+      "type": 0,
+      "value": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+    }
+  ],
+  "terms.zetter.registration.title": [
+    {
+      "type": 0,
+      "value": "Registration"
+    }
+  ],
+  "terms.zetter.release.release-statement.1": [
+    {
+      "type": 0,
+      "value": "You hereby expressly and irrevocably release and forever discharge Zetter Gallery from any and all actions, causes of action, suits, proceedings, liability, debts, judgments, claims, and demands whatsoever in law or equity which you ever had, now have, or hereafter can, shall or may have, for or by reason of, or arising directly or indirectly out of your use of the Site and the Services."
+    }
+  ],
+  "terms.zetter.release.release-statement.2": [
+    {
+      "type": 0,
+      "value": "You hereby agree to indemnify and hold harmless Zetter Gallery from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary, and indirect damages), and reasonable attorneys' fees, resulting from or arising out of (i) a breach of these Terms, (ii) Content posted on the Site, by you or any person using your account or Microsoft credentials, (iv) the licensing, distribution, or use of your Visual Content, or (v) any violation of any rights of a third party. Zetter Gallery reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you."
+    }
+  ],
+  "terms.zetter.release.title": [
+    {
+      "type": 0,
+      "value": "Release and Indemnity"
+    }
+  ],
+  "terms.zetter.user-conduct.paragraph": [
+    {
+      "type": 0,
+      "value": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+    }
+  ],
+  "terms.zetter.user-conduct.title": [
+    {
+      "type": 0,
+      "value": "User Conduct"
+    }
+  ],
+  "terms.zetter.warranty.paragraph": [
+    {
+      "type": 0,
+      "value": "YOUR USE OF THE SITE AND THE SERVICES IS AT YOUR OWN RISK. THE SITE AND THE SERVICES ARE PROVIDED ON AN “AS IS, AS AVAILABLE” BASIS. ZETTER GALLERY EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING THE WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. ZETTER GALLERY DISCLAIMS ALL RESPONSIBILITY FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM, ARISING OUT OF OR IN ANY WAY RELATED TO (A) ANY ERRORS IN OR OMISSIONS FROM THIS SITE AND THE SERVICES, INCLUDING, BUT NOT LIMITED TO, TECHNICAL INACCURACIES AND TYPOGRAPHICAL ERRORS, (B) THIRD PARTY COMMUNICATIONS, (C) ANY THIRD PARTY WEBSITES OR CONTENT DIRECTLY OR INDIRECTLY ACCESSED THROUGH LINKS IN THE SITE, INCLUDING BUT NOT LIMITED TO ANY ERRORS OR OMISSIONS, (D) THE UNAVAILABILITY OF ALL OR ANY PART OF THE SITE OR THE SERVICES, (E) YOUR USE OF THE SITE OR THE SERVICES, OR (F) YOUR USE OF ANY EQUIPMENT OR SOFTWARE IN CONNECTION WITH THE SITE OR THE SERVICES."
+    }
+  ],
+  "terms.zetter.warranty.paragraph.1": [
+    {
+      "type": 0,
+      "value": "EXCEPT AS OTHERWISE PROVIDED BY LAW, NEITHER ZETTER GALLERY NOR ANY OF ITS AFFILIATES, PARENTS, SUBSIDIARIES, AUTHORIZED DISTRIBUTORS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, CLIENTS, OR AGENTS SHALL BE LIABLE FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM YOUR USE OF THE SITE, ANY FACTS OR OPINIONS APPEARING THEREON, OR THE SERVICES. ZETTER GALLERY SHALL NOT BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ATTORNEYS’ FEES) IN ANY WAY DUE TO, RESULTING FROM, OR ARISING IN CONNECTION WITH THE USE OF OR INABILITY TO USE THE SITE OR SERVICES. TO THE EXTENT THE FOREGOING LIMITATION OF LIABILITY IS PROHIBITED OR FAILS OF ITS ESSENTIAL PURPOSE, ZETTER GALLERY’S SOLE OBLIGATION TO YOU FOR DAMAGES SHALL BE LIMITED TO (A) US$100.00 IF THE CLAIM IS UNRELATED TO THE LICENSING OF VISUAL CONTENT; OR (B) THE TOTAL FEES COLLECTED BY ZETTER GALLERY FOR THE VISUAL CONTENT THAT IS THE SUBJECT MATTER OF THE CLAIM IF THE CLAIM IS RELATED TO THE LICENSING OF VISUAL CONTENT, WITH THE UNDERSTANDING THAT ZETTER GALLERY IS NOT RESPONSIBLE FOR THE MISUSE OF VISUAL CONTENT BY DISTRIBUTORS OR ANY OTHER THIRD PARTY UNDER ANY CIRCUMSTANCES."
+    }
+  ],
+  "terms.zetter.warranty.paragraph.2": [
+    {
+      "type": 0,
+      "value": "YOU AND ZETTER GALLERY AGREE THAT ANY PROCEEDINGS TO RESOLVE OR LITIGATE ANY DISPUTE ARISING HEREUNDER WILL BE CONDUCTED SOLELY ON AN INDIVIDUAL BASIS, AND THAT YOU WILL NOT SEEK TO HAVE ANY DISPUTE HEARD AS A CLASS ACTION, A REPRESENTATIVE ACTION, A COLLECTIVE ACTION, A PRIVATE ATTORNEY-GENERAL ACTION, OR IN ANY PROCEEDING IN WHICH YOU ACT OR PROPOSE TO ACT IN A REPRESENTATIVE CAPACITY. YOU FURTHER AGREE THAT NO PROCEEDING WILL BE JOINED, CONSOLIDATED, OR COMBINED WITH ANOTHER PROCEEDING WITHOUT THE PRIOR WRITTEN CONSENT OF ZETTER GALLERY AND ALL PARTIES TO ANY SUCH PROCEEDING."
+    }
+  ],
+  "terms.zetter.warranty.title": [
+    {
+      "type": 0,
+      "value": "Warranty Disclaimer"
+    }
+  ],
+  "widgets.under-construction.description.discord-button": [
+    {
+      "type": 0,
+      "value": "Join our Discord server"
+    }
+  ],
+  "widgets.under-construction.description.discord-button.join": [
+    {
+      "type": 0,
+      "value": "Join our"
+    }
+  ],
+  "widgets.under-construction.description.discord-button.server": [
+    {
+      "type": 0,
+      "value": "Discord server"
+    }
+  ],
+  "widgets.under-construction.description.updates": [
+    {
+      "type": 0,
+      "value": "If you'd like to know about updates:"
     }
   ],
   "widgets.under-construction.description.why": [
@@ -137,10 +977,196 @@
       "value": "We are building home for Zetter paintings"
     }
   ],
-  "widgets.under-construction.title": [
+  "wiki.zetter-gallery.about-feed.description": [
     {
       "type": 0,
-      "value": "Under Construction"
+      "value": "Feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
+    }
+  ],
+  "wiki.zetter-gallery.about-feed.title": [
+    {
+      "type": 0,
+      "value": "About feed"
+    }
+  ],
+  "wiki.zetter-gallery.login.description.mc-auth": [
+    {
+      "type": 0,
+      "value": "After that, if you logged into your account you will be prompted to allow the Minecraft server you opened link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you."
+    }
+  ],
+  "wiki.zetter-gallery.login.description.ms-auth": [
+    {
+      "type": 0,
+      "value": "If you haven't logged in on this site, you will be asked to log in with your Microsoft account. Please check carefully that the URI in your address bar is zetter.gallery and read the message on that page. This will help you to secure account. Do not enter your Microsoft password outside of Microsoft websites."
+    }
+  ],
+  "wiki.zetter-gallery.login.description.screen": [
+    {
+      "type": 0,
+      "value": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in."
+    }
+  ],
+  "wiki.zetter-gallery.login.description.zg-auth": [
+    {
+      "type": 0,
+      "value": "To log in, you would need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site."
+    }
+  ],
+  "wiki.zetter-gallery.login.description.zg-requirements": [
+    {
+      "type": 0,
+      "value": "To log in, you would Minecraft to allow you to open links. You can check out if you are allowed to open links in Main Menu -> Preferences. You would also need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site."
+    }
+  ],
+  "wiki.zetter-gallery.login.title": [
+    {
+      "type": 0,
+      "value": "Logging in"
+    }
+  ],
+  "wiki.zetter-gallery.page": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery Wiki"
+    }
+  ],
+  "wiki.zetter-gallery.page.description": [
+    {
+      "type": 0,
+      "value": "Get information about Zetter Gallery Mod for Minecraft"
+    }
+  ],
+  "wiki.zetter-gallery.page.title": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery Wiki"
+    }
+  ],
+  "wiki.zetter-gallery.painting-merchant.description.1": [
+    {
+      "type": 0,
+      "value": "To start trading paintings, you will need to find a villager and change their occupation. In order for villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed."
+    }
+  ],
+  "wiki.zetter-gallery.painting-merchant.description.2": [
+    {
+      "type": 0,
+      "value": "Check out the Minecraft wiki to see how villager occupation works."
+    }
+  ],
+  "wiki.zetter-gallery.painting-merchant.section": [
+    {
+      "type": 0,
+      "value": "Painting Merchant"
+    }
+  ],
+  "wiki.zetter-gallery.painting-merchant.title": [
+    {
+      "type": 0,
+      "value": "Painting Merchant"
+    }
+  ],
+  "wiki.zetter-gallery.title": [
+    {
+      "type": 0,
+      "value": "Zetter Gallery Wiki Home"
+    }
+  ],
+  "wiki.zetter-gallery.trading-interface.description.pre": [
+    {
+      "type": 0,
+      "value": "After logging in and loading of current painting feed you will see unusual trading interface."
+    }
+  ],
+  "wiki.zetter-gallery.trading-interface.title": [
+    {
+      "type": 0,
+      "value": "Trading paintings"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.checkout-dd": [
+    {
+      "type": 0,
+      "value": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will recieve your painting item or emeralds"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.checkout-dt": [
+    {
+      "type": 0,
+      "value": "5) Checkout button"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.pagination-buttons-dd": [
+    {
+      "type": 0,
+      "value": "Click on this buttons to switch painting in current feed."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.pagination-buttons-dt": [
+    {
+      "type": 0,
+      "value": "3) Previous & next buttons"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.pagination-dd": [
+    {
+      "type": 0,
+      "value": "Shouws amount of painting in current feed and current position."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.pagination-dt": [
+    {
+      "type": 0,
+      "value": "1) Painting feed pagination"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.preview-dd": [
+    {
+      "type": 0,
+      "value": "Shows currently selected painting."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.preview-dt": [
+    {
+      "type": 0,
+      "value": "2) Preview"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.result-dd": [
+    {
+      "type": 0,
+      "value": "Take your painting or emeralds from this slot after checkout."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.result-dt": [
+    {
+      "type": 0,
+      "value": "6) Result slot"
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.1": [
+    {
+      "type": 0,
+      "value": "This slot is used to pay for the current painting with emeralds, or to sell paintings."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.2": [
+    {
+      "type": 0,
+      "value": "Placing painting it this slot will switch you to sell mode."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.sell-slot-dd.3": [
+    {
+      "type": 0,
+      "value": "In sell mode, you can submit your painting and receive emeralds for it."
+    }
+  ],
+  "wiki.zetter-gallery.trading.interface.sell-slot-dt": [
+    {
+      "type": 0,
+      "value": "4) Selling slot"
     }
   ],
   "wiki.zetter.combining.interface.grid-dd": [
@@ -230,7 +1256,7 @@
   "wiki.zetter.framing.section": [
     {
       "type": 0,
-      "value": "Creating a frame"
+      "value": "Framing"
     }
   ],
   "wiki.zetter.framing.text-finish": [
@@ -245,10 +1271,22 @@
       "value": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall."
     }
   ],
-  "wiki.zetter.page": [
+  "wiki.zetter.framing.title": [
     {
       "type": 0,
-      "value": "Home"
+      "value": "Creating a frame"
+    }
+  ],
+  "wiki.zetter.page.description": [
+    {
+      "type": 0,
+      "value": "Get information about Zetter Mod for Minecraft"
+    }
+  ],
+  "wiki.zetter.page.title": [
+    {
+      "type": 0,
+      "value": "Zetter Wiki"
     }
   ],
   "wiki.zetter.painting.interface.finish-dd": [
@@ -467,10 +1505,16 @@
       "value": "Iron Frame"
     }
   ],
-  "wiki.zetter.recipes.page": [
+  "wiki.zetter.recipes.page.description": [
     {
       "type": 0,
-      "value": "Recipes"
+      "value": "Find recipes for Zetter Mod in Minecraft"
+    }
+  ],
+  "wiki.zetter.recipes.page.title": [
+    {
+      "type": 0,
+      "value": "Zetter Recipes Wiki"
     }
   ],
   "wiki.zetter.recipes.painting": [
@@ -512,7 +1556,7 @@
   "wiki.zetter.recipes.palette": [
     {
       "type": 0,
-      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paints as shown above."
+      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
     }
   ],
   "wiki.zetter.recipes.palette.section": [

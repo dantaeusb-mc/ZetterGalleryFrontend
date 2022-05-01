@@ -11,6 +11,10 @@
   }
 }
 
+/**
+ * For smaller images & descriptions:
+ * image and description side by side
+ */
 .image-description {
   background: colors.color('block');
   border-radius: var(--border-small-radius);
@@ -33,6 +37,36 @@
 
     .description {
       width: 50%;
+    }
+  }
+}
+
+/**
+ * For longer images & descriptions:
+ * image stays on top, two rows of description to fit on screen
+ */
+.image-long-description {
+  background: colors.color('block');
+  border-radius: var(--border-small-radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: [first-half] 1fr [second-half] 1fr;
+  grid-template-rows: [image-row] max-content [description-row] min-content;
+
+  .image {
+    text-align: center;
+  }
+
+  .description-col {
+    padding: 1rem;
+  }
+
+  @include media.desktop {
+    .image {
+      grid-column-start: first-half;
+      grid-column-end: end;
+      padding: 1rem;
+      width: 100%;
     }
   }
 }
