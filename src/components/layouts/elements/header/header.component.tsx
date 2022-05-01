@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './header.module.scss';
-import Logo from '@assets/logo.svg';
 import LanguageSelector from '@components/layouts/elements/header/language-selector';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
@@ -17,7 +16,7 @@ const Header = (props: HeaderProps): JSX.Element => {
       <Link href="/">
         <a title="Go to homepage">
           <figure className={styles['logo-wrapper']}>
-            <Logo className={styles['logo']} alt={'Zetter Gallery Logo'} />
+            <img src={'/assets/logo.png'} className={styles['logo']} alt={'Zetter Gallery Logo'} />
             <figcaption>Zetter Gallery Logo</figcaption>
           </figure>
         </a>

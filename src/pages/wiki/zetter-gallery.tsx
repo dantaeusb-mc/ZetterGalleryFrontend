@@ -107,10 +107,10 @@ export default function ZetterGalleryWikiHome({
                   />
                 </p>
                 <Image
-                    src="/assets/wiki/trading-login.png"
-                    alt="Painting Merchant Login Screen"
-                    height={293}
-                    width={340}
+                  src="/assets/wiki/trading-login.png"
+                  alt="Painting Merchant Login Screen"
+                  height={293}
+                  width={340}
                 />
                 <p>
                   <FormattedMessage
@@ -317,9 +317,27 @@ export default function ZetterGalleryWikiHome({
                 </h2>
                 <p>
                   <FormattedMessage
-                    id={'wiki.zetter-gallery.about-feed.description'}
+                    id={'wiki.zetter-gallery.about-feed.description.1'}
+                    defaultMessage="Feed is ever updating list of paintings, available for purchase.
+                      With small amount of paintings the feed is not very useful, but it's main goal is to always have 
+                      some interesting paintings for you to choose from."
+                    description="What is feed"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter-gallery.about-feed.description.2'}
                     defaultMessage="Feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
                     description="About feed description"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter-gallery.about-feed.description.3'}
+                    defaultMessage="Also, you can use stars on this website to mark paintings you find interesting.
+                      Those paintings will have higher changes to appear in your personal feed, that is available for
+                      purchase only to you."
+                    description="Personal feed"
                   />
                 </p>
               </section>
