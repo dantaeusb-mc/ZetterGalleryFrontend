@@ -72,8 +72,9 @@ export default function ZetterGalleryWikiHome({
                   <FormattedMessage
                     id={'wiki.zetter-gallery.painting-merchant.description.1'}
                     defaultMessage="To start trading paintings, you will need to find a villager and change their
-                    occupation. In order for villager to become a Painting Merchant, they should have an assigned
-                    bed and Artist Table block nearby this bed."
+                     occupation. In order for a villager to become a Painting Merchant, they should have an assigned
+                     bed and Artist Table block nearby this bed. Check out the Minecraft wiki to see how villager
+                     occupation works."
                     description="What you need to start trading paintings"
                   />
                   <FormattedMessage
@@ -143,8 +144,8 @@ export default function ZetterGalleryWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.login.description.mc-auth'}
-                    defaultMessage="After that, if you logged into your account you will be prompted
-                      to allow the Minecraft server you opened link from to use your Zetter account. Check
+                    defaultMessage="After that, if you logged into your account, you will be prompted
+                      to allow the Minecraft server you opened the link from to use your Zetter account. Check
                       that it's the correct server and press allow if everything seems alright to you."
                     description="Minecraft Server Authorization"
                   />
@@ -169,7 +170,8 @@ export default function ZetterGalleryWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.trading-interface.description.pre'}
-                    defaultMessage="After logging in and loading of current painting feed you will see unusual trading interface."
+                    defaultMessage="After logging in and loading of current painting feed, you will see an unusual
+                    trading interface."
                     description="Trading screen pre"
                   />
                 </p>
@@ -197,7 +199,7 @@ export default function ZetterGalleryWikiHome({
                           id={
                             'wiki.zetter-gallery.trading.interface.pagination-dd'
                           }
-                          defaultMessage="Shouws amount of painting in current feed and current position."
+                          defaultMessage="Shows amount of painting in current feed and current position."
                         />
                       </dd>
                       <dt>
@@ -229,7 +231,7 @@ export default function ZetterGalleryWikiHome({
                           id={
                             'wiki.zetter-gallery.trading.interface.pagination-buttons-dd'
                           }
-                          defaultMessage="Click on this buttons to switch painting in current feed."
+                          defaultMessage="Click on these buttons to switch painting in current feed."
                         />
                       </dd>
                     </dl>
@@ -280,7 +282,7 @@ export default function ZetterGalleryWikiHome({
                             'wiki.zetter-gallery.trading.interface.checkout-dd'
                           }
                           defaultMessage="Click on this button to proceed with painting purchase or sell. Information
-                            about this operation will be sent to Gallery and you will recieve your painting item or emeralds"
+                            about this operation will be sent to Gallery and you will receive your painting item or emeralds"
                         />
                       </dd>
                       <dt>
@@ -319,7 +321,7 @@ export default function ZetterGalleryWikiHome({
                   <FormattedMessage
                     id={'wiki.zetter-gallery.about-feed.description.1'}
                     defaultMessage="Feed is ever updating list of paintings, available for purchase.
-                      With small amount of paintings the feed is not very useful, but it's main goal is to always have 
+                      With small amount of paintings the feed is not very useful, but its main goal is to always have
                       some interesting paintings for you to choose from."
                     description="What is feed"
                   />
@@ -327,7 +329,7 @@ export default function ZetterGalleryWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.about-feed.description.2'}
-                    defaultMessage="Feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
+                    defaultMessage="The feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
                     description="About feed description"
                   />
                 </p>

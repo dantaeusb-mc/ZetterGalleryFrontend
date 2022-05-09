@@ -124,7 +124,10 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.easel'}
-                    defaultMessage="Easel is a starting point for all paintings. In order to start drawing, you would need to place one in the world, put canvas on it by right-clicking with canvas in hand. Simple right click will open easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel."
+                    defaultMessage="Easel is a starting point for all paintings. In order to start drawing, you would
+                    eed to place one in the world, put canvas on it by right-clicking with canvas in hand. A simple right
+                     click will open the easel UI. You would also need to put a palette into special slot. Shift-right
+                     click with empty hand will retract canvas from easel."
                     description="Explain what is painting"
                   />
                 </p>
@@ -236,7 +239,11 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.palette'}
-                    defaultMessage="Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
+                    defaultMessage="Palette is necessary for drawing on a canvas. When placed in easel's UI special slot,
+                     the colors will appear. For your convenience when painting multi-canvas artwork, you can use a
+                     single palette on multiple easels and your colors will be saved with the palette. Once the palette
+                     bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by
+                     combining with paintings as shown above."
                     description="Explain what is painting"
                   />
                 </p>
@@ -277,7 +284,9 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.canvas'}
-                    defaultMessage="Canvases are intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there."
+                    defaultMessage="Canvases are an intermediate home for your artworks. They are visible when put on
+                    easel with right-click, but when it's done it's better to make a painting from canvases by using
+                    artist table. You'll see combined canvases preview there."
                     description="Explain what is painting"
                   />
                 </p>
@@ -318,7 +327,10 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.artist-table'}
-                    defaultMessage="Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and output slot is empty, the shape is incorrect. Supported painting sizes listed below."
+                    defaultMessage="Artist table allows you to make paintings from canvases by combining and signing them.
+                    In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is
+                    correct, painting preview will be updated. If painting preview is not visible and the output slot
+                    is empty, the shape is incorrect. Supported painting sizes listed below."
                     description="Explain what is artist table"
                   />
                 </p>
@@ -385,7 +397,8 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.painting'}
-                    defaultMessage="This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+                    defaultMessage="This is an actual painting. It's created only by signing one or multiple combined
+                    canvases on the Artist Table."
                     description="Explain what is painting"
                   />
                 </p>
@@ -442,7 +455,10 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.wooden-frames'}
-                    defaultMessage="Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting."
+                    defaultMessage="Basic frames are made from wood, sticks, leather and nugget of your choice.
+                    You can use any vanilla type of wood, and you'll get different frames depending on what type
+                    of wood was used. If you use gold nugget in crafting, the frame will additionally have a tiny golden
+                    plate, and the name of the painting will be shown when you right-click the painting."
                     description="Explain what is basic wooden frame"
                   />
                 </p>
@@ -487,7 +503,9 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.framing'}
-                    defaultMessage="In order to put painting in a frame, you need to combine them on crafting grid in any order. You can always get your painting back from the frame. To do that, just put framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in crafting grid."
+                    defaultMessage="In order to put painting in a frame, you need to combine them on the crafting grid in
+                    any order. You can always get your painting back from the frame. To do that, just put the framed painting
+                     on a crafting grid. You can take the frame back, and un-framed painting will appear in the crafting grid."
                     description="Explain how to put painting in a frame"
                   />
                 </p>
@@ -579,7 +597,8 @@ export default function ZetterWikiRecipes({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.golden-frame'}
-                    defaultMessage="This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;"
+                    defaultMessage="This is golden frame, which is much thicker than others and has a luxury look.
+                    It has inlaid emeralds, which are required for crafting. Doesn't have a nameplate by default, see below;"
                     description="Explain what is golden frame"
                   />
                 </p>

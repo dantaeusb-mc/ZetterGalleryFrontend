@@ -101,8 +101,8 @@ export default function ZetterWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.crafting.text'}
-                    defaultMessage="First, we need to craft some things. Some canvases, an easel to put canvas on,
-                             some paints and finally, palette."
+                    defaultMessage="First, we need to craft some things. Some canvases, an easel to put the canvas on,
+                    some paints and finally, a palette."
                     description="Explain first step, what we will be crafting"
                   />
                 </p>
@@ -204,7 +204,7 @@ export default function ZetterWikiHome({
                   <FormattedMessage
                     id={'wiki.zetter.preparing.text-start'}
                     defaultMessage="To start drawing, we would need to prepare our painting workshop.
-                            Place the easel, grab canvas, put palette in your hotbar. You can also place artist table
+                            Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table
                             somewhere nearby - we will need it later."
                     description="Explain what we need to start drawing"
                   />
@@ -360,7 +360,7 @@ export default function ZetterWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.combining.text-intro'}
-                    defaultMessage="When you finished with one or multiple parts of your artwork, it's time to
+                    defaultMessage="When you are finished with one or multiple parts of your artwork, it's time to
                             combine canvases and put your author signature. Shift+Right-click on easel will take canvas
                             back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
                     description="Intro before combining interface explanation"
@@ -452,7 +452,7 @@ export default function ZetterWikiHome({
                     id={'wiki.zetter.framing.text-intro'}
                     defaultMessage="After signing and naming your painting, it's time to place it somewhere
                             in your fancy house finally! In order to do that, we would need to create a special frame
-                            and put the painting into this frame, then place it on wall."
+                            and put the painting into this frame, then place it on the wall."
                     description="Intro before showing frame recipes"
                   />
                 </p>

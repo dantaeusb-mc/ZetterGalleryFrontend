@@ -92,7 +92,7 @@
   "about.zetter.description": [
     {
       "type": 0,
-      "value": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for your virtual home."
+      "value": "Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall. This should add some cozy feeling for your virtual home."
     }
   ],
   "about.zetter.gallery.description": [
@@ -977,10 +977,28 @@
       "value": "We are building home for Zetter paintings"
     }
   ],
-  "wiki.zetter-gallery.about-feed.description": [
+  "wiki.zetter-gallery.about-feed.description.1": [
     {
       "type": 0,
-      "value": "Feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
+      "value": "Feed is ever updating list of paintings, available for purchase. With small amount of paintings the feed is not very useful, but its main goal is to always have some interesting paintings for you to choose from."
+    }
+  ],
+  "wiki.zetter-gallery.about-feed.description.2": [
+    {
+      "type": 0,
+      "value": "The feed is updated every 15 minutes and populated with trending, top and new paintings, if present."
+    }
+  ],
+  "wiki.zetter-gallery.about-feed.description.3": [
+    {
+      "type": 0,
+      "value": "Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher changes to appear in your personal feed, that is available for purchase only to you."
+    }
+  ],
+  "wiki.zetter-gallery.about-feed.section": [
+    {
+      "type": 0,
+      "value": "About feed"
     }
   ],
   "wiki.zetter-gallery.about-feed.title": [
@@ -992,7 +1010,7 @@
   "wiki.zetter-gallery.login.description.mc-auth": [
     {
       "type": 0,
-      "value": "After that, if you logged into your account you will be prompted to allow the Minecraft server you opened link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you."
+      "value": "After that, if you logged into your account, you will be prompted to allow the Minecraft server you opened the link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you."
     }
   ],
   "wiki.zetter-gallery.login.description.ms-auth": [
@@ -1016,19 +1034,19 @@
   "wiki.zetter-gallery.login.description.zg-requirements": [
     {
       "type": 0,
-      "value": "To log in, you would Minecraft to allow you to open links. You can check out if you are allowed to open links in Main Menu -> Preferences. You would also need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site."
+      "value": "To log in, you would Minecraft to allow you to open links. It is enabled by default, but if you have problems and nothing opens, you can check out if you are allowed to open links in Main Menu -> Preferences."
+    }
+  ],
+  "wiki.zetter-gallery.login.section": [
+    {
+      "type": 0,
+      "value": "Logging in"
     }
   ],
   "wiki.zetter-gallery.login.title": [
     {
       "type": 0,
       "value": "Logging in"
-    }
-  ],
-  "wiki.zetter-gallery.page": [
-    {
-      "type": 0,
-      "value": "Zetter Gallery Wiki"
     }
   ],
   "wiki.zetter-gallery.page.description": [
@@ -1046,7 +1064,7 @@
   "wiki.zetter-gallery.painting-merchant.description.1": [
     {
       "type": 0,
-      "value": "To start trading paintings, you will need to find a villager and change their occupation. In order for villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed."
+      "value": "To start trading paintings, you will need to find a villager and change their occupation. In order for a villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed. Check out the Minecraft wiki to see how villager occupation works."
     }
   ],
   "wiki.zetter-gallery.painting-merchant.description.2": [
@@ -1076,7 +1094,13 @@
   "wiki.zetter-gallery.trading-interface.description.pre": [
     {
       "type": 0,
-      "value": "After logging in and loading of current painting feed you will see unusual trading interface."
+      "value": "After logging in and loading of current painting feed, you will see an unusual trading interface."
+    }
+  ],
+  "wiki.zetter-gallery.trading-interface.section": [
+    {
+      "type": 0,
+      "value": "Trading"
     }
   ],
   "wiki.zetter-gallery.trading-interface.title": [
@@ -1088,7 +1112,7 @@
   "wiki.zetter-gallery.trading.interface.checkout-dd": [
     {
       "type": 0,
-      "value": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will recieve your painting item or emeralds"
+      "value": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will receive your painting item or emeralds"
     }
   ],
   "wiki.zetter-gallery.trading.interface.checkout-dt": [
@@ -1100,7 +1124,7 @@
   "wiki.zetter-gallery.trading.interface.pagination-buttons-dd": [
     {
       "type": 0,
-      "value": "Click on this buttons to switch painting in current feed."
+      "value": "Click on these buttons to switch painting in current feed."
     }
   ],
   "wiki.zetter-gallery.trading.interface.pagination-buttons-dt": [
@@ -1112,7 +1136,7 @@
   "wiki.zetter-gallery.trading.interface.pagination-dd": [
     {
       "type": 0,
-      "value": "Shouws amount of painting in current feed and current position."
+      "value": "Shows amount of painting in current feed and current position."
     }
   ],
   "wiki.zetter-gallery.trading.interface.pagination-dt": [
@@ -1226,7 +1250,7 @@
   "wiki.zetter.combining.text-intro": [
     {
       "type": 0,
-      "value": "When you finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
+      "value": "When you are finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
     }
   ],
   "wiki.zetter.combining.title": [
@@ -1244,7 +1268,7 @@
   "wiki.zetter.crafting.text": [
     {
       "type": 0,
-      "value": "First, we need to craft some things. Some canvases, an easel to put canvas on, some paints and finally, palette."
+      "value": "First, we need to craft some things. Some canvases, an easel to put the canvas on, some paints and finally, a palette."
     }
   ],
   "wiki.zetter.crafting.title": [
@@ -1268,7 +1292,7 @@
   "wiki.zetter.framing.text-intro": [
     {
       "type": 0,
-      "value": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall."
+      "value": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on the wall."
     }
   ],
   "wiki.zetter.framing.title": [
@@ -1394,7 +1418,7 @@
   "wiki.zetter.preparing.text-start": [
     {
       "type": 0,
-      "value": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place artist table somewhere nearby - we will need it later."
+      "value": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table somewhere nearby - we will need it later."
     }
   ],
   "wiki.zetter.preparing.text-workshop-title": [
@@ -1412,7 +1436,7 @@
   "wiki.zetter.recipes.artist-table": [
     {
       "type": 0,
-      "value": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and output slot is empty, the shape is incorrect. Supported painting sizes listed below."
+      "value": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and the output slot is empty, the shape is incorrect. Supported painting sizes listed below."
     }
   ],
   "wiki.zetter.recipes.artist-table.section": [
@@ -1430,7 +1454,7 @@
   "wiki.zetter.recipes.canvas": [
     {
       "type": 0,
-      "value": "Canvases are intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there."
+      "value": "Canvases are an intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there."
     }
   ],
   "wiki.zetter.recipes.canvas.section": [
@@ -1448,7 +1472,7 @@
   "wiki.zetter.recipes.easel": [
     {
       "type": 0,
-      "value": "Easel is a starting point for all paintings. In order to start drawing, you would need to place one in the world, put canvas on it by right-clicking with canvas in hand. Simple right click will open easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel."
+      "value": "Easel is a starting point for all paintings. In order to start drawing, you would eed to place one in the world, put canvas on it by right-clicking with canvas in hand. A simple right click will open the easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel."
     }
   ],
   "wiki.zetter.recipes.easel.section": [
@@ -1472,7 +1496,7 @@
   "wiki.zetter.recipes.framing": [
     {
       "type": 0,
-      "value": "In order to put painting in a frame, you need to combine them on crafting grid in any order. You can always get your painting back from the frame. To do that, just put framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in crafting grid."
+      "value": "In order to put painting in a frame, you need to combine them on the crafting grid in any order. You can always get your painting back from the frame. To do that, just put the framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in the crafting grid."
     }
   ],
   "wiki.zetter.recipes.framing.title": [
@@ -1490,7 +1514,7 @@
   "wiki.zetter.recipes.golden-frame": [
     {
       "type": 0,
-      "value": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;"
+      "value": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds, which are required for crafting. Doesn't have a nameplate by default, see below;"
     }
   ],
   "wiki.zetter.recipes.iron-frame": [
@@ -1520,7 +1544,7 @@
   "wiki.zetter.recipes.painting": [
     {
       "type": 0,
-      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table."
+      "value": "This is an actual painting. It's created only by signing one or multiple combined canvases on the Artist Table."
     }
   ],
   "wiki.zetter.recipes.painting.section": [
@@ -1556,7 +1580,7 @@
   "wiki.zetter.recipes.palette": [
     {
       "type": 0,
-      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
+      "value": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork, you can use a single palette on multiple easels and your colors will be saved with the palette. Once the palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above."
     }
   ],
   "wiki.zetter.recipes.palette.section": [
@@ -1592,7 +1616,7 @@
   "wiki.zetter.recipes.wooden-frames": [
     {
       "type": 0,
-      "value": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting."
+      "value": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, the frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting."
     }
   ],
   "wiki.zetter.recipes.wooden-frames.title": [
@@ -1605,6 +1629,24 @@
     {
       "type": 0,
       "value": "Zetter Wiki Home"
+    }
+  ],
+  "wiki.zetter.page": [
+    {
+      "type": 0,
+      "value": "Wiki Home"
+    }
+  ],
+  "wiki.zetter.recipes.page": [
+    {
+      "type": 0,
+      "value": "Recipes"
+    }
+  ],
+  "wiki.zetter-gallery.page": [
+    {
+      "type": 0,
+      "value": "Gallery Wiki Home"
     }
   ]
 }

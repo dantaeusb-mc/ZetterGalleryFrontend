@@ -48,7 +48,7 @@
     "defaultMessage": "Zetter Wiki"
   },
   "about.zetter.description": {
-    "defaultMessage": "Zetter is Minecraft mod for creating paintings in minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on wall. This should add some cozy feeling for your virtual home.",
+    "defaultMessage": "Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall. This should add some cozy feeling for your virtual home.",
     "description": "Zetter Description"
   },
   "about.zetter.gallery.description": {
@@ -515,19 +515,26 @@
   "widgets.under-construction.description.why": {
     "defaultMessage": "We are building home for Zetter paintings"
   },
-  "wiki.zetter-gallery.page": {
-    "defaultMessage": "Zetter Gallery Wiki",
-    "description": "Zetter Gallery Wiki page"
+  "wiki.zetter-gallery.about-feed.description.1": {
+    "defaultMessage": "Feed is ever updating list of paintings, available for purchase. With small amount of paintings the feed is not very useful, but its main goal is to always have some interesting paintings for you to choose from.",
+    "description": "What is feed"
   },
-  "wiki.zetter-gallery.about-feed.description": {
-    "defaultMessage": "Feed is updated every 15 minutes and populated with trending, top and new paintings, if present.",
+  "wiki.zetter-gallery.about-feed.description.2": {
+    "defaultMessage": "The feed is updated every 15 minutes and populated with trending, top and new paintings, if present.",
     "description": "About feed description"
+  },
+  "wiki.zetter-gallery.about-feed.description.3": {
+    "defaultMessage": "Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher changes to appear in your personal feed, that is available for purchase only to you.",
+    "description": "Personal feed"
+  },
+  "wiki.zetter-gallery.about-feed.section": {
+    "defaultMessage": "About feed"
   },
   "wiki.zetter-gallery.about-feed.title": {
     "defaultMessage": "About feed"
   },
   "wiki.zetter-gallery.login.description.mc-auth": {
-    "defaultMessage": "After that, if you logged into your account you will be prompted to allow the Minecraft server you opened link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you.",
+    "defaultMessage": "After that, if you logged into your account, you will be prompted to allow the Minecraft server you opened the link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you.",
     "description": "Minecraft Server Authorization"
   },
   "wiki.zetter-gallery.login.description.ms-auth": {
@@ -543,8 +550,11 @@
     "description": "Zetter Gallery Authorization"
   },
   "wiki.zetter-gallery.login.description.zg-requirements": {
-    "defaultMessage": "To log in, you would Minecraft to allow you to open links. You can check out if you are allowed to open links in Main Menu -> Preferences. You would also need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site.",
+    "defaultMessage": "To log in, you would Minecraft to allow you to open links. It is enabled by default, but if you have problems and nothing opens, you can check out if you are allowed to open links in Main Menu -> Preferences.",
     "description": "Login requirements"
+  },
+  "wiki.zetter-gallery.login.section": {
+    "defaultMessage": "Logging in"
   },
   "wiki.zetter-gallery.login.title": {
     "defaultMessage": "Logging in"
@@ -558,7 +568,7 @@
     "description": "Zetter Gallery Wiki page title"
   },
   "wiki.zetter-gallery.painting-merchant.description.1": {
-    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed.",
+    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for a villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed. Check out the Minecraft wiki to see how villager occupation works.",
     "description": "What you need to start trading paintings"
   },
   "wiki.zetter-gallery.painting-merchant.description.2": {
@@ -576,26 +586,29 @@
     "description": "Title for Zetter Gallery Wiki Home Page"
   },
   "wiki.zetter-gallery.trading-interface.description.pre": {
-    "defaultMessage": "After logging in and loading of current painting feed you will see unusual trading interface.",
+    "defaultMessage": "After logging in and loading of current painting feed, you will see an unusual trading interface.",
     "description": "Trading screen pre"
+  },
+  "wiki.zetter-gallery.trading-interface.section": {
+    "defaultMessage": "Trading"
   },
   "wiki.zetter-gallery.trading-interface.title": {
     "defaultMessage": "Trading paintings"
   },
   "wiki.zetter-gallery.trading.interface.checkout-dd": {
-    "defaultMessage": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will recieve your painting item or emeralds"
+    "defaultMessage": "Click on this button to proceed with painting purchase or sell. Information about this operation will be sent to Gallery and you will receive your painting item or emeralds"
   },
   "wiki.zetter-gallery.trading.interface.checkout-dt": {
     "defaultMessage": "5) Checkout button"
   },
   "wiki.zetter-gallery.trading.interface.pagination-buttons-dd": {
-    "defaultMessage": "Click on this buttons to switch painting in current feed."
+    "defaultMessage": "Click on these buttons to switch painting in current feed."
   },
   "wiki.zetter-gallery.trading.interface.pagination-buttons-dt": {
     "defaultMessage": "3) Previous & next buttons"
   },
   "wiki.zetter-gallery.trading.interface.pagination-dd": {
-    "defaultMessage": "Shouws amount of painting in current feed and current position."
+    "defaultMessage": "Shows amount of painting in current feed and current position."
   },
   "wiki.zetter-gallery.trading.interface.pagination-dt": {
     "defaultMessage": "1) Painting feed pagination"
@@ -652,7 +665,7 @@
     "defaultMessage": "Combining"
   },
   "wiki.zetter.combining.text-intro": {
-    "defaultMessage": "When you finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:",
+    "defaultMessage": "When you are finished with one or multiple parts of your artwork, it's time to combine canvases and put your author signature. Shift+Right-click on easel will take canvas back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:",
     "description": "Intro before combining interface explanation"
   },
   "wiki.zetter.combining.title": {
@@ -662,7 +675,7 @@
     "defaultMessage": "Crafting"
   },
   "wiki.zetter.crafting.text": {
-    "defaultMessage": "First, we need to craft some things. Some canvases, an easel to put canvas on, some paints and finally, palette.",
+    "defaultMessage": "First, we need to craft some things. Some canvases, an easel to put the canvas on, some paints and finally, a palette.",
     "description": "Explain first step, what we will be crafting"
   },
   "wiki.zetter.crafting.title": {
@@ -676,7 +689,7 @@
     "description": "Call to action with first painting"
   },
   "wiki.zetter.framing.text-intro": {
-    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on wall.",
+    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on the wall.",
     "description": "Intro before showing frame recipes"
   },
   "wiki.zetter.framing.title": {
@@ -744,7 +757,7 @@
     "description": "Explain how to mount canvas"
   },
   "wiki.zetter.preparing.text-start": {
-    "defaultMessage": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place artist table somewhere nearby - we will need it later.",
+    "defaultMessage": "To start drawing, we would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table somewhere nearby - we will need it later.",
     "description": "Explain what we need to start drawing"
   },
   "wiki.zetter.preparing.text-workshop-title": {
@@ -755,7 +768,7 @@
     "defaultMessage": "Preparing Workplace"
   },
   "wiki.zetter.recipes.artist-table": {
-    "defaultMessage": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and output slot is empty, the shape is incorrect. Supported painting sizes listed below.",
+    "defaultMessage": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and the output slot is empty, the shape is incorrect. Supported painting sizes listed below.",
     "description": "Explain what is artist table"
   },
   "wiki.zetter.recipes.artist-table.section": {
@@ -765,7 +778,7 @@
     "defaultMessage": "Artist Table"
   },
   "wiki.zetter.recipes.canvas": {
-    "defaultMessage": "Canvases are intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there.",
+    "defaultMessage": "Canvases are an intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there.",
     "description": "Explain what is painting"
   },
   "wiki.zetter.recipes.canvas.section": {
@@ -775,7 +788,7 @@
     "defaultMessage": "Canvas"
   },
   "wiki.zetter.recipes.easel": {
-    "defaultMessage": "Easel is a starting point for all paintings. In order to start drawing, you would need to place one in the world, put canvas on it by right-clicking with canvas in hand. Simple right click will open easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel.",
+    "defaultMessage": "Easel is a starting point for all paintings. In order to start drawing, you would eed to place one in the world, put canvas on it by right-clicking with canvas in hand. A simple right click will open the easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel.",
     "description": "Explain what is painting"
   },
   "wiki.zetter.recipes.easel.section": {
@@ -788,7 +801,7 @@
     "defaultMessage": "Frames"
   },
   "wiki.zetter.recipes.framing": {
-    "defaultMessage": "In order to put painting in a frame, you need to combine them on crafting grid in any order. You can always get your painting back from the frame. To do that, just put framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in crafting grid.",
+    "defaultMessage": "In order to put painting in a frame, you need to combine them on the crafting grid in any order. You can always get your painting back from the frame. To do that, just put the framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in the crafting grid.",
     "description": "Explain how to put painting in a frame"
   },
   "wiki.zetter.recipes.framing.title": {
@@ -798,7 +811,7 @@
     "defaultMessage": "Golden Frame"
   },
   "wiki.zetter.recipes.golden-frame": {
-    "defaultMessage": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds which are required for crafting. Doesn't have a nameplate by default, see below;",
+    "defaultMessage": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds, which are required for crafting. Doesn't have a nameplate by default, see below;",
     "description": "Explain what is golden frame"
   },
   "wiki.zetter.recipes.iron-frame": {
@@ -817,7 +830,7 @@
     "description": "Zetter Recipes Wiki page title"
   },
   "wiki.zetter.recipes.painting": {
-    "defaultMessage": "This is an actual painting. It's created only by signing one or multiple combined canvases on Artist Table.",
+    "defaultMessage": "This is an actual painting. It's created only by signing one or multiple combined canvases on the Artist Table.",
     "description": "Explain what is painting"
   },
   "wiki.zetter.recipes.painting.section": {
@@ -837,7 +850,7 @@
     "defaultMessage": "Paints"
   },
   "wiki.zetter.recipes.palette": {
-    "defaultMessage": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork you can use single palette on multiple easels and your colors will be saved with palette. Once palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above.",
+    "defaultMessage": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork, you can use a single palette on multiple easels and your colors will be saved with the palette. Once the palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above.",
     "description": "Explain what is painting"
   },
   "wiki.zetter.recipes.palette.section": {
@@ -857,7 +870,7 @@
     "defaultMessage": "Palette"
   },
   "wiki.zetter.recipes.wooden-frames": {
-    "defaultMessage": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting.",
+    "defaultMessage": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, the frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting.",
     "description": "Explain what is basic wooden frame"
   },
   "wiki.zetter.recipes.wooden-frames.title": {
