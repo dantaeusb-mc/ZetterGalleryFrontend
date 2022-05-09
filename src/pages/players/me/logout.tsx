@@ -10,7 +10,7 @@ import { RedirectTimer } from '@components/widgets/redirectTimer';
 import getTitle from '@/utils/page/get-title';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { apiPost } from '@/utils/request';
-import { setCookies } from 'cookies-next';
+import {removeCookies, setCookies} from 'cookies-next';
 
 export default function LogoutPage(): JSX.Element {
   const router = useRouter();
@@ -77,7 +77,7 @@ export async function getServerSideProps(
   try {
     await apiPost('/auth/token/drop', undefined, undefined, context);
 
-    setCookies('token', null, { req: context.req, res: context.res });
+    removeCookies('token', { req: context.req, res: context.res });
   } catch (e) {
     console.log(e);
 

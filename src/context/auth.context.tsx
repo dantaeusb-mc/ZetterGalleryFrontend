@@ -14,15 +14,26 @@ export interface AuthenticatedPlayer {
   nickname: string;
 }
 
+export interface RefreshToken {
+  token: string;
+  issued: string;
+  notAfter: string;
+}
+
 export interface AuthContextProps {
   player?: AuthenticatedPlayer;
   setPlayer: (player: AuthenticatedPlayer) => void;
+  refreshToken?: RefreshToken;
+  setRefreshToken: (token: RefreshToken) => void;
 }
 
 export const AuthContext = React.createContext<AuthContextProps>({
   player: undefined,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setPlayer: (player) => {},
+  refreshToken: undefined,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setRefreshToken: (token) => {},
 });
 
 export interface AuthProviderProps {
@@ -30,6 +41,7 @@ export interface AuthProviderProps {
 }
 
 const PLAYER_STORAGE_KEY = 'player';
+const REFRESH_TOKEN_STORAGE_KEY = 'refresh_token';
 
 const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
   const route = useRouter();
@@ -37,6 +49,7 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
     props.player,
   );
 
+  const [refreshToken, setRefreshToken] = useState<RefreshToken | undefined>();
   let cookieToken = getCookie('token');
 
   const fetchPlayerProps = useCallback(async () => {
@@ -46,6 +59,7 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
 
   useEffect(() => {
     const playerInfoRaw = localStorage.getItem(PLAYER_STORAGE_KEY);
+    const refreshTokenInfoRaw = localStorage.getItem(REFRESH_TOKEN_STORAGE_KEY);
 
     if (playerInfoRaw) {
       try {
@@ -53,7 +67,19 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
         setPlayer(savedPlayerInfo);
         return;
       } catch (e) {
+        localStorage.removeItem(PLAYER_STORAGE_KEY);
         console.error('Unable to parse player from local storage', e);
+      }
+    }
+
+    if (refreshTokenInfoRaw) {
+      try {
+        const refreshToken: RefreshToken = JSON.parse(refreshTokenInfoRaw);
+        setRefreshToken(refreshToken);
+        return;
+      } catch (e) {
+        localStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
+        console.error('Unable to parse refresh token from local storage', e);
       }
     }
   }, []);
@@ -61,14 +87,16 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
   useEffect(() => {
     cookieToken = getCookie('token');
 
-    if (!!player && !!cookieToken) {
-      return;
-    }
-
-    if (cookieToken) {
-      fetchPlayerProps();
+    if (player) {
+      if (!cookieToken) {
+        // refresh or drop?
+        setPlayer(undefined);
+        return;
+      }
     } else {
-      setPlayer(undefined);
+      if (cookieToken) {
+        fetchPlayerProps();
+      }
     }
   }, [route]);
 
@@ -80,11 +108,21 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
     }
   }, [player]);
 
+  useEffect(() => {
+    if (refreshToken !== undefined) {
+      localStorage.setItem(REFRESH_TOKEN_STORAGE_KEY, JSON.stringify(refreshToken));
+    } else {
+      localStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
+    }
+  }, [refreshToken]);
+
   return (
     <AuthContext.Provider
       value={{
         player: player,
         setPlayer: setPlayer,
+        refreshToken: refreshToken,
+        setRefreshToken: setRefreshToken,
       }}
     >
       {props.children}

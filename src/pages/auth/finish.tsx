@@ -130,7 +130,8 @@ export async function getServerSideProps(
       context,
     );
 
-    setCookies('token', response.token, { req: context.req, res: context.res });
+    const expireDate = new Date(response.notAfter);
+    setCookies('token', response.token, { req: context.req, res: context.res, expires: expireDate });
   } catch (e) {
     return {
       redirect: {

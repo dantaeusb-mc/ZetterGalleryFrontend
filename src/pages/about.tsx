@@ -50,9 +50,9 @@ const AboutPage: NextPage<Record<string, unknown>> = (
         <p>
           <FormattedMessage
             id="about.zetter.description"
-            defaultMessage="Zetter is Minecraft mod for creating paintings in minecraft. It allows players
-                          to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4
-                          blocks, wrapped in a frame and put on wall. This should add some cozy feeling for your virtual home."
+            defaultMessage="Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw
+            paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a
+            frame and put on the wall. This should add some cozy feeling for your virtual home."
             description="Zetter Description"
           />
         </p>
