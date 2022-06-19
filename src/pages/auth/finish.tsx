@@ -147,7 +147,7 @@ export async function getServerSideProps(
   if (response.redirect) {
     nextAction = {
       path:
-        response.redirect + buildQuery({ then: '/players/me/preferences/' }),
+        response.redirect + buildQuery({ then: '/players/me/preferences/' }, response.redirect),
       description: 'Authorize server',
     };
   } else {

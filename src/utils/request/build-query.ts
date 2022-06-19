@@ -2,20 +2,25 @@ export interface IQueryParams {
   [key: string]: any;
 }
 
-const buildQuery = (queryParams?: IQueryParams): string => {
+const buildQuery = (queryParams?: IQueryParams, originalUri?: string): string => {
   let queryString = '';
 
   if (!queryParams || Object.keys(queryParams).length === 0) {
     return queryString;
   }
 
-  queryString += '?';
+  if (originalUri && originalUri.includes('?')) {
+    queryString += '&';
+  } else {
+    queryString += '?';
+  }
+
   queryString += Object.keys(queryParams)
     .map(function (key) {
       if (Array.isArray(queryParams[key])) {
         return queryParams[key]
           .map((value: string) => {
-            return key + '=' + value.toString();
+            return key + '=' + encodeURIComponent(value.toString());
           })
           .join('&');
       }
