@@ -225,6 +225,9 @@
   "footer.legal.learn-more": {
     "defaultMessage": "Terms of service"
   },
+  "footer.legal.tos": {
+    "defaultMessage": "Terms of service"
+  },
   "footer.legal.minecraft-copyright": {
     "defaultMessage": "Minecraft and associated Minecraft images are copyright of Mojang AB."
   },

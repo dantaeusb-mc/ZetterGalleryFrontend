@@ -44,6 +44,7 @@ import {
 } from '@components/layouts/wiki';
 import styles from './wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
+import { SliceLink } from "@components/widgets/slice-link";
 
 export default function ZetterWikiHome({
   pages,
@@ -531,6 +532,71 @@ export default function ZetterWikiHome({
                   height={386}
                   width={688}
                 />
+              </section>
+              <section
+                id="sharing"
+                ref={addSection(
+                  intl.formatMessage({
+                    id: 'wiki.zetter.sharing.section',
+                    defaultMessage: 'Sharing',
+                  }),
+                  'sharing',
+                )}
+              >
+                <h2>
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.title"
+                    defaultMessage="Sharing paintings"
+                  />
+                </h2>
+                <p>
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.description"
+                    defaultMessage="You can share your painting with the world using this site,
+                     and download paintings from other artists by using Zetter Gallery add-on."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.what-is-gallery"
+                    defaultMessage="Zetter Gallery is independent mod, which requires Zetter to work. It is downloaded separately,
+                    so players who prefer not to have online features can keep basic version of the mod."
+                  />
+                </p>
+                <SliceLink
+                  title={intl.formatMessage({
+                    id: 'wiki.zetter.sharing.button.wiki',
+                    defaultMessage: 'Check out Zetter Gallery Wiki',
+                  })}
+                  uri="/wiki/zetter-gallery"
+                >
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.button.wiki.check"
+                    defaultMessage="Check out"
+                  />
+                  <br />
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.button.wiki.what"
+                    defaultMessage="Zetter Gallery Wiki"
+                  />
+                </SliceLink>
+                <SliceLink
+                  title={intl.formatMessage({
+                    id: 'wiki.zetter.sharing.button.download',
+                    defaultMessage: 'Download Zetter Gallery from CurseForge',
+                  })}
+                  uri="https://www.curseforge.com/minecraft/mc-mods/zetter-gallery"
+                >
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.button.download.what"
+                    defaultMessage="Download Zetter Gallery"
+                  />
+                  <br />
+                  <FormattedMessage
+                    id="wiki.zetter.sharing.button.download.from"
+                    defaultMessage="from CurseForge"
+                  />
+                </SliceLink>
               </section>
             </article>
           );

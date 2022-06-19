@@ -41,7 +41,7 @@ const Footer = (): JSX.Element => {
         <Link href="/terms">
           <a>
             <FormattedMessage
-              id="footer.legal.learn-more"
+              id="footer.legal.tos"
               defaultMessage="Terms of service"
             />
           </a>

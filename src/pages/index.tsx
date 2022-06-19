@@ -13,9 +13,10 @@ import { apiGet } from '@/utils/request';
 import 'reflect-metadata';
 import conform from '@/utils/conform';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from "react-intl";
 import getTitle from '@/utils/page/get-title';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
+import { SliceLink } from "@components/widgets/slice-link";
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -199,6 +200,37 @@ const Home: NextPage<PaintingsPageProps> = (
             <Post key={`painting-${index}`} {...paintingProps} />
           ))}
         </InfiniteScroll>
+
+        <h2>
+          <FormattedMessage
+            id="index.page.cta.title"
+            defaultMessage="Would like to add your own painting?"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="index.page.cta.description"
+            defaultMessage="Use Zetter and Zetter Gallery mods together to add your paintings here
+            by trading with painting merchant in Minecraft™ game."
+          />
+        </p>
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'index.page.cta.button.wiki',
+            defaultMessage: 'Learn about Zetter Gallery',
+          })}
+          uri="/about"
+        >
+          <FormattedMessage
+            id="index.page.cta.button.wiki.learn"
+            defaultMessage="Learn more about"
+          />
+          <br />
+          <FormattedMessage
+            id="index.page.cta.button.wiki.about-zetter"
+            defaultMessage="Zetter Gallery Project"
+          />
+        </SliceLink>
       </DefaultLayout>
     </>
   );

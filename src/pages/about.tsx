@@ -154,6 +154,37 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             defaultMessage="from CurseForge"
           />
         </SliceLink>
+        <h2>
+          <FormattedMessage
+            id="about.zetter.discord.title"
+            defaultMessage="Join our community"
+            description="Title for Zetter Discord About Section"
+          />
+        </h2>
+        <p>
+          <FormattedMessage
+            id="about.zetter.discord.description"
+            defaultMessage="Share your ideas and know about the updates first! We also look for community managers and moderators who can rate paintings."
+            description="Zetter Discord Description"
+          />
+        </p>
+        <SliceLink
+          title={intl.formatMessage({
+            id: 'widgets.discord-button',
+            defaultMessage: 'Join our Discord server',
+          })}
+          uri="https://discord.gg/thPEdjKE3h"
+        >
+          <FormattedMessage
+            id="widgets.discord-button.join"
+            defaultMessage="Join our"
+          />
+          <br />
+          <FormattedMessage
+            id="widgets.discord-button.server"
+            defaultMessage="Discord server"
+          />
+        </SliceLink>
       </DefaultLayout>
     </>
   );

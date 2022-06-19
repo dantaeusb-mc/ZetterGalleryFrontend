@@ -396,6 +396,12 @@
   "footer.legal.learn-more": [
     {
       "type": 0,
+      "value": "Learn more"
+    }
+  ],
+  "footer.legal.tos": [
+    {
+      "type": 0,
       "value": "Terms of service"
     }
   ],
