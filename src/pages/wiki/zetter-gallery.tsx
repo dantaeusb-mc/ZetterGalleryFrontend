@@ -125,7 +125,7 @@ export default function ZetterGalleryWikiHome({
                     id={'wiki.zetter-gallery.login.description.zg-requirements'}
                     defaultMessage="To log in, you would Minecraft to allow you to open links. It is enabled by default,
                      but if you have problems and nothing opens, you can check out
-                      if you are allowed to open links in Main Menu -> Preferences."
+                      if you are allowed to open links in Main Menu -> Options -> Chat Settings -> Links."
                     description="Login requirements"
                   />
                 </p>

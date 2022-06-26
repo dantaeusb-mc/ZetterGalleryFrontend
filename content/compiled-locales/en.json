@@ -175,7 +175,7 @@
   "wiki.zetter-gallery.login.description.ms-auth": "If you haven't logged in on this site, you will be asked to log in with your Microsoft account. Please check carefully that the URI in your address bar is zetter.gallery and read the message on that page. This will help you to secure account. Do not enter your Microsoft password outside of Microsoft websites.",
   "wiki.zetter-gallery.login.description.screen": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in.",
   "wiki.zetter-gallery.login.description.zg-auth": "To log in, you would need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be redirected to log in page on this site.",
-  "wiki.zetter-gallery.login.description.zg-requirements": "To log in, you would Minecraft to allow you to open links. It is enabled by default, but if you have problems and nothing opens, you can check out if you are allowed to open links in Main Menu -> Preferences.",
+  "wiki.zetter-gallery.login.description.zg-requirements": "To log in, you would Minecraft to allow you to open links. It is enabled by default, but if you have problems and nothing opens, you can check out if you are allowed to open links in Main Menu -> Options -> Chat Settings -> Links.",
   "wiki.zetter-gallery.login.section": "Logging in",
   "wiki.zetter-gallery.login.title": "Logging in",
   "wiki.zetter-gallery.page.description": "Get information about Zetter Gallery Mod for Minecraft",

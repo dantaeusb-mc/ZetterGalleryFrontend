@@ -22,7 +22,7 @@ module.exports = withBundleAnalyzer({
     domains: ['[::1]'],
   },
   i18n: {
-    locales: ['en', 'ru', 'pl'],
+    locales: ['en', 'ru', 'pl', 'fr', 'de', 'tr', 'uk', 'pt'],
     defaultLocale: 'en',
     localeDetection: true,
   },
