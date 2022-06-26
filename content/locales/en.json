@@ -51,6 +51,14 @@
     "defaultMessage": "Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall. This should add some cozy feeling for your virtual home.",
     "description": "Zetter Description"
   },
+  "about.zetter.discord.description": {
+    "defaultMessage": "Share your ideas and know about the updates first! We also look for community managers and moderators who can rate paintings.",
+    "description": "Zetter Discord Description"
+  },
+  "about.zetter.discord.title": {
+    "defaultMessage": "Join our community",
+    "description": "Title for Zetter Discord About Section"
+  },
   "about.zetter.gallery.description": {
     "defaultMessage": "Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to sell and purchase popular paintings on Zetter Gallery",
     "description": "Zetter Gallery Description"
@@ -97,6 +105,9 @@
   "auth.microsoft.callout.check-disclaimer": {
     "defaultMessage": "If you don't see this message when connecting Zetter Gallery, there's a chance that someone trying to steal your info."
   },
+  "auth.microsoft.callout.same-account": {
+    "defaultMessage": "Please use the same Microsoft account you use to login into Minecraft."
+  },
   "auth.microsoft.check.advice": {
     "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright.",
     "description": "Explain how to make sure it's not a phishing page"
@@ -139,15 +150,15 @@
   "common.post.painting.link.title": {
     "defaultMessage": "{paintingName} by {username}"
   },
-  "credits.page.description": {
+  "contributors.page.description": {
     "defaultMessage": "Zetter Gallery credits",
     "description": "Credits page description"
   },
-  "credits.page.title": {
-    "defaultMessage": "Credits",
-    "description": "Credits page title"
+  "contributors.page.title": {
+    "defaultMessage": "Contributors",
+    "description": "Contributors page title"
   },
-  "credits.title": {
+  "contributors.title": {
     "defaultMessage": "Credits",
     "description": "Title for Zetter Gallery Credits Page"
   },
@@ -216,20 +227,20 @@
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
   },
-  "footer.legal.credits": {
-    "defaultMessage": "Credits"
+  "footer.legal.contributors": {
+    "defaultMessage": "Contributors"
   },
   "footer.legal.developer": {
     "defaultMessage": "Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
   },
   "footer.legal.learn-more": {
-    "defaultMessage": "Terms of service"
-  },
-  "footer.legal.tos": {
-    "defaultMessage": "Terms of service"
+    "defaultMessage": "Learn more"
   },
   "footer.legal.minecraft-copyright": {
     "defaultMessage": "Minecraft and associated Minecraft images are copyright of Mojang AB."
+  },
+  "footer.legal.tos": {
+    "defaultMessage": "Terms of service"
   },
   "human-terms.complications.paragraph.1": {
     "defaultMessage": "I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
@@ -287,6 +298,21 @@
   },
   "human-terms.title.callout.check-english": {
     "defaultMessage": "These statements are not legally binding. This page provides short explanation of the terms of use and some details about intended usage of this service."
+  },
+  "index.page.cta.button.wiki": {
+    "defaultMessage": "Learn about Zetter Gallery"
+  },
+  "index.page.cta.button.wiki.about-zetter": {
+    "defaultMessage": "Zetter Gallery Project"
+  },
+  "index.page.cta.button.wiki.learn": {
+    "defaultMessage": "Learn more about"
+  },
+  "index.page.cta.description": {
+    "defaultMessage": "Use Zetter and Zetter Gallery mods together to add your paintings here by trading with painting merchant in Minecraft™ game."
+  },
+  "index.page.cta.title": {
+    "defaultMessage": "Would like to add your own painting?"
   },
   "index.page.description": {
     "defaultMessage": "Zetter Gallery is a service that allows you to share your Zetter Minecraft paintings with the world",
@@ -503,6 +529,15 @@
   "terms.zetter.warranty.title": {
     "defaultMessage": "Warranty Disclaimer"
   },
+  "widgets.discord-button": {
+    "defaultMessage": "Join our Discord server"
+  },
+  "widgets.discord-button.join": {
+    "defaultMessage": "Join our"
+  },
+  "widgets.discord-button.server": {
+    "defaultMessage": "Discord server"
+  },
   "widgets.under-construction.description.discord-button": {
     "defaultMessage": "Join our Discord server"
   },
@@ -571,7 +606,7 @@
     "description": "Zetter Gallery Wiki page title"
   },
   "wiki.zetter-gallery.painting-merchant.description.1": {
-    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for a villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed. Check out the Minecraft wiki to see how villager occupation works.",
+    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for a villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed.",
     "description": "What you need to start trading paintings"
   },
   "wiki.zetter-gallery.painting-merchant.description.2": {
@@ -878,6 +913,36 @@
   },
   "wiki.zetter.recipes.wooden-frames.title": {
     "defaultMessage": "Wooden Frames"
+  },
+  "wiki.zetter.sharing.button.download": {
+    "defaultMessage": "Download Zetter Gallery from CurseForge"
+  },
+  "wiki.zetter.sharing.button.download.from": {
+    "defaultMessage": "from CurseForge"
+  },
+  "wiki.zetter.sharing.button.download.what": {
+    "defaultMessage": "Download Zetter Gallery"
+  },
+  "wiki.zetter.sharing.button.wiki": {
+    "defaultMessage": "Check out Zetter Gallery Wiki"
+  },
+  "wiki.zetter.sharing.button.wiki.check": {
+    "defaultMessage": "Check out"
+  },
+  "wiki.zetter.sharing.button.wiki.what": {
+    "defaultMessage": "Zetter Gallery Wiki"
+  },
+  "wiki.zetter.sharing.description": {
+    "defaultMessage": "You can share your painting with the world using this site, and download paintings from other artists by using Zetter Gallery add-on."
+  },
+  "wiki.zetter.sharing.section": {
+    "defaultMessage": "Sharing"
+  },
+  "wiki.zetter.sharing.title": {
+    "defaultMessage": "Sharing paintings"
+  },
+  "wiki.zetter.sharing.what-is-gallery": {
+    "defaultMessage": "Zetter Gallery is independent mod, which requires Zetter to work. It is downloaded separately, so players who prefer not to have online features can keep basic version of the mod."
   },
   "wiki.zetter.title": {
     "defaultMessage": "Zetter Wiki Home",

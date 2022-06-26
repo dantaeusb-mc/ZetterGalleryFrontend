@@ -47,11 +47,11 @@ const Footer = (): JSX.Element => {
           </a>
         </Link>
         <span> | </span>
-        <Link href="/credits">
+        <Link href="/contributors">
           <a>
             <FormattedMessage
-              id="footer.legal.credits"
-              defaultMessage="Credits"
+              id="footer.legal.contributors"
+              defaultMessage="Contributors"
             />
           </a>
         </Link>

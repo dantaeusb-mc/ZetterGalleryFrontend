@@ -28,14 +28,14 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
 
   const title = getTitle(
     intl.formatMessage({
-      id: 'credits.page.title',
-      defaultMessage: 'Credits',
-      description: 'Credits page title',
+      id: 'contributors.page.title',
+      defaultMessage: 'Contributors',
+      description: 'Contributors page title',
     }),
   );
 
   const description = intl.formatMessage({
-    id: 'credits.page.description',
+    id: 'contributors.page.description',
     defaultMessage: 'Zetter Gallery credits',
     description: 'Credits page description',
   });
@@ -147,7 +147,7 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
       <DefaultLayout>
         <h1>
           <FormattedMessage
-            id="credits.title"
+            id="contributors.title"
             defaultMessage="Credits"
             description="Title for Zetter Gallery Credits Page"
           />

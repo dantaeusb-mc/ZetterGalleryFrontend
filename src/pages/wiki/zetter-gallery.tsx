@@ -73,16 +73,23 @@ export default function ZetterGalleryWikiHome({
                     id={'wiki.zetter-gallery.painting-merchant.description.1'}
                     defaultMessage="To start trading paintings, you will need to find a villager and change their
                      occupation. In order for a villager to become a Painting Merchant, they should have an assigned
-                     bed and Artist Table block nearby this bed. Check out the Minecraft wiki to see how villager
-                     occupation works."
+                     bed and Artist Table block nearby this bed."
                     description="What you need to start trading paintings"
                   />
-                  <FormattedMessage
-                    id={'wiki.zetter-gallery.painting-merchant.description.2'}
-                    defaultMessage="Check out the Minecraft wiki to see how villager occupation works."
-                    description="Check out Minecraft wiki about villager occupation"
-                  />
+                  <a href="https://minecraft.fandom.com/wiki/Villager#Job_site_blocks" target="_blank">
+                    <FormattedMessage
+                      id={'wiki.zetter-gallery.painting-merchant.description.2'}
+                      defaultMessage="Check out the Minecraft wiki to see how villager occupation works."
+                      description="Check out Minecraft wiki about villager occupation"
+                    />
+                  </a>
                 </p>
+                <Image
+                  src="/assets/wiki/merchant-screenshot.png"
+                  alt="Painting Merchant Room"
+                  height={458}
+                  width={756}
+                />
               </section>
               <section
                 id="login"
