@@ -18,7 +18,7 @@ export default function Painting(props: PaintingProps): JSX.Element {
     },
   );
 
-  const aspectRatio = Math.max(
+  const aspectRatio = Math.min(
     props.originalSize.height / props.originalSize.width,
     1,
   );
