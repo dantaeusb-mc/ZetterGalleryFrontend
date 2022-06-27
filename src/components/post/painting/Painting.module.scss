@@ -3,13 +3,17 @@
 .painting-wrapper {
   background: colors.color('block');
   object-position: center;
+  position: relative;
 }
 
 .painting {
   display: block;
   image-rendering: crisp-edges;
-  margin: 0 auto;
-  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  -moz-user-select: none;
+  height: 100%;
   width: 100%;
-  max-height: 50vh;
 }

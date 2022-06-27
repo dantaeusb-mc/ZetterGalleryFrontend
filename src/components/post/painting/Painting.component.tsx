@@ -18,13 +18,14 @@ export default function Painting(props: PaintingProps): JSX.Element {
     },
   );
 
-  const pageWidth = usePageWidth();
-
-  const scaling = Math.floor(pageWidth / props.originalSize.width);
-  const pictureWidth = props.originalSize.width * scaling;
+  const aspectRatio = Math.max(
+    props.originalSize.height / props.originalSize.width,
+    1,
+  );
+  const percentage = Math.round(aspectRatio * 100);
 
   return (
-    <div className={styles['painting-wrapper']}>
+    <div className={styles['painting-wrapper']} style={{ paddingTop: `${percentage}%` }}>
       <img src={props.image} alt={alt} className={styles['painting']} />
     </div>
   );
