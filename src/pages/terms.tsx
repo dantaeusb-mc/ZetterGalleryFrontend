@@ -57,7 +57,7 @@ const TermsPage: NextPage<Record<string, unknown>> = (
         <p>
           <FormattedMessage
             id="terms.description.paragraph"
-            defaultMessage="Dmitry Burlakov (“Zetter Gallery“, “we”, “us” or “our”) provides a platform via its website, Application Programming Interface and an independent, user-made modification to the Mojang video game Minecraft, to a community of registered users (“users” or “you”) to engage in a variety of activities, including to upload and display digital paintings (“Visual Content”). The following are the terms of use (“Terms”) for using the Site and the Services."
+            defaultMessage="Dmitrii Burlakov (“Zetter Gallery“, “we”, “us” or “our”) provides a platform via its website, Application Programming Interface and an independent, user-made modification to the Mojang video game Minecraft, to a community of registered users (“users” or “you”) to engage in a variety of activities, including to upload and display digital paintings (“Visual Content”). The following are the terms of use (“Terms”) for using the Site and the Services."
           />
         </p>
         <h2>

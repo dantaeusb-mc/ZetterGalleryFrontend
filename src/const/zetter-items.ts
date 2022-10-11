@@ -124,7 +124,7 @@ export const IronFrameItem: CraftItemProps = {
   name: 'Iron Bezel-less Frame',
   uri: '/wiki/zetter/recipes#frames',
   spritePos: {
-    x: 32,
+    x: 64,
     y: 64,
   },
   classic: false,
