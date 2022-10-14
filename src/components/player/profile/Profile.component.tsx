@@ -19,7 +19,7 @@ export default function Profile(props: ProfileProps): JSX.Element {
     <section className={injectClassNames('block', styles['profile'])}>
       <header className={styles['summary']}>
         <img
-          src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.uuid}/original.png`}
+          src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.uuid}/avatar.png`}
           className={injectClassNames('pixelated-images', styles['userpic'])}
           title={`${props.nickname}'s Minecraft avatar`}
           alt={`${props.nickname}'s Minecraft in-game character's face`}
