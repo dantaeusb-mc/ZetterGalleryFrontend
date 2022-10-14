@@ -43,7 +43,7 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                     defaultMessage: 'Your profile avatar',
                   })}
                   // @todo: load from js with retries to wait for queue processing for new players
-                  src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${player.uuid}/original.png`}
+                  src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${player.uuid}/avatar.png`}
                   className={injectClassNames(
                     styles['profile-avatar'],
                     'pixelated-images',
