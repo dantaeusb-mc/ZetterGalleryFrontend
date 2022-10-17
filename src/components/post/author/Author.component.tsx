@@ -9,7 +9,7 @@ export default function Author(props: PaintingProps): JSX.Element {
     <Link href={`/players/${props.author.uuid}`}>
       <a>
         <header className={styles['post-header']} style={{
-          background: `radial-gradient(circle at right, #ffca3a 0%, transparent 25%)`
+          background: `radial-gradient(circle at right, var(--zetter-color-badge-exceptional) 0%, transparent 25%)`
         }}>
           <div className={styles['profile-picture-wrapper']}>
             <span

@@ -1,4 +1,6 @@
 .post-header {
+  border-top-left-radius: var(--border-small-radius);
+  border-top-right-radius: var(--border-small-radius);
   display: flex;
   flex-direction: row;
   align-items: center;
