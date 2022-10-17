@@ -37,7 +37,7 @@
   @for $i from 0 to 2 {
     i:nth-child(#{$i + 1}) {
       right: #{16 * $i}px;
-      z-index: #{$i};
+      z-index: #{3 - $i};
     }
   }
 }

@@ -25,7 +25,8 @@ export default function Author(props: PaintingProps): JSX.Element {
             <span>{props.author.nickname}</span>
           </div>
           <div className={injectClassNames(styles['profile-badge-wrapper'], 'player-badge')}>
-            <i className={'player-badge-icon support-alpha'}></i>
+            <i className={'player-badge-icon support-alpha'} style={{position: "absolute"}}></i>
+            <i className={'player-badge-icon style-landscape'} style={{position: "absolute"}}></i>
           </div>
         </header>
       </a>
