@@ -47,11 +47,26 @@ $colors: (
                 light: lighten(#eb459e, 15%),
                 dark: darken(#eb459e, 25%)
         ),
-        badge-uncommon: #1982c4,
-        badge-rare: #8ac926,
-        badge-exceptional: #ffca3a,
-        badge-epic: #f15bb5,
-        badge-legendary: #ff5400,
+        badge-uncommon: (
+                base: #1982c4,
+                glow: transparentize(#1982c4, .75)
+        ),
+        badge-rare: (
+                base: #8ac926,
+                glow: transparentize(#8ac926, .75)
+        ),
+        badge-exceptional: (
+                base: #ffca3a,
+                glow: transparentize(#ffca3a, .75)
+        ),
+        badge-epic: (
+                base: #f15bb5,
+                glow: transparentize(#f15bb5, .75)
+        ),
+        badge-legendary: (
+                base: #ff5400,
+                glow: transparentize(#ff5400, .75)
+        ),
 );
 
 $color-prefix: --zetter-color-;
