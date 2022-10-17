@@ -24,3 +24,18 @@
 .profile-name-wrapper {
   margin-left: 1rem;
 }
+
+.profile-badge-wrapper {
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  margin-right: .5rem;
+  height: 32px;
+
+  @for $i from 0 to 2 {
+    i:nth-child(#{$i + 1}) {
+      right: #{16 * $i}px;
+      z-index: #{$i};
+    }
+  }
+}

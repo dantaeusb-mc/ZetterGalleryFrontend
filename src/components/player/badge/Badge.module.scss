@@ -10,32 +10,42 @@
 
   .icon {
     position: relative;
-    height: 2rem;
-    width: 2rem;
+    transition: transform .3s ease;
   }
 
   .description {
     line-height: 1.75rem;
-    padding: 0 .5rem 0 1rem;
+    padding: 0 1rem 0 1rem;
+    transition: padding .3s ease;
   }
 
-  &.common {
-    background: colors.color('red');
+  &:hover {
+    .icon {
+      transform: scale(2);
+    }
+
+    .description {
+      padding: 0 .5rem 0 1.5rem;
+    }
   }
 
   &.uncommon {
-    background: colors.color('yellow');
+    background: colors.color('badge-uncommon');
   }
 
   &.rare {
-    background: colors.color('green');
+    background: colors.color('badge-rare');
+  }
+
+  &.exceptional {
+    background: colors.color('badge-exceptional');
   }
 
   &.epic {
-    background: colors.color('blue');
+    background: colors.color('badge-epic');
   }
 
   &.legendary {
-    background: colors.color('pink');
+    background: colors.color('badge-legendary');
   }
 }

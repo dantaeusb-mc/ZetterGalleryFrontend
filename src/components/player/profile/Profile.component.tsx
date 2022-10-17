@@ -63,7 +63,8 @@ export default function Profile(props: ProfileProps): JSX.Element {
         </div>
       </header>
       <div className={styles['badge-wrapper']}>
-        <Badge title={'Alpha Supporter'} tier={EBadgeTier.Rare} />
+        <Badge title="Alpha Supporter" category="support" code="alpha" tier={EBadgeTier.Exceptional} />
+        <Badge title="Landscapist" category="style" code="landscape" tier={EBadgeTier.Rare} />
       </div>
       <footer className={styles['statistics']}>
         <div className={styles['statistics-element']}>

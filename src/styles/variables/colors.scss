@@ -46,7 +46,12 @@ $colors: (
                 base: #eb459e,
                 light: lighten(#eb459e, 15%),
                 dark: darken(#eb459e, 25%)
-        )
+        ),
+        badge-uncommon: #1982c4,
+        badge-rare: #8ac926,
+        badge-exceptional: #ffca3a,
+        badge-epic: #f15bb5,
+        badge-legendary: #ff5400,
 );
 
 $color-prefix: --zetter-color-;

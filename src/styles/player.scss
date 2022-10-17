@@ -1,0 +1,26 @@
+@use 'src/styles/variables/colors' as colors;
+
+.player-badge {
+  .player-badge-icon {
+    display: block;
+    image-rendering: pixelated;
+    height: 32px;
+    width: 32px;
+
+    &.support-alpha {
+      background-image: url("/assets/badge/support/alpha.png");
+    }
+
+    &.support-beta {
+      background-image: url("/assets/badge/support/beta.png");
+    }
+
+    &.style-landscape {
+      background-image: url("/assets/badge/style/landscapist.png");
+    }
+
+    &.style-european {
+      background-image: url("/assets/badge/style/europeanartist.png");
+    }
+  }
+}
