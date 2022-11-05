@@ -1,6 +1,7 @@
 import React, {MouseEventHandler, useState} from 'react';
 import styles from './Badge.module.scss';
 import {injectClassNames} from "@/utils/css";
+import Tippy from "@tippyjs/react";
 
 export enum EBadgeTier {
   Uncommon,
@@ -27,9 +28,8 @@ const tierClasses = {
 
 export default function Badge(props: IBadgeProps): JSX.Element {
   return (
-    <div className={ injectClassNames('player-badge', styles['badge'], tierClasses[props.tier] ) }>
-      <i className={ injectClassNames('player-badge-icon', `${props.category}-${props.code}`, styles['icon'])}></i>
-      <div className={ styles['description'] }>{ props.title }</div>
-    </div>
+    <Tippy content={ props.title }>
+      <i className={ injectClassNames('player-badge', `${props.category}-${props.code}`, styles['badge'], tierClasses[props.tier] ) } />
+    </Tippy>
   );
 }

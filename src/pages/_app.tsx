@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import { AppProps } from 'next/app';
 import '../styles/main.scss';
 import '../styles/player.scss';
+import 'tippy.js/dist/tippy.css';
 import { IntlProviderWrapper, Locale } from '@/context/intl.context';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
