@@ -619,6 +619,7 @@ export const getStaticProps: GetStaticProps = async (
       pages: [
         { title: 'wiki.zetter.page', path: '/wiki/zetter' },
         { title: 'wiki.zetter.recipes.page', path: '/wiki/zetter/recipes' },
+        { title: 'wiki.zetter.advanced.page', path: '/wiki/zetter/advanced' },
       ],
     },
   };

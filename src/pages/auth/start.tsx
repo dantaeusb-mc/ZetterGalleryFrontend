@@ -45,12 +45,6 @@ export default function AuthStart(): JSX.Element {
       <CleanLayout>
         <Callout severity={CalloutSeverity.Warning}>
           <FormattedMessage
-            id="auth.microsoft.callout.check-disclaimer"
-            defaultMessage="If you don't see this message when connecting Zetter Gallery, there's a chance that someone trying to steal your info."
-          />
-        </Callout>
-        <Callout severity={CalloutSeverity.Warning}>
-          <FormattedMessage
             id="auth.microsoft.callout.same-account"
             defaultMessage="Please use the same Microsoft account you use to login into Minecraft."
           />

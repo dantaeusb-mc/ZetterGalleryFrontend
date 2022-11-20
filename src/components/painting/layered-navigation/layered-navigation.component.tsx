@@ -41,7 +41,7 @@ export default function LayeredNavigation({
           type="button"
           onClick={(e) => updateLayer('sort', PaintingSorting.SCORE)}
         >
-          <Icon className={styles['sort-icon']} asset="fire" />
+          <Icon className={styles['sort-icon']} asset="hot" />
           <span className={styles['sort-text']}>
             <FormattedMessage
               id="paintings.layered-navigation.sort.hot"
@@ -103,7 +103,7 @@ export default function LayeredNavigation({
           {isActive('dir', Direction.ASC) ? <SortAscIcon /> : <SortDescIcon />}
         </div>
       </div>
-      <div className={styles['layered-navigation-resolution']}>
+      {/*<div className={styles['layered-navigation-resolution']}>
         <div className={styles['resolution-label']}>
           <FormattedMessage
             id="paintings.layered-navigation.filter.resolution"
@@ -144,7 +144,7 @@ export default function LayeredNavigation({
         >
           x64
         </button>
-      </div>
+      </div>*/}
     </>
   );
 }

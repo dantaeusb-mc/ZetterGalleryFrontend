@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './CrossAuthButton.module.scss';
+import styles from './ConsentButton.module.scss';
 import { Button } from '@components/button';
 import { apiGet } from '@/utils/request';
 import Loader from '../../widgets/loader/Loader.component';
@@ -12,13 +12,15 @@ enum ECrossAuthStatus {
   ERROR,
 }
 
-export interface ICrossAuthButtonProps {
+export interface ConsentButtonProps {
   code: string;
+  clientName: string;
 }
 
-export default function CrossAuthButton({
+export default function ConsentButton({
   code,
-}: ICrossAuthButtonProps): JSX.Element {
+  clientName,
+}: ConsentButtonProps): JSX.Element {
   const [status, setStatus] = useState<ECrossAuthStatus>(
     ECrossAuthStatus.PENDING,
   );
@@ -29,8 +31,8 @@ export default function CrossAuthButton({
   const confirm = async () => {
     setStatus(ECrossAuthStatus.WAITING);
 
-    apiGet('/auth/cross-authorization/elevate', {
-      crossAuthorizationCode: code,
+    apiGet('/auth/consent/agree', {
+      authorizationCode: code,
     })
       .then((response) => {
         setStatus(ECrossAuthStatus.CONFIRMED);
@@ -49,11 +51,11 @@ export default function CrossAuthButton({
     case ECrossAuthStatus.PENDING:
       return (
         <Button
-          title="Allow Minecraft Server to act on behalf of your Zetter account"
+          title={`Allow ${clientName} to act on behalf of your Zetter account`}
           className={styles['action-button']}
           action={confirm}
         >
-          {'Allow server to use my account'}
+          {'Allow to use my account'}
         </Button>
       );
     case ECrossAuthStatus.WAITING:
@@ -66,7 +68,7 @@ export default function CrossAuthButton({
     case ECrossAuthStatus.CONFIRMED:
       return (
         <p>
-          You authorized Minecraft server. Feel free to close this window and
+          You authorized {clientName}. Feel free to close this window and
           get back to game.
         </p>
       );
