@@ -2,6 +2,7 @@ import React, {PropsWithChildren, ReactNode} from 'react';
 import {injectClassNames} from '../../../../utils/css';
 import styles from './statistics-info.module.scss';
 import { Icon } from '@components/icon';
+import Tippy from "@tippyjs/react";
 
 export interface IStatisticsButtonProps {
   className?: string;
@@ -16,15 +17,17 @@ function StatisticsInfo({
   children,
 }: PropsWithChildren<IStatisticsButtonProps>): JSX.Element {
   return (
-    <div
-      className={injectClassNames(
-        styles['info'],
-        className,
-      )}
-    >
-      {children}
-      <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
-    </div>
+    <Tippy content={title} theme="minecraft">
+      <div
+        className={injectClassNames(
+          styles['info'],
+          className,
+        )}
+      >
+        {children}
+        <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
+      </div>
+    </Tippy>
   );
 }
 

@@ -35,3 +35,23 @@
     //background: colors.color('badge-legendary');
   }
 }
+
+.badge-title.uncommon {
+  color: colors.color('badge-uncommon');
+}
+
+.badge-title.rare {
+  color: colors.color('badge-rare');
+}
+
+.badge-title.exceptional {
+  color: colors.color('badge-exceptional');
+}
+
+.badge-title.epic {
+  color: colors.color('badge-epic');
+}
+
+.badge-title.legendary {
+  color: colors.color('badge-legendary');
+}

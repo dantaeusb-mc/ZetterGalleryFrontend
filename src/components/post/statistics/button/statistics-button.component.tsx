@@ -3,6 +3,7 @@ import { injectClassNames } from '../../../../utils/css';
 import styles from './statistics-button.module.scss';
 import Sparkles from '@components/vanity/sparkles';
 import { Icon } from '@components/icon';
+import Tippy from "@tippyjs/react";
 
 export enum EStatisticsButtonActiveColor {
   Green,
@@ -41,21 +42,23 @@ function StatisticsButton({
   const clickable = !!action;
 
   return (
-    <button
-      type="button"
-      className={injectClassNames(
-        styles['button'],
-        className,
-        [styles['clickable'], clickable],
-        [styles['active'], active],
-        colorClasses[activeColor],
-      )}
-      onClick={action}
-    >
-      <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
-      {active && <Sparkles color={`var(--zetter-color-yellow)`} />}
-      {children}
-    </button>
+    <Tippy content={title} theme="minecraft">
+      <button
+        type="button"
+        className={injectClassNames(
+          styles['button'],
+          className,
+          [styles['clickable'], clickable],
+          [styles['active'], active],
+          colorClasses[activeColor],
+        )}
+        onClick={action}
+      >
+        <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
+        {active && <Sparkles color={`var(--zetter-color-yellow)`} />}
+        {children}
+      </button>
+    </Tippy>
   );
 }
 
