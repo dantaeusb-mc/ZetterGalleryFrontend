@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-import styles from './Author.module.scss';
-import { PaintingProps } from '@components/post/Post.component';
+import styles from './author.module.scss';
+import { PaintingProps } from '@components/post/post.component';
 import { injectClassNames } from "@/utils/css";
+import Badge from "@components/player/badge";
+import { EBadgeTier } from "@components/player/badge/badge.component";
 
 export default function Author(props: PaintingProps): JSX.Element {
   return (
@@ -24,9 +26,8 @@ export default function Author(props: PaintingProps): JSX.Element {
           <div className={styles['profile-name-wrapper']}>
             <span>{props.author.nickname}</span>
           </div>
-          <div className={injectClassNames(styles['profile-badge-wrapper'], 'player-badge')}>
-            <i className={'player-badge-icon support-alpha'} style={{position: "absolute"}}></i>
-            <i className={'player-badge-icon style-landscape'} style={{position: "absolute"}}></i>
+          <div className={injectClassNames(styles['profile-badge-wrapper'])}>
+            <Badge title="Alpha Supporter" category="support" code="alpha" tier={EBadgeTier.Exceptional} className={styles['post-author-badge']} />
           </div>
         </header>
       </a>

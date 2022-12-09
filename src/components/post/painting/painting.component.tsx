@@ -1,7 +1,7 @@
 import React from 'react';
 import { pageWidth } from 'hooks/events';
-import { PaintingProps } from '../Post.component';
-import styles from './Painting.module.scss';
+import { PaintingProps } from '../post.component';
+import styles from './painting.module.scss';
 import { useIntl } from 'react-intl';
 
 export default function Painting(props: PaintingProps): JSX.Element {

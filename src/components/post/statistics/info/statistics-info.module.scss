@@ -1,0 +1,14 @@
+@use 'src/styles/variables/colors' as colors;
+
+.info {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding: .375rem .75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  margin-left: .5rem;
+}

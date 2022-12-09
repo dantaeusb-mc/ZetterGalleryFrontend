@@ -1,0 +1,20 @@
+@use 'variables/colors' as colors;
+
+.post-footer {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: flex-start;
+}
+
+.painting-title {
+  font-size: 1rem;
+  margin: 0.5rem;
+}
+
+.statistics-info-wrapper {
+  background: colors.color('block', 'dark');
+  border-radius: var(--button-radius);
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+}

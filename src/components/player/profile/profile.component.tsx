@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Profile.module.scss';
+import styles from './profile.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Badge from '@components/player/badge';
-import { EBadgeTier } from '@components/player/badge/Badge.component';
+import { EBadgeTier } from '@components/player/badge/badge.component';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
 
@@ -63,12 +63,7 @@ export default function Profile(props: ProfileProps): JSX.Element {
         </div>
       </header>
       <div className={styles['badge-wrapper']}>
-        <Badge title="Alpha Supporter" category="support" code="alpha" tier={EBadgeTier.Exceptional} />
-        <Badge title="Landscapist" category="style" code="landscape" tier={EBadgeTier.Rare} />
-        <Badge title="European artist" category="style" code="european" tier={EBadgeTier.Rare} />
-        <Badge title="Beta Supporter" category="support" code="beta" tier={EBadgeTier.Rare} />
-        <Badge title="Alpha Supporter" category="support" code="alpha" tier={EBadgeTier.Exceptional} />
-        <Badge title="Landscapist" category="style" code="landscape" tier={EBadgeTier.Rare} />
+        <Badge title="Alpha Supporter" category="support" code="alpha" tier={EBadgeTier.Exceptional} className={styles['profile-badge']} />
       </div>
       <footer className={styles['statistics']}>
         <div className={styles['statistics-element']}>
@@ -78,7 +73,7 @@ export default function Profile(props: ProfileProps): JSX.Element {
             description="Amount of submitted paintings showing in player's profile"
           />
           <br />
-          {1}
+          {0}
         </div>
         <div className={styles['statistics-element']}>
           <FormattedMessage
@@ -87,7 +82,7 @@ export default function Profile(props: ProfileProps): JSX.Element {
             description="Amount of favorite marks put on player's paintings in player's profile"
           />
           <br />
-          152
+          0
         </div>
         <div className={styles['statistics-element']}>
           <FormattedMessage
@@ -96,7 +91,7 @@ export default function Profile(props: ProfileProps): JSX.Element {
             description="Amount of total emeralds spent on player's paintings showing in player's profile"
           />
           <br />
-          {2742}
+          {0}
         </div>
       </footer>
     </section>

@@ -2,7 +2,7 @@ import React from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import Profile from '@components/player/profile';
-import { ProfileProps } from '@components/player/profile/Profile.component';
+import { ProfileProps } from '@components/player/profile/profile.component';
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 import { apiGet } from '@/utils/request';
 import { MessageResponseDto } from '@/dto/response/message.dto';

@@ -6,7 +6,7 @@ import Post from '@components/post';
 import DefaultLayout from '@components/layouts/default';
 import LayeredNavigation from '@components/painting/layered-navigation';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { PaintingProps } from '@components/post/Post.component';
+import { PaintingProps } from '@components/post/post.component';
 import lodash from 'lodash';
 import { useRouter } from 'next/router';
 import { apiGet } from '@/utils/request';

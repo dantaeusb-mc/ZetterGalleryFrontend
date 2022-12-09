@@ -3,7 +3,7 @@ import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import { NextPageContext } from 'next';
 import Profile from '@components/player/profile';
-import { ProfileProps } from '@components/player/profile/Profile.component';
+import { ProfileProps } from '@components/player/profile/profile.component';
 import { apiGet } from '@/utils/request';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { HttpCodeError } from '@/utils/request/api-get';

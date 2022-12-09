@@ -15,9 +15,11 @@ const Sparkles = ({
   color,
   count,
   duration,
-}: PropsWithChildren<SparklesProps>): JSX.Element => {
+}: PropsWithChildren<SparklesProps>): JSX.Element | null => {
   const nodeRef = useRef(null);
+
   const [show, setShow] = useState(false);
+
   useEffect(() => {
     setShow(true);
 

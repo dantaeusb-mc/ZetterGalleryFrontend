@@ -54,7 +54,7 @@ const Feed: NextPage<FeedPageProps> = (
       <DefaultLayout>
         {showFeedIntroduction && (
           <Introduction
-            learnMoreLink="/about"
+            learnMoreLink="/wiki/zetter-gallery#about-feed"
             hide={() => {
               updateShowFeedIntroduction(false);
             }}
