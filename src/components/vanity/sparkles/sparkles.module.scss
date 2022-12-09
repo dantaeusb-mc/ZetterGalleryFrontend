@@ -3,11 +3,16 @@
 @use 'sass:math';
 
 .sparkles {
+  display: none;
   position: absolute;
   pointer-events: none;
   top: 50%;
   right: 50%;
   transform: translate(-50%, -50%);
+
+  &.active {
+    display: block;
+  }
 }
 
 .particle {
@@ -22,6 +27,7 @@
     height: math.div(1rem, 4);
     width: math.div(1rem, 4);
     transform: scale(0);
+    z-index: -2;
   }
 }
 

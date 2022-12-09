@@ -1,5 +1,5 @@
 import React from 'react';
-import { usePageWidth } from 'hooks/events';
+import { pageWidth } from 'hooks/events';
 import { PaintingProps } from '../Post.component';
 import styles from './Painting.module.scss';
 import { useIntl } from 'react-intl';

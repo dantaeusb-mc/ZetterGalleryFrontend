@@ -12,7 +12,6 @@ export interface ItemProps {
   active: boolean;
   asset: StaticImageData;
   uri: string;
-  colorVar: string;
   className: string;
   large: boolean;
 }
@@ -26,14 +25,13 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
         {({ player }) => {
           return player ? (
             <Link href="/players/me">
-              <a
+              <button
                 title={player.nickname}
                 className={injectClassNames(
                   props.className,
-                  props.active ? styles['active'] : undefined,
                 )}
               >
-                {props.active && <Sparkles color={`var(${props.colorVar})`} />}
+                {props.active && <Sparkles />}
                 <Icon
                   asset={props.asset}
                   title={props.name}
@@ -52,15 +50,14 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                     'pixelated-images',
                   )}
                 />
-              </a>
+              </button>
             </Link>
           ) : (
             <Link href={props.uri}>
-              <a
+              <button
                 title={props.name}
                 className={injectClassNames(
                   props.className,
-                  props.active ? styles['active'] : undefined,
                 )}
               >
                 <Icon
@@ -80,7 +77,7 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                     'pixelated-images',
                   )}
                 />
-              </a>
+              </button>
             </Link>
           );
         }}

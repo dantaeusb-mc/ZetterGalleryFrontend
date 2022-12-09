@@ -6,7 +6,7 @@
   background: colors.color("block", "dark");
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   position: fixed;
   left: 50%;
   bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
@@ -28,30 +28,36 @@
   list-style: none;
   padding: 0;
 
-  @include media.after-mobile {
-    a {
-      margin: .5rem;
-    }
-
-    > li {
-      margin: 0 1rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-    margin: 0;
-    padding: .5rem;
-    overflow: hidden;
-    position: relative;
-  }
-
   > li {
     margin: 0 0.5rem;
   }
 }
 
+.icon {
+  border-radius: var(--border-small-radius);
+  display: block;
+  margin: 0;
+  position: relative;
+  transition: outline-color .1s ease, transform .2s ease;
+  outline-color: transparent;
+  height: 2rem;
+  width: 2rem;
+
+  &:focus {
+    outline: .2rem currentColor solid;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+
+  @include media.after-mobile {
+    padding: .5rem;
+  }
+}
+
 .about {
+  color: colors.color('red');
   filter: grayscale(1);
 
   &:hover,
@@ -61,6 +67,7 @@
 }
 
 .search {
+  color: colors.color('yellow');
   filter: grayscale(1);
 
   &:hover,
@@ -70,6 +77,7 @@
 }
 
 .home {
+  color: colors.color('green');
   filter: grayscale(1);
 
   &:hover,
@@ -79,6 +87,7 @@
 }
 
 .sale {
+  color: colors.color('blue');
   filter: grayscale(1);
 
   &:hover,
@@ -88,20 +97,15 @@
 }
 
 .profile {
+  color: colors.color('pink');
+  filter: grayscale(1);
   position: relative;
   height: 2rem;
   width: 2rem;
 
-  .icon {
-    position: absolute;
-    filter: grayscale(1);
-  }
-
   &:hover,
   &.active {
-    .icon {
-      filter: none;
-    }
+    filter: none;
   }
 }
 
@@ -111,7 +115,7 @@
   background-size: cover;
   image-rendering: pixelated;
   position: absolute;
-  bottom: 0.25rem;
+  bottom: 0;
   right: .5rem;
   height: .875rem;
   width: .75rem;

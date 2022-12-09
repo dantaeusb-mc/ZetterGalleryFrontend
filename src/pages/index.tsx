@@ -13,10 +13,16 @@ import { apiGet } from '@/utils/request';
 import 'reflect-metadata';
 import conform from '@/utils/conform';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
-import { SliceLink } from "@components/widgets/slice-link";
+import { SliceLink } from '@components/widgets/slice-link';
+import Introduction from '@components/widgets/introduction/introduction.component';
+import {
+  IntroductionStages,
+  isStageIntroduced,
+  setStageIntroduced,
+} from '@hooks/events/introduction';
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -81,6 +87,7 @@ const fetchPaintings = async (
 };
 
 interface PaintingsPageProps {
+  needWhatIsIntroduction: boolean;
   hasMore: boolean;
   paintings: PaintingProps[];
 }
@@ -171,6 +178,13 @@ const Home: NextPage<PaintingsPageProps> = (
     }
   }, [paintings.query]);
 
+  const [showWhatIsIntroduction, updateShowWhatIsIntroduction] =
+    useState<boolean>(props.needWhatIsIntroduction);
+
+  useEffect(() => {
+    setStageIntroduced(IntroductionStages.WhatIs, !showWhatIsIntroduction);
+  }, [showWhatIsIntroduction]);
+
   return (
     <>
       <Head>
@@ -179,6 +193,19 @@ const Home: NextPage<PaintingsPageProps> = (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
+        {showWhatIsIntroduction && (
+          <Introduction
+            learnMoreLink="/about"
+            hide={() => {
+              updateShowWhatIsIntroduction(false);
+            }}
+          >
+            <FormattedMessage
+              id="introduction.first-time.description"
+              defaultMessage="Zetter Gallery is a Minecraft mod that allow you to share paintings created with in game pixel art editor. Mod with painting editor is also available on CurseForge and installed separately."
+            />
+          </Introduction>
+        )}
         <LayeredNavigation
           currentQuery={paintings.query}
           updateLayer={updateQuery}
@@ -250,6 +277,10 @@ export async function getServerSideProps(
   return {
     props: {
       hasMore: hasMore,
+      needWhatIsIntroduction: isStageIntroduced(
+        IntroductionStages.WhatIs,
+        context.req,
+      ),
       paintings: await fetchPaintings(initPaintingsQuery),
     },
   };

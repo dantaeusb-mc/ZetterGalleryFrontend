@@ -2,6 +2,9 @@
 @use 'variables/colors' as colors;
 
 .profile-avatar {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
   height: 2rem;
   width: 2rem;
   z-index: -1;

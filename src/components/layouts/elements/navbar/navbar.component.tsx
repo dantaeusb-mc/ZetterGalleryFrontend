@@ -40,7 +40,6 @@ export default memo(function Navbar(): JSX.Element {
           asset={AboutIcon}
           uri="/about"
           active={aboutActive}
-          colorVar="--zetter-color-red"
           className={injectClassNames(
             styles['icon'], styles['about'], [styles['active'], aboutActive]
           )}
@@ -54,7 +53,6 @@ export default memo(function Navbar(): JSX.Element {
           asset={SearchIcon}
           uri="/search"
           active={searchActive}
-          colorVar="--zetter-color-yellow"
           className={injectClassNames(
             styles['icon'], styles['search'], [styles['active'], searchActive]
           )}
@@ -68,7 +66,6 @@ export default memo(function Navbar(): JSX.Element {
           asset={HomeIcon}
           uri="/"
           active={homeActive}
-          colorVar="--zetter-color-green"
           className={injectClassNames(
             styles['icon'], styles['home'], [styles['active'], homeActive]
           )}
@@ -82,7 +79,6 @@ export default memo(function Navbar(): JSX.Element {
           asset={OnSaleIcon}
           uri="/feed"
           active={saleActive}
-          colorVar="--zetter-color-blue"
           className={injectClassNames(
             styles['icon'], styles['sale'], [styles['active'], saleActive]
           )}
@@ -98,9 +94,8 @@ export default memo(function Navbar(): JSX.Element {
           asset={ProfileIcon}
           uri="/players/me"
           active={profileActive}
-          colorVar="--zetter-color-pink"
           className={injectClassNames(
-            styles['icon'], styles['profile'], [styles['active'], saleActive]
+            styles['icon'], styles['profile'], [styles['active'], profileActive]
           )}
         />
       </ul>

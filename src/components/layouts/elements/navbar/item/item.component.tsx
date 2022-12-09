@@ -10,7 +10,6 @@ export interface ItemProps {
   title: string;
   asset: StaticImageData;
   uri: string;
-  colorVar: string;
   className: string;
   large: boolean;
 }
@@ -19,21 +18,18 @@ const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
   return (
     <li>
       <Link href={props.uri}>
-        <a
+        <button
           title={props.title}
-          className={injectClassNames(
-            props.className,
-          )}
+          className={injectClassNames(props.className)}
         >
-          {props.active && <Sparkles color={`var(${props.colorVar})`} />}
+          {props.active && <Sparkles />}
           <Icon
             asset={props.asset}
             title={props.title}
-            className={props.className}
             size={props.large ? IconSize.Large : IconSize.Regular}
           />
           {props.children}
-        </a>
+        </button>
       </Link>
     </li>
   );

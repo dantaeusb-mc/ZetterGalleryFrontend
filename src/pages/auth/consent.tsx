@@ -6,12 +6,12 @@ import { FormattedMessage } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
 import ConsentButton from '@components/auth/consentButton';
-import { GetServerSideProps, NextPage, NextPageContext } from "next";
+import { GetServerSideProps } from 'next';
 import buildQuery from '@/utils/request/build-query';
 import { apiGet } from '@/utils/request';
 import { HttpCodeError } from '@/utils/request/api-get';
 import { ConsentInfoResponseDto } from "@/dto/response/auth/consent-info.dto";
-import { getCookie } from "cookies-next";
+import { getCookie } from 'cookies-next';
 import { ActionResponseDto } from "@/dto/response/action.dto";
 
 interface AuthConsentProps {
