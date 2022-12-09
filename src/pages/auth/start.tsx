@@ -84,7 +84,7 @@ export default function AuthStart(): JSX.Element {
                 <FormattedMessage
                   id="auth.microsoft.disclaimer.track"
                   defaultMessage="This is also used track what paintings
-            you purchase in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
+            you download in order to keep feed relevant. Do not worry, we keep your activity data only for a week."
                   description="Explain how we track player activity"
                 />
               </p>

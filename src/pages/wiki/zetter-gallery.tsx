@@ -327,7 +327,7 @@ export default function ZetterGalleryWikiHome({
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.about-feed.description.1'}
-                    defaultMessage="Feed is ever updating list of paintings, available for purchase.
+                    defaultMessage="Feed is ever updating list of paintings, available for purchase (download) from Painting Merchant.
                       With small amount of paintings the feed is not very useful, but its main goal is to always have
                       some interesting paintings for you to choose from."
                     description="What is feed"

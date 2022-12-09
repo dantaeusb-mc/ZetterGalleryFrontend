@@ -1,7 +1,13 @@
 @use 'src/styles/variables/placeholder' as *;
 
 .icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: transparent;
   display: inline-block;
+  font-size: 0;
+  image-rendering: pixelated;
+
 
   &.small-size {
     height: 1rem;

@@ -65,7 +65,7 @@ export default function AuthConsent(props: AuthConsentProps): JSX.Element {
               <p>
                 <FormattedMessage
                   id="auth-prompt.microsoft.disclaimer.what-for"
-                  defaultMessage="This allows server to purchase and submit paintings on your behalf when you trading with painting merchant."
+                  defaultMessage="This allows server to download and submit paintings on your behalf when you trading with painting merchant."
                   description="Why do we need player to authorize us with Microsoft account"
                 />
               </p>

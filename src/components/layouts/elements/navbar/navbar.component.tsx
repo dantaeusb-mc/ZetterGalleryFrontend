@@ -3,6 +3,12 @@ import styles from './navbar.module.scss';
 import { useRouter } from 'next/router';
 import { NavbarItem, NavbarProfileItem } from './item';
 import { useIntl } from 'react-intl';
+import AboutIcon from './icons/about.png';
+import SearchIcon from './icons/search.png';
+import HomeIcon from './icons/home.png';
+import OnSaleIcon from './icons/onsale.png';
+import ProfileIcon from './icons/profile.png';
+import { injectClassNames } from "@/utils/css";
 
 export interface ItemProps {
   name: string;
@@ -19,71 +25,85 @@ export default memo(function Navbar(): JSX.Element {
     router.pathname === '/about' || router.pathname.startsWith('/wiki');
   const searchActive = router.pathname === '/search';
   const homeActive = router.pathname === '/';
-  const feedActive = router.pathname === '/feed';
+  const saleActive = router.pathname === '/feed';
   const profileActive = router.pathname === '/players/me';
 
   return (
-    <>
-      <nav className={styles['header']}>
-        <ul className={styles['items']}>
-          <NavbarItem
-            key="nav-about"
-            name={intl.formatMessage({
-              id: 'navbar.about',
-              defaultMessage: 'About',
-            })}
-            icon="about"
-            uri="/about"
-            active={aboutActive}
-            className={styles['icon']}
-          />
-          <NavbarItem
-            key="nav-search"
-            name={intl.formatMessage({
-              id: 'navbar.search',
-              defaultMessage: 'Search',
-            })}
-            icon="search"
-            uri="/search"
-            active={searchActive}
-            className={styles['icon']}
-          />
-          <NavbarItem
-            key="nav-home"
-            name={intl.formatMessage({
-              id: 'navbar.home',
-              defaultMessage: 'Home',
-            })}
-            icon="home"
-            uri="/"
-            active={homeActive}
-            className={styles['icon']}
-            large={true}
-          />
-          <NavbarItem
-            key="nav-feed"
-            name={intl.formatMessage({
-              id: 'navbar.feed',
-              defaultMessage: 'Feed',
-            })}
-            icon="sale"
-            uri="/feed"
-            active={feedActive}
-            className={styles['icon']}
-          />
-          <NavbarProfileItem
-            key="nav-profile"
-            name={intl.formatMessage({
-              id: 'navbar.profile',
-              defaultMessage: 'Profile',
-            })}
-            icon="profile"
-            uri="/players/me"
-            active={profileActive}
-            className={styles['icon']}
-          />
-        </ul>
-      </nav>
-    </>
+    <nav className={styles['header']}>
+      <ul className={styles['items']}>
+        <NavbarItem
+          key="nav-about"
+          title={intl.formatMessage({
+            id: 'navbar.about',
+            defaultMessage: 'About',
+          })}
+          asset={AboutIcon}
+          uri="/about"
+          active={aboutActive}
+          colorVar="--zetter-color-red"
+          className={injectClassNames(
+            styles['icon'], styles['about'], [styles['active'], aboutActive]
+          )}
+        />
+        <NavbarItem
+          key="nav-search"
+          title={intl.formatMessage({
+            id: 'navbar.search',
+            defaultMessage: 'Search',
+          })}
+          asset={SearchIcon}
+          uri="/search"
+          active={searchActive}
+          colorVar="--zetter-color-yellow"
+          className={injectClassNames(
+            styles['icon'], styles['search'], [styles['active'], searchActive]
+          )}
+        />
+        <NavbarItem
+          key="nav-home"
+          title={intl.formatMessage({
+            id: 'navbar.home',
+            defaultMessage: 'Home',
+          })}
+          asset={HomeIcon}
+          uri="/"
+          active={homeActive}
+          colorVar="--zetter-color-green"
+          className={injectClassNames(
+            styles['icon'], styles['home'], [styles['active'], homeActive]
+          )}
+        />
+        <NavbarItem
+          key="nav-feed"
+          title={intl.formatMessage({
+            id: 'navbar.feed',
+            defaultMessage: 'On sale',
+          })}
+          asset={OnSaleIcon}
+          uri="/feed"
+          active={saleActive}
+          colorVar="--zetter-color-blue"
+          className={injectClassNames(
+            styles['icon'], styles['sale'], [styles['active'], saleActive]
+          )}
+        >
+          {saleActive && <div className={styles['sale-emerald']} />}
+        </NavbarItem>
+        <NavbarProfileItem
+          key="nav-profile"
+          name={intl.formatMessage({
+            id: 'navbar.profile',
+            defaultMessage: 'Profile',
+          })}
+          asset={ProfileIcon}
+          uri="/players/me"
+          active={profileActive}
+          colorVar="--zetter-color-pink"
+          className={injectClassNames(
+            styles['icon'], styles['profile'], [styles['active'], saleActive]
+          )}
+        />
+      </ul>
+    </nav>
   );
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './WikiNavigation.module.scss';
+import styles from './wiki-navigation.module.scss';
 import { WikiPageProps, WikiPageSections } from '@components/layouts/wiki';
 import { injectClassNames } from '@/utils/css';
 import { FormattedMessage } from 'react-intl';

@@ -1,3 +1,4 @@
+var path = require("path");
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -17,6 +18,9 @@ module.exports = withBundleAnalyzer({
     }*/
 
     return config;
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
   },
   images: {
     domains: ['[::1]'],

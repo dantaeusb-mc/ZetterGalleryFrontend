@@ -1,5 +1,5 @@
-@use '../../../styles/variables/media' as media;
-@use '../../../styles/variables/colors' as colors;
+@use 'variables/media' as media;
+@use 'variables/colors' as colors;
 
 .layered-navigation-sort, .layered-navigation-resolution {
   display: flex;

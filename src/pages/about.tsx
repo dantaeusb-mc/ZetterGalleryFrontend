@@ -108,7 +108,7 @@ const AboutPage: NextPage<Record<string, unknown>> = (
           <FormattedMessage
             id="about.zetter.gallery.description"
             defaultMessage="Zetter Gallery is a mod and a place to share your Zetter artworks with the world.
-                          With Zetter Gallery mod, the Painting Merchant is added, that allows you to sell and purchase
+                          With Zetter Gallery mod, the Painting Merchant is added, that allows you to upload and download
                           popular paintings on Zetter Gallery"
             description="Zetter Gallery Description"
           />
