@@ -1,4 +1,4 @@
-import React, { CSSProperties, memo } from "react";
+import React, { memo } from "react";
 import { injectClassNames } from 'utils/css';
 import styles from './icon.module.scss';
 
@@ -13,12 +13,14 @@ export enum IconSize {
   Small,
   Regular,
   Large,
+  ExtraLarge,
 }
 
 const sizeClasses = {
   [IconSize.Small]: styles['small-size'],
   [IconSize.Regular]: styles['regular-size'],
   [IconSize.Large]: styles['large-size'],
+  [IconSize.ExtraLarge]: styles['xl-size'],
 };
 
 function Icon(props: IconProps): JSX.Element {

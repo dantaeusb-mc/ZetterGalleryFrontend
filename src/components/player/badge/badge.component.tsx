@@ -41,7 +41,7 @@ export default function Badge({
     [EBadgeTier.Rare]: intl.formatMessage({id: 'badge.rare', defaultMessage: 'Rare'}),
     [EBadgeTier.Exceptional]: intl.formatMessage({id: 'badge.uncommon', defaultMessage: 'Exceptional'}),
     [EBadgeTier.Epic]:  intl.formatMessage({id: 'badge.epic', defaultMessage: 'Epic'}),
-    [EBadgeTier.Legendary]:  intl.formatMessage({id: 'badge.legendary', defaultMessage: 'Legendary'}),
+    [EBadgeTier.Legendary]:  intl.formatMessage({id: 'badge.legendary', defaultMessage: 'Legendary`'}),
   };
 
   return (

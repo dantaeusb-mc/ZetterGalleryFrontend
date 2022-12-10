@@ -7,9 +7,9 @@ import SortDescIcon from '@assets/sort-desc.svg';
 import { FormattedMessage } from 'react-intl';
 import { Icon } from '@components/icon';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
-import HotIcon from './icons/filters/hot.png';
-import NewIcon from './icons/filters/new.png';
-import TopIcon from './icons/filters/top.png';
+import HotIcon from '@assets/icons/feed/hot.png';
+import NewIcon from '@assets/icons/feed/new.png';
+import TopIcon from '@assets/icons/feed/top.png';
 
 export interface ILayeredNavigationProps {
   updateLayer: PaintingQueryUpdateFn;

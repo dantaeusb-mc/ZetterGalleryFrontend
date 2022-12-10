@@ -1,10 +1,10 @@
-import React, {createElement, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { injectClassNames } from 'utils/css';
-import styles from './RedirectTimer.module.scss';
+import styles from './redirect-timer.module.scss';
 
 type RedirectTimerProps = {
-  redirect: string,
-  timeout: number
+  redirect: string;
+  timeout: number;
 };
 
 function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
@@ -15,7 +15,7 @@ function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
     setTimeout(() => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
-  }
+  };
 
   useEffect(() => {
     if (isActive) {
@@ -30,7 +30,7 @@ function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
   const activate = () => {
     setIsActive(true);
     launchTimeout();
-  }
+  };
 
   return (<div className={ styles['wrapper'] }>
     <div className={ injectClassNames(styles['redirect-timer'])}>{ timeLeft }</div>
@@ -40,6 +40,6 @@ function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
 
 RedirectTimer.defaultProps = {
   timeout: 5
-}
+};
 
 export default RedirectTimer;
