@@ -1,12 +1,18 @@
 import buildQuery, { QueryParams } from '@/utils/request/build-query';
-import { GetServerSidePropsContext, NextPageContext } from 'next';
 import { getCookie } from 'cookies-next';
-import { HttpCodeError } from '@/utils/request/api-get';
+import { GetServerSidePropsContext, NextPageContext } from 'next';
 
-const apiPost = <T>(
+export class HttpCodeError {
+  response: Response;
+
+  constructor(response: Response) {
+    this.response = response;
+  }
+}
+
+const apiDelete = <T>(
   path: string,
-  body?: any | undefined,
-  queryParams?: QueryParams | undefined,
+  queryParams?: QueryParams,
   context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();
@@ -31,9 +37,8 @@ const apiPost = <T>(
   return fetch(
     process.env.NEXT_PUBLIC_API_URI + path + buildQuery(queryParams),
     {
-      method: 'POST',
+      method: 'DELETE',
       headers: requestHeaders,
-      body: JSON.stringify(body),
     },
   ).then((res) => {
     if (!res.ok) {
@@ -45,4 +50,4 @@ const apiPost = <T>(
   //.catch(handleFetchError);
 };
 
-export default apiPost;
+export default apiDelete;

@@ -39,25 +39,26 @@ function StatisticsButton({
   icon,
   children,
 }: PropsWithChildren<IStatisticsButtonProps>): JSX.Element {
-  const clickable = !!action;
-
   return (
     <Tippy content={title} theme="minecraft">
-      <button
-        type="button"
-        className={injectClassNames(
-          styles['button'],
-          className,
-          [styles['clickable'], clickable],
-          [styles['active'], active],
-          colorClasses[activeColor],
-        )}
-        onClick={action}
-      >
-        <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
-        {active && <Sparkles color={`var(--zetter-color-yellow)`} />}
-        {children}
-      </button>
+      { /* Disabled elements do not trigger events, such as hover, so for popup we need to have a wrapper block */}
+      <div>
+        <button
+          type="button"
+          className={injectClassNames(
+            styles['button'],
+            className,
+            [styles['active'], active],
+            colorClasses[activeColor],
+          )}
+          disabled={!action}
+          onClick={action}
+        >
+          <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
+          {active && <Sparkles color={`var(--zetter-color-yellow)`} />}
+          {children}
+        </button>
+      </div>
     </Tippy>
   );
 }

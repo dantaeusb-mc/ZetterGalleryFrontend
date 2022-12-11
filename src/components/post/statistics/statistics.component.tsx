@@ -10,16 +10,23 @@ import StatisticsInfo from './info';
 import FavoriteIcon from './icon/favorite.png';
 import ImpressionIcon from './icon/impression.png';
 import TotalIcon from './icon/total.png';
+import { AuthContext, AuthenticatedPlayer } from '@/context/auth.context';
+import { apiDelete, apiPost } from '@/utils/request';
 
-export interface IPaintingStatisticsProps {
+export interface PaintingStatisticsProps {
+  score: number;
   favorites: number;
+  impressions: number;
   salesTotal: number;
   salesCount: number;
 }
 
 export default function Statistics(props: PaintingProps): JSX.Element {
   const intl = useIntl();
-  const [favorite, setFavorite] = useState<boolean>(false);
+  const [favorite, setFavorite] = useState<boolean>(props.favorite);
+  let favorites = props.favorite
+    ? props.stats.favorites - 1
+    : props.stats.favorites;
 
   const formatNumber = (number: number): string => {
     const numeralInstance = numeral(number);
@@ -31,29 +38,92 @@ export default function Statistics(props: PaintingProps): JSX.Element {
     return numeralInstance.format('0,0');
   };
 
-  let counter = props.stats.favorites;
+  const submitFavorite = (player?: AuthenticatedPlayer) => {
+    if (!player) {
+      console.warn('Cannot submit favorite from non-logged in player');
+      return;
+    }
+
+    apiPost(`/players/${player.uuid}/favorites`, {
+      paintingUuid: props.uuid,
+    })
+      .then(() => {
+        setFavorite(true);
+      })
+      .catch((e) => {
+        console.error(e);
+        setFavorite(favorite);
+      });
+  };
+
+  const removeFavorite = (player?: AuthenticatedPlayer) => {
+    if (!player) {
+      console.warn('Cannot remove favorite from non-logged in player');
+      return;
+    }
+
+    apiDelete(`/players/${player.uuid}/favorites/${props.uuid}`)
+      .then(() => {
+        setFavorite(false);
+      })
+      .catch((e) => {
+        console.error(e);
+        setFavorite(favorite);
+      });
+  };
+
+  const toggleFavorite = (player: AuthenticatedPlayer) => {
+    if (favorite) {
+      removeFavorite(player);
+    } else {
+      submitFavorite(player);
+    }
+  };
+
   if (favorite) {
-    counter++;
+    favorites++;
   }
 
   return (
     <>
       <h3 className={styles['painting-title']}>{props.name}</h3>
       <footer className={styles['post-footer']}>
-        <StatisticsButton
-          activeColor={EStatisticsButtonActiveColor.Blue}
-          active={favorite}
-          action={() => {
-            setFavorite(!favorite);
+        <AuthContext.Consumer>
+          {({ player }) => {
+            if (player) {
+              return (
+                <StatisticsButton
+                  activeColor={EStatisticsButtonActiveColor.Blue}
+                  active={favorite}
+                  action={() => {
+                    toggleFavorite(player);
+                  }}
+                  title={intl.formatMessage({
+                    id: 'common.post.painting.action.favorite',
+                    defaultMessage: 'Add this painting to favorites',
+                  })}
+                  icon={FavoriteIcon}
+                >
+                  <span>{formatNumber(favorites)}</span>
+                </StatisticsButton>
+              );
+            } else {
+              return (
+                <StatisticsButton
+                  activeColor={EStatisticsButtonActiveColor.Blue}
+                  active={false}
+                  title={intl.formatMessage({
+                    id: 'common.post.painting.action.favorite.disabled',
+                    defaultMessage: 'Log in to add painting to favorites',
+                  })}
+                  icon={FavoriteIcon}
+                >
+                  <span>{formatNumber(favorites)}</span>
+                </StatisticsButton>
+              );
+            }
           }}
-          title={intl.formatMessage({
-            id: 'common.post.painting.action.favorite',
-            defaultMessage: 'Favorite this painting',
-          })}
-          icon={FavoriteIcon}
-        >
-          <span>{formatNumber(counter)}</span>
-        </StatisticsButton>
+        </AuthContext.Consumer>
         <div className={styles['statistics-info-wrapper']}>
           <StatisticsInfo
             title={intl.formatMessage({
@@ -62,7 +132,7 @@ export default function Statistics(props: PaintingProps): JSX.Element {
             })}
             icon={ImpressionIcon}
           >
-            <span>{formatNumber(counter)}</span>
+            <span>{formatNumber(props.stats.impressions)}</span>
           </StatisticsInfo>
           <StatisticsInfo
             title={intl.formatMessage({
@@ -71,7 +141,7 @@ export default function Statistics(props: PaintingProps): JSX.Element {
             })}
             icon={TotalIcon}
           >
-            <span>{formatNumber(counter)}</span>
+            <span>{formatNumber(props.stats.salesTotal)}</span>
           </StatisticsInfo>
         </div>
       </footer>

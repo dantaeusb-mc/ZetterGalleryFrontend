@@ -1,0 +1,17 @@
+@use 'variables/media';
+@use 'variables/colors' as colors;
+
+.feed-separator {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: .5rem 0;
+}
+
+.feed-icon {
+  margin-left: auto;
+}
+
+.feed-title {
+  margin: 0;
+}

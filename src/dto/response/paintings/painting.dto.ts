@@ -5,10 +5,20 @@ export class PaintingResponseDto {
   sizeH: number;
   sizeW: number;
   color?: string;
+  favorite?: boolean;
+  favorites?: number;
   statistics?: {
-    favorites: number;
-    salesTotal: string;
-    salesCount: number;
+    score: number;
+    verified: {
+      impressions: number;
+      salesTotal: number;
+      salesCount: number;
+    };
+    total: {
+      impressions: number;
+      salesTotal: number;
+      salesCount: number;
+    }
   };
   author: {
     uuid: string;

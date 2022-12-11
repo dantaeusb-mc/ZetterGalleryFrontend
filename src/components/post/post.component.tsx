@@ -2,7 +2,7 @@ import React from 'react';
 import Author from './author';
 import Painting from './painting';
 import Statistics from './statistics';
-import { IPaintingStatisticsProps } from './statistics/statistics.component';
+import { PaintingStatisticsProps } from './statistics/statistics.component';
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
@@ -22,7 +22,8 @@ export interface PaintingProps {
     uuid: string;
     nickname: string;
   };
-  stats: IPaintingStatisticsProps;
+  favorite: boolean;
+  stats: PaintingStatisticsProps;
 }
 
 export default function Post(props: PaintingProps): JSX.Element {

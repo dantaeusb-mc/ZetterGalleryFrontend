@@ -9,10 +9,19 @@
   flex-direction: row;
   padding: .375rem .75rem;
   position: relative;
-  overflow: hidden;
+
+  transition: transform .3s ease;
 
   &:focus {
     outline: .2rem solid var(--zetter-color-yellow);
+  }
+
+  &:disabled {
+    background: colors.color("block");
+  }
+
+  &:active {
+    transform: scale(.9);
   }
 
   &.active {

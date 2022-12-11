@@ -5,6 +5,9 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
 import { SliceLink } from '@components/widgets/slice-link';
 import getTitle from '@/utils/page/get-title';
+import DiscordIcon from '@assets/icons/logos/discord.png';
+import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
+import WikiIcon from '@assets/icons/logos/wiki.png';
 
 const AboutPage: NextPage<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
@@ -68,6 +71,8 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             id: 'about.zetter.button.wiki',
             defaultMessage: 'Check out Zetter Wiki',
           })}
+          icon={WikiIcon}
+          color="var(--zetter-color-red)"
           uri="/wiki/zetter"
         >
           <FormattedMessage
@@ -85,6 +90,8 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             id: 'about.zetter.button.download',
             defaultMessage: 'Download Zetter from CurseForge',
           })}
+          icon={CurseForgeIcon}
+          color="#F16436"
           uri="https://www.curseforge.com/minecraft/mc-mods/zetter"
         >
           <FormattedMessage
@@ -125,6 +132,8 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             id: 'about.zetter-gallery.button.wiki',
             defaultMessage: 'Check out Zetter Gallery Wiki',
           })}
+          icon={WikiIcon}
+          color="var(--zetter-color-red)"
           uri="/wiki/zetter-gallery"
         >
           <FormattedMessage
@@ -142,6 +151,8 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             id: 'about.zetter-gallery.button.download',
             defaultMessage: 'Download Zetter Gallery from CurseForge',
           })}
+          icon={CurseForgeIcon}
+          color="#F16436"
           uri="https://www.curseforge.com/minecraft/mc-mods/zetter-gallery"
         >
           <FormattedMessage
@@ -173,6 +184,8 @@ const AboutPage: NextPage<Record<string, unknown>> = (
             id: 'widgets.discord-button',
             defaultMessage: 'Join our Discord server',
           })}
+          icon={DiscordIcon}
+          color="#5865F2"
           uri="https://discord.gg/thPEdjKE3h"
         >
           <FormattedMessage

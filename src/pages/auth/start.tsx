@@ -49,12 +49,6 @@ export default function AuthStart(): JSX.Element {
             defaultMessage="Please use the same Microsoft account you use to login into Minecraft."
           />
         </Callout>
-        <Callout severity={CalloutSeverity.Info}>
-          <FormattedMessage
-            id="auth.microsoft.callout.alpha"
-            defaultMessage="This is a very early version of the service, provided as is. Issues may arise, content is not yet moderated."
-          />
-        </Callout>
         <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
           <header className={styles['heading']}>
             <h1>

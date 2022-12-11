@@ -1,5 +1,5 @@
 import type { NextPage, NextPageContext } from 'next';
-import { GetServerSidePropsResult } from 'next';
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import Head from 'next/head';
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import Post from '@components/post';
@@ -17,6 +17,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import { SliceLink } from '@components/widgets/slice-link';
+import DiscordIcon from '@assets/icons/logos/discord.png';
 import Introduction from '@components/widgets/introduction/introduction.component';
 import {
   IntroductionStages,
@@ -50,6 +51,7 @@ const defaultQuery: PaintingListQueryDto = {
 
 const mapPaintingResponseToProps = (
   response: PaintingResponseDto,
+  onlyVerified = false,
 ): PaintingProps => {
   return {
     uuid: response.uuid,
@@ -65,25 +67,42 @@ const mapPaintingResponseToProps = (
       uuid: response.author.uuid,
       nickname: response.author.nickname,
     },
+    favorite: !!response.favorite,
     stats: {
-      favorites: response.statistics ? response.statistics.favorites : 0,
-      salesTotal: response.statistics
-        ? parseInt(response.statistics.salesTotal)
+      favorites: response.favorites ? response.favorites : 0,
+      score: response.statistics ? response.statistics.score : 0,
+      impressions: response.statistics
+        ? onlyVerified
+          ? response.statistics.verified.impressions
+          : response.statistics.total.impressions
         : 0,
-      salesCount: response.statistics ? response.statistics.salesCount : 0,
+      salesTotal: response.statistics
+        ? onlyVerified
+          ? response.statistics.verified.salesTotal
+          : response.statistics.total.salesTotal
+        : 0,
+      salesCount: response.statistics
+        ? onlyVerified
+          ? response.statistics.verified.salesCount
+          : response.statistics.total.salesCount
+        : 0,
     },
   };
 };
 
 const fetchPaintings = async (
   queryParams: PaintingListQueryDto,
+  context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<PaintingProps[]> => {
   const response = await apiGet<PaintingResponseDto[]>(
     '/paintings',
     queryParams,
+    context,
   );
 
-  return response.map(mapPaintingResponseToProps);
+  return response.map((paintingData) =>
+    mapPaintingResponseToProps(paintingData, false),
+  );
 };
 
 interface PaintingsPageProps {
@@ -165,7 +184,7 @@ const Home: NextPage<PaintingsPageProps> = (
 
       setPaintings({
         ...paintings,
-        hasMore: newPaintings.length >= 20,
+        hasMore: newPaintings.length >= 10,
         items: paintings.items.concat(newPaintings),
       });
     };
@@ -246,6 +265,7 @@ const Home: NextPage<PaintingsPageProps> = (
             id: 'index.page.cta.button.wiki',
             defaultMessage: 'Learn about Zetter Gallery',
           })}
+          icon={DiscordIcon}
           uri="/about"
         >
           <FormattedMessage
@@ -271,7 +291,7 @@ export async function getServerSideProps(
     context.query,
   );
 
-  const paintings = await fetchPaintings(initPaintingsQuery);
+  const paintings = await fetchPaintings(initPaintingsQuery, context);
   const hasMore = paintings.length === 10;
 
   return {
@@ -281,7 +301,7 @@ export async function getServerSideProps(
         IntroductionStages.WhatIs,
         context.req,
       ),
-      paintings: await fetchPaintings(initPaintingsQuery),
+      paintings: paintings,
     },
   };
 }

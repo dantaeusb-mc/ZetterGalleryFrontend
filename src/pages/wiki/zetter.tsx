@@ -45,6 +45,8 @@ import {
 import styles from './wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
 import { SliceLink } from "@components/widgets/slice-link";
+import WikiIcon from "@assets/icons/logos/wiki.png";
+import CurseForgeIcon from "@assets/icons/logos/curseforge.png";
 
 export default function ZetterWikiHome({
   pages,
@@ -615,35 +617,39 @@ export default function ZetterWikiHome({
                 </p>
                 <SliceLink
                   title={intl.formatMessage({
-                    id: 'wiki.zetter.sharing.button.wiki',
+                    id: 'about.zetter-gallery.button.wiki',
                     defaultMessage: 'Check out Zetter Gallery Wiki',
                   })}
+                  icon={WikiIcon}
+                  color="var(--zetter-color-red)"
                   uri="/wiki/zetter-gallery"
                 >
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.wiki.check"
+                    id="about.zetter-gallery.button.wiki.check"
                     defaultMessage="Check out"
                   />
                   <br />
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.wiki.what"
+                    id="about.zetter-gallery.button.wiki.what"
                     defaultMessage="Zetter Gallery Wiki"
                   />
                 </SliceLink>
                 <SliceLink
                   title={intl.formatMessage({
-                    id: 'wiki.zetter.sharing.button.download',
+                    id: 'about.zetter-gallery.button.download',
                     defaultMessage: 'Download Zetter Gallery from CurseForge',
                   })}
+                  icon={CurseForgeIcon}
+                  color="#F16436"
                   uri="https://www.curseforge.com/minecraft/mc-mods/zetter-gallery"
                 >
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.download.what"
+                    id="about.zetter-gallery.button.download.what"
                     defaultMessage="Download Zetter Gallery"
                   />
                   <br />
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.download.from"
+                    id="about.zetter-gallery.button.download.from"
                     defaultMessage="from CurseForge"
                   />
                 </SliceLink>

@@ -1,4 +1,4 @@
-import buildQuery, { IQueryParams } from '@/utils/request/build-query';
+import buildQuery, { QueryParams } from '@/utils/request/build-query';
 import { getCookie } from 'cookies-next';
 import { GetServerSidePropsContext, NextPageContext } from 'next';
 
@@ -12,7 +12,7 @@ export class HttpCodeError {
 
 const apiGet = <T>(
   path: string,
-  queryParams?: IQueryParams,
+  queryParams?: QueryParams,
   context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();

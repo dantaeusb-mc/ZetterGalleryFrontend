@@ -24,7 +24,7 @@ export default function FeedSeparator({
     },
     hot: {
       title: intl.formatMessage({id: 'feed.popular.title', defaultMessage: 'Hot'}),
-      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Trending paintings, that got attention in the previous batches'}),
+      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Trending paintings that got attention in the previous batches'}),
       icon: HotIcon,
     },
     new: {

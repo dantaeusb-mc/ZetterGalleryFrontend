@@ -44,7 +44,6 @@ export default function Player(props: ProfileProps): JSX.Element {
       </Head>
       <DefaultLayout>
         <Profile uuid={props.uuid} nickname={props.nickname} me={true} />
-        <ConstructionPlaceholder />
       </DefaultLayout>
     </>
   );
