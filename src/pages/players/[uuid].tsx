@@ -3,16 +3,21 @@ import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import Profile from '@components/player/profile';
 import { ProfileProps } from '@components/player/profile/profile.component';
-import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { apiGet } from '@/utils/request';
-import { MessageResponseDto } from '@/dto/response/message.dto';
-import { TokenResponseDto } from '@/dto/response/auth/token.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
 import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
-import ConstructionPlaceholder from '@components/construction-placeholder';
+import Post, { PaintingProps } from '@components/post/post.component';
+import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
+import { mapPaintingResponseToProps } from "@/utils/mappers";
 
-export default function Player(props: ProfileProps): JSX.Element {
+export interface PlayerPageProps {
+  profile: ProfileProps;
+  paintings: PaintingProps[];
+}
+
+const PlayerPage = ({ profile, paintings }: PlayerPageProps): JSX.Element => {
   const intl = useIntl();
   const title = getTitle(
     intl.formatMessage(
@@ -21,7 +26,7 @@ export default function Player(props: ProfileProps): JSX.Element {
         defaultMessage: "{username}'s Profile",
       },
       {
-        username: props.nickname,
+        username: profile.nickname,
       },
     ),
   );
@@ -32,7 +37,7 @@ export default function Player(props: ProfileProps): JSX.Element {
       defaultMessage: "{username}'s profile on Zetter Gallery",
     },
     {
-      username: props.nickname,
+      username: profile.nickname,
     },
   );
 
@@ -44,29 +49,50 @@ export default function Player(props: ProfileProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
-        <Profile uuid={props.uuid} nickname={props.nickname} me={false} />
+        <Profile {...profile} />
+        {paintings.map((paintingProps, index) => (
+          <Post key={`painting-${index}`} {...paintingProps} />
+        ))}
       </DefaultLayout>
     </>
   );
-}
+};
 
-export const getServerSideProps = async (
+export default PlayerPage;
+
+export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
   context: GetServerSidePropsContext,
-): Promise<GetServerSidePropsResult<Partial<ProfileProps>>> => {
-  let response: MessageResponseDto & Partial<ProfileProps>;
+) => {
+  let profile: ProfileProps;
 
   try {
-    response = await apiGet<
-      MessageResponseDto & TokenResponseDto & Partial<ProfileProps>
-    >(`/players/${context.params?.uuid}`, {}, context);
+    profile = await apiGet<ProfileProps>(`/players/${context.params?.uuid}`, {}, context);
+  } catch (e) {
+    return handleRequestErrors(e);
+  }
+
+  let paintings: PaintingResponseDto[];
+
+  try {
+    paintings = await apiGet<PaintingResponseDto[]>(
+      `/players/${context.params?.uuid}/paintings`,
+      {
+        sort: 'newest',
+      },
+      context,
+    );
   } catch (e) {
     return handleRequestErrors(e);
   }
 
   return {
     props: {
-      uuid: response.uuid,
-      nickname: response.nickname,
+      profile: {
+        uuid: profile.uuid,
+        nickname: profile.nickname,
+        me: false,
+      },
+      paintings: paintings.map((painting) => mapPaintingResponseToProps(painting, false)),
     },
   };
 };

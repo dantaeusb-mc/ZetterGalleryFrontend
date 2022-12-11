@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import styles from './cycle-info.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icon, IconSize } from '@components/icon';
 import MerchantIcon from './icons/merchant.png';
 import NewIcon from '@assets/icons/feed/new.png';
 import { injectClassNames } from '@/utils/css';
-import Tippy from "@tippyjs/react";
-import { useRouter } from "next/router";
+import Tippy from '@tippyjs/react';
+import { useRouter } from 'next/router';
 
 export interface CycleInfoProps {
   id: number;
@@ -28,8 +28,10 @@ export default function CycleInfo({
     endsAt.getTime() - new Date().getTime(),
   );
 
+  let timeout: ReturnType<typeof setTimeout>;
+
   const launchTimeout = () => {
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       setTimeLeft(endsAt.getTime() - new Date().getTime());
     }, 1000);
   };
@@ -40,6 +42,12 @@ export default function CycleInfo({
     } else {
       launchTimeout();
     }
+
+    return () => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    };
   }, [timeLeft]);
 
   useEffect(launchTimeout, []);
@@ -50,7 +58,7 @@ export default function CycleInfo({
 
     let minutesString = minutes.toString();
     if (minutes <= 0) {
-      minutesString = '0'
+      minutesString = '0';
     }
 
     let secondsString = seconds.toString();

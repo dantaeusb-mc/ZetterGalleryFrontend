@@ -1,55 +1,20 @@
 import React from 'react';
-import DefaultLayout from '@components/layouts/default';
-import Head from 'next/head';
-import { NextPageContext } from 'next';
-import Profile from '@components/player/profile';
-import { ProfileProps } from '@components/player/profile/profile.component';
+import { GetServerSideProps, GetServerSidePropsContext, NextPageContext } from "next";
 import { apiGet } from '@/utils/request';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { HttpCodeError } from '@/utils/request/api-get';
-import { useIntl } from 'react-intl';
-import getTitle from '@/utils/page/get-title';
-import ConstructionPlaceholder from '@components/construction-placeholder';
+import PlayerPage, { PlayerPageProps } from "@pages/players/[uuid]";
+import { ProfileProps } from "@components/player/profile/profile.component";
+import handleRequestErrors from "@/utils/response/handleRequestErrors";
+import { PaintingResponseDto } from "@/dto/response/paintings/painting.dto";
+import { mapPaintingResponseToProps } from "@/utils/mappers";
 
-export default function Player(props: ProfileProps): JSX.Element {
-  const intl = useIntl();
-  const title = getTitle(
-    intl.formatMessage(
-      {
-        id: 'players.page.title',
-        defaultMessage: "{username}'s Profile",
-      },
-      {
-        username: props.nickname,
-      },
-    ),
-  );
+const CurrentPlayerPage = PlayerPage;
+export default CurrentPlayerPage;
 
-  const description = intl.formatMessage(
-    {
-      id: 'players.page.description',
-      defaultMessage: "{username}'s profile on Zetter Gallery",
-    },
-    {
-      username: props.nickname,
-    },
-  );
-
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <DefaultLayout>
-        <Profile uuid={props.uuid} nickname={props.nickname} me={true} />
-      </DefaultLayout>
-    </>
-  );
-}
-
-export async function getServerSideProps(context: NextPageContext) {
+export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
+  context: GetServerSidePropsContext,
+) => {
   let response: PlayerResponseDto;
 
   try {
@@ -76,9 +41,36 @@ export async function getServerSideProps(context: NextPageContext) {
     };
   }
 
+  let profile: ProfileProps;
+
+  try {
+    profile = await apiGet<ProfileProps>(`/players/${response.uuid}`, {}, context);
+  } catch (e) {
+    return handleRequestErrors(e);
+  }
+
+  let paintings: PaintingResponseDto[];
+
+  try {
+    paintings = await apiGet<PaintingResponseDto[]>(
+      `/players/${response.uuid}/paintings`,
+      {
+        sort: 'newest',
+      },
+      context,
+    );
+  } catch (e) {
+    return handleRequestErrors(e);
+  }
+
   return {
     props: {
-      ...response,
+      profile: {
+        uuid: profile.uuid,
+        nickname: profile.nickname,
+        me: true,
+      },
+      paintings: paintings.map((painting) => mapPaintingResponseToProps(painting, false)),
     },
   };
-}
+};

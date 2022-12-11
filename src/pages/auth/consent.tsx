@@ -10,9 +10,9 @@ import { GetServerSideProps } from 'next';
 import buildQuery from '@/utils/request/build-query';
 import { apiGet } from '@/utils/request';
 import { HttpCodeError } from '@/utils/request/api-get';
-import { ConsentInfoResponseDto } from "@/dto/response/auth/consent-info.dto";
+import { ConsentInfoResponseDto } from '@/dto/response/auth/consent-info.dto';
 import { getCookie } from 'cookies-next';
-import { ActionResponseDto } from "@/dto/response/action.dto";
+import { ActionResponseDto } from '@/dto/response/action.dto';
 
 interface AuthConsentProps {
   code: string;
@@ -39,7 +39,13 @@ export default function AuthConsent(props: AuthConsentProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CleanLayout>
-        <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
+        <section
+          className={injectClassNames(
+            'block',
+            'sans-serif-font',
+            styles['auth-prompt'],
+          )}
+        >
           <header className={styles['heading']}>
             <h1>
               You are going to allow <wbr />
@@ -87,9 +93,12 @@ export default function AuthConsent(props: AuthConsentProps): JSX.Element {
                   description="Explain how to make sure it's not a phishing page"
                 />
               </p>
-              { props.serverInfo &&
-                <ServerWidget name={props.serverInfo.title} ip={props.serverInfo.ip} />
-              }
+              {props.serverInfo && (
+                <ServerWidget
+                  name={props.serverInfo.title}
+                  ip={props.serverInfo.ip}
+                />
+              )}
             </div>
           </div>
           <div className={styles['action-wrapper']}>
@@ -150,16 +159,18 @@ export const getServerSideProps: GetServerSideProps<AuthConsentProps> = async (
 
     return {
       props: {
-        code: code,
+        code: code as string,
         clientName: result.clientName,
         scope: result.scope,
         issuedAt: result.issuedAt,
         notAfter: result.notAfter,
-        serverInfo: {
-          title: result.serverInfo?.title,
-          motd: result.serverInfo?.motd,
-          ip: result.serverInfo?.ip,
-        },
+        serverInfo: result.serverInfo
+          ? {
+              title: result.serverInfo?.title,
+              motd: result.serverInfo?.motd,
+              ip: result.serverInfo?.ip,
+            }
+          : undefined,
       },
     };
   } catch (e) {
@@ -167,6 +178,13 @@ export const getServerSideProps: GetServerSideProps<AuthConsentProps> = async (
       return {
         redirect: {
           destination: '/' + e.response.status,
+          permanent: false,
+        },
+      };
+    } else {
+      return {
+        redirect: {
+          destination: '/500',
           permanent: false,
         },
       };

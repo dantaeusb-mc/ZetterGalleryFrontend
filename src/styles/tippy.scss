@@ -10,6 +10,14 @@
   @include font-family('Minecraftia', sans-serif);
   font-size: 1rem;
 
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   &:before {
     background: linear-gradient(#310567, #1f0038);
     content: '';

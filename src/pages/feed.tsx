@@ -13,43 +13,18 @@ import {
 import getTitle from '@/utils/page/get-title';
 import { useRouter } from 'next/router';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
-import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import Post, { PaintingProps } from '@components/post/post.component';
 import { apiGet } from '@/utils/request';
 import { PaintingFeedResponseDto } from '@/dto/response/paintings/feed.dto';
 import FeedSeparator from "@components/feed/seaprator";
 import { FeedTypes } from "@/const/feed-types";
 import CycleInfo from "@components/cycle";
+import { mapPaintingResponseToProps } from "@/utils/mappers";
 
-const mapPaintingResponseToProps = (
-  response: PaintingResponseDto,
-): PaintingProps => {
-  return {
-    uuid: response.uuid,
-    uri: `/paintings/${response.uuid}`,
-    image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
-    name: response.name,
-    resolution: response.resolution,
-    originalSize: {
-      height: response.sizeH,
-      width: response.sizeW,
-    },
-    author: {
-      uuid: response.author.uuid,
-      nickname: response.author.nickname,
-    },
-    stats: {
-      favorites: response.statistics ? response.statistics.favorites : 0,
-      salesTotal: response.statistics
-        ? parseInt(response.statistics.salesTotal)
-        : 0,
-      salesCount: response.statistics ? response.statistics.salesCount : 0,
-    },
-  };
-};
-
-const fetchFeed = async (): Promise<CycleFeedProps> => {
-  const response = await apiGet<PaintingFeedResponseDto>('/paintings/feed');
+const fetchFeed = async (
+  context?: NextPageContext,
+): Promise<CycleFeedProps> => {
+  const response = await apiGet<PaintingFeedResponseDto>('/paintings/feed', undefined, context);
 
   const feeds: FeedProps[] = [];
 
@@ -60,7 +35,9 @@ const fetchFeed = async (): Promise<CycleFeedProps> => {
 
     feeds.push({
       code: feed,
-      paintings: response.feeds[feed]!.map(mapPaintingResponseToProps),
+      paintings: response.feeds[feed]!.map((paintingData) =>
+        mapPaintingResponseToProps(paintingData, false),
+      ),
     });
   }
 
@@ -164,7 +141,7 @@ const Feed: NextPage<FeedPageProps> = (
 export async function getServerSideProps(
   context: NextPageContext,
 ): Promise<GetServerSidePropsResult<FeedPageProps>> {
-  const cycleFeed = await fetchFeed();
+  const cycleFeed = await fetchFeed(context);
 
   return {
     props: {
