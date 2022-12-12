@@ -13,6 +13,7 @@ import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
 import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
+import { mapPaintingResponseToProps } from "@/utils/mappers";
 
 export default function Painting(props: PaintingProps): JSX.Element {
   const intl = useIntl();
@@ -68,26 +69,7 @@ export const getServerSideProps: GetServerSideProps<PaintingProps> = async (
     );
 
     return {
-      props: {
-        uuid: response.uuid,
-        image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
-        name: response.name,
-        resolution: response.resolution,
-        originalSize: {
-          height: response.sizeH,
-          width: response.sizeW,
-        },
-        author: {
-          uuid: response.author.uuid,
-          nickname: response.author.nickname,
-        },
-        stats: {
-          salesCount: response.statistics!.salesCount,
-          // @todo: BigInt
-          salesTotal: parseInt(response.statistics!.salesTotal),
-          favorites: response.statistics!.favorites,
-        },
-      },
+      props: mapPaintingResponseToProps(response, false),
     };
   } catch (e) {
     return handleRequestErrors(e);
