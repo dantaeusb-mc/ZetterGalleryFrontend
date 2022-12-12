@@ -1,6 +1,7 @@
 @use 'raleway/index' as raleway;
 @use 'minecraftia/index' as minecraftia;
 @use 'equipmentpro/index' as equipmentpro;
+@use 'martianmono/index' as martianmono;
 
 $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
 
@@ -71,5 +72,12 @@ $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
     equipmentpro.$vfont,
     equipmentpro.$fonts,
     equipmentpro.$ext
+  );
+
+  @include _include-fonts(
+      'MartianMono',
+      martianmono.$vfont,
+      martianmono.$fonts,
+      martianmono.$ext
   );
 }

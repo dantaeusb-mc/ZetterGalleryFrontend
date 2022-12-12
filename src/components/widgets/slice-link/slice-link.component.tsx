@@ -2,17 +2,22 @@ import React, { PropsWithChildren } from 'react';
 import { injectClassNames } from '@/utils/css';
 import styles from './slice-link.module.scss';
 import { Icon, IconSize } from '@components/icon';
+import BackgroundIcon from '@assets/icons/button-icon-wrapper-alt.png';
 import Link from 'next/link';
 
 type ButtonProps = {
   title: string;
   uri: string;
+  icon: StaticImageData;
   className?: string;
+  color?: string;
 };
 
 function SliceLink({
   title,
+  icon,
   uri,
+  color,
   className,
   children,
 }: PropsWithChildren<ButtonProps>): JSX.Element {
@@ -35,7 +40,12 @@ function SliceLink({
         {...(external ? { target: '_blank' } : {})}
       >
         <div className={styles['slice-button-inner']}>
-          <Icon asset="home" className={styles['icon']} size={IconSize.Large} />
+          <div
+            className={styles['slice-button-icon-wrapper']}
+            style={{ backgroundImage: `url(${BackgroundIcon.src})`, backgroundColor: color }}
+          >
+            <Icon asset={icon} title={title} className={styles['icon']} />
+          </div>
           <div className={styles['slice-button-text']}>{children}</div>
         </div>
       </a>

@@ -1,64 +1,10 @@
-@use '../../../../../styles/variables/media';
-@use '../../../../../styles/variables/colors' as colors;
-
-.about {
-  .icon {
-    stroke: colors.color("inactive");
-  }
-
-  &:hover,
-  &.active {
-    .icon {
-      stroke: colors.color("red");
-    }
-  }
-}
-
-.search {
-  .icon {
-    stroke: colors.color("inactive");
-  }
-
-  &:hover,
-  &.active {
-    .icon {
-      stroke: colors.color("yellow");
-    }
-  }
-}
-
-.sale {
-  .icon {
-    stroke: colors.color("inactive");
-  }
-
-  &:hover,
-  &.active {
-    .icon {
-      stroke: colors.color("blue");
-    }
-  }
-}
-
-.profile {
-  position: relative;
-  height: 2rem;
-  width: 2rem;
-
-  .icon {
-    position: absolute;
-    stroke: colors.color("inactive");
-  }
-
-  &:hover,
-  &.active {
-    .icon {
-      stroke: colors.color("pink");
-    }
-  }
-}
+@use 'variables/media';
+@use 'variables/colors' as colors;
 
 .profile-avatar {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
   height: 2rem;
   width: 2rem;
   z-index: -1;

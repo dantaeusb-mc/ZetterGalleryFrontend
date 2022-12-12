@@ -1,0 +1,57 @@
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
+
+.badge {
+  background-size: cover;
+  border-radius: var(--border-small-radius);
+  display: inline-flex;
+  position: relative;
+  min-height: 2rem;
+  min-width: 2rem;
+
+  .description {
+    line-height: 1.75rem;
+    padding: 0 1rem 0 1rem;
+    transition: padding .3s ease;
+  }
+
+  &.uncommon {
+    //background: colors.color('badge-uncommon');
+  }
+
+  &.rare {
+    //background: colors.color('badge-rare');
+  }
+
+  &.exceptional {
+    //background: colors.color('badge-exceptional');
+  }
+
+  &.epic {
+    //background: colors.color('badge-epic');
+  }
+
+  &.legendary {
+    //background: colors.color('badge-legendary');
+  }
+}
+
+.badge-title.uncommon {
+  color: colors.color('badge-uncommon');
+}
+
+.badge-title.rare {
+  color: colors.color('badge-rare');
+}
+
+.badge-title.exceptional {
+  color: colors.color('badge-exceptional');
+}
+
+.badge-title.epic {
+  color: colors.color('badge-epic');
+}
+
+.badge-title.legendary {
+  color: colors.color('badge-legendary');
+}

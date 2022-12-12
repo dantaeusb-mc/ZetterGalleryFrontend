@@ -5,14 +5,15 @@ import { Icon, IconSize } from '@components/icon';
 import { injectClassNames } from '@/utils/css';
 import { AuthContext } from '@/context/auth.context';
 import { useIntl } from 'react-intl';
+import Sparkles from '@components/vanity/sparkles';
 
 export interface ItemProps {
+  name: string;
+  active: boolean;
+  asset: StaticImageData;
+  uri: string;
   className: string;
   large: boolean;
-  name: string;
-  uri: string;
-  icon: string;
-  active: boolean;
 }
 
 const NavbarProfileItem = (props: ItemProps): JSX.Element => {
@@ -24,16 +25,16 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
         {({ player }) => {
           return player ? (
             <Link href="/players/me">
-              <a
+              <button
                 title={player.nickname}
                 className={injectClassNames(
-                  styles[props.icon],
                   props.className,
-                  props.active ? styles['active'] : undefined,
                 )}
               >
+                {props.active && <Sparkles />}
                 <Icon
-                  asset={props.icon}
+                  asset={props.asset}
+                  title={props.name}
                   className={styles['icon']}
                   size={props.large ? IconSize.Large : IconSize.Regular}
                 />
@@ -49,20 +50,19 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                     'pixelated-images',
                   )}
                 />
-              </a>
+              </button>
             </Link>
           ) : (
             <Link href={props.uri}>
-              <a
+              <button
                 title={props.name}
                 className={injectClassNames(
-                  styles[props.icon],
                   props.className,
-                  props.active ? styles['active'] : undefined,
                 )}
               >
                 <Icon
-                  asset={props.icon}
+                  asset={props.asset}
+                  title={props.name}
                   className={styles['icon']}
                   size={props.large ? IconSize.Large : IconSize.Regular}
                 />
@@ -77,7 +77,7 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                     'pixelated-images',
                   )}
                 />
-              </a>
+              </button>
             </Link>
           );
         }}

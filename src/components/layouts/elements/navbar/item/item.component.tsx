@@ -1,36 +1,35 @@
-import React, { memo } from 'react';
+import React, { memo, PropsWithChildren } from "react";
 import styles from './item.module.scss';
 import Link from 'next/link';
 import { Icon, IconSize } from '@components/icon';
 import { injectClassNames } from '@/utils/css';
+import Sparkles from "@components/vanity/sparkles";
 
 export interface ItemProps {
+  active: boolean;
+  title: string;
+  asset: StaticImageData;
+  uri: string;
   className: string;
   large: boolean;
-  name: string;
-  uri: string;
-  icon: string;
-  active: boolean;
 }
 
-function NavbarItem(props: ItemProps): JSX.Element {
+const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
   return (
     <li>
       <Link href={props.uri}>
-        <a
-          title={props.name}
-          className={injectClassNames(
-            styles[props.icon],
-            props.className,
-            props.active ? styles['active'] : undefined,
-          )}
+        <button
+          title={props.title}
+          className={injectClassNames(props.className)}
         >
+          {props.active && <Sparkles />}
           <Icon
-            asset={props.icon}
-            className={styles['icon']}
+            asset={props.asset}
+            title={props.title}
             size={props.large ? IconSize.Large : IconSize.Regular}
           />
-        </a>
+          {props.children}
+        </button>
       </Link>
     </li>
   );

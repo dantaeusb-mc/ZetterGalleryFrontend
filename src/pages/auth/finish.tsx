@@ -8,7 +8,7 @@ import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
 import { FormattedMessage } from 'react-intl';
 import { Button } from '@components/button';
-import { RedirectTimer } from '@components/widgets/redirectTimer';
+import { RedirectTimer } from '@components/widgets/redirect-timer';
 import { TokenResponseDto } from '@/dto/response/auth/token.dto';
 import { ActionResponseDto } from '@/dto/response/action.dto';
 import { MessageResponseDto } from '@/dto/response/message.dto';

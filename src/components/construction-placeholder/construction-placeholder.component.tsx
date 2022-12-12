@@ -3,6 +3,7 @@ import { injectClassNames } from '@/utils/css';
 import styles from './construction-placeholder.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { SliceLink } from '@components/widgets/slice-link';
+import DiscordIcon from '@assets/icons/logos/discord.png';
 
 const ConstructionPlaceholder = (): JSX.Element => {
   const intl = useIntl();
@@ -27,6 +28,8 @@ const ConstructionPlaceholder = (): JSX.Element => {
           id: 'widgets.under-construction.description.discord-button',
           defaultMessage: 'Join our Discord server',
         })}
+        icon={DiscordIcon}
+        color="#5865F2"
         uri="https://discord.gg/thPEdjKE3h"
       >
         <FormattedMessage

@@ -10,7 +10,7 @@
     "lint": "next lint",
     "i18n:extract": "formatjs extract \"src/**/*.{ts,tsx}\" --out-file content/locales/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
     "i18n:compile": "formatjs compile-folder content/locales content/compiled-locales",
-    "i18n:manage": "node ./translationRunner.js",
+    "i18n:manage": "node ./translation-runner.js",
     "i18n": "npm run i18n:extract && npm run i18n:compile",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
@@ -19,7 +19,9 @@
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.4",
     "@svgr/webpack": "^5.5.0",
+    "@tippyjs/react": "^4.2.6",
     "@types/numeral": "^2.0.2",
+    "@types/ua-parser-js": "^0.7.36",
     "class-transformer": "^0.4.0",
     "cookies-next": "^2.0.3",
     "cross-env": "^7.0.3",
@@ -32,9 +34,11 @@
     "react-dom": "17.0.2",
     "react-infinite-scroll-component": "^6.1.0",
     "react-intl": "^5.21.2",
+    "react-transition-group": "^4.4.5",
     "reflect-metadata": "^0.1.13",
     "sass": "^1.43.4",
-    "sharp": "^0.29.3"
+    "sharp": "^0.29.3",
+    "ua-parser-js": "^1.0.32"
   },
   "devDependencies": {
     "@formatjs/cli": "^4.4.0",
@@ -42,6 +46,7 @@
     "@types/lodash": "^4.14.177",
     "@types/node": "16.11.7",
     "@types/react": "17.0.34",
+    "@types/react-transition-group": "^4.4.5",
     "@types/sass": "^1.43.0",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",

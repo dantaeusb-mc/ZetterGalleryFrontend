@@ -6,7 +6,7 @@ import { Button } from '@components/button';
 import React from 'react';
 import { useRouter } from 'next/router';
 import CleanLayout from '@components/layouts/clean';
-import { RedirectTimer } from '@components/widgets/redirectTimer';
+import { RedirectTimer } from '@components/widgets/redirect-timer';
 import getTitle from '@/utils/page/get-title';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { apiPost } from '@/utils/request';

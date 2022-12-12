@@ -9,11 +9,7 @@ type ServerWidgetProps = {
 };
 
 function ServerWidget(props: ServerWidgetProps): JSX.Element {
-  const {
-    className
-  } = props;
-
-  return (<div className={ injectClassNames(styles['server-widget'], className) }>
+  return (<div className={ injectClassNames(styles['server-widget'], props.className) }>
     <div className={ styles['favicon'] }>
       <img alt={ `${props.name} server thumbnail` } src="http://placehold.it/64x64" />
     </div>

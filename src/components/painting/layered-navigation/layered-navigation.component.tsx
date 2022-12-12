@@ -7,6 +7,9 @@ import SortDescIcon from '@assets/sort-desc.svg';
 import { FormattedMessage } from 'react-intl';
 import { Icon } from '@components/icon';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
+import HotIcon from '@assets/icons/feed/hot.png';
+import NewIcon from '@assets/icons/feed/new.png';
+import TopIcon from '@assets/icons/feed/top.png';
 
 export interface ILayeredNavigationProps {
   updateLayer: PaintingQueryUpdateFn;
@@ -41,7 +44,7 @@ export default function LayeredNavigation({
           type="button"
           onClick={(e) => updateLayer('sort', PaintingSorting.SCORE)}
         >
-          <Icon className={styles['sort-icon']} asset="fire" />
+          <Icon className={styles['sort-icon']} asset={HotIcon} title="Hot" />
           <span className={styles['sort-text']}>
             <FormattedMessage
               id="paintings.layered-navigation.sort.hot"
@@ -62,7 +65,7 @@ export default function LayeredNavigation({
           type="button"
           onClick={(e) => updateLayer('sort', PaintingSorting.SALES_TOTAL)}
         >
-          <Icon className={styles['sort-icon']} asset="emerald" />
+          <Icon className={styles['sort-icon']} asset={TopIcon} title="Top" />
           <span className={styles['sort-text']}>
             <FormattedMessage
               id="paintings.layered-navigation.sort.top"
@@ -84,6 +87,7 @@ export default function LayeredNavigation({
           onClick={(e) => updateLayer('sort', PaintingSorting.NEWEST)}
         >
           <span className={styles['sort-text']}>
+            <Icon className={styles['sort-icon']} asset={NewIcon} title="New" />
             <FormattedMessage
               id="paintings.layered-navigation.sort.new"
               defaultMessage="New"
@@ -103,7 +107,7 @@ export default function LayeredNavigation({
           {isActive('dir', Direction.ASC) ? <SortAscIcon /> : <SortDescIcon />}
         </div>
       </div>
-      <div className={styles['layered-navigation-resolution']}>
+      {/*<div className={styles['layered-navigation-resolution']}>
         <div className={styles['resolution-label']}>
           <FormattedMessage
             id="paintings.layered-navigation.filter.resolution"
@@ -144,7 +148,7 @@ export default function LayeredNavigation({
         >
           x64
         </button>
-      </div>
+      </div>*/}
     </>
   );
 }

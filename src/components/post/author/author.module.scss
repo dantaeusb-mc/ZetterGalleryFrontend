@@ -1,0 +1,49 @@
+.post-header {
+  border-top-left-radius: var(--border-small-radius);
+  border-top-right-radius: var(--border-small-radius);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 0.5rem;
+}
+
+.profile-picture-wrapper {
+  background: var(--background-color);
+  border-radius: var(--button-radius);
+  overflow: hidden;
+  height: 2rem;
+  width: 2rem;
+}
+
+.profile-picture {
+  background-size: cover;
+  display: block;
+  font-size: 0;
+  height: 2rem;
+  width: 2rem;
+}
+
+.profile-name-wrapper {
+  margin-left: 1rem;
+}
+
+.profile-badge-wrapper {
+  display: flex;
+  position: relative;
+  margin-left: auto;
+  margin-right: .5rem;
+  height: 32px;
+
+  @for $i from 0 to 2 {
+    i:nth-child(#{$i + 1}) {
+      right: #{16 * $i}px;
+      z-index: #{3 - $i};
+    }
+  }
+}
+
+.post-author-badge {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+}

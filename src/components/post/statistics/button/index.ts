@@ -1,1 +1,1 @@
-export { default } from './StatisticsButton.component';
+export { default } from './statistics-button.component';

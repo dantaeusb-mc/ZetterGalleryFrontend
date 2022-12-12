@@ -1,11 +1,12 @@
-@use '../../../../styles/variables/media';
-@use '../../../../styles/variables/colors' as colors;
+@use 'variables/media';
+@use 'variables/colors' as colors;
+@use 'sass:math';
 
 .header {
   background: colors.color("block", "dark");
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   position: fixed;
   left: 50%;
   bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
@@ -27,30 +28,107 @@
   list-style: none;
   padding: 0;
 
-  @include media.after-mobile {
-    a {
-      margin: .5rem;
-    }
-
-    > li {
-      margin: 0 1rem;
-    }
-  }
-
-  a {
-    display: inline-block;
-    margin: 0;
-    padding: .5rem;
-    overflow: hidden;
-
-    &:hover {
-      .icon {
-        margin-bottom: 0.125rem;
-      }
-    }
-  }
-
   > li {
     margin: 0 0.5rem;
+  }
+}
+
+.icon {
+  border-radius: var(--border-small-radius);
+  display: block;
+  margin: 0;
+  position: relative;
+  transition: outline-color .1s ease, transform .2s ease;
+  outline-color: transparent;
+  height: 2rem;
+  width: 2rem;
+
+  &:focus {
+    outline: .2rem currentColor solid;
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+
+  @include media.after-mobile {
+    padding: .5rem;
+  }
+}
+
+.about {
+  color: colors.color('red');
+  filter: grayscale(1);
+
+  &:hover,
+  &.active {
+    filter: none;
+  }
+}
+
+.search {
+  color: colors.color('yellow');
+  filter: grayscale(1);
+
+  &:hover,
+  &.active {
+    filter: none;
+  }
+}
+
+.home {
+  color: colors.color('green');
+  filter: grayscale(1);
+
+  &:hover,
+  &.active {
+    filter: none;
+  }
+}
+
+.sale {
+  color: colors.color('blue');
+  filter: grayscale(1);
+
+  &:hover,
+  &.active {
+    filter: none;
+  }
+}
+
+.profile {
+  color: colors.color('pink');
+  filter: grayscale(1);
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+
+  &:hover,
+  &.active {
+    filter: none;
+  }
+}
+
+.sale-emerald {
+  animation: sale-emerald-appear .5s ease-in-out;
+  background: url("./icons/onsale-emerald.png") no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
+  position: absolute;
+  bottom: 0;
+  right: .5rem;
+  height: .875rem;
+  width: .75rem;
+}
+
+@keyframes sale-emerald-appear {
+  0% {
+    transform: scale(0.3, 1.2);
+  }
+  50% {
+    transform: scale(1.1, 0.7);
+  }
+  100% {
+    transform: scale(1);
   }
 }

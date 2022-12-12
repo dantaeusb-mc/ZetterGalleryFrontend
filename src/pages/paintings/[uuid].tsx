@@ -7,7 +7,7 @@ import {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
 } from 'next';
-import { PaintingProps } from '@components/post/Post.component';
+import { PaintingProps } from '@components/post/post.component';
 import { apiGet } from '@/utils/request';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';

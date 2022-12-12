@@ -1,4 +1,4 @@
-@use '../../../styles/variables/colors' as colors;
+@use 'variables/colors' as colors;
 
 .slice-button {
   border-image-source: url("/assets/buttons/button-9slices.png");
@@ -8,9 +8,46 @@
   display: inline-block;
   color: #fff;
   text-shadow: 2px 2px 0 #555;
-  image-rendering: crisp-edges;
+  image-rendering: pixelated;
   padding: 16px;
   margin: .5rem 1rem .5rem 0;
+
+  &:hover {
+    .slice-button-icon-wrapper {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.slice-button-icon-wrapper {
+  background-size: 3rem 3rem;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  padding: .5rem;
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+
+  &:before {
+    background: radial-gradient(rgba(255,255,255,.2) 0%, rgba(255,255,255,0) 80%);
+    content: '';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+
+    transition: opacity .3s ease;
+  }
+}
+
+.icon {
+  display: block;
 }
 
 .slice-button-inner {

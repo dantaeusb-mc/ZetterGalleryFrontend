@@ -1,0 +1,62 @@
+@use 'fonts/index' as *;
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/media';
+
+@include fonts;
+
+.tippy-box[data-theme~='minecraft'] {
+  border-radius: 0;
+  box-shadow: .125rem 0 rgba(0,0,0,.8), -.125rem 0 rgba(0,0,0,.8), 0 -.125rem rgba(0,0,0,.8), 0 .125rem rgba(0,0,0,.8);
+  @include font-family('Minecraftia', sans-serif);
+  font-size: 1rem;
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:before {
+    background: linear-gradient(#310567, #1f0038);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .8;
+  }
+
+  &:after {
+    background: #200a1d;
+    content: '';
+    position: absolute;
+    top: .125rem;
+    left: .125rem;
+    right: .125rem;
+    bottom: .125rem;
+    opacity: .8;
+  }
+
+  &[data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: #310567;
+    display: none;
+  }
+
+  &[data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-color: #1f0038;
+    display: none;
+  }
+
+  &[data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: #310567;
+    display: none;
+  }
+
+  &[data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: #310567;
+    display: none;
+  }
+}

@@ -1,1 +1,1 @@
-export { default } from './Painting.component';
+export { default } from './painting.component';

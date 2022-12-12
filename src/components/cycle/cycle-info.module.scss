@@ -1,0 +1,91 @@
+@use 'variables/media';
+@use 'variables/colors' as colors;
+
+.cycle-info {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  position: relative;
+}
+
+.cycle-info-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.merchant-icon-wrapper {
+  position: relative;
+  margin: 1rem 2rem 1rem 0;
+  height: 6rem;
+  width: 6rem;
+}
+
+.cycle-description-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.cycle-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.cycle-seed {
+  background: colors.color('block', 'dark');
+  border-radius: var(--button-radius);
+  padding: .5rem;
+  margin: 0;
+}
+
+.timeout-text {
+  text-align: center;
+}
+
+.timeout {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.merchant-icon-circle {
+  background: colors.color('block', 'light');
+  border-radius: 3rem;
+  overflow: hidden;
+  position: relative;
+  height: 6rem;
+  width: 6rem;
+}
+
+.merchant-icon {
+  position: absolute;
+  top: .5rem;
+}
+
+.merchant-timeout-icon {
+  animation: timeout-tick linear 5s infinite;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes timeout-tick {
+  0% {
+    transform: rotate(0);
+  }
+  2% {
+    transform: rotate(15deg);
+  }
+  4% {
+    transform: rotate(-20deg);
+  }
+  6% {
+    transform: rotate(10deg);
+  }
+  8% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

@@ -1,22 +1,30 @@
 import type { NextPage, NextPageContext } from 'next';
-import { GetServerSidePropsResult } from 'next';
+import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import Head from 'next/head';
 import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import Post from '@components/post';
 import DefaultLayout from '@components/layouts/default';
 import LayeredNavigation from '@components/painting/layered-navigation';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { PaintingProps } from '@components/post/Post.component';
+import { PaintingProps } from '@components/post/post.component';
 import lodash from 'lodash';
 import { useRouter } from 'next/router';
 import { apiGet } from '@/utils/request';
 import 'reflect-metadata';
 import conform from '@/utils/conform';
 import { PaintingListQueryDto } from '@/dto/request/paintings/painting-list.query.dto';
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
-import { SliceLink } from "@components/widgets/slice-link";
+import { SliceLink } from '@components/widgets/slice-link';
+import DiscordIcon from '@assets/icons/logos/discord.png';
+import Introduction from '@components/widgets/introduction/introduction.component';
+import {
+  IntroductionStages,
+  isStageIntroduced,
+  setStageIntroduced,
+} from '@hooks/events/introduction';
+import { mapPaintingResponseToProps } from "@/utils/mappers";
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -42,45 +50,23 @@ const defaultQuery: PaintingListQueryDto = {
   withStatistics: true,
 };
 
-const mapPaintingResponseToProps = (
-  response: PaintingResponseDto,
-): PaintingProps => {
-  return {
-    uuid: response.uuid,
-    uri: `/paintings/${response.uuid}`,
-    image: `${process.env.NEXT_PUBLIC_STATIC_URI}/generated/paintings/${response.uuid}/original.png`,
-    name: response.name,
-    resolution: response.resolution,
-    originalSize: {
-      height: response.sizeH,
-      width: response.sizeW,
-    },
-    author: {
-      uuid: response.author.uuid,
-      nickname: response.author.nickname,
-    },
-    stats: {
-      favorites: response.statistics ? response.statistics.favorites : 0,
-      salesTotal: response.statistics
-        ? parseInt(response.statistics.salesTotal)
-        : 0,
-      salesCount: response.statistics ? response.statistics.salesCount : 0,
-    },
-  };
-};
-
 const fetchPaintings = async (
   queryParams: PaintingListQueryDto,
+  context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<PaintingProps[]> => {
   const response = await apiGet<PaintingResponseDto[]>(
     '/paintings',
     queryParams,
+    context,
   );
 
-  return response.map(mapPaintingResponseToProps);
+  return response.map((paintingData) =>
+    mapPaintingResponseToProps(paintingData, false),
+  );
 };
 
 interface PaintingsPageProps {
+  needWhatIsIntroduction: boolean;
   hasMore: boolean;
   paintings: PaintingProps[];
 }
@@ -158,7 +144,7 @@ const Home: NextPage<PaintingsPageProps> = (
 
       setPaintings({
         ...paintings,
-        hasMore: newPaintings.length >= 20,
+        hasMore: newPaintings.length >= 10,
         items: paintings.items.concat(newPaintings),
       });
     };
@@ -171,6 +157,13 @@ const Home: NextPage<PaintingsPageProps> = (
     }
   }, [paintings.query]);
 
+  const [showWhatIsIntroduction, updateShowWhatIsIntroduction] =
+    useState<boolean>(props.needWhatIsIntroduction);
+
+  useEffect(() => {
+    setStageIntroduced(IntroductionStages.WhatIs, !showWhatIsIntroduction);
+  }, [showWhatIsIntroduction]);
+
   return (
     <>
       <Head>
@@ -179,6 +172,19 @@ const Home: NextPage<PaintingsPageProps> = (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
+        {showWhatIsIntroduction && (
+          <Introduction
+            learnMoreLink="/about"
+            hide={() => {
+              updateShowWhatIsIntroduction(false);
+            }}
+          >
+            <FormattedMessage
+              id="introduction.first-time.description"
+              defaultMessage="Zetter Gallery is a Minecraft mod that allow you to share paintings created with in game pixel art editor. Mod with painting editor is also available on CurseForge and installed separately."
+            />
+          </Introduction>
+        )}
         <LayeredNavigation
           currentQuery={paintings.query}
           updateLayer={updateQuery}
@@ -219,6 +225,7 @@ const Home: NextPage<PaintingsPageProps> = (
             id: 'index.page.cta.button.wiki',
             defaultMessage: 'Learn about Zetter Gallery',
           })}
+          icon={DiscordIcon}
           uri="/about"
         >
           <FormattedMessage
@@ -244,13 +251,17 @@ export async function getServerSideProps(
     context.query,
   );
 
-  const paintings = await fetchPaintings(initPaintingsQuery);
+  const paintings = await fetchPaintings(initPaintingsQuery, context);
   const hasMore = paintings.length === 10;
 
   return {
     props: {
       hasMore: hasMore,
-      paintings: await fetchPaintings(initPaintingsQuery),
+      needWhatIsIntroduction: isStageIntroduced(
+        IntroductionStages.WhatIs,
+        context.req,
+      ),
+      paintings: paintings,
     },
   };
 }

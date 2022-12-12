@@ -1,0 +1,41 @@
+@use '../../../styles/variables/media';
+@use '../../../styles/variables/colors' as colors;
+@use 'sass:math';
+
+.sparkles {
+  display: none;
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+
+  &.active {
+    display: block;
+  }
+}
+
+.particle {
+  pointer-events: none;
+  position: absolute;
+
+  &:before {
+    animation: sparkle-out ease-out .6s;
+    background-color: currentColor;
+    content: '';
+    display: block;
+    height: math.div(1rem, 4);
+    width: math.div(1rem, 4);
+    transform: scale(0);
+    z-index: -2;
+  }
+}
+
+@keyframes sparkle-out {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    transform: translateX(2rem) scale(0);
+  }
+}

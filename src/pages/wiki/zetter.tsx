@@ -45,6 +45,8 @@ import {
 import styles from './wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
 import { SliceLink } from "@components/widgets/slice-link";
+import WikiIcon from "@assets/icons/logos/wiki.png";
+import CurseForgeIcon from "@assets/icons/logos/curseforge.png";
 
 export default function ZetterWikiHome({
   pages,
@@ -232,6 +234,94 @@ export default function ZetterWikiHome({
                 />
               </section>
               <section
+                id="combining"
+                ref={addSection(
+                  intl.formatMessage({
+                    id: 'wiki.zetter.combining.section',
+                    defaultMessage: 'Combining',
+                  }),
+                  'combining',
+                )}
+              >
+                <h2 id="combining">
+                  <FormattedMessage
+                    id={'wiki.zetter.combining.title'}
+                    defaultMessage="Сombining and splitting canvases"
+                  />
+                </h2>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.combining.text-intro'}
+                    defaultMessage="Right-click the Artist Table to open combine & signing interface:"
+                    description="Intro before combining interface explanation"
+                  />
+                </p>
+                <div className={styles['image-description']}>
+                  <div className={styles['image']}>
+                    <Image
+                      src="/assets/wiki/combination-gui.png"
+                      alt="Artist Table GUI"
+                      height={234}
+                      width={371}
+                    />
+                  </div>
+                  <div className={styles['description']}>
+                    <dl>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.grid-dt'}
+                          defaultMessage="1) Canvas combination grid"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.grid-dd'}
+                          defaultMessage="Place your canvases here in order to glue them together. You can also
+                                    just put one canvas here."
+                        />
+                      </dd>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.preview-dt'}
+                          defaultMessage="2) Preview"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.preview-dd'}
+                          defaultMessage="Shows how combined  painting will look like."
+                        />
+                      </dd>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.name-dt'}
+                          defaultMessage="3) Name field"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.name-dd'}
+                          defaultMessage="Use it to name your painting."
+                        />
+                      </dd>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.result-dt'}
+                          defaultMessage="4) Result"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.combining.interface.result-dd'}
+                          defaultMessage="When you're happy with the result, grab your painting from
+                                    there. Congratulations! First masterpiece is done."
+                        />
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </section>
+              <section
                 id="painting"
                 ref={addSection(
                   intl.formatMessage({
@@ -343,28 +433,27 @@ export default function ZetterWikiHome({
                 </div>
               </section>
               <section
-                id="combining"
+                id="signing"
                 ref={addSection(
                   intl.formatMessage({
-                    id: 'wiki.zetter.combining.section',
-                    defaultMessage: 'Combining',
+                    id: 'wiki.zetter.signing.section',
+                    defaultMessage: 'Signing',
                   }),
-                  'combining',
+                  'signing',
                 )}
               >
-                <h2 id="combining">
+                <h2 id="signing">
                   <FormattedMessage
-                    id={'wiki.zetter.combining.title'}
-                    defaultMessage="Signing and combining canvases"
+                    id={'wiki.zetter.signing.title'}
+                    defaultMessage="Signing paintings"
                   />
                 </h2>
                 <p>
                   <FormattedMessage
-                    id={'wiki.zetter.combining.text-intro'}
+                    id={'wiki.zetter.signing.text-intro'}
                     defaultMessage="When you are finished with one or multiple parts of your artwork, it's time to
-                            combine canvases and put your author signature. Shift+Right-click on easel will take canvas
-                            back from easel to your inventory. Right-click the Artist Table to open combine & signing interface:"
-                    description="Intro before combining interface explanation"
+                             put your author signature. to open combine & signing interface:"
+                    description="Intro before signing interface explanation"
                   />
                 </p>
                 <div className={styles['image-description']}>
@@ -389,43 +478,6 @@ export default function ZetterWikiHome({
                           id={'wiki.zetter.combining.interface.grid-dd'}
                           defaultMessage="Place your canvases here in order to glue them together. You can also
                                     just put one canvas here."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.preview-dt'}
-                          defaultMessage="2) Preview"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.preview-dd'}
-                          defaultMessage="Shows how combined  painting will look like."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.name-dt'}
-                          defaultMessage="3) Name field"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.name-dd'}
-                          defaultMessage="Use it to name your painting."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.result-dt'}
-                          defaultMessage="4) Result"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.result-dd'}
-                          defaultMessage="When you're happy with the result, grab your painting from
-                                    there. Congratulations! First masterpiece is done."
                         />
                       </dd>
                     </dl>
@@ -565,35 +617,39 @@ export default function ZetterWikiHome({
                 </p>
                 <SliceLink
                   title={intl.formatMessage({
-                    id: 'wiki.zetter.sharing.button.wiki',
+                    id: 'about.zetter-gallery.button.wiki',
                     defaultMessage: 'Check out Zetter Gallery Wiki',
                   })}
+                  icon={WikiIcon}
+                  color="var(--zetter-color-red)"
                   uri="/wiki/zetter-gallery"
                 >
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.wiki.check"
+                    id="about.zetter-gallery.button.wiki.check"
                     defaultMessage="Check out"
                   />
                   <br />
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.wiki.what"
+                    id="about.zetter-gallery.button.wiki.what"
                     defaultMessage="Zetter Gallery Wiki"
                   />
                 </SliceLink>
                 <SliceLink
                   title={intl.formatMessage({
-                    id: 'wiki.zetter.sharing.button.download',
+                    id: 'about.zetter-gallery.button.download',
                     defaultMessage: 'Download Zetter Gallery from CurseForge',
                   })}
+                  icon={CurseForgeIcon}
+                  color="#F16436"
                   uri="https://www.curseforge.com/minecraft/mc-mods/zetter-gallery"
                 >
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.download.what"
+                    id="about.zetter-gallery.button.download.what"
                     defaultMessage="Download Zetter Gallery"
                   />
                   <br />
                   <FormattedMessage
-                    id="wiki.zetter.sharing.button.download.from"
+                    id="about.zetter-gallery.button.download.from"
                     defaultMessage="from CurseForge"
                   />
                 </SliceLink>
@@ -616,6 +672,7 @@ export const getStaticProps: GetStaticProps = async (
       pages: [
         { title: 'wiki.zetter.page', path: '/wiki/zetter' },
         { title: 'wiki.zetter.recipes.page', path: '/wiki/zetter/recipes' },
+        { title: 'wiki.zetter.advanced.page', path: '/wiki/zetter/advanced' },
       ],
     },
   };

@@ -1,1 +1,1 @@
-export { default } from './Author.component';
+export { default } from './author.component';

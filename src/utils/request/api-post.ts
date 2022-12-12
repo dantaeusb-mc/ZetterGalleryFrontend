@@ -1,4 +1,4 @@
-import buildQuery, { IQueryParams } from '@/utils/request/build-query';
+import buildQuery, { QueryParams } from '@/utils/request/build-query';
 import { GetServerSidePropsContext, NextPageContext } from 'next';
 import { getCookie } from 'cookies-next';
 import { HttpCodeError } from '@/utils/request/api-get';
@@ -6,7 +6,7 @@ import { HttpCodeError } from '@/utils/request/api-get';
 const apiPost = <T>(
   path: string,
   body?: any | undefined,
-  queryParams?: IQueryParams | undefined,
+  queryParams?: QueryParams | undefined,
   context?: NextPageContext | GetServerSidePropsContext,
 ): Promise<T> => {
   const requestHeaders: HeadersInit = new Headers();
