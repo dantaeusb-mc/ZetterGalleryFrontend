@@ -5,38 +5,50 @@ import Badge from '@components/player/badge';
 import { EBadgeTier } from '@components/player/badge/badge.component';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
+import ProfileAuthorStatistics from '@components/player/profile/author-statistics';
 
 export interface ProfileProps {
   uuid: string;
   nickname: string;
   me: boolean;
+  statistics: {
+    paintingsCount: number;
+    favoritesCount: number;
+    salesCount: number;
+    salesTotalCount: number;
+  };
 }
 
-export default function Profile(props: ProfileProps): JSX.Element {
+export default function Profile({
+  uuid,
+  nickname,
+  me,
+  statistics,
+}: ProfileProps): JSX.Element {
   const intl = useIntl();
 
   return (
     <section className={injectClassNames('block', styles['profile'])}>
       <header className={styles['summary']}>
         <img
-          src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.uuid}/avatar.png`}
+          src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${uuid}/avatar.png`}
           className={injectClassNames('pixelated-images', styles['userpic'])}
-          title={`${props.nickname}'s Minecraft avatar`}
-          alt={`${props.nickname}'s Minecraft in-game character's face`}
+          title={`${nickname}'s Minecraft avatar`}
+          alt={`${nickname}'s Minecraft in-game character's face`}
         />
         <div className={styles['description']}>
-          <h1 className={styles['nickname']}>{props.nickname}</h1>
-          {props.me ? (
+          <h1 className={styles['nickname']}>{nickname}</h1>
+          {me ? (
             <>
               <Link href="/players/me/preferences">
                 <a
                   title={intl.formatMessage({
-                    id: 'profile.link.preferences',
+                    id: 'components.player.profile.preferences-link',
                     defaultMessage: 'Preferences',
                   })}
                 >
                   <FormattedMessage
-                    id="profile.link.preferences"
+                    id="components.player.profile.preferences-link"
                     defaultMessage="Preferences"
                   />
                 </a>
@@ -45,12 +57,12 @@ export default function Profile(props: ProfileProps): JSX.Element {
               <Link href="/players/me/logout">
                 <a
                   title={intl.formatMessage({
-                    id: 'profile.link.logout',
+                    id: 'components.player.profile.logout-link',
                     defaultMessage: 'Log Out',
                   })}
                 >
                   <FormattedMessage
-                    id="profile.link.logout"
+                    id="components.player.profile.logout-link"
                     defaultMessage="Log Out"
                   />
                 </a>
@@ -63,37 +75,19 @@ export default function Profile(props: ProfileProps): JSX.Element {
         </div>
       </header>
       <div className={styles['badge-wrapper']}>
-        <Badge title="Alpha Supporter" description="Registered when Gallery was Alpha version" placement="bottom" category="support" code="alpha" tier={EBadgeTier.Exceptional} className={styles['profile-badge']} />
+        <Badge
+          title="Alpha Supporter"
+          description="Registered when Gallery was Alpha version"
+          placement="bottom"
+          category="support"
+          code="alpha"
+          tier={EBadgeTier.Exceptional}
+          className={styles['profile-badge']}
+        />
       </div>
-      <footer className={styles['statistics']}>
-        <div className={styles['statistics-element']}>
-          <FormattedMessage
-            id="profile.count.paintings"
-            defaultMessage="Paintings:"
-            description="Amount of submitted paintings showing in player's profile"
-          />
-          <br />
-          {0}
-        </div>
-        <div className={styles['statistics-element']}>
-          <FormattedMessage
-            id="profile.count.favorites"
-            defaultMessage="Favorites:"
-            description="Amount of favorite marks put on player's paintings in player's profile"
-          />
-          <br />
-          0
-        </div>
-        <div className={styles['statistics-element']}>
-          <FormattedMessage
-            id="profile.count.earnings"
-            defaultMessage="Earnings:"
-            description="Amount of total emeralds spent on player's paintings showing in player's profile"
-          />
-          <br />
-          {0}
-        </div>
-      </footer>
+      {statistics.paintingsCount > 0 && (
+        <ProfileAuthorStatistics {...statistics} />
+      )}
     </section>
   );
 }

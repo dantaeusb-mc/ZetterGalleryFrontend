@@ -11,6 +11,9 @@ import getTitle from '@/utils/page/get-title';
 import Post, { PaintingProps } from '@components/post/post.component';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import { mapPaintingResponseToProps } from "@/utils/mappers";
+import PlayerPaintingList from "@components/player/paintings/list";
+import { PlayerResponseDto } from "@/dto/response/player/player.dto";
+import { PlayerStatisticsResponseDto } from "@/dto/response/player/player-statistics.dto";
 
 export interface PlayerPageProps {
   profile: ProfileProps;
@@ -50,9 +53,7 @@ const PlayerPage = ({ profile, paintings }: PlayerPageProps): JSX.Element => {
       </Head>
       <DefaultLayout>
         <Profile {...profile} />
-        {paintings.map((paintingProps, index) => (
-          <Post key={`painting-${index}`} {...paintingProps} />
-        ))}
+        <PlayerPaintingList paintings={paintings} />
       </DefaultLayout>
     </>
   );
@@ -63,10 +64,18 @@ export default PlayerPage;
 export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
   context: GetServerSidePropsContext,
 ) => {
-  let profile: ProfileProps;
+  let profile: PlayerResponseDto;
 
   try {
-    profile = await apiGet<ProfileProps>(`/players/${context.params?.uuid}`, {}, context);
+    profile = await apiGet<PlayerResponseDto>(`/players/${context.params?.uuid}`, {}, context);
+  } catch (e) {
+    return handleRequestErrors(e);
+  }
+
+  let profileStatistics: PlayerStatisticsResponseDto;
+
+  try {
+    profileStatistics = await apiGet<PlayerStatisticsResponseDto>(`/players/${context.params?.uuid}/statistics`, {}, context);
   } catch (e) {
     return handleRequestErrors(e);
   }
@@ -91,6 +100,12 @@ export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
         uuid: profile.uuid,
         nickname: profile.nickname,
         me: false,
+        statistics: {
+          paintingsCount: profileStatistics.paintingsCount,
+          favoritesCount: profileStatistics.favoritesCount,
+          salesCount: profileStatistics.statistics.total.salesCount,
+          salesTotal: profileStatistics.statistics.total.salesTotal,
+        },
       },
       paintings: paintings.map((painting) => mapPaintingResponseToProps(painting, false)),
     },

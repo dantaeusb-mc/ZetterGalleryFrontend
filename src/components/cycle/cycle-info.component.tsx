@@ -80,7 +80,7 @@ export default function CycleInfo({
               title={intl.formatMessage({
                 id: 'cycle.merchant.icon',
                 defaultMessage:
-                  'Those paintings are available for purchase from Painting Merchant in game right now',
+                  'Some of those paintings are available for purchase from Painting Merchant in game right now!',
               })}
               asset={MerchantIcon}
               className={styles['merchant-icon']}
@@ -91,7 +91,7 @@ export default function CycleInfo({
             title={intl.formatMessage({
               id: 'cycle.merchant.icon',
               defaultMessage:
-                'Those paintings are available for purchase from Painting Merchant in game right now',
+                'Some of those paintings are available for purchase from Painting Merchant in game right now!',
             })}
             asset={NewIcon}
             className={styles['merchant-timeout-icon']}
@@ -109,7 +109,7 @@ export default function CycleInfo({
             content={intl.formatMessage({
               id: 'cycle.seed',
               defaultMessage:
-                'Seed phrase, used to select which painting you will get from Merchant!',
+                'Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings.',
             })}
             theme="minecraft"
           >

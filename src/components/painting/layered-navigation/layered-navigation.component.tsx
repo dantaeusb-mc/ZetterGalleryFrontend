@@ -86,8 +86,8 @@ export default function LayeredNavigation({
           type="button"
           onClick={(e) => updateLayer('sort', PaintingSorting.NEWEST)}
         >
+          <Icon className={styles['sort-icon']} asset={NewIcon} title="New" />
           <span className={styles['sort-text']}>
-            <Icon className={styles['sort-icon']} asset={NewIcon} title="New" />
             <FormattedMessage
               id="paintings.layered-navigation.sort.new"
               defaultMessage="New"

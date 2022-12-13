@@ -181,7 +181,7 @@ const Home: NextPage<PaintingsPageProps> = (
           >
             <FormattedMessage
               id="introduction.first-time.description"
-              defaultMessage="Zetter Gallery is a Minecraft mod that allow you to share paintings created with in game pixel art editor. Mod with painting editor is also available on CurseForge and installed separately."
+              defaultMessage="Zetter Gallery is a Minecraft mod which allows you to share paintings created with the in game pixel art editor. Mods with painting editor and painting merchant are installed separately."
             />
           </Introduction>
         )}
