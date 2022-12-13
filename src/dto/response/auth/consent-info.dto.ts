@@ -4,7 +4,6 @@ export class ConsentInfoResponseDto {
   issuedAt: string;
   notAfter: string;
   serverInfo?: {
-    title: string;
     motd: string;
     ip: string;
   };

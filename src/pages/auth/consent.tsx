@@ -21,7 +21,6 @@ interface AuthConsentProps {
   issuedAt: string;
   notAfter: string;
   serverInfo?: {
-    title: string;
     motd: string;
     ip: string;
   };
@@ -95,7 +94,7 @@ export default function AuthConsent(props: AuthConsentProps): JSX.Element {
               </p>
               {props.serverInfo && (
                 <ServerWidget
-                  name={props.serverInfo.title}
+                  name={props.serverInfo.motd}
                   ip={props.serverInfo.ip}
                 />
               )}
@@ -166,7 +165,6 @@ export const getServerSideProps: GetServerSideProps<AuthConsentProps> = async (
         notAfter: result.notAfter,
         serverInfo: result.serverInfo
           ? {
-              title: result.serverInfo?.title,
               motd: result.serverInfo?.motd,
               ip: result.serverInfo?.ip,
             }
