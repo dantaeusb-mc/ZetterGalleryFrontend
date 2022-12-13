@@ -19,6 +19,7 @@ const Sparkles = ({
   const nodeRef = useRef(null);
 
   const [show, setShow] = useState(false);
+  const baseRotation = 2 * Math.PI / count;
 
   useEffect(() => {
     setShow(true);
@@ -40,8 +41,7 @@ const Sparkles = ({
           )}
         >
           {range(1, count).map((i) => {
-            const baseRotation = 2 * Math.PI * i / (count - 1);
-            const random  = Math.random();
+            const random = Math.random();
 
             return (
               <div
@@ -49,7 +49,7 @@ const Sparkles = ({
                 className={injectClassNames(styles['particle'])}
                 style={{
                   color: color,
-                  transform: `scale(${(0.5 + random).toFixed(1)}) rotate(${(baseRotation + random).toFixed(2)}rad)`,
+                  transform: `scale(${(0.5 + random).toFixed(1)}) rotate(${(baseRotation * (i + random)).toFixed(2)}rad)`,
                 }}
               />
             );
