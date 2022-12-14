@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './craft-item.module.scss';
 import { injectClassNames } from '@/utils/css';
+import Tippy from "@tippyjs/react";
 
 export interface CraftItemProps {
   name: string;
@@ -22,14 +23,16 @@ export default function CraftItem(props: CraftItemProps): JSX.Element {
 
   return (
     <span className={styles['item']}>
-      <a title={title} href={props.uri} target="_blank" rel="noreferrer">
-        <span
-          className={injectClassNames(styles['sprite'], style)}
-          style={{
-            backgroundPosition: `-${props.spritePos.x}px -${props.spritePos.y}px`,
-          }}
-        />
-      </a>
+      <Tippy content={props.name} theme="minecraft">
+        <a title={title} href={props.uri} target="_blank" rel="noreferrer">
+          <span
+            className={injectClassNames(styles['sprite'], style)}
+            style={{
+              backgroundPosition: `-${props.spritePos.x}px -${props.spritePos.y}px`,
+            }}
+          />
+        </a>
+      </Tippy>
     </span>
   );
 }

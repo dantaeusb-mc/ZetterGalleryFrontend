@@ -1,0 +1,42 @@
+@use 'variables/placeholder' as *;
+@use 'variables/colors' as colors;
+
+.radio-wrapper {
+  display: flex;
+}
+
+.option-label {
+  &:first-child {
+    .option-wrapper {
+      border-top-left-radius: var(--button-radius);
+      border-bottom-left-radius: var(--button-radius);
+    }
+  }
+
+  &:last-child {
+    .option-wrapper {
+      border-top-right-radius: var(--button-radius);
+      border-bottom-right-radius: var(--button-radius);
+    }
+  }
+}
+
+.option-wrapper {
+  border: .125rem solid colors.color('block');
+  cursor: pointer;
+  padding: .25rem .5rem;
+
+  &.active {
+    background: colors.color('block', 'light');
+    border: .125rem solid colors.color('block', 'light');
+  }
+}
+
+.radio {
+  border: 0;
+  display: none;
+  padding: 0;
+  height: 0;
+  width: 0;
+}
+

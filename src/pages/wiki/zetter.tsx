@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
-import CraftGrid from '@components/widgets/craft-grid';
+import CraftGrid from '@components/wiki/craft-grid';
 import {
   AnyPlanksItem,
   BlackDyeItem,
@@ -30,28 +30,26 @@ import {
   WarpedPlatedFrameItem,
   WarpedPlatedFrameWithPaintingItem,
 } from '@/const/zetter-items';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage, IntlShape, useIntl } from 'react-intl';
 import Image from 'next/image';
-import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  GetStaticPropsResult,
-} from 'next';
-import {
-  WikiLayout,
-  WikiLayoutProps,
-  WikiNavigationProps,
-} from '@components/layouts/wiki';
+import { WikiLayout, WikiPageProps } from '@components/layouts/wiki';
 import styles from './wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
-import { SliceLink } from "@components/widgets/slice-link";
-import WikiIcon from "@assets/icons/logos/wiki.png";
-import CurseForgeIcon from "@assets/icons/logos/curseforge.png";
+import { SliceLink } from '@components/widgets/slice-link';
+import WikiIcon from '@assets/icons/logos/wiki.png';
+import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
+import { Radio } from '@components/widgets/radio';
 
-export default function ZetterWikiHome({
-  pages,
-}: WikiLayoutProps): JSX.Element {
+enum ArtistTableMode {
+  COMBINE = 'COMBINE',
+  SPLIT = 'SPLIT',
+}
+
+export default function ZetterWikiHome(): JSX.Element {
   const intl = useIntl();
+  const [artistTableMode, setArtistTableMode] = useState<ArtistTableMode>(
+    ArtistTableMode.COMBINE,
+  );
 
   const title = getTitle(
     intl.formatMessage({
@@ -74,7 +72,7 @@ export default function ZetterWikiHome({
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <WikiLayout pages={pages}>
+      <WikiLayout pages={getZetterWikiPages(intl)}>
         {(addSection) => {
           return (
             <article>
@@ -86,45 +84,81 @@ export default function ZetterWikiHome({
                 />
               </h1>
               <section
-                id="crafting"
+                id="preparing"
                 ref={addSection(
                   intl.formatMessage({
-                    id: 'wiki.zetter.crafting.section',
-                    defaultMessage: 'Crafting',
+                    id: 'wiki.zetter.preparing.section',
+                    defaultMessage: 'Preparing',
                   }),
-                  'crafting',
+                  'preparing',
                 )}
               >
                 <h2>
                   <FormattedMessage
-                    id={'wiki.zetter.crafting.title'}
-                    defaultMessage="Crafting"
+                    id={'wiki.zetter.preparing.title'}
+                    defaultMessage="Preparing"
                   />
                 </h2>
                 <p>
                   <FormattedMessage
-                    id={'wiki.zetter.crafting.text'}
-                    defaultMessage="First, we need to craft some things. Some canvases, an easel to put the canvas on,
-                    some paints and finally, a palette."
+                    id={'wiki.zetter.preparing.introduction'}
+                    defaultMessage="First, you need to craft some things."
                     description="Explain first step, what we will be crafting"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.preparing.canvases'}
+                    defaultMessage="Canvases: every canvas gives you one block of painting, so one is enough for a small painting, and 16 will be enough for the largest possible single painting (4×4). Typically, I suggest going with 4 — it is enough for a 2×2 painting that can fit on the easel."
                   />
                 </p>
                 <div className={styles['recipes-grid']}>
                   <CraftGrid
                     items={[
-                      AnyPlanksItem,
-                      AnyPlanksItem,
                       null,
-                      AnyPlanksItem,
-                      AnyPlanksItem,
                       null,
-                      StickItem,
-                      StickItem,
+                      null,
+                      PaperItem,
+                      PaperItem,
+                      null,
+                      PaperItem,
+                      PaperItem,
                       null,
                     ]}
-                    output={EaselItem}
+                    output={CanvasItem}
                     shapeless={false}
                   />
+                  <CraftGrid
+                    items={[
+                      PaintsItem,
+                      PaperItem,
+                      null,
+                      AnyPlanksItem,
+                      AnyPlanksItem,
+                      null,
+                      AnyPlanksItem,
+                      AnyPlanksItem,
+                      null,
+                    ]}
+                    output={ArtistTableItem}
+                    shapeless={false}
+                  />
+                </div>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.preparing.artist-table'}
+                    defaultMessage="You can combine those canvases on a special Artist Table, which you will need to craft too. We will cover the canvas combination in the next step."
+                    description="Explain first step, what we will be crafting"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.preparing.paints'}
+                    defaultMessage="Now we need something to paint with — paints and palette. Palettes are required to save the colors you are working with, and they are not infinite. They will not break, but you will need to recharge them eventually to continue painting. There are also alternative recipes, which you can find on the recipes page."
+                    description="Explain first step, what we will be crafting"
+                  />
+                </p>
+                <div className={styles['recipes-grid']}>
                   <CraftGrid
                     items={[
                       RedDyeItem,
@@ -160,78 +194,39 @@ export default function ZetterWikiHome({
                       null,
                       null,
                       null,
-                      PaperItem,
-                      PaperItem,
+                      PaintsItem,
+                      PaletteItem,
                       null,
-                      PaperItem,
-                      PaperItem,
+                      null,
+                      null,
                       null,
                     ]}
-                    output={CanvasItem}
-                    shapeless={false}
+                    output={PaletteItem}
+                    shapeless={true}
                   />
                   <CraftGrid
                     items={[
-                      PlanksSlabItem,
-                      PlanksSlabItem,
-                      PlanksSlabItem,
-                      AnyPlanksItem,
-                      PaintsItem,
                       AnyPlanksItem,
                       AnyPlanksItem,
-                      PaperItem,
+                      null,
                       AnyPlanksItem,
+                      AnyPlanksItem,
+                      null,
+                      StickItem,
+                      StickItem,
+                      null,
                     ]}
-                    output={ArtistTableItem}
+                    output={EaselItem}
                     shapeless={false}
                   />
                 </div>
-              </section>
-              <section
-                id="preparing"
-                ref={addSection(
-                  intl.formatMessage({
-                    id: 'wiki.zetter.preparing.section',
-                    defaultMessage: 'Preparing',
-                  }),
-                  'preparing',
-                )}
-              >
-                <h2>
-                  <FormattedMessage
-                    id={'wiki.zetter.preparing.title'}
-                    defaultMessage="Preparing Workplace"
-                  />
-                </h2>
                 <p>
                   <FormattedMessage
-                    id={'wiki.zetter.preparing.text-start'}
-                    defaultMessage="To start drawing, we would need to prepare our painting workshop.
-                            Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table
-                            somewhere nearby - we will need it later."
-                    description="Explain what we need to start drawing"
+                    id={'wiki.zetter.preparing.easel'}
+                    defaultMessage="Finally, you would need an easel. You can find its recipe above. Easel needs some space, so don't place it right near the wall!"
+                    description="Explain first step, what we will be crafting"
                   />
                 </p>
-                <p>
-                  <FormattedMessage
-                    id={'wiki.zetter.preparing.text-mounting'}
-                    defaultMessage="With canvas in hand, right-click on easel to mount it."
-                    description="Explain how to mount canvas"
-                  />
-                </p>
-                <p>
-                  <FormattedMessage
-                    id={'wiki.zetter.preparing.text-workshop-title'}
-                    defaultMessage="Our workshop should look like this:"
-                    description="Title for workshop screenshot"
-                  />
-                </p>
-                <Image
-                  src="/assets/wiki/workshop-screenshot.png"
-                  alt="Workshop"
-                  height={388}
-                  width={688}
-                />
               </section>
               <section
                 id="combining"
@@ -246,80 +241,195 @@ export default function ZetterWikiHome({
                 <h2 id="combining">
                   <FormattedMessage
                     id={'wiki.zetter.combining.title'}
-                    defaultMessage="Сombining and splitting canvases"
+                    defaultMessage="Combining and splitting canvases"
                   />
                 </h2>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.combining.text-intro'}
-                    defaultMessage="Right-click the Artist Table to open combine & signing interface:"
+                    defaultMessage="To prepare a canvas which is larger than 1 block, place newly crafted Artist Table and right-click it to open combine & split interface:"
                     description="Intro before combining interface explanation"
                   />
                 </p>
-                <div className={styles['image-description']}>
-                  <div className={styles['image']}>
-                    <Image
-                      src="/assets/wiki/combination-gui.png"
-                      alt="Artist Table GUI"
-                      height={234}
-                      width={371}
-                    />
+                <Radio
+                  id="artist-table-mode"
+                  value={artistTableMode}
+                  values={{
+                    [ArtistTableMode.COMBINE]: {
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.combining.mode.combine',
+                        defaultMessage: 'Combine Mode',
+                      }),
+                    },
+                    [ArtistTableMode.SPLIT]: {
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.combining.mode.split',
+                        defaultMessage: 'Split Mode',
+                      }),
+                    },
+                  }}
+                  title={intl.formatMessage({
+                    id: 'wiki.zetter.combining.mode',
+                    defaultMessage: 'Artist Table mode',
+                  })}
+                  onChange={(event) => {
+                    setArtistTableMode(event.target.value as ArtistTableMode);
+                  }}
+                />
+                {artistTableMode == ArtistTableMode.COMBINE ? (
+                  <div className={styles['image-description']}>
+                    <div className={styles['image']}>
+                      <Image
+                        src="/assets/wiki/combination-gui.png"
+                        alt="Artist Table GUI"
+                        height={234}
+                        width={371}
+                      />
+                    </div>
+                    <div className={styles['description']}>
+                      <dl>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.grid-dt'}
+                            defaultMessage="1) Canvas combination grid"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.grid-dd'}
+                            defaultMessage="Place your canvases here in order to merge them together."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.preview-dt'}
+                            defaultMessage="2) Preview"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.preview-dd'}
+                            defaultMessage="Shows how combined canvas will look like."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.result-dt'}
+                            defaultMessage="3) Result slot"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.combine.result-dd'}
+                            defaultMessage="When you're happy with the result, grab your merged canvas from there."
+                          />
+                        </dd>
+                      </dl>
+                    </div>
                   </div>
-                  <div className={styles['description']}>
-                    <dl>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.grid-dt'}
-                          defaultMessage="1) Canvas combination grid"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.grid-dd'}
-                          defaultMessage="Place your canvases here in order to glue them together. You can also
-                                    just put one canvas here."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.preview-dt'}
-                          defaultMessage="2) Preview"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.preview-dd'}
-                          defaultMessage="Shows how combined  painting will look like."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.name-dt'}
-                          defaultMessage="3) Name field"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.name-dd'}
-                          defaultMessage="Use it to name your painting."
-                        />
-                      </dd>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.result-dt'}
-                          defaultMessage="4) Result"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.result-dd'}
-                          defaultMessage="When you're happy with the result, grab your painting from
-                                    there. Congratulations! First masterpiece is done."
-                        />
-                      </dd>
-                    </dl>
+                ) : (
+                  <div className={styles['image-description']}>
+                    <div className={styles['image']}>
+                      <Image
+                        src="/assets/wiki/combination-gui.png"
+                        alt="Artist Table GUI"
+                        height={234}
+                        width={371}
+                      />
+                    </div>
+                    <div className={styles['description']}>
+                      <dl>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.slot-dt'}
+                            defaultMessage="1) Canvas split slot"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.grid-dd'}
+                            defaultMessage="Place your canvas here in order to split it."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.preview-dt'}
+                            defaultMessage="2) Preview"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.preview-dd'}
+                            defaultMessage="Shows what current split canvas look like."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.result-dt'}
+                            defaultMessage="3) Result slot"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={'wiki.zetter.combining.interface.split.result-dd'}
+                            defaultMessage="When you're happy with the result, grab your canvases from there."
+                          />
+                        </dd>
+                      </dl>
+                    </div>
                   </div>
-                </div>
+                )}
+              </section>
+              <section
+                id="workspace"
+                ref={addSection(
+                  intl.formatMessage({
+                    id: 'wiki.zetter.workspace.section',
+                    defaultMessage: 'Workspace',
+                  }),
+                  'workspace',
+                )}
+              >
+                <h2>
+                  <FormattedMessage
+                    id={'wiki.zetter.workspace.title'}
+                    defaultMessage="Preparing Workplace"
+                  />
+                </h2>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.workspace.text-start'}
+                    defaultMessage="To start drawing, you would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table somewhere nearby - we will need it later."
+                    description="Explain what we need to start drawing"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.workspace.text-mounting'}
+                    defaultMessage="With canvas in hand, right-click on easel to mount it."
+                    description="Explain how to mount canvas"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.workspace.text-workshop-title'}
+                    defaultMessage="Our workshop should look like this:"
+                    description="Title for workshop screenshot"
+                  />
+                </p>
+                <Image
+                  src="/assets/wiki/workshop-screenshot.png"
+                  alt="Workshop"
+                  height={388}
+                  width={688}
+                />
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.workspace.text-mounting'}
+                    defaultMessage="With (or without) palette in hand, right-click on the easel to start drawing."
+                    description="Explain how to open easel screen"
+                  />
+                </p>
               </section>
               <section
                 id="painting"
@@ -341,7 +451,7 @@ export default function ZetterWikiHome({
                   <FormattedMessage
                     id={'wiki.zetter.painting.text-intro'}
                     defaultMessage="Time to create your first masterpiece! Let me introduce how drawing
-                             interface works. It's simple as old good MS Paint, here's the reference:"
+                             interface works. Here's the reference:"
                     description="Intro before painting interface explanation"
                   />
                 </p>
@@ -662,18 +772,29 @@ export default function ZetterWikiHome({
   );
 }
 
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<WikiNavigationProps>> => {
-  context.locale;
-
-  return {
-    props: {
-      pages: [
-        { title: 'wiki.zetter.page', path: '/wiki/zetter' },
-        { title: 'wiki.zetter.recipes.page', path: '/wiki/zetter/recipes' },
-        { title: 'wiki.zetter.advanced.page', path: '/wiki/zetter/advanced' },
-      ],
-    },
-  };
-};
+export const getZetterWikiPages = (intl: IntlShape): WikiPageProps[] => [
+  {
+    title: intl.formatMessage({
+      id: 'wiki.zetter.page',
+      defaultMessage: 'Wiki Home',
+      description: 'Sidebar navigation, home page',
+    }),
+    path: '/wiki/zetter',
+  },
+  {
+    title: intl.formatMessage({
+      id: 'wiki.zetter.recipes.page',
+      defaultMessage: 'Recipes',
+      description: 'Sidebar navigation, recipes page',
+    }),
+    path: '/wiki/zetter/recipes',
+  },
+  {
+    title: intl.formatMessage({
+      id: 'wiki.zetter.advanced.page',
+      defaultMessage: 'Advanced',
+      description: 'Sidebar navigation, advanced techniques page',
+    }),
+    path: '/wiki/zetter/advanced',
+  },
+];

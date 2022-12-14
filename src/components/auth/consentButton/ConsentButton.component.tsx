@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './ConsentButton.module.scss';
 import { Button } from '@components/button';
 import { apiGet } from '@/utils/request';
-import Loader from '../../widgets/loader/Loader.component';
+import Loader from '../../widgets/loader/loader.component';
 import { HttpCodeError } from '@/utils/request/api-get';
 
 enum ECrossAuthStatus {

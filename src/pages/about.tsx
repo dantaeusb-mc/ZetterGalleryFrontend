@@ -52,10 +52,15 @@ const AboutPage: NextPage<Record<string, unknown>> = (
         </h2>
         <p>
           <FormattedMessage
-            id="about.zetter.description"
-            defaultMessage="Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw
-            paintings in game with ol' MS Paint-like UI. Paintings can be combined for up to 4x4 blocks, wrapped in a
-            frame and put on the wall. This should add some cozy feeling for your virtual home."
+            id="about.zetter.description.what"
+            defaultMessage="Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with tools-rich and easy to use UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall."
+            description="Zetter Description"
+          />
+        </p>
+        <p>
+          <FormattedMessage
+            id="about.zetter.description.what-for"
+            defaultMessage="Whether you want to make your virtual home more comfortable, add some thematic posters or painting, or just fool around - it's a great addition to the game."
             description="Zetter Description"
           />
         </p>
@@ -114,9 +119,7 @@ const AboutPage: NextPage<Record<string, unknown>> = (
         <p>
           <FormattedMessage
             id="about.zetter.gallery.description"
-            defaultMessage="Zetter Gallery is a mod and a place to share your Zetter artworks with the world.
-                          With Zetter Gallery mod, the Painting Merchant is added, that allows you to upload and download
-                          popular paintings on Zetter Gallery"
+            defaultMessage="Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to upload and download popular paintings on Zetter Gallery"
             description="Zetter Gallery Description"
           />
         </p>

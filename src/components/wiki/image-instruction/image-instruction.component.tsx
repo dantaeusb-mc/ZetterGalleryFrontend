@@ -1,9 +1,11 @@
 import React from 'react';
-import styles from './craft-grid.module.scss';
+import styles from './image-instruction.module.scss';
 import { injectClassNames } from '@/utils/css';
 import CraftItem, {
   CraftItemProps,
-} from '@components/widgets/craft-grid/craft-item';
+} from '@components/wiki/craft-grid/craft-item';
+import Tippy from '@tippyjs/react';
+import { useIntl } from 'react-intl';
 
 type GridItem = CraftItemProps | null;
 export type ItemGrid = [
@@ -25,6 +27,8 @@ export interface CraftingGridProps {
 }
 
 export default function CraftGrid(props: CraftingGridProps): JSX.Element {
+  const intl = useIntl();
+
   return (
     <div
       className={injectClassNames(styles['crafting-grid'], 'pixelated-images')}
@@ -62,7 +66,17 @@ export default function CraftGrid(props: CraftingGridProps): JSX.Element {
       <div className={injectClassNames(styles['slot'], styles['out-slot'])}>
         <CraftItem {...props.output} />
       </div>
-      {props.shapeless ? <div className={styles['shapeless-icon']} /> : ''}
+      {props.shapeless && (
+        <Tippy
+          content={intl.formatMessage({
+            id: 'components.widgets.craft-grid.shapeless',
+            defaultMessage: 'Shapeless crafting',
+          })}
+          theme="minecraft"
+        >
+          <div className={styles['shapeless-icon']} />
+        </Tippy>
+      )}
     </div>
   );
 }

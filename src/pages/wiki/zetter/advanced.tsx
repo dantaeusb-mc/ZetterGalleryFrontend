@@ -3,18 +3,13 @@ import Head from 'next/head';
 import UAParser from 'ua-parser-js';
 import { FormattedMessage, useIntl } from 'react-intl';
 import {
-  GetStaticProps,
-  GetStaticPropsContext,
-  GetStaticPropsResult,
-} from 'next';
-import {
   WikiLayout,
   WikiLayoutProps,
-  WikiNavigationProps,
 } from '@components/layouts/wiki';
 import styles from '../wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
 import { injectClassNames } from "@/utils/css";
+import { getZetterWikiPages } from "@pages/wiki/zetter";
 
 enum HotkeyFlavor {
   windows = 'windows',
@@ -22,9 +17,7 @@ enum HotkeyFlavor {
   mac = 'mac'
 }
 
-export default function ZetterWikiRecipes({
-  pages,
-}: WikiLayoutProps): JSX.Element {
+export default function ZetterWikiRecipes(): JSX.Element {
   const intl = useIntl();
   const userAgent = new UAParser();
   const hotkeyFlavor: HotkeyFlavor =
@@ -53,7 +46,7 @@ export default function ZetterWikiRecipes({
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <WikiLayout pages={pages}>
+      <WikiLayout pages={getZetterWikiPages(intl)}>
         {(addSection) => {
           return (
             <article>
@@ -184,17 +177,3 @@ export default function ZetterWikiRecipes({
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext,
-): Promise<GetStaticPropsResult<WikiNavigationProps>> => {
-  return {
-    props: {
-      pages: [
-        { title: 'wiki.zetter.page', path: '/wiki/zetter' },
-        { title: 'wiki.zetter.recipes.page', path: '/wiki/zetter/recipes' },
-        { title: 'wiki.zetter.advanced.page', path: '/wiki/zetter/advanced' },
-      ],
-    },
-  };
-};
