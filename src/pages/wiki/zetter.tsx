@@ -39,6 +39,7 @@ import { SliceLink } from '@components/widgets/slice-link';
 import WikiIcon from '@assets/icons/logos/wiki.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import { Radio } from '@components/widgets/radio';
+import ImageInstruction from "@components/wiki/image-instruction";
 
 enum ArtistTableMode {
   COMBINE = 'COMBINE',
@@ -253,6 +254,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 </p>
                 <Radio
                   id="artist-table-mode"
+                  className={styles['artist-table-mode']}
                   value={artistTableMode}
                   values={{
                     [ArtistTableMode.COMBINE]: {
@@ -277,67 +279,213 @@ export default function ZetterWikiHome(): JSX.Element {
                   }}
                 />
                 {artistTableMode == ArtistTableMode.COMBINE ? (
-                  <div className={styles['image-description']}>
+                  <div className={styles['image-long-description']}>
                     <div className={styles['image']}>
-                      <Image
-                        src="/assets/wiki/combination-gui.png"
-                        alt="Artist Table GUI"
-                        height={234}
-                        width={371}
+                      <ImageInstruction
+                        src="/assets/wiki/zetter/artist-table/combination.png"
+                        title={intl.formatMessage({
+                          id: 'wiki.zetter.combining.mode.combine.instruction.image',
+                          defaultMessage: 'Combine Mode instruction image',
+                        })}
+                        instructions={[
+                          {
+                            number: 1,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.combine.grid-dt',
+                              defaultMessage: '1) Canvas combination grid',
+                            }),
+                            rectangle: {
+                              top: 12,
+                              left: 3,
+                              right: 60,
+                              bottom: 12,
+                            },
+                          },
+                          {
+                            number: 2,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.combine.preview-dt',
+                              defaultMessage: '2) Preview',
+                            }),
+                            rectangle: {
+                              top: 12,
+                              left: 60,
+                              right: 4,
+                              bottom: 12,
+                            },
+                          },
+                          {
+                            number: 3,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.combine.result-dt',
+                              defaultMessage: '3) Result slot',
+                            }),
+                            rectangle: {
+                              top: 52,
+                              left: 42,
+                              right: 42,
+                              bottom: 16,
+                            },
+                          },
+                          {
+                            number: 4,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.combine.mode-dt',
+                              defaultMessage: '3) Change mode',
+                            }),
+                            rectangle: {
+                              top: 23,
+                              left: 44,
+                              right: 44,
+                              bottom: 55,
+                            },
+                          },
+                        ]}
+                        height={308}
+                        width={648}
                       />
                     </div>
-                    <div className={styles['description']}>
+                    <div className={styles['description-col']}>
                       <dl>
                         <dt>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.grid-dt'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.grid-dt'
+                            }
                             defaultMessage="1) Canvas combination grid"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.grid-dd'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.grid-dd'
+                            }
                             defaultMessage="Place your canvases here in order to merge them together."
                           />
                         </dd>
                         <dt>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.preview-dt'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.preview-dt'
+                            }
                             defaultMessage="2) Preview"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.preview-dd'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.preview-dd'
+                            }
                             defaultMessage="Shows how combined canvas will look like."
                           />
                         </dd>
+                      </dl>
+                    </div>
+                    <div className={styles['description-col']}>
+                      <dl>
                         <dt>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.result-dt'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.result-dt'
+                            }
                             defaultMessage="3) Result slot"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.combine.result-dd'}
+                            id={
+                              'wiki.zetter.combining.interface.combine.result-dd'
+                            }
                             defaultMessage="When you're happy with the result, grab your merged canvas from there."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.combining.interface.combine.mode-dt'
+                            }
+                            defaultMessage="4) Change mode"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.combining.interface.combine.mode-dd'
+                            }
+                            defaultMessage="Press to switch to split mode. Combination grid should be empty."
                           />
                         </dd>
                       </dl>
                     </div>
                   </div>
                 ) : (
-                  <div className={styles['image-description']}>
+                  <div className={styles['image-long-description']}>
                     <div className={styles['image']}>
-                      <Image
-                        src="/assets/wiki/combination-gui.png"
-                        alt="Artist Table GUI"
-                        height={234}
-                        width={371}
+                      <ImageInstruction
+                        src="/assets/wiki/zetter/artist-table/split.png"
+                        title={intl.formatMessage({
+                          id: 'wiki.zetter.combining.mode.split.instruction.image',
+                          defaultMessage: 'Split Mode instruction image',
+                        })}
+                        instructions={[
+                          {
+                            number: 1,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.split.grid-dt',
+                              defaultMessage: '1) Canvas split slot',
+                            }),
+                            rectangle: {
+                              top: 52,
+                              left: 42,
+                              right: 42,
+                              bottom: 16,
+                            },
+                          },
+                          {
+                            number: 2,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.split.preview-dt',
+                              defaultMessage: '2) Preview',
+                            }),
+                            rectangle: {
+                              top: 12,
+                              left: 3,
+                              right: 60,
+                              bottom: 12,
+                            },
+                          },
+                          {
+                            number: 3,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.split.result-dt',
+                              defaultMessage: '3) Result slots',
+                            }),
+                            rectangle: {
+                              top: 12,
+                              left: 60,
+                              right: 4,
+                              bottom: 12,
+                            },
+                          },
+                          {
+                            number: 4,
+                            title: intl.formatMessage({
+                              id: 'wiki.zetter.combining.interface.split.mode-dt',
+                              defaultMessage: '4) Change mode',
+                            }),
+                            rectangle: {
+                              top: 23,
+                              left: 44,
+                              right: 44,
+                              bottom: 55,
+                            },
+                          },
+                        ]}
+                        height={308}
+                        width={648}
                       />
                     </div>
-                    <div className={styles['description']}>
+                    <div className={styles['description-col']}>
                       <dl>
                         <dt>
                           <FormattedMessage
@@ -353,26 +501,54 @@ export default function ZetterWikiHome(): JSX.Element {
                         </dd>
                         <dt>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.split.preview-dt'}
+                            id={
+                              'wiki.zetter.combining.interface.split.preview-dt'
+                            }
                             defaultMessage="2) Preview"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.split.preview-dd'}
+                            id={
+                              'wiki.zetter.combining.interface.split.preview-dd'
+                            }
                             defaultMessage="Shows what current split canvas look like."
                           />
                         </dd>
+                      </dl>
+                    </div>
+                    <div className={styles['description-col']}>
+                      <dl>
                         <dt>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.split.result-dt'}
-                            defaultMessage="3) Result slot"
+                            id={
+                              'wiki.zetter.combining.interface.split.result-dt'
+                            }
+                            defaultMessage="3) Result slots"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={'wiki.zetter.combining.interface.split.result-dd'}
+                            id={
+                              'wiki.zetter.combining.interface.split.result-dd'
+                            }
                             defaultMessage="When you're happy with the result, grab your canvases from there."
+                          />
+                        </dd>
+                        <dt>
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.combining.interface.split.mode-dt'
+                            }
+                            defaultMessage="4) Change mode"
+                          />
+                        </dt>
+                        <dd>
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.combining.interface.split.mode-dd'
+                            }
+                            defaultMessage="Press to switch to combine mode. Split slot should be empty."
                           />
                         </dd>
                       </dl>
@@ -426,7 +602,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.workspace.text-mounting'}
-                    defaultMessage="With (or without) palette in hand, right-click on the easel to start drawing."
+                    defaultMessage="With (or without, if it's already in place) palette in hand, right-click on the easel to start drawing."
                     description="Explain how to open easel screen"
                   />
                 </p>
@@ -450,8 +626,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.painting.text-intro'}
-                    defaultMessage="Time to create your first masterpiece! Let me introduce how drawing
-                             interface works. Here's the reference:"
+                    defaultMessage="Time to create your first masterpiece! Let me introduce how drawing interface works. Here's the reference:"
                     description="Intro before painting interface explanation"
                   />
                 </p>

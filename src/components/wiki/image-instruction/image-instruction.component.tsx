@@ -1,82 +1,70 @@
 import React from 'react';
 import styles from './image-instruction.module.scss';
 import { injectClassNames } from '@/utils/css';
-import CraftItem, {
-  CraftItemProps,
-} from '@components/wiki/craft-grid/craft-item';
 import Tippy from '@tippyjs/react';
-import { useIntl } from 'react-intl';
+import Image from 'next/image';
 
-type GridItem = CraftItemProps | null;
-export type ItemGrid = [
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-  GridItem,
-];
-
-export interface CraftingGridProps {
-  items: ItemGrid;
-  output: CraftItemProps;
-  shapeless: boolean;
+export interface Instruction {
+  number: number;
+  title: string;
+  rectangle: {
+    top: number;
+    right: number;
+    bottom: number;
+    left: number;
+  };
 }
 
-export default function CraftGrid(props: CraftingGridProps): JSX.Element {
-  const intl = useIntl();
+export interface ImageInstructionProps {
+  title: string;
+  src: string;
+  height: number;
+  width: number;
+  instructions: Instruction[];
+}
 
+export default function ImageInstruction({
+  title,
+  src,
+  height,
+  width,
+  instructions,
+}: ImageInstructionProps): JSX.Element {
   return (
-    <div
-      className={injectClassNames(styles['crafting-grid'], 'pixelated-images')}
-    >
-      <div className={styles['input']}>
-        <div className={styles['slot']}>
-          {props.items[0] !== null ? <CraftItem {...props.items[0]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[1] !== null ? <CraftItem {...props.items[1]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[2] !== null ? <CraftItem {...props.items[2]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[3] !== null ? <CraftItem {...props.items[3]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[4] !== null ? <CraftItem {...props.items[4]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[5] !== null ? <CraftItem {...props.items[5]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[6] !== null ? <CraftItem {...props.items[6]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[7] !== null ? <CraftItem {...props.items[7]} /> : ''}
-        </div>
-        <div className={styles['slot']}>
-          {props.items[8] !== null ? <CraftItem {...props.items[8]} /> : ''}
-        </div>
+    <div className={injectClassNames(styles['instruction-wrapper'])}>
+      <div className={styles['instruction-overlay']}>
+        {instructions.map((instruction) => {
+          return (
+            <Tippy
+              key={`instruction-${instruction.number}`}
+              content={instruction.title}
+              followCursor={true}
+              theme="minecraft"
+            >
+              <div
+                className={styles['instruction-rectangle']}
+                style={{
+                  top: `${instruction.rectangle.top}%`,
+                  right: `${instruction.rectangle.right}%`,
+                  bottom: `${instruction.rectangle.bottom}%`,
+                  left: `${instruction.rectangle.left}%`,
+                }}
+              >
+                <div className={styles['instruction-number']}>
+                  {instruction.number}
+                </div>
+              </div>
+            </Tippy>
+          );
+        })}
       </div>
-      <div className={styles['arrow']} />
-      <div className={injectClassNames(styles['slot'], styles['out-slot'])}>
-        <CraftItem {...props.output} />
-      </div>
-      {props.shapeless && (
-        <Tippy
-          content={intl.formatMessage({
-            id: 'components.widgets.craft-grid.shapeless',
-            defaultMessage: 'Shapeless crafting',
-          })}
-          theme="minecraft"
-        >
-          <div className={styles['shapeless-icon']} />
-        </Tippy>
-      )}
+      <Image
+        src={src}
+        height={height}
+        width={width}
+        className={styles['instruction-image']}
+        alt={title}
+      />
     </div>
   );
 }

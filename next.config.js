@@ -1,9 +1,9 @@
-var path = require("path");
+var path = require('path');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 module.exports = withBundleAnalyzer({
   // This is needed to get dynamic SVG import working
   webpack(config) {
@@ -23,7 +23,15 @@ module.exports = withBundleAnalyzer({
     includePaths: [path.join(__dirname, 'src/styles')],
   },
   images: {
-    domains: ['[::1]'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'zetter.gallery',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    domains: ['[::1]', 'localhost', 'zetter.gallery'],
   },
   i18n: {
     locales: ['en', 'ru', 'pl', 'fr', 'de', 'tr', 'uk', 'pt'],
