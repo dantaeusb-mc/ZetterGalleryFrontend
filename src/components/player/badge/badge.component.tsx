@@ -51,7 +51,7 @@ const Badge = ({
       defaultMessage: 'Rare',
     }),
     [EBadgeTier.Exceptional]: intl.formatMessage({
-      id: 'badge.uncommon',
+      id: 'badge.exceptional',
       defaultMessage: 'Exceptional',
     }),
     [EBadgeTier.Epic]: intl.formatMessage({

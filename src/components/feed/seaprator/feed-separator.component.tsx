@@ -23,18 +23,18 @@ export default function FeedSeparator({
       icon: TopIcon,
     },
     hot: {
-      title: intl.formatMessage({id: 'feed.popular.title', defaultMessage: 'Hot'}),
-      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Trending paintings that got attention in the previous batches'}),
+      title: intl.formatMessage({id: 'feed.hot.title', defaultMessage: 'Hot'}),
+      info: intl.formatMessage({id: 'feed.hot.info', defaultMessage: 'Trending paintings that got attention in the previous batches'}),
       icon: HotIcon,
     },
     new: {
-      title: intl.formatMessage({id: 'feed.popular.title', defaultMessage: 'New'}),
-      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Freshly baked, just submitted to the Gallery'}),
+      title: intl.formatMessage({id: 'feed.new.title', defaultMessage: 'New'}),
+      info: intl.formatMessage({id: 'feed.new.info', defaultMessage: 'Freshly baked, just submitted to the Gallery'}),
       icon: NewIcon,
     },
     personal: {
-      title: intl.formatMessage({id: 'feed.popular.title', defaultMessage: 'Personal'}),
-      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Your personal selection: random picks from favorites'}),
+      title: intl.formatMessage({id: 'feed.personal.title', defaultMessage: 'Personal'}),
+      info: intl.formatMessage({id: 'feed.personal.info', defaultMessage: 'Your personal selection: random picks from favorites'}),
       icon: TopIcon,
     },
   };

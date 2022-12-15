@@ -155,6 +155,9 @@
   "badge.epic": {
     "defaultMessage": "Epic"
   },
+  "badge.exceptional": {
+    "defaultMessage": "Exceptional"
+  },
   "badge.legendary": {
     "defaultMessage": "Legendary`"
   },
@@ -162,7 +165,7 @@
     "defaultMessage": "Rare"
   },
   "badge.uncommon": {
-    "defaultMessage": "Exceptional"
+    "defaultMessage": "Uncommon"
   },
   "common.post.painting.action.favorite": {
     "defaultMessage": "Add this painting to favorites"
@@ -292,11 +295,29 @@
   "error.unauthenticated.title": {
     "defaultMessage": "Unauthenticated"
   },
-  "feed.popular.info": {
+  "feed.hot.info": {
+    "defaultMessage": "Trending paintings that got attention in the previous batches"
+  },
+  "feed.hot.title": {
+    "defaultMessage": "Hot"
+  },
+  "feed.new.info": {
+    "defaultMessage": "Freshly baked, just submitted to the Gallery"
+  },
+  "feed.new.title": {
+    "defaultMessage": "New"
+  },
+  "feed.personal.info": {
     "defaultMessage": "Your personal selection: random picks from favorites"
   },
-  "feed.popular.title": {
+  "feed.personal.title": {
     "defaultMessage": "Personal"
+  },
+  "feed.popular.info": {
+    "defaultMessage": "Small selection from best of the best"
+  },
+  "feed.popular.title": {
+    "defaultMessage": "Popular"
   },
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
@@ -837,6 +858,12 @@
   "wiki.zetter.combining.interface.combine.grid-dt": {
     "defaultMessage": "1) Canvas combination grid"
   },
+  "wiki.zetter.combining.interface.combine.mode-dd": {
+    "defaultMessage": "Press to switch to split mode. Combination grid should be empty."
+  },
+  "wiki.zetter.combining.interface.combine.mode-dt": {
+    "defaultMessage": "4) Change mode"
+  },
   "wiki.zetter.combining.interface.combine.preview-dd": {
     "defaultMessage": "Shows how combined canvas will look like."
   },
@@ -849,14 +876,17 @@
   "wiki.zetter.combining.interface.combine.result-dt": {
     "defaultMessage": "3) Result slot"
   },
-  "wiki.zetter.combining.interface.grid-dd": {
-    "defaultMessage": "Place your canvases here in order to glue them together. You can also just put one canvas here."
-  },
-  "wiki.zetter.combining.interface.grid-dt": {
-    "defaultMessage": "1) Canvas combination grid"
-  },
   "wiki.zetter.combining.interface.split.grid-dd": {
     "defaultMessage": "Place your canvas here in order to split it."
+  },
+  "wiki.zetter.combining.interface.split.grid-dt": {
+    "defaultMessage": "1) Canvas split slot"
+  },
+  "wiki.zetter.combining.interface.split.mode-dd": {
+    "defaultMessage": "Press to switch to combine mode. Split slot should be empty."
+  },
+  "wiki.zetter.combining.interface.split.mode-dt": {
+    "defaultMessage": "4) Change mode"
   },
   "wiki.zetter.combining.interface.split.preview-dd": {
     "defaultMessage": "Shows what current split canvas look like."
@@ -868,7 +898,7 @@
     "defaultMessage": "When you're happy with the result, grab your canvases from there."
   },
   "wiki.zetter.combining.interface.split.result-dt": {
-    "defaultMessage": "3) Result slot"
+    "defaultMessage": "3) Result slots"
   },
   "wiki.zetter.combining.interface.split.slot-dt": {
     "defaultMessage": "1) Canvas split slot"
@@ -879,14 +909,26 @@
   "wiki.zetter.combining.mode.combine": {
     "defaultMessage": "Combine Mode"
   },
+  "wiki.zetter.combining.mode.combine.instruction.image": {
+    "defaultMessage": "Combine Mode instruction image"
+  },
   "wiki.zetter.combining.mode.split": {
     "defaultMessage": "Split Mode"
+  },
+  "wiki.zetter.combining.mode.split.instruction.image": {
+    "defaultMessage": "Split Mode instruction image"
   },
   "wiki.zetter.combining.section": {
     "defaultMessage": "Combining"
   },
+  "wiki.zetter.combining.signing.no-clearing": {
+    "defaultMessage": "You do not need to clear default painting name. Just start typing your name."
+  },
+  "wiki.zetter.combining.signing.text": {
+    "defaultMessage": "This is the preview and sign screen for your painting. On the bottom left hand side you will see the name for painting (default is Unnamed) and your nickname. On the right hand-side there's Sign button. Press it when you are happy with your painting and given it a name."
+  },
   "wiki.zetter.combining.text-intro": {
-    "defaultMessage": "To prepare a canvas which is larger than 1 block, place newly crafted Artist Table and right-click it to open combine & split interface:",
+    "defaultMessage": "To prepare a canvas which is larger than 1 block, place the newly crafted Artist Table and right-click it to open combine & split interface:",
     "description": "Intro before combining interface explanation"
   },
   "wiki.zetter.combining.title": {
@@ -896,11 +938,11 @@
     "defaultMessage": "Framing"
   },
   "wiki.zetter.framing.text-finish": {
-    "defaultMessage": "What are you waiting for? Place it on the wall!",
+    "defaultMessage": "Congratulations! You should finally see something like that, when your hard work finally pays off.",
     "description": "Call to action with first painting"
   },
   "wiki.zetter.framing.text-intro": {
-    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! In order to do that, we would need to create a special frame and put the painting into this frame, then place it on the wall.",
+    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! To achieve that, we would need to create a special frame and put the painting into this frame, then place it on the wall, by right-clicking wall with framed painting in hand. Make sure there's enough space on the wall for it!",
     "description": "Intro before showing frame recipes"
   },
   "wiki.zetter.framing.title": {
@@ -918,41 +960,56 @@
     "defaultMessage": "Zetter Wiki",
     "description": "Zetter Wiki page title"
   },
-  "wiki.zetter.painting.interface.finish-dd": {
-    "defaultMessage": "Start drawing!"
+  "wiki.zetter.painting.instruction.image": {
+    "defaultMessage": "Painting instruction image"
   },
-  "wiki.zetter.painting.interface.finish-dt": {
-    "defaultMessage": "6) Drawing window"
+  "wiki.zetter.painting.interface.canvas-dd": {
+    "defaultMessage": "Place where magic happens. When hovering over the canvas area with a drawing tool, a drawing cursor should appear, showing the area affected by the tool. You can reposition canvas with space (hand tool) and mouse wheel (zoom tool)"
   },
-  "wiki.zetter.painting.interface.hex-dd": {
-    "defaultMessage": "If you know the code of the color you want to use, simply write or copy it there."
+  "wiki.zetter.painting.interface.canvas-dt": {
+    "defaultMessage": "2) Canvas area"
   },
-  "wiki.zetter.painting.interface.hex-dt": {
-    "defaultMessage": "4) HEX color input"
+  "wiki.zetter.painting.interface.canvas-slot-dd": {
+    "defaultMessage": "Current canvas placed on this easel. You can also get it by shift+click on Easel, but alternatively, you can use this slot."
   },
-  "wiki.zetter.painting.interface.hsv-dd": {
-    "defaultMessage": "Drag sliders to adjust selected color."
+  "wiki.zetter.painting.interface.canvas-slot-dt": {
+    "defaultMessage": "6) Canvas slot"
   },
-  "wiki.zetter.painting.interface.hsv-dt": {
-    "defaultMessage": "3) HSV color adjustment"
+  "wiki.zetter.painting.interface.current-tab-dd": {
+    "defaultMessage": "Current tab. You can select color from here, set up your tool opacity, size, and other options. When inventory selected, it shows your character's inventory."
+  },
+  "wiki.zetter.painting.interface.current-tab-dt": {
+    "defaultMessage": "8) Current tab"
+  },
+  "wiki.zetter.painting.interface.history-zoom-dd": {
+    "defaultMessage": "History and zoom tools. Press undo to revert the last action, and redo to get it back. Hotkeys are working. History is shared between players! Press plus to increase canvas scale and minus to decrease it."
+  },
+  "wiki.zetter.painting.interface.history-zoom-dt": {
+    "defaultMessage": "3) History & Scale"
   },
   "wiki.zetter.painting.interface.palette-dd": {
-    "defaultMessage": "Colors are saved with palette item. Current palette slot is highlighted, you can save up to 14 colors in a single palette."
+    "defaultMessage": "Palette shows color saved in the palette which is placed in the slot (5)."
   },
   "wiki.zetter.painting.interface.palette-dt": {
-    "defaultMessage": "2) Palette"
+    "defaultMessage": "4) Palette"
   },
   "wiki.zetter.painting.interface.palette-slot-dd": {
-    "defaultMessage": "Put your crafted palette here in order to start drawing."
+    "defaultMessage": "Palette shows color saved in the palette which is placed in the slot (5). You can save up to 16 colors in one palette."
   },
   "wiki.zetter.painting.interface.palette-slot-dt": {
-    "defaultMessage": "1) Palette slot"
+    "defaultMessage": "5) Palette slot"
   },
-  "wiki.zetter.painting.interface.tool-dd": {
-    "defaultMessage": "You may want to start with bucket to create a background."
+  "wiki.zetter.painting.interface.tabs-dd": {
+    "defaultMessage": "Depending on the tool you're using, you'll see different tabs here. When you click any tab, the contents of (8) area will change. Last tab is always inventory. Not all tools have parameters. We'll cover different tools and parameters below."
   },
-  "wiki.zetter.painting.interface.tool-dt": {
-    "defaultMessage": "5) Select tool"
+  "wiki.zetter.painting.interface.tabs-dt": {
+    "defaultMessage": "7) Tabs"
+  },
+  "wiki.zetter.painting.interface.tools-dd": {
+    "defaultMessage": "Available tools: pixel pencil, brush, color picker, bucket tool and hand. Every tool has own purpose, we will describe them below."
+  },
+  "wiki.zetter.painting.interface.tools-dt": {
+    "defaultMessage": "1) Tools"
   },
   "wiki.zetter.painting.section": {
     "defaultMessage": "Painting"
@@ -972,7 +1029,7 @@
     "defaultMessage": "Canvases: every canvas gives you one block of painting, so one is enough for a small painting, and 16 will be enough for the largest possible single painting (4×4). Typically, I suggest going with 4 — it is enough for a 2×2 painting that can fit on the easel."
   },
   "wiki.zetter.preparing.easel": {
-    "defaultMessage": "Finally, you would need an easel. You can find its recipe above. Easel needs some space, so don't place it right near the wall!",
+    "defaultMessage": "Finally, you would need an easel. You can find its recipe above. The easel needs some space, so don't place it right near the wall!",
     "description": "Explain first step, what we will be crafting"
   },
   "wiki.zetter.preparing.introduction": {
@@ -1114,11 +1171,14 @@
   "wiki.zetter.sharing.what-is-gallery": {
     "defaultMessage": "Zetter Gallery is independent mod, which requires Zetter to work. It is downloaded separately, so players who prefer not to have online features can keep basic version of the mod."
   },
+  "wiki.zetter.signing.image": {
+    "defaultMessage": "Painting signing instruction image"
+  },
   "wiki.zetter.signing.section": {
     "defaultMessage": "Signing"
   },
   "wiki.zetter.signing.text-intro": {
-    "defaultMessage": "When you are finished with one or multiple parts of your artwork, it's time to put your author signature. to open combine & signing interface:",
+    "defaultMessage": "When you are finished with your artwork, it's time to put your author signature. You will not be able to edit the painting after signing, so make sure it's good! Right-click with canvas in hand at empty space to open preview & signing interface:",
     "description": "Intro before signing interface explanation"
   },
   "wiki.zetter.signing.title": {
@@ -1128,12 +1188,97 @@
     "defaultMessage": "Zetter Wiki Home",
     "description": "Title for Zetter Wiki Home Page"
   },
+  "wiki.zetter.tools.color.blending": {
+    "defaultMessage": "1) Blending type. It defines, in which color space and which algorithm will be used to blend colors when blending is applicable (brush tool, not full intensity pencil). First here is RYB blending, which tries to imitate how real paints work in a very simplistic manner. It can be weird, but it makes nicer colors. Second is RGB blending, which is very familiar for digital artists (you may prefer that). Last is natural blending, which uses real data kindly provided by researcher Scott Allen Burns. It's not yet implemented in fact, but should give the best result in future."
+  },
+  "wiki.zetter.tools.color.brightness": {
+    "defaultMessage": "And (3) is brightness (B) slider. On lowest value this will turn your color to black."
+  },
+  "wiki.zetter.tools.color.brightness.title": {
+    "defaultMessage": "3) Brightness slider"
+  },
+  "wiki.zetter.tools.color.dithering": {
+    "defaultMessage": "2) Dithering type. When enabled, every N pixel will be skipped, to give painting classic pixel-art dithering effect."
+  },
+  "wiki.zetter.tools.color.hex.title": {
+    "defaultMessage": "4) HEX color field"
+  },
+  "wiki.zetter.tools.color.hue": {
+    "defaultMessage": "1) Hue (H) slider. By holding mouse over that slider you can change the actual base color in currently selected palette slot."
+  },
+  "wiki.zetter.tools.color.hue.title": {
+    "defaultMessage": "1) Hue slider"
+  },
+  "wiki.zetter.tools.color.image": {
+    "defaultMessage": "Color configuration instruction image"
+  },
+  "wiki.zetter.tools.color.input": {
+    "defaultMessage": "4) Input field can be used to import color from somewhere else. It accepts hexadecimal value of RGB color, sometimes it's called HTML notation. It looks like this: #FFDAE9. You can freely paste to that field or enter manually. When pasting, it's not needed to clean up the field, color will be replaced automatically for convenience."
+  },
+  "wiki.zetter.tools.color.intensity": {
+    "defaultMessage": "3) Intensity. It defines, how much the pixel color under the brush will be affected. Blending is made by selected blending type. Lower values will barely affect color (useful for shades and lights), maximum value will just replace underlying pixel with another color."
+  },
+  "wiki.zetter.tools.color.into": {
+    "defaultMessage": "Inside the color tab, you will see three sliders (1,2,3) and an input field (4)."
+  },
+  "wiki.zetter.tools.color.saturation": {
+    "defaultMessage": "2) Saturation (S) slider. It affects the contrast of current color. On minimum value, it turns color to grayscale palette."
+  },
+  "wiki.zetter.tools.color.saturation.title": {
+    "defaultMessage": "2) Saturation slider"
+  },
+  "wiki.zetter.tools.color.size": {
+    "defaultMessage": "4) Size. Bigger size will affect more pixels. For brush, it's smoothly increased, but for pencil there are thresholds, pencil has only limited set of shape-sizes."
+  },
+  "wiki.zetter.tools.color.title": {
+    "defaultMessage": "Color"
+  },
+  "wiki.zetter.tools.intentory.text": {
+    "defaultMessage": "Your character's inventory. You can use it to quickly change palettes and canvases."
+  },
+  "wiki.zetter.tools.inventory.image": {
+    "defaultMessage": "Inventory instruction image"
+  },
+  "wiki.zetter.tools.inventory.title": {
+    "defaultMessage": "Inventory"
+  },
+  "wiki.zetter.tools.pencil.blending-type.title": {
+    "defaultMessage": "1) Blending type"
+  },
+  "wiki.zetter.tools.pencil.dither-type.title": {
+    "defaultMessage": "2) Dithering type"
+  },
+  "wiki.zetter.tools.pencil.image": {
+    "defaultMessage": "Pencil configuration instruction image"
+  },
+  "wiki.zetter.tools.pencil.intensity.title": {
+    "defaultMessage": "3) Intensity slider"
+  },
+  "wiki.zetter.tools.pencil.intro": {
+    "defaultMessage": "Configurations for Pencil and Brush tools are similar, so we'll cover both in one paragraph."
+  },
+  "wiki.zetter.tools.pencil.size.title": {
+    "defaultMessage": "4) Size slider"
+  },
+  "wiki.zetter.tools.pencil.title": {
+    "defaultMessage": "Pencil & Brush parameters"
+  },
+  "wiki.zetter.tools.section": {
+    "defaultMessage": "Tools"
+  },
+  "wiki.zetter.tools.title": {
+    "defaultMessage": "Tools and Settings"
+  },
   "wiki.zetter.workspace.section": {
     "defaultMessage": "Workspace"
   },
-  "wiki.zetter.workspace.text-mounting": {
-    "defaultMessage": "With (or without) palette in hand, right-click on the easel to start drawing.",
+  "wiki.zetter.workspace.text-interacting": {
+    "defaultMessage": "With (or without, if it's already in place) palette in hand, right-click on the easel to start drawing.",
     "description": "Explain how to open easel screen"
+  },
+  "wiki.zetter.workspace.text-mounting": {
+    "defaultMessage": "With canvas in hand, right-click on easel to mount it.",
+    "description": "Explain how to mount canvas"
   },
   "wiki.zetter.workspace.text-start": {
     "defaultMessage": "To start drawing, you would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table somewhere nearby - we will need it later.",

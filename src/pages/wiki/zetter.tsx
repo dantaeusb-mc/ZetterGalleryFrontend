@@ -39,7 +39,7 @@ import { SliceLink } from '@components/widgets/slice-link';
 import WikiIcon from '@assets/icons/logos/wiki.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import { Radio } from '@components/widgets/radio';
-import ImageInstruction from "@components/wiki/image-instruction";
+import ImageInstruction from '@components/wiki/image-instruction';
 
 enum ArtistTableMode {
   COMBINE = 'COMBINE',
@@ -224,7 +224,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.preparing.easel'}
-                    defaultMessage="Finally, you would need an easel. You can find its recipe above. Easel needs some space, so don't place it right near the wall!"
+                    defaultMessage="Finally, you would need an easel. You can find its recipe above. The easel needs some space, so don't place it right near the wall!"
                     description="Explain first step, what we will be crafting"
                   />
                 </p>
@@ -248,7 +248,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.combining.text-intro'}
-                    defaultMessage="To prepare a canvas which is larger than 1 block, place newly crafted Artist Table and right-click it to open combine & split interface:"
+                    defaultMessage="To prepare a canvas which is larger than 1 block, place the newly crafted Artist Table and right-click it to open combine & split interface:"
                     description="Intro before combining interface explanation"
                   />
                 </p>
@@ -331,7 +331,7 @@ export default function ZetterWikiHome(): JSX.Element {
                             number: 4,
                             title: intl.formatMessage({
                               id: 'wiki.zetter.combining.interface.combine.mode-dt',
-                              defaultMessage: '3) Change mode',
+                              defaultMessage: '4) Change mode',
                             }),
                             rectangle: {
                               top: 23,
@@ -537,17 +537,13 @@ export default function ZetterWikiHome(): JSX.Element {
                         </dd>
                         <dt>
                           <FormattedMessage
-                            id={
-                              'wiki.zetter.combining.interface.split.mode-dt'
-                            }
+                            id={'wiki.zetter.combining.interface.split.mode-dt'}
                             defaultMessage="4) Change mode"
                           />
                         </dt>
                         <dd>
                           <FormattedMessage
-                            id={
-                              'wiki.zetter.combining.interface.split.mode-dd'
-                            }
+                            id={'wiki.zetter.combining.interface.split.mode-dd'}
                             defaultMessage="Press to switch to combine mode. Split slot should be empty."
                           />
                         </dd>
@@ -601,7 +597,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 />
                 <p>
                   <FormattedMessage
-                    id={'wiki.zetter.workspace.text-mounting'}
+                    id={'wiki.zetter.workspace.text-interacting'}
                     defaultMessage="With (or without, if it's already in place) palette in hand, right-click on the easel to start drawing."
                     description="Explain how to open easel screen"
                   />
@@ -630,92 +626,465 @@ export default function ZetterWikiHome(): JSX.Element {
                     description="Intro before painting interface explanation"
                   />
                 </p>
-                <div className={styles['image-description']}>
+                <div className={styles['image-long-description']}>
                   <div className={styles['image']}>
-                    <Image
-                      src="/assets/wiki/painting-gui.png"
-                      alt="Painting GUI"
-                      height={347}
-                      width={376}
+                    <ImageInstruction
+                      src="/assets/wiki/zetter/easel/screen.png"
+                      title={intl.formatMessage({
+                        id: 'wiki.zetter.painting.instruction.image',
+                        defaultMessage: 'Painting instruction image',
+                      })}
+                      instructions={[
+                        {
+                          number: 1,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.tools-dt',
+                            defaultMessage: '1) Tools',
+                          }),
+                          rectangle: {
+                            top: 1,
+                            left: 1,
+                            right: 85,
+                            bottom: 63,
+                          },
+                        },
+                        {
+                          number: 2,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.canvas-dt',
+                            defaultMessage: '2) Canvas area',
+                          }),
+                          rectangle: {
+                            top: 2,
+                            left: 17,
+                            right: 17,
+                            bottom: 41,
+                          },
+                        },
+                        {
+                          number: 3,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.history-zoom-dt',
+                            defaultMessage: '3) History & Scale',
+                          }),
+                          rectangle: {
+                            top: 46,
+                            left: 1,
+                            right: 85,
+                            bottom: 34,
+                          },
+                        },
+                        {
+                          number: 4,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.palette-dt',
+                            defaultMessage: '4) Palette',
+                          }),
+                          rectangle: {
+                            top: 14,
+                            left: 83,
+                            right: 4,
+                            bottom: 46,
+                          },
+                        },
+                        {
+                          number: 5,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.palette-slot-dt',
+                            defaultMessage: '5) Palette slot',
+                          }),
+                          rectangle: {
+                            top: 55,
+                            left: 86,
+                            right: 4,
+                            bottom: 37,
+                          },
+                        },
+                        {
+                          number: 6,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.canvas-slot-dt',
+                            defaultMessage: '6) Canvas slot',
+                          }),
+                          rectangle: {
+                            top: 3,
+                            left: 86,
+                            right: 4,
+                            bottom: 88,
+                          },
+                        },
+                        {
+                          number: 7,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.tabs-dt',
+                            defaultMessage: '7) Tabs',
+                          }),
+                          rectangle: {
+                            top: 65,
+                            left: 1,
+                            right: 83,
+                            bottom: 1,
+                          },
+                        },
+                        {
+                          number: 8,
+                          title: intl.formatMessage({
+                            id: 'wiki.zetter.painting.interface.current-tab-dt',
+                            defaultMessage: '8) Current tab',
+                          }),
+                          rectangle: {
+                            top: 65,
+                            left: 17,
+                            right: 4,
+                            bottom: 1,
+                          },
+                        },
+                      ]}
+                      height={559}
+                      width={485}
                     />
                   </div>
-                  <div className={styles['description']}>
+                  <div className={styles['description-col']}>
                     <dl>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.palette-slot-dt'}
-                          defaultMessage="1) Palette slot"
+                          id={'wiki.zetter.painting.interface.tools-dt'}
+                          defaultMessage="1) Tools"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.palette-slot-dd'}
-                          defaultMessage="Put your crafted palette here in order to start drawing."
+                          id={'wiki.zetter.painting.interface.tools-dd'}
+                          defaultMessage="Available tools: pixel pencil, brush, color picker, bucket tool and hand. Every tool has own purpose, we will describe them below."
+                        />
+                      </dd>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.painting.interface.canvas-dt'}
+                          defaultMessage="2) Canvas area"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.painting.interface.canvas-dd'}
+                          defaultMessage="Place where magic happens. When hovering over the canvas area with a drawing tool, a drawing cursor should appear, showing the area affected by the tool. You can reposition canvas with space (hand tool) and mouse wheel (zoom tool)"
+                        />
+                      </dd>
+                      <dt>
+                        <FormattedMessage
+                          id={'wiki.zetter.painting.interface.history-zoom-dt'}
+                          defaultMessage="3) History & Scale"
+                        />
+                      </dt>
+                      <dd>
+                        <FormattedMessage
+                          id={'wiki.zetter.painting.interface.history-zoom-dd'}
+                          defaultMessage="History and zoom tools. Press undo to revert the last action, and redo to get it back. Hotkeys are working. History is shared between players! Press plus to increase canvas scale and minus to decrease it."
                         />
                       </dd>
                       <dt>
                         <FormattedMessage
                           id={'wiki.zetter.painting.interface.palette-dt'}
-                          defaultMessage="2) Palette"
+                          defaultMessage="4) Palette"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
                           id={'wiki.zetter.painting.interface.palette-dd'}
-                          defaultMessage="Colors are saved with palette item. Current palette slot is highlighted, you can save up to 14 colors in a single palette."
+                          defaultMessage="Palette shows color saved in the palette which is placed in the slot (5)."
                         />
                       </dd>
+                    </dl>
+                  </div>
+                  <div className={styles['description-col']}>
+                    <dl>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.hsv-dt'}
-                          defaultMessage="3) HSV color adjustment"
+                          id={'wiki.zetter.painting.interface.palette-slot-dt'}
+                          defaultMessage="5) Palette slot"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.hsv-dd'}
-                          defaultMessage="Drag sliders to adjust selected color."
+                          id={'wiki.zetter.painting.interface.palette-slot-dd'}
+                          defaultMessage="Palette shows color saved in the palette which is placed in the slot (5). You can save up to 16 colors in one palette."
                         />
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.hex-dt'}
-                          defaultMessage="4) HEX color input"
+                          id={'wiki.zetter.painting.interface.canvas-slot-dt'}
+                          defaultMessage="6) Canvas slot"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.hex-dd'}
-                          defaultMessage="If you know the code of the color you want to use, simply write or copy it there."
+                          id={'wiki.zetter.painting.interface.canvas-slot-dd'}
+                          defaultMessage="Current canvas placed on this easel. You can also get it by shift+click on Easel, but alternatively, you can use this slot."
                         />
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.tool-dt'}
-                          defaultMessage="5) Select tool"
+                          id={'wiki.zetter.painting.interface.tabs-dt'}
+                          defaultMessage="7) Tabs"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.tool-dd'}
-                          defaultMessage="You may want to start with bucket to create a background."
+                          id={'wiki.zetter.painting.interface.tabs-dd'}
+                          defaultMessage="Depending on the tool you're using, you'll see different tabs here. When you click any tab, the contents of (8) area will change. Last tab is always inventory. Not all tools have parameters. We'll cover different tools and parameters below."
                         />
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.finish-dt'}
-                          defaultMessage="6) Drawing window"
+                          id={'wiki.zetter.painting.interface.current-tab-dt'}
+                          defaultMessage="8) Current tab"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter.painting.interface.finish-dd'}
-                          defaultMessage="Start drawing!"
+                          id={'wiki.zetter.painting.interface.current-tab-dd'}
+                          defaultMessage="Current tab. You can select color from here, set up your tool opacity, size, and other options. When inventory selected, it shows your character's inventory."
                         />
                       </dd>
                     </dl>
                   </div>
                 </div>
+              </section>
+              <section
+                id="tools"
+                ref={addSection(
+                  intl.formatMessage({
+                    id: 'wiki.zetter.tools.section',
+                    defaultMessage: 'Tools',
+                  }),
+                  'tools',
+                )}
+              >
+                <h2 id="tools">
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.title'}
+                    defaultMessage="Tools and Settings"
+                  />
+                </h2>
+                <h3>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.title'}
+                    defaultMessage="Color"
+                  />
+                </h3>
+                <ImageInstruction
+                  src="/assets/wiki/zetter/easel/color.png"
+                  title={intl.formatMessage({
+                    id: 'wiki.zetter.tools.color.image',
+                    defaultMessage: 'Color configuration instruction image',
+                  })}
+                  instructions={[
+                    {
+                      number: 1,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.color.hue.title',
+                        defaultMessage: '1) Hue slider',
+                      }),
+                      rectangle: {
+                        top: 20,
+                        left: 8,
+                        right: 1,
+                        bottom: 67,
+                      },
+                    },
+                    {
+                      number: 2,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.color.saturation.title',
+                        defaultMessage: '2) Saturation slider',
+                      }),
+                      rectangle: {
+                        top: 35,
+                        left: 8,
+                        right: 1,
+                        bottom: 52,
+                      },
+                    },
+                    {
+                      number: 3,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.color.brightness.title',
+                        defaultMessage: '3) Brightness slider',
+                      }),
+                      rectangle: {
+                        top: 50,
+                        left: 8,
+                        right: 1,
+                        bottom: 37,
+                      },
+                    },
+                    {
+                      number: 4,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.color.hex.title',
+                        defaultMessage: '4) HEX color field',
+                      }),
+                      rectangle: {
+                        top: 79,
+                        left: 1,
+                        right: 48,
+                        bottom: 1,
+                      },
+                    },
+                  ]}
+                  height={358}
+                  width={648}
+                />
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.into'}
+                    defaultMessage="Inside the color tab, you will see three sliders (1,2,3) and an input field (4)."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.hue'}
+                    defaultMessage="1) Hue (H) slider. By holding mouse over that slider you can change the actual base color in currently selected palette slot."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.saturation'}
+                    defaultMessage="2) Saturation (S) slider. It affects the contrast of current color. On minimum value, it turns color to grayscale palette."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.brightness'}
+                    defaultMessage="And (3) is brightness (B) slider. On lowest value this will turn your color to black."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.input'}
+                    defaultMessage="4) Input field can be used to import color from somewhere else. It accepts hexadecimal value of RGB color, sometimes it's called HTML notation. It looks like this: #FFDAE9. You can freely paste to that field or enter manually. When pasting, it's not needed to clean up the field, color will be replaced automatically for convenience."
+                  />
+                </p>
+                <h3>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.pencil.title'}
+                    defaultMessage="Pencil & Brush parameters"
+                  />
+                </h3>
+                <ImageInstruction
+                  src="/assets/wiki/zetter/easel/pencil.png"
+                  title={intl.formatMessage({
+                    id: 'wiki.zetter.tools.pencil.image',
+                    defaultMessage: 'Pencil configuration instruction image',
+                  })}
+                  instructions={[
+                    {
+                      number: 1,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.pencil.blending-type.title',
+                        defaultMessage: '1) Blending type',
+                      }),
+                      rectangle: {
+                        top: 27,
+                        left: 1,
+                        right: 61,
+                        bottom: 47,
+                      },
+                    },
+                    {
+                      number: 2,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.pencil.dither-type.title',
+                        defaultMessage: '2) Dithering type',
+                      }),
+                      rectangle: {
+                        top: 27,
+                        left: 47,
+                        right: 26,
+                        bottom: 47,
+                      },
+                    },
+                    {
+                      number: 3,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.pencil.intensity.title',
+                        defaultMessage: '3) Intensity slider',
+                      }),
+                      rectangle: {
+                        top: 63,
+                        left: 1,
+                        right: 7,
+                        bottom: 24,
+                      },
+                    },
+                    {
+                      number: 4,
+                      title: intl.formatMessage({
+                        id: 'wiki.zetter.tools.pencil.size.title',
+                        defaultMessage: '4) Size slider',
+                      }),
+                      rectangle: {
+                        top: 85,
+                        left: 1,
+                        right: 7,
+                        bottom: 2,
+                      },
+                    },
+                  ]}
+                  height={358}
+                  width={648}
+                />
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.pencil.intro'}
+                    defaultMessage="Configurations for Pencil and Brush tools are similar, so we'll cover both in one paragraph."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.blending'}
+                    defaultMessage="1) Blending type. It defines, in which color space and which algorithm will be used to blend colors when blending is applicable (brush tool, not full intensity pencil). First here is RYB blending, which tries to imitate how real paints work in a very simplistic manner. It can be weird, but it makes nicer colors. Second is RGB blending, which is very familiar for digital artists (you may prefer that). Last is natural blending, which uses real data kindly provided by researcher Scott Allen Burns. It's not yet implemented in fact, but should give the best result in future."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.dithering'}
+                    defaultMessage="2) Dithering type. When enabled, every N pixel will be skipped, to give painting classic pixel-art dithering effect."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.intensity'}
+                    defaultMessage="3) Intensity. It defines, how much the pixel color under the brush will be affected. Blending is made by selected blending type. Lower values will barely affect color (useful for shades and lights), maximum value will just replace underlying pixel with another color."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.color.size'}
+                    defaultMessage="4) Size. Bigger size will affect more pixels. For brush, it's smoothly increased, but for pencil there are thresholds, pencil has only limited set of shape-sizes."
+                  />
+                </p>
+                <h3>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.inventory.title'}
+                    defaultMessage="Inventory"
+                  />
+                </h3>
+                <Image
+                  src="/assets/wiki/zetter/easel/inventory.png"
+                  alt={intl.formatMessage({
+                    id: 'wiki.zetter.tools.inventory.image',
+                    defaultMessage: 'Inventory instruction image',
+                  })}
+                  height={358}
+                  width={648}
+                />
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.tools.intentory.text'}
+                    defaultMessage="Your character's inventory. You can use it to quickly change palettes and canvases."
+                  />
+                </p>
               </section>
               <section
                 id="signing"
@@ -736,38 +1105,31 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.signing.text-intro'}
-                    defaultMessage="When you are finished with one or multiple parts of your artwork, it's time to
-                             put your author signature. to open combine & signing interface:"
+                    defaultMessage="When you are finished with your artwork, it's time to put your author signature. You will not be able to edit the painting after signing, so make sure it's good! Right-click with canvas in hand at empty space to open preview & signing interface:"
                     description="Intro before signing interface explanation"
                   />
                 </p>
-                <div className={styles['image-description']}>
-                  <div className={styles['image']}>
-                    <Image
-                      src="/assets/wiki/combination-gui.png"
-                      alt="Artist Table GUI"
-                      height={234}
-                      width={371}
-                    />
-                  </div>
-                  <div className={styles['description']}>
-                    <dl>
-                      <dt>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.grid-dt'}
-                          defaultMessage="1) Canvas combination grid"
-                        />
-                      </dt>
-                      <dd>
-                        <FormattedMessage
-                          id={'wiki.zetter.combining.interface.grid-dd'}
-                          defaultMessage="Place your canvases here in order to glue them together. You can also
-                                    just put one canvas here."
-                        />
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
+                <Image
+                  src="/assets/wiki/zetter/painting/signing.png"
+                  alt={intl.formatMessage({
+                    id: 'wiki.zetter.signing.image',
+                    defaultMessage: 'Painting signing instruction image',
+                  })}
+                  height={427}
+                  width={537}
+                />
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.combining.signing.text'}
+                    defaultMessage="This is the preview and sign screen for your painting. On the bottom left hand side you will see the name for painting (default is Unnamed) and your nickname. On the right hand-side there's Sign button. Press it when you are happy with your painting and given it a name."
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.combining.signing.no-clearing'}
+                    defaultMessage="You do not need to clear default painting name. Just start typing your name."
+                  />
+                </p>
               </section>
               <section
                 id="framing"
@@ -788,9 +1150,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.framing.text-intro'}
-                    defaultMessage="After signing and naming your painting, it's time to place it somewhere
-                            in your fancy house finally! In order to do that, we would need to create a special frame
-                            and put the painting into this frame, then place it on the wall."
+                    defaultMessage="After signing and naming your painting, it's time to place it somewhere in your fancy house finally! To achieve that, we would need to create a special frame and put the painting into this frame, then place it on the wall, by right-clicking wall with framed painting in hand. Make sure there's enough space on the wall for it!"
                     description="Intro before showing frame recipes"
                   />
                 </p>
@@ -859,7 +1219,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.framing.text-finish'}
-                    defaultMessage="What are you waiting for? Place it on the wall!"
+                    defaultMessage="Congratulations! You should finally see something like that, when your hard work finally pays off. Congratulations!"
                     description="Call to action with first painting"
                   />
                 </p>

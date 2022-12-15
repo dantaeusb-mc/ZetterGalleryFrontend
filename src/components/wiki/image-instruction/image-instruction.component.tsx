@@ -31,7 +31,10 @@ export default function ImageInstruction({
   instructions,
 }: ImageInstructionProps): JSX.Element {
   return (
-    <div className={injectClassNames(styles['instruction-wrapper'])}>
+    <div className={injectClassNames(styles['instruction-wrapper'])} style={{
+      height,
+      width,
+    }}>
       <div className={styles['instruction-overlay']}>
         {instructions.map((instruction) => {
           return (

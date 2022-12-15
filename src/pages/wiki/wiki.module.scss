@@ -53,6 +53,8 @@
   display: grid;
 
   .image {
+    display: flex;
+    justify-content: center;
     text-align: center;
   }
 
