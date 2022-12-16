@@ -2,7 +2,6 @@ import React, { PropsWithChildren } from 'react';
 import { injectClassNames } from '@/utils/css';
 import styles from './slice-link.module.scss';
 import { Icon, IconSize } from '@components/icon';
-import BackgroundIcon from '@assets/icons/button-icon-wrapper-alt.png';
 import Link from 'next/link';
 
 type ButtonProps = {
@@ -40,12 +39,7 @@ function SliceLink({
         {...(external ? { target: '_blank' } : {})}
       >
         <div className={styles['slice-button-inner']}>
-          <div
-            className={styles['slice-button-icon-wrapper']}
-            style={{ backgroundImage: `url(${BackgroundIcon.src})`, backgroundColor: color }}
-          >
-            <Icon asset={icon} title={title} className={styles['icon']} />
-          </div>
+          <Icon asset={icon} title={title} className={styles['icon']} size={IconSize.Large} />
           <div className={styles['slice-button-text']}>{children}</div>
         </div>
       </a>

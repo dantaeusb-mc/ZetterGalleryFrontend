@@ -9,9 +9,7 @@ import DiscordIcon from '@assets/icons/logos/discord.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import WikiIcon from '@assets/icons/logos/wiki.png';
 
-const AboutPage: NextPage<Record<string, unknown>> = (
-  props: PropsWithChildren<Record<string, unknown>>,
-) => {
+const AboutPage: NextPage = () => {
   const intl = useIntl();
 
   const title = getTitle(

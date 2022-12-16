@@ -571,7 +571,7 @@ export default function ZetterWikiHome(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.workspace.text-start'}
-                    defaultMessage="To start drawing, you would need to prepare our painting workshop. Place the easel, grab canvas, put palette in your hotbar. You can also place an artist table somewhere nearby - we will need it later."
+                    defaultMessage="To start drawing, you would need to prepare our painting workshop. Place the artist table, the easel, put canvas on the easel and get palette in your hotbar."
                     description="Explain what we need to start drawing"
                   />
                 </p>
@@ -590,10 +590,13 @@ export default function ZetterWikiHome(): JSX.Element {
                   />
                 </p>
                 <Image
-                  src="/assets/wiki/workshop-screenshot.png"
-                  alt="Workshop"
-                  height={388}
-                  width={688}
+                  src="/assets/wiki/zetter/workshop.png"
+                  alt={intl.formatMessage({
+                    id: 'wiki.zetter.workspace.image',
+                    defaultMessage: 'Workshop: Artist Table, Easel and Canvas on Eassel',
+                  })}
+                  height={412}
+                  width={680}
                 />
                 <p>
                   <FormattedMessage
@@ -1224,10 +1227,13 @@ export default function ZetterWikiHome(): JSX.Element {
                   />
                 </p>
                 <Image
-                  src="/assets/wiki/showcase-screenshot.png"
-                  alt="Workshop"
-                  height={386}
-                  width={688}
+                  src="/assets/wiki/zetter/result.png"
+                  alt={intl.formatMessage({
+                    id: 'wiki.zetter.framing.result.image',
+                    defaultMessage: 'Painting in a frame on the wall',
+                  })}
+                  height={412}
+                  width={680}
                 />
               </section>
               <section

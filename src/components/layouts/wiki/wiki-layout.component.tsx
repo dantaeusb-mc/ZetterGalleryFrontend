@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import styles from './wiki-layout.module.scss';
-import WikiNavigation from '@components/wiki/navigation';
+import WikiNavigation from '@components/layouts/wiki/navigation';
 import Header from '@components/layouts/elements/header';
 import NavBar from '@components/layouts/elements/navbar';
 import Footer from '@components/layouts/elements/footer';
