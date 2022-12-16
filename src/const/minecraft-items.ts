@@ -1,4 +1,4 @@
-import { CraftItemProps } from '@/components/widgets/craft-grid/craft-item';
+import { CraftItemProps } from '@/components/wiki/craft-grid/craft-item';
 
 export const AnyPlanksItem: CraftItemProps = {
   name: 'Planks',
