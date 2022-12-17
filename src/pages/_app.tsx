@@ -34,6 +34,7 @@ const Zetter = ({ Component, pageProps }: AppPropsWithLayout) => {
           name="viewport"
           content="width=device-width, user-scalable=no initial-scale=1.0, viewport-fit=cover"
         />
+        <meta name="yandex-verification" content="ece5edd1bdb6235d" />
       </Head>
       <IntlProviderWrapper locale={(router.locale ?? 'en') as Locale}>
         <AuthProviderWrapper>
