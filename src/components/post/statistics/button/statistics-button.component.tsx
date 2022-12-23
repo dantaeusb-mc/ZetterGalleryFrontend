@@ -4,6 +4,7 @@ import styles from './statistics-button.module.scss';
 import Sparkles from '@components/vanity/sparkles';
 import { Icon } from '@components/icon';
 import Tippy from "@tippyjs/react";
+import { StaticImageData } from "next/image";
 
 export enum EStatisticsButtonActiveColor {
   Green,

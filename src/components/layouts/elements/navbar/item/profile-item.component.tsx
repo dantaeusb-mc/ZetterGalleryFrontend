@@ -6,6 +6,7 @@ import { injectClassNames } from '@/utils/css';
 import { AuthContext } from '@/context/auth.context';
 import { useIntl } from 'react-intl';
 import Sparkles from '@components/vanity/sparkles';
+import { StaticImageData } from "next/image";
 
 export interface ItemProps {
   name: string;

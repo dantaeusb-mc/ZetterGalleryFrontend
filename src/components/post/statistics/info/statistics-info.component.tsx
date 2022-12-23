@@ -3,6 +3,7 @@ import {injectClassNames} from '../../../../utils/css';
 import styles from './statistics-info.module.scss';
 import { Icon } from '@components/icon';
 import Tippy from "@tippyjs/react";
+import { StaticImageData } from "next/image";
 
 export interface IStatisticsButtonProps {
   className?: string;

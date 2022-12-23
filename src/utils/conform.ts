@@ -37,7 +37,7 @@ const cast = (what: any, to: any) => {
   }
 }
 
-const conform = <T>(defaultObject: T, object: Object): T => {
+const conform = <T>(defaultObject: T, object: Record<string, unknown>): T => {
   const newObject: Partial<T> = {};
 
   Object.keys(defaultObject).map(function(key) {

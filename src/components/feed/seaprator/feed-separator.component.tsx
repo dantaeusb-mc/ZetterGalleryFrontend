@@ -7,6 +7,7 @@ import HotIcon from '@assets/icons/feed/hot.png';
 import NewIcon from '@assets/icons/feed/new.png';
 import TopIcon from '@assets/icons/feed/top.png';
 import { Icon } from "@components/icon";
+import { StaticImageData } from "next/image";
 
 export interface FeedSeparatorProps {
   code: FeedTypes;

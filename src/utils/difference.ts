@@ -5,7 +5,9 @@ import lodash from 'lodash';
  * @param object
  * @param base
  */
+// eslint-disable-next-line @typescript-eslint/ban-types
 const difference = (object: Object, base: Object): Object => {
+// eslint-disable-next-line @typescript-eslint/ban-types
   function changes(object: Object, base: Object): Object {
     return lodash.transform(object, function(result: any, value, key) {
       if (!lodash.isEqual(value, base[key])) {
