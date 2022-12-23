@@ -1,4 +1,3 @@
-// @ts-nocheck
 /**
  * Naive yet effective way to "cast" one object to another.
  * For example, next query params ([key: string]: string) to query builder
@@ -8,49 +7,49 @@
  * If defaultObject don't have a param, it'll be ignored.
  */
 
-const cast = (what: any, to: any) => {
+const cast = (what: any, to: any): any => {
   switch (typeof to) {
-    case "object":
-      if (typeof what === "object") {
+    case 'object':
+      if (typeof what === 'object') {
         return conform(to, what);
       }
 
       return to;
-    case "boolean":
+    case 'boolean':
       return !!to;
-    case "number":
-      return parseFloat(what)
-    case "string":
+    case 'number':
+      return parseFloat(what);
+    case 'string':
       return what.toString();
-    case "bigint":
-      if (typeof what === "number" || typeof what === "string") {
-        return new BigInt(what)
+    case 'bigint':
+      if (typeof what === 'number' || typeof what === 'string') {
+        return BigInt(what);
       }
 
       return to;
-    case "function":
+    case 'function':
       return () => to;
-    case "undefined":
-    case "symbol":
+    case 'undefined':
+    case 'symbol':
     default:
       return to;
   }
-}
+};
 
-const conform = <T>(defaultObject: T, object: Record<string, unknown>): T => {
-  const newObject: Partial<T> = {};
+const conform = <T extends Record<string, unknown>>(defaultObject: T, object: Record<string, unknown>): T => {
+  const newObject: Record<string, unknown> = {};
 
-  Object.keys(defaultObject).map(function(key) {
+  Object.keys(defaultObject).map(function (key) {
     if (!defaultObject.hasOwnProperty(key)) return;
     if (!object.hasOwnProperty(key)) {
       newObject[key] = defaultObject[key];
       return;
     }
 
-    newObject[key] = cast(object[key], defaultObject[key]) as T[key];
+    newObject[key] = cast(object[key], defaultObject[key]);
   });
 
   return newObject as T;
-}
+};
 
 export default conform;

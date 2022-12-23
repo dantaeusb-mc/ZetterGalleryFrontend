@@ -93,7 +93,7 @@ const Home: NextPage<PaintingsPageProps> = (
 
   const router = useRouter();
   //const initPaintingsQuery = lodash.assign(lodash.clone(defaultQuery), router.query);
-  const initPaintingsQuery = conform(defaultQuery, router.query);
+  const initPaintingsQuery = conform({ ...defaultQuery }, router.query);
 
   // @todo: cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
   const [paintings, setPaintings] = useState<{
