@@ -1,13 +1,15 @@
-import React, { PropsWithChildren } from 'react';
-import DefaultLayout from '@components/layouts/default';
-import Head from 'next/head';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { NextPage } from 'next';
-import { SliceLink } from '@components/widgets/slice-link';
-import getTitle from '@/utils/page/get-title';
-import DiscordIcon from '@assets/icons/logos/discord.png';
-import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
-import WikiIcon from '@assets/icons/logos/wiki.png';
+import React from "react";
+import DefaultLayout from "@components/layouts/default";
+import Head from "next/head";
+import { FormattedMessage, useIntl } from "react-intl";
+import { NextPage } from "next";
+import { SliceLink } from "@components/widgets/slice-link";
+import getTitle from "@/utils/page/get-title";
+import DiscordIcon from "@assets/icons/logos/discord.png";
+import CurseForgeIcon from "@assets/icons/logos/curseforge.png";
+import WikiIcon from "@assets/icons/logos/wiki.png";
+import { Callout, CalloutSeverity } from "@components/widgets/callout";
+import Link from "next/link";
 
 const AboutPage: NextPage = () => {
   const intl = useIntl();

@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^12.0.4",
-    "@svgr/webpack": "^5.5.0",
+    "@svgr/webpack": "^6.5.1",
     "@tippyjs/react": "^4.2.6",
     "@types/numeral": "^2.0.2",
     "@types/ua-parser-js": "^0.7.36",
@@ -27,7 +27,7 @@
     "cross-env": "^7.0.3",
     "inspirational-quotes": "^2.0.1",
     "lodash": "^4.17.21",
-    "next": "^12.0.7",
+    "next": "^12.3.4",
     "next-sitemap": "^1.6.203",
     "numeral": "^2.0.6",
     "react": "^17.0.2",
@@ -37,7 +37,7 @@
     "react-transition-group": "^4.4.5",
     "reflect-metadata": "^0.1.13",
     "sass": "^1.43.4",
-    "sharp": "^0.29.3",
+    "sharp": "^0.31.2",
     "ua-parser-js": "^1.0.32"
   },
   "devDependencies": {

@@ -7,6 +7,7 @@ import getTitle from '@/utils/page/get-title';
 import Callout, {
   CalloutSeverity,
 } from '../components/widgets/callout/callout.component';
+import Link from "next/link";
 
 const TermsPage: NextPage<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
@@ -39,6 +40,22 @@ const TermsPage: NextPage<Record<string, unknown>> = (
           <FormattedMessage
             id="human-terms.title.callout.check-english"
             defaultMessage="These statements are not legally binding. This page provides short explanation of the terms of use and some details about intended usage of this service."
+          />
+        </Callout>
+        <Callout severity={CalloutSeverity.Info}>
+          <FormattedMessage
+            id="about.zetter.name"
+            defaultMessage="Zetter is named after {Kristoffer}, author of the original Minecraft paintings."
+            description="Zetter Gallery Description"
+            values={{
+              Kristoffer: (
+                <Link href="https://zetterstrand.com/">
+                  <a title="Kristoffer Zetterstrand website" target="_blank">
+                    Kristoffer Zetterstrand
+                  </a>
+                </Link>
+              ),
+            }}
           />
         </Callout>
         <h1>

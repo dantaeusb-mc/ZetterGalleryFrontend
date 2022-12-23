@@ -40,6 +40,8 @@ import WikiIcon from '@assets/icons/logos/wiki.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import { Radio } from '@components/widgets/radio';
 import ImageInstruction from '@components/wiki/image-instruction';
+import { Callout, CalloutSeverity } from "@components/widgets/callout";
+import Link from "next/link";
 
 enum ArtistTableMode {
   COMBINE = 'COMBINE',
@@ -875,69 +877,71 @@ export default function ZetterWikiHome(): JSX.Element {
                     defaultMessage="Color"
                   />
                 </h3>
-                <ImageInstruction
-                  src="/assets/wiki/zetter/easel/color.png"
-                  title={intl.formatMessage({
-                    id: 'wiki.zetter.tools.color.image',
-                    defaultMessage: 'Color configuration instruction image',
-                  })}
-                  instructions={[
-                    {
-                      number: 1,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.color.hue.title',
-                        defaultMessage: '1) Hue slider',
-                      }),
-                      rectangle: {
-                        top: 20,
-                        left: 8,
-                        right: 1,
-                        bottom: 67,
+                <div className={styles['image']}>
+                  <ImageInstruction
+                    src="/assets/wiki/zetter/easel/color.png"
+                    title={intl.formatMessage({
+                      id: 'wiki.zetter.tools.color.image',
+                      defaultMessage: 'Color configuration instruction image',
+                    })}
+                    instructions={[
+                      {
+                        number: 1,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.color.hue.title',
+                          defaultMessage: '1) Hue slider',
+                        }),
+                        rectangle: {
+                          top: 20,
+                          left: 8,
+                          right: 1,
+                          bottom: 67,
+                        },
                       },
-                    },
-                    {
-                      number: 2,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.color.saturation.title',
-                        defaultMessage: '2) Saturation slider',
-                      }),
-                      rectangle: {
-                        top: 35,
-                        left: 8,
-                        right: 1,
-                        bottom: 52,
+                      {
+                        number: 2,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.color.saturation.title',
+                          defaultMessage: '2) Saturation slider',
+                        }),
+                        rectangle: {
+                          top: 35,
+                          left: 8,
+                          right: 1,
+                          bottom: 52,
+                        },
                       },
-                    },
-                    {
-                      number: 3,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.color.brightness.title',
-                        defaultMessage: '3) Brightness slider',
-                      }),
-                      rectangle: {
-                        top: 50,
-                        left: 8,
-                        right: 1,
-                        bottom: 37,
+                      {
+                        number: 3,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.color.brightness.title',
+                          defaultMessage: '3) Brightness slider',
+                        }),
+                        rectangle: {
+                          top: 50,
+                          left: 8,
+                          right: 1,
+                          bottom: 37,
+                        },
                       },
-                    },
-                    {
-                      number: 4,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.color.hex.title',
-                        defaultMessage: '4) HEX color field',
-                      }),
-                      rectangle: {
-                        top: 79,
-                        left: 1,
-                        right: 48,
-                        bottom: 1,
+                      {
+                        number: 4,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.color.hex.title',
+                          defaultMessage: '4) HEX color field',
+                        }),
+                        rectangle: {
+                          top: 79,
+                          left: 1,
+                          right: 48,
+                          bottom: 1,
+                        },
                       },
-                    },
-                  ]}
-                  height={358}
-                  width={648}
-                />
+                    ]}
+                    height={358}
+                    width={648}
+                  />
+                </div>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.tools.color.into'}
@@ -974,69 +978,71 @@ export default function ZetterWikiHome(): JSX.Element {
                     defaultMessage="Pencil & Brush parameters"
                   />
                 </h3>
-                <ImageInstruction
-                  src="/assets/wiki/zetter/easel/pencil.png"
-                  title={intl.formatMessage({
-                    id: 'wiki.zetter.tools.pencil.image',
-                    defaultMessage: 'Pencil configuration instruction image',
-                  })}
-                  instructions={[
-                    {
-                      number: 1,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.pencil.blending-type.title',
-                        defaultMessage: '1) Blending type',
-                      }),
-                      rectangle: {
-                        top: 27,
-                        left: 1,
-                        right: 61,
-                        bottom: 47,
+                <div className={styles['image']}>
+                  <ImageInstruction
+                    src="/assets/wiki/zetter/easel/pencil.png"
+                    title={intl.formatMessage({
+                      id: 'wiki.zetter.tools.pencil.image',
+                      defaultMessage: 'Pencil configuration instruction image',
+                    })}
+                    instructions={[
+                      {
+                        number: 1,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.pencil.blending-type.title',
+                          defaultMessage: '1) Blending type',
+                        }),
+                        rectangle: {
+                          top: 27,
+                          left: 1,
+                          right: 61,
+                          bottom: 47,
+                        },
                       },
-                    },
-                    {
-                      number: 2,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.pencil.dither-type.title',
-                        defaultMessage: '2) Dithering type',
-                      }),
-                      rectangle: {
-                        top: 27,
-                        left: 47,
-                        right: 26,
-                        bottom: 47,
+                      {
+                        number: 2,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.pencil.dither-type.title',
+                          defaultMessage: '2) Dithering type',
+                        }),
+                        rectangle: {
+                          top: 27,
+                          left: 47,
+                          right: 26,
+                          bottom: 47,
+                        },
                       },
-                    },
-                    {
-                      number: 3,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.pencil.intensity.title',
-                        defaultMessage: '3) Intensity slider',
-                      }),
-                      rectangle: {
-                        top: 63,
-                        left: 1,
-                        right: 7,
-                        bottom: 24,
+                      {
+                        number: 3,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.pencil.intensity.title',
+                          defaultMessage: '3) Intensity slider',
+                        }),
+                        rectangle: {
+                          top: 63,
+                          left: 1,
+                          right: 7,
+                          bottom: 24,
+                        },
                       },
-                    },
-                    {
-                      number: 4,
-                      title: intl.formatMessage({
-                        id: 'wiki.zetter.tools.pencil.size.title',
-                        defaultMessage: '4) Size slider',
-                      }),
-                      rectangle: {
-                        top: 85,
-                        left: 1,
-                        right: 7,
-                        bottom: 2,
+                      {
+                        number: 4,
+                        title: intl.formatMessage({
+                          id: 'wiki.zetter.tools.pencil.size.title',
+                          defaultMessage: '4) Size slider',
+                        }),
+                        rectangle: {
+                          top: 85,
+                          left: 1,
+                          right: 7,
+                          bottom: 2,
+                        },
                       },
-                    },
-                  ]}
-                  height={358}
-                  width={648}
-                />
+                    ]}
+                    height={358}
+                    width={648}
+                  />
+                </div>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.tools.pencil.intro'}
@@ -1073,15 +1079,17 @@ export default function ZetterWikiHome(): JSX.Element {
                     defaultMessage="Inventory"
                   />
                 </h3>
-                <Image
-                  src="/assets/wiki/zetter/easel/inventory.png"
-                  alt={intl.formatMessage({
-                    id: 'wiki.zetter.tools.inventory.image',
-                    defaultMessage: 'Inventory instruction image',
-                  })}
-                  height={358}
-                  width={648}
-                />
+                <div className={styles['image']}>
+                  <Image
+                    src="/assets/wiki/zetter/easel/inventory.png"
+                    alt={intl.formatMessage({
+                      id: 'wiki.zetter.tools.inventory.image',
+                      defaultMessage: 'Inventory instruction image',
+                    })}
+                    height={358}
+                    width={648}
+                  />
+                </div>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.tools.intentory.text'}
@@ -1112,15 +1120,17 @@ export default function ZetterWikiHome(): JSX.Element {
                     description="Intro before signing interface explanation"
                   />
                 </p>
-                <Image
-                  src="/assets/wiki/zetter/painting/signing.png"
-                  alt={intl.formatMessage({
-                    id: 'wiki.zetter.signing.image',
-                    defaultMessage: 'Painting signing instruction image',
-                  })}
-                  height={427}
-                  width={537}
-                />
+                <div className={styles['image']}>
+                  <Image
+                    src="/assets/wiki/zetter/painting/signing.png"
+                    alt={intl.formatMessage({
+                      id: 'wiki.zetter.signing.image',
+                      defaultMessage: 'Painting signing instruction image',
+                    })}
+                    height={427}
+                    width={537}
+                  />
+                </div>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.combining.signing.text'}
@@ -1226,15 +1236,17 @@ export default function ZetterWikiHome(): JSX.Element {
                     description="Call to action with first painting"
                   />
                 </p>
-                <Image
-                  src="/assets/wiki/zetter/result.png"
-                  alt={intl.formatMessage({
-                    id: 'wiki.zetter.framing.result.image',
-                    defaultMessage: 'Painting in a frame on the wall',
-                  })}
-                  height={412}
-                  width={680}
-                />
+                <div className={styles['image']}>
+                  <Image
+                    src="/assets/wiki/zetter/result.png"
+                    alt={intl.formatMessage({
+                      id: 'wiki.zetter.framing.result.image',
+                      defaultMessage: 'Painting in a frame on the wall',
+                    })}
+                    height={412}
+                    width={680}
+                  />
+                </div>
               </section>
               <section
                 id="sharing"

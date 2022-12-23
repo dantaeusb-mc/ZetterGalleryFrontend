@@ -27,7 +27,7 @@ module.exports = withBundleAnalyzer({
       {
         protocol: 'https',
         hostname: 'zetter.gallery',
-        port: '',
+        port: '443',
         pathname: '/**',
       },
     ],
