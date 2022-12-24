@@ -53,6 +53,18 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
           name: '@ppblitto (StuarteLitro)',
           description: 'Artist, Zetter mod assets',
         },
+        pxlsamosa: {
+          name: '@pxlsamosa (Pxlsamosa)',
+          description: 'Artist, Zetter mod & website assets',
+        },
+        eliathx: {
+          name: '@eliathx (Eliathx)',
+          description: 'Artist, website assets',
+        },
+        grimmnail: {
+          name: '@GrimmNail (GrimmNail)',
+          description: 'Artist, website assets',
+        },
       },
     },
     translators: {
@@ -92,9 +104,13 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
           description:
             'Forge Discord, absolutely insane amount of help with mod development',
         },
+        xfacthd: {
+          name: '@XFactHD (XFactHD#5288)',
+          description: 'Forge Discord, helped to get through a very rough path of Minecraft modding',
+        },
         gigaherz: {
           name: '@gigaherz (gigaherz#9173)',
-          description: 'consultations about Forge and GUI',
+          description: 'Forge Discord, consultations about Forge and GUI',
         },
         cyborgmas: {
           name: 'Cyborgmas#0379',
