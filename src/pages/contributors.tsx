@@ -109,7 +109,7 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
           description: 'Forge Discord, helped to get through a very rough path of Minecraft modding',
         },
         gigaherz: {
-          name: '@gigaherz (gigaherz#9173)',
+          name: 'Gigaherz#9173',
           description: 'Forge Discord, consultations about Forge and GUI',
         },
         cyborgmas: {
