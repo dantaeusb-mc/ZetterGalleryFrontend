@@ -38,11 +38,37 @@
   display: block;
   margin: 0;
   position: relative;
-  transition: outline-color .1s ease, transform .2s ease;
+  transition: padding .3s ease, outline-color .1s ease, transform .2s ease;
   outline-color: transparent;
   padding: .5rem;
   height: 2rem;
   width: 2rem;
+
+  &:before {
+    background: currentColor;
+    border-radius: .25rem;
+    content: ' ';
+    display: none;
+    position: absolute;
+    height: .5rem;
+    width: .5rem;
+
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.loading {
+    animation: loading 1s ease-in-out infinite;
+  }
+
+  &.active {
+    padding: 0 .5rem 1rem .5rem;
+
+    &:before {
+      display: block;
+    }
+  }
 
   &:focus {
     outline: .2rem currentColor solid;
@@ -58,6 +84,7 @@
   filter: grayscale(1);
 
   &:hover,
+  &.loading,
   &.active {
     filter: none;
   }
@@ -68,6 +95,7 @@
   filter: grayscale(1);
 
   &:hover,
+  &.loading,
   &.active {
     filter: none;
   }
@@ -78,6 +106,7 @@
   filter: grayscale(1);
 
   &:hover,
+  &.loading,
   &.active {
     filter: none;
   }
@@ -88,6 +117,7 @@
   filter: grayscale(1);
 
   &:hover,
+  &.loading,
   &.active {
     filter: none;
   }
@@ -101,6 +131,7 @@
   width: 2rem;
 
   &:hover,
+  &.loading,
   &.active {
     filter: none;
   }
@@ -116,6 +147,24 @@
   right: .5rem;
   height: .875rem;
   width: .75rem;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  20% {
+    transform: translateY(10%) scale(1.1, 0.9);
+  }
+  30% {
+    transform: translateY(-10%) scale(0.8, 1.2);
+  }
+  50% {
+    transform: translateY(-20%) scale(1, 1);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
 }
 
 @keyframes sale-emerald-appear {

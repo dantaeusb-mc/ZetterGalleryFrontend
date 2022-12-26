@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
+import React, { memo, ReactElement, useEffect, useState } from 'react';
 import styles from './navbar.module.scss';
 import { useRouter } from 'next/router';
 import { NavbarItem, NavbarProfileItem } from './item';
-import { useIntl } from 'react-intl';
+import { IntlShape, useIntl } from 'react-intl';
 import AboutIcon from './icons/about.png';
 import SearchIcon from './icons/search.png';
 import HomeIcon from './icons/home.png';
 import OnSaleIcon from './icons/onsale.png';
 import ProfileIcon from './icons/profile.png';
-import { injectClassNames } from "@/utils/css";
+import { injectClassNames } from '@/utils/css';
 
 export interface ItemProps {
   name: string;
@@ -17,16 +17,88 @@ export interface ItemProps {
   active: boolean;
 }
 
+const navigationButtonCodes = [
+  'about',
+  'search',
+  'home',
+  'sale',
+  'profile',
+] as const;
+
+type NavigationButtonsEnum = typeof navigationButtonCodes[number];
+const NavigationButtonValues: ReadonlyArray<NavigationButtonsEnum> =
+  navigationButtonCodes;
+
+interface NavigationButtonMetaProps {
+  isCurrentPath: (pathname: string) => boolean;
+}
+
+const navigationButtons: Record<
+  NavigationButtonsEnum,
+  NavigationButtonMetaProps
+> = {
+  about: {
+    isCurrentPath: (pathname) =>
+      pathname === '/about' || pathname.startsWith('/wiki'),
+  },
+  search: {
+    isCurrentPath: (pathname) => pathname === '/search',
+  },
+  home: {
+    isCurrentPath: (pathname) => pathname === '/',
+  },
+  sale: {
+    isCurrentPath: (pathname) => pathname === '/feed',
+  },
+  profile: {
+    isCurrentPath: (pathname) => pathname === '/players/me',
+  },
+};
+
 export default memo(function Navbar(): JSX.Element {
   const router = useRouter();
   const intl = useIntl();
 
-  const aboutActive =
-    router.pathname === '/about' || router.pathname.startsWith('/wiki');
-  const searchActive = router.pathname === '/search';
-  const homeActive = router.pathname === '/';
-  const saleActive = router.pathname === '/feed';
-  const profileActive = router.pathname === '/players/me';
+  const [loadingButton, setLoadingButton] =
+    useState<NavigationButtonsEnum | null>(null);
+  const [activeButton, setActiveButton] =
+    useState<NavigationButtonsEnum | null>(null);
+
+  useEffect(() => {
+    const handleStart = (uri: string) => {
+      const loadingButtonCodes = navigationButtonCodes.filter((code) =>
+        navigationButtons[code].isCurrentPath(router.pathname),
+      );
+
+      if (loadingButtonCodes.length === 1) {
+        setActiveButton(loadingButtonCodes.pop() ?? null);
+      }
+    };
+
+    const handleComplete = (uri: string) => {
+      setLoadingButton(null);
+    };
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  });
+
+  useEffect(() => {
+    const activeButtonCodes = navigationButtonCodes.filter((code) =>
+      navigationButtons[code].isCurrentPath(router.pathname),
+    );
+
+    if (activeButtonCodes.length === 1) {
+      setActiveButton(activeButtonCodes.pop() ?? null);
+    }
+  }, [router]);
 
   return (
     <nav className={styles['header']}>
@@ -39,9 +111,12 @@ export default memo(function Navbar(): JSX.Element {
           })}
           asset={AboutIcon}
           uri="/about"
-          active={aboutActive}
+          active={activeButton === 'about'}
           className={injectClassNames(
-            styles['icon'], styles['about'], [styles['active'], aboutActive]
+            styles['icon'],
+            styles['about'],
+            [styles['active'], activeButton === 'about'],
+            [styles['loading'], loadingButton === 'about'],
           )}
         />
         <NavbarItem
@@ -52,9 +127,12 @@ export default memo(function Navbar(): JSX.Element {
           })}
           asset={SearchIcon}
           uri="/search"
-          active={searchActive}
+          active={activeButton === 'search'}
           className={injectClassNames(
-            styles['icon'], styles['search'], [styles['active'], searchActive]
+            styles['icon'],
+            styles['search'],
+            [styles['active'], activeButton === 'search'],
+            [styles['loading'], activeButton === 'search'],
           )}
         />
         <NavbarItem
@@ -65,9 +143,12 @@ export default memo(function Navbar(): JSX.Element {
           })}
           asset={HomeIcon}
           uri="/"
-          active={homeActive}
+          active={activeButton === 'home'}
           className={injectClassNames(
-            styles['icon'], styles['home'], [styles['active'], homeActive]
+            styles['icon'],
+            styles['home'],
+            [styles['active'], activeButton === 'home'],
+            [styles['loading'], loadingButton === 'home'],
           )}
         />
         <NavbarItem
@@ -78,12 +159,17 @@ export default memo(function Navbar(): JSX.Element {
           })}
           asset={OnSaleIcon}
           uri="/feed"
-          active={saleActive}
+          active={activeButton === 'sale'}
           className={injectClassNames(
-            styles['icon'], styles['sale'], [styles['active'], saleActive]
+            styles['icon'],
+            styles['sale'],
+            [styles['active'], activeButton === 'sale'],
+            [styles['loading'], loadingButton === 'sale'],
           )}
         >
-          {saleActive && <div className={styles['sale-emerald']} />}
+          {activeButton === 'sale' && (
+            <div className={styles['sale-emerald']} />
+          )}
         </NavbarItem>
         <NavbarProfileItem
           key="nav-profile"
@@ -93,9 +179,12 @@ export default memo(function Navbar(): JSX.Element {
           })}
           asset={ProfileIcon}
           uri="/players/me"
-          active={profileActive}
+          active={activeButton === 'profile'}
           className={injectClassNames(
-            styles['icon'], styles['profile'], [styles['active'], profileActive]
+            styles['icon'],
+            styles['profile'],
+            [styles['active'], activeButton === 'profile'],
+            [styles['loading'], loadingButton === 'profile'],
           )}
         />
       </ul>

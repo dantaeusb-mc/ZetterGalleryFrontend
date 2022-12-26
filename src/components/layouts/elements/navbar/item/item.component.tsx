@@ -1,10 +1,10 @@
-import React, { memo, PropsWithChildren } from "react";
+import React, { memo, PropsWithChildren } from 'react';
 import styles from './item.module.scss';
 import Link from 'next/link';
 import { Icon, IconSize } from '@components/icon';
 import { injectClassNames } from '@/utils/css';
-import Sparkles from "@components/vanity/sparkles";
-import { StaticImageData } from "next/image";
+import Sparkles from '@components/vanity/sparkles';
+import { StaticImageData } from 'next/image';
 
 export interface ItemProps {
   active: boolean;
@@ -34,7 +34,7 @@ const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
       </Link>
     </li>
   );
-}
+};
 
 NavbarItem.defaultProps = {
   large: false,
