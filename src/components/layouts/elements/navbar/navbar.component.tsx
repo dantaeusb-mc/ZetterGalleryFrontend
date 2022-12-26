@@ -67,7 +67,7 @@ const Navbar = (): JSX.Element => {
   useEffect(() => {
     const handleStart = (uri: string) => {
       const loadingButtonCodes = navigationButtonCodes.filter((code) =>
-        navigationButtons[code].isCurrentPath(router.pathname),
+        navigationButtons[code].isCurrentPath(uri),
       );
 
       if (loadingButtonCodes.length === 1) {
