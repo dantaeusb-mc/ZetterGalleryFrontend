@@ -55,7 +55,7 @@ const navigationButtons: Record<
   },
 };
 
-export default memo(function Navbar(): JSX.Element {
+const Navbar = (): JSX.Element => {
   const router = useRouter();
   const intl = useIntl();
 
@@ -112,6 +112,7 @@ export default memo(function Navbar(): JSX.Element {
           asset={AboutIcon}
           uri="/about"
           active={activeButton === 'about'}
+          loading={loadingButton === 'about'}
           className={injectClassNames(
             styles['icon'],
             styles['about'],
@@ -128,6 +129,7 @@ export default memo(function Navbar(): JSX.Element {
           asset={SearchIcon}
           uri="/search"
           active={activeButton === 'search'}
+          loading={loadingButton === 'search'}
           className={injectClassNames(
             styles['icon'],
             styles['search'],
@@ -144,6 +146,7 @@ export default memo(function Navbar(): JSX.Element {
           asset={HomeIcon}
           uri="/"
           active={activeButton === 'home'}
+          loading={loadingButton === 'home'}
           className={injectClassNames(
             styles['icon'],
             styles['home'],
@@ -160,6 +163,7 @@ export default memo(function Navbar(): JSX.Element {
           asset={OnSaleIcon}
           uri="/feed"
           active={activeButton === 'sale'}
+          loading={loadingButton === 'sale'}
           className={injectClassNames(
             styles['icon'],
             styles['sale'],
@@ -180,6 +184,7 @@ export default memo(function Navbar(): JSX.Element {
           asset={ProfileIcon}
           uri="/players/me"
           active={activeButton === 'profile'}
+          loading={loadingButton === 'profile'}
           className={injectClassNames(
             styles['icon'],
             styles['profile'],
@@ -190,4 +195,6 @@ export default memo(function Navbar(): JSX.Element {
       </ul>
     </nav>
   );
-});
+};
+
+export default Navbar;

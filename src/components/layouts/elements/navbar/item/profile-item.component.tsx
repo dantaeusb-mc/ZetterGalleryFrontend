@@ -11,6 +11,7 @@ import { StaticImageData } from "next/image";
 export interface ItemProps {
   name: string;
   active: boolean;
+  loading: boolean;
   asset: StaticImageData;
   uri: string;
   className: string;
@@ -33,24 +34,26 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                 )}
               >
                 {props.active && <Sparkles />}
-                <Icon
-                  asset={props.asset}
-                  title={props.name}
-                  className={styles['icon']}
-                  size={props.large ? IconSize.Large : IconSize.Regular}
-                />
-                <img
-                  alt={intl.formatMessage({
-                    id: 'navbar.profile.avatar',
-                    defaultMessage: 'Your profile avatar',
-                  })}
-                  // @todo: load from js with retries to wait for queue processing for new players
-                  src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${player.uuid}/avatar.png`}
-                  className={injectClassNames(
-                    styles['profile-avatar'],
-                    'pixelated-images',
-                  )}
-                />
+                <div className={styles['profile-wrapper']}>
+                  <Icon
+                    asset={props.asset}
+                    title={props.name}
+                    className={styles['icon']}
+                    size={props.large ? IconSize.Large : IconSize.Regular}
+                  />
+                  <img
+                    alt={intl.formatMessage({
+                      id: 'navbar.profile.avatar',
+                      defaultMessage: 'Your profile avatar',
+                    })}
+                    // @todo: load from js with retries to wait for queue processing for new players
+                    src={`${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${player.uuid}/avatar.png`}
+                    className={injectClassNames(
+                      styles['profile-avatar'],
+                      'pixelated-images',
+                    )}
+                  />
+                </div>
               </button>
             </Link>
           ) : (
@@ -61,23 +64,25 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
                   props.className,
                 )}
               >
-                <Icon
-                  asset={props.asset}
-                  title={props.name}
-                  className={styles['icon']}
-                  size={props.large ? IconSize.Large : IconSize.Regular}
-                />
-                <img
-                  alt={intl.formatMessage({
-                    id: 'navbar.profile.avatar.default',
-                    defaultMessage: 'Anonymous avatar',
-                  })}
-                  src="/assets/herobrine.png"
-                  className={injectClassNames(
-                    styles['profile-avatar'],
-                    'pixelated-images',
-                  )}
-                />
+                <div className={styles['profile-wrapper']}>
+                  <Icon
+                    asset={props.asset}
+                    title={props.name}
+                    className={styles['icon']}
+                    size={props.large ? IconSize.Large : IconSize.Regular}
+                  />
+                  <img
+                    alt={intl.formatMessage({
+                      id: 'navbar.profile.avatar.default',
+                      defaultMessage: 'Anonymous avatar',
+                    })}
+                    src="/assets/herobrine.png"
+                    className={injectClassNames(
+                      styles['profile-avatar'],
+                      'pixelated-images',
+                    )}
+                  />
+                </div>
               </button>
             </Link>
           );
@@ -89,6 +94,7 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
 
 NavbarProfileItem.defaultProps = {
   large: false,
+  loading: false,
 };
 
 export default memo(NavbarProfileItem);

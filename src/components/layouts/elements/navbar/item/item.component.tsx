@@ -8,6 +8,7 @@ import { StaticImageData } from 'next/image';
 
 export interface ItemProps {
   active: boolean;
+  loading: boolean;
   title: string;
   asset: StaticImageData;
   uri: string;
@@ -38,6 +39,7 @@ const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
 
 NavbarItem.defaultProps = {
   large: false,
+  loading: false,
 };
 
 export default memo(NavbarItem);
