@@ -29,6 +29,10 @@ const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
             asset={props.asset}
             title={props.title}
             size={props.large ? IconSize.Large : IconSize.Regular}
+            className={injectClassNames(styles['icon'], [
+              styles['loading'],
+              props.loading,
+            ])}
           />
           {props.children}
         </button>

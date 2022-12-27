@@ -6,7 +6,7 @@ import { injectClassNames } from '@/utils/css';
 import { AuthContext } from '@/context/auth.context';
 import { useIntl } from 'react-intl';
 import Sparkles from '@components/vanity/sparkles';
-import { StaticImageData } from "next/image";
+import { StaticImageData } from 'next/image';
 
 export interface ItemProps {
   name: string;
@@ -29,16 +29,17 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
             <Link href="/players/me">
               <button
                 title={player.nickname}
-                className={injectClassNames(
-                  props.className,
-                )}
+                className={injectClassNames(props.className)}
               >
                 {props.active && <Sparkles />}
                 <div className={styles['profile-wrapper']}>
                   <Icon
                     asset={props.asset}
                     title={props.name}
-                    className={styles['icon']}
+                    className={injectClassNames(styles['icon'], [
+                      styles['loading'],
+                      props.loading,
+                    ])}
                     size={props.large ? IconSize.Large : IconSize.Regular}
                   />
                   <img
@@ -60,15 +61,16 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
             <Link href={props.uri}>
               <button
                 title={props.name}
-                className={injectClassNames(
-                  props.className,
-                )}
+                className={injectClassNames(props.className)}
               >
                 <div className={styles['profile-wrapper']}>
                   <Icon
                     asset={props.asset}
                     title={props.name}
-                    className={styles['icon']}
+                    className={injectClassNames(styles['icon'], [
+                      styles['loading'],
+                      props.loading,
+                    ])}
                     size={props.large ? IconSize.Large : IconSize.Regular}
                   />
                   <img

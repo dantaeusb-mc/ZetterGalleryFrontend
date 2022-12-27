@@ -71,7 +71,9 @@ const Navbar = (): JSX.Element => {
       );
 
       if (loadingButtonCodes.length === 1) {
-        setActiveButton(loadingButtonCodes.pop() ?? null);
+        setLoadingButton(loadingButtonCodes.pop() ?? null);
+      } else {
+        setLoadingButton(null);
       }
     };
 
