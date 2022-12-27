@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './header.module.scss';
 import LanguageSelector from '@components/layouts/elements/header/language-selector';
 import { injectClassNames } from '@/utils/css';
@@ -16,7 +16,11 @@ const Header = (props: HeaderProps): JSX.Element => {
       <Link href="/">
         <a title="Go to homepage">
           <figure className={styles['logo-wrapper']}>
-            <img src={'/assets/logo.png'} className={styles['logo']} alt={'Zetter Gallery Logo'} />
+            <img
+              src={'/assets/logo.png'}
+              className={styles['logo']}
+              alt={'Zetter Gallery Logo'}
+            />
             <figcaption>Zetter Gallery Logo</figcaption>
           </figure>
         </a>
@@ -30,4 +34,4 @@ Header.defaultProps = {
   type: 'thin',
 };
 
-export default Header;
+export default memo(Header);
