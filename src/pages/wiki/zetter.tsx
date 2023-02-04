@@ -889,7 +889,7 @@ export default function ZetterWikiHome(): JSX.Element {
                     description="Hint about hotkeys page"
                     values={{
                       recipesLocation: (
-                        <Link href="/wiki/zetter/recipes">
+                        <Link href="/wiki/zetter/advanced">
                           <a
                             title={intl.formatMessage({
                               id: 'wiki.zetter.painting.callout-advanced.location',

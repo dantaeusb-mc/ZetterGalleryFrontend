@@ -395,11 +395,27 @@ export default function ZetterWikiRecipes(): JSX.Element {
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.recipes.painting'}
-                    defaultMessage="This is an actual painting. It's created only by signing one or multiple combined
-                    canvases on the Artist Table."
+                    defaultMessage="An actual painting, result of your work. It's created only by signing a canvas. To sign a canvas, right-click with painted canvas in hand, enter name and press sign. You can also copy existing painting with recipe below."
                     description="Explain what is painting"
                   />
                 </p>
+                <div className={styles['recipes-grid']}>
+                  <CraftGrid
+                    items={[
+                      null,
+                      null,
+                      null,
+                      PaintingItem,
+                      CanvasItem,
+                      PaletteItem,
+                      null,
+                      null,
+                      null,
+                    ]}
+                    output={PaintingItem}
+                    shapeless={true}
+                  />
+                </div>
               </section>
               <section
                 id="frames"
