@@ -11,7 +11,6 @@ import {
   IronNuggetItem,
   LeatherItem,
   PaperItem,
-  PlanksSlabItem,
   RedDyeItem,
   StickItem,
   WhiteDyeItem,
@@ -40,8 +39,8 @@ import WikiIcon from '@assets/icons/logos/wiki.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import { Radio } from '@components/widgets/radio';
 import ImageInstruction from '@components/wiki/image-instruction';
-import { Callout, CalloutSeverity } from "@components/widgets/callout";
-import Link from "next/link";
+import { Callout, CalloutSeverity } from '@components/widgets/callout';
+import Link from 'next/link';
 
 enum ArtistTableMode {
   COMBINE = 'COMBINE',
@@ -230,6 +229,34 @@ export default function ZetterWikiHome(): JSX.Element {
                     description="Explain first step, what we will be crafting"
                   />
                 </p>
+                <Callout severity={CalloutSeverity.Info}>
+                  <FormattedMessage
+                    id={'wiki.zetter.preparing.callout-recipes'}
+                    defaultMessage="You can find all recipes reference {recipesLocation}"
+                    description="Hint about recipes page"
+                    values={{
+                      recipesLocation: (
+                        <Link href="/wiki/zetter/recipes">
+                          <a
+                            title={intl.formatMessage({
+                              id: 'wiki.zetter.preparing.callout-recipes.location',
+                              defaultMessage: 'on this page',
+                              description: 'Hint recipes page location',
+                            })}
+                          >
+                            <FormattedMessage
+                              id={
+                                'wiki.zetter.preparing.callout-recipes.location'
+                              }
+                              defaultMessage="on this page"
+                              description="Hint recipes page location"
+                            />
+                          </a>
+                        </Link>
+                      ),
+                    }}
+                  />
+                </Callout>
               </section>
               <section
                 id="combining"
@@ -595,7 +622,8 @@ export default function ZetterWikiHome(): JSX.Element {
                   src="/assets/wiki/zetter/workshop.png"
                   alt={intl.formatMessage({
                     id: 'wiki.zetter.workspace.image',
-                    defaultMessage: 'Workshop: Artist Table, Easel and Canvas on Eassel',
+                    defaultMessage:
+                      'Workshop: Artist Table, Easel and Canvas on Eassel',
                   })}
                   height={412}
                   width={680}
@@ -854,6 +882,34 @@ export default function ZetterWikiHome(): JSX.Element {
                     </dl>
                   </div>
                 </div>
+                <Callout severity={CalloutSeverity.Info}>
+                  <FormattedMessage
+                    id={'wiki.zetter.painting.callout-advanced'}
+                    defaultMessage="You can find hotkeys & console commands {recipesLocation}"
+                    description="Hint about hotkeys page"
+                    values={{
+                      recipesLocation: (
+                        <Link href="/wiki/zetter/recipes">
+                          <a
+                            title={intl.formatMessage({
+                              id: 'wiki.zetter.painting.callout-advanced.location',
+                              defaultMessage: 'on this page',
+                              description: 'Hint advanced page location',
+                            })}
+                          >
+                            <FormattedMessage
+                              id={
+                                'wiki.zetter.painting.callout-advanced.location'
+                              }
+                              defaultMessage="on this page"
+                              description="Hint advanced page location"
+                            />
+                          </a>
+                        </Link>
+                      ),
+                    }}
+                  />
+                </Callout>
               </section>
               <section
                 id="tools"
@@ -1245,6 +1301,47 @@ export default function ZetterWikiHome(): JSX.Element {
                     })}
                     height={412}
                     width={680}
+                  />
+                </div>
+              </section>
+              <section
+                id="copying"
+                ref={addSection(
+                  intl.formatMessage({
+                    id: 'wiki.zetter.copying.section',
+                    defaultMessage: 'Copying',
+                  }),
+                  'copying',
+                )}
+              >
+                <h2 id="framing">
+                  <FormattedMessage
+                    id={'wiki.zetter.copying.title'}
+                    defaultMessage="Copying a painting"
+                  />
+                </h2>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.copying.text'}
+                    defaultMessage="If you would like to duplicate your painting, you would need to combine the signed painting without a frame with the blank canvas of the same size and a palette with sufficient paints. You will have a copy in a result slot, and the painting will be kept in the original slot, as well as the palette, with reduced paints amount. Like books, paintings have three generations: original, copy and copy of copy."
+                    description="Tell about copying recipe and generations"
+                  />
+                </p>
+                <div className={styles['recipes-grid']}>
+                  <CraftGrid
+                    items={[
+                      null,
+                      null,
+                      null,
+                      PaintingItem,
+                      CanvasItem,
+                      PaletteItem,
+                      null,
+                      null,
+                      null,
+                    ]}
+                    output={PaintingItem}
+                    shapeless={true}
                   />
                 </div>
               </section>

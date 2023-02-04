@@ -79,6 +79,10 @@
     "defaultMessage": "Check out Zetter mod wiki page with recipes and manuals",
     "description": "Link to Zetter wiki from About Zetter page"
   },
+  "about.zetter.name": {
+    "defaultMessage": "Zetter is named after {Kristoffer}, author of the original Minecraft paintings.",
+    "description": "Zetter Gallery Description"
+  },
   "about.zetter.title": {
     "defaultMessage": "What is Zetter",
     "description": "Title for Zetter About Section"
@@ -665,7 +669,7 @@
     "description": "Microsoft Authorization"
   },
   "wiki.zetter-gallery.login.description.screen": {
-    "defaultMessage": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in.",
+    "defaultMessage": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in when pressing on the account button.",
     "description": "Login screen description"
   },
   "wiki.zetter-gallery.login.description.zg-auth": {
@@ -673,8 +677,11 @@
     "description": "Zetter Gallery Authorization"
   },
   "wiki.zetter-gallery.login.description.zg-requirements": {
-    "defaultMessage": "To log in, you would Minecraft to allow you to open links. It is enabled by default, but if you have problems and nothing opens, you can check out if you are allowed to open links in Main Menu -> Options -> Chat Settings -> Links.",
+    "defaultMessage": "By default, you can open links in Minecraft. If you do not see this button, you would need Minecraft to allow you to open links. It can be done in Main Menu -> Options -> Chat Settings -> Links.",
     "description": "Login requirements"
+  },
+  "wiki.zetter-gallery.login.prompt.image": {
+    "defaultMessage": "Log in prompt message"
   },
   "wiki.zetter-gallery.login.section": {
     "defaultMessage": "Logging in"
@@ -788,12 +795,27 @@
   "wiki.zetter-gallery.trading.interface.update-countdown-dd": {
     "defaultMessage": "Because offers are updated every 5 minutes, you have limited time to purchase the painting in offer. Do not worry, when time will run out, this button will turn black, and you will have 1:30 to finish what you planned. You can also manually update offers by clicking this button when it's black."
   },
+  "wiki.zetter.advanced.console.export.param1": {
+    "defaultMessage": "The first parameter is target for exporting. Typically, you most likely need to use \"client\" parameter, so the painting will be saved to your Minecraft folder, the same place where screenshots and texturepacks are located, in a new \"zetter\" directory. If you are a server operator, you can make use of \"server\" option: that way painting will be saved only in server directory root under \"zetter\" directory. If you are playing in a single-player world, the result will be the same, but for dedicated servers \"server\" result will only be accessible to the people who have access to the server computer file system.",
+    "description": "Explanation of the first parameter of export command"
+  },
+  "wiki.zetter.advanced.console.export.param2": {
+    "defaultMessage": "The second parameter is painting lookup rule. It could be either the name of the painting you are looking for in double quotes, like \"My Painting\", or you can refer to your painting by its numeric ID. Another option is to use its canvas name, typically it's a string like zetter_painting_14 (14 is the numeric ID).",
+    "description": "Explanation of the second parameter of export command"
+  },
+  "wiki.zetter.advanced.console.export.pre": {
+    "defaultMessage": "If you would like to share your work outside Minecraft and do not want to use Zetter Gallery, you can use a special export command. This command will allow you to save your painting to PNG file to your game folder or to server folder.",
+    "description": "Explain what is export command"
+  },
+  "wiki.zetter.advanced.console.export.title": {
+    "defaultMessage": "Export command"
+  },
   "wiki.zetter.advanced.console.restore.notice": {
     "defaultMessage": "Keep in mind, though, that this only applies to the signed paintings. Non-signed canvases can be easily lost forever or overwritten by Zetter when canvas item is removed from the world. So remember to sign your painting when you're done and avoid using easels as a decoration if the result is important to you.",
     "description": "Explain requirements for the restore command"
   },
   "wiki.zetter.advanced.console.restore.post": {
-    "defaultMessage": "Instead of \"Your Painting Name\" you should use the title of your painting, obviously. But you can also use painting id (number) or even canvas code, if you're more into technical stuff. This command should give you a copy of the painting if it was found by provided parameter.",
+    "defaultMessage": "Instead of [painting] you should use the title of your painting, like \"My Painting\". But you can also use painting id (number) or even canvas code, if you're more into technical stuff. This command should give you a copy of the painting if it was found by provided parameter.",
     "description": "Explain what restore command parameters and results"
   },
   "wiki.zetter.advanced.console.restore.pre": {
@@ -962,6 +984,16 @@
   "wiki.zetter.combining.title": {
     "defaultMessage": "Combining and splitting canvases"
   },
+  "wiki.zetter.copying.section": {
+    "defaultMessage": "Copying"
+  },
+  "wiki.zetter.copying.text": {
+    "defaultMessage": "If you would like to duplicate your painting, you would need to combine the signed painting without a frame with the blank canvas of the same size and a palette with sufficient paints. You will have a copy in a result slot, and the painting will be kept in the original slot, as well as the palette, with reduced paints amount. Like books, paintings have three generations: original, copy and copy of copy.",
+    "description": "Tell about copying recipe and generations"
+  },
+  "wiki.zetter.copying.title": {
+    "defaultMessage": "Copying a painting"
+  },
   "wiki.zetter.framing.result.image": {
     "defaultMessage": "Painting in a frame on the wall"
   },
@@ -990,6 +1022,14 @@
   "wiki.zetter.page.title": {
     "defaultMessage": "Zetter Wiki",
     "description": "Zetter Wiki page title"
+  },
+  "wiki.zetter.painting.callout-advanced": {
+    "defaultMessage": "You can find hotkeys & console commands {recipesLocation}",
+    "description": "Hint about hotkeys page"
+  },
+  "wiki.zetter.painting.callout-advanced.location": {
+    "defaultMessage": "on this page",
+    "description": "Hint advanced page location"
   },
   "wiki.zetter.painting.instruction.image": {
     "defaultMessage": "Painting instruction image"
@@ -1055,6 +1095,14 @@
   "wiki.zetter.preparing.artist-table": {
     "defaultMessage": "You can combine those canvases on a special Artist Table, which you will need to craft too. We will cover the canvas combination in the next step.",
     "description": "Explain first step, what we will be crafting"
+  },
+  "wiki.zetter.preparing.callout-recipes": {
+    "defaultMessage": "You can find all recipes reference {recipesLocation}",
+    "description": "Hint about recipes page"
+  },
+  "wiki.zetter.preparing.callout-recipes.location": {
+    "defaultMessage": "on this page",
+    "description": "Hint recipes page location"
   },
   "wiki.zetter.preparing.canvases": {
     "defaultMessage": "Canvases: every canvas gives you one block of painting, so one is enough for a small painting, and 16 will be enough for the largest possible single painting (4×4). Typically, I suggest going with 4 — it is enough for a 2×2 painting that can fit on the easel."

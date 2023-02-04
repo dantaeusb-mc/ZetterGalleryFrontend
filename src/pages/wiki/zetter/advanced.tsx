@@ -2,19 +2,16 @@ import React from 'react';
 import Head from 'next/head';
 import UAParser from 'ua-parser-js';
 import { FormattedMessage, useIntl } from 'react-intl';
-import {
-  WikiLayout,
-  WikiLayoutProps,
-} from '@components/layouts/wiki';
+import { WikiLayout, WikiLayoutProps } from '@components/layouts/wiki';
 import styles from '../wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
-import { injectClassNames } from "@/utils/css";
-import { getZetterWikiPages } from "@pages/wiki/zetter";
+import { injectClassNames } from '@/utils/css';
+import { getZetterWikiPages } from '@pages/wiki/zetter';
 
 enum HotkeyFlavor {
   windows = 'windows',
   linux = 'linux',
-  mac = 'mac'
+  mac = 'mac',
 }
 
 export default function ZetterWikiRecipes(): JSX.Element {
@@ -35,7 +32,8 @@ export default function ZetterWikiRecipes(): JSX.Element {
 
   const description = intl.formatMessage({
     id: 'wiki.zetter.advanced.page.description',
-    defaultMessage: 'Learn about advanced techniques in Zetter Mod for Minecraft',
+    defaultMessage:
+      'Learn about advanced techniques in Zetter Mod for Minecraft',
     description: 'Zetter Advanced Wiki page description',
   });
 
@@ -80,40 +78,147 @@ export default function ZetterWikiRecipes(): JSX.Element {
                     description="Explain what is hotkeys"
                   />
                 </p>
-                <div className={injectClassNames(styles['grouped-table'], styles['hotkeys'])}>
+                <div
+                  className={injectClassNames(
+                    styles['grouped-table'],
+                    styles['hotkeys'],
+                  )}
+                >
                   <div className={styles['group-title-row']}>
-                    <FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.title'} defaultMessage="Tools" />
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.title'}
+                      defaultMessage="Tools"
+                    />
                   </div>
-                  <div className={styles['col']}><kbd>P</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.pencil'} defaultMessage="Pencil tool" /></div>
-                  <div className={styles['col']}><kbd>B</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.brush'} defaultMessage="Brush tool" /></div>
-                  <div className={styles['col']}><kbd>I</kbd> or hold { hotkeyFlavor == HotkeyFlavor.mac ? <kbd>Option ⌥</kbd> : <kbd>Alt</kbd>}</div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.picker'} defaultMessage="Color picker tool" /></div>
-                  <div className={styles['col']}><kbd>F</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.bucket'} defaultMessage="Bucket or fill tool" /></div>
-                  <div className={styles['col']}><kbd>H</kbd> or hold <kbd>Space</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.hand'} defaultMessage="Hand tool" /></div>
-                  <div className={styles['col']}><kbd>-</kbd> or <kbd>_</kbd> or mouse wheel down</div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.zoom-out'} defaultMessage="Zoom out" /></div>
-                  <div className={styles['col']}><kbd>=</kbd> or <kbd>+</kbd> or mouse wheel up</div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.zoom-in'} defaultMessage="Zoom in" /></div>
+                  <div className={styles['col']}>
+                    <kbd>P</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.pencil'}
+                      defaultMessage="Pencil tool"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>B</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.brush'}
+                      defaultMessage="Brush tool"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>I</kbd> or hold{' '}
+                    {hotkeyFlavor == HotkeyFlavor.mac ? (
+                      <kbd>Option ⌥</kbd>
+                    ) : (
+                      <kbd>Alt</kbd>
+                    )}
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.picker'}
+                      defaultMessage="Color picker tool"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>F</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.bucket'}
+                      defaultMessage="Bucket or fill tool"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>H</kbd> or hold <kbd>Space</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.hand'}
+                      defaultMessage="Hand tool"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>-</kbd> or <kbd>_</kbd> or mouse wheel down
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.zoom-out'}
+                      defaultMessage="Zoom out"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>=</kbd> or <kbd>+</kbd> or mouse wheel up
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.zoom-in'}
+                      defaultMessage="Zoom in"
+                    />
+                  </div>
                   <div className={styles['group-title-row']}>
-                    <FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.history'} defaultMessage="History" />
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.history'}
+                      defaultMessage="History"
+                    />
                   </div>
-                  <div className={styles['col']}><kbd className={styles['key']}>{ hotkeyFlavor == HotkeyFlavor.mac ? 'Cmd ⌘' : 'Ctrl'} + Z</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.history.undo'} defaultMessage="Undo: cancel last non-canceled action" /></div>
-                  <div className={styles['col']}><kbd className={styles['key']}>{ hotkeyFlavor == HotkeyFlavor.mac ? 'Cmd ⌘' : 'Ctrl'} + Y</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.history.redo'} defaultMessage="Redo: restore last canceled action" /></div>
+                  <div className={styles['col']}>
+                    <kbd className={styles['key']}>
+                      {hotkeyFlavor == HotkeyFlavor.mac ? 'Cmd ⌘' : 'Ctrl'} + Z
+                    </kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.history.undo'}
+                      defaultMessage="Undo: cancel last non-canceled action"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd className={styles['key']}>
+                      {hotkeyFlavor == HotkeyFlavor.mac ? 'Cmd ⌘' : 'Ctrl'} + Y
+                    </kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.history.redo'}
+                      defaultMessage="Redo: restore last canceled action"
+                    />
+                  </div>
                   <div className={styles['group-title-row']}>
-                    <FormattedMessage  id={'wiki.zetter.advanced.hotkeys.tools.colors'} defaultMessage="Colors" />
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.tools.colors'}
+                      defaultMessage="Colors"
+                    />
                   </div>
-                  <div className={styles['col']}><kbd>Up arrow</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.colors.up'} defaultMessage="Use palette slot above the current one" /></div>
-                  <div className={styles['col']}><kbd>Down arrow</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.colors.down'} defaultMessage="Use palette slot below the current one" /></div>
-                  <div className={styles['col']}><kbd>X</kbd></div>
-                  <div className={styles['col']}><FormattedMessage  id={'wiki.zetter.advanced.hotkeys.colors.swap'} defaultMessage="Swap color: use palette slot next to current one." /></div>
+                  <div className={styles['col']}>
+                    <kbd>Up arrow</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.colors.up'}
+                      defaultMessage="Use palette slot above the current one"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>Down arrow</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.colors.down'}
+                      defaultMessage="Use palette slot below the current one"
+                    />
+                  </div>
+                  <div className={styles['col']}>
+                    <kbd>X</kbd>
+                  </div>
+                  <div className={styles['col']}>
+                    <FormattedMessage
+                      id={'wiki.zetter.advanced.hotkeys.colors.swap'}
+                      defaultMessage="Swap color: use palette slot next to current one."
+                    />
+                  </div>
                 </div>
               </section>
               <section
@@ -134,6 +239,40 @@ export default function ZetterWikiRecipes(): JSX.Element {
                 </h2>
                 <h3>
                   <FormattedMessage
+                    id={'wiki.zetter.advanced.console.export.title'}
+                    defaultMessage="Export command"
+                  />
+                </h3>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.advanced.console.export.pre'}
+                    defaultMessage="If you would like to share your work outside Minecraft and do not want to use Zetter Gallery, you can use a special export command. This command will allow you to save your painting to PNG file to your game folder or to server folder."
+                    description="Explain what is export command"
+                  />
+                </p>
+                <code className={styles['console-code']}>
+                  /zetter export [client|server] [painting]
+                </code>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.advanced.console.export.param1'}
+                    defaultMessage={
+                      'The first parameter is target for exporting. Typically, you most likely need to use "client" parameter, so the painting will be saved to your Minecraft folder, the same place where screenshots and texturepacks are located, in a new "zetter" directory. If you are a server operator, you can make use of "server" option: that way painting will be saved only in server directory root under "zetter" directory. If you are playing in a single-player world, the result will be the same, but for dedicated servers "server" result will only be accessible to the people who have access to the server computer file system.'
+                    }
+                    description="Explanation of the first parameter of export command"
+                  />
+                </p>
+                <p>
+                  <FormattedMessage
+                    id={'wiki.zetter.advanced.console.export.param2'}
+                    defaultMessage={
+                      'The second parameter is painting lookup rule. It could be either the name of the painting you are looking for in double quotes, like "My Painting", or you can refer to your painting by its numeric ID. Another option is to use its canvas name, typically it\'s a string like zetter_painting_14 (14 is the numeric ID).'
+                    }
+                    description="Explanation of the second parameter of export command"
+                  />
+                </p>
+                <h3>
+                  <FormattedMessage
                     id={'wiki.zetter.advanced.console.restore.title'}
                     defaultMessage="Restore command"
                   />
@@ -149,13 +288,17 @@ export default function ZetterWikiRecipes(): JSX.Element {
                     description="Explain what is restore command"
                   />
                 </p>
-                <code className={styles['console-code']}>/zetter restore "Your Painting Title"</code>
+                <code className={styles['console-code']}>
+                  /zetter restore [painting]
+                </code>
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter.advanced.console.restore.post'}
-                    defaultMessage={'Instead of "Your Painting Name" you should use the title of your painting, obviously. ' +
-                      'But you can also use painting id (number) or even canvas code, if you\'re more into technical stuff. ' +
-                      'This command should give you a copy of the painting if it was found by provided parameter.'}
+                    defaultMessage={
+                      'Instead of [painting] you should use the title of your painting, like "My Painting". ' +
+                      "But you can also use painting id (number) or even canvas code, if you're more into technical stuff. " +
+                      'This command should give you a copy of the painting if it was found by provided parameter.'
+                    }
                     description="Explain what restore command parameters and results"
                   />
                 </p>
