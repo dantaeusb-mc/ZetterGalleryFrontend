@@ -6,7 +6,15 @@ const FontSupportedLocales: Locale[] = ['en'];
 const LayoutWrapper = ({
   children,
 }: PropsWithChildren<Record<string, unknown>>) => {
-  return (children);
+  return (
+    <LocaleContext.Consumer>
+      {(localeContext) => (
+        <span>
+          {children}
+        </span>
+      )}
+    </LocaleContext.Consumer>
+  );
 };
 
 export default LayoutWrapper;
