@@ -64,6 +64,7 @@ body {
   color: colors.color('text');
   @include font-family('Minefont', sans-serif);
   font-size: 16px;
+  line-height: 1.5;
   margin: 0;
 
   font-smooth: none;
