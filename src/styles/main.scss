@@ -62,8 +62,13 @@ html {
 body {
   background-color: colors.color('background');
   color: colors.color('text');
+  @include font-family('Minefont', sans-serif);
   font-size: 16px;
   margin: 0;
+
+  font-smooth: none;
+  font-smoothing: none;
+  -webkit-font-smoothing: none;
 }
 
 dl {
@@ -163,7 +168,7 @@ button {
 }
 
 .pixel-font {
-  @include font-family('Minecraftia', sans-serif);
+  @include font-family('Minefont', sans-serif);
   font-smooth: none;
   font-smoothing: none;
   -webkit-font-smoothing: none;
