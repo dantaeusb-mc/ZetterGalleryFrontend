@@ -3,7 +3,7 @@ import { injectClassNames } from '@/utils/css';
 import styles from './slice-link.module.scss';
 import { Icon, IconSize } from '@components/icon';
 import Link from 'next/link';
-import { StaticImageData } from "next/image";
+import { StaticImageData } from 'next/image';
 
 type ButtonProps = {
   title: string;

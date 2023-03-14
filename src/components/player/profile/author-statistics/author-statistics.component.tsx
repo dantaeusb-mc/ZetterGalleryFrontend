@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './author-statistics.module.scss';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 export interface ProfileAuthorStatisticsProps {
   paintingsCount: number;

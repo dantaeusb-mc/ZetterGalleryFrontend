@@ -1,8 +1,8 @@
-import React, { memo, ReactElement, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './navbar.module.scss';
 import { useRouter } from 'next/router';
 import { NavbarItem, NavbarProfileItem } from './item';
-import { IntlShape, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import AboutIcon from './icons/about.png';
 import SearchIcon from './icons/search.png';
 import HomeIcon from './icons/home.png';

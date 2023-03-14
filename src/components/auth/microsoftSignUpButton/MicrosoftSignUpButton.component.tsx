@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './MicrosoftSignUpButton.module.scss';
-import {injectClassNames} from "@/utils/css";
-import {Button} from "@components/button";
-import Loader from "../../widgets/loader/loader.component";
-import {apiGet} from "@/utils/request";
+import { Button } from '@components/button';
+import Loader from '../../widgets/loader/loader.component';
+import { apiGet } from '@/utils/request';
 import { ActionResponseDto } from '@/dto/response/action.dto';
 
 export interface IMicrosoftSignUpButtonProps {
-  redirect?: string
+  redirect?: string;
 }
 
 export default function MicrosoftSignUpButton({ redirect }: IMicrosoftSignUpButtonProps): JSX.Element {

@@ -1,3 +1,6 @@
+import { PaintingRatingResponseDto } from "@/dto/response/paintings/ratings.dto";
+import { PaintingStatisticsResponseDto } from "@/dto/response/paintings/statistics.dto";
+
 export class PaintingResponseDto {
   uuid: string;
   name: string;
@@ -7,19 +10,8 @@ export class PaintingResponseDto {
   color?: string;
   favorite?: boolean;
   favorites?: number;
-  statistics?: {
-    score: number;
-    verified: {
-      impressions: number;
-      salesTotal: number;
-      salesCount: number;
-    };
-    total: {
-      impressions: number;
-      salesTotal: number;
-      salesCount: number;
-    }
-  };
+  ratings?: PaintingRatingResponseDto[];
+  statistics?:PaintingStatisticsResponseDto;
   author: {
     uuid: string;
     nickname: string;

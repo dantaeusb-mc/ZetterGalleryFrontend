@@ -3,7 +3,7 @@ import { injectClassNames } from 'utils/css';
 import styles from './introduction.module.scss';
 import Link from 'next/link';
 import CrossIcon from './icons/cross.png';
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage } from 'react-intl';
 
 interface FirstTimeNoticeProps {
   hide: () => void;

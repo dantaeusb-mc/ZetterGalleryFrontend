@@ -4,8 +4,9 @@ import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
+import { NextPageWithLayout } from "@pages/_app";
 
-const UnauthorizedPage = () => {
+const UnauthorizedPage: NextPageWithLayout<Record<string, unknown>> = () => {
   const intl = useIntl();
   const title = getTitle(
     intl.formatMessage({
@@ -28,24 +29,26 @@ const UnauthorizedPage = () => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <ErrorMessage
-          title={
-            <FormattedMessage
-              id={'error.forbidden.title'}
-              defaultMessage={'Forbidden'}
-            />
-          }
-          description={
-            <FormattedMessage
-              id={'error.forbidden.description'}
-              defaultMessage={'Server said you cannot access this resource.'}
-            />
-          }
-        />
-      </DefaultLayout>
+      <ErrorMessage
+        title={
+          <FormattedMessage
+            id={'error.forbidden.title'}
+            defaultMessage={'Forbidden'}
+          />
+        }
+        description={
+          <FormattedMessage
+            id={'error.forbidden.description'}
+            defaultMessage={'Server said you cannot access this resource.'}
+          />
+        }
+      />
     </>
   );
 };
+
+UnauthorizedPage.getLayout = (page) => (
+  <DefaultLayout>{page}</DefaultLayout>
+);
 
 export default UnauthorizedPage;

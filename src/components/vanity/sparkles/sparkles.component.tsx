@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
+import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
 import styles from './sparkles.module.scss';
 import { range } from 'lodash';
 import { injectClassNames } from '@/utils/css';

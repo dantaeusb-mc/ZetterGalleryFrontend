@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactElement, ReactNode, useState } from 'react';
 import Head from 'next/head';
 import CraftGrid from '@components/wiki/craft-grid';
 import {
@@ -41,13 +41,15 @@ import { Radio } from '@components/widgets/radio';
 import ImageInstruction from '@components/wiki/image-instruction';
 import { Callout, CalloutSeverity } from '@components/widgets/callout';
 import Link from 'next/link';
+import { NextPageWithLayout } from '@pages/_app';
+import DefaultLayout from '@components/layouts/default';
 
 enum ArtistTableMode {
   COMBINE = 'COMBINE',
   SPLIT = 'SPLIT',
 }
 
-export default function ZetterWikiHome(): JSX.Element {
+const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
   const intl = useIntl();
   const [artistTableMode, setArtistTableMode] = useState<ArtistTableMode>(
     ArtistTableMode.COMBINE,
@@ -1420,7 +1422,7 @@ export default function ZetterWikiHome(): JSX.Element {
       </WikiLayout>
     </>
   );
-}
+};
 
 export const getZetterWikiPages = (intl: IntlShape): WikiPageProps[] => [
   {
@@ -1448,3 +1450,5 @@ export const getZetterWikiPages = (intl: IntlShape): WikiPageProps[] => [
     path: '/wiki/zetter/advanced',
   },
 ];
+
+export default ZetterWikiPage;

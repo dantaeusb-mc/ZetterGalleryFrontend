@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './redirect-timer.module.scss';
 

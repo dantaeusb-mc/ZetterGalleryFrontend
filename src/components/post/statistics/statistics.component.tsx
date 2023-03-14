@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import numeral from 'numeral';
-import { Icon } from 'components/icon';
 import StatisticsButton from './button';
 import { EStatisticsButtonActiveColor } from './button/statistics-button.component';
-import { PaintingProps } from '../post.component';
 import styles from './statistics.module.scss';
 import { useIntl } from 'react-intl';
 import StatisticsInfo from './info';
@@ -14,19 +12,26 @@ import { AuthContext, AuthenticatedPlayer } from '@/context/auth.context';
 import { apiDelete, apiPost } from '@/utils/request';
 
 export interface PaintingStatisticsProps {
+  paintingUuid: string;
   score: number;
+  isFavorite: boolean;
   favorites: number;
   impressions: number;
   salesTotal: number;
   salesCount: number;
 }
 
-export default function Statistics(props: PaintingProps): JSX.Element {
+export default function PaintingStatistics({
+  paintingUuid,
+  isFavorite,
+  score,
+  favorites,
+  impressions,
+  salesTotal,
+  salesCount,
+}: PaintingStatisticsProps): JSX.Element {
   const intl = useIntl();
-  const [favorite, setFavorite] = useState<boolean>(props.favorite);
-  let favorites = props.favorite
-    ? props.stats.favorites - 1
-    : props.stats.favorites;
+  const [favored, setFavored] = useState<boolean>(isFavorite);
 
   const formatNumber = (number: number): string => {
     const numeralInstance = numeral(number);
@@ -45,14 +50,14 @@ export default function Statistics(props: PaintingProps): JSX.Element {
     }
 
     apiPost(`/players/${player.uuid}/favorites`, {
-      paintingUuid: props.uuid,
+      paintingUuid: paintingUuid,
     })
       .then(() => {
-        setFavorite(true);
+        setFavored(true);
       })
       .catch((e) => {
         console.error(e);
-        setFavorite(favorite);
+        setFavored(favored);
       });
   };
 
@@ -62,31 +67,30 @@ export default function Statistics(props: PaintingProps): JSX.Element {
       return;
     }
 
-    apiDelete(`/players/${player.uuid}/favorites/${props.uuid}`)
+    apiDelete(`/players/${player.uuid}/favorites/${paintingUuid}`)
       .then(() => {
-        setFavorite(false);
+        setFavored(false);
       })
       .catch((e) => {
         console.error(e);
-        setFavorite(favorite);
+        setFavored(favored);
       });
   };
 
   const toggleFavorite = (player: AuthenticatedPlayer) => {
-    if (favorite) {
+    if (favored) {
       removeFavorite(player);
     } else {
       submitFavorite(player);
     }
   };
 
-  if (favorite) {
+  if (favored) {
     favorites++;
   }
 
   return (
     <>
-      <h3 className={styles['painting-title']}>{props.name}</h3>
       <footer className={styles['post-footer']}>
         <AuthContext.Consumer>
           {({ player }) => {
@@ -94,7 +98,7 @@ export default function Statistics(props: PaintingProps): JSX.Element {
               return (
                 <StatisticsButton
                   activeColor={EStatisticsButtonActiveColor.Blue}
-                  active={favorite}
+                  active={favored}
                   action={() => {
                     toggleFavorite(player);
                   }}
@@ -132,7 +136,7 @@ export default function Statistics(props: PaintingProps): JSX.Element {
             })}
             icon={ImpressionIcon}
           >
-            <span>{formatNumber(props.stats.impressions)}</span>
+            <span>{formatNumber(impressions)}</span>
           </StatisticsInfo>
           <StatisticsInfo
             title={intl.formatMessage({
@@ -141,7 +145,7 @@ export default function Statistics(props: PaintingProps): JSX.Element {
             })}
             icon={TotalIcon}
           >
-            <span>{formatNumber(props.stats.salesTotal)}</span>
+            <span>{formatNumber(salesTotal)}</span>
           </StatisticsInfo>
         </div>
       </footer>

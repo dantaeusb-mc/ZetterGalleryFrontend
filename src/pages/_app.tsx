@@ -10,12 +10,12 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import AuthProviderWrapper from '@/context/auth.context';
 
-type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout<T> = NextPage<T> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
+  Component: NextPageWithLayout<any>;
 };
 
 const Zetter = ({ Component, pageProps }: AppPropsWithLayout) => {

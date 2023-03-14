@@ -16,6 +16,7 @@ import lodash from 'lodash';
 import { PlayerPreferencesBodyDto } from '@/dto/request/player/preferences.body.dto';
 import { NextActionProps, parseNextAction } from '@/const/next-action.type';
 import { useRouter } from 'next/router';
+import { NextPageWithLayout } from "@pages/_app";
 
 export interface PreferencesProps {
   playerUuid: string;
@@ -30,7 +31,7 @@ interface PreferencesState {
   playerRatings: string[];
 }
 
-export default function Preferences(props: PreferencesProps): JSX.Element {
+const PreferencesPage: NextPageWithLayout<PreferencesProps> = (props: PreferencesProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { playerUuid, allRatings, ...defaultState } = props;
 
@@ -77,163 +78,167 @@ export default function Preferences(props: PreferencesProps): JSX.Element {
         <meta name="description" content="Your preferences on Zetter Gallery" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <Callout severity={CalloutSeverity.Warning}>
-          <FormattedMessage
-            id="player.preferences.callout.alpha-warning"
-            defaultMessage="This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
-          />
-        </Callout>
-        <section className={injectClassNames('block', styles['preferences'])}>
-          <form
-            action={`${process.env.NEXT_PUBLIC_API_URI}/players/me/preferences`}
-            onSubmit={handleSubmit}
-          >
-            <h1>
-              <FormattedMessage
-                id="player.preferences.title"
-                defaultMessage="Preferences"
-              />
-            </h1>
-            <h2>
-              <FormattedMessage
-                id="player.preferences.public.profile"
-                defaultMessage="Profile"
-              />
-            </h2>
-            <Toggle
-              id="isProfilePublic"
-              name="isProfilePublic"
-              enabled={preferences.isProfilePublic}
-              unsaved={
-                savedPreferences.isProfilePublic != preferences.isProfilePublic
-              }
-              title={
-                <FormattedMessage
-                  id="player.preferences.public.toggle.title"
-                  defaultMessage="Make your profile visible to other players"
-                />
-              }
-              description={
-                <FormattedMessage
-                  id="player.preferences.public.toggle.description"
-                  defaultMessage={
-                    "Is you disable this, your nickname and avatar still will be visible, but players won't be able to view paintings and badges in your profile"
-                  }
-                />
-              }
-              onChange={(e) => {
-                setPreferences({
-                  ...preferences,
-                  ...{ isProfilePublic: e.currentTarget.checked },
-                });
-              }}
+      <Callout severity={CalloutSeverity.Warning}>
+        <FormattedMessage
+          id="player.preferences.callout.alpha-warning"
+          defaultMessage="This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
+        />
+      </Callout>
+      <section className={injectClassNames('block', styles['preferences'])}>
+        <form
+          action={`${process.env.NEXT_PUBLIC_API_URI}/players/me/preferences`}
+          onSubmit={handleSubmit}
+        >
+          <h1>
+            <FormattedMessage
+              id="player.preferences.title"
+              defaultMessage="Preferences"
             />
-            <h2>
+          </h1>
+          <h2>
+            <FormattedMessage
+              id="player.preferences.public.profile"
+              defaultMessage="Profile"
+            />
+          </h2>
+          <Toggle
+            id="isProfilePublic"
+            name="isProfilePublic"
+            enabled={preferences.isProfilePublic}
+            unsaved={
+              savedPreferences.isProfilePublic != preferences.isProfilePublic
+            }
+            title={
               <FormattedMessage
-                id="player.preferences.ratings.title"
-                defaultMessage="Ratings"
+                id="player.preferences.public.toggle.title"
+                defaultMessage="Make your profile visible to other players"
               />
-            </h2>
-            <p className={styles['description']}>
+            }
+            description={
               <FormattedMessage
-                id="player.preferences.ratings.description"
-                defaultMessage="This section allows you to control what kind of paintings you may see in your feed"
+                id="player.preferences.public.toggle.description"
+                defaultMessage={
+                  "Is you disable this, your nickname and avatar still will be visible, but players won't be able to view paintings and badges in your profile"
+                }
               />
-            </p>
-            {props.allRatings.map((rating) => {
-              return (
-                <Toggle
-                  id={`rating${rating.code}`}
-                  key={`rating${rating.code}`}
-                  name={`rating[${rating.code}]`}
-                  enabled={preferences.playerRatings.includes(rating.code)}
-                  unsaved={
-                    savedPreferences.playerRatings.includes(rating.code) !==
-                    preferences.playerRatings.includes(rating.code)
+            }
+            onChange={(e) => {
+              setPreferences({
+                ...preferences,
+                ...{ isProfilePublic: e.currentTarget.checked },
+              });
+            }}
+          />
+          <h2>
+            <FormattedMessage
+              id="player.preferences.ratings.title"
+              defaultMessage="Ratings"
+            />
+          </h2>
+          <p className={styles['description']}>
+            <FormattedMessage
+              id="player.preferences.ratings.description"
+              defaultMessage="This section allows you to control what kind of paintings you may see in your feed"
+            />
+          </p>
+          {props.allRatings.map((rating) => {
+            return (
+              <Toggle
+                id={`rating${rating.code}`}
+                key={`rating${rating.code}`}
+                name={`rating[${rating.code}]`}
+                enabled={preferences.playerRatings.includes(rating.code)}
+                unsaved={
+                  savedPreferences.playerRatings.includes(rating.code) !==
+                  preferences.playerRatings.includes(rating.code)
+                }
+                title={rating.title}
+                description={rating.description}
+                onChange={(e) => {
+                  let newPlayerRatings = preferences.playerRatings;
+
+                  if (e.currentTarget.checked) {
+                    newPlayerRatings.push(rating.code);
+                  } else {
+                    newPlayerRatings = newPlayerRatings.filter(
+                      (ratingCode) => ratingCode !== rating.code,
+                    );
                   }
-                  title={rating.title}
-                  description={rating.description}
-                  onChange={(e) => {
-                    let newPlayerRatings = preferences.playerRatings;
 
-                    if (e.currentTarget.checked) {
-                      newPlayerRatings.push(rating.code);
-                    } else {
-                      newPlayerRatings = newPlayerRatings.filter(
-                        (ratingCode) => ratingCode !== rating.code,
-                      );
-                    }
-
-                    setPreferences({
-                      ...preferences,
-                      ...{ playerRatings: newPlayerRatings },
-                    });
-                  }}
+                  setPreferences({
+                    ...preferences,
+                    ...{ playerRatings: newPlayerRatings },
+                  });
+                }}
+              />
+            );
+          })}
+          <div className={styles['preferences-footer']}>
+            <div className={styles['left']}>
+              <Button
+                title={intl.formatMessage({
+                  id: 'player.preferences.button.reset',
+                  defaultMessage: 'Reset',
+                })}
+                className={styles['reset-button']}
+                style={ButtonStyle.SECONDARY}
+                type="reset"
+                action={(e) => {
+                  e.preventDefault();
+                  setPreferences(lodash.cloneDeep(savedPreferences));
+                }}
+              >
+                <FormattedMessage
+                  id="player.preferences.button.reset"
+                  defaultMessage="Reset"
                 />
-              );
-            })}
-            <div className={styles['preferences-footer']}>
-              <div className={styles['left']}>
+              </Button>
+            </div>
+            <div className={styles['right']}>
+              {props.nextAction ? (
                 <Button
                   title={intl.formatMessage({
-                    id: 'player.preferences.button.reset',
-                    defaultMessage: 'Reset',
+                    id: 'player.preferences.button.save',
+                    defaultMessage: 'Save',
                   })}
-                  className={styles['reset-button']}
-                  style={ButtonStyle.SECONDARY}
-                  type="reset"
-                  action={(e) => {
-                    e.preventDefault();
-                    setPreferences(lodash.cloneDeep(savedPreferences));
-                  }}
+                  className={styles['save-button']}
+                  style={ButtonStyle.SUCCESS}
+                  type="submit"
                 >
                   <FormattedMessage
-                    id="player.preferences.button.reset"
-                    defaultMessage="Reset"
+                    id="player.preferences.button.save-and-continue"
+                    defaultMessage="Save and continue"
                   />
                 </Button>
-              </div>
-              <div className={styles['right']}>
-                {props.nextAction ? (
-                  <Button
-                    title={intl.formatMessage({
-                      id: 'player.preferences.button.save',
-                      defaultMessage: 'Save',
-                    })}
-                    className={styles['save-button']}
-                    style={ButtonStyle.SUCCESS}
-                    type="submit"
-                  >
-                    <FormattedMessage
-                      id="player.preferences.button.save-and-continue"
-                      defaultMessage="Save and continue"
-                    />
-                  </Button>
-                ) : (
-                  <Button
-                    title={intl.formatMessage({
-                      id: 'player.preferences.button.save',
-                      defaultMessage: 'Save',
-                    })}
-                    className={styles['save-button']}
-                    style={ButtonStyle.SUCCESS}
-                    type="submit"
-                  >
-                    <FormattedMessage
-                      id="player.preferences.button.save"
-                      defaultMessage="Save"
-                    />
-                  </Button>
-                )}
-              </div>
+              ) : (
+                <Button
+                  title={intl.formatMessage({
+                    id: 'player.preferences.button.save',
+                    defaultMessage: 'Save',
+                  })}
+                  className={styles['save-button']}
+                  style={ButtonStyle.SUCCESS}
+                  type="submit"
+                >
+                  <FormattedMessage
+                    id="player.preferences.button.save"
+                    defaultMessage="Save"
+                  />
+                </Button>
+              )}
             </div>
-          </form>
-        </section>
-      </DefaultLayout>
+          </div>
+        </form>
+      </section>
     </>
   );
-}
+};
+
+PreferencesPage.getLayout = (page) => (
+  <DefaultLayout>{page}</DefaultLayout>
+);
+
+export default PreferencesPage;
 
 export async function getServerSideProps(
   context: NextPageContext,

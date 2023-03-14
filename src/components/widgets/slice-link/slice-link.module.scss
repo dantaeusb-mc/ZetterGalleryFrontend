@@ -1,4 +1,4 @@
-@use 'variables/colors' as colors;
+@use '/src/styles/variables/colors' as colors;
 
 .slice-button {
   border-image-source: url("/assets/buttons/button-9slices.png");
@@ -10,7 +10,7 @@
   text-decoration: none;
   text-shadow: 2px 2px 0 #555;
   image-rendering: pixelated;
-  padding: 16px;
+  padding: 1rem;
   margin: .5rem 1rem .5rem 0;
 
   &:hover {

@@ -40,7 +40,7 @@ export default function Profile({
           <h1 className={styles['nickname']}>{nickname}</h1>
           {me ? (
             <>
-              <Link href="/players/me/preferences">
+              <Link href="/players/me/PreferencesPage">
                 <a
                   title={intl.formatMessage({
                     id: 'components.player.profile.preferences-link',

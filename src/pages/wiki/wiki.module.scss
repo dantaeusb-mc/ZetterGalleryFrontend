@@ -1,6 +1,6 @@
-@use 'src/styles/variables/media';
-@use 'src/styles/variables/fonts' as fonts;
-@use 'src/styles/variables/colors' as colors;
+@use '/src/styles/variables/media';
+@use '/src/styles/variables/fonts' as fonts;
+@use '/src/styles/variables/colors' as colors;
 
 .recipes-grid {
   display: grid;

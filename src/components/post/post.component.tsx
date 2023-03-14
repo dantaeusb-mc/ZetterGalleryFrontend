@@ -1,14 +1,16 @@
 import React from 'react';
-import Author from './author';
-import Painting from './painting';
-import Statistics from './statistics';
+import PaintingAuthor from './author';
+import PaintingStatistics from './statistics';
 import { PaintingStatisticsProps } from './statistics/statistics.component';
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
+import Image from 'next/image';
+import PaintingMetadata from '@components/post/meta/metadata.component';
+import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto';
 
-export interface PaintingProps {
+export interface PaintingPostProps {
   uuid: string;
   uri?: string;
   image: string;
@@ -22,11 +24,21 @@ export interface PaintingProps {
     uuid: string;
     nickname: string;
   };
-  favorite: boolean;
   stats: PaintingStatisticsProps;
+  ratings: PaintingRatingResponseDto[];
 }
 
-export default function Post(props: PaintingProps): JSX.Element {
+export default function Post({
+  uuid,
+  uri,
+  image,
+  name,
+  resolution,
+  originalSize,
+  author,
+  stats,
+  ratings,
+}: PaintingPostProps): JSX.Element {
   const intl = useIntl();
 
   const title = intl.formatMessage(
@@ -35,8 +47,19 @@ export default function Post(props: PaintingProps): JSX.Element {
       defaultMessage: '{paintingName} by {username}',
     },
     {
-      paintingName: props.name,
-      username: props.author.nickname,
+      paintingName: name,
+      username: author.nickname,
+    },
+  );
+
+  const imageAlt = intl.formatMessage(
+    {
+      id: 'common.post.painting.alt',
+      defaultMessage: '{paintingName} by {username}',
+    },
+    {
+      paintingName: name,
+      username: author.nickname,
     },
   );
 
@@ -44,17 +67,27 @@ export default function Post(props: PaintingProps): JSX.Element {
     <article
       className={injectClassNames('block', styles['post'], 'pixelated-images')}
     >
-      <Author {...props} />
-      {props.uri ? (
-        <Link href={props.uri}>
+      <PaintingAuthor uuid={author.uuid} nickname={author.nickname} />
+      {uri ? (
+        <Link href={uri}>
           <a title={title}>
-            <Painting {...props} />
+            <div className={styles['painting-wrapper']}>
+              <img src={image} alt={imageAlt} className={styles['painting']} style={{
+                aspectRatio: `${originalSize.width} / ${originalSize.height}`,
+              }} />
+            </div>
           </a>
         </Link>
       ) : (
-        <Painting {...props} />
+        <div className={styles['painting-wrapper']}>
+          <img src={image} alt={imageAlt} className={styles['painting']} style={{
+            aspectRatio: `${originalSize.width} / ${originalSize.height}`,
+          }} />
+        </div>
       )}
-      <Statistics {...props} />
+      <PaintingMetadata originalSize={originalSize} ratings={ratings} />
+      <h1 className={styles['painting-title']}>{name}</h1>
+      <PaintingStatistics {...stats} />
     </article>
   );
 }

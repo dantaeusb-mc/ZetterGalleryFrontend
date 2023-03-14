@@ -1,5 +1,5 @@
-@use 'variables/placeholder' as *;
-@use 'variables/colors' as colors;
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
 
 .radio-wrapper {
   display: flex;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './craft-item.module.scss';
 import { injectClassNames } from '@/utils/css';
-import Tippy from "@tippyjs/react";
+import Tippy from '@tippyjs/react';
 
 export interface CraftItemProps {
   name: string;

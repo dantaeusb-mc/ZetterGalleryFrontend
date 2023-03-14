@@ -1,9 +1,11 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactElement, ReactNode } from "react";
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
 import getTitle from '@/utils/page/get-title';
+import HomePage from "@pages/index";
+import { NextPageWithLayout } from "@pages/_app";
 
 type CreditsGroups = 'general' | 'translators' | 'thanks'; // | 'bugSmashers'
 
@@ -21,7 +23,7 @@ type CreditsProps = Record<
   }
 >;
 
-const CreditsPage: NextPage<Record<string, unknown>> = (
+const CreditsPage: NextPageWithLayout<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
 ) => {
   const intl = useIntl();
@@ -160,36 +162,40 @@ const CreditsPage: NextPage<Record<string, unknown>> = (
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <h1>
-          <FormattedMessage
-            id="contributors.title"
-            defaultMessage="Credits"
-            description="Title for Zetter Gallery Credits Page"
-          />
-        </h1>
-        {Object.keys(nicePeople).map((groupCode) => {
-          const group = nicePeople[groupCode as CreditsGroups];
-          return (
-            <>
-              <h2>{group.title}</h2>
-              <dl>
-                {Object.keys(group.people).map((personCode) => {
-                  const person = group.people[personCode];
-                  return (
-                    <>
-                      <dt>{person.name}</dt>
-                      <dd>{person.description}</dd>
-                    </>
-                  );
-                })}
-              </dl>
-            </>
-          );
-        })}
-      </DefaultLayout>
+      <h1>
+        <FormattedMessage
+          id="contributors.title"
+          defaultMessage="Credits"
+          description="Title for Zetter Gallery Credits Page"
+        />
+      </h1>
+      {Object.keys(nicePeople).map((groupCode) => {
+        const group = nicePeople[groupCode as CreditsGroups];
+        return (
+          <>
+            <h2>{group.title}</h2>
+            <dl>
+              {Object.keys(group.people).map((personCode) => {
+                const person = group.people[personCode];
+                return (
+                  <>
+                    <dt>{person.name}</dt>
+                    <dd>{person.description}</dd>
+                  </>
+                );
+              })}
+            </dl>
+          </>
+        );
+      })}
     </>
   );
 };
+
+CreditsPage.getLayout = (page: ReactElement): ReactNode => (
+  <DefaultLayout>
+    {page}
+  </DefaultLayout>
+);
 
 export default CreditsPage;

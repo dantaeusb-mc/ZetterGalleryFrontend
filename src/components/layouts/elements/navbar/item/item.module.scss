@@ -1,5 +1,5 @@
-@use 'variables/media';
-@use 'variables/colors' as colors;
+@use '/src/styles/variables/media';
+@use '/src/styles/variables/colors' as colors;
 
 .loading {
   animation: loading 1s ease-in-out infinite;

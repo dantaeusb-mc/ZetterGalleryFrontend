@@ -1,6 +1,6 @@
 @use 'fonts/index' as *;
-@use 'src/styles/variables/colors' as colors;
-@use 'src/styles/variables/media';
+@use '/src/styles/variables/colors' as colors;
+@use '/src/styles/variables/media';
 
 @include fonts;
 
@@ -8,7 +8,7 @@
   border-radius: 0;
   box-shadow: .125rem 0 rgba(0,0,0,.8), -.125rem 0 rgba(0,0,0,.8), 0 -.125rem rgba(0,0,0,.8), 0 .125rem rgba(0,0,0,.8);
   @include font-family('Minefont', sans-serif);
-  font-size: 1rem;
+  font-size: 20px;
 
   font-smooth: none;
   font-smoothing: none;

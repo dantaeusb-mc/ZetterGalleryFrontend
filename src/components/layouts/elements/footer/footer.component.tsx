@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './footer.module.scss';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import Link from 'next/link';
 
 const { footer } = styles;
 
 const Footer = (): JSX.Element => {
+  const intl = useIntl();
+
   return (
     <footer className={footer}>
       <p>© Zetter — Minecraft™ Painting Mod</p>
@@ -25,7 +27,41 @@ const Footer = (): JSX.Element => {
       <small className={'sans-serif-font'}>
         <FormattedMessage
           id="footer.legal.developer"
-          defaultMessage="Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
+          defaultMessage="Zetter Gallery is licensed mostly under MPL2 and partially with reserved rights, developed by {author} and {contributors}."
+          values={{
+            author: (
+              <a
+                title={intl.formatMessage({
+                  id: 'footer.legal.developer.author',
+                  defaultMessage: 'Dmitry Burlakov (@dantaeusb)',
+                  description: 'Author name and nickname',
+                })}
+                href="https://dantaeusb.me"
+                target="_blank"
+              >
+                <FormattedMessage
+                  id="footer.legal.developer.author"
+                  defaultMessage="Dmitry Burlakov (@dantaeusb)"
+                  description="Author name and nickname"
+                />
+              </a>
+            ),
+            contributors: (
+              <Link href="/contributors">
+                <a
+                  title={intl.formatMessage({
+                    id: 'footer.legal.developer.contributors',
+                    defaultMessage: 'Contributors',
+                  })}
+                >
+                  <FormattedMessage
+                    id="footer.legal.developer.contributors"
+                    defaultMessage="Contributors"
+                  />
+                </a>
+              </Link>
+            ),
+          }}
         />
       </small>
       <small className={'sans-serif-font'}>
@@ -43,15 +79,6 @@ const Footer = (): JSX.Element => {
             <FormattedMessage
               id="footer.legal.tos"
               defaultMessage="Terms of service"
-            />
-          </a>
-        </Link>
-        <span> | </span>
-        <Link href="/contributors">
-          <a>
-            <FormattedMessage
-              id="footer.legal.contributors"
-              defaultMessage="Contributors"
             />
           </a>
         </Link>

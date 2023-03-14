@@ -4,8 +4,11 @@ import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
+import { NextPageWithLayout } from "@pages/_app";
 
-const InternalServerErrorPage = () => {
+const InternalServerErrorPage: NextPageWithLayout<
+  Record<string, unknown>
+> = () => {
   const intl = useIntl();
   const title = getTitle(
     intl.formatMessage({
@@ -28,26 +31,28 @@ const InternalServerErrorPage = () => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <ErrorMessage
-          title={
-            <FormattedMessage
-              id={'error.server-error.title'}
-              defaultMessage={'Server error'}
-            />
-          }
-          description={
-            <FormattedMessage
-              id={'error.server-error.description'}
-              defaultMessage={
-                'Sorry, something bad and unexpected happened while processing your request'
-              }
-            />
-          }
-        />
-      </DefaultLayout>
+      <ErrorMessage
+        title={
+          <FormattedMessage
+            id={'error.server-error.title'}
+            defaultMessage={'Server error'}
+          />
+        }
+        description={
+          <FormattedMessage
+            id={'error.server-error.description'}
+            defaultMessage={
+              'Sorry, something bad and unexpected happened while processing your request'
+            }
+          />
+        }
+      />
     </>
   );
 };
+
+InternalServerErrorPage.getLayout = (page) => (
+  <DefaultLayout>{page}</DefaultLayout>
+);
 
 export default InternalServerErrorPage;

@@ -1,0 +1,31 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
+.container {
+  background: colors.color('block', 'dark');
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem;
+}
+
+.ratings {
+
+}
+
+.rating {
+  background: colors.color('red');
+  padding: 0 .5rem;
+
+  &.rating-notice {
+    background: colors.color('green', 'dark');
+  }
+
+  &.rating-warning {
+    background: colors.color('yellow', 'dark');
+  }
+
+  &.rating-danger {
+    background: colors.color('red', 'dark');
+  }
+}

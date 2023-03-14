@@ -1,8 +1,5 @@
-@use 'raleway/index' as raleway;
-@use 'minecraftia/index' as minecraftia;
-@use 'monocraft/index' as monocraft;
 @use 'minefont/index' as minefont;
-@use 'equipmentpro/index' as equipmentpro;
+@use 'monocraft/index' as monocraft;
 @use 'martianmono/index' as martianmono;
 
 $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
@@ -56,13 +53,6 @@ $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
 
 @mixin fonts {
   @include _include-fonts(
-    'Raleway',
-    raleway.$vfont,
-    raleway.$fonts,
-    raleway.$ext
-  );
-
-  @include _include-fonts(
     'Minefont',
     minefont.$vfont,
     minefont.$fonts,
@@ -70,9 +60,16 @@ $extension-map: ('ttf': 'truetype', 'otf': 'opentype');
   );
 
   @include _include-fonts(
-      'MartianMono',
-      martianmono.$vfont,
-      martianmono.$fonts,
-      martianmono.$ext
+    'Monocraft',
+    monocraft.$vfont,
+    monocraft.$fonts,
+    monocraft.$ext
+  );
+
+  @include _include-fonts(
+    'MartianMono',
+    martianmono.$vfont,
+    martianmono.$fonts,
+    martianmono.$ext
   );
 }

@@ -1,6 +1,6 @@
 @use 'fonts/index' as *;
-@use 'src/styles/variables/colors' as colors;
-@use 'src/styles/variables/media';
+@use '/src/styles/variables/colors' as colors;
+@use '/src/styles/variables/media';
 
 @include fonts;
 
@@ -37,6 +37,7 @@
 
 html {
   box-sizing: border-box;
+  //font-size: 20px;
   // Header
   --header-height: calc(var(--header-navigation-height)
   + var(--offline-notification-height)
@@ -63,7 +64,7 @@ body {
   background-color: colors.color('background');
   color: colors.color('text');
   @include font-family('Minefont', sans-serif);
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.5;
   margin: 0;
 
@@ -115,15 +116,27 @@ dl {
   - 2 * var(--content-padding));
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  font-size: unset;
+  overflow-wrap: break-word;
+}
+
+/**
+ * @todo: All sizes are wrong, we should use 20px as a rem
+ * Need to recalculate all current 16px rems
+ */
+h1 {
+  font-size: 40px;
+}
+
+h2, h3 {
+  font-size: 30px;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-h1 {
-  font-size: 36px;
-  font-weight: 500;
 }
 
 a {

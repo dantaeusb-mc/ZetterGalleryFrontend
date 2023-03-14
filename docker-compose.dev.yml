@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  app:
+    image: localhost:5000/zetter-frontend-app
+    build:
+      context: .
+      target: ${CONTAINER_TARGET}
+      dockerfile: ./cd/node/Dockerfile
+    container_name: zg-frontend-app
+    ports:
+      - ${PORT}:${PORT}
+      - "9235:9229"
+    volumes:
+      - ./:/app:rw
+      - frontend_modules:/app/node_modules
+      - ./logs:/logs:rw
+
+volumes:
+  frontend_modules:
+    name: zetter-frontend-modules

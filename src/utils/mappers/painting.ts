@@ -1,10 +1,10 @@
 import { PaintingResponseDto } from "@/dto/response/paintings/painting.dto";
-import { PaintingProps } from "@components/post/post.component";
+import { PaintingPostProps } from "@components/post/post.component";
 
 const mapPaintingResponseToProps = (
   response: PaintingResponseDto,
   onlyVerified = false,
-): PaintingProps => {
+): PaintingPostProps => {
   return {
     uuid: response.uuid,
     uri: `/paintings/${response.uuid}`,
@@ -19,8 +19,10 @@ const mapPaintingResponseToProps = (
       uuid: response.author.uuid,
       nickname: response.author.nickname,
     },
-    favorite: !!response.favorite,
+    ratings: response.ratings ?? [],
     stats: {
+      paintingUuid: response.uuid,
+      isFavorite: !!response.favorite,
       favorites: response.favorites ? response.favorites : 0,
       score: response.statistics ? response.statistics.score : 0,
       impressions: response.statistics

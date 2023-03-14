@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, useState } from 'react';
+import React from 'react';
 import styles from './badge.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';

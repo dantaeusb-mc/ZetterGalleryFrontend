@@ -1,10 +1,9 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
-import styles from './player-paintings-list.module.scss';
-import Post, { PaintingProps } from '@components/post/post.component';
+import { FormattedMessage } from 'react-intl';
+import Post, { PaintingPostProps } from '@components/post/post.component';
 
 export interface PlayerPaintingListProps {
-  paintings: PaintingProps[];
+  paintings: PaintingPostProps[];
 }
 
 export default function PlayerPaintingList({

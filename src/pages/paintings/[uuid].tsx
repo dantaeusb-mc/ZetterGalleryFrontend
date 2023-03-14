@@ -7,7 +7,7 @@ import {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
 } from 'next';
-import { PaintingProps } from '@components/post/post.component';
+import { PaintingPostProps } from '@components/post/post.component';
 import { apiGet } from '@/utils/request';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
@@ -15,7 +15,7 @@ import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
 import { mapPaintingResponseToProps } from "@/utils/mappers";
 
-export default function Painting(props: PaintingProps): JSX.Element {
+export default function Painting(props: PaintingPostProps): JSX.Element {
   const intl = useIntl();
   const title = getTitle(
     intl.formatMessage(
@@ -44,11 +44,8 @@ export default function Painting(props: PaintingProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>Painting Name | Zetter Gallery</title>
-        <meta
-          name="description"
-          content="View painting called Painting Name at Zetter Gallery"
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
@@ -58,9 +55,9 @@ export default function Painting(props: PaintingProps): JSX.Element {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<PaintingProps> = async (
+export const getServerSideProps: GetServerSideProps<PaintingPostProps> = async (
   context: GetServerSidePropsContext,
-): Promise<GetServerSidePropsResult<PaintingProps>> => {
+): Promise<GetServerSidePropsResult<PaintingPostProps>> => {
   try {
     const response = await apiGet<PaintingResponseDto>(
       `/paintings/${context.params?.uuid}`,

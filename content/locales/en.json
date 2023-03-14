@@ -8,8 +8,8 @@
     "description": "About page title"
   },
   "about.title": {
-    "defaultMessage": "About Zetter Project",
-    "description": "Title for Zetter Gallery About Page"
+    "defaultMessage": "Minefont test page",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
   },
   "about.zetter-gallery.button.download": {
     "defaultMessage": "Download Zetter Gallery from CurseForge"
@@ -189,6 +189,9 @@
   "common.post.painting.link.title": {
     "defaultMessage": "{paintingName} by {username}"
   },
+  "common.post.painting.size.detailed": {
+    "defaultMessage": "This painting is {width} {width, plural,one {block}other {blocks}} width and {height} {height, plural, one {block}other {blocks}} tall"
+  },
   "components.player.plaintings.list.empty": {
     "defaultMessage": "This player didn't submit any paintings yet!"
   },
@@ -233,6 +236,9 @@
   },
   "cycle.seed": {
     "defaultMessage": "Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings."
+  },
+  "cycle.timeout.expired": {
+    "defaultMessage": "Cycle expired!"
   },
   "cycle.timeout.left": {
     "defaultMessage": "Expires in"
@@ -323,14 +329,26 @@
   "feed.popular.title": {
     "defaultMessage": "Popular"
   },
+  "font.page.description": {
+    "defaultMessage": "Test page for in-house international Minecraft font based on Monocraft font",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
+  },
+  "font.page.title": {
+    "defaultMessage": "Minefont test page",
+    "description": "Minefont test page title"
+  },
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
   },
-  "footer.legal.contributors": {
-    "defaultMessage": "Contributors"
-  },
   "footer.legal.developer": {
-    "defaultMessage": "Zetter Gallery is licensed under closed license and MPL2, developed by Dmitry Burlakov (@dantaeusb) and translated by contributors."
+    "defaultMessage": "Zetter Gallery is licensed mostly under MPL2 and partially with reserved rights, developed by {author} and {contributors}."
+  },
+  "footer.legal.developer.author": {
+    "defaultMessage": "Dmitry Burlakov (@dantaeusb)",
+    "description": "Author name and nickname"
+  },
+  "footer.legal.developer.contributors": {
+    "defaultMessage": "Contributors"
   },
   "footer.legal.learn-more": {
     "defaultMessage": "Learn more"
@@ -340,6 +358,12 @@
   },
   "footer.legal.tos": {
     "defaultMessage": "Terms of service"
+  },
+  "header.link.home.logo": {
+    "defaultMessage": "Zetter Gallery Logo"
+  },
+  "header.link.home.title": {
+    "defaultMessage": "Go to homepage"
   },
   "human-terms.complications.paragraph.1": {
     "defaultMessage": "I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
@@ -1192,7 +1216,7 @@
     "description": "Zetter Recipes Wiki page title"
   },
   "wiki.zetter.recipes.painting": {
-    "defaultMessage": "This is an actual painting. It's created only by signing one or multiple combined canvases on the Artist Table.",
+    "defaultMessage": "An actual painting, result of your work. It's created only by signing a canvas. To sign a canvas, right-click with painted canvas in hand, enter name and press sign. You can also copy existing painting with recipe below.",
     "description": "Explain what is painting"
   },
   "wiki.zetter.recipes.painting.section": {

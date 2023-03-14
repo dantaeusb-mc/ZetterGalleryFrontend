@@ -1,12 +1,12 @@
 import type { NextPage, NextPageContext } from 'next';
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import Head from 'next/head';
-import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import React, { PropsWithChildren, ReactElement, ReactNode, useEffect, useRef, useState } from "react";
 import Post from '@components/post';
 import DefaultLayout from '@components/layouts/default';
 import LayeredNavigation from '@components/painting/layered-navigation';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { PaintingProps } from '@components/post/post.component';
+import { PaintingPostProps } from '@components/post/post.component';
 import lodash from 'lodash';
 import { useRouter } from 'next/router';
 import { apiGet } from '@/utils/request';
@@ -25,6 +25,7 @@ import {
   setStageIntroduced,
 } from '@hooks/events/introduction';
 import { mapPaintingResponseToProps } from "@/utils/mappers";
+import { NextPageWithLayout } from "@pages/_app";
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -53,7 +54,7 @@ const defaultQuery: PaintingListQueryDto = {
 const fetchPaintings = async (
   queryParams: PaintingListQueryDto,
   context?: NextPageContext | GetServerSidePropsContext,
-): Promise<PaintingProps[]> => {
+): Promise<PaintingPostProps[]> => {
   const response = await apiGet<PaintingResponseDto[]>(
     '/paintings',
     queryParams,
@@ -68,11 +69,11 @@ const fetchPaintings = async (
 interface PaintingsPageProps {
   needWhatIsIntroduction: boolean;
   hasMore: boolean;
-  paintings: PaintingProps[];
+  paintings: PaintingPostProps[];
 }
 
 // pass page as prop so we'll know when to show "Jump to top" button
-const Home: NextPage<PaintingsPageProps> = (
+const HomePage: NextPageWithLayout<PaintingsPageProps> = (
   props: PropsWithChildren<PaintingsPageProps>,
 ) => {
   const intl = useIntl();
@@ -98,7 +99,7 @@ const Home: NextPage<PaintingsPageProps> = (
   // @todo: cast query params (class-transformer?) so paintings.query.page + 1 won't be equal 11 :)
   const [paintings, setPaintings] = useState<{
     query: PaintingListQueryDto;
-    items: PaintingProps[];
+    items: PaintingPostProps[];
     hasMore: boolean;
   }>({
     query: initPaintingsQuery,
@@ -171,77 +172,81 @@ const Home: NextPage<PaintingsPageProps> = (
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        {showWhatIsIntroduction && (
-          <Introduction
-            learnMoreLink="/about"
-            hide={() => {
-              updateShowWhatIsIntroduction(false);
-            }}
-          >
-            <FormattedMessage
-              id="introduction.first-time.description"
-              defaultMessage="Zetter Gallery is a Minecraft mod which allows you to share paintings created with the in game pixel art editor. Mods with painting editor and painting merchant are installed separately."
-            />
-          </Introduction>
-        )}
-        <LayeredNavigation
-          currentQuery={paintings.query}
-          updateLayer={updateQuery}
-        />
-        <InfiniteScroll
-          next={() => {
-            if (paintings.hasMore) {
-              updateQuery(
-                'from',
-                paintings.items[paintings.items.length - 1].uuid,
-              );
-            }
+      {showWhatIsIntroduction && (
+        <Introduction
+          learnMoreLink="/about"
+          hide={() => {
+            updateShowWhatIsIntroduction(false);
           }}
-          hasMore={paintings.hasMore}
-          loader={'Loading'}
-          dataLength={paintings.items.length}
         >
-          {paintings.items.map((paintingProps, index) => (
-            <Post key={`painting-${index}`} {...paintingProps} />
-          ))}
-        </InfiniteScroll>
+          <FormattedMessage
+            id="introduction.first-time.description"
+            defaultMessage="Zetter Gallery is a Minecraft mod which allows you to share paintings created with the in game pixel art editor. Mods with painting editor and painting merchant are installed separately."
+          />
+        </Introduction>
+      )}
+      <LayeredNavigation
+        currentQuery={paintings.query}
+        updateLayer={updateQuery}
+      />
+      <InfiniteScroll
+        next={() => {
+          if (paintings.hasMore) {
+            updateQuery(
+              'from',
+              paintings.items[paintings.items.length - 1].uuid,
+            );
+          }
+        }}
+        hasMore={paintings.hasMore}
+        loader={'Loading'}
+        dataLength={paintings.items.length}
+      >
+        {paintings.items.map((paintingProps, index) => (
+          <Post key={`painting-${index}`} {...paintingProps} />
+        ))}
+      </InfiniteScroll>
 
-        <h2>
-          <FormattedMessage
-            id="index.page.cta.title"
-            defaultMessage="Would like to add your own painting?"
-          />
-        </h2>
-        <p>
-          <FormattedMessage
-            id="index.page.cta.description"
-            defaultMessage="Use Zetter and Zetter Gallery mods together to add your paintings here
-            by trading with painting merchant in Minecraft™ game."
-          />
-        </p>
-        <SliceLink
-          title={intl.formatMessage({
-            id: 'index.page.cta.button.wiki',
-            defaultMessage: 'Learn about Zetter Gallery',
-          })}
-          icon={DiscordIcon}
-          uri="/about"
-        >
-          <FormattedMessage
-            id="index.page.cta.button.wiki.learn"
-            defaultMessage="Learn more about"
-          />
-          <br />
-          <FormattedMessage
-            id="index.page.cta.button.wiki.about-zetter"
-            defaultMessage="Zetter Gallery Project"
-          />
-        </SliceLink>
-      </DefaultLayout>
+      <h2>
+        <FormattedMessage
+          id="index.page.cta.title"
+          defaultMessage="Would like to add your own painting?"
+        />
+      </h2>
+      <p>
+        <FormattedMessage
+          id="index.page.cta.description"
+          defaultMessage="Use Zetter and Zetter Gallery mods together to add your paintings here
+          by trading with painting merchant in Minecraft™ game."
+        />
+      </p>
+      <SliceLink
+        title={intl.formatMessage({
+          id: 'index.page.cta.button.wiki',
+          defaultMessage: 'Learn about Zetter Gallery',
+        })}
+        icon={DiscordIcon}
+        uri="/about"
+      >
+        <FormattedMessage
+          id="index.page.cta.button.wiki.learn"
+          defaultMessage="Learn more about"
+        />
+        <br />
+        <FormattedMessage
+          id="index.page.cta.button.wiki.about-zetter"
+          defaultMessage="Zetter Gallery Project"
+        />
+      </SliceLink>
     </>
   );
 };
+
+HomePage.getLayout = (page: ReactElement): ReactNode => (
+  <DefaultLayout>
+    {page}
+  </DefaultLayout>
+);
 
 export async function getServerSideProps(
   context: NextPageContext,
@@ -266,4 +271,4 @@ export async function getServerSideProps(
   };
 }
 
-export default Home;
+export default HomePage;

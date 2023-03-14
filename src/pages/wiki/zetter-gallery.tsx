@@ -1,14 +1,17 @@
-import React from "react";
-import Head from "next/head";
-import { FormattedMessage, IntlShape, useIntl } from "react-intl";
-import { WikiLayout, WikiPageProps } from "@components/layouts/wiki";
-import getTitle from "@/utils/page/get-title";
-import styles from "@pages/wiki/wiki.module.scss";
-import Image from "next/image";
-import ImageInstruction from "@components/wiki/image-instruction";
-import { Callout, CalloutSeverity } from "@components/widgets/callout";
+import React from 'react';
+import Head from 'next/head';
+import { FormattedMessage, IntlShape, useIntl } from 'react-intl';
+import { WikiLayout, WikiPageProps } from '@components/layouts/wiki';
+import getTitle from '@/utils/page/get-title';
+import styles from '@pages/wiki/wiki.module.scss';
+import Image from 'next/image';
+import ImageInstruction from '@components/wiki/image-instruction';
+import { Callout, CalloutSeverity } from '@components/widgets/callout';
+import { NextPageWithLayout } from '@pages/_app';
 
-export default function ZetterGalleryWikiHome(): JSX.Element {
+const ZetterGalleryWikiPage: NextPageWithLayout<
+  Record<string, unknown>
+> = () => {
   const intl = useIntl();
 
   const title = getTitle(
@@ -66,9 +69,11 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
                      occupation. In order for a villager to become a Painting Merchant, they should have an assigned
                      bed and Artist Table block nearby this bed."
                     description="What you need to start trading paintings"
-                  />
-                  {' '}
-                  <a href="https://minecraft.fandom.com/wiki/Villager#Job_site_blocks" target="_blank">
+                  />{' '}
+                  <a
+                    href="https://minecraft.fandom.com/wiki/Villager#Job_site_blocks"
+                    target="_blank"
+                  >
                     <FormattedMessage
                       id={'wiki.zetter-gallery.painting-merchant.description.2'}
                       defaultMessage="Refer to the Minecraft wiki to see how villager occupation works."
@@ -291,20 +296,15 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={
-                            'wiki.zetter-gallery.trading-interface.login-dt'
-                          }
+                          id={'wiki.zetter-gallery.trading-interface.login-dt'}
                           defaultMessage="4) Account"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={
-                            'wiki.zetter-gallery.trading-interface.login-dd'
-                          }
+                          id={'wiki.zetter-gallery.trading-interface.login-dd'}
                           defaultMessage="Shows current authentication state. When using anonymously, Log In button will appear. Pressing it will show prompt to authenticate on this site. If you logged in successfully, your nickname will be shown instead."
-                        />
-                        {' '}
+                        />{' '}
                         <strong>
                           <FormattedMessage
                             id={
@@ -316,17 +316,13 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={
-                            'wiki.zetter-gallery.trading-interface.price-dt'
-                          }
+                          id={'wiki.zetter-gallery.trading-interface.price-dt'}
                           defaultMessage="5) Offer price"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={
-                            'wiki.zetter-gallery.trading-interface.price-dd'
-                          }
+                          id={'wiki.zetter-gallery.trading-interface.price-dd'}
                           defaultMessage="Shows how many emeralds you should place in sale slot to get a painting. In sale mode, show how much you will get: popular artists are getting more emeralds."
                         />
                       </dd>
@@ -352,25 +348,33 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter-gallery.trading.interface.result-slot-dt'}
+                          id={
+                            'wiki.zetter-gallery.trading.interface.result-slot-dt'
+                          }
                           defaultMessage="7) Result slot"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter-gallery.trading.interface.result-slot-dd'}
+                          id={
+                            'wiki.zetter-gallery.trading.interface.result-slot-dd'
+                          }
                           defaultMessage="When the offer is fulfilled (you have enough emeralds or your painting is validated), get your result from that slot. It could be painting or emeralds here."
                         />
                       </dd>
                       <dt>
                         <FormattedMessage
-                          id={'wiki.zetter-gallery.trading-interface.update-countdown-dt'}
+                          id={
+                            'wiki.zetter-gallery.trading-interface.update-countdown-dt'
+                          }
                           defaultMessage="8) Update countdown"
                         />
                       </dt>
                       <dd>
                         <FormattedMessage
-                          id={'wiki.zetter-gallery.trading.interface.update-countdown-dd'}
+                          id={
+                            'wiki.zetter-gallery.trading.interface.update-countdown-dd'
+                          }
                           defaultMessage="Because offers are updated every 5 minutes, you have limited time to purchase the painting in offer. Do not worry, when time will run out, this button will turn black, and you will have 1:30 to finish what you planned. You can also manually update offers by clicking this button when it's black."
                         />
                       </dd>
@@ -416,7 +420,8 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
                   src="/assets/wiki/zetter-gallery/login-highlight.png"
                   alt={intl.formatMessage({
                     id: 'wiki.zetter-gallery.login.prompt.image',
-                    defaultMessage: 'Merchant screen with login button highlighted',
+                    defaultMessage:
+                      'Merchant screen with login button highlighted',
                   })}
                   height={451}
                   width={648}
@@ -518,6 +523,8 @@ export default function ZetterGalleryWikiHome(): JSX.Element {
     </>
   );
 };
+
+export default ZetterGalleryWikiPage;
 
 export const getZetterGalleryWikiPages = (intl: IntlShape): WikiPageProps[] => [
   {

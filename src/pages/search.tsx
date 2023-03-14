@@ -1,10 +1,11 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, ReactElement, ReactNode } from "react";
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
-import { NextPage } from 'next';
 import ConstructionPlaceholder from '@components/construction-placeholder';
+import { NextPageWithLayout } from "@pages/_app";
+import HomePage from "@pages/index";
 
-const SearchPage: NextPage<Record<string, unknown>> = (
+const SearchPage: NextPageWithLayout<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
 ) => {
   return (
@@ -14,11 +15,15 @@ const SearchPage: NextPage<Record<string, unknown>> = (
         <meta name="description" content="Zetter Gallery About Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <ConstructionPlaceholder />
-      </DefaultLayout>
+      <ConstructionPlaceholder />
     </>
   );
 };
+
+SearchPage.getLayout = (page: ReactElement): ReactNode => (
+  <DefaultLayout>
+    {page}
+  </DefaultLayout>
+);
 
 export default SearchPage;

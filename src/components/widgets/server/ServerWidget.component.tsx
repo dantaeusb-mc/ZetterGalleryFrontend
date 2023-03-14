@@ -1,11 +1,11 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './ServerWidget.module.scss';
 
 type ServerWidgetProps = {
-  name: string,
-  ip: string,
-  className?: string
+  name: string;
+  ip: string;
+  className?: string;
 };
 
 function ServerWidget(props: ServerWidgetProps): JSX.Element {

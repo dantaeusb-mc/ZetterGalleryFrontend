@@ -11,8 +11,9 @@ import getTitle from '@/utils/page/get-title';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { apiPost } from '@/utils/request';
 import {removeCookies, setCookies} from 'cookies-next';
+import { NextPageWithLayout } from "@pages/_app";
 
-export default function LogoutPage(): JSX.Element {
+const LogoutPage: NextPageWithLayout<Record<never, unknown>> = () => {
   const router = useRouter();
   const intl = useIntl();
 
@@ -31,7 +32,7 @@ export default function LogoutPage(): JSX.Element {
   });
 
   return (
-    <CleanLayout>
+    <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -67,9 +68,15 @@ export default function LogoutPage(): JSX.Element {
           </Button>
         </div>
       </section>
-    </CleanLayout>
+    </>
   );
-}
+};
+
+LogoutPage.getLayout = (page) => (
+  <CleanLayout>{page}</CleanLayout>
+);
+
+export default LogoutPage;
 
 export async function getServerSideProps(
   context: NextPageContext,

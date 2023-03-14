@@ -1,5 +1,5 @@
-@use 'variables/placeholder' as *;
-@use 'variables/colors' as colors;
+@use '/src/styles/variables/placeholder' as *;
+@use '/src/styles/variables/colors' as colors;
 @use 'sass:color';
 
 .first-time-notice {
@@ -15,7 +15,7 @@
   background-color: color.adjust(black, $alpha: -0.25);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 10px 10px;
+  background-size: .625rem .625rem;
   border-radius: 1rem;
   image-rendering: pixelated;
   position: absolute;

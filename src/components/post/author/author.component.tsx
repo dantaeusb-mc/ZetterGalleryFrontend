@@ -1,15 +1,24 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './author.module.scss';
-import { PaintingProps } from '@components/post/post.component';
 import { injectClassNames } from '@/utils/css';
 import Badge from '@components/player/badge';
 import { EBadgeTier } from '@components/player/badge/badge.component';
 
-export default function Author(props: PaintingProps): JSX.Element {
+export interface PaintingAuthorProps {
+  uuid: string;
+  nickname: string;
+}
+
+export default function PaintingAuthor(
+  {
+    uuid,
+    nickname,
+  }: PaintingAuthorProps
+): JSX.Element {
   return (
-    <Link href={`/players/${props.author.uuid}`}>
-      <a>
+    <Link href={`/players/${uuid}`}>
+      <a className={styles['post-header-link']}>
         <header
           className={styles['post-header']}
           style={{
@@ -20,15 +29,15 @@ export default function Author(props: PaintingProps): JSX.Element {
             <span
               className={styles['profile-picture']}
               style={{
-                backgroundImage: `url(${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${props.author.uuid}/avatar.png)`,
+                backgroundImage: `url(${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${uuid}/avatar.png)`,
               }}
             >
-              {`${props.author.nickname}'s Profile Picture`}
+              {`${nickname}'s Profile Picture`}
             </span>
           </div>
-          <div className={styles['profile-name-wrapper']}>
-            <span>{props.author.nickname}</span>
-          </div>
+          <h2 className={styles['profile-name']}>
+            { nickname }
+          </h2>
           <div className={injectClassNames(styles['profile-badge-wrapper'])}>
             <Badge
               title="Alpha Supporter"

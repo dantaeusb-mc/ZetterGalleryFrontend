@@ -1,10 +1,10 @@
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { injectClassNames } from '../../../../utils/css';
 import styles from './statistics-button.module.scss';
 import Sparkles from '@components/vanity/sparkles';
 import { Icon } from '@components/icon';
-import Tippy from "@tippyjs/react";
-import { StaticImageData } from "next/image";
+import Tippy from '@tippyjs/react';
+import { StaticImageData } from 'next/image';
 
 export enum EStatisticsButtonActiveColor {
   Green,

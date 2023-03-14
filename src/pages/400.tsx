@@ -3,8 +3,10 @@ import DefaultLayout from '@components/layouts/default';
 import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage } from 'react-intl';
+import { NextPageWithLayout } from "@pages/_app";
+import InternalServerErrorPage from "@pages/500";
 
-const BadRequestPage = () => {
+const BadRequestPage: NextPageWithLayout<Record<string, unknown>> = () => {
   return (
     <>
       <Head>
@@ -12,24 +14,26 @@ const BadRequestPage = () => {
         <meta name="description" content="Bad Request" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <DefaultLayout>
-        <ErrorMessage
-          title={
-            <FormattedMessage
-              id={'error.bad-request.title'}
-              defaultMessage={'Bad request'}
-            />
-          }
-          description={
-            <FormattedMessage
-              id={'error.bad-request.description'}
-              defaultMessage={'Sorry, server refused to process your request'}
-            />
-          }
-        />
-      </DefaultLayout>
+      <ErrorMessage
+        title={
+          <FormattedMessage
+            id={'error.bad-request.title'}
+            defaultMessage={'Bad request'}
+          />
+        }
+        description={
+          <FormattedMessage
+            id={'error.bad-request.description'}
+            defaultMessage={'Sorry, server refused to process your request'}
+          />
+        }
+      />
     </>
   );
 };
+
+BadRequestPage.getLayout = (page) => (
+  <DefaultLayout>{page}</DefaultLayout>
+);
 
 export default BadRequestPage;

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useMemo, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { IntlProvider } from 'react-intl';
 import English from '../../content/compiled-locales/en.json';
 import Russian from '../../content/compiled-locales/ru.json';
@@ -8,12 +8,13 @@ import German from '../../content/compiled-locales/de.json';
 import Portuguese from '../../content/compiled-locales/pt.json';
 import Ukrainian from '../../content/compiled-locales/uk.json';
 import Turkish from '../../content/compiled-locales/tr.json';
+import { useRouter } from "next/router";
 
 export const languages = {
   en: 'English',
   fr: 'Français (traduit automatiquement)',
   ru: 'Русский',
-  ua: 'Українська (автоматичний переклад)',
+  uk: 'Українська (автоматичний переклад)',
   pl: 'Polski',
   de: 'Deutsch (automatisch übersetzt)',
   pt: 'Portuguese (traduzido automaticamente)',
@@ -38,7 +39,15 @@ export interface IIntlProps {
 }
 
 function IntlProviderWrapper(props: PropsWithChildren<IIntlProps>) {
+  const router = useRouter();
+  const { pathname, asPath, query } = router;
+
   const [locale, setLocale] = useState<keyof typeof languages>(props.locale);
+
+  // When the locale changes, we need to update the URL
+  useEffect(() => {
+    router.push({ pathname, query }, asPath, { locale });
+  }, [locale]);
 
   const messages = useMemo(() => {
     switch (locale) {
@@ -46,7 +55,7 @@ function IntlProviderWrapper(props: PropsWithChildren<IIntlProps>) {
         return Russian;
       case 'fr':
         return French;
-      case 'ua':
+      case 'uk':
         return Ukrainian;
       case 'pl':
         return Polish;

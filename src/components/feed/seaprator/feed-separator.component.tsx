@@ -1,13 +1,13 @@
 import React from 'react';
 import Tippy from '@tippyjs/react';
 import { useIntl } from 'react-intl';
-import { FeedTypes } from "@/const/feed-types";
+import { FeedTypes } from '@/const/feed-types';
 import styles from './feed-separator.module.scss';
 import HotIcon from '@assets/icons/feed/hot.png';
 import NewIcon from '@assets/icons/feed/new.png';
 import TopIcon from '@assets/icons/feed/top.png';
-import { Icon } from "@components/icon";
-import { StaticImageData } from "next/image";
+import { Icon } from '@components/icon';
+import { StaticImageData } from 'next/image';
 
 export interface FeedSeparatorProps {
   code: FeedTypes;

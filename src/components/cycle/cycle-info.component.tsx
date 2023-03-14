@@ -24,6 +24,7 @@ export default function CycleInfo({
   const intl = useIntl();
   const router = useRouter();
 
+  const [autoReload, setAutoReload] = useState(false);
   const [timeLeft, setTimeLeft] = useState(
     endsAt.getTime() - new Date().getTime(),
   );
@@ -38,7 +39,6 @@ export default function CycleInfo({
 
   useEffect(() => {
     if (timeLeft <= 0) {
-      router.reload();
     } else {
       launchTimeout();
     }
@@ -50,7 +50,14 @@ export default function CycleInfo({
     };
   }, [timeLeft]);
 
-  useEffect(launchTimeout, []);
+  useEffect(() => {
+    // If the current cycle has ended some time ago, stop the auto reload
+    // This is to prevent the page from reloading eternally if something went wrong
+    // And no new cycles are created
+    if (endsAt.getTime() - new Date().getTime() < -1000) {
+      setAutoReload(false);
+    }
+  }, []);
 
   const formatTimeout = (timeLeftIn: number) => {
     const minutes = Math.floor((timeLeftIn % (1000 * 60 * 60)) / (1000 * 60));
@@ -117,13 +124,44 @@ export default function CycleInfo({
           </Tippy>
         </div>
       </header>
-      <p className={styles['timeout-text']}>
-        <FormattedMessage
-          id="cycle.timeout.left"
-          defaultMessage="Expires in"
-        ></FormattedMessage>
-      </p>
-      <div className={styles['timeout']}>{formatTimeout(timeLeft)}</div>
+      <div className={styles['cycle-info-expiration']}>
+        {timeLeft >= 0 ? (
+          <>
+            <p className={styles['timeout-text']}>
+              <FormattedMessage
+                id="cycle.timeout.left"
+                defaultMessage="Expires in"
+              ></FormattedMessage>
+            </p>
+            <div className={styles['timeout']}>{formatTimeout(timeLeft)}</div>
+          </>
+        ) : (
+          <>
+            <div className={styles['timeout-expired']}>
+              <FormattedMessage
+                id="cycle.timeout.expired"
+                defaultMessage="Cycle expired!"
+              ></FormattedMessage>
+            </div>
+          </>
+        )}
+        <div className={styles['auto-reload']}>
+          <label htmlFor="auto-reload">
+            <input
+              type="checkbox"
+              id="auto-reload"
+              checked={autoReload}
+              onChange={(e) => {
+                setAutoReload(e.target.checked);
+              }}
+            />
+            <span>
+              Reload page automatically <wbr />
+              when cycle expires
+            </span>
+          </label>
+        </div>
+      </div>
     </section>
   );
 }
