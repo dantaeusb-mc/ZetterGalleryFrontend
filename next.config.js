@@ -38,5 +38,6 @@ module.exports = withBundleAnalyzer({
     defaultLocale: 'en',
     localeDetection: true,
   },
+  output: 'standalone',
   reactStrictMode: true,
 });

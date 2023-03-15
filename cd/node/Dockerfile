@@ -41,8 +41,11 @@ RUN npm run build
 FROM production-build-stage as production-run-stage
 
 WORKDIR /app
-
 ENV NODE_ENV production
+
+COPY --from=production-build-stage /app/public ./public
+COPY --from=production-build-stage /app/.next/standalone ./
+COPY --from=production-build-stage /app/.next/static ./.next/static
 
 CMD ["node", "server.js"]
 
