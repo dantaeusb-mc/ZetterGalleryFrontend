@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   app:
-    image: localhost:5000/zetter-frontend-app
+    image: localhost:5000/zetter-frontend-app:${VERSION}
     build:
       context: .
       target: ${CONTAINER_TARGET}
@@ -10,7 +10,7 @@ services:
     container_name: zg-frontend-app
     ports:
       - ${PORT}:${PORT}
-      - "9235:9229"
+    user: ${RUNNING_USER}
     volumes:
       - ./:/app:rw
       - frontend_modules:/app/node_modules

@@ -4,11 +4,11 @@
 name: Hetzner Production node.js
 
 on:
-  push:
-    branches: [ main ]
+  release:
+    types: [ published ]
 
 jobs:
-  build:
+  build-app:
     runs-on: [ self-hosted, production ]
     strategy:
       matrix:
@@ -28,6 +28,17 @@ jobs:
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
       - name: 'Push API container to local registry'
         run: docker-compose --env-file=.env.production -f docker-compose.prod.yml push app
+        env:
+          VERSION: ${{ github.ref_name }}
+          RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
+
+  deploy:
+    runs-on: self-hosted
+    needs:
+      - build-app
+    steps:
+      - name: Deploy to swarm
+        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker-compose -f docker-compose.prod.yml --env-file .production.env config) --with-registry-auth zg-frontend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
