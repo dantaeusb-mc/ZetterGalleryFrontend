@@ -13,49 +13,28 @@ RUN npm install -g npm@8
 RUN apt-get update && apt-get install -y build-essential python2.7
 RUN npm config set unsafe-perm true
 
-# Some other dep uses this lib (it's a libc alternative? why it's needed for node?)
+# Some other dep uses this lib (I'm thinking I've been using it for graphics libs?)
 RUN apt-get install -y musl musl-dev
 RUN ln -s /usr/lib/arm64-linux-musl/libc.so /lib/libc.musl-arm64.so.1
-
-# Install Node-gyp build tools
-RUN npm install -g node-gyp
-
-# Install nest cli
-RUN npm install -g @nestjs/cli
 
 FROM init-stage as prepare-stage
 
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY ./cd/node/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 COPY package*.json ./
 
-# Dvelopment build stage
-FROM prepare-stage as development-build-stage
+# Production install stage
+FROM prepare-stage as production-install-stage
 
 WORKDIR /app
-
-RUN npm install
-
-# Dvelopment run stage
-FROM development-build-stage as development-run-stage
-
-WORKDIR /app
-
-ENV NODE_ENV development
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["npm", "run", "dev"]
+RUN npm ci
 
 # Production build stage
-FROM prepare-stage as production-build-stage
+FROM production-install-stage as production-build-stage
 
 WORKDIR /app
-
-RUN npm ci
+COPY . .
 RUN npm run build
 
 # Production run stage
@@ -63,11 +42,16 @@ FROM production-build-stage as production-run-stage
 
 WORKDIR /app
 
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=dependencies-build-stage /app/.next/standalone ./
-COPY --from=dependencies-build-stage /app/.next/static ./.next/static
-
 ENV NODE_ENV production
 
 CMD ["node", "server.js"]
+
+# Dvelopment single stage
+FROM prepare-stage as development-run-stage
+
+WORKDIR /app
+RUN npm install
+
+ENV NODE_ENV development
+
+CMD ["npm", "run", "dev"]

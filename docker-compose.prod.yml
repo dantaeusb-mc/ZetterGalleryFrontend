@@ -12,7 +12,6 @@ services:
       - ${PORT}:${PORT}
     user: ${RUNNING_USER}
     volumes:
-      - ./:/app:rw
       - frontend_modules:/app/node_modules
       - ./logs:/var/log/zetter-frontend:rw
 
