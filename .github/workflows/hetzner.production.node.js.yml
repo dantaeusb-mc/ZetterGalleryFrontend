@@ -38,7 +38,7 @@ jobs:
       - build-app
     steps:
       - name: Deploy to swarm
-        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker-compose -f docker-compose.prod.yml --env-file .production.env config) --with-registry-auth zg-frontend
+        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker-compose -f docker-compose.prod.yml --env-file .env.production config) --with-registry-auth zg-frontend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
