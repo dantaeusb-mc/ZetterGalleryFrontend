@@ -1,491 +1,1401 @@
 {
-  "about.page.description": "Zetter ve Zetter Galerisi Nedir",
-  "about.page.title": "Proje hakkında",
-  "about.title": "Zetter Projesi Hakkında",
-  "about.zetter-gallery.button.download": "CurseForge'dan Zetter Galerisini indirin",
-  "about.zetter-gallery.button.download.from": "CurseForge'dan",
-  "about.zetter-gallery.button.download.what": "Zetter Galerisini İndirin",
-  "about.zetter-gallery.button.wiki": "Zetter Gallery Wiki'ye göz atın",
-  "about.zetter-gallery.button.wiki.check": "Zetter Gallery",
-  "about.zetter-gallery.button.wiki.what": "Wiki'ye göz atın",
-  "about.zetter.button.download": "CurseForge'dan Zetter'i indirin",
-  "about.zetter.button.download.from": "CurseForge'dan",
-  "about.zetter.button.download.what": "Zetter'i indirin",
-  "about.zetter.button.wiki": "Zetter Wiki'ye göz atın",
-  "about.zetter.button.wiki.check": "Çıkış yapmak",
-  "about.zetter.button.wiki.what": "Zetter Wiki",
-  "about.zetter.description": "Zetter, Minecraft'ta resimler oluşturmak için bir Minecraft modudur. Oyuncuların eski MS Paint benzeri UI ile oyunda resim çizmesine olanak tanır. Resimler 4x4 bloklara kadar birleştirilebilir, bir çerçeveye sarılabilir ve duvara asılabilir. Bu, sanal eviniz için biraz rahatlık hissi katmalıdır.",
-  "about.zetter.description.what": "Zetter, Minecraft'ta resim oluşturmak için bir Minecraft modudur. Oyuncuların zengin araçlarla ve kullanımı kolay kullanıcı arayüzü ile oyunda resim çizmelerine olanak tanır. Resimler 4x4 bloğa kadar birleştirilebilir, bir çerçeveye sarılabilir ve duvara asılabilir.",
-  "about.zetter.description.what-for": "Sanal evinizi daha konforlu hale getirmek, bazı tematik posterler veya resimler eklemek ya da sadece oyalanmak istiyorsanız - oyuna harika bir ektir.",
-  "about.zetter.discord.description": "Fikirlerinizi paylaşın ve önce güncellemelerden haberdar olun! Ayrıca tablolara oy verebilecek topluluk yöneticileri ve moderatörler arıyoruz.",
-  "about.zetter.discord.title": "Topluluğumuza Katılın",
-  "about.zetter.gallery.description": "Zetter Gallery, Zetter sanat çalışmalarınızı dünyayla paylaşabileceğiniz bir mod ve yerdir. Zetter Gallery moduyla, Zetter Gallery'de popüler tabloları satmanıza ve satın almanıza izin veren Resim Tüccarı eklenir.",
-  "about.zetter.gallery.mod-wiki-link": "Tarifler ve kılavuzlar ile Zetter Gallery mod wiki sayfasına göz atın",
-  "about.zetter.gallery.title": "Zetter Galerisi Nedir?",
-  "about.zetter.mod-wiki-link": "Tarifler ve kılavuzlar ile Zetter mod wiki sayfasına göz atın",
-  "about.zetter.name": "Zetter, adını orijinal Minecraft resimlerinin yazarı {Kristoffer}'dan almıştır.",
-  "about.zetter.title": "Zetter nedir?",
-  "auth-prompt.check.title": "Güvende olduğumdan nasıl emin olabilirim?",
-  "auth-prompt.deprecated.disclaimer.what-for": "Sürümünüz artık desteklenmiyor, üzgünüz. Yeni bir sürüme güncelleme, anonim kullanıma (resim satın alma) ve daha kolay resim yüklemeye izin verecektir.",
-  "auth-prompt.deprecated.disclaimer.why": "Sürümünüzün yayınlanmasından bu yana Zetter Gallery'yi daha güvenli ve geleceğe dönük olacak şekilde güncelledik.",
-  "auth-prompt.deprecated.title": "Buna neden ihtiyacım olsun ki?",
-  "auth-prompt.disclaimer.title": "Neden buna ihtiyacım var?",
-  "auth-prompt.microsoft.disclaimer.what-for": "Bu, boyama tüccarı ile ticaret yaparken sunucunun sizin adınıza tablo satın almasına ve göndermesine izin verir.",
-  "auth-prompt.microsoft.disclaimer.why": "Gerçek bir sunucuda oynayan gerçek oyuncu olduğunuzu ve bunun sadece otomatik istekler olmadığını kanıtlamak için.",
-  "auth.microsoft.button.agreement": "Butona basarak reşit olduğunuzu onaylıyor ve hizmet şartlarını kabul ediyorsunuz.",
-  "auth.microsoft.callout.alpha": "Bu, olduğu gibi sağlanan hizmetin çok erken bir sürümüdür. Sorunlar ortaya çıkabilir, içerik henüz denetlenmedi.",
-  "auth.microsoft.callout.check-disclaimer": "Zetter Gallery'ye bağlanırken bu mesajı görmüyorsanız, birisinin bilgilerinizi çalmaya çalışıyor olma ihtimali vardır.",
-  "auth.microsoft.callout.same-account": "Lütfen Minecraft'ta oturum açmak için kullandığınız Microsoft hesabını kullanın.",
-  "auth.microsoft.check.advice": "İyi ki sordun! Parola yazarken her zaman tarayıcınızdaki etki alanını kontrol edin. Bu adımda, microsoft hesabında oturum açmamışsanız&apos;önce \"zettergallery.onmicrosoft.com\" veya \"login.live.com\" adresine yönlendirilebilirsiniz. Etki alanı eşleşirse, her şey yolunda demektir.",
-  "auth.microsoft.disclaimer.track": "Bu aynı zamanda, beslemeyi alakalı tutmak için hangi resimleri satın aldığınızı takip etmek için kullanılır. Merak etmeyin, aktivite verilerinizi sadece bir hafta saklıyoruz.",
-  "auth.microsoft.disclaimer.why": "Tabloları göndermek için kullanılabilecek oyuncu hesabına erişiminiz olduğundan emin olmak için buna ihtiyacımız var. Bu, favori tablolarınızla kişisel besleme yapmanıza ve tablo istatistiklerinizi kontrol etmenize olanak tanır.",
-  "auth.microsoft.finish.description.callback.description": "İşleminize devam etmeniz için yakında sizi yönlendireceğiz.",
-  "auth.microsoft.finish.description.callback.title": "Lütfen bu sayfayı kapatmayın",
-  "auth.microsoft.finish.description.description": "Artık Minecraft hesabınızla oyun sunucusunu hızlı bir şekilde yetkilendirebileceksiniz.",
-  "auth.microsoft.finish.description.title": "kayıt oldun",
-  "auth.start.page.description": "Hesabınıza erişmesi için Zetter Gallery haklarını verin",
-  "auth.start.page.title": "Microsoft Hesabı ile Kimlik Doğrulama",
-  "badge.epic": "Destansı",
-  "badge.exceptional": "Olağanüstü",
-  "badge.legendary": "EFSANEVİ",
-  "badge.rare": "NADİR",
-  "badge.uncommon": "Yaygın olmayan",
-  "common.post.painting.action.favorite": "Bu resmi favorilere ekle",
-  "common.post.painting.action.favorite.disabled": "Resmi favorilere eklemek için giriş yapın",
-  "common.post.painting.alt": "{paintingName} ile {username}",
-  "common.post.painting.info.impressions": "İzlenimler",
-  "common.post.painting.info.total": "Harcanan toplam zümrüt",
-  "common.post.painting.link.title": "{paintingName} ile {username}",
-  "common.post.painting.size.detailed": "",
-  "components.player.plaintings.list.empty": "Bu oyuncu henüz hiç resim göndermedi!",
-  "components.player.profile.logout-link": "Oturumu kapat",
-  "components.player.profile.preferences-link": "Tercihler",
-  "components.player.profile.statistics.downloads": "İndirmeler:",
-  "components.player.profile.statistics.favorites": "Favoriler:",
-  "components.player.profile.statistics.paintings": "Tablolar:",
-  "components.widgets.craft-grid.shapeless": "Şekilsiz işçilik",
-  "contributors.page.description": "Zetter Galeri kredileri",
-  "contributors.page.title": "katkıda bulunanlar",
-  "contributors.title": "KREDİLER",
-  "cycle.batch.no": "Parti no",
-  "cycle.merchant.icon": "Bu tablolardan bazıları şu anda oyun içinde Painting Merchant'tan satın alınabilir!",
-  "cycle.seed": "Tohum ifadesi, Satıcıdan hangi resimleri alacağınızı seçmek için kullanılır! Tam resim seti bu cümle, Satıcı seviyesi ve ayarlarınız tarafından belirlenir.",
-  "cycle.timeout.expired": "",
-  "cycle.timeout.left": "Son Kullanma Tarihi",
-  "error.401.page.description": "Bu kaynağa erişmek için giriş yapmadınız",
-  "error.401.page.title": "Kimliği doğrulanmamış",
-  "error.403.page.description": "Bu kaynağa erişme izniniz yok",
-  "error.403.page.title": "Yasak",
-  "error.404.page.description": "Sayfa bulunamadı",
-  "error.404.page.title": "Bulunamadı",
-  "error.500.page.description": "Dahili sunucu hata sayfası",
-  "error.500.page.title": "Hata!",
-  "error.bad-request.description": "Üzgünüz, sunucu isteğinizi işlemeyi reddetti",
-  "error.bad-request.title": "Geçersiz istek",
-  "error.forbidden.description": "Sunucu, bu kaynağa erişemeyeceğinizi söyledi.",
-  "error.forbidden.title": "Yasak",
-  "error.not-found.description": "Üzgünüz, aradığınız kaynağı bulamadık",
-  "error.not-found.title": "Bulunamadı",
-  "error.server-error.description": "Üzgünüz, isteğiniz işlenirken kötü ve beklenmeyen bir şey oldu",
-  "error.server-error.title": "Server hatası",
-  "error.unauthenticated.description": "Sunucu, erişimi olan biri olarak oturum açmadığınız için bu kaynağa erişemeyeceğinizi söyledi.",
-  "error.unauthenticated.title": "Kimliği doğrulanmamış",
-  "feed.hot.info": "Önceki gruplarda dikkat çeken trend resimler",
-  "feed.hot.title": "Sıcak",
-  "feed.new.info": "Taze pişmiş, Galeri'ye yeni gönderildi",
-  "feed.new.title": "Yeni",
-  "feed.personal.info": "Kişisel seçiminiz: favorilerden rastgele seçimler",
-  "feed.personal.title": "Kişisel",
-  "feed.popular.info": "En iyilerin en iyilerinden küçük bir seçki",
-  "feed.popular.title": "popüler",
-  "font.page.description": "",
-  "font.page.title": "",
-  "footer.legal.affiliation": "Zetter Gallery, Minecraft, Microsoft ve Mojang AB ile bağlantılı değildir.",
-  "footer.legal.contributors": "katkıda bulunanlar",
-  "footer.legal.credits": "Kredi",
-  "footer.legal.developer": "Zetter Gallery, {author} ve {contributors}tarafından geliştirilen, çoğunlukla MPL2 kapsamında ve kısmen saklı haklarla lisanslanmıştır.",
-  "footer.legal.developer.author": "Dmitry Burlakov (@dantaeusb)",
-  "footer.legal.developer.contributors": "Katkıda",
-  "footer.legal.learn-more": "Daha fazla bilgi edin",
-  "footer.legal.minecraft-copyright": "Minecraft ve ilgili Minecraft resimlerinin telif hakkı Mojang AB'ye aittir.",
-  "footer.legal.tos": "Kullanım Şartları",
-  "header.link.home.logo": "",
-  "header.link.home.title": "",
-  "human-terms.complications.paragraph.1": "Ben sadece bir insanım. Çalışmanızı mahkemede koruyamayacağım veya telif hakkıyla ilgili karmaşık yasal şeyler yapamayacağım. Burada olup bitenler için makul bir aralıkta olan her türlü sorumluluktan istifa ediyorum. Kendi güvenliğim için hak talebinde bulunan herkesin iyi niyetini varsayardım.",
-  "human-terms.complications.title": "Komplikasyonlar nelerdir?",
-  "human-terms.contribution.paragraph.1": "Evet! Kısmen. Zetter ve Zetter Gallery modları, MPL2 ve açık kaynak kapsamında lisanslanmıştır. Bu hizmetin ön uç kısmı da MPL2 ve açık kaynaklıdır. Ancak API kapalı kaynaklıdır. Bunun nedeni güvenlik endişelerim ve bir oyuncu tabanı oluşturmak ve erken çatallardan kaçınmak istiyorum. Ancak bu, muhtemelen 1.0 modunun piyasaya sürülmesine yakın bir zamanda değiştirilecektir. Olumlu niyetlerini kanıtlamış ve yeterli TypeScript/Nest.js becerilerine sahip belirli katkıda bulunanlara depo açabilirim.",
-  "human-terms.contribution.title": "katkıda bulunabilir miyim?",
-  "human-terms.copyright.paragraph.1": "Eserleriniz üzerinde hiçbir şekilde münhasır veya mülkiyet hakkı talep etmiyorum. Çalışmanız size aittir ve başka hiç kimseye ait değildir. Ancak yasal olarak güvende olmak adına Instagram, DeviantArt veya 500px gibi sitelere çok benzer lisanslar kullanıyorum. Bu, çalışmanızı gösterebileceğim ve dağıtabileceğim anlamına geliyor.",
-  "human-terms.copyright.paragraph.2": "Önemli uyarı: Çalışmanızı herhangi bir zamanda Zetter Gallery'den kaldırmak isterseniz, bunu yapmakta özgürsünüz. Ancak oyuncuların sunucularından resimleri geri çekmek için bir mekanizma ve bunun uygulanacağının garantisi yok. İnsanların resimlerinize yapabileceklerinden sorumlu değilim.",
-  "human-terms.copyright.paragraph.3": "Birinin çalışmanızı çalabileceği şeyler olur. Bu kötü çünkü çalışmanızın nerede görüneceğine yalnızca siz karar verebilirsiniz. Böyle bir şey olursa, lütfen Discord'dan benimle iletişime geçin veya çalışmanın size ait olduğunu gösteren bir kanıt sunarak Copyright@zetter.gallery adresine e-posta gönderin.",
-  "human-terms.copyright.title": "Peki ya telif hakkı?",
-  "human-terms.end.thank-you": "Okuduğunuz için teşekkürler. Herhangi bir sorunuz olursa benimle konuşmaktan çekinmeyin.",
-  "human-terms.introduction.paragraph.1": "Her şeyden önce, Zetter Gallery bir tür tüzel kişilik değildir ve şimdiye kadar yalnızca tek bir kişi tarafından yaratılmış ve sağlanmıştır. Bu, bazı komplikasyonlar ekler, ancak bunun hakkında daha sonra konuşacağız.",
-  "human-terms.introduction.paragraph.2": "Zetter Gallery tek bir amaç için yaratılmıştır - insanların Minecraft adlı harika bir oyunda sanat eserlerini yaratmasına ve paylaşmasına izin verin. Reklam yapmak veya bir şeyler satmak bu hizmetin bir amacı değildir.",
-  "human-terms.introduction.title": "Zetter Gallery ile ilgili bazı detayları açıklayayım.",
-  "human-terms.moderation.paragraph.1": "Sanatın farklı insanlar için farklı şeyler ifade ettiğini anlıyorum. Ayrıca, farklı insanların farklı şeyleri görmeyi tercih edeceğini anlıyorum. Bunu akılda tutarak, şu sonuca vardım: moderasyon, topluluk moderatörleri tarafından mükemmel bir şekilde gerçekleştirilecektir. Kurallarımız, özel olarak hiçbir şeyi sansürlemeyecek, bunun yerine tablolar için bir 'derecelendirme' oluşturacak.",
-  "human-terms.moderation.paragraph.2": "İçerik çok rahatsız ediciyse, moderatörlerin resminizi geri çekme veya sadece reddetme hakkını saklı tutarım. Belirsiz tanımının farkındayım, ancak umarım resimler nadiren doğrudan atılır. Bunun yerine, onaydan önce derecelendirmelere göre uygulanacaktır. Bu derecelendirme Kumar, Çıplaklık vb. gibi şeyleri içerebilir - tüm listeyi oyuncu tercihleri sayfanızda görebilirsiniz. Bu liste genişletilebilir ve varsayılanlar oldukça 'aile dostu' olacaktır. Bu hiçbir şekilde bu modun çocuklar için iyi olduğu anlamına gelmez, her türlü çevrimiçi etkinliğin ebeveyn rehberliğine ihtiyacı vardır.",
-  "human-terms.moderation.paragraph.3": "Moderatörler hata yapabilir ve boyamayı atabilir veya yanlış değerlendirebilir. Lütfen boş zamanlarını herkesin iyiliği için harcayanların insanlar olduğunu anlayın. Sabırlı olun ve böyle bir şey olursa bizimle konuşun.",
-  "human-terms.moderation.paragraph.4": "Bu modu ve hizmeti yalnızca yasal yaştaki oyuncular için kesinlikle tavsiye ederim. Yasal yaşa ulaşmadan buraya kaydolmak, Microsoft oAuth kurallarına göre mümkün olmamalı ve Hizmet Şartlarını ihlal etmemelidir.",
-  "human-terms.moderation.title": "Peki ya ılımlılık?",
-  "human-terms.title": "Selamlar,",
-  "human-terms.title.callout.check-english": "Bu beyanlar yasal olarak bağlayıcı değildir. Bu sayfa, kullanım koşullarının kısa bir açıklamasını ve bu hizmetin kullanım amacına ilişkin bazı ayrıntıları sağlar.",
-  "index.page.cta.button.wiki": "Zetter Galerisi hakkında bilgi edinin",
-  "index.page.cta.button.wiki.about-zetter": "Zetter Galeri Projesi",
-  "index.page.cta.button.wiki.learn": "Hakkında daha fazla öğren",
-  "index.page.cta.description": "Minecraft™ oyununda resim tüccarı ile ticaret yaparak resimlerinizi buraya eklemek için Zetter ve Zetter Gallery modlarını birlikte kullanın.",
-  "index.page.cta.title": "Kendi resminizi eklemek ister misiniz?",
-  "index.page.description": "Zetter Gallery, Zetter Minecraft resimlerinizi dünyayla paylaşmanıza izin veren bir hizmettir.",
-  "index.page.title": "Minecraft resimleri için ev",
-  "introduction.feed.description": "Besleme, oyundaki Resim Tüccarından temin edilebilen resimlerin sürekli güncellenen listesidir. Giriş yaparak ve bazı tabloları favorilere ekleyerek akışınızı özelleştirebilirsiniz.",
-  "introduction.first-time.description": "Zetter Gallery, oyun içi piksel sanat editörü ile oluşturulan resimleri paylaşmanıza izin veren bir Minecraft modudur. Resim editörü ve resim tüccarı içeren modlar ayrı olarak yüklenir.",
-  "introduction.first-time.ignore": "Biliyorum zaten.",
-  "introduction.first-time.learn-more": "Daha fazlasını öğrenin!",
-  "microsoft-auth-check-advice": "İyi ki sordun! Aşağıda açıklanan sunucunun şu anda oynamakta olduğunuz sunucu olup olmadığını kontrol edin.",
-  "navbar.about": "Hakkında",
-  "navbar.feed": "besleme",
-  "navbar.home": "Ev",
-  "navbar.profile": "Profil",
-  "navbar.profile.avatar": "Profil avatarın",
-  "navbar.profile.avatar.default": "Anonim avatar",
-  "navbar.search": "Arama",
-  "paintings.layered-navigation.filter.resolution": "çözüm",
-  "paintings.layered-navigation.sort.hot": "Sıcak",
-  "paintings.layered-navigation.sort.new": "Yeni",
-  "paintings.layered-navigation.sort.top": "Üst",
-  "paintings.page.description": "Zetter Gallery'de {username}tarafından oluşturulan {paintingName} adlı tabloya göz atın",
-  "paintings.page.description.1.value": "boyamaAdı",
-  "paintings.page.description.2.value": " tarafından yaratıldı",
-  "paintings.page.description.3.value": "Kullanıcı adı",
-  "paintings.page.description.4.value": "Zetter Gallery'de çalışıyor",
-  "paintings.page.title": "{paintingName} tarafından {username}",
-  "paintings.page.title.1.value": " ile",
-  "paintings.page.title.2.value": "Kullanıcı adı",
-  "player.preferences.button.reset": "Reset",
-  "player.preferences.button.save": "Kayıt etmek",
-  "player.preferences.button.save-and-continue": "Kaydet ve devam Et",
-  "player.preferences.callout.alpha-warning": "Bu, feed'inizi alfa sürümünde etkilemez (ancak gelecekte bir noktada olacaktır)! Sanat moderasyonu zordur, bu yüzden farklı şeyler görebileceğiniz konusunda uyarınız!",
-  "player.preferences.public.profile": "Profil",
-  "player.preferences.public.toggle.description": "Bunu devre dışı bırakırsanız, takma adınız ve avatarınız görünmeye devam eder, ancak oyuncular profilinizdeki tabloları ve rozetleri göremez",
-  "player.preferences.public.toggle.title": "Profilinizi diğer oyunculara görünür yapın",
-  "player.preferences.ratings.description": "Bu bölüm, feed'inizde ne tür resimler görebileceğinizi kontrol etmenizi sağlar.",
-  "player.preferences.ratings.title": "Puanlar",
-  "player.preferences.title": "Tercihler",
-  "players.me.logout.description": "Sizi yakında ana sayfaya yönlendireceğiz",
-  "players.me.logout.page.description": "Zetter galerisinden çıkış yapın",
-  "players.me.logout.page.title": "Çıkış Yap",
-  "players.me.logout.title": "Zetter Gallery'den başarıyla çıkış yapıldı",
-  "players.page.description": " Zetter Gallery'de {username} adlı kullanıcının profili",
-  "players.page.description.1.value": "'nin profili Zetter Gallery'de",
-  "players.page.title": "{username} adlı kullanıcının Profili",
-  "players.page.title.1.value": "Profili",
-  "profile.count.earnings": "Kazanç:",
-  "profile.count.favorites": "Favoriler:",
-  "profile.count.paintings": "resimler:",
-  "profile.link.logout": "Çıkış Yap",
-  "profile.link.preferences": "Tercihler",
-  "terms-for-humans.page.description": "Zetter Galerisi sık sorulan sorular",
-  "terms-for-humans.page.title": "SSS",
-  "terms.acceptance.paragraph": "HİZMETLERİ KULLANARAK, KENDİNİZ VE TEMSİL ETTİĞİNİZ KİŞİLER ADINA, BU ŞARTLARA, GİZLİLİK POLİTİKAMIZA VE GEÇERLİ TÜM KANUNLARA UYMANIZI VE YASAL OLARAK BAĞLI OLMAYI KABUL EDERSİNİZ. SİZ, KENDİNİZ VEYA TEMSİL ETTİLERİNİZ ADINA, BU KOŞULLARIN HİÇBİR HÜKÜMÜNÜ KABUL ETMİYORSANIZ, KENDİNİZ VE BU KİŞİLER ADINA KAYIT İŞLEMİNİ DURDURMALISINIZ, HİZMET KULLANIMINIZI DURDURMALISINIZ, VE, ÖNCEDEN KAYDOLUYSANIZ HESABINIZI İPTAL EDİN.",
-  "terms.acceptance.title": "ŞARTLARIN kabulü",
-  "terms.description.paragraph": "Dmitry Burlakov (\"Zetter Galeri\", \"biz\", \"biz\" veya \"bizim\"), web sitesi, Uygulama Programlama Arayüzü aracılığıyla bir platform ve Mojang video oyunu Minecraft'ta, kayıtlı bir topluluk için bağımsız, kullanıcı tarafından yapılan bir değişiklik sağlar. kullanıcıları (\"kullanıcılar\" veya \"siz\"), dijital tabloları (\"Görsel İçerik\") yüklemek ve görüntülemek de dahil olmak üzere çeşitli etkinliklere dahil etmek için. Aşağıda Site ve Hizmetlerin kullanımına ilişkin kullanım koşulları (“Şartlar”) yer almaktadır.",
-  "terms.description.title": "Servis tanımı",
-  "terms.page.description": "Zetter Galeri hizmet şartları",
-  "terms.page.title": "Kullanım Şartları",
-  "terms.title": "Kullanım Şartları",
-  "terms.title.callout.check-english": "Terimlerin çevirileri topluluk tarafından sağlanır ve yasal olarak bağlayıcı değildir. Herhangi bir sorunuz varsa lütfen bu sayfanın ingilizce versiyonuna bakın.",
-  "terms.zetter.copyright-complaints.dmca": "Zetter Gallery, başka bir kişinin telif hakkını ihlal ettiği iddia edilen herhangi bir İçeriği kaldırma hakkını saklı tutar. Uygun durumlarda, Zetter Gallery telif hakkını ihlal eden kullanıcıların hesaplarını feshedecektir. Herhangi bir telif hakkı ihlali iddiasıyla ilgili olarak Zetter Gallery'ye yapılan bildirimler, e-posta yoluyla Zetter Gallery'ye iletilmelidir: Copyright@zetter.gallery.",
-  "terms.zetter.copyright-complaints.title": "Telif Hakkı Şikayetleri",
-  "terms.zetter.liability.title": "Sorumluluğun Sınırlandırılması",
-  "terms.zetter.licensing.paragraph": "Zetter Gallery'ye Görsel İçerik göndererek, söz konusu Görsel İçeriği Hizmetlerle bağlantılı olarak kullanmak, alt lisanslamak, dağıtmak, çoğaltmak, değiştirmek, uyarlamak, kamuya açık olarak gerçekleştirmek ve kamuya açık olarak görüntülemek için münhasır olmayan, devredilebilir, dünya çapında bir lisans vermiş olursunuz. Bu lisans, Görsel İçeriğin Sitede yayınlandığı süre boyunca geçerli olacak ve Görsel İçeriğin Siteden kaldırılmasıyla otomatik olarak sona erecektir. Zetter Gallery, Görsel İçeriğin hizmette bulunduğu süre boyunca oluşturulan ve dağıtılan kopyalardan sorumlu değildir. Zetter Gallery, Görsel İçeriğinizin kopyalarının dağıtıldıktan sonra geri çekilmesi için bir yol sağlamaz. Zetter Gallery, Görsel İçeriğinizin mülkiyeti üzerinde hak iddia etmez.",
-  "terms.zetter.licensing.title": "Lisanslama",
-  "terms.zetter.modification.interruptions": "Siteye ve Hizmetlerimize erişiminiz ve bunları kullanımınız, ekipman arızası, Sitenin güncellenmesi, bakımı veya onarımı veya kontrolümüz dahilinde veya dışında başka herhangi bir nedenle zaman zaman kesintiye uğrayabilir. Zetter Gallery, tamamen kendi takdirine bağlı olarak ve önceden bildirimde bulunmaksızın herhangi bir zamanda Sitenin, herhangi bir Hizmetin kullanılabilirliğini askıya alma veya durdurma ve herhangi bir Görsel İçeriği kaldırma hakkını saklı tutar. Zetter Gallery ayrıca belirli özelliklere ve Hizmetlere sınırlamalar getirebilir veya bildirimde bulunmaksızın veya yükümlülük altına girmeksizin Sitenin ve Hizmetlerin bir kısmına veya tamamına erişiminizi kısıtlayabilir. Site, Görsel İçeriğinizin depolanması için kullanılmamalı veya buna güvenilmemelidir ve Sitede yayınlanan tüm Görsel İçeriğin kendi kopyalarını saklamanız istenmektedir.",
-  "terms.zetter.modification.replace": "Zetter Gallery, kendi takdirine bağlı olarak, Şartları herhangi bir zamanda değiştirme veya değiştirme hakkını saklı tutar. Maddi bir değişikliği neyin oluşturduğu, tamamen Zetter Gallery'nin takdirine bağlı olarak belirlenecektir. Bu tür değişiklikleri incelemek ve bunlara aşina olmak sizin sorumluluğunuzdadır. Herhangi bir Hizmeti kullanmak veya herhangi bir Görsel İçeriği görüntülemek, Koşulları değiştirilmiş haliyle kabul ettiğiniz anlamına gelir.",
-  "terms.zetter.modification.title": "Şartların Değiştirilmesi",
-  "terms.zetter.registration.paragraph": "Siteye ve Hizmetlerimize erişiminiz ve bunları kullanımınız, ekipman arızası, Sitenin güncellenmesi, bakımı veya onarımı veya kontrolümüz dahilinde veya dışında başka herhangi bir nedenle zaman zaman kesintiye uğrayabilir. Zetter Gallery, tamamen kendi takdirine bağlı olarak ve önceden bildirimde bulunmaksızın herhangi bir zamanda Sitenin, herhangi bir Hizmetin kullanılabilirliğini askıya alma veya durdurma ve herhangi bir Görsel İçeriği kaldırma hakkını saklı tutar. Zetter Gallery ayrıca belirli özelliklere ve Hizmetlere sınırlamalar getirebilir veya bildirimde bulunmaksızın veya yükümlülük altına girmeksizin Sitenin ve Hizmetlerin bir kısmına veya tamamına erişiminizi kısıtlayabilir. Site, Görsel İçeriğinizin depolanması için kullanılmamalı veya buna güvenilmemelidir ve Sitede yayınlanan tüm Görsel İçeriğin kendi kopyalarını saklamanız istenmektedir.",
-  "terms.zetter.registration.title": "kayıt",
-  "terms.zetter.release.release-statement.1": "İşbu belge ile Zetter Gallery'yi, Siteyi ve Hizmetleri kullanımınızdan doğrudan veya dolaylı olarak kaynaklanan veya bu nedenle sahip olduğunuz, şimdi sahip olduğunuz veya bundan sonra sahip olabileceğiniz, sahip olabileceğiniz veya sahip olabileceğiniz her türlü eylemden, dava nedeninden, davadan, işlemden, sorumluluktan, borçtan, yargıdan, iddiadan ve talepten açıkça ve geri dönülmez bir şekilde ibra eder ve sonsuza dek ibra edersiniz.",
-  "terms.zetter.release.release-statement.2": "Zetter Gallery'yi (i) bu Şartların ihlali, (ii) sizin veya hesabınızı veya Microsoft kimlik bilgilerinizi kullanan herhangi bir kişi tarafından Sitede yayınlanan İçerik, (iv) Görsel İçeriğinizin lisanslanması, dağıtımı veya kullanımı veya (v) üçüncü bir tarafın herhangi bir hakkının ihlalinden kaynaklanan veya bunlardan doğan tüm talepler, kayıplar, masraflar, hasarlar ve maliyetler (doğrudan, arızi, sonuç olarak ortaya çıkan, örnek niteliğinde ve dolaylı hasarlar dahil ancak bunlarla sınırlı olmamak üzere) ve makul avukatlık ücretlerine karşı tazmin etmeyi ve zarar görmemesini sağlamayı kabul edersiniz. Zetter Gallery, masrafları kendisine ait olmak üzere, aksi takdirde tarafınızca tazmin edilecek herhangi bir konunun münhasır savunmasını ve kontrolünü üstlenme hakkını saklı tutar.",
-  "terms.zetter.release.title": "İbra ve Tazminat",
-  "terms.zetter.user-conduct.paragraph": "Siteye ve Hizmetlerimize erişiminiz ve bunları kullanımınız, ekipman arızası, Sitenin güncellenmesi, bakımı veya onarımı veya kontrolümüz dahilinde veya dışında başka herhangi bir nedenle zaman zaman kesintiye uğrayabilir. Zetter Gallery, tamamen kendi takdirine bağlı olarak ve önceden bildirimde bulunmaksızın herhangi bir zamanda Sitenin, herhangi bir Hizmetin kullanılabilirliğini askıya alma veya durdurma ve herhangi bir Görsel İçeriği kaldırma hakkını saklı tutar. Zetter Gallery ayrıca belirli özelliklere ve Hizmetlere sınırlamalar getirebilir veya bildirimde bulunmaksızın veya yükümlülük altına girmeksizin Sitenin ve Hizmetlerin bir kısmına veya tamamına erişiminizi kısıtlayabilir. Site, Görsel İçeriğinizin depolanması için kullanılmamalı veya buna güvenilmemelidir ve Sitede yayınlanan tüm Görsel İçeriğin kendi kopyalarını saklamanız istenmektedir.",
-  "terms.zetter.user-conduct.title": "Kullanıcı Davranışı",
-  "terms.zetter.warranty.paragraph": "SİTEYİ VE HİZMETLERİ KULLANMANIZIN RİSKİ SİZE AİTTİR. SİTE VE HİZMETLER \"OLDUĞU GİBİ, MEVCUT OLDUĞU GİBİ\" ESASINA GÖRE SUNULMAKTADIR. ZETTER GALLERY, TİCARİ ELVERİŞLİLİK, UNVAN, BELİRLİ BİR AMACA UYGUNLUK VE İHLAL ETMEME GARANTİLERİ DAHİL OLMAK ÜZERE TÜM GARANTİLERİ AÇIKÇA REDDEDER. ZETTER GALLERY, (A) TEKNİK YANLIŞLIKLAR VE YAZIM HATALARI DAHİL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE BU SİTEDEKİ VE HİZMETLERDEKİ HATALAR VEYA EKSİKLİKLER, (B) ÜÇÜNCÜ TARAF İLETİŞİMLERİNDEN KAYNAKLANAN, BUNLARDAN DOĞAN VEYA BUNLARLA HERHANGİ BİR ŞEKİLDE İLGİLİ OLAN HER TÜRLÜ KAYIP, YARALANMA, İDDİA, YÜKÜMLÜLÜK VEYA HASARA İLİŞKİN TÜM SORUMLULUĞU REDDEDER, (C) HERHANGI BIR HATA VEYA EKSIKLIK DAHIL ANCAK BUNLARLA SINIRLI OLMAMAK ÜZERE SITEDEKI BAĞLANTILAR ARACILIĞIYLA DOĞRUDAN VEYA DOLAYLI OLARAK ERIŞILEN HERHANGI BIR ÜÇÜNCÜ TARAF WEB SITESI VEYA IÇERIĞI, (D) SITENIN VEYA HIZMETLERIN TAMAMININ VEYA BIR KISMININ KULLANILAMAMASI, (E) SITEYI VEYA HIZMETLERI KULLANIMINIZ VEYA (F) SITE VEYA HIZMETLERLE BAĞLANTILI OLARAK HERHANGI BIR EKIPMAN VEYA YAZILIMI KULLANIMINIZ.",
-  "terms.zetter.warranty.paragraph.1": "YASALARCA AKSİ BELİRTİLMEDİKÇE, NE ZETTER GALLERY NE DE BAĞLI ŞİRKETLERİ, ANA ŞİRKETLERİ, İŞTİRAKLERİ, YETKİLİ DAĞITIMCILARI, YÖNETİCİLERİ, HİSSEDARLARI, ÇALIŞANLARI, MÜŞTERİLERİ VEYA TEMSİLCİLERİ SİTEYİ, SİTEDE YER ALAN HERHANGİ BİR OLGU VEYA GÖRÜŞÜ VEYA HİZMETLERİ KULLANMANIZDAN KAYNAKLANAN HERHANGİ BİR KAYIP, YARALANMA, İDDİA, YÜKÜMLÜLÜK VEYA HASARDAN SORUMLU OLMAYACAKTIR. ZETTER GALLERY, SİTENİN VEYA HİZMETLERİN KULLANIMINDAN VEYA KULLANILAMAMASINDAN KAYNAKLANAN VEYA BUNLARLA BAĞLANTILI OLARAK ORTAYA ÇIKAN HERHANGİ BİR ÖZEL, DOĞRUDAN, DOLAYLI, ARIZİ, CEZAİ VEYA SONUÇ OLARAK ORTAYA ÇIKAN ZARARLARDAN (AVUKATLIK ÜCRETLERİ DAHİL ANCAK BUNLARLA SINIRLI OLMAMAK KAYDIYLA) SORUMLU OLMAYACAKTIR. YUKARIDA BELİRTİLEN SORUMLULUK SINIRLAMASININ YASAKLANMASI VEYA ASIL AMACINA ULAŞAMAMASI DURUMUNDA, ZETTER GALLERY'NİN ZARARLAR İÇİN SİZE KARŞI TEK YÜKÜMLÜLÜĞÜ (A) İDDİANIN GÖRSEL İÇERİĞİN LİSANSLANMASI İLE İLGİLİ OLMAMASI DURUMUNDA 100,00 ABD DOLARI; VEYA (B) İDDİANIN GÖRSEL İÇERİĞİN LİSANSLANMASI İLE İLGİLİ OLMASI DURUMUNDA ZETTER GALLERY TARAFINDAN İDDİANIN KONUSU OLAN GÖRSEL İÇERİK İÇİN TAHSİL EDİLEN TOPLAM ÜCRET İLE SINIRLI OLACAKTIR.",
-  "terms.zetter.warranty.paragraph.2": "SİZ VE ZETTER GALLERY, BU SÖZLEŞME KAPSAMINDA ORTAYA ÇIKAN HERHANGİ BİR ANLAŞMAZLIĞI ÇÖZMEK VEYA DAVA AÇMAK İÇİN YAPILACAK HERHANGİ BİR İŞLEMİN YALNIZCA BİREYSEL OLARAK YÜRÜTÜLECEĞİNİ VE HERHANGİ BİR ANLAŞMAZLIĞIN TOPLU DAVA, TEMSİLİ DAVA, KOLEKTİF DAVA, ÖZEL BAŞSAVCI DAVASI VEYA TEMSİLCİ SIFATIYLA HAREKET ETTİĞİNİZ VEYA HAREKET ETMEYİ ÖNERDİĞİNİZ HERHANGİ BİR İŞLEM OLARAK GÖRÜLMESİNİ İSTEMEYECEĞİNİZİ KABUL EDİYORSUNUZ. AYRICA, ZETTER GALLERY'NİN VE SÖZ KONUSU DAVANIN TÜM TARAFLARININ ÖNCEDEN YAZILI İZNİ OLMADAN HİÇBİR DAVANIN BAŞKA BİR DAVAYLA BİRLEŞTİRİLMEYECEĞİNİ, KONSOLİDE EDİLMEYECEĞİNİ VEYA BİRLEŞTİRİLMEYECEĞİNİ KABUL EDERSİNİZ.",
-  "terms.zetter.warranty.title": "Garanti Sorumluluk Reddi",
-  "widgets.discord-button": "Discord sunucumuza katılın",
-  "widgets.discord-button.join": "bize katılın",
-  "widgets.discord-button.server": "Discord sunucusu",
-  "widgets.under-construction.description.discord-button": "Discord sunucumuza katılın",
-  "widgets.under-construction.description.discord-button.join": "bize katılın",
-  "widgets.under-construction.description.discord-button.server": "Discord sunucusu",
-  "widgets.under-construction.description.dm": "",
-  "widgets.under-construction.description.updates": "Güncellemelerden haberdar olmak isterseniz:",
-  "widgets.under-construction.description.why": "Zetter tabloları için ev inşa ediyoruz",
-  "widgets.under-construction.title": "",
-  "wiki.zetter-gallery.about-feed.description.1": "Feed, Painting Merchant'tan satın alınabilecek (indirilebilecek) resimlerin sürekli güncellenen bir listesidir. Az sayıda resim ile besleme çok kullanışlı değildir, ancak ana amacı her zaman aralarından seçim yapabileceğiniz bazı ilginç resimlere sahip olmaktır.",
-  "wiki.zetter-gallery.about-feed.description.2": "Akış her 5 dakikada bir güncellenir ve varsa trend, en iyi ve yeni resimlerle doldurulur.",
-  "wiki.zetter-gallery.about-feed.description.3": "Ayrıca, ilginç bulduğunuz resimleri işaretlemek için bu web sitesindeki yıldızları kullanabilirsiniz. Bu resimler, yalnızca sizin satın alabileceğiniz kişisel akışınızda görünmek için daha yüksek değişikliklere sahip olacaktır.",
-  "wiki.zetter-gallery.about-feed.section": "Yem hakkında",
-  "wiki.zetter-gallery.about-feed.title": "Yem hakkında",
-  "wiki.zetter-gallery.login.description.mc-auth": "Bundan sonra, hesabınıza giriş yaptıysanız, bağlantıyı açtığınız Minecraft sunucusunun Zetter hesabınızı kullanmasına izin vermeniz istenecektir. Doğru sunucu olup olmadığını kontrol edin ve size her şey yolunda görünüyorsa izin ver düğmesine basın.",
-  "wiki.zetter-gallery.login.description.ms-auth": "Bu sitede oturum açmadıysanız, Microsoft hesabınızla oturum açmanız istenecektir. Lütfen adres çubuğunuzdaki URI'nin zetter.gallery olduğunu dikkatlice kontrol edin ve bu sayfadaki mesajı okuyun. Bu, hesabınızın güvenliğini sağlamanıza yardımcı olacaktır. Microsoft şifrenizi Microsoft web siteleri dışında girmeyin.",
-  "wiki.zetter-gallery.login.description.screen": "Zetter Gallery modunu ilk kez kullanıyorsanız, oturum açmanız istenecektir.",
-  "wiki.zetter-gallery.login.description.zg-auth": "Giriş yapmak için, bilgisayarınızda İnternet bağlantısı ve İnternet tarayıcısına ihtiyacınız olacaktır (bu makaleyi okuyorsanız %99'unuz buna sahiptir). Bağlantıya tıkladığınızda, bu sitedeki giriş sayfasına gitmeniz önerilecektir. Alan adının doğru olduğunu kontrol edin (zetter.gallery).",
-  "wiki.zetter-gallery.login.description.zg-requirements": "Giriş yapmak için Minecraft'ın bağlantıları açmanıza izin vermesi gerekir. Varsayılan olarak etkindir, ancak sorun yaşıyorsanız ve hiçbir şey açılmıyorsa, Ana Menü -> Seçenekler -> Sohbet Ayarları -> Bağlantılar bölümünden bağlantıları açmanıza izin verilip verilmediğini kontrol edebilirsiniz.",
-  "wiki.zetter-gallery.login.prompt.image": "",
-  "wiki.zetter-gallery.login.section": "Oturum açma",
-  "wiki.zetter-gallery.login.title": "Oturum açma",
-  "wiki.zetter-gallery.page": "Wiki Ana Sayfası",
-  "wiki.zetter-gallery.page.description": "Minecraft için Zetter Galeri Modu hakkında bilgi alın",
-  "wiki.zetter-gallery.page.title": "Zetter Gallery Wiki",
-  "wiki.zetter-gallery.painting-merchant.description.1": "Resim ticaretine başlamak için bir köylü bulmanız ve mesleğini değiştirmeniz gerekecektir. Bir köylünün Resim Tüccarı olabilmesi için atanmış bir yatağı ve bu yatağın yakınında Sanatçı Masası bloğu olmalıdır.",
-  "wiki.zetter-gallery.painting-merchant.description.2": "Köylü işgalinin nasıl çalıştığını görmek için Minecraft wiki'ye bakın.",
-  "wiki.zetter-gallery.painting-merchant.section": "Boyama Tüccarı",
-  "wiki.zetter-gallery.painting-merchant.title": "Boyama Tüccarı",
-  "wiki.zetter-gallery.title": "Zetter Galeri Wiki Ana Sayfası",
-  "wiki.zetter-gallery.trading-interface.description.pre": "Giriş yaptıktan ve mevcut resim akışını yükledikten sonra, alışılmadık bir ticaret arayüzü göreceksiniz.",
-  "wiki.zetter-gallery.trading-interface.feed-dt": "9) Besleme simgesi",
-  "wiki.zetter-gallery.trading-interface.instruction.image": "Birleştirme Modu talimat görüntüsü",
-  "wiki.zetter-gallery.trading-interface.login-dd": "Geçerli kimlik doğrulama durumunu gösterir. Anonim olarak kullanırken, Oturum Aç düğmesi görünecektir. Düğmeye basıldığında, bu sitede kimlik doğrulama istemi gösterilir. Başarılı bir şekilde giriş yaptıysanız, bunun yerine takma adınız gösterilecektir.",
-  "wiki.zetter-gallery.trading-interface.login-dt": "4) Hesap",
-  "wiki.zetter-gallery.trading-interface.login-no-dd": "Bu düğmeyi göremiyorsanız, Minecraft'ta sohbet bağlantıları devre dışı bırakılmış veya oynadığınız sunucu yasaklanmış olabilir.",
-  "wiki.zetter-gallery.trading-interface.offer-count-dd": "Geçerli beslemedeki boyama miktarını ve geçerli konumu gösterir.",
-  "wiki.zetter-gallery.trading-interface.offer-count-dt": "",
-  "wiki.zetter-gallery.trading-interface.offer-paginator-dt": "3) Önceki ve sonraki düğmeleri",
-  "wiki.zetter-gallery.trading-interface.painting-info-dd": "O anda seçili olan resmi solda ve resimle ilgili bilgileri sağda gösterir. Bilgi, resmin adını, yazarın takma adını ve blok olarak boyutunu içerir.",
-  "wiki.zetter-gallery.trading-interface.painting-info-dt": "1) Resim önizleme ve bilgi",
-  "wiki.zetter-gallery.trading-interface.price-dd": "Bir tablo almak için satış yuvasına kaç zümrüt yerleştirmeniz gerektiğini gösterir. Satış modunda, ne kadar alacağınızı gösterir: popüler sanatçılar daha fazla zümrüt alıyor.",
-  "wiki.zetter-gallery.trading-interface.price-dt": "5) Teklif fiyatı",
-  "wiki.zetter-gallery.trading-interface.result-slot-dt": "7) Sonuç yuvası",
-  "wiki.zetter-gallery.trading-interface.sale-slot-dt": "6) Satış yuvası",
-  "wiki.zetter-gallery.trading-interface.section": "Ticaret",
-  "wiki.zetter-gallery.trading-interface.title": "Resim ticareti",
-  "wiki.zetter-gallery.trading-interface.update-countdown-dt": "8) Geri sayımı güncelleyin",
-  "wiki.zetter-gallery.trading.interface.checkout-dd": "",
-  "wiki.zetter-gallery.trading.interface.checkout-dt": "",
-  "wiki.zetter-gallery.trading.interface.feed-dd": "Bu sadece bu tabloyu size getirmek için hangi algoritmanın kullanıldığını gösterir. Örneğin, bu tabloyu bu web sitesindeki favori tablolarınıza eklediğiniz için bu tablo yalnızca sizin için mevcutsa bu bir yıldız olabilir.",
-  "wiki.zetter-gallery.trading.interface.login-callout": "Giriş yapmak, daha iyi çalışmamıza ve botlar ve troller tarafından yem manipülasyonunu önlememize yardımcı olur. Bir hesabınız varsa lütfen her zaman giriş yapın.",
-  "wiki.zetter-gallery.trading.interface.offer-paginator-dd": "Mevcut teklifi değiştirmek için bu düğmelere basın. Önceki teklif için yukarı ve sonraki için aşağı.",
-  "wiki.zetter-gallery.trading.interface.pagination-buttons-dd": "",
-  "wiki.zetter-gallery.trading.interface.pagination-buttons-dt": "",
-  "wiki.zetter-gallery.trading.interface.pagination-dd": "",
-  "wiki.zetter-gallery.trading.interface.pagination-dt": "",
-  "wiki.zetter-gallery.trading.interface.preview-dd": "",
-  "wiki.zetter-gallery.trading.interface.preview-dt": "",
-  "wiki.zetter-gallery.trading.interface.result-dd": "",
-  "wiki.zetter-gallery.trading.interface.result-dt": "",
-  "wiki.zetter-gallery.trading.interface.result-slot-dd": "Teklif yerine getirildiğinde (yeterli zümrütünüz olduğunda veya resminiz onaylandığında), o yuvadan sonucunuzu alın. Burada resim veya zümrüt olabilir.",
-  "wiki.zetter-gallery.trading.interface.result-slot-dt": "7) Sonuç yuvası",
-  "wiki.zetter-gallery.trading.interface.sale-slot-dd": "Zümrütlerinizi buraya yerleştirin. Şimdi. Şaka bir yana, giriş yaptıysanız resminizi bu web sitesine göndermek için resminizi buraya da yerleştirebilirsiniz.",
-  "wiki.zetter-gallery.trading.interface.sell-slot-dd.1": "",
-  "wiki.zetter-gallery.trading.interface.sell-slot-dd.2": "",
-  "wiki.zetter-gallery.trading.interface.sell-slot-dd.3": "",
-  "wiki.zetter-gallery.trading.interface.sell-slot-dt": "",
-  "wiki.zetter-gallery.trading.interface.update-countdown-dd": "Teklifler her 5 dakikada bir güncellendiğinden, teklifteki tabloyu satın almak için sınırlı zamanınız vardır. Endişelenmeyin, zaman dolduğunda bu düğme siyaha dönecek ve planladığınız şeyi bitirmek için 1:30 zamanınız olacak. Ayrıca, siyah olduğunda bu düğmeye tıklayarak teklifleri manuel olarak da güncelleyebilirsiniz.",
-  "wiki.zetter.advanced.console.export.param1": "İlk parametre dışa aktarma için hedeftir. Tipik olarak, büyük olasılıkla \"client\" parametresini kullanmanız gerekir, bu nedenle tablo, ekran görüntülerinin ve texturepack'lerin yeni bir \"zetter\" dizininde bulunduğu Minecraft klasörünüze kaydedilecektir. Bir sunucu operatörüyseniz, \"sunucu\" seçeneğini kullanabilirsiniz: bu şekilde boyama yalnızca \"zetter\" dizini altındaki sunucu dizini kök dizinine kaydedilecektir. Tek oyunculu bir dünyada oynuyorsanız, sonuç aynı olacaktır, ancak adanmış sunucular için \"sunucu\" sonucuna yalnızca sunucu bilgisayar dosya sistemine erişimi olan kişiler erişebilir.",
-  "wiki.zetter.advanced.console.export.param2": "İkinci parametre, resim arama kuralıdır. Aradığınız resmin adı \"Benim Resmim\" gibi çift tırnak içinde olabilir veya resminize sayısal kimliğiyle başvurabilirsiniz. Başka bir seçenek de tuval adını kullanmaktır, tipik olarak zetter_painting_14 gibi bir dizedir (14, sayısal kimliktir).",
-  "wiki.zetter.advanced.console.export.pre": "Çalışmanızı Minecraft dışında paylaşmak istiyor ve Zetter Gallery'yi kullanmak istemiyorsanız, özel bir dışa aktarma komutu kullanabilirsiniz. Bu komut, PNG dosyasındaki resminizi oyun klasörünüze veya sunucu klasörüne kaydetmenize izin verecektir.",
-  "wiki.zetter.advanced.console.export.title": "Dışa aktarma komutu",
-  "wiki.zetter.advanced.console.restore.notice": "Ancak bunun yalnızca imzalı tablolar için geçerli olduğunu unutmayın. İmzasız tuvaller kolayca sonsuza dek kaybolabilir veya tuval öğesi dünyadan kaldırıldığında Zetter tarafından üzerine yazılabilir. Bu nedenle, işiniz bittiğinde resminizi imzalamayı unutmayın ve sonuç sizin için önemliyse şövaleleri bir dekorasyon olarak kullanmaktan kaçının.",
-  "wiki.zetter.advanced.console.restore.post": "\"Your Painting Name\" yerine resminizin başlığını kullanmalısınız. Ancak teknik konularla daha fazla ilgileniyorsanız, resim kimliğini (numarasını) veya hatta tuval kodunu da kullanabilirsiniz. Bu komut, verilen parametre tarafından bulunmuşsa size resmin bir kopyasını vermelidir.",
-  "wiki.zetter.advanced.console.restore.pre": "Çok severek yaptığınız bir çalışmanın sonuçlarını kaybetmek yıkıcı olabilir. Özellikle de birileri modun test edilmemiş bir versiyonunu yüklediği ve korkunç bir hata meydana geldiği için bu durum yaşanıyorsa... oh iyi. Bu nedenle, Zetter bir resmi asla kaldırmaz (sunucu yöneticisi tarafından engellenebilir, ancak fiziksel olarak silinmedikçe kaldırılmaz) ve aşağıdaki gibi kullanılabilen özel bir 'Geri Yükle' komutu vardır:",
-  "wiki.zetter.advanced.console.restore.title": "Geri yükleme komutu",
-  "wiki.zetter.advanced.console.section": "Konsol Komutları",
-  "wiki.zetter.advanced.console.title": "Konsol Komutları",
-  "wiki.zetter.advanced.hotkeys": "Kısayol tuşları, işinizi daha kolay ve hızlı hale getirecek klavye kısayollarıdır. Bunları öğrenmek deneyiminizi çok geliştirecektir.",
-  "wiki.zetter.advanced.hotkeys.colors.down": "Geçerli olanın altındaki palet yuvasını kullan",
-  "wiki.zetter.advanced.hotkeys.colors.swap": "Renk değiştir: mevcut olanın yanındaki palet yuvasını kullanın.",
-  "wiki.zetter.advanced.hotkeys.colors.up": "Geçerli olanın üzerindeki palet yuvasını kullan",
-  "wiki.zetter.advanced.hotkeys.history.redo": "Yinele: iptal edilen son eylemi geri yükle",
-  "wiki.zetter.advanced.hotkeys.history.undo": "Geri al: iptal edilmeyen son eylemi iptal eder",
-  "wiki.zetter.advanced.hotkeys.section": "Kısayol Tuşları",
-  "wiki.zetter.advanced.hotkeys.title": "Kısayol Tuşları",
-  "wiki.zetter.advanced.hotkeys.tools.brush": "Fırça aracı",
-  "wiki.zetter.advanced.hotkeys.tools.bucket": "Kova veya doldurma aleti",
-  "wiki.zetter.advanced.hotkeys.tools.colors": "Renkler",
-  "wiki.zetter.advanced.hotkeys.tools.hand": "El aleti",
-  "wiki.zetter.advanced.hotkeys.tools.history": "tarih",
-  "wiki.zetter.advanced.hotkeys.tools.pencil": "Kurşun kalem aracı",
-  "wiki.zetter.advanced.hotkeys.tools.picker": "Renk seçme aracı",
-  "wiki.zetter.advanced.hotkeys.tools.title": "Araçlar",
-  "wiki.zetter.advanced.hotkeys.tools.zoom-in": "Yakınlaştır",
-  "wiki.zetter.advanced.hotkeys.tools.zoom-out": "Uzaklaştır",
-  "wiki.zetter.advanced.page": "Gelişmiş",
-  "wiki.zetter.advanced.page.description": "Minecraft için Zetter Modundaki ileri teknikler hakkında bilgi edinin",
-  "wiki.zetter.advanced.page.title": "Zetter Gelişmiş Konular Wiki",
-  "wiki.zetter.advanced.title": "Zetter Wiki Gelişmiş Konular",
-  "wiki.zetter.combining.interface.combine.grid-dd": "Tuvallerinizi birleştirmek için buraya yerleştirin.",
-  "wiki.zetter.combining.interface.combine.grid-dt": "1) Kanvas kombinasyon ızgarası",
-  "wiki.zetter.combining.interface.combine.mode-dd": "Bölme moduna geçmek için basın. Kombinasyon ızgarası boş olmalıdır.",
-  "wiki.zetter.combining.interface.combine.mode-dt": "4) Mod değiştirme",
-  "wiki.zetter.combining.interface.combine.preview-dd": "Birleşik tuvalin nasıl görüneceğini gösterir.",
-  "wiki.zetter.combining.interface.combine.preview-dt": "2) Önizleme",
-  "wiki.zetter.combining.interface.combine.result-dd": "Sonuçtan memnun olduğunuzda, birleştirilmiş tuvalinizi oradan alın.",
-  "wiki.zetter.combining.interface.combine.result-dt": "3) Sonuç yuvası",
-  "wiki.zetter.combining.interface.grid-dd": "",
-  "wiki.zetter.combining.interface.grid-dt": "",
-  "wiki.zetter.combining.interface.name-dd": "",
-  "wiki.zetter.combining.interface.name-dt": "",
-  "wiki.zetter.combining.interface.preview-dd": "",
-  "wiki.zetter.combining.interface.preview-dt": "",
-  "wiki.zetter.combining.interface.result-dd": "",
-  "wiki.zetter.combining.interface.result-dt": "",
-  "wiki.zetter.combining.interface.split.grid-dd": "Bölmek için kanvasınızı buraya yerleştirin.",
-  "wiki.zetter.combining.interface.split.grid-dt": "1) Kanvas bölme yuvası",
-  "wiki.zetter.combining.interface.split.mode-dd": "Birleştirme moduna geçmek için basın. Bölme yuvası boş olmalıdır.",
-  "wiki.zetter.combining.interface.split.mode-dt": "4) Mod değiştirme",
-  "wiki.zetter.combining.interface.split.preview-dd": "Mevcut bölünmüş tuvalin neye benzediğini gösterir.",
-  "wiki.zetter.combining.interface.split.preview-dt": "2) Önizleme",
-  "wiki.zetter.combining.interface.split.result-dd": "Sonuçtan memnun olduğunuzda, tuvallerinizi oradan alın.",
-  "wiki.zetter.combining.interface.split.result-dt": "3) Sonuç yuvaları",
-  "wiki.zetter.combining.interface.split.slot-dt": "1) Kanvas bölme yuvası",
-  "wiki.zetter.combining.mode": "Sanatçı Masası modu",
-  "wiki.zetter.combining.mode.combine": "Birleştirme Modu",
-  "wiki.zetter.combining.mode.combine.instruction.image": "Birleştirme Modu talimat görüntüsü",
-  "wiki.zetter.combining.mode.split": "Bölünmüş Mod",
-  "wiki.zetter.combining.mode.split.instruction.image": "Bölünmüş Mod talimat görüntüsü",
-  "wiki.zetter.combining.section": "Birleştirme",
-  "wiki.zetter.combining.signing.no-clearing": "Varsayılan resim adını temizlemenize gerek yoktur. Sadece isminizi yazmaya başlayın.",
-  "wiki.zetter.combining.signing.text": "Bu, resminiz için önizleme ve işaret ekranıdır. Sol alt tarafta resmin adını (varsayılan Adsız'dır) ve takma adınızı göreceksiniz. Sağ tarafta İmzala düğmesi vardır. Resminizden memnun olduğunuzda ve ona bir isim verdiğinizde bu düğmeye basın.",
-  "wiki.zetter.combining.text-intro": "Bir bloktan daha büyük bir tuval hazırlamak için, yeni hazırlanmış Sanatçı Tablosunu yerleştirin ve sağ tıklayarak Birleştir ve Böl arayüzünü açın:",
-  "wiki.zetter.combining.title": "Tuvalleri birleştirme ve bölme",
-  "wiki.zetter.copying.section": "Kopyalama",
-  "wiki.zetter.copying.text": "Tablonuzu çoğaltmak istiyorsanız, çerçevesiz imzalı tabloyu aynı boyuttaki boş tuval ve yeterli miktarda boya içeren bir paletle birleştirmeniz gerekir. Bir sonuç yuvasında bir kopyanız olacak ve boyama, azaltılmış boya miktarıyla paletin yanı sıra orijinal yuvada tutulacaktır. Kitaplar gibi resimlerin de üç kuşağı vardır: orijinal, kopya ve kopyanın kopyası.",
-  "wiki.zetter.copying.title": "Bir resmin kopyalanması",
-  "wiki.zetter.crafting.section": "",
-  "wiki.zetter.crafting.text": "",
-  "wiki.zetter.crafting.title": "",
-  "wiki.zetter.framing.result.image": "Duvarda çerçeve içinde resim",
-  "wiki.zetter.framing.section": "Çerçeveleme",
-  "wiki.zetter.framing.text-finish": "Tebrik ederim! Sonunda sıkı çalışmanızın karşılığını aldığınızda böyle bir şey görmelisiniz. Tebrikler!",
-  "wiki.zetter.framing.text-intro": "Tablonuzu imzaladıktan ve isimlendirdikten sonra, nihayet süslü evinizde bir yere yerleştirmenin zamanı geldi! Bunu başarmak için özel bir çerçeve oluşturmamız ve tabloyu bu çerçeveye koymamız, ardından çerçeveli tablo elimizdeyken duvara sağ tıklayarak duvara yerleştirmemiz gerekir. Duvarda bunun için yeterli alan olduğundan emin olun!",
-  "wiki.zetter.framing.title": "Çerçeve oluşturma",
-  "wiki.zetter.page": "Wiki Ana Sayfası",
-  "wiki.zetter.page.description": "Minecraft için Zetter Mod hakkında bilgi alın",
-  "wiki.zetter.page.title": "Zetter Wiki",
-  "wiki.zetter.painting.callout-advanced": "Kısayol tuşlarını ve konsol komutlarını bulabilirsiniz {recipesLocation}",
-  "wiki.zetter.painting.callout-advanced.location": "bu sayfada",
-  "wiki.zetter.painting.instruction.image": "Boyama talimatı resmi",
-  "wiki.zetter.painting.interface.canvas-dd": "Sihrin gerçekleştiği yer. Bir çizim aracıyla tuval alanının üzerine gelindiğinde, aracın etkilediği alanı gösteren bir çizim imleci görünmelidir. Tuvali boşluk (el aracı) ve fare tekerleği (yakınlaştırma aracı) ile yeniden konumlandırabilirsiniz",
-  "wiki.zetter.painting.interface.canvas-dt": "2) Tuval alanı",
-  "wiki.zetter.painting.interface.canvas-slot-dd": "Geçerli tuval bu şövale üzerine yerleştirilir. Şövale üzerine shift+tıklayarak da elde edebilirsiniz, ancak alternatif olarak bu yuvayı kullanabilirsiniz.",
-  "wiki.zetter.painting.interface.canvas-slot-dt": "6) Tuval yuvası",
-  "wiki.zetter.painting.interface.current-tab-dd": "Geçerli sekme. Buradan renk seçebilir, araç opaklığınızı, boyutunuzu ve diğer seçenekleri ayarlayabilirsiniz. Envanter seçildiğinde, karakterinizin envanterini gösterir.",
-  "wiki.zetter.painting.interface.current-tab-dt": "8) Geçerli sekme",
-  "wiki.zetter.painting.interface.finish-dd": "",
-  "wiki.zetter.painting.interface.finish-dt": "",
-  "wiki.zetter.painting.interface.hex-dd": "",
-  "wiki.zetter.painting.interface.hex-dt": "",
-  "wiki.zetter.painting.interface.history-zoom-dd": "Geçmiş ve yakınlaştırma araçları. Son eylemi geri almak için geri al'a ve geri almak için yinele'ye basın. Kısayol tuşları çalışıyor. Geçmiş oyuncular arasında paylaşılıyor! Tuval ölçeğini artırmak için artıya, azaltmak için eksiye basın.",
-  "wiki.zetter.painting.interface.history-zoom-dt": "3) Tarih ve Ölçek",
-  "wiki.zetter.painting.interface.hsv-dd": "",
-  "wiki.zetter.painting.interface.hsv-dt": "",
-  "wiki.zetter.painting.interface.palette-dd": "Palet, yuvaya (5) yerleştirilen palette kayıtlı rengi gösterir.",
-  "wiki.zetter.painting.interface.palette-dt": "4) Palet",
-  "wiki.zetter.painting.interface.palette-slot-dd": "Palet, yuvaya (5) yerleştirilen palette kayıtlı rengi gösterir. Bir palete en fazla 16 renk kaydedebilirsiniz.",
-  "wiki.zetter.painting.interface.palette-slot-dt": "5) Palet yuvası",
-  "wiki.zetter.painting.interface.tabs-dd": "Kullandığınız araca bağlı olarak burada farklı sekmeler göreceksiniz. Herhangi bir sekmeye tıkladığınızda, (8) alanının içeriği değişecektir. Son sekme her zaman envanterdir. Tüm araçların parametreleri yoktur. Aşağıda farklı araçları ve parametreleri ele alacağız.",
-  "wiki.zetter.painting.interface.tabs-dt": "7) Sekmeler",
-  "wiki.zetter.painting.interface.tool-dd": "",
-  "wiki.zetter.painting.interface.tool-dt": "",
-  "wiki.zetter.painting.interface.tools-dd": "Mevcut araçlar: piksel kalemi, fırça, renk seçici, kova aracı ve el. Her aracın kendi amacı vardır, bunları aşağıda açıklayacağız.",
-  "wiki.zetter.painting.interface.tools-dt": "1) Araçlar",
-  "wiki.zetter.painting.section": "Boyama",
-  "wiki.zetter.painting.text-intro": "İlk şaheserinizi yaratma zamanı! Çizim arayüzünün nasıl çalıştığını anlatayım. İşte referans:",
-  "wiki.zetter.painting.title": "Boyama",
-  "wiki.zetter.preparing.artist-table": "Bu tuvalleri, sizin de yapmanız gereken özel bir Sanatçı Masası üzerinde birleştirebilirsiniz. Tuval kombinasyonunu bir sonraki adımda ele alacağız.",
-  "wiki.zetter.preparing.callout-recipes": "Tüm tarifleri referans olarak bulabilirsiniz {recipesLocation}",
-  "wiki.zetter.preparing.callout-recipes.location": "bu sayfada",
-  "wiki.zetter.preparing.canvases": "Tuvaller: her tuval size bir resim bloğu verir, bu nedenle küçük bir resim için bir tane yeterlidir ve mümkün olan en büyük tek resim (4×4) için 16 tane yeterli olacaktır. Genellikle 4 tane kullanmanızı öneririm - şövaleye sığabilecek 2×2'lik bir resim için yeterlidir.",
-  "wiki.zetter.preparing.easel": "Son olarak, bir şövaleye ihtiyacınız olacaktır. Tarifini yukarıda bulabilirsiniz. Şövale biraz alana ihtiyaç duyar, bu yüzden hemen duvarın yanına yerleştirmeyin!",
-  "wiki.zetter.preparing.introduction": "İlk olarak, bazı şeyleri hazırlamanız gerekir.",
-  "wiki.zetter.preparing.paints": "Şimdi boyamak için bir şeye ihtiyacımız var - boyalar ve palet. Paletler, üzerinde çalıştığınız renkleri kaydetmek için gereklidir ve sonsuz değildirler. Kırılmazlar, ancak boyamaya devam etmek için sonunda onları yeniden şarj etmeniz gerekecektir. Tarifler sayfasında bulabileceğiniz alternatif tarifler de vardır.",
-  "wiki.zetter.preparing.section": "hazırlık",
-  "wiki.zetter.preparing.text-mounting": "",
-  "wiki.zetter.preparing.text-start": "",
-  "wiki.zetter.preparing.text-workshop-title": "",
-  "wiki.zetter.preparing.title": "hazırlık",
-  "wiki.zetter.recipes.artist-table": "Sanatçı tablosu, tuvalleri birleştirerek ve imzalayarak tablolar yapmanızı sağlar. Tuvalleri birleştirmek için, onları işçilik ızgarasına dikdörtgen şeklinde yerleştirin. Şekil doğruysa, resim önizlemesi güncellenecektir. Resim önizlemesi görünmüyorsa ve çıktı yuvası boşsa, şekil yanlıştır. Desteklenen resim boyutları aşağıda listelenmiştir.",
-  "wiki.zetter.recipes.artist-table.section": "Sanatçı Masası",
-  "wiki.zetter.recipes.artist-table.title": "Sanatçı Masası",
-  "wiki.zetter.recipes.canvas": "Tuvaller, sanat çalışmalarınız için ara bir evdir. Sağ tıklama ile şövale üzerine yerleştirildiklerinde görünürler, ancak bittiğinde sanatçı tablosunu kullanarak tuvallerden bir resim yapmak daha iyidir. Orada birleştirilmiş tuvallerin önizlemesini göreceksiniz.",
-  "wiki.zetter.recipes.canvas.section": "Tuval",
-  "wiki.zetter.recipes.canvas.title": "Tuval",
-  "wiki.zetter.recipes.easel": "Şövale tüm resimler için bir başlangıç noktasıdır. Çizime başlamak için dünyaya bir tane yerleştirmeniz, elinizde tuval varken sağ tıklayarak üzerine tuval koymanız gerekir. Basit bir sağ tıklama şövale kullanıcı arayüzünü açacaktır. Ayrıca özel yuvaya bir palet koymanız gerekir. Boş el ile Shift-sağ tıklama tuvali şövaleden geri çekecektir.",
-  "wiki.zetter.recipes.easel.section": "Şövale",
-  "wiki.zetter.recipes.easel.title": "Şövale",
-  "wiki.zetter.recipes.frames.section": "çerçeveler",
-  "wiki.zetter.recipes.framing": "Resmi bir çerçeveye yerleştirmek için, onları işçilik ızgarasında herhangi bir sırayla birleştirmeniz gerekir. Resminizi her zaman çerçeveden geri alabilirsiniz. Bunu yapmak için, çerçeveli tabloyu bir işçilik ızgarasına koyun. Çerçeveyi geri alabilirsiniz ve çerçevesiz resim işçiliği ızgarasında görünecektir.",
-  "wiki.zetter.recipes.framing.title": "Resimlerin Çerçevelenmesi ve Çerçeveden Çıkarılması",
-  "wiki.zetter.recipes.gold-frame.title": "Altın Çerçeve",
-  "wiki.zetter.recipes.golden-frame": "Bu, diğerlerinden çok daha kalın ve lüks bir görünüme sahip olan altın çerçevedir. İşçiliği için gerekli olan kakma zümrütlere sahiptir. Varsayılan olarak bir isim plakası yoktur, aşağıya bakın;",
-  "wiki.zetter.recipes.iron-frame": "Bu çerçevede resminizin etrafında kalın çerçeveler yoktur, böylece bunlardan birkaçını yan yana koyarak 4x4'ten daha büyük bir resim oluşturabilir veya çerçevelerden kurtulabilirsiniz. Vanilya resim gibi 1px kalınlığındadır.",
-  "wiki.zetter.recipes.iron-frame.title": "Demir Çerçeve",
-  "wiki.zetter.recipes.page": "Yemek Tarifleri",
-  "wiki.zetter.recipes.page.description": "Minecraft'ta Zetter Modu için tarifler bulun",
-  "wiki.zetter.recipes.page.title": "Zetter Tarifler Wiki",
-  "wiki.zetter.recipes.painting": "Bu gerçek bir resimdir. Yalnızca Sanatçı Tablosundaki bir veya birden fazla birleşik tuvalin imzalanmasıyla oluşturulur.",
-  "wiki.zetter.recipes.painting.section": "Boyama",
-  "wiki.zetter.recipes.painting.title": "Boyama",
-  "wiki.zetter.recipes.paints": "Boyalar bir palet oluşturmak veya yeniden doldurmak için kullanılır.",
-  "wiki.zetter.recipes.paints.section": "boyalar",
-  "wiki.zetter.recipes.paints.title": "boyalar",
-  "wiki.zetter.recipes.palette": "",
-  "wiki.zetter.recipes.palette.section": "Palet",
-  "wiki.zetter.recipes.special-frames.section": "Özel Çerçeveler",
-  "wiki.zetter.recipes.special-frames.title": "Özel Çerçeveler",
-  "wiki.zetter.recipes.title": "Zetter Wiki Yemek Tarifleri",
-  "wiki.zetter.recipes.title-palette": "Palet",
-  "wiki.zetter.recipes.wooden-frames": "Temel çerçeveler ahşap, çubuklar, deri ve seçtiğiniz külçeden yapılır. Herhangi bir vanilya türü ahşap kullanabilirsiniz ve kullanılan ahşap türüne bağlı olarak farklı çerçeveler elde edersiniz. İşçilikte altın külçe kullanırsanız, çerçevede ayrıca küçük bir altın plaka olacak ve resme sağ tıkladığınızda resmin adı gösterilecektir.",
-  "wiki.zetter.recipes.wooden-frames.title": "Ahşap Çerçeveler",
-  "wiki.zetter.sharing.button.download": "",
-  "wiki.zetter.sharing.button.download.from": "",
-  "wiki.zetter.sharing.button.download.what": "",
-  "wiki.zetter.sharing.button.wiki": "",
-  "wiki.zetter.sharing.button.wiki.check": "Çıkış yapmak",
-  "wiki.zetter.sharing.button.wiki.what": "",
-  "wiki.zetter.sharing.description": "Bu siteyi kullanarak resminizi dünyayla paylaşabilir ve Zetter Gallery eklentisini kullanarak diğer sanatçıların resimlerini indirebilirsiniz.",
-  "wiki.zetter.sharing.section": "Paylaşım",
-  "wiki.zetter.sharing.title": "Resimlerin paylaşımı",
-  "wiki.zetter.sharing.what-is-gallery": "Zetter Gallery, çalışması için Zetter gerektiren bağımsız bir moddur. Ayrı olarak indirilir, böylece çevrimiçi özelliklere sahip olmayı tercih etmeyen oyuncular modun temel sürümünü tutabilirler.",
-  "wiki.zetter.signing.image": "Boyama imzalama talimatı resmi",
-  "wiki.zetter.signing.section": "İmzalama",
-  "wiki.zetter.signing.text-intro": "",
-  "wiki.zetter.signing.title": "İmza tabloları",
-  "wiki.zetter.title": "Zetter Wiki Ana Sayfası",
-  "wiki.zetter.tools.color.blending": "1) Karıştırma türü. Karıştırma uygulanabilir olduğunda renkleri karıştırmak için hangi renk uzayında ve hangi algoritmanın kullanılacağını tanımlar (fırça aracı, tam yoğunluklu kalem değil). Burada ilk olarak, gerçek boyaların nasıl çalıştığını çok basit bir şekilde taklit etmeye çalışan RYB karıştırma vardır. Garip olabilir ama daha güzel renkler oluşturur. İkincisi, dijital sanatçılar için çok tanıdık olan RGB karıştırma (bunu tercih edebilirsiniz). Sonuncusu ise araştırmacı Scott Allen Burns tarafından nazikçe sağlanan gerçek verileri kullanan doğal harmanlama. Aslında henüz uygulanmadı, ancak gelecekte en iyi sonucu verecektir.",
-  "wiki.zetter.tools.color.brightness": "Ve (3) parlaklık (B) kaydırıcısıdır. En düşük değerde bu, renginizi siyaha çevirecektir.",
-  "wiki.zetter.tools.color.brightness.title": "3) Parlaklık kaydırıcısı",
-  "wiki.zetter.tools.color.dithering": "2) Dithering tipi. Etkinleştirildiğinde, klasik piksel-sanat dithering efekti vermek için her N piksel atlanacaktır.",
-  "wiki.zetter.tools.color.hex.title": "4) HEX renk alanı",
-  "wiki.zetter.tools.color.hue": "1) Ton (H) kaydırıcısı. Fareyi bu kaydırıcının üzerinde tutarak o anda seçili olan palet yuvasındaki gerçek temel rengi değiştirebilirsiniz.",
-  "wiki.zetter.tools.color.hue.title": "1) Renk tonu kaydırıcısı",
-  "wiki.zetter.tools.color.image": "Renk yapılandırma talimatı görüntüsü",
-  "wiki.zetter.tools.color.input": "4) Giriş alanı başka bir yerden renk almak için kullanılabilir. RGB renginin onaltılık değerini kabul eder, bazen HTML notasyonu olarak adlandırılır. Bu şekilde görünür: #FFDAE9. Bu alana serbestçe yapıştırabilir veya manuel olarak girebilirsiniz. Yapıştırırken, alanı temizlemenize gerek yoktur, kolaylık sağlamak için renk otomatik olarak değiştirilecektir.",
-  "wiki.zetter.tools.color.intensity": "3) Yoğunluk. Fırçanın altındaki piksel renginin ne kadar etkileneceğini tanımlar. Karıştırma, seçilen karıştırma türüne göre yapılır. Düşük değerler rengi neredeyse hiç etkilemez (gölgeler ve ışıklar için kullanışlıdır), maksimum değer sadece alttaki pikseli başka bir renkle değiştirir.",
-  "wiki.zetter.tools.color.into": "Renk sekmesinin içinde üç kaydırıcı (1,2,3) ve bir giriş alanı (4) göreceksiniz.",
-  "wiki.zetter.tools.color.saturation": "2) Doygunluk (S) kaydırıcısı. Geçerli rengin kontrastını etkiler. Minimum değerde, rengi gri tonlamalı palete dönüştürür.",
-  "wiki.zetter.tools.color.saturation.title": "2) Doygunluk kaydırıcısı",
-  "wiki.zetter.tools.color.size": "4) Boyut. Daha büyük boyut daha fazla pikseli etkileyecektir. Fırça için sorunsuz bir şekilde artırılır, ancak kalem için eşikler vardır, kalemin yalnızca sınırlı sayıda şekil boyutu vardır.",
-  "wiki.zetter.tools.color.title": "Renk",
-  "wiki.zetter.tools.intentory.text": "Karakterinizin envanteri. Paletleri ve tuvalleri hızlıca değiştirmek için kullanabilirsiniz.",
-  "wiki.zetter.tools.inventory.image": "Envanter talimat görüntüsü",
-  "wiki.zetter.tools.inventory.title": "Envanter",
-  "wiki.zetter.tools.pencil.blending-type.title": "1) Karıştırma tipi",
-  "wiki.zetter.tools.pencil.dither-type.title": "2) Dithering tipi",
-  "wiki.zetter.tools.pencil.image": "Kalem yapılandırma talimatı görüntüsü",
-  "wiki.zetter.tools.pencil.intensity.title": "3) Yoğunluk kaydırıcısı",
-  "wiki.zetter.tools.pencil.intro": "Kurşun Kalem ve Fırça araçları için yapılandırmalar benzerdir, bu nedenle her ikisini de tek bir paragrafta ele alacağız.",
-  "wiki.zetter.tools.pencil.size.title": "4) Boyut kaydırıcısı",
-  "wiki.zetter.tools.pencil.title": "Kalem ve Fırça parametreleri",
-  "wiki.zetter.tools.section": "Araçlar",
-  "wiki.zetter.tools.title": "Araçlar ve Ayarlar",
-  "wiki.zetter.workspace.image": "Atölye Çalışması: Eassel Üzerinde Sanatçı Masası, Şövale ve Tuval",
-  "wiki.zetter.workspace.section": "Çalışma Alanı",
-  "wiki.zetter.workspace.text-interacting": "Palet elinizdeyken (veya zaten yerindeyse palet olmadan), çizime başlamak için şövale üzerine sağ tıklayın.",
-  "wiki.zetter.workspace.text-mounting": "Tuval elinizdeyken, monte etmek için şövale üzerine sağ tıklayın.",
-  "wiki.zetter.workspace.text-start": "Çizime başlamak için resim atölyemizi hazırlamanız gerekir. Sanatçı masasını, şövaleyi yerleştirin, tuvali şövalenin üzerine koyun ve sıcak çubuğunuza paleti alın.",
-  "wiki.zetter.workspace.text-workshop-title": "Atölyemiz şöyle görünmeli:",
-  "wiki.zetter.workspace.title": "İşyerinin Hazırlanması"
+  "about.page.description": {
+    "defaultMessage": "What is Zetter and Zetter Gallery",
+    "description": "About page description"
+  },
+  "about.page.title": {
+    "defaultMessage": "About",
+    "description": "About page title"
+  },
+  "about.title": {
+    "defaultMessage": "Minefont test page",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
+  },
+  "about.zetter-gallery.button.download": {
+    "defaultMessage": "Download Zetter Gallery from CurseForge"
+  },
+  "about.zetter-gallery.button.download.from": {
+    "defaultMessage": "from CurseForge"
+  },
+  "about.zetter-gallery.button.download.what": {
+    "defaultMessage": "Download Zetter Gallery"
+  },
+  "about.zetter-gallery.button.wiki": {
+    "defaultMessage": "Check out Zetter Gallery Wiki"
+  },
+  "about.zetter-gallery.button.wiki.check": {
+    "defaultMessage": "Check out"
+  },
+  "about.zetter-gallery.button.wiki.what": {
+    "defaultMessage": "Zetter Gallery Wiki"
+  },
+  "about.zetter.button.download": {
+    "defaultMessage": "Download Zetter from CurseForge"
+  },
+  "about.zetter.button.download.from": {
+    "defaultMessage": "from CurseForge"
+  },
+  "about.zetter.button.download.what": {
+    "defaultMessage": "Download Zetter"
+  },
+  "about.zetter.button.wiki": {
+    "defaultMessage": "Check out Zetter Wiki"
+  },
+  "about.zetter.button.wiki.check": {
+    "defaultMessage": "Check out"
+  },
+  "about.zetter.button.wiki.what": {
+    "defaultMessage": "Zetter Wiki"
+  },
+  "about.zetter.description.what": {
+    "defaultMessage": "Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with tools-rich and easy to use UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall.",
+    "description": "Zetter Description"
+  },
+  "about.zetter.description.what-for": {
+    "defaultMessage": "Whether you want to make your virtual home more comfortable, add some thematic posters or painting, or just fool around - it's a great addition to the game.",
+    "description": "Zetter Description"
+  },
+  "about.zetter.discord.description": {
+    "defaultMessage": "Share your ideas and know about the updates first! We also look for community managers and moderators who can rate paintings.",
+    "description": "Zetter Discord Description"
+  },
+  "about.zetter.discord.title": {
+    "defaultMessage": "Join our community",
+    "description": "Title for Zetter Discord About Section"
+  },
+  "about.zetter.gallery.description": {
+    "defaultMessage": "Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to upload and download popular paintings on Zetter Gallery",
+    "description": "Zetter Gallery Description"
+  },
+  "about.zetter.gallery.mod-wiki-link": {
+    "defaultMessage": "Check out Zetter Gallery mod wiki page with recipes and manuals",
+    "description": "Link to Zetter Gallery wiki from About Zetter page"
+  },
+  "about.zetter.gallery.title": {
+    "defaultMessage": "What is Zetter Gallery",
+    "description": "Title for Zetter Gallery About Section"
+  },
+  "about.zetter.mod-wiki-link": {
+    "defaultMessage": "Check out Zetter mod wiki page with recipes and manuals",
+    "description": "Link to Zetter wiki from About Zetter page"
+  },
+  "about.zetter.name": {
+    "defaultMessage": "Zetter is named after {Kristoffer}, author of the original Minecraft paintings.",
+    "description": "Zetter Gallery Description"
+  },
+  "about.zetter.title": {
+    "defaultMessage": "What is Zetter",
+    "description": "Title for Zetter About Section"
+  },
+  "auth-prompt.check.title": {
+    "defaultMessage": "How to make sure I am safe?",
+    "description": "Title for security warning"
+  },
+  "auth-prompt.deprecated.disclaimer.what-for": {
+    "defaultMessage": "Your version is no longer supported, sorry. Updating to a new version will allow anonymous usage (painting purchase) and easier painting upload."
+  },
+  "auth-prompt.deprecated.disclaimer.why": {
+    "defaultMessage": "Since the release of your version we have updated Zetter Gallery to be more secure and futureproof."
+  },
+  "auth-prompt.deprecated.title": {
+    "defaultMessage": "Why do I need that?",
+    "description": "Title for request explanation"
+  },
+  "auth-prompt.disclaimer.title": {
+    "defaultMessage": "Why do I need that?",
+    "description": "Title for request explanation"
+  },
+  "auth-prompt.microsoft.disclaimer.what-for": {
+    "defaultMessage": "This allows server to download and submit paintings on your behalf when you trading with painting merchant.",
+    "description": "Why do we need player to authorize us with Microsoft account"
+  },
+  "auth-prompt.microsoft.disclaimer.why": {
+    "defaultMessage": "To prove that you are the real player playing on a real server and it's not just automated requests.",
+    "description": "Why do we need player to authorize us with Microsoft account"
+  },
+  "auth.microsoft.button.agreement": {
+    "defaultMessage": "By pressing the button, you confirm that you are in legal age and agree to the terms of service.",
+    "description": "Explain what do you agree when starting using the service"
+  },
+  "auth.microsoft.callout.same-account": {
+    "defaultMessage": "Please use the same Microsoft account you use to login into Minecraft."
+  },
+  "auth.microsoft.check.advice": {
+    "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright.",
+    "description": "Explain how to make sure it's not a phishing page"
+  },
+  "auth.microsoft.disclaimer.track": {
+    "defaultMessage": "This is also used track what paintings you download in order to keep feed relevant. Do not worry, we keep your activity data only for a week.",
+    "description": "Explain how we track player activity"
+  },
+  "auth.microsoft.disclaimer.why": {
+    "defaultMessage": "We need this to make sure that you have access to the player account that can be used for submitting paintings. This allows you to have personal feed with your favorite paintings and check your paintings stats.",
+    "description": "Why do we need player to authorize us with Microsoft account"
+  },
+  "auth.microsoft.finish.description.callback.description": {
+    "defaultMessage": "We will redirect you soon to continue your action.",
+    "description": "Title for finish auth page"
+  },
+  "auth.microsoft.finish.description.callback.title": {
+    "defaultMessage": "Please do not close this page",
+    "description": "Title for finish auth page"
+  },
+  "auth.microsoft.finish.description.description": {
+    "defaultMessage": "Now you'll be able to quickly authorize game server with your Minecraft account.",
+    "description": "Title for finish auth page"
+  },
+  "auth.microsoft.finish.description.title": {
+    "defaultMessage": "You are signed up",
+    "description": "Title for finish auth page"
+  },
+  "auth.start.page.description": {
+    "defaultMessage": "Grant Zetter Gallery rights to access your account",
+    "description": "Auth start page description"
+  },
+  "auth.start.page.title": {
+    "defaultMessage": "Authenticate with Microsoft Account",
+    "description": "Auth start page title"
+  },
+  "badge.epic": {
+    "defaultMessage": "Epic"
+  },
+  "badge.exceptional": {
+    "defaultMessage": "Exceptional"
+  },
+  "badge.legendary": {
+    "defaultMessage": "Legendary`"
+  },
+  "badge.rare": {
+    "defaultMessage": "Rare"
+  },
+  "badge.uncommon": {
+    "defaultMessage": "Uncommon"
+  },
+  "common.post.painting.action.favorite": {
+    "defaultMessage": "Add this painting to favorites"
+  },
+  "common.post.painting.action.favorite.disabled": {
+    "defaultMessage": "Log in to add painting to favorites"
+  },
+  "common.post.painting.alt": {
+    "defaultMessage": "{paintingName} by {username}"
+  },
+  "common.post.painting.info.impressions": {
+    "defaultMessage": "Impressions"
+  },
+  "common.post.painting.info.total": {
+    "defaultMessage": "Total emeralds spent"
+  },
+  "common.post.painting.link.title": {
+    "defaultMessage": "{paintingName} by {username}"
+  },
+  "common.post.painting.size.detailed": {
+    "defaultMessage": "This painting is {width} {width, plural,one {block}other {blocks}} width and {height} {height, plural, one {block}other {blocks}} tall"
+  },
+  "components.player.plaintings.list.empty": {
+    "defaultMessage": "This player didn't submit any paintings yet!"
+  },
+  "components.player.profile.logout-link": {
+    "defaultMessage": "Log Out"
+  },
+  "components.player.profile.preferences-link": {
+    "defaultMessage": "Preferences"
+  },
+  "components.player.profile.statistics.downloads": {
+    "defaultMessage": "Downloads:",
+    "description": "Amount of player's sell paintings showing in player's profile"
+  },
+  "components.player.profile.statistics.favorites": {
+    "defaultMessage": "Favorites:",
+    "description": "Amount of favorite marks put on player's paintings in player's profile"
+  },
+  "components.player.profile.statistics.paintings": {
+    "defaultMessage": "Paintings:",
+    "description": "Amount of submitted paintings showing in player's profile"
+  },
+  "components.widgets.craft-grid.shapeless": {
+    "defaultMessage": "Shapeless crafting"
+  },
+  "contributors.page.description": {
+    "defaultMessage": "Zetter Gallery credits",
+    "description": "Credits page description"
+  },
+  "contributors.page.title": {
+    "defaultMessage": "Contributors",
+    "description": "Contributors page title"
+  },
+  "contributors.title": {
+    "defaultMessage": "Credits",
+    "description": "Title for Zetter Gallery Credits Page"
+  },
+  "cycle.batch.no": {
+    "defaultMessage": "Batch no"
+  },
+  "cycle.merchant.icon": {
+    "defaultMessage": "Some of those paintings are available for purchase from Painting Merchant in game right now!"
+  },
+  "cycle.seed": {
+    "defaultMessage": "Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings."
+  },
+  "cycle.timeout.expired": {
+    "defaultMessage": "Cycle expired!"
+  },
+  "cycle.timeout.left": {
+    "defaultMessage": "Expires in"
+  },
+  "error.401.page.description": {
+    "defaultMessage": "You are not logged in to access this resource",
+    "description": "401 page description"
+  },
+  "error.401.page.title": {
+    "defaultMessage": "Unauthenticated",
+    "description": "401 page title"
+  },
+  "error.403.page.description": {
+    "defaultMessage": "You are not allowed to access this resource",
+    "description": "403 page description"
+  },
+  "error.403.page.title": {
+    "defaultMessage": "Forbidden",
+    "description": "403 page title"
+  },
+  "error.404.page.description": {
+    "defaultMessage": "Page not found",
+    "description": "404 page description"
+  },
+  "error.404.page.title": {
+    "defaultMessage": "Not Found",
+    "description": "404 page title"
+  },
+  "error.500.page.description": {
+    "defaultMessage": "Internal server error page",
+    "description": "500 page description"
+  },
+  "error.500.page.title": {
+    "defaultMessage": "Error!",
+    "description": "500 page title"
+  },
+  "error.bad-request.description": {
+    "defaultMessage": "Sorry, server refused to process your request"
+  },
+  "error.bad-request.title": {
+    "defaultMessage": "Bad request"
+  },
+  "error.forbidden.description": {
+    "defaultMessage": "Server said you cannot access this resource."
+  },
+  "error.forbidden.title": {
+    "defaultMessage": "Forbidden"
+  },
+  "error.not-found.description": {
+    "defaultMessage": "Sorry, we were unable to locate the resource you're looking for"
+  },
+  "error.not-found.title": {
+    "defaultMessage": "Not found"
+  },
+  "error.server-error.description": {
+    "defaultMessage": "Sorry, something bad and unexpected happened while processing your request"
+  },
+  "error.server-error.title": {
+    "defaultMessage": "Server error"
+  },
+  "error.unauthenticated.description": {
+    "defaultMessage": "Server said you cannot access this resource because you are not logged in as someone who have access."
+  },
+  "error.unauthenticated.title": {
+    "defaultMessage": "Unauthenticated"
+  },
+  "feed.hot.info": {
+    "defaultMessage": "Trending paintings that got attention in the previous batches"
+  },
+  "feed.hot.title": {
+    "defaultMessage": "Hot"
+  },
+  "feed.new.info": {
+    "defaultMessage": "Freshly baked, just submitted to the Gallery"
+  },
+  "feed.new.title": {
+    "defaultMessage": "New"
+  },
+  "feed.personal.info": {
+    "defaultMessage": "Your personal selection: random picks from favorites"
+  },
+  "feed.personal.title": {
+    "defaultMessage": "Personal"
+  },
+  "feed.popular.info": {
+    "defaultMessage": "Small selection from best of the best"
+  },
+  "feed.popular.title": {
+    "defaultMessage": "Popular"
+  },
+  "font.page.description": {
+    "defaultMessage": "Test page for in-house international Minecraft font based on Monocraft font",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
+  },
+  "font.page.title": {
+    "defaultMessage": "Minefont test page",
+    "description": "Minefont test page title"
+  },
+  "footer.legal.affiliation": {
+    "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
+  },
+  "footer.legal.developer": {
+    "defaultMessage": "Zetter Gallery is licensed mostly under MPL2 and partially with reserved rights, developed by {author} and {contributors}."
+  },
+  "footer.legal.developer.author": {
+    "defaultMessage": "Dmitry Burlakov (@dantaeusb)",
+    "description": "Author name and nickname"
+  },
+  "footer.legal.developer.contributors": {
+    "defaultMessage": "Contributors"
+  },
+  "footer.legal.learn-more": {
+    "defaultMessage": "Learn more"
+  },
+  "footer.legal.minecraft-copyright": {
+    "defaultMessage": "Minecraft and associated Minecraft images are copyright of Mojang AB."
+  },
+  "footer.legal.tos": {
+    "defaultMessage": "Terms of service"
+  },
+  "header.link.home.logo": {
+    "defaultMessage": "Zetter Gallery Logo"
+  },
+  "header.link.home.title": {
+    "defaultMessage": "Go to homepage"
+  },
+  "human-terms.complications.paragraph.1": {
+    "defaultMessage": "I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
+  },
+  "human-terms.complications.title": {
+    "defaultMessage": "What are the complications?"
+  },
+  "human-terms.contribution.paragraph.1": {
+    "defaultMessage": "Yes! Well, partially. Zetter and Zetter Gallery mods are licensed under MPL2 and open-source. The front-end part of this service is also MPL2 and open-source. The API, however, is closed-source. This is because of my security concerns and because I would like to build a player base and avoid early forks. This, however, will likely be changed closer to release of 1.0 mods. I can open repository to particular contributors who proved their positive intents and have sufficient TypeScript/Nest.js skills."
+  },
+  "human-terms.contribution.title": {
+    "defaultMessage": "Can I contribute?"
+  },
+  "human-terms.copyright.paragraph.1": {
+    "defaultMessage": "I do not claim exclusive or ownership rights on your artworks by any means. Your work is owned by you and no one else. However, for the sake of being safe legally, I use very similar licensing to the sites like Instagram, DeviantArt or 500px. That means I am able to show and distribute your work."
+  },
+  "human-terms.copyright.paragraph.2": {
+    "defaultMessage": "Important notice: if you at any time would like to remove your work from Zetter Gallery, you are free to do that. But there's no mechanism to retract paintings from players' servers, and no guarantees that it will be implemented. I am not responsible for what people might do with your paintings."
+  },
+  "human-terms.copyright.paragraph.3": {
+    "defaultMessage": "Things happen that someone might steal your work. That's bad because only you can decide where your work might appear. If that happened, please, contact me on Discord or email copyright@zetter.gallery, providing some proof that you own the work."
+  },
+  "human-terms.copyright.title": {
+    "defaultMessage": "What about copyright?"
+  },
+  "human-terms.end.thank-you": {
+    "defaultMessage": "Thank you for reading. Feel free to talk to me if you have any questions."
+  },
+  "human-terms.introduction.paragraph.1": {
+    "defaultMessage": "First of all, Zetter Gallery is not some kind of legal entity, and created & provided solely by a single person so far. This adds some complications, but we'll talk about that later."
+  },
+  "human-terms.introduction.paragraph.2": {
+    "defaultMessage": "Zetter Gallery is created with single purpose — let people to create and share their artworks in a wonderful game called Minecraft. Advertising or selling things is not a purpose of this service."
+  },
+  "human-terms.introduction.title": {
+    "defaultMessage": "Let me explain some details about Zetter Gallery"
+  },
+  "human-terms.moderation.paragraph.1": {
+    "defaultMessage": "I understand that art means different things for different people. Also, I understand that different people would prefer to see different things. With this in mind, I came to a conclusion: the moderation will be performed, perfectly, by community moderators. Our rules won't be censoring anything specifically, rather creating a 'ratings' for paintings."
+  },
+  "human-terms.moderation.paragraph.2": {
+    "defaultMessage": "I keep the right for moderators to retract or just deny your painting, if the content is very disruptive. I understand that its vague definition, but hopefully, the paintings will rarely be straight discarded. Instead, according ratings will be applied before approval. Those rating may include things like Gambling, Nudity, etc. — you can see the whole list at your player preferences page. This list is subject to extension, and the defaults will be rather 'family-friendly'. This by no means that this mod is good for kids, any kind of online activity needs parental guidance."
+  },
+  "human-terms.moderation.paragraph.3": {
+    "defaultMessage": "Moderators can make mistakes and discard or wrongly rate painting. Please be understanding that it's just people who put their free time for everyone's good. Be patient and talk to us if that happened."
+  },
+  "human-terms.moderation.paragraph.4": {
+    "defaultMessage": "I strictly recommend this mod and service only for legal age players. Registering here without reaching legal age should not be possible by Microsoft oAuth rules and breaks ToS."
+  },
+  "human-terms.moderation.title": {
+    "defaultMessage": "What about moderation?"
+  },
+  "human-terms.title": {
+    "defaultMessage": "Greetings,"
+  },
+  "human-terms.title.callout.check-english": {
+    "defaultMessage": "These statements are not legally binding. This page provides short explanation of the terms of use and some details about intended usage of this service."
+  },
+  "index.page.cta.button.wiki": {
+    "defaultMessage": "Learn about Zetter Gallery"
+  },
+  "index.page.cta.button.wiki.about-zetter": {
+    "defaultMessage": "Zetter Gallery Project"
+  },
+  "index.page.cta.button.wiki.learn": {
+    "defaultMessage": "Learn more about"
+  },
+  "index.page.cta.description": {
+    "defaultMessage": "Use Zetter and Zetter Gallery mods together to add your paintings here by trading with painting merchant in Minecraft™ game."
+  },
+  "index.page.cta.title": {
+    "defaultMessage": "Would like to add your own painting?"
+  },
+  "index.page.description": {
+    "defaultMessage": "Zetter Gallery is a service that allows you to share your Zetter Minecraft paintings with the world",
+    "description": "Homepage description"
+  },
+  "index.page.title": {
+    "defaultMessage": "Home for Minecraft paintings",
+    "description": "Homepage title"
+  },
+  "introduction.feed.description": {
+    "defaultMessage": "Feed is ever updating list of paintings, which are available from Painting Merchant in game. You can customize your feed by logging in and adding some paintings to favorites."
+  },
+  "introduction.first-time.description": {
+    "defaultMessage": "Zetter Gallery is a Minecraft mod which allows you to share paintings created with the in game pixel art editor. Mods with painting editor and painting merchant are installed separately."
+  },
+  "introduction.first-time.ignore": {
+    "defaultMessage": "I know already"
+  },
+  "introduction.first-time.learn-more": {
+    "defaultMessage": "Learn more!"
+  },
+  "microsoft-auth-check-advice": {
+    "defaultMessage": "Good you asked! Just check that server described below is the one that you're playing on right now.",
+    "description": "Explain how to make sure it's not a phishing page"
+  },
+  "navbar.about": {
+    "defaultMessage": "About"
+  },
+  "navbar.feed": {
+    "defaultMessage": "On sale"
+  },
+  "navbar.home": {
+    "defaultMessage": "Home"
+  },
+  "navbar.profile": {
+    "defaultMessage": "Profile"
+  },
+  "navbar.profile.avatar": {
+    "defaultMessage": "Your profile avatar"
+  },
+  "navbar.profile.avatar.default": {
+    "defaultMessage": "Anonymous avatar"
+  },
+  "navbar.search": {
+    "defaultMessage": "Search"
+  },
+  "paintings.layered-navigation.sort.hot": {
+    "defaultMessage": "Hot",
+    "description": "Sort paintings by rating"
+  },
+  "paintings.layered-navigation.sort.new": {
+    "defaultMessage": "New",
+    "description": "Sort paintings by creation date"
+  },
+  "paintings.layered-navigation.sort.top": {
+    "defaultMessage": "Top",
+    "description": "Sort paintings by total sales count"
+  },
+  "paintings.page.description": {
+    "defaultMessage": "Check out painting called {paintingName} created by {username}'s at Zetter Gallery"
+  },
+  "paintings.page.title": {
+    "defaultMessage": "{paintingName} by {username}"
+  },
+  "player.preferences.button.reset": {
+    "defaultMessage": "Reset"
+  },
+  "player.preferences.button.save": {
+    "defaultMessage": "Save"
+  },
+  "player.preferences.button.save-and-continue": {
+    "defaultMessage": "Save and continue"
+  },
+  "player.preferences.callout.alpha-warning": {
+    "defaultMessage": "This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
+  },
+  "player.preferences.public.profile": {
+    "defaultMessage": "Profile"
+  },
+  "player.preferences.public.toggle.description": {
+    "defaultMessage": "Is you disable this, your nickname and avatar still will be visible, but players won't be able to view paintings and badges in your profile"
+  },
+  "player.preferences.public.toggle.title": {
+    "defaultMessage": "Make your profile visible to other players"
+  },
+  "player.preferences.ratings.description": {
+    "defaultMessage": "This section allows you to control what kind of paintings you may see in your feed"
+  },
+  "player.preferences.ratings.title": {
+    "defaultMessage": "Ratings"
+  },
+  "player.preferences.title": {
+    "defaultMessage": "Preferences"
+  },
+  "players.me.logout.description": {
+    "defaultMessage": "We will redirect you back to home page soon"
+  },
+  "players.me.logout.page.description": {
+    "defaultMessage": "Log out from Zetter gallery",
+    "description": "Player log out page description"
+  },
+  "players.me.logout.page.title": {
+    "defaultMessage": "Log Out",
+    "description": "Player log out page title"
+  },
+  "players.me.logout.title": {
+    "defaultMessage": "Successfully logged out from Zetter Gallery"
+  },
+  "players.page.description": {
+    "defaultMessage": "{username}'s profile on Zetter Gallery"
+  },
+  "players.page.title": {
+    "defaultMessage": "{username}'s Profile"
+  },
+  "terms-for-humans.page.description": {
+    "defaultMessage": "Zetter Gallery frequently asked questions",
+    "description": "FAQ About Zetter Gallery page description"
+  },
+  "terms-for-humans.page.title": {
+    "defaultMessage": "FAQ",
+    "description": "FAQ About Zetter Gallery page title"
+  },
+  "terms.acceptance.paragraph": {
+    "defaultMessage": "BY USING THE SERVICES, YOU ARE AGREEING, ON BEHALF OF YOURSELF AND THOSE YOU REPRESENT, TO COMPLY WITH AND BE LEGALLY BOUND BY THESE TERMS AS WELL AS OUR PRIVACY POLICY AND ALL APPLICABLE LAWS. IF YOU, FOR YOURSELF OR ON BEHALF OF THOSE YOU REPRESENT, DO NOT AGREE TO ANY PROVISION OF THESE TERMS, YOU MUST, FOR YOURSELF AND ON BEHALF ANY SUCH PERSON(S), DISCONTINUE THE REGISTRATION PROCESS, DISCONTINUE YOUR USE OF THE SERVICES, AND, IF YOU ARE ALREADY REGISTERED, CANCEL YOUR ACCOUNT."
+  },
+  "terms.acceptance.title": {
+    "defaultMessage": "Acceptance of Terms"
+  },
+  "terms.description.paragraph": {
+    "defaultMessage": "Dmitrii Burlakov (“Zetter Gallery“, “we”, “us” or “our”) provides a platform via its website, Application Programming Interface and an independent, user-made modification to the Mojang video game Minecraft, to a community of registered users (“users” or “you”) to engage in a variety of activities, including to upload and display digital paintings (“Visual Content”). The following are the terms of use (“Terms”) for using the Site and the Services."
+  },
+  "terms.description.title": {
+    "defaultMessage": "Description of Service"
+  },
+  "terms.page.description": {
+    "defaultMessage": "Zetter Gallery terms of service",
+    "description": "ToS page description"
+  },
+  "terms.page.title": {
+    "defaultMessage": "Terms of Service",
+    "description": "ToS page title"
+  },
+  "terms.title": {
+    "defaultMessage": "Terms of Service",
+    "description": "Title for Zetter Gallery Terms of Service Page"
+  },
+  "terms.title.callout.check-english": {
+    "defaultMessage": "Translations of the terms are provided by community and are not legally binding. Please refer to english version of this page if you have any questions."
+  },
+  "terms.zetter.copyright-complaints.dmca": {
+    "defaultMessage": "Zetter Gallery reserves the right to remove any Content that allegedly infringes another person’s copyright. In appropriate circumstances, Zetter Gallery will terminate the accounts of users who infringe copyright. Notices to Zetter Gallery regarding any alleged copyright infringement should be directed to Zetter Gallery via email at: copyright@zetter.gallery."
+  },
+  "terms.zetter.copyright-complaints.title": {
+    "defaultMessage": "Copyright Complaints"
+  },
+  "terms.zetter.liability.title": {
+    "defaultMessage": "Limitation of Liability"
+  },
+  "terms.zetter.licensing.paragraph": {
+    "defaultMessage": "By submitting Visual Content to Zetter Gallery you grant a non-exclusive, transferable, worldwide license to use, sublicense, distribute, reproduce, modify, adapt, publicly perform and publicly display such Visual Content in connection with the Services. This license will exist for the period during which the Visual Content is posted on the Site and will automatically terminate upon the removal of the Visual Content from the Site. Zetter Gallery is not responsible for the copies that were created and distributed during period that Visual Content was available on service. Zetter Gallery does not provide way to retract copies of your Visual Content after it's distribution. Zetter Gallery does not claim ownership of your Visual Content."
+  },
+  "terms.zetter.licensing.title": {
+    "defaultMessage": "Licensing"
+  },
+  "terms.zetter.modification.interruptions": {
+    "defaultMessage": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+  },
+  "terms.zetter.modification.replace": {
+    "defaultMessage": "Zetter Gallery reserves the right, at its sole discretion, to modify or replace the Terms at any time. What constitutes a material change will be determined at Zetter Gallery sole discretion. You are responsible for reviewing and becoming familiar with any such modifications. Using any Service or viewing any Visual Content constitutes your acceptance of the Terms as modified."
+  },
+  "terms.zetter.modification.title": {
+    "defaultMessage": "Modification of Terms"
+  },
+  "terms.zetter.registration.paragraph": {
+    "defaultMessage": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+  },
+  "terms.zetter.registration.title": {
+    "defaultMessage": "Registration"
+  },
+  "terms.zetter.release.release-statement.1": {
+    "defaultMessage": "You hereby expressly and irrevocably release and forever discharge Zetter Gallery from any and all actions, causes of action, suits, proceedings, liability, debts, judgments, claims, and demands whatsoever in law or equity which you ever had, now have, or hereafter can, shall or may have, for or by reason of, or arising directly or indirectly out of your use of the Site and the Services."
+  },
+  "terms.zetter.release.release-statement.2": {
+    "defaultMessage": "You hereby agree to indemnify and hold harmless Zetter Gallery from and against all claims, losses, expenses, damages and costs (including, but not limited to, direct, incidental, consequential, exemplary, and indirect damages), and reasonable attorneys' fees, resulting from or arising out of (i) a breach of these Terms, (ii) Content posted on the Site, by you or any person using your account or Microsoft credentials, (iv) the licensing, distribution, or use of your Visual Content, or (v) any violation of any rights of a third party. Zetter Gallery reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you."
+  },
+  "terms.zetter.release.title": {
+    "defaultMessage": "Release and Indemnity"
+  },
+  "terms.zetter.user-conduct.paragraph": {
+    "defaultMessage": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
+  },
+  "terms.zetter.user-conduct.title": {
+    "defaultMessage": "User Conduct"
+  },
+  "terms.zetter.warranty.paragraph": {
+    "defaultMessage": "YOUR USE OF THE SITE AND THE SERVICES IS AT YOUR OWN RISK. THE SITE AND THE SERVICES ARE PROVIDED ON AN “AS IS, AS AVAILABLE” BASIS. ZETTER GALLERY EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING THE WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. ZETTER GALLERY DISCLAIMS ALL RESPONSIBILITY FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM, ARISING OUT OF OR IN ANY WAY RELATED TO (A) ANY ERRORS IN OR OMISSIONS FROM THIS SITE AND THE SERVICES, INCLUDING, BUT NOT LIMITED TO, TECHNICAL INACCURACIES AND TYPOGRAPHICAL ERRORS, (B) THIRD PARTY COMMUNICATIONS, (C) ANY THIRD PARTY WEBSITES OR CONTENT DIRECTLY OR INDIRECTLY ACCESSED THROUGH LINKS IN THE SITE, INCLUDING BUT NOT LIMITED TO ANY ERRORS OR OMISSIONS, (D) THE UNAVAILABILITY OF ALL OR ANY PART OF THE SITE OR THE SERVICES, (E) YOUR USE OF THE SITE OR THE SERVICES, OR (F) YOUR USE OF ANY EQUIPMENT OR SOFTWARE IN CONNECTION WITH THE SITE OR THE SERVICES."
+  },
+  "terms.zetter.warranty.paragraph.1": {
+    "defaultMessage": "EXCEPT AS OTHERWISE PROVIDED BY LAW, NEITHER ZETTER GALLERY NOR ANY OF ITS AFFILIATES, PARENTS, SUBSIDIARIES, AUTHORIZED DISTRIBUTORS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, CLIENTS, OR AGENTS SHALL BE LIABLE FOR ANY LOSS, INJURY, CLAIM, LIABILITY, OR DAMAGE OF ANY KIND RESULTING FROM YOUR USE OF THE SITE, ANY FACTS OR OPINIONS APPEARING THEREON, OR THE SERVICES. ZETTER GALLERY SHALL NOT BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER (INCLUDING, WITHOUT LIMITATION, ATTORNEYS’ FEES) IN ANY WAY DUE TO, RESULTING FROM, OR ARISING IN CONNECTION WITH THE USE OF OR INABILITY TO USE THE SITE OR SERVICES. TO THE EXTENT THE FOREGOING LIMITATION OF LIABILITY IS PROHIBITED OR FAILS OF ITS ESSENTIAL PURPOSE, ZETTER GALLERY’S SOLE OBLIGATION TO YOU FOR DAMAGES SHALL BE LIMITED TO (A) US$100.00 IF THE CLAIM IS UNRELATED TO THE LICENSING OF VISUAL CONTENT; OR (B) THE TOTAL FEES COLLECTED BY ZETTER GALLERY FOR THE VISUAL CONTENT THAT IS THE SUBJECT MATTER OF THE CLAIM IF THE CLAIM IS RELATED TO THE LICENSING OF VISUAL CONTENT, WITH THE UNDERSTANDING THAT ZETTER GALLERY IS NOT RESPONSIBLE FOR THE MISUSE OF VISUAL CONTENT BY DISTRIBUTORS OR ANY OTHER THIRD PARTY UNDER ANY CIRCUMSTANCES."
+  },
+  "terms.zetter.warranty.paragraph.2": {
+    "defaultMessage": "YOU AND ZETTER GALLERY AGREE THAT ANY PROCEEDINGS TO RESOLVE OR LITIGATE ANY DISPUTE ARISING HEREUNDER WILL BE CONDUCTED SOLELY ON AN INDIVIDUAL BASIS, AND THAT YOU WILL NOT SEEK TO HAVE ANY DISPUTE HEARD AS A CLASS ACTION, A REPRESENTATIVE ACTION, A COLLECTIVE ACTION, A PRIVATE ATTORNEY-GENERAL ACTION, OR IN ANY PROCEEDING IN WHICH YOU ACT OR PROPOSE TO ACT IN A REPRESENTATIVE CAPACITY. YOU FURTHER AGREE THAT NO PROCEEDING WILL BE JOINED, CONSOLIDATED, OR COMBINED WITH ANOTHER PROCEEDING WITHOUT THE PRIOR WRITTEN CONSENT OF ZETTER GALLERY AND ALL PARTIES TO ANY SUCH PROCEEDING."
+  },
+  "terms.zetter.warranty.title": {
+    "defaultMessage": "Warranty Disclaimer"
+  },
+  "widgets.discord-button": {
+    "defaultMessage": "Join our Discord server"
+  },
+  "widgets.discord-button.join": {
+    "defaultMessage": "Join our"
+  },
+  "widgets.discord-button.server": {
+    "defaultMessage": "Discord server"
+  },
+  "widgets.under-construction.description.discord-button": {
+    "defaultMessage": "Join our Discord server"
+  },
+  "widgets.under-construction.description.discord-button.join": {
+    "defaultMessage": "Join our"
+  },
+  "widgets.under-construction.description.discord-button.server": {
+    "defaultMessage": "Discord server"
+  },
+  "widgets.under-construction.description.updates": {
+    "defaultMessage": "If you'd like to know about updates:"
+  },
+  "widgets.under-construction.description.why": {
+    "defaultMessage": "We are building home for Zetter paintings"
+  },
+  "wiki.zetter-gallery.about-feed.description.1": {
+    "defaultMessage": "Feed is ever updating list of paintings, available for purchase (download) from Painting Merchant. With small number of paintings the feed is not very useful, but its main goal is to always have some interesting paintings for you to choose from.",
+    "description": "What is feed"
+  },
+  "wiki.zetter-gallery.about-feed.description.2": {
+    "defaultMessage": "The feed is updated every 5 minutes and populated with trending, top and new paintings, if present.",
+    "description": "About feed description"
+  },
+  "wiki.zetter-gallery.about-feed.description.3": {
+    "defaultMessage": "Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher changes to appear in your personal feed, that is available for purchase only to you.",
+    "description": "Personal feed"
+  },
+  "wiki.zetter-gallery.about-feed.section": {
+    "defaultMessage": "About feed"
+  },
+  "wiki.zetter-gallery.about-feed.title": {
+    "defaultMessage": "About feed"
+  },
+  "wiki.zetter-gallery.login.description.mc-auth": {
+    "defaultMessage": "After that, if you logged into your account, you will be prompted to allow the Minecraft server you opened the link from to use your Zetter account. Check that it's the correct server and press allow if everything seems alright to you.",
+    "description": "Minecraft Server Authorization"
+  },
+  "wiki.zetter-gallery.login.description.ms-auth": {
+    "defaultMessage": "If you haven't logged in on this site, you will be asked to log in with your Microsoft account. Please check carefully that the URI in your address bar is zetter.gallery and read the message on that page. This will help you to secure account. Do not enter your Microsoft password outside of Microsoft websites.",
+    "description": "Microsoft Authorization"
+  },
+  "wiki.zetter-gallery.login.description.screen": {
+    "defaultMessage": "If you are using Zetter Gallery mod for the first time, you will be prompted to log in when pressing on the account button.",
+    "description": "Login screen description"
+  },
+  "wiki.zetter-gallery.login.description.zg-auth": {
+    "defaultMessage": "To log in, you would need the Internet connection and Internet browser on your computer (you 99% have this if you are reading this article). When you click on the link, you will be offered to proceed to the login page on this site. Check that domain is correct (zetter.gallery).",
+    "description": "Zetter Gallery Authorization"
+  },
+  "wiki.zetter-gallery.login.description.zg-requirements": {
+    "defaultMessage": "By default, you can open links in Minecraft. If you do not see this button, you would need Minecraft to allow you to open links. It can be done in Main Menu -> Options -> Chat Settings -> Links.",
+    "description": "Login requirements"
+  },
+  "wiki.zetter-gallery.login.prompt.image": {
+    "defaultMessage": "Log in prompt message"
+  },
+  "wiki.zetter-gallery.login.section": {
+    "defaultMessage": "Logging in"
+  },
+  "wiki.zetter-gallery.login.title": {
+    "defaultMessage": "Logging in"
+  },
+  "wiki.zetter-gallery.page": {
+    "defaultMessage": "Wiki Home",
+    "description": "Sidebar navigation, home page"
+  },
+  "wiki.zetter-gallery.page.description": {
+    "defaultMessage": "Get information about Zetter Gallery Mod for Minecraft",
+    "description": "Zetter Wiki page description"
+  },
+  "wiki.zetter-gallery.page.title": {
+    "defaultMessage": "Zetter Gallery Wiki",
+    "description": "Zetter Gallery Wiki page title"
+  },
+  "wiki.zetter-gallery.painting-merchant.description.1": {
+    "defaultMessage": "To start trading paintings, you will need to find a villager and change their occupation. In order for a villager to become a Painting Merchant, they should have an assigned bed and Artist Table block nearby this bed.",
+    "description": "What you need to start trading paintings"
+  },
+  "wiki.zetter-gallery.painting-merchant.description.2": {
+    "defaultMessage": "Refer to the Minecraft wiki to see how villager occupation works.",
+    "description": "Check out Minecraft wiki about villager occupation"
+  },
+  "wiki.zetter-gallery.painting-merchant.section": {
+    "defaultMessage": "Painting Merchant"
+  },
+  "wiki.zetter-gallery.painting-merchant.title": {
+    "defaultMessage": "Painting Merchant"
+  },
+  "wiki.zetter-gallery.title": {
+    "defaultMessage": "Zetter Gallery Wiki Home",
+    "description": "Title for Zetter Gallery Wiki Home Page"
+  },
+  "wiki.zetter-gallery.trading-interface.description.pre": {
+    "defaultMessage": "After logging in and loading of current painting feed, you will see an unusual trading interface.",
+    "description": "Trading screen pre"
+  },
+  "wiki.zetter-gallery.trading-interface.feed-dt": {
+    "defaultMessage": "9) Feed icon"
+  },
+  "wiki.zetter-gallery.trading-interface.instruction.image": {
+    "defaultMessage": "Combine Mode instruction image"
+  },
+  "wiki.zetter-gallery.trading-interface.login-dd": {
+    "defaultMessage": "Shows current authentication state. When using anonymously, Log In button will appear. Pressing it will show prompt to authenticate on this site. If you logged in successfully, your nickname will be shown instead."
+  },
+  "wiki.zetter-gallery.trading-interface.login-dt": {
+    "defaultMessage": "4) Account"
+  },
+  "wiki.zetter-gallery.trading-interface.login-no-dd": {
+    "defaultMessage": "If you do not see this button, it is likely that chat links are disabled in Minecraft, or the server you are playing on is banned."
+  },
+  "wiki.zetter-gallery.trading-interface.offer-count-dd": {
+    "defaultMessage": "Shows amount of painting in current feed and current position."
+  },
+  "wiki.zetter-gallery.trading-interface.offer-count-dt": {
+    "defaultMessage": "2) Offer count"
+  },
+  "wiki.zetter-gallery.trading-interface.offer-paginator-dt": {
+    "defaultMessage": "3) Previous & next buttons"
+  },
+  "wiki.zetter-gallery.trading-interface.painting-info-dd": {
+    "defaultMessage": "Shows currently selected painting on the left, and it's info on the right. Info includes painting name, author's nickname and size in blocks."
+  },
+  "wiki.zetter-gallery.trading-interface.painting-info-dt": {
+    "defaultMessage": "1) Painting preview & info"
+  },
+  "wiki.zetter-gallery.trading-interface.price-dd": {
+    "defaultMessage": "Shows how many emeralds you should place in sale slot to get a painting. In sale mode, show how much you will get: popular artists are getting more emeralds."
+  },
+  "wiki.zetter-gallery.trading-interface.price-dt": {
+    "defaultMessage": "5) Offer price"
+  },
+  "wiki.zetter-gallery.trading-interface.result-slot-dt": {
+    "defaultMessage": "7) Result slot"
+  },
+  "wiki.zetter-gallery.trading-interface.sale-slot-dt": {
+    "defaultMessage": "6) Sale slot"
+  },
+  "wiki.zetter-gallery.trading-interface.section": {
+    "defaultMessage": "Trading"
+  },
+  "wiki.zetter-gallery.trading-interface.title": {
+    "defaultMessage": "Trading paintings"
+  },
+  "wiki.zetter-gallery.trading-interface.update-countdown-dt": {
+    "defaultMessage": "8) Update countdown"
+  },
+  "wiki.zetter-gallery.trading.interface.feed-dd": {
+    "defaultMessage": "This just shows which algorithm was used to bring this painting to you. For example, this can be a star if this painting is available only to you, as you added it to your favorite paintings on this website."
+  },
+  "wiki.zetter-gallery.trading.interface.login-callout": {
+    "defaultMessage": "Logging in helps us to work better and prevent feed manipulation by bots and trolls. Please always log in if you have an account."
+  },
+  "wiki.zetter-gallery.trading.interface.offer-paginator-dd": {
+    "defaultMessage": "Press those buttons to switch the current offer. Up for previous offer and down for next."
+  },
+  "wiki.zetter-gallery.trading.interface.result-slot-dd": {
+    "defaultMessage": "When the offer is fulfilled (you have enough emeralds or your painting is validated), get your result from that slot. It could be painting or emeralds here."
+  },
+  "wiki.zetter-gallery.trading.interface.result-slot-dt": {
+    "defaultMessage": "7) Result slot"
+  },
+  "wiki.zetter-gallery.trading.interface.sale-slot-dd": {
+    "defaultMessage": "Place your emeralds here. Now. Jokes aside, you can also place your painting here if you are logged in, to submit your painting to this website."
+  },
+  "wiki.zetter-gallery.trading.interface.update-countdown-dd": {
+    "defaultMessage": "Because offers are updated every 5 minutes, you have limited time to purchase the painting in offer. Do not worry, when time will run out, this button will turn black, and you will have 1:30 to finish what you planned. You can also manually update offers by clicking this button when it's black."
+  },
+  "wiki.zetter.advanced.console.export.param1": {
+    "defaultMessage": "The first parameter is target for exporting. Typically, you most likely need to use \"client\" parameter, so the painting will be saved to your Minecraft folder, the same place where screenshots and texturepacks are located, in a new \"zetter\" directory. If you are a server operator, you can make use of \"server\" option: that way painting will be saved only in server directory root under \"zetter\" directory. If you are playing in a single-player world, the result will be the same, but for dedicated servers \"server\" result will only be accessible to the people who have access to the server computer file system.",
+    "description": "Explanation of the first parameter of export command"
+  },
+  "wiki.zetter.advanced.console.export.param2": {
+    "defaultMessage": "The second parameter is painting lookup rule. It could be either the name of the painting you are looking for in double quotes, like \"My Painting\", or you can refer to your painting by its numeric ID. Another option is to use its canvas name, typically it's a string like zetter_painting_14 (14 is the numeric ID).",
+    "description": "Explanation of the second parameter of export command"
+  },
+  "wiki.zetter.advanced.console.export.pre": {
+    "defaultMessage": "If you would like to share your work outside Minecraft and do not want to use Zetter Gallery, you can use a special export command. This command will allow you to save your painting to PNG file to your game folder or to server folder.",
+    "description": "Explain what is export command"
+  },
+  "wiki.zetter.advanced.console.export.title": {
+    "defaultMessage": "Export command"
+  },
+  "wiki.zetter.advanced.console.restore.notice": {
+    "defaultMessage": "Keep in mind, though, that this only applies to the signed paintings. Non-signed canvases can be easily lost forever or overwritten by Zetter when canvas item is removed from the world. So remember to sign your painting when you're done and avoid using easels as a decoration if the result is important to you.",
+    "description": "Explain requirements for the restore command"
+  },
+  "wiki.zetter.advanced.console.restore.post": {
+    "defaultMessage": "Instead of [painting] you should use the title of your painting, like \"My Painting\". But you can also use painting id (number) or even canvas code, if you're more into technical stuff. This command should give you a copy of the painting if it was found by provided parameter.",
+    "description": "Explain what restore command parameters and results"
+  },
+  "wiki.zetter.advanced.console.restore.pre": {
+    "defaultMessage": "Losing results of your work can be devastating, when you put a lot of love in it. It is especially devastating if that is happened because some guy uploaded ill-tested version of the mod and some terrible bug happened... oh well. For that reason, Zetter does never remove a painting (though it could be blocked by server admin, but not removed unless physically deleted), and there is a special 'Restore' command, which can be used as following:",
+    "description": "Explain what is restore command"
+  },
+  "wiki.zetter.advanced.console.restore.title": {
+    "defaultMessage": "Restore command"
+  },
+  "wiki.zetter.advanced.console.section": {
+    "defaultMessage": "Console Commands"
+  },
+  "wiki.zetter.advanced.console.title": {
+    "defaultMessage": "Console Commands"
+  },
+  "wiki.zetter.advanced.hotkeys": {
+    "defaultMessage": "Hotkeys are keyboard shortcuts that should make your work easier and quicker. Learning them will improve your experience a lot.",
+    "description": "Explain what is hotkeys"
+  },
+  "wiki.zetter.advanced.hotkeys.colors.down": {
+    "defaultMessage": "Use palette slot below the current one"
+  },
+  "wiki.zetter.advanced.hotkeys.colors.swap": {
+    "defaultMessage": "Swap color: use palette slot next to current one."
+  },
+  "wiki.zetter.advanced.hotkeys.colors.up": {
+    "defaultMessage": "Use palette slot above the current one"
+  },
+  "wiki.zetter.advanced.hotkeys.history.redo": {
+    "defaultMessage": "Redo: restore last canceled action"
+  },
+  "wiki.zetter.advanced.hotkeys.history.undo": {
+    "defaultMessage": "Undo: cancel last non-canceled action"
+  },
+  "wiki.zetter.advanced.hotkeys.section": {
+    "defaultMessage": "Hotkeys"
+  },
+  "wiki.zetter.advanced.hotkeys.title": {
+    "defaultMessage": "Hotkeys"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.brush": {
+    "defaultMessage": "Brush tool"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.bucket": {
+    "defaultMessage": "Bucket or fill tool"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.colors": {
+    "defaultMessage": "Colors"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.hand": {
+    "defaultMessage": "Hand tool"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.history": {
+    "defaultMessage": "History"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.pencil": {
+    "defaultMessage": "Pencil tool"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.picker": {
+    "defaultMessage": "Color picker tool"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.title": {
+    "defaultMessage": "Tools"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.zoom-in": {
+    "defaultMessage": "Zoom in"
+  },
+  "wiki.zetter.advanced.hotkeys.tools.zoom-out": {
+    "defaultMessage": "Zoom out"
+  },
+  "wiki.zetter.advanced.page": {
+    "defaultMessage": "Advanced",
+    "description": "Sidebar navigation, advanced techniques page"
+  },
+  "wiki.zetter.advanced.page.description": {
+    "defaultMessage": "Learn about advanced techniques in Zetter Mod for Minecraft",
+    "description": "Zetter Advanced Wiki page description"
+  },
+  "wiki.zetter.advanced.page.title": {
+    "defaultMessage": "Zetter Advanced Topics Wiki",
+    "description": "Zetter Advanced Topics Wiki page title"
+  },
+  "wiki.zetter.advanced.title": {
+    "defaultMessage": "Zetter Wiki Advanced Topics",
+    "description": "Title for Zetter Wiki Advanced Page"
+  },
+  "wiki.zetter.combining.interface.combine.grid-dd": {
+    "defaultMessage": "Place your canvases here in order to merge them together."
+  },
+  "wiki.zetter.combining.interface.combine.grid-dt": {
+    "defaultMessage": "1) Canvas combination grid"
+  },
+  "wiki.zetter.combining.interface.combine.mode-dd": {
+    "defaultMessage": "Press to switch to split mode. Combination grid should be empty."
+  },
+  "wiki.zetter.combining.interface.combine.mode-dt": {
+    "defaultMessage": "4) Change mode"
+  },
+  "wiki.zetter.combining.interface.combine.preview-dd": {
+    "defaultMessage": "Shows how combined canvas will look like."
+  },
+  "wiki.zetter.combining.interface.combine.preview-dt": {
+    "defaultMessage": "2) Preview"
+  },
+  "wiki.zetter.combining.interface.combine.result-dd": {
+    "defaultMessage": "When you're happy with the result, grab your merged canvas from there."
+  },
+  "wiki.zetter.combining.interface.combine.result-dt": {
+    "defaultMessage": "3) Result slot"
+  },
+  "wiki.zetter.combining.interface.split.grid-dd": {
+    "defaultMessage": "Place your canvas here in order to split it."
+  },
+  "wiki.zetter.combining.interface.split.grid-dt": {
+    "defaultMessage": "1) Canvas split slot"
+  },
+  "wiki.zetter.combining.interface.split.mode-dd": {
+    "defaultMessage": "Press to switch to combine mode. Split slot should be empty."
+  },
+  "wiki.zetter.combining.interface.split.mode-dt": {
+    "defaultMessage": "4) Change mode"
+  },
+  "wiki.zetter.combining.interface.split.preview-dd": {
+    "defaultMessage": "Shows what current split canvas look like."
+  },
+  "wiki.zetter.combining.interface.split.preview-dt": {
+    "defaultMessage": "2) Preview"
+  },
+  "wiki.zetter.combining.interface.split.result-dd": {
+    "defaultMessage": "When you're happy with the result, grab your canvases from there."
+  },
+  "wiki.zetter.combining.interface.split.result-dt": {
+    "defaultMessage": "3) Result slots"
+  },
+  "wiki.zetter.combining.interface.split.slot-dt": {
+    "defaultMessage": "1) Canvas split slot"
+  },
+  "wiki.zetter.combining.mode": {
+    "defaultMessage": "Artist Table mode"
+  },
+  "wiki.zetter.combining.mode.combine": {
+    "defaultMessage": "Combine Mode"
+  },
+  "wiki.zetter.combining.mode.combine.instruction.image": {
+    "defaultMessage": "Combine Mode instruction image"
+  },
+  "wiki.zetter.combining.mode.split": {
+    "defaultMessage": "Split Mode"
+  },
+  "wiki.zetter.combining.mode.split.instruction.image": {
+    "defaultMessage": "Split Mode instruction image"
+  },
+  "wiki.zetter.combining.section": {
+    "defaultMessage": "Combining"
+  },
+  "wiki.zetter.combining.signing.no-clearing": {
+    "defaultMessage": "You do not need to clear default painting name. Just start typing your name."
+  },
+  "wiki.zetter.combining.signing.text": {
+    "defaultMessage": "This is the preview and sign screen for your painting. On the bottom left hand side you will see the name for painting (default is Unnamed) and your nickname. On the right hand-side there's Sign button. Press it when you are happy with your painting and given it a name."
+  },
+  "wiki.zetter.combining.text-intro": {
+    "defaultMessage": "To prepare a canvas which is larger than 1 block, place the newly crafted Artist Table and right-click it to open combine & split interface:",
+    "description": "Intro before combining interface explanation"
+  },
+  "wiki.zetter.combining.title": {
+    "defaultMessage": "Combining and splitting canvases"
+  },
+  "wiki.zetter.copying.section": {
+    "defaultMessage": "Copying"
+  },
+  "wiki.zetter.copying.text": {
+    "defaultMessage": "If you would like to duplicate your painting, you would need to combine the signed painting without a frame with the blank canvas of the same size and a palette with sufficient paints. You will have a copy in a result slot, and the painting will be kept in the original slot, as well as the palette, with reduced paints amount. Like books, paintings have three generations: original, copy and copy of copy.",
+    "description": "Tell about copying recipe and generations"
+  },
+  "wiki.zetter.copying.title": {
+    "defaultMessage": "Copying a painting"
+  },
+  "wiki.zetter.framing.result.image": {
+    "defaultMessage": "Painting in a frame on the wall"
+  },
+  "wiki.zetter.framing.section": {
+    "defaultMessage": "Framing"
+  },
+  "wiki.zetter.framing.text-finish": {
+    "defaultMessage": "Congratulations! You should finally see something like that, when your hard work finally pays off. Congratulations!",
+    "description": "Call to action with first painting"
+  },
+  "wiki.zetter.framing.text-intro": {
+    "defaultMessage": "After signing and naming your painting, it's time to place it somewhere in your fancy house finally! To achieve that, we would need to create a special frame and put the painting into this frame, then place it on the wall, by right-clicking wall with framed painting in hand. Make sure there's enough space on the wall for it!",
+    "description": "Intro before showing frame recipes"
+  },
+  "wiki.zetter.framing.title": {
+    "defaultMessage": "Creating a frame"
+  },
+  "wiki.zetter.page": {
+    "defaultMessage": "Wiki Home",
+    "description": "Sidebar navigation, home page"
+  },
+  "wiki.zetter.page.description": {
+    "defaultMessage": "Get information about Zetter Mod for Minecraft",
+    "description": "Zetter Wiki page description"
+  },
+  "wiki.zetter.page.title": {
+    "defaultMessage": "Zetter Wiki",
+    "description": "Zetter Wiki page title"
+  },
+  "wiki.zetter.painting.callout-advanced": {
+    "defaultMessage": "You can find hotkeys & console commands {recipesLocation}",
+    "description": "Hint about hotkeys page"
+  },
+  "wiki.zetter.painting.callout-advanced.location": {
+    "defaultMessage": "on this page",
+    "description": "Hint advanced page location"
+  },
+  "wiki.zetter.painting.instruction.image": {
+    "defaultMessage": "Painting instruction image"
+  },
+  "wiki.zetter.painting.interface.canvas-dd": {
+    "defaultMessage": "Place where magic happens. When hovering over the canvas area with a drawing tool, a drawing cursor should appear, showing the area affected by the tool. You can reposition canvas with space (hand tool) and mouse wheel (zoom tool)"
+  },
+  "wiki.zetter.painting.interface.canvas-dt": {
+    "defaultMessage": "2) Canvas area"
+  },
+  "wiki.zetter.painting.interface.canvas-slot-dd": {
+    "defaultMessage": "Current canvas placed on this easel. You can also get it by shift+click on Easel, but alternatively, you can use this slot."
+  },
+  "wiki.zetter.painting.interface.canvas-slot-dt": {
+    "defaultMessage": "6) Canvas slot"
+  },
+  "wiki.zetter.painting.interface.current-tab-dd": {
+    "defaultMessage": "Current tab. You can select color from here, set up your tool opacity, size, and other options. When inventory selected, it shows your character's inventory."
+  },
+  "wiki.zetter.painting.interface.current-tab-dt": {
+    "defaultMessage": "8) Current tab"
+  },
+  "wiki.zetter.painting.interface.history-zoom-dd": {
+    "defaultMessage": "History and zoom tools. Press undo to revert the last action, and redo to get it back. Hotkeys are working. History is shared between players! Press plus to increase canvas scale and minus to decrease it."
+  },
+  "wiki.zetter.painting.interface.history-zoom-dt": {
+    "defaultMessage": "3) History & Scale"
+  },
+  "wiki.zetter.painting.interface.palette-dd": {
+    "defaultMessage": "Palette shows color saved in the palette which is placed in the slot (5)."
+  },
+  "wiki.zetter.painting.interface.palette-dt": {
+    "defaultMessage": "4) Palette"
+  },
+  "wiki.zetter.painting.interface.palette-slot-dd": {
+    "defaultMessage": "Palette shows color saved in the palette which is placed in the slot (5). You can save up to 16 colors in one palette."
+  },
+  "wiki.zetter.painting.interface.palette-slot-dt": {
+    "defaultMessage": "5) Palette slot"
+  },
+  "wiki.zetter.painting.interface.tabs-dd": {
+    "defaultMessage": "Depending on the tool you're using, you'll see different tabs here. When you click any tab, the contents of (8) area will change. Last tab is always inventory. Not all tools have parameters. We'll cover different tools and parameters below."
+  },
+  "wiki.zetter.painting.interface.tabs-dt": {
+    "defaultMessage": "7) Tabs"
+  },
+  "wiki.zetter.painting.interface.tools-dd": {
+    "defaultMessage": "Available tools: pixel pencil, brush, color picker, bucket tool and hand. Every tool has own purpose, we will describe them below."
+  },
+  "wiki.zetter.painting.interface.tools-dt": {
+    "defaultMessage": "1) Tools"
+  },
+  "wiki.zetter.painting.section": {
+    "defaultMessage": "Painting"
+  },
+  "wiki.zetter.painting.text-intro": {
+    "defaultMessage": "Time to create your first masterpiece! Let me introduce how drawing interface works. Here's the reference:",
+    "description": "Intro before painting interface explanation"
+  },
+  "wiki.zetter.painting.title": {
+    "defaultMessage": "Painting"
+  },
+  "wiki.zetter.preparing.artist-table": {
+    "defaultMessage": "You can combine those canvases on a special Artist Table, which you will need to craft too. We will cover the canvas combination in the next step.",
+    "description": "Explain first step, what we will be crafting"
+  },
+  "wiki.zetter.preparing.callout-recipes": {
+    "defaultMessage": "You can find all recipes reference {recipesLocation}",
+    "description": "Hint about recipes page"
+  },
+  "wiki.zetter.preparing.callout-recipes.location": {
+    "defaultMessage": "on this page",
+    "description": "Hint recipes page location"
+  },
+  "wiki.zetter.preparing.canvases": {
+    "defaultMessage": "Canvases: every canvas gives you one block of painting, so one is enough for a small painting, and 16 will be enough for the largest possible single painting (4×4). Typically, I suggest going with 4 — it is enough for a 2×2 painting that can fit on the easel."
+  },
+  "wiki.zetter.preparing.easel": {
+    "defaultMessage": "Finally, you would need an easel. You can find its recipe above. The easel needs some space, so don't place it right near the wall!",
+    "description": "Explain first step, what we will be crafting"
+  },
+  "wiki.zetter.preparing.introduction": {
+    "defaultMessage": "First, you need to craft some things.",
+    "description": "Explain first step, what we will be crafting"
+  },
+  "wiki.zetter.preparing.paints": {
+    "defaultMessage": "Now we need something to paint with — paints and palette. Palettes are required to save the colors you are working with, and they are not infinite. They will not break, but you will need to recharge them eventually to continue painting. There are also alternative recipes, which you can find on the recipes page.",
+    "description": "Explain first step, what we will be crafting"
+  },
+  "wiki.zetter.preparing.section": {
+    "defaultMessage": "Preparing"
+  },
+  "wiki.zetter.preparing.title": {
+    "defaultMessage": "Preparing"
+  },
+  "wiki.zetter.recipes.artist-table": {
+    "defaultMessage": "Artist table allows you to make paintings from canvases by combining and signing them. In order to combine canvases, put them in rectangular shape in crafting grid. If the shape is correct, painting preview will be updated. If painting preview is not visible and the output slot is empty, the shape is incorrect. Supported painting sizes listed below.",
+    "description": "Explain what is artist table"
+  },
+  "wiki.zetter.recipes.artist-table.section": {
+    "defaultMessage": "Artist Table"
+  },
+  "wiki.zetter.recipes.artist-table.title": {
+    "defaultMessage": "Artist Table"
+  },
+  "wiki.zetter.recipes.canvas": {
+    "defaultMessage": "Canvases are an intermediate home for your artworks. They are visible when put on easel with right-click, but when it's done it's better to make a painting from canvases by using artist table. You'll see combined canvases preview there.",
+    "description": "Explain what is painting"
+  },
+  "wiki.zetter.recipes.canvas.section": {
+    "defaultMessage": "Canvas"
+  },
+  "wiki.zetter.recipes.canvas.title": {
+    "defaultMessage": "Canvas"
+  },
+  "wiki.zetter.recipes.easel": {
+    "defaultMessage": "Easel is a starting point for all paintings. In order to start drawing, you would eed to place one in the world, put canvas on it by right-clicking with canvas in hand. A simple right click will open the easel UI. You would also need to put a palette into special slot. Shift-right click with empty hand will retract canvas from easel.",
+    "description": "Explain what is painting"
+  },
+  "wiki.zetter.recipes.easel.section": {
+    "defaultMessage": "Easel"
+  },
+  "wiki.zetter.recipes.easel.title": {
+    "defaultMessage": "Easel"
+  },
+  "wiki.zetter.recipes.frames.section": {
+    "defaultMessage": "Frames"
+  },
+  "wiki.zetter.recipes.framing": {
+    "defaultMessage": "In order to put painting in a frame, you need to combine them on the crafting grid in any order. You can always get your painting back from the frame. To do that, just put the framed painting on a crafting grid. You can take the frame back, and un-framed painting will appear in the crafting grid.",
+    "description": "Explain how to put painting in a frame"
+  },
+  "wiki.zetter.recipes.framing.title": {
+    "defaultMessage": "Framing and Un-Framing Paintings"
+  },
+  "wiki.zetter.recipes.gold-frame.title": {
+    "defaultMessage": "Golden Frame"
+  },
+  "wiki.zetter.recipes.golden-frame": {
+    "defaultMessage": "This is golden frame, which is much thicker than others and has a luxury look. It has inlaid emeralds, which are required for crafting. Doesn't have a nameplate by default, see below;",
+    "description": "Explain what is golden frame"
+  },
+  "wiki.zetter.recipes.iron-frame": {
+    "defaultMessage": "This frame doesn't have thick bezels around your painting, so you can put several of those one next to another o create a huge painting, more than 4x4 or just get rid of bezels. It's 1px thick, as vanilla painting is.",
+    "description": "Explain what is iron frame"
+  },
+  "wiki.zetter.recipes.iron-frame.title": {
+    "defaultMessage": "Iron Frame"
+  },
+  "wiki.zetter.recipes.page": {
+    "defaultMessage": "Recipes",
+    "description": "Sidebar navigation, recipes page"
+  },
+  "wiki.zetter.recipes.page.description": {
+    "defaultMessage": "Find recipes for Zetter Mod in Minecraft",
+    "description": "Zetter Recipes Wiki page description"
+  },
+  "wiki.zetter.recipes.page.title": {
+    "defaultMessage": "Zetter Recipes Wiki",
+    "description": "Zetter Recipes Wiki page title"
+  },
+  "wiki.zetter.recipes.painting": {
+    "defaultMessage": "An actual painting, result of your work. It's created only by signing a canvas. To sign a canvas, right-click with painted canvas in hand, enter name and press sign. You can also copy existing painting with recipe below.",
+    "description": "Explain what is painting"
+  },
+  "wiki.zetter.recipes.painting.section": {
+    "defaultMessage": "Painting"
+  },
+  "wiki.zetter.recipes.painting.title": {
+    "defaultMessage": "Painting"
+  },
+  "wiki.zetter.recipes.paints": {
+    "defaultMessage": "Paints are used to create or recharge a palette.",
+    "description": "Explain what is painting"
+  },
+  "wiki.zetter.recipes.paints.section": {
+    "defaultMessage": "Paints"
+  },
+  "wiki.zetter.recipes.paints.title": {
+    "defaultMessage": "Paints"
+  },
+  "wiki.zetter.recipes.palette": {
+    "defaultMessage": "Palette is necessary for drawing on a canvas. When placed in easel's UI special slot, the colors will appear. For your convenience when painting multi-canvas artwork, you can use a single palette on multiple easels and your colors will be saved with the palette. Once the palette bar is low, you won't be able to continue drawing. You can keep the colors and recharge it by combining with paintings as shown above.",
+    "description": "Explain what is painting"
+  },
+  "wiki.zetter.recipes.palette.section": {
+    "defaultMessage": "Palette"
+  },
+  "wiki.zetter.recipes.special-frames.section": {
+    "defaultMessage": "Special Frames"
+  },
+  "wiki.zetter.recipes.special-frames.title": {
+    "defaultMessage": "Special Frames"
+  },
+  "wiki.zetter.recipes.title": {
+    "defaultMessage": "Zetter Wiki Recipes",
+    "description": "Title for Zetter Wiki Recipes Page"
+  },
+  "wiki.zetter.recipes.title-palette": {
+    "defaultMessage": "Palette"
+  },
+  "wiki.zetter.recipes.wooden-frames": {
+    "defaultMessage": "Basic frames are made from wood, sticks, leather and nugget of your choice. You can use any vanilla type of wood, and you'll get different frames depending on what type of wood was used. If you use gold nugget in crafting, the frame will additionally have a tiny golden plate, and the name of the painting will be shown when you right-click the painting.",
+    "description": "Explain what is basic wooden frame"
+  },
+  "wiki.zetter.recipes.wooden-frames.title": {
+    "defaultMessage": "Wooden Frames"
+  },
+  "wiki.zetter.sharing.description": {
+    "defaultMessage": "You can share your painting with the world using this site, and download paintings from other artists by using Zetter Gallery add-on."
+  },
+  "wiki.zetter.sharing.section": {
+    "defaultMessage": "Sharing"
+  },
+  "wiki.zetter.sharing.title": {
+    "defaultMessage": "Sharing paintings"
+  },
+  "wiki.zetter.sharing.what-is-gallery": {
+    "defaultMessage": "Zetter Gallery is independent mod, which requires Zetter to work. It is downloaded separately, so players who prefer not to have online features can keep basic version of the mod."
+  },
+  "wiki.zetter.signing.image": {
+    "defaultMessage": "Painting signing instruction image"
+  },
+  "wiki.zetter.signing.section": {
+    "defaultMessage": "Signing"
+  },
+  "wiki.zetter.signing.text-intro": {
+    "defaultMessage": "When you are finished with your artwork, it's time to put your author signature. You will not be able to edit the painting after signing, so make sure it's good! Right-click with canvas in hand at empty space to open preview & signing interface:",
+    "description": "Intro before signing interface explanation"
+  },
+  "wiki.zetter.signing.title": {
+    "defaultMessage": "Signing paintings"
+  },
+  "wiki.zetter.title": {
+    "defaultMessage": "Zetter Wiki Home",
+    "description": "Title for Zetter Wiki Home Page"
+  },
+  "wiki.zetter.tools.color.blending": {
+    "defaultMessage": "1) Blending type. It defines, in which color space and which algorithm will be used to blend colors when blending is applicable (brush tool, not full intensity pencil). First here is RYB blending, which tries to imitate how real paints work in a very simplistic manner. It can be weird, but it makes nicer colors. Second is RGB blending, which is very familiar for digital artists (you may prefer that). Last is natural blending, which uses real data kindly provided by researcher Scott Allen Burns. It's not yet implemented in fact, but should give the best result in future."
+  },
+  "wiki.zetter.tools.color.brightness": {
+    "defaultMessage": "And (3) is brightness (B) slider. On lowest value this will turn your color to black."
+  },
+  "wiki.zetter.tools.color.brightness.title": {
+    "defaultMessage": "3) Brightness slider"
+  },
+  "wiki.zetter.tools.color.dithering": {
+    "defaultMessage": "2) Dithering type. When enabled, every N pixel will be skipped, to give painting classic pixel-art dithering effect."
+  },
+  "wiki.zetter.tools.color.hex.title": {
+    "defaultMessage": "4) HEX color field"
+  },
+  "wiki.zetter.tools.color.hue": {
+    "defaultMessage": "1) Hue (H) slider. By holding mouse over that slider you can change the actual base color in currently selected palette slot."
+  },
+  "wiki.zetter.tools.color.hue.title": {
+    "defaultMessage": "1) Hue slider"
+  },
+  "wiki.zetter.tools.color.image": {
+    "defaultMessage": "Color configuration instruction image"
+  },
+  "wiki.zetter.tools.color.input": {
+    "defaultMessage": "4) Input field can be used to import color from somewhere else. It accepts hexadecimal value of RGB color, sometimes it's called HTML notation. It looks like this: #FFDAE9. You can freely paste to that field or enter manually. When pasting, it's not needed to clean up the field, color will be replaced automatically for convenience."
+  },
+  "wiki.zetter.tools.color.intensity": {
+    "defaultMessage": "3) Intensity. It defines, how much the pixel color under the brush will be affected. Blending is made by selected blending type. Lower values will barely affect color (useful for shades and lights), maximum value will just replace underlying pixel with another color."
+  },
+  "wiki.zetter.tools.color.into": {
+    "defaultMessage": "Inside the color tab, you will see three sliders (1,2,3) and an input field (4)."
+  },
+  "wiki.zetter.tools.color.saturation": {
+    "defaultMessage": "2) Saturation (S) slider. It affects the contrast of current color. On minimum value, it turns color to grayscale palette."
+  },
+  "wiki.zetter.tools.color.saturation.title": {
+    "defaultMessage": "2) Saturation slider"
+  },
+  "wiki.zetter.tools.color.size": {
+    "defaultMessage": "4) Size. Bigger size will affect more pixels. For brush, it's smoothly increased, but for pencil there are thresholds, pencil has only limited set of shape-sizes."
+  },
+  "wiki.zetter.tools.color.title": {
+    "defaultMessage": "Color"
+  },
+  "wiki.zetter.tools.intentory.text": {
+    "defaultMessage": "Your character's inventory. You can use it to quickly change palettes and canvases."
+  },
+  "wiki.zetter.tools.inventory.image": {
+    "defaultMessage": "Inventory instruction image"
+  },
+  "wiki.zetter.tools.inventory.title": {
+    "defaultMessage": "Inventory"
+  },
+  "wiki.zetter.tools.pencil.blending-type.title": {
+    "defaultMessage": "1) Blending type"
+  },
+  "wiki.zetter.tools.pencil.dither-type.title": {
+    "defaultMessage": "2) Dithering type"
+  },
+  "wiki.zetter.tools.pencil.image": {
+    "defaultMessage": "Pencil configuration instruction image"
+  },
+  "wiki.zetter.tools.pencil.intensity.title": {
+    "defaultMessage": "3) Intensity slider"
+  },
+  "wiki.zetter.tools.pencil.intro": {
+    "defaultMessage": "Configurations for Pencil and Brush tools are similar, so we'll cover both in one paragraph."
+  },
+  "wiki.zetter.tools.pencil.size.title": {
+    "defaultMessage": "4) Size slider"
+  },
+  "wiki.zetter.tools.pencil.title": {
+    "defaultMessage": "Pencil & Brush parameters"
+  },
+  "wiki.zetter.tools.section": {
+    "defaultMessage": "Tools"
+  },
+  "wiki.zetter.tools.title": {
+    "defaultMessage": "Tools and Settings"
+  },
+  "wiki.zetter.workspace.image": {
+    "defaultMessage": "Workshop: Artist Table, Easel and Canvas on Eassel"
+  },
+  "wiki.zetter.workspace.section": {
+    "defaultMessage": "Workspace"
+  },
+  "wiki.zetter.workspace.text-interacting": {
+    "defaultMessage": "With (or without, if it's already in place) palette in hand, right-click on the easel to start drawing.",
+    "description": "Explain how to open easel screen"
+  },
+  "wiki.zetter.workspace.text-mounting": {
+    "defaultMessage": "With canvas in hand, right-click on easel to mount it.",
+    "description": "Explain how to mount canvas"
+  },
+  "wiki.zetter.workspace.text-start": {
+    "defaultMessage": "To start drawing, you would need to prepare our painting workshop. Place the artist table, the easel, put canvas on the easel and get palette in your hotbar.",
+    "description": "Explain what we need to start drawing"
+  },
+  "wiki.zetter.workspace.text-workshop-title": {
+    "defaultMessage": "Our workshop should look like this:",
+    "description": "Title for workshop screenshot"
+  },
+  "wiki.zetter.workspace.title": {
+    "defaultMessage": "Preparing Workplace"
+  }
 }
+
