@@ -13,7 +13,6 @@ import {
 import getTitle from '@/utils/page/get-title';
 import { useRouter } from 'next/router';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
-import Post, { PaintingPostProps } from '@components/post/post.component';
 import { apiGet } from '@/utils/request';
 import { PaintingFeedResponseDto } from '@/dto/response/paintings/feed.dto';
 import FeedSeparator from "@components/feed/seaprator";
@@ -22,6 +21,7 @@ import CycleInfo from "@components/cycle";
 import { mapPaintingResponseToProps } from "@/utils/mappers";
 import HomePage from "@pages/index";
 import { NextPageWithLayout } from "@pages/_app";
+import PaintingPost, { PaintingPostProps } from "@components/post/painting-post.component";
 
 const fetchFeed = async (
   context?: NextPageContext,
@@ -128,7 +128,7 @@ const FeedPage: NextPageWithLayout<FeedPageProps> = (
           <>
             <FeedSeparator key={`feed-${feed.code}`} code={feed.code as FeedTypes} />
             {feed.paintings.map((painting, index) => {
-              return <Post key={`painting-${index}`} {...painting} />;
+              return <PaintingPost key={`painting-${index}`} {...painting} />;
             })}
           </>
         );

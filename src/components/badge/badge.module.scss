@@ -1,5 +1,6 @@
-@use '../../../styles/variables/media';
-@use '../../../styles/variables/colors' as colors;
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
 
 .badge {
   background-size: cover;

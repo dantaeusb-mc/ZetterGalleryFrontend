@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Post, { PaintingPostProps } from '@components/post/post.component';
+import PaintingPost, { PaintingPostProps } from "@components/post/painting-post.component";
 
 export interface PlayerPaintingListProps {
   paintings: PaintingPostProps[];
@@ -13,7 +13,7 @@ export default function PlayerPaintingList({
     return (
       <>
         {paintings.map((paintingProps, index) => (
-          <Post key={`painting-${index}`} {...paintingProps} />
+          <PaintingPost key={`painting-${index}`} {...paintingProps} />
         ))}
       </>
     );

@@ -1,10 +1,13 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
 .post-header {
   border-top-left-radius: var(--border-small-radius);
   border-top-right-radius: var(--border-small-radius);
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1rem 0.5rem;
 }
 
 .post-header-link {
@@ -16,9 +19,11 @@
 }
 
 .profile-picture-wrapper {
-  background: var(--background-color);
+  background: colors.color('background', 'dark');
   border-radius: var(--button-radius);
+  box-sizing: content-box;
   overflow: hidden;
+  padding: 1rem 0.5rem;
   height: 2rem;
   width: 2rem;
 }
@@ -32,22 +37,94 @@
 }
 
 .profile-name {
-  margin: 0 0 0 1rem;
+  padding: 1rem 0.5rem;
+  margin: 0;
 }
 
-.profile-badge-wrapper {
+.badge-wrapper {
+  border-top-right-radius: var(--button-radius);
+  box-sizing: content-box;
+  contain: paint;
   display: flex;
   position: relative;
   margin-left: auto;
-  margin-right: .5rem;
+  overflow: hidden;
+  padding: 1rem 0.5rem 1rem 4.5rem;
   height: 2rem;
+  width: 4rem;
+  z-index: 1;
 
   @for $i from 0 to 2 {
-    i:nth-child(#{$i + 1}) {
+    .post-author-badge:nth-child(#{$i + 1}) {
       right: #{$i}rem;
       z-index: #{3 - $i};
     }
   }
+}
+
+.badge-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.badge-glow {
+  animation: glow-rotation 10s linear infinite;
+  background-repeat: no-repeat;
+  content: '';
+  mix-blend-mode: screen;
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  height: 6rem;
+  width: 8rem;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+
+  &.exceptional {
+    background-image: radial-gradient(
+        ellipse 8rem 6rem at center,
+        colors.color('badge-exceptional', 'glow') 0%,
+        transparent 50%,
+        transparent 100%
+    );
+  }
+}
+
+@keyframes glow-rotation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.badge-list-wrapper {
+  box-sizing: border-box;
+  padding: 1rem 0.5rem 1rem 4.5rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.badge-list {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .post-author-badge {

@@ -1,12 +1,17 @@
-import type { NextPage, NextPageContext } from 'next';
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
+import type { NextPageContext } from 'next';
+import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 import Head from 'next/head';
-import React, { PropsWithChildren, ReactElement, ReactNode, useEffect, useRef, useState } from "react";
-import Post from '@components/post';
+import React, {
+  PropsWithChildren,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import DefaultLayout from '@components/layouts/default';
 import LayeredNavigation from '@components/painting/layered-navigation';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { PaintingPostProps } from '@components/post/post.component';
 import lodash from 'lodash';
 import { useRouter } from 'next/router';
 import { apiGet } from '@/utils/request';
@@ -24,8 +29,11 @@ import {
   isStageIntroduced,
   setStageIntroduced,
 } from '@hooks/events/introduction';
-import { mapPaintingResponseToProps } from "@/utils/mappers";
-import { NextPageWithLayout } from "@pages/_app";
+import { mapPaintingResponseToProps } from '@/utils/mappers';
+import { NextPageWithLayout } from '@pages/_app';
+import PaintingPost, {
+  PaintingPostProps,
+} from '@components/post/painting-post.component';
 
 export enum PaintingSorting {
   SCORE = 'score',
@@ -203,7 +211,7 @@ const HomePage: NextPageWithLayout<PaintingsPageProps> = (
         dataLength={paintings.items.length}
       >
         {paintings.items.map((paintingProps, index) => (
-          <Post key={`painting-${index}`} {...paintingProps} />
+          <PaintingPost key={`painting-${index}`} {...paintingProps} />
         ))}
       </InfiniteScroll>
 
@@ -243,9 +251,7 @@ const HomePage: NextPageWithLayout<PaintingsPageProps> = (
 };
 
 HomePage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export async function getServerSideProps(

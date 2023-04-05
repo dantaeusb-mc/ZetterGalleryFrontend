@@ -1,0 +1,7 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
+.container {
+  display: flex;
+}

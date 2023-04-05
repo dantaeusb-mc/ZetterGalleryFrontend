@@ -4,61 +4,47 @@ import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';
 import { Placement as TippyPlacement } from 'tippy.js';
 import { useIntl } from 'react-intl';
-
-export enum EBadgeTier {
-  Uncommon,
-  Rare,
-  Exceptional,
-  Epic,
-  Legendary,
-}
+import { Badge, BadgeTier } from "@/const/badges";
+import { BadgeIcon } from "@components/badge/index";
 
 export interface BadgeProps {
-  title: string;
-  description?: string;
-  placement: TippyPlacement;
-  category: string;
-  code: string;
-  tier: EBadgeTier;
+  badge: Badge;
+  placement?: TippyPlacement;
   className?: string;
 }
 
 const tierClasses = {
-  [EBadgeTier.Uncommon]: styles['uncommon'],
-  [EBadgeTier.Rare]: styles['rare'],
-  [EBadgeTier.Exceptional]: styles['exceptional'],
-  [EBadgeTier.Epic]: styles['epic'],
-  [EBadgeTier.Legendary]: styles['legendary'],
+  [BadgeTier.Uncommon]: styles['uncommon'],
+  [BadgeTier.Rare]: styles['rare'],
+  [BadgeTier.Exceptional]: styles['exceptional'],
+  [BadgeTier.Epic]: styles['epic'],
+  [BadgeTier.Legendary]: styles['legendary'],
 };
 
-const Badge = ({
-  title,
-  description,
+const TooltipBadge: React.FunctionComponent<BadgeProps> = ({
+  badge,
   placement,
-  category,
-  code,
-  tier,
   className,
 }: BadgeProps): JSX.Element => {
   const intl = useIntl();
   const tierCodes = {
-    [EBadgeTier.Uncommon]: intl.formatMessage({
+    [BadgeTier.Uncommon]: intl.formatMessage({
       id: 'badge.uncommon',
       defaultMessage: 'Uncommon',
     }),
-    [EBadgeTier.Rare]: intl.formatMessage({
+    [BadgeTier.Rare]: intl.formatMessage({
       id: 'badge.rare',
       defaultMessage: 'Rare',
     }),
-    [EBadgeTier.Exceptional]: intl.formatMessage({
+    [BadgeTier.Exceptional]: intl.formatMessage({
       id: 'badge.exceptional',
       defaultMessage: 'Exceptional',
     }),
-    [EBadgeTier.Epic]: intl.formatMessage({
+    [BadgeTier.Epic]: intl.formatMessage({
       id: 'badge.epic',
       defaultMessage: 'Epic',
     }),
-    [EBadgeTier.Legendary]: intl.formatMessage({
+    [BadgeTier.Legendary]: intl.formatMessage({
       id: 'badge.legendary',
       defaultMessage: 'Legendary`',
     }),
@@ -66,7 +52,6 @@ const Badge = ({
 
   return (
     <Tippy
-      allowHTML={true}
       theme="minecraft"
       placement={placement}
       content={
@@ -74,41 +59,38 @@ const Badge = ({
           <p
             className={injectClassNames(
               styles['badge-title'],
-              tierClasses[tier],
+              tierClasses[badge.tier],
             )}
           >
-            [{tierCodes[tier]}]
+            [{tierCodes[badge.tier]}]
           </p>
           <p
             className={injectClassNames(
               styles['badge-title'],
-              tierClasses[tier],
+              tierClasses[badge.tier],
             )}
           >
-            {title}
+            {badge.name}
           </p>
-          {description && (
+          {badge.description && (
             <p
               className={injectClassNames(
                 styles['badge-title'],
-                tierClasses[tier],
+                tierClasses[badge.tier],
               )}
             >
-              {description}
+              {badge.description}
             </p>
           )}
         </>
       }
     >
-      <i
-        className={injectClassNames(
-          'player-badge',
-          `${category}-${code}`,
-          styles['badge'],
-          tierClasses[tier],
-          className,
-        )}
-      />
+      <div className={injectClassNames(
+        styles['badge'],
+        className,
+      )}>
+        <BadgeIcon badge={badge} />
+      </div>
     </Tippy>
   );
 };
@@ -117,6 +99,6 @@ const defaultProps: Partial<BadgeProps> = {
   placement: 'top-end',
 };
 
-Badge.defaultProps = defaultProps;
+TooltipBadge.defaultProps = defaultProps;
 
-export default Badge;
+export default TooltipBadge;

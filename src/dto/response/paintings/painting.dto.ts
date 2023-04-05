@@ -1,5 +1,6 @@
 import { PaintingRatingResponseDto } from "@/dto/response/paintings/ratings.dto";
 import { PaintingStatisticsResponseDto } from "@/dto/response/paintings/statistics.dto";
+import { PlayerBadgeResponseDto } from '@/dto/response/player/badge.dto';
 
 export class PaintingResponseDto {
   uuid: string;
@@ -15,5 +16,6 @@ export class PaintingResponseDto {
   author: {
     uuid: string;
     nickname: string;
+    badges?: PlayerBadgeResponseDto[];
   };
 }

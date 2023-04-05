@@ -8,13 +8,13 @@ import { apiGet } from '@/utils/request';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
 import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
-import { PaintingPostProps } from '@components/post/post.component';
 import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import { mapPaintingResponseToProps } from '@/utils/mappers';
 import PlayerPaintingList from '@components/player/paintings/list';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { PlayerStatisticsResponseDto } from '@/dto/response/player/player-statistics.dto';
 import { NextPageWithLayout } from '@pages/_app';
+import { PaintingPostProps } from "@components/post/painting-post.component";
 
 export interface PlayerPageProps {
   profile: ProfileProps;
@@ -114,6 +114,7 @@ export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
         uuid: profile.uuid,
         nickname: profile.nickname,
         me: false,
+        badges: profile.badges,
         statistics: {
           paintingsCount: profileStatistics.paintingsCount,
           favoritesCount: profileStatistics.favoritesCount,

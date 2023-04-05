@@ -1,5 +1,5 @@
-import { PaintingResponseDto } from "@/dto/response/paintings/painting.dto";
-import { PaintingPostProps } from "@components/post/post.component";
+import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
+import { PaintingPostProps } from '@components/post/painting-post.component';
 
 const mapPaintingResponseToProps = (
   response: PaintingResponseDto,
@@ -18,6 +18,7 @@ const mapPaintingResponseToProps = (
     author: {
       uuid: response.author.uuid,
       nickname: response.author.nickname,
+      badges: response.author.badges ?? [],
     },
     ratings: response.ratings ?? [],
     stats: {

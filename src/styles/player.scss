@@ -4,19 +4,51 @@
   display: block;
   image-rendering: pixelated;
 
-  &.support-alpha {
+  &.support_alpha {
     background-image: url("/assets/badge/support/alpha.png");
   }
 
-  &.support-beta {
+  &.support_beta {
     background-image: url("/assets/badge/support/beta.png");
   }
 
-  &.style-landscape {
-    background-image: url("/assets/badge/style/landscapist.png");
+  &.style_landscape {
+    background-image: url("/assets/badge/style/landscape.png");
   }
 
-  &.style-european {
-    background-image: url("/assets/badge/style/europeanartist.png");
+  &.style_still-life {
+    background-image: url("/assets/badge/style/still-life.png");
+  }
+
+  &.style_european {
+    background-image: url("/assets/badge/legacy/european.png");
+  }
+
+  &.community_honored-i {
+    background-image: url("/assets/badge/community/honored-artist-1.png");
+  }
+
+  &.community_honored-ii {
+    background-image: url("/assets/badge/community/honored-artist-2.png");
+  }
+
+  &.community_honored-iii {
+    background-image: url("/assets/badge/community/honored-artist-3.png");
+  }
+
+  &.community_honored-iv {
+    background-image: url("/assets/badge/community/honored-artist-4.png");
+  }
+
+  &.community_honored-v {
+    background-image: url("/assets/badge/community/honored-artist-5.png");
+  }
+
+  &.community_honored-v {
+    background-image: url("/assets/badge/community/honored-artist-5.png");
+  }
+
+  &.community_pop-star {
+    background-image: url("/assets/badge/community/pop-star.png");
   }
 }

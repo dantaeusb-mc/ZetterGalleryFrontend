@@ -23,11 +23,14 @@ const apiGet = <T>(
   }
 
   let token: string;
+  let uri: string;
 
   if (context) {
     token = <string>getCookie('token', { req: context.req, res: context.res });
+    uri = process.env.NEXT_INTERNAL_API_URI + path + buildQuery(queryParams);
   } else {
     token = <string>getCookie('token');
+    uri = process.env.NEXT_PUBLIC_API_URI + path + buildQuery(queryParams);
   }
 
   if (token) {
@@ -35,7 +38,7 @@ const apiGet = <T>(
   }
 
   return fetch(
-    process.env.NEXT_PUBLIC_API_URI + path + buildQuery(queryParams),
+    uri,
     {
       method: 'GET',
       headers: requestHeaders,

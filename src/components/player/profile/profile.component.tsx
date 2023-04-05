@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './profile.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
-import Badge from '@components/player/badge';
-import { EBadgeTier } from '@components/player/badge/badge.component';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
 import ProfileAuthorStatistics from '@components/player/profile/author-statistics';
+import TooltipBadge from '@components/badge';
+import { Badge, SupportBadge, SupportBadges } from '@/const/badges';
 
 export interface ProfileProps {
   uuid: string;
   nickname: string;
   me: boolean;
+  badges?: Badge[];
   statistics: {
     paintingsCount: number;
     favoritesCount: number;
@@ -23,6 +24,7 @@ export default function Profile({
   uuid,
   nickname,
   me,
+  badges,
   statistics,
 }: ProfileProps): JSX.Element {
   const intl = useIntl();
@@ -40,7 +42,7 @@ export default function Profile({
           <h1 className={styles['nickname']}>{nickname}</h1>
           {me ? (
             <>
-              <Link href="/players/me/PreferencesPage">
+              <Link href="/players/me/preferences">
                 <a
                   title={intl.formatMessage({
                     id: 'components.player.profile.preferences-link',
@@ -74,17 +76,18 @@ export default function Profile({
           </p>*/}
         </div>
       </header>
-      <div className={styles['badge-wrapper']}>
-        <Badge
-          title="Alpha Supporter"
-          description="Registered when Gallery was Alpha version"
-          placement="bottom"
-          category="support"
-          code="alpha"
-          tier={EBadgeTier.Exceptional}
-          className={styles['profile-badge']}
-        />
-      </div>
+      {badges && (
+        <div className={styles['badge-wrapper']}>
+          {badges.map((badge, i) => (
+            <TooltipBadge
+              key={`badge-${i}`}
+              badge={badge}
+              placement="bottom"
+              className={styles['profile-badge']}
+            />
+          ))}
+        </div>
+      )}
       {statistics.paintingsCount > 0 && (
         <ProfileAuthorStatistics {...statistics} />
       )}

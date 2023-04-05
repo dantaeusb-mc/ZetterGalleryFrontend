@@ -1,0 +1,36 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
+.quest {
+
+}
+
+.container {
+  display: flex;
+  padding: 1rem;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  margin-right: 1rem;
+  width: 4rem;
+
+  .icon {
+    height: 4rem;
+    width: 4rem;
+
+    &.exceptional {
+      box-shadow: 0 0 1rem colors.color('badge-exceptional', 'glow');
+    }
+  }
+}
+
+.goal {
+  border-top: .125rem solid colors.color('text');
+}
+
+.title {
+  color: colors.color('badge-epic');
+  margin: 0 0 .5rem 0;
+}

@@ -1,0 +1,11 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
+.badge-icon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 2rem;
+  min-width: 2rem;
+}
