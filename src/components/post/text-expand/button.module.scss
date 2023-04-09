@@ -1,0 +1,15 @@
+@use 'src/styles/variables/media';
+@use 'src/styles/variables/colors' as colors;
+@use 'src/styles/variables/fonts' as fonts;
+
+.expand-button {
+  background: colors.color('block', 'light');
+  border-radius: var(--button-radius);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: .5rem 1rem;
+  margin: 1rem;
+  text-align: center;
+  width: auto;
+}

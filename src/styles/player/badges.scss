@@ -1,0 +1,182 @@
+@use 'src/styles/variables/colors' as colors;
+
+.player-badge {
+  display: block;
+  image-rendering: pixelated;
+
+  // Support badges
+
+  &.support_alpha {
+    background-image: url("/assets/badge/support/alpha.png");
+  }
+
+  &.support_beta {
+    background-image: url("/assets/badge/support/beta.png");
+  }
+
+  &.support_resilient {
+    background-image: url("/assets/badge/support/resilient.png");
+  }
+
+  // Community badges
+
+  .community_artist-maecenas {
+    background-image: url("/assets/badge/community/artist-maecenas.png");
+  }
+
+  &.community_honored-i {
+    background-image: url("/assets/badge/community/honored-artist-i.png");
+  }
+
+  &.community_honored-ii {
+    background-image: url("/assets/badge/community/honored-artist-ii.png");
+  }
+
+  &.community_honored-iii {
+    background-image: url("/assets/badge/community/honored-artist-iii.png");
+  }
+
+  &.community_honored-iv {
+    background-image: url("/assets/badge/community/honored-artist-iv.png");
+  }
+
+  &.community_honored-v {
+    background-image: url("/assets/badge/community/honored-artist-v.png");
+  }
+
+  &.community_honored-v {
+    background-image: url("/assets/badge/community/honored-artist-v.png");
+  }
+
+  &.community_pop-star {
+    background-image: url("/assets/badge/community/pop-star.png");
+  }
+
+  // @todo: Find correct icon!
+  &.community_niche-artist {
+    background-image: url("/assets/badge/community/popular-artist.png");
+  }
+
+  &.community_popular-artist {
+    background-image: url("/assets/badge/community/popular-artist.png");
+  }
+
+  &.community_rising-star {
+    background-image: url("/assets/badge/community/rising-star.png");
+  }
+
+  &.community_star {
+    background-image: url("/assets/badge/community/star.png");
+  }
+
+  &.community_pop-star {
+    background-image: url("/assets/badge/community/pop-star.png");
+  }
+
+  // Legacy badges
+
+  &.legacy_american {
+    background-image: url("/assets/badge/legacy/american.png");
+  }
+
+  &.legacy_european {
+    background-image: url("/assets/badge/legacy/european.png");
+  }
+
+  &.legacy_japanese {
+    background-image: url("/assets/badge/legacy/japan.png");
+  }
+
+  &.legacy_middle-eastern {
+    background-image: url("/assets/badge/legacy/middle-eastern.png");
+  }
+
+  // Style badges
+
+  &.style_dark {
+    background-image: url("/assets/badge/style/dark.png");
+  }
+
+  &.style_horror {
+    background-image: url("/assets/badge/style/horror.png");
+  }
+
+  &.style_impressionism {
+    background-image: url("/assets/badge/style/impressionism.png");
+  }
+
+  &.style_landscape {
+    background-image: url("/assets/badge/style/landscape.png");
+  }
+
+  &.style_manga {
+    background-image: url("/assets/badge/style/manga.png");
+  }
+
+  &.style_minecraft {
+    background-image: url("/assets/badge/style/minecraft.png");
+  }
+
+  &.style_pop-art {
+    background-image: url("/assets/badge/style/pop-art.png");
+  }
+
+
+  &.style_portrait {
+    background-image: url("/assets/badge/style/portrait.png");
+  }
+
+  &.style_sci-fi {
+    background-image: url("/assets/badge/style/sci-fi.png");
+  }
+
+  &.style_sea {
+    background-image: url("/assets/badge/style/sea.png");
+  }
+
+  &.style_still-life {
+    background-image: url("/assets/badge/style/still-life.png");
+  }
+
+  &.style_surrealism {
+    background-image: url("/assets/badge/style/surrealism.png");
+  }
+
+  // Collector badges
+
+  &.collector_beginner {
+    background-image: url("/assets/badge/collector/beginner.png");
+  }
+
+  &.collector_intermediate {
+    background-image: url("/assets/badge/collector/intermediate.png");
+  }
+
+  &.collector_well-known {
+    background-image: url("/assets/badge/collector/well-known.png");
+  }
+
+  &.collector_expert {
+    background-image: url("/assets/badge/collector/expert.png");
+  }
+
+  &.collector_insane {
+    background-image: url("/assets/badge/collector/insane.png");
+  }
+
+  // Anti badges
+
+  &.anti_banned {
+    background-image: url("/assets/badge/anti/banned.png");
+  }
+
+  &.anti_disqualified {
+    background-image: url("/assets/badge/anti/disqualified.png");
+  }
+
+  // Event badges
+
+  &.event_the-censorship {
+    background-image: url("/assets/badge/event/spooktober.png");
+  }
+}
