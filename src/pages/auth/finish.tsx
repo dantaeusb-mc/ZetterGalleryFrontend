@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
-import { setCookies } from 'cookies-next';
+import { setCookie } from 'cookies-next';
 import { apiGet } from '@/utils/request';
 import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
@@ -131,7 +131,7 @@ export async function getServerSideProps(
     );
 
     const expireDate = new Date(response.notAfter);
-    setCookies('token', response.token, { req: context.req, res: context.res, expires: expireDate });
+    setCookie('token', response.token, { req: context.req, res: context.res, expires: expireDate });
   } catch (e) {
     return {
       redirect: {
@@ -153,7 +153,7 @@ export async function getServerSideProps(
   } else {
     nextAction = {
       path: '/players/me/preferences/',
-      description: 'Authorize server',
+      description: 'Set up your account',
     };
   }
 

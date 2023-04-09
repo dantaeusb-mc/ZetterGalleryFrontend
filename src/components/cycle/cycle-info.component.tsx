@@ -3,7 +3,8 @@ import styles from './cycle-info.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icon, IconSize } from '@components/icon';
 import MerchantIcon from './icons/merchant.png';
-import NewIcon from '@assets/icons/feed/new.png';
+import RefreshIcon from '@assets/icons/cycle/refresh.png';
+import TimeoutIcon from '@assets/icons/cycle/timeout.png';
 import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';
 import { useRouter } from 'next/router';
@@ -78,11 +79,13 @@ export default function CycleInfo({
     return minutesString + ':' + secondsString;
   };
 
+  const expired = timeLeft <= 0;
+
   return (
     <section className={injectClassNames(styles['cycle-info'])}>
       <header className={styles['cycle-info-header']}>
-        <div className={styles['merchant-icon-wrapper']}>
-          <div className={styles['merchant-icon-circle']}>
+        <div className={styles['cycle-icon-wrapper']}>
+          <div className={styles['cycle-icon-circle']}>
             <Icon
               title={intl.formatMessage({
                 id: 'cycle.merchant.icon',
@@ -90,19 +93,10 @@ export default function CycleInfo({
                   'Some of those paintings are available for purchase from Painting Merchant in game right now!',
               })}
               asset={MerchantIcon}
-              className={styles['merchant-icon']}
+              className={styles['cycle-icon']}
               size={IconSize.ExtraLarge}
             />
           </div>
-          <Icon
-            title={intl.formatMessage({
-              id: 'cycle.merchant.icon',
-              defaultMessage:
-                'Some of those paintings are available for purchase from Painting Merchant in game right now!',
-            })}
-            asset={NewIcon}
-            className={styles['merchant-timeout-icon']}
-          />
         </div>
         <div className={styles['cycle-description-wrapper']}>
           <h1 className={styles['cycle-title']}>
@@ -112,55 +106,116 @@ export default function CycleInfo({
             ></FormattedMessage>{' '}
             #{id}
           </h1>
-          <Tippy
-            content={intl.formatMessage({
-              id: 'cycle.seed',
+          <div className={styles['cycle-timeout']}>
+            <div className={styles['cycle-timeout-icon-wrapper']}>
+              <Icon
+                title={intl.formatMessage({
+                  id: 'cycle.merchant.timeout.icon',
+                  defaultMessage:
+                    'Some of those paintings are available for purchase from Painting Merchant in game right now!',
+                })}
+                asset={TimeoutIcon}
+                className={injectClassNames(
+                  styles['cycle-timeout-icon'],
+                  [styles['expired'], expired],
+                )}
+              />
+            </div>
+            {expired ? (
+              <div className={styles['timeout-expired']}>
+                <FormattedMessage
+                  id="cycle.timeout.expired"
+                  defaultMessage="Cycle expired!"
+                ></FormattedMessage>
+              </div>
+            ) : (
+              <div className={styles['timeout-text']}>
+                <FormattedMessage
+                  id="cycle.timeout.left-time"
+                  defaultMessage="Expires in {time}"
+                  values={{
+                    time: formatTimeout(timeLeft),
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+        <div className={styles['cycle-actions-wrapper']}>
+          <button
+            type="button"
+            className={styles['refresh-button']}
+            title={intl.formatMessage({
+              id: 'cycle.refresh.button',
               defaultMessage:
-                'Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings.',
+                'Refresh available paintings, rotation happens every 5 minutes',
             })}
-            theme="minecraft"
+            disabled={!expired}
           >
-            <p className={styles['cycle-seed']}>{seed}</p>
-          </Tippy>
+            <Icon
+              title={intl.formatMessage({
+                id: 'cycle.refresh.button.icon',
+                defaultMessage: 'Refresh available paintings icon',
+              })}
+              asset={RefreshIcon}
+              className={styles['refresh-icon']}
+              size={IconSize.Large}
+            />
+          </button>
         </div>
       </header>
-      <div className={styles['cycle-info-expiration']}>
-        {timeLeft >= 0 ? (
-          <>
-            <p className={styles['timeout-text']}>
-              <FormattedMessage
-                id="cycle.timeout.left"
-                defaultMessage="Expires in"
-              ></FormattedMessage>
-            </p>
-            <div className={styles['timeout']}>{formatTimeout(timeLeft)}</div>
-          </>
-        ) : (
-          <>
-            <div className={styles['timeout-expired']}>
-              <FormattedMessage
-                id="cycle.timeout.expired"
-                defaultMessage="Cycle expired!"
-              ></FormattedMessage>
+      <div className={styles['cycle-info-extra']}>
+        <label htmlFor="auto-reload">
+          <Tippy
+            content={intl.formatMessage({
+              id: 'cycle.auto-reload',
+              defaultMessage:
+                'Automatically reload the page at the end of the cycle.',
+            })}
+            placement="bottom-start"
+            theme="minecraft"
+          >
+            <div
+              className={injectClassNames(styles['auto-reload'], [
+                styles['active'],
+                autoReload,
+              ])}
+            >
+              <input
+                type="checkbox"
+                id="auto-reload"
+                checked={autoReload}
+                onChange={(e) => {
+                  setAutoReload(e.target.checked);
+                }}
+              />
+              <span>
+                <FormattedMessage
+                  id="cycle.auto-reload.label"
+                  defaultMessage="Auto-reload: {status}"
+                  values={{
+                    status: autoReload ? (
+                      <FormattedMessage id="common.on" defaultMessage="On" />
+                    ) : (
+                      <FormattedMessage id="common.off" defaultMessage="Off" />
+                    ),
+                  }}
+                />
+              </span>
             </div>
-          </>
-        )}
-        <div className={styles['auto-reload']}>
-          <label htmlFor="auto-reload">
-            <input
-              type="checkbox"
-              id="auto-reload"
-              checked={autoReload}
-              onChange={(e) => {
-                setAutoReload(e.target.checked);
-              }}
-            />
-            <span>
-              Reload page automatically <wbr />
-              when cycle expires
-            </span>
-          </label>
-        </div>
+          </Tippy>
+        </label>
+        <Tippy
+          content={intl.formatMessage({
+            id: 'cycle.seed',
+            defaultMessage:
+              'Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings.',
+          })}
+          placement="bottom-end"
+          theme="minecraft"
+        >
+          <div className={styles['cycle-seed']}>{seed}</div>
+        </Tippy>
       </div>
     </section>
   );

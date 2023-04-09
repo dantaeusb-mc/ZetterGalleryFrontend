@@ -4,8 +4,8 @@ import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';
 import { Placement as TippyPlacement } from 'tippy.js';
 import { useIntl } from 'react-intl';
-import { Badge, BadgeTier } from "@/const/badges";
-import { BadgeIcon } from "@components/badge/index";
+import { Badge, BadgeTier } from '@/const/badges';
+import { BadgeIcon } from '@components/badge/index';
 
 export interface BadgeProps {
   badge: Badge;
@@ -85,10 +85,7 @@ const TooltipBadge: React.FunctionComponent<BadgeProps> = ({
         </>
       }
     >
-      <div className={injectClassNames(
-        styles['badge'],
-        className,
-      )}>
+      <div className={injectClassNames(styles['badge'], className)}>
         <BadgeIcon badge={badge} />
       </div>
     </Tippy>

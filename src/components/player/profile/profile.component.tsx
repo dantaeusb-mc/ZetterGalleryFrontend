@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './profile.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
 import Link from 'next/link';
 import ProfileAuthorStatistics from '@components/player/profile/author-statistics';
 import TooltipBadge from '@components/badge';
-import { Badge, SupportBadge, SupportBadges } from '@/const/badges';
+import { Badge, BadgeTier } from '@/const/badges';
 
 export interface ProfileProps {
   uuid: string;

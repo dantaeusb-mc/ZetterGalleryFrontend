@@ -10,8 +10,8 @@ import { RedirectTimer } from '@components/widgets/redirect-timer';
 import getTitle from '@/utils/page/get-title';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { apiPost } from '@/utils/request';
-import {removeCookies, setCookies} from 'cookies-next';
-import { NextPageWithLayout } from "@pages/_app";
+import { removeCookies } from 'cookies-next';
+import { NextPageWithLayout } from '@pages/_app';
 
 const LogoutPage: NextPageWithLayout<Record<never, unknown>> = () => {
   const router = useRouter();

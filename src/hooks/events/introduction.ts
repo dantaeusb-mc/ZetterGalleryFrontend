@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { getCookie, setCookies } from "cookies-next";
-import { IncomingMessage } from "http";
+import { getCookie, setCookie } from 'cookies-next';
+import { IncomingMessage } from 'http';
 
 export enum IntroductionStages {
   WhatIs,
@@ -26,14 +25,14 @@ export const setStageIntroduced = (
   // Clear flag at position of stage
   existingState &= ~(1 << stage);
   // Set to 1 at stage position if finished is true
-  setCookies(cookieKey, existingState | ((value ? 1 : 0) << stage), {
+  setCookie(cookieKey, existingState | ((value ? 1 : 0) << stage), {
     expires: new Date(new Date().getTime() + 7 * 86400000),
     req,
   });
 };
 
 export const resetIntroduction = (req?: IncomingMessage): void => {
-  setCookies(cookieKey, 0, {
+  setCookie(cookieKey, 0, {
     expires: new Date(new Date().getTime() + 7 * 86400000),
     req
   });

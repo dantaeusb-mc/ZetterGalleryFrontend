@@ -19,7 +19,7 @@ export interface ItemProps {
 
 const navigationButtonCodes = [
   'about',
-  'search',
+  'hall',
   'home',
   'sale',
   'profile',
@@ -41,8 +41,8 @@ const navigationButtons: Record<
     isCurrentPath: (pathname) =>
       pathname === '/about' || pathname.startsWith('/wiki'),
   },
-  search: {
-    isCurrentPath: (pathname) => pathname === '/search',
+  hall: {
+    isCurrentPath: (pathname) => pathname === '/hall',
   },
   home: {
     isCurrentPath: (pathname) => pathname === '/',
@@ -129,14 +129,14 @@ const Navbar = (): JSX.Element => {
             defaultMessage: 'Search',
           })}
           asset={SearchIcon}
-          uri="/search"
-          active={activeButton === 'search'}
-          loading={loadingButton === 'search'}
+          uri="/hall"
+          active={activeButton === 'hall'}
+          loading={loadingButton === 'hall'}
           className={injectClassNames(
             styles['icon'],
             styles['search'],
-            [styles['active'], activeButton === 'search'],
-            [styles['loading'], activeButton === 'search'],
+            [styles['active'], activeButton === 'hall'],
+            [styles['loading'], activeButton === 'hall'],
           )}
         />
         <NavbarItem

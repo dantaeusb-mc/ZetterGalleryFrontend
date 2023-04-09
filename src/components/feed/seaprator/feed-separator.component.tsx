@@ -6,6 +6,7 @@ import styles from './feed-separator.module.scss';
 import HotIcon from '@assets/icons/feed/hot.png';
 import NewIcon from '@assets/icons/feed/new.png';
 import TopIcon from '@assets/icons/feed/top.png';
+import PersonalIcon from '@assets/icons/feed/personal.png';
 import { Icon } from '@components/icon';
 import { StaticImageData } from 'next/image';
 
@@ -36,7 +37,7 @@ export default function FeedSeparator({
     personal: {
       title: intl.formatMessage({id: 'feed.personal.title', defaultMessage: 'Personal'}),
       info: intl.formatMessage({id: 'feed.personal.info', defaultMessage: 'Your personal selection: random picks from favorites'}),
-      icon: TopIcon,
+      icon: PersonalIcon,
     },
   };
 

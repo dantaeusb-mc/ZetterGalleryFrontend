@@ -49,23 +49,23 @@ $colors: (
         ),
         badge-uncommon: (
                 base: #1982c4,
-                glow: transparentize(#1982c4, .75)
+                rgb: (25, 130, 196),
         ),
         badge-rare: (
                 base: #8ac926,
-                glow: transparentize(#8ac926, .75)
+                rgb: (138, 201, 38),
         ),
         badge-exceptional: (
                 base: #ffca3a,
-                glow: transparentize(#ffca3a, .75)
+                rgb: (255, 202, 58),
         ),
         badge-epic: (
                 base: #f15bb5,
-                glow: transparentize(#f15bb5, .75)
+                rgb: (241, 91, 181),
         ),
         badge-legendary: (
                 base: #ff5400,
-                glow: transparentize(#ff5400, .75)
+                rgb: (255, 84, 0),
         ),
 );
 

@@ -3,18 +3,20 @@
 @use 'src/styles/variables/fonts' as fonts;
 
 .post-header {
-  border-top-left-radius: var(--border-small-radius);
-  border-top-right-radius: var(--border-small-radius);
+  background: colors.color('block');
+  border-radius: var(--border-small-radius);
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  transition: .1s ease background;
 }
 
 .post-header-link {
   text-decoration: none;
 
-  &:hover {
-    text-decoration: underline;
+  &:hover .post-header {
+    background: colors.color('block', 'light');
   }
 }
 
@@ -41,20 +43,37 @@
   margin: 0;
 }
 
-.badge-wrapper {
-  border-top-right-radius: var(--button-radius);
-  box-sizing: content-box;
+.badges {
+  border-radius: var(--button-radius);
   contain: paint;
   display: flex;
-  position: relative;
   margin-left: auto;
   overflow: hidden;
-  padding: 1rem 0.5rem 1rem 4.5rem;
+  padding: 1rem 0.5rem 1rem 1.5rem;
+}
+
+.badges-count-wrapper {
+  margin-right: .5rem;
+}
+
+.badges-count {
+  background: colors.color('block', 'light');
+  border-radius: var(--button-radius);
+  padding: 0 .5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.badges-wrapper {
+  border-top-right-radius: var(--button-radius);
+  box-sizing: content-box;
+  display: flex;
+  position: relative;
   height: 2rem;
   width: 4rem;
   z-index: 1;
 
-  @for $i from 0 to 2 {
+  @for $i from 0 to 3 {
     .post-author-badge:nth-child(#{$i + 1}) {
       right: #{$i}rem;
       z-index: #{3 - $i};
@@ -62,7 +81,7 @@
   }
 }
 
-.badge-background {
+.badges-background {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -77,7 +96,7 @@
   animation: glow-rotation 10s linear infinite;
   background-repeat: no-repeat;
   content: '';
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   display: block;
   position: absolute;
   pointer-events: none;
@@ -88,12 +107,73 @@
   transform: translate(-50%, -50%);
   z-index: 0;
 
+  &:nth-child(1) {
+    animation-duration: 17s;
+    left: 75%;
+    opacity: 1;
+  }
+
+  &:nth-child(2) {
+    animation-duration: 29s;
+    animation-delay: 1s;
+    left: 50%;
+    opacity: .75;
+  }
+
+  &:nth-child(3) {
+    animation-duration: 23s;
+    animation-delay: 2s;
+    left: 25%;
+    opacity: .5;
+  }
+
+  &.uncommon {
+    background-image: radial-gradient(
+                    ellipse 8rem 6rem at center,
+                    rgba(colors.color('badge-uncommon', 'rgb'), 50%) 0%,
+                    rgba(colors.color('badge-uncommon', 'rgb'), 10%) 50%,
+                    transparent 50%,
+                    transparent 100%
+    );
+  }
+
+  &.rare {
+    background-image: radial-gradient(
+                    ellipse 8rem 6rem at center,
+                    rgba(colors.color('badge-rare', 'rgb'), .5) 0%,
+                    rgba(colors.color('badge-rare', 'rgb'), .1) 50%,
+                    transparent 50%,
+                    transparent 100%
+    );
+  }
+
   &.exceptional {
     background-image: radial-gradient(
-        ellipse 8rem 6rem at center,
-        colors.color('badge-exceptional', 'glow') 0%,
-        transparent 50%,
-        transparent 100%
+                    ellipse 8rem 6rem at center,
+                    rgba(colors.color('badge-exceptional', 'rgb'), .5) 0%,
+                    rgba(colors.color('badge-exceptional', 'rgb'), .1) 50%,
+                    transparent 50%,
+                    transparent 100%
+    );
+  }
+
+  &.epic {
+    background-image: radial-gradient(
+                    ellipse 8rem 6rem at center,
+                    rgba(colors.color('badge-epic', 'rgb'), .5) 0%,
+                    rgba(colors.color('badge-epic', 'rgb'), .1) 50%,
+                    transparent 50%,
+                    transparent 100%
+    );
+  }
+
+  &.legendary {
+    background-image: radial-gradient(
+                    ellipse 8rem 6rem at center,
+                    rgba(colors.color('badge-legendary', 'rgb'), .5) 0%,
+                    rgba(colors.color('badge-legendary', 'rgb'), .1) 50%,
+                    transparent 50%,
+                    transparent 100%
     );
   }
 }
@@ -107,9 +187,8 @@
   }
 }
 
-.badge-list-wrapper {
+.badges-list-wrapper {
   box-sizing: border-box;
-  padding: 1rem 0.5rem 1rem 4.5rem;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -120,7 +199,7 @@
   z-index: 1;
 }
 
-.badge-list {
+.badges-list {
   display: flex;
   position: relative;
   height: 100%;

@@ -4,7 +4,6 @@
 .cycle-info {
   display: flex;
   flex-direction: column;
-  padding: .5rem;
   position: relative;
 }
 
@@ -13,7 +12,7 @@
   flex-direction: row;
 }
 
-.merchant-icon-wrapper {
+.cycle-icon-wrapper {
   position: relative;
   margin: 1rem 2rem 1rem 0;
   height: 6rem;
@@ -27,14 +26,23 @@
   justify-content: space-evenly;
 }
 
+.cycle-actions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 0 0 0 auto;
+}
+
 .cycle-title {
   font-size: 1.5rem;
   margin: 0;
 }
 
-.cycle-seed {
+.cycle-timeout {
   background: colors.color('block', 'dark');
   border-radius: var(--button-radius);
+  display: flex;
   padding: .5rem;
   margin: 0;
 }
@@ -48,7 +56,7 @@
   text-align: center;
 }
 
-.merchant-icon-circle {
+.cycle-icon-circle {
   background: colors.color('block', 'light');
   border-radius: 3rem;
   overflow: hidden;
@@ -57,35 +65,160 @@
   width: 6rem;
 }
 
-.merchant-icon {
+.cycle-icon {
   position: absolute;
   top: .5rem;
 }
 
-.merchant-timeout-icon {
-  animation: timeout-tick linear 5s infinite;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.cycle-timeout-icon-wrapper {
+  margin-right: .5rem;
+}
+
+.cycle-timeout-icon {
+  animation: timeout-tick linear 1s infinite;
+  display: block;
+
+  &.expired {
+    animation: timeout-expired linear 5s infinite;
+  }
 }
 
 @keyframes timeout-tick {
   0% {
+    transform: rotate(-15deg);
+  }
+  10% {
     transform: rotate(0);
   }
-  2% {
+  45% {
+    transform: rotate(0);
+  }
+  50% {
     transform: rotate(15deg);
   }
-  4% {
-    transform: rotate(-20deg);
+  60% {
+    transform: rotate(0);
   }
-  6% {
-    transform: rotate(10deg);
+  95% {
+    transform: rotate(0);
   }
-  8% {
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes timeout-expired {
+  0% {
+    transform: rotate(0);
+  }
+  1% {
+    transform: rotate(-15deg);
+  }
+  3% {
+    transform: rotate(15deg);
+  }
+  5% {
+    transform: rotate(-15deg);
+  }
+  7% {
+    transform: rotate(15deg);
+  }
+  9% {
+    transform: rotate(-15deg);
+  }
+  11% {
+    transform: rotate(15deg);
+  }
+  14% {
     transform: rotate(0);
   }
   100% {
     transform: rotate(0);
   }
+}
+
+.refresh-button {
+  height: 3rem;
+  width: 3rem;
+
+  &:disabled {
+    cursor: wait;
+
+    .refresh-icon {
+      animation: none;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      .refresh-icon {
+        transform: none;
+      }
+    }
+  }
+
+  &:hover {
+    .refresh-icon {
+      animation: none;
+      transform: rotate(15deg);
+    }
+  }
+}
+
+@keyframes button-poke {
+  0% {
+    transform: rotate(15deg);
+  }
+  4% {
+    transform: rotate(0);
+  }
+  8% {
+    transform: rotate(15deg);
+  }
+  16% {
+    transform: rotate(0);
+  }
+  96% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+.refresh-icon {
+  animation: button-poke 3s ease infinite;
+  display: block;
+  transition: .1s ease transform;
+}
+
+.cycle-info-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.auto-reload {
+  background: colors.color('block', 'light');
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  padding: .5rem;
+  text-align: center;
+  width: 100%;
+
+  input {
+    display: none;
+  }
+
+  &.active {
+    background: colors.color('green', 'dark');
+  }
+}
+
+.cycle-seed {
+  background: colors.color('block', 'light');
+  border-radius: var(--button-radius);
+  padding: .5rem;
+  text-align: center;
+  width: 100%;
 }
