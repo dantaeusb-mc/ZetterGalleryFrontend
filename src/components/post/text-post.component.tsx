@@ -4,7 +4,7 @@ import Post, { PostProps } from '@components/post/post.component';
 import React, { PropsWithChildren, ReactNode } from 'react';
 import TextPostExpandButton from '@components/post/text-expand/button.component';
 
-export interface PaintingPostProps extends PostProps {
+export interface TextPostProps extends PostProps {
   short: ReactNode;
 }
 
@@ -12,7 +12,7 @@ const TextPost = ({
   short,
   children,
   author,
-}: PropsWithChildren<PaintingPostProps>): JSX.Element => {
+}: PropsWithChildren<TextPostProps>): JSX.Element => {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
