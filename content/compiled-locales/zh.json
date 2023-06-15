@@ -121,484 +121,484 @@
     "defaultMessage": "请使用您用来登录Minecraft的相同的微软账户。"
   },
   "auth.microsoft.check.advice": {
-    "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright.",
+    "defaultMessage": "您提出了很好的问题！在您的浏览器中填写密码时请务必检查域名。在这个步骤中，如果您还没有登录到微软帐户，您可能会被重定向到“zettergallery.onmicrosoft.com或是“login.live.com”。如果域名匹配，那一切都没有问题。",
     "description": "Explain how to make sure it's not a phishing page"
   },
   "auth.microsoft.disclaimer.track": {
-    "defaultMessage": "This is also used track what paintings you download in order to keep feed relevant. Do not worry, we keep your activity data only for a week.",
+    "defaultMessage": "这也是用来跟踪您下载的画作，以保持兴趣流的相关性。 别担心，我们只将您的活动数据保存一个星期。",
     "description": "Explain how we track player activity"
   },
   "auth.microsoft.disclaimer.why": {
-    "defaultMessage": "We need this to make sure that you have access to the player account that can be used for submitting paintings. This allows you to have personal feed with your favorite paintings and check your paintings stats.",
+    "defaultMessage": "我们需要这个以确保您能够访问可以用于提交画作的玩家帐户。 这使您能拥有包含您最喜欢的画作的兴趣流，并检查您的画作统计信息。",
     "description": "Why do we need player to authorize us with Microsoft account"
   },
   "auth.microsoft.finish.description.callback.description": {
-    "defaultMessage": "We will redirect you soon to continue your action.",
+    "defaultMessage": "我们将很快重定向你，使你继续你的行为。",
     "description": "Title for finish auth page"
   },
   "auth.microsoft.finish.description.callback.title": {
-    "defaultMessage": "Please do not close this page",
+    "defaultMessage": "请勿关闭此页面。",
     "description": "Title for finish auth page"
   },
   "auth.microsoft.finish.description.description": {
-    "defaultMessage": "Now you'll be able to quickly authorize game server with your Minecraft account.",
+    "defaultMessage": "现在您可以通过您的 Minecraft 帐户快速授权游戏服务器。",
     "description": "Title for finish auth page"
   },
   "auth.microsoft.finish.description.title": {
-    "defaultMessage": "You are signed up",
+    "defaultMessage": "您已经注册了！",
     "description": "Title for finish auth page"
   },
   "auth.start.page.description": {
-    "defaultMessage": "Grant Zetter Gallery rights to access your account",
+    "defaultMessage": "授予Zetter 画廊权限以访问您的帐户",
     "description": "Auth start page description"
   },
   "auth.start.page.title": {
-    "defaultMessage": "Authenticate with Microsoft Account",
+    "defaultMessage": "通过 Microsoft 帐户登录",
     "description": "Auth start page title"
   },
   "badge.epic": {
-    "defaultMessage": "Epic"
+    "defaultMessage": "史诗的"
   },
   "badge.exceptional": {
-    "defaultMessage": "Exceptional"
+    "defaultMessage": "特别的"
   },
   "badge.legendary": {
-    "defaultMessage": "Legendary`"
+    "defaultMessage": "传奇的"
   },
   "badge.rare": {
-    "defaultMessage": "Rare"
+    "defaultMessage": "稀有的"
   },
   "badge.uncommon": {
-    "defaultMessage": "Uncommon"
+    "defaultMessage": "不寻常的"
   },
   "common.post.painting.action.favorite": {
-    "defaultMessage": "Add this painting to favorites"
+    "defaultMessage": "添加这幅画到收藏夹"
   },
   "common.post.painting.action.favorite.disabled": {
-    "defaultMessage": "Log in to add painting to favorites"
+    "defaultMessage": "登录以添加画作到收藏夹"
   },
   "common.post.painting.alt": {
-    "defaultMessage": "{paintingName} by {username}"
+    "defaultMessage": "{paintingName} 由 {username} 创作"
   },
   "common.post.painting.info.impressions": {
-    "defaultMessage": "Impressions"
+    "defaultMessage": "展示量"
   },
   "common.post.painting.info.total": {
-    "defaultMessage": "Total emeralds spent"
+    "defaultMessage": "总绿宝石销售额"
   },
   "common.post.painting.link.title": {
-    "defaultMessage": "{paintingName} by {username}"
+    "defaultMessage": "{paintingName} 由 {username} 创作"
   },
   "common.post.painting.size.detailed": {
-    "defaultMessage": "This painting is {width} {width, plural,one {block}other {blocks}} width and {height} {height, plural, one {block}other {blocks}} tall"
+    "defaultMessage": "这幅绘画是 {width} {width, plural,one {block}other {blocks}} 宽， {height} {height, plural, one {block}other {blocks}}长"
   },
   "components.player.plaintings.list.empty": {
-    "defaultMessage": "This player didn't submit any paintings yet!"
+    "defaultMessage": "这位玩家尚未提交任何画作！"
   },
   "components.player.profile.logout-link": {
-    "defaultMessage": "Log Out"
+    "defaultMessage": "退出登录"
   },
   "components.player.profile.preferences-link": {
-    "defaultMessage": "Preferences"
+    "defaultMessage": "设置"
   },
   "components.player.profile.statistics.downloads": {
-    "defaultMessage": "Downloads:",
+    "defaultMessage": "已下载：",
     "description": "Amount of player's sell paintings showing in player's profile"
   },
   "components.player.profile.statistics.favorites": {
-    "defaultMessage": "Favorites:",
+    "defaultMessage": "收藏夹：",
     "description": "Amount of favorite marks put on player's paintings in player's profile"
   },
   "components.player.profile.statistics.paintings": {
-    "defaultMessage": "Paintings:",
+    "defaultMessage": "画作：",
     "description": "Amount of submitted paintings showing in player's profile"
   },
   "components.widgets.craft-grid.shapeless": {
-    "defaultMessage": "Shapeless crafting"
+    "defaultMessage": "无形合成"
   },
   "contributors.page.description": {
-    "defaultMessage": "Zetter Gallery credits",
+    "defaultMessage": "Zetter 画廊版权",
     "description": "Credits page description"
   },
   "contributors.page.title": {
-    "defaultMessage": "Contributors",
+    "defaultMessage": "贡献者",
     "description": "Contributors page title"
   },
   "contributors.title": {
-    "defaultMessage": "Credits",
+    "defaultMessage": "版权",
     "description": "Title for Zetter Gallery Credits Page"
   },
   "cycle.batch.no": {
-    "defaultMessage": "Batch no"
+    "defaultMessage": "批"
   },
   "cycle.merchant.icon": {
-    "defaultMessage": "Some of those paintings are available for purchase from Painting Merchant in game right now!"
+    "defaultMessage": "其中一些绘画现在可以从游戏中的画作商人处购买！"
   },
   "cycle.seed": {
-    "defaultMessage": "Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings."
+    "defaultMessage": "种子短语，用来选择从商人那里获取哪些画作！ 精确的画作集是由这个短语，商人级别和您的设置决定的。"
   },
   "cycle.timeout.expired": {
-    "defaultMessage": "Cycle expired!"
+    "defaultMessage": "循环已过期！"
   },
   "cycle.timeout.left": {
-    "defaultMessage": "Expires in"
+    "defaultMessage": "有效期至"
   },
   "error.401.page.description": {
-    "defaultMessage": "You are not logged in to access this resource",
+    "defaultMessage": "您尚未登录以访问此资源",
     "description": "401 page description"
   },
   "error.401.page.title": {
-    "defaultMessage": "Unauthenticated",
+    "defaultMessage": "未认证",
     "description": "401 page title"
   },
   "error.403.page.description": {
-    "defaultMessage": "You are not allowed to access this resource",
+    "defaultMessage": "您无权访问此资源",
     "description": "403 page description"
   },
   "error.403.page.title": {
-    "defaultMessage": "Forbidden",
+    "defaultMessage": "禁止访问",
     "description": "403 page title"
   },
   "error.404.page.description": {
-    "defaultMessage": "Page not found",
+    "defaultMessage": "未找到页面",
     "description": "404 page description"
   },
   "error.404.page.title": {
-    "defaultMessage": "Not Found",
+    "defaultMessage": "未找到",
     "description": "404 page title"
   },
   "error.500.page.description": {
-    "defaultMessage": "Internal server error page",
+    "defaultMessage": "服务器内部错误页面",
     "description": "500 page description"
   },
   "error.500.page.title": {
-    "defaultMessage": "Error!",
+    "defaultMessage": "错误！",
     "description": "500 page title"
   },
   "error.bad-request.description": {
-    "defaultMessage": "Sorry, server refused to process your request"
+    "defaultMessage": "抱歉，服务器拒绝处理您的请求"
   },
   "error.bad-request.title": {
-    "defaultMessage": "Bad request"
+    "defaultMessage": "错误请求"
   },
   "error.forbidden.description": {
-    "defaultMessage": "Server said you cannot access this resource."
+    "defaultMessage": "服务器表示，您无法访问此资源。"
   },
   "error.forbidden.title": {
-    "defaultMessage": "Forbidden"
+    "defaultMessage": "禁止访问"
   },
   "error.not-found.description": {
-    "defaultMessage": "Sorry, we were unable to locate the resource you're looking for"
+    "defaultMessage": "对不起，我们无法找到您正在寻找的资源"
   },
   "error.not-found.title": {
-    "defaultMessage": "Not found"
+    "defaultMessage": "未找到"
   },
   "error.server-error.description": {
-    "defaultMessage": "Sorry, something bad and unexpected happened while processing your request"
+    "defaultMessage": "对不起，在处理您的请求时发生了一些错误和意外的问题"
   },
   "error.server-error.title": {
-    "defaultMessage": "Server error"
+    "defaultMessage": "服务器错误"
   },
   "error.unauthenticated.description": {
-    "defaultMessage": "Server said you cannot access this resource because you are not logged in as someone who have access."
+    "defaultMessage": "服务器表示，您不能访问此资源，因为您没有以有访问权限的人登录。"
   },
   "error.unauthenticated.title": {
-    "defaultMessage": "Unauthenticated"
+    "defaultMessage": "未认证"
   },
   "feed.hot.info": {
-    "defaultMessage": "Trending paintings that got attention in the previous batches"
+    "defaultMessage": "在前几批中引起注意的热门绘画"
   },
   "feed.hot.title": {
-    "defaultMessage": "Hot"
+    "defaultMessage": "热门"
   },
   "feed.new.info": {
-    "defaultMessage": "Freshly baked, just submitted to the Gallery"
+    "defaultMessage": "新鲜出路，刚刚提交到画廊"
   },
   "feed.new.title": {
-    "defaultMessage": "New"
+    "defaultMessage": "新增"
   },
   "feed.personal.info": {
-    "defaultMessage": "Your personal selection: random picks from favorites"
+    "defaultMessage": "您的个人选辑：从收藏夹中随机选择"
   },
   "feed.personal.title": {
-    "defaultMessage": "Personal"
+    "defaultMessage": "个人"
   },
   "feed.popular.info": {
-    "defaultMessage": "Small selection from best of the best"
+    "defaultMessage": "从最佳中生成小选辑"
   },
   "feed.popular.title": {
-    "defaultMessage": "Popular"
+    "defaultMessage": "热门"
   },
   "font.page.description": {
-    "defaultMessage": "Test page for in-house international Minecraft font based on Monocraft font",
+    "defaultMessage": "基于 Monocraft 字体的内部 Minecraft 字体测试页面",
     "description": "Test page for in-house international Minecraft font based on Monocraft font"
   },
   "font.page.title": {
-    "defaultMessage": "Minefont test page",
+    "defaultMessage": "Minefont 测试页面",
     "description": "Minefont test page title"
   },
   "footer.legal.affiliation": {
-    "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
+    "defaultMessage": "Zetter 画廊不隶属于Minecraft, Microsoft and Mojang AB。"
   },
   "footer.legal.developer": {
-    "defaultMessage": "Zetter Gallery is licensed mostly under MPL2 and partially with reserved rights, developed by {author} and {contributors}."
+    "defaultMessage": "Zetter 画廊大部分在 MPL2 下许可，部分由 {author} 和 {contributors} 开发的保留权利。"
   },
   "footer.legal.developer.author": {
     "defaultMessage": "Dmitry Burlakov (@dantaeusb)",
     "description": "Author name and nickname"
   },
   "footer.legal.developer.contributors": {
-    "defaultMessage": "Contributors"
+    "defaultMessage": "贡献者"
   },
   "footer.legal.learn-more": {
-    "defaultMessage": "Learn more"
+    "defaultMessage": "了解详情"
   },
   "footer.legal.minecraft-copyright": {
-    "defaultMessage": "Minecraft and associated Minecraft images are copyright of Mojang AB."
+    "defaultMessage": "Minecraft 和相关的 Minecraft 图像是Mojang AB 的版权。"
   },
   "footer.legal.tos": {
-    "defaultMessage": "Terms of service"
+    "defaultMessage": "服务条款"
   },
   "header.link.home.logo": {
-    "defaultMessage": "Zetter Gallery Logo"
+    "defaultMessage": "Zetter 画廊图标"
   },
   "header.link.home.title": {
-    "defaultMessage": "Go to homepage"
+    "defaultMessage": "转到主页"
   },
   "human-terms.complications.paragraph.1": {
-    "defaultMessage": "I am just a human being. I won't be able to protect your work in court or do any complicated legal stuff regarding copyright. I resign from any responsibility for the things going on here, in a reasonable range. For own safety I would assume good intentions from anyone making a claim."
+    "defaultMessage": "我只是一个人。我无法在法庭上保护你的作品，也无法在版权方面做任何复杂的法律工作。 我在合理范围内对这里发生的事情免除任何责任。 为了自身的安全，我将从任何提出要求的人那里假定良好的意图。"
   },
   "human-terms.complications.title": {
-    "defaultMessage": "What are the complications?"
+    "defaultMessage": "有什么复杂情况？"
   },
   "human-terms.contribution.paragraph.1": {
-    "defaultMessage": "Yes! Well, partially. Zetter and Zetter Gallery mods are licensed under MPL2 and open-source. The front-end part of this service is also MPL2 and open-source. The API, however, is closed-source. This is because of my security concerns and because I would like to build a player base and avoid early forks. This, however, will likely be changed closer to release of 1.0 mods. I can open repository to particular contributors who proved their positive intents and have sufficient TypeScript/Nest.js skills."
+    "defaultMessage": "是的！部分好。Zetter 和 Zetter 画廊模组都是在 MPL2 和开源下许可的。此服务的前端部分也是 MPL2 开源的。 然而，API是闭源的。 这是因为我对安全的注意，并且因为我想建立一个玩家基地并避免早期派系。 然而，这可能会更接近于发布 1.0 模式。 我可以为特定贡献者开放仓库，他们证明了他们的积极意图，并且具备足够的 TypeScript/Nest.js 技能。"
   },
   "human-terms.contribution.title": {
-    "defaultMessage": "Can I contribute?"
+    "defaultMessage": "我可以贡献吗？"
   },
   "human-terms.copyright.paragraph.1": {
-    "defaultMessage": "I do not claim exclusive or ownership rights on your artworks by any means. Your work is owned by you and no one else. However, for the sake of being safe legally, I use very similar licensing to the sites like Instagram, DeviantArt or 500px. That means I am able to show and distribute your work."
+    "defaultMessage": "我不会以任何方式声称对您的艺术作品拥有独有权或所有权。您的作品由您所有而非其他人。然而，为了在法律上安全起见，我使用发放给 Instagram、Deviantart 或 500px 等网站非常类似的许可证。 这意味着我能够展示和分发你们的作品。"
   },
   "human-terms.copyright.paragraph.2": {
-    "defaultMessage": "Important notice: if you at any time would like to remove your work from Zetter Gallery, you are free to do that. But there's no mechanism to retract paintings from players' servers, and no guarantees that it will be implemented. I am not responsible for what people might do with your paintings."
+    "defaultMessage": "重要通知：如果您随时想从Zetter 画廊移除您的作品，您可以自由地做。 但是，没有从玩家的服务器上收回画作的机制和能够获得的保证。 我不对人们可能对你的画作做些什么而负责。"
   },
   "human-terms.copyright.paragraph.3": {
-    "defaultMessage": "Things happen that someone might steal your work. That's bad because only you can decide where your work might appear. If that happened, please, contact me on Discord or email copyright@zetter.gallery, providing some proof that you own the work."
+    "defaultMessage": "有人可能偷盗你的作品。这很糟糕，因为只有你才能决定你的作品可能出现在哪里。 如果发生这种情况，请在 Discord 上或电子邮件 copyright@zetter.gallery 联系我，提供一些证据，证明你拥有这个作品。"
   },
   "human-terms.copyright.title": {
-    "defaultMessage": "What about copyright?"
+    "defaultMessage": "版权如何？"
   },
   "human-terms.end.thank-you": {
-    "defaultMessage": "Thank you for reading. Feel free to talk to me if you have any questions."
+    "defaultMessage": "感谢您阅读。如果您有任何问题，请随时与我交谈。"
   },
   "human-terms.introduction.paragraph.1": {
-    "defaultMessage": "First of all, Zetter Gallery is not some kind of legal entity, and created & provided solely by a single person so far. This adds some complications, but we'll talk about that later."
+    "defaultMessage": "首先，Zeter 画廊不是某种法律实体，迄今只是由一个人创立和提供。 这增加了一些复杂情况，但我们稍后将谈论这一点。"
   },
   "human-terms.introduction.paragraph.2": {
-    "defaultMessage": "Zetter Gallery is created with single purpose — let people to create and share their artworks in a wonderful game called Minecraft. Advertising or selling things is not a purpose of this service."
+    "defaultMessage": "Zeter 画廊是为了单一的目的创建的——让人们在一个名为 Minecraft 的美丽游戏中创建和分享他们的艺术品。 广告或销售物品不是这种服务的目的。"
   },
   "human-terms.introduction.title": {
-    "defaultMessage": "Let me explain some details about Zetter Gallery"
+    "defaultMessage": "请允许我解释有关 Zeter 画廊的一些详细信息"
   },
   "human-terms.moderation.paragraph.1": {
-    "defaultMessage": "I understand that art means different things for different people. Also, I understand that different people would prefer to see different things. With this in mind, I came to a conclusion: the moderation will be performed, perfectly, by community moderators. Our rules won't be censoring anything specifically, rather creating a 'ratings' for paintings."
+    "defaultMessage": "我理解艺术对不同的人意味着不同，我理解不同的人希望看到不同的东西。 考虑到这一点，我得出了一个结论：社区管理员将完美地履行调整。 我们的规则不会具体检查任何东西，而是为绘画创建一个“评级”。"
   },
   "human-terms.moderation.paragraph.2": {
-    "defaultMessage": "I keep the right for moderators to retract or just deny your painting, if the content is very disruptive. I understand that its vague definition, but hopefully, the paintings will rarely be straight discarded. Instead, according ratings will be applied before approval. Those rating may include things like Gambling, Nudity, etc. — you can see the whole list at your player preferences page. This list is subject to extension, and the defaults will be rather 'family-friendly'. This by no means that this mod is good for kids, any kind of online activity needs parental guidance."
+    "defaultMessage": "如果您的画作内容非常混乱，我有权让版主收回或拒绝您的画作。 我理解其模糊的定义，但希望这些画作很少被直接抛弃，而是在批准之前将使用评级。 这些评分可能包括游戏、 Nudity 等——您可以在您的玩家设置页面看到整个列表。 此列表可以扩展，默认值将相当“关爱家庭”。 这绝不意味着这个模组对孩子是好的，任何类型的在线活动都需要父母的指导。"
   },
   "human-terms.moderation.paragraph.3": {
-    "defaultMessage": "Moderators can make mistakes and discard or wrongly rate painting. Please be understanding that it's just people who put their free time for everyone's good. Be patient and talk to us if that happened."
+    "defaultMessage": "版主可能犯错误，拒绝或错误评分画作。 请理解，只有那些为了每个人的利益放下自由时间的人才会这样做。要有耐心并与我们交谈。"
   },
   "human-terms.moderation.paragraph.4": {
-    "defaultMessage": "I strictly recommend this mod and service only for legal age players. Registering here without reaching legal age should not be possible by Microsoft oAuth rules and breaks ToS."
+    "defaultMessage": "我严格推荐这个模组和仅为合法年龄的玩家服务。 Microsoft oAuth 规则不应允许在这里注册而不达到法定年龄，并且打破ToS。"
   },
   "human-terms.moderation.title": {
-    "defaultMessage": "What about moderation?"
+    "defaultMessage": "如何审核？"
   },
   "human-terms.title": {
-    "defaultMessage": "Greetings,"
+    "defaultMessage": "你好，"
   },
   "human-terms.title.callout.check-english": {
-    "defaultMessage": "These statements are not legally binding. This page provides short explanation of the terms of use and some details about intended usage of this service."
+    "defaultMessage": "这些声明不具有法律约束力。本页对使用条款作了简短的解释，并详细介绍了这种服务的预期用途。"
   },
   "index.page.cta.button.wiki": {
-    "defaultMessage": "Learn about Zetter Gallery"
+    "defaultMessage": "了解 Zeter 画廊"
   },
   "index.page.cta.button.wiki.about-zetter": {
-    "defaultMessage": "Zetter Gallery Project"
+    "defaultMessage": "Zeter 画廊项目"
   },
   "index.page.cta.button.wiki.learn": {
-    "defaultMessage": "Learn more about"
+    "defaultMessage": "了解更多有关"
   },
   "index.page.cta.description": {
-    "defaultMessage": "Use Zetter and Zetter Gallery mods together to add your paintings here by trading with painting merchant in Minecraft™ game."
+    "defaultMessage": "在 Minecraft™ 游戏中使用 Zetter 和 Zeter 画廊模组来添加您的画作。"
   },
   "index.page.cta.title": {
-    "defaultMessage": "Would like to add your own painting?"
+    "defaultMessage": "想要添加您自己的画作吗？"
   },
   "index.page.description": {
-    "defaultMessage": "Zetter Gallery is a service that allows you to share your Zetter Minecraft paintings with the world",
+    "defaultMessage": "Zetter 画廊是一种服务，让您能够与世界分享你的 Zetter Minecraft 画作。",
     "description": "Homepage description"
   },
   "index.page.title": {
-    "defaultMessage": "Home for Minecraft paintings",
+    "defaultMessage": "Minecraft画作主页",
     "description": "Homepage title"
   },
   "introduction.feed.description": {
-    "defaultMessage": "Feed is ever updating list of paintings, which are available from Painting Merchant in game. You can customize your feed by logging in and adding some paintings to favorites."
+    "defaultMessage": "兴趣流不断更新画作列表，这些绘图可从游戏中的画作商人获得。 您可以通过登录并添加一些绘图到收藏夹来自定义您的兴趣流。"
   },
   "introduction.first-time.description": {
-    "defaultMessage": "Zetter Gallery is a Minecraft mod which allows you to share paintings created with the in game pixel art editor. Mods with painting editor and painting merchant are installed separately."
+    "defaultMessage": "Zetter 画廊是一个 Minecraft 模组，它允许您分享通过游戏内像素艺术编辑器创建的画作。 含有画作编辑器和画作商人的模组是分开安装的。"
   },
   "introduction.first-time.ignore": {
-    "defaultMessage": "I know already"
+    "defaultMessage": "我已知晓"
   },
   "introduction.first-time.learn-more": {
-    "defaultMessage": "Learn more!"
+    "defaultMessage": "了解更多！"
   },
   "microsoft-auth-check-advice": {
-    "defaultMessage": "Good you asked! Just check that server described below is the one that you're playing on right now.",
+    "defaultMessage": "问得好！只要检查下述的服务器是你正在玩的服务器即可。",
     "description": "Explain how to make sure it's not a phishing page"
   },
   "navbar.about": {
-    "defaultMessage": "About"
+    "defaultMessage": "关于"
   },
   "navbar.feed": {
-    "defaultMessage": "On sale"
+    "defaultMessage": "在售"
   },
   "navbar.home": {
-    "defaultMessage": "Home"
+    "defaultMessage": "主页"
   },
   "navbar.profile": {
-    "defaultMessage": "Profile"
+    "defaultMessage": "个人资料"
   },
   "navbar.profile.avatar": {
-    "defaultMessage": "Your profile avatar"
+    "defaultMessage": "你的头像"
   },
   "navbar.profile.avatar.default": {
-    "defaultMessage": "Anonymous avatar"
+    "defaultMessage": "匿名头像"
   },
   "navbar.search": {
-    "defaultMessage": "Search"
+    "defaultMessage": "搜索"
   },
   "paintings.layered-navigation.sort.hot": {
-    "defaultMessage": "Hot",
+    "defaultMessage": "热门",
     "description": "Sort paintings by rating"
   },
   "paintings.layered-navigation.sort.new": {
-    "defaultMessage": "New",
+    "defaultMessage": "新增",
     "description": "Sort paintings by creation date"
   },
   "paintings.layered-navigation.sort.top": {
-    "defaultMessage": "Top",
+    "defaultMessage": "顶流",
     "description": "Sort paintings by total sales count"
   },
   "paintings.page.description": {
-    "defaultMessage": "Check out painting called {paintingName} created by {username}'s at Zetter Gallery"
+    "defaultMessage": "看看由 {username} 在 Zetter 画廊创作的 {paintingName} 画作。"
   },
   "paintings.page.title": {
-    "defaultMessage": "{paintingName} by {username}"
+    "defaultMessage": "{paintingName} 由 {username} 创作"
   },
   "player.preferences.button.reset": {
-    "defaultMessage": "Reset"
+    "defaultMessage": "重置"
   },
   "player.preferences.button.save": {
-    "defaultMessage": "Save"
+    "defaultMessage": "保存"
   },
   "player.preferences.button.save-and-continue": {
-    "defaultMessage": "Save and continue"
+    "defaultMessage": "保存并继续"
   },
   "player.preferences.callout.alpha-warning": {
-    "defaultMessage": "This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"
+    "defaultMessage": "这不会影响您在 Alpha 版本中的兴趣流(但将影响今后某个时候的兴趣流)！ 调整艺术是很困难的，所以你可能会看到不同的东西！"
   },
   "player.preferences.public.profile": {
-    "defaultMessage": "Profile"
+    "defaultMessage": "个人资料"
   },
   "player.preferences.public.toggle.description": {
-    "defaultMessage": "Is you disable this, your nickname and avatar still will be visible, but players won't be able to view paintings and badges in your profile"
+    "defaultMessage": "您是否禁用此功能，您的昵称和头像仍然可见，但是玩家将无法在您的个人资料中查看画作和徽章"
   },
   "player.preferences.public.toggle.title": {
-    "defaultMessage": "Make your profile visible to other players"
+    "defaultMessage": "让您的个人资料对其他玩家可见"
   },
   "player.preferences.ratings.description": {
-    "defaultMessage": "This section allows you to control what kind of paintings you may see in your feed"
+    "defaultMessage": "本区域允许你控制你在你的兴趣流中可以看到什么绘画"
   },
   "player.preferences.ratings.title": {
-    "defaultMessage": "Ratings"
+    "defaultMessage": "评分"
   },
   "player.preferences.title": {
-    "defaultMessage": "Preferences"
+    "defaultMessage": "设置"
   },
   "players.me.logout.description": {
-    "defaultMessage": "We will redirect you back to home page soon"
+    "defaultMessage": "我们将很快将您重定向至主页"
   },
   "players.me.logout.page.description": {
-    "defaultMessage": "Log out from Zetter gallery",
+    "defaultMessage": "从 Zetter 画廊登出",
     "description": "Player log out page description"
   },
   "players.me.logout.page.title": {
-    "defaultMessage": "Log Out",
+    "defaultMessage": "登出",
     "description": "Player log out page title"
   },
   "players.me.logout.title": {
-    "defaultMessage": "Successfully logged out from Zetter Gallery"
+    "defaultMessage": "成功从 Zetter 画廊登出"
   },
   "players.page.description": {
-    "defaultMessage": "{username}'s profile on Zetter Gallery"
+    "defaultMessage": "{username} 在 Zetter 画廊上的个人资料"
   },
   "players.page.title": {
-    "defaultMessage": "{username}'s Profile"
+    "defaultMessage": "{username} 的个人资料"
   },
   "terms-for-humans.page.description": {
-    "defaultMessage": "Zetter Gallery frequently asked questions",
+    "defaultMessage": "Zetter 画廊常见问题",
     "description": "FAQ About Zetter Gallery page description"
   },
   "terms-for-humans.page.title": {
-    "defaultMessage": "FAQ",
+    "defaultMessage": "常见问题",
     "description": "FAQ About Zetter Gallery page title"
   },
   "terms.acceptance.paragraph": {
-    "defaultMessage": "BY USING THE SERVICES, YOU ARE AGREEING, ON BEHALF OF YOURSELF AND THOSE YOU REPRESENT, TO COMPLY WITH AND BE LEGALLY BOUND BY THESE TERMS AS WELL AS OUR PRIVACY POLICY AND ALL APPLICABLE LAWS. IF YOU, FOR YOURSELF OR ON BEHALF OF THOSE YOU REPRESENT, DO NOT AGREE TO ANY PROVISION OF THESE TERMS, YOU MUST, FOR YOURSELF AND ON BEHALF ANY SUCH PERSON(S), DISCONTINUE THE REGISTRATION PROCESS, DISCONTINUE YOUR USE OF THE SERVICES, AND, IF YOU ARE ALREADY REGISTERED, CANCEL YOUR ACCOUNT."
+    "defaultMessage": "通过使用此服务，您代表您自己和您所代表的人，同意遵守这些条款以及我们的隐私政策和所有适用法律，并受其法律约束。如果您和您所代表的人，不同意这些条款的任何规定，您必须为您自己和您所代表的人，停止注册程序并停止使用服务，如果您已经注册，请删除您的帐户。"
   },
   "terms.acceptance.title": {
-    "defaultMessage": "Acceptance of Terms"
+    "defaultMessage": "接受条款"
   },
   "terms.description.paragraph": {
-    "defaultMessage": "Dmitrii Burlakov (“Zetter Gallery“, “we”, “us” or “our”) provides a platform via its website, Application Programming Interface and an independent, user-made modification to the Mojang video game Minecraft, to a community of registered users (“users” or “you”) to engage in a variety of activities, including to upload and display digital paintings (“Visual Content”). The following are the terms of use (“Terms”) for using the Site and the Services."
+    "defaultMessage": "Dmitrii Burlakov（“Zetter 画廊“，我们”）通过其网站提供了一个平台、应用程序编程界面和独立的、用户制作的 Mojang 视频游戏Minecraft 的模组的，让注册用户（“用户”或“你”）参与各种活动，包括上传和显示数字画作（“视觉内容”）。 以下是使用网站和服务的条款。"
   },
   "terms.description.title": {
-    "defaultMessage": "Description of Service"
+    "defaultMessage": "服务的描述"
   },
   "terms.page.description": {
-    "defaultMessage": "Zetter Gallery terms of service",
+    "defaultMessage": "Zetter 画廊服务条款",
     "description": "ToS page description"
   },
   "terms.page.title": {
-    "defaultMessage": "Terms of Service",
+    "defaultMessage": "服务条款",
     "description": "ToS page title"
   },
   "terms.title": {
-    "defaultMessage": "Terms of Service",
+    "defaultMessage": "服务条款",
     "description": "Title for Zetter Gallery Terms of Service Page"
   },
   "terms.title.callout.check-english": {
-    "defaultMessage": "Translations of the terms are provided by community and are not legally binding. Please refer to english version of this page if you have any questions."
+    "defaultMessage": "这些条款的译文由社区提供，不具有法律约束力。 如果您有任何疑问，请参阅此页面的英文版本。"
   },
   "terms.zetter.copyright-complaints.dmca": {
-    "defaultMessage": "Zetter Gallery reserves the right to remove any Content that allegedly infringes another person’s copyright. In appropriate circumstances, Zetter Gallery will terminate the accounts of users who infringe copyright. Notices to Zetter Gallery regarding any alleged copyright infringement should be directed to Zetter Gallery via email at: copyright@zetter.gallery."
+    "defaultMessage": "Zetter 画廊保留删除任何据称侵犯他人版权的内容的权利。在适当情况下，Zetter Gallery 将终止侵犯版权的用户账户。关于任何指称的侵犯版权行为的通知应通过电子邮件发送给 Zeter 画廊：copyright@zetter.gallery。"
   },
   "terms.zetter.copyright-complaints.title": {
-    "defaultMessage": "Copyright Complaints"
+    "defaultMessage": "版权申诉"
   },
   "terms.zetter.liability.title": {
-    "defaultMessage": "Limitation of Liability"
+    "defaultMessage": "责任限制"
   },
   "terms.zetter.licensing.paragraph": {
-    "defaultMessage": "By submitting Visual Content to Zetter Gallery you grant a non-exclusive, transferable, worldwide license to use, sublicense, distribute, reproduce, modify, adapt, publicly perform and publicly display such Visual Content in connection with the Services. This license will exist for the period during which the Visual Content is posted on the Site and will automatically terminate upon the removal of the Visual Content from the Site. Zetter Gallery is not responsible for the copies that were created and distributed during period that Visual Content was available on service. Zetter Gallery does not provide way to retract copies of your Visual Content after it's distribution. Zetter Gallery does not claim ownership of your Visual Content."
+    "defaultMessage": "通过向 Zeter 画廊提交视觉内容，您授予一个非专用、可转让的全球许可以使用，再授予、分发、复制、修改、改编、公开表演和公开显示与服务有关的视觉内容。 此许可将存在于视觉内容上载在网站上的期间内，并在从网站移除视觉内容后自动终止。 Zetter 画廊不负责在视觉内容可用期间创建和分发的副本。 Zetter 画廊不提供在发行后撤回您的视觉内容副本的方法。 Zetter 画廊不拥有您的视觉内容。"
   },
   "terms.zetter.licensing.title": {
-    "defaultMessage": "Licensing"
+    "defaultMessage": "授权"
   },
   "terms.zetter.modification.interruptions": {
     "defaultMessage": "Your access to and use of the Site and our Services may be interrupted from time to time as a result of equipment malfunction, updating, maintenance or repair of the Site or any other reason within or outside of our control. Zetter Gallery reserves the right to suspend or discontinue the availability of the Site, any Service, and to remove any Visual Content at any time at its sole discretion and without prior notice. Zetter Gallery may also impose limits on certain features and Services or restrict your access to parts of or all of the Site and the Services without notice or liability. The Site should not be used or relied upon for storage of your Visual Content and you are directed to retain your own copies of all Visual Content posted on the Site."
@@ -763,263 +763,263 @@
     "defaultMessage": "If you do not see this button, it is likely that chat links are disabled in Minecraft, or the server you are playing on is banned."
   },
   "wiki.zetter-gallery.trading-interface.offer-count-dd": {
-    "defaultMessage": "Shows amount of painting in current feed and current position."
+    "defaultMessage": "显示当前兴趣流和当前位置的画作数量。"
   },
   "wiki.zetter-gallery.trading-interface.offer-count-dt": {
-    "defaultMessage": "2) Offer count"
+    "defaultMessage": "2) 报价数量"
   },
   "wiki.zetter-gallery.trading-interface.offer-paginator-dt": {
-    "defaultMessage": "3) Previous & next buttons"
+    "defaultMessage": "3) 上一个和下一个按钮"
   },
   "wiki.zetter-gallery.trading-interface.painting-info-dd": {
-    "defaultMessage": "Shows currently selected painting on the left, and it's info on the right. Info includes painting name, author's nickname and size in blocks."
+    "defaultMessage": "在左侧显示当前选中的画作以及右侧的信息。信息包括画作名称、作者的昵称和方块大小等。"
   },
   "wiki.zetter-gallery.trading-interface.painting-info-dt": {
-    "defaultMessage": "1) Painting preview & info"
+    "defaultMessage": "1) 画作预览与信息"
   },
   "wiki.zetter-gallery.trading-interface.price-dd": {
-    "defaultMessage": "Shows how many emeralds you should place in sale slot to get a painting. In sale mode, show how much you will get: popular artists are getting more emeralds."
+    "defaultMessage": "显示您应该放下多少个绿宝石才能获得画作。 在销售模式下，显示您将得到多少绿宝石：受欢迎的艺术家正在获得更多的绿宝石。"
   },
   "wiki.zetter-gallery.trading-interface.price-dt": {
-    "defaultMessage": "5) Offer price"
+    "defaultMessage": "5) 报价"
   },
   "wiki.zetter-gallery.trading-interface.result-slot-dt": {
-    "defaultMessage": "7) Result slot"
+    "defaultMessage": "7) 结果槽"
   },
   "wiki.zetter-gallery.trading-interface.sale-slot-dt": {
-    "defaultMessage": "6) Sale slot"
+    "defaultMessage": "6) 销售槽"
   },
   "wiki.zetter-gallery.trading-interface.section": {
-    "defaultMessage": "Trading"
+    "defaultMessage": "交易中"
   },
   "wiki.zetter-gallery.trading-interface.title": {
-    "defaultMessage": "Trading paintings"
+    "defaultMessage": "交易中的画作"
   },
   "wiki.zetter-gallery.trading-interface.update-countdown-dt": {
-    "defaultMessage": "8) Update countdown"
+    "defaultMessage": "8) 更新倒计时"
   },
   "wiki.zetter-gallery.trading.interface.feed-dd": {
-    "defaultMessage": "This just shows which algorithm was used to bring this painting to you. For example, this can be a star if this painting is available only to you, as you added it to your favorite paintings on this website."
+    "defaultMessage": "这只是显示了哪个算法被用来将这幅画作带给你。 例如，如果这幅绘画只供您使用，在本画作网站，当您将其添加到您收藏夹，其可能是一个星星。"
   },
   "wiki.zetter-gallery.trading.interface.login-callout": {
-    "defaultMessage": "Logging in helps us to work better and prevent feed manipulation by bots and trolls. Please always log in if you have an account."
+    "defaultMessage": "登录帮助我们更好地工作，防止机器人和怪人操纵兴趣流。如果您有帐户，请随时登录。"
   },
   "wiki.zetter-gallery.trading.interface.offer-paginator-dd": {
-    "defaultMessage": "Press those buttons to switch the current offer. Up for previous offer and down for next."
+    "defaultMessage": "按下这些按钮来切换当前报价。上次报价和下次报价。"
   },
   "wiki.zetter-gallery.trading.interface.result-slot-dd": {
-    "defaultMessage": "When the offer is fulfilled (you have enough emeralds or your painting is validated), get your result from that slot. It could be painting or emeralds here."
+    "defaultMessage": "当报价完成时(您有足够的绿宝石或您的画作被验证)，从该槽中获取您的结果。 这里可能是画作或绿宝石。"
   },
   "wiki.zetter-gallery.trading.interface.result-slot-dt": {
-    "defaultMessage": "7) Result slot"
+    "defaultMessage": "7) 结果槽"
   },
   "wiki.zetter-gallery.trading.interface.sale-slot-dd": {
-    "defaultMessage": "Place your emeralds here. Now. Jokes aside, you can also place your painting here if you are logged in, to submit your painting to this website."
+    "defaultMessage": "在此处放置您的绿宝石。现在。 如果您已登录，您也可以在这里放置您的画作，提交您的画作到本网站。"
   },
   "wiki.zetter-gallery.trading.interface.update-countdown-dd": {
-    "defaultMessage": "Because offers are updated every 5 minutes, you have limited time to purchase the painting in offer. Do not worry, when time will run out, this button will turn black, and you will have 1:30 to finish what you planned. You can also manually update offers by clicking this button when it's black."
+    "defaultMessage": "由于报价每5分钟更新一次，您有有限的时间购买报价。不要担心，如果时间用完，此按钮会变成黑色，您将有 1:30 来完成您的计划。您也可以通过单击此按钮来手动更新报价。"
   },
   "wiki.zetter.advanced.console.export.param1": {
-    "defaultMessage": "The first parameter is target for exporting. Typically, you most likely need to use \"client\" parameter, so the painting will be saved to your Minecraft folder, the same place where screenshots and texturepacks are located, in a new \"zetter\" directory. If you are a server operator, you can make use of \"server\" option: that way painting will be saved only in server directory root under \"zetter\" directory. If you are playing in a single-player world, the result will be the same, but for dedicated servers \"server\" result will only be accessible to the people who have access to the server computer file system.",
+    "defaultMessage": "第一个参数是导出的目标。 通常，您最可能需要使用“客户端”参数，所以绘画将保存到您的 Minecraft 文件夹。 在一个新的 “zetter” 目录中，在屏幕截图和材质包的同一位置。 如果您是服务器运营商， 您可以使用“服务器”选项：这种绘画只能保存在 \"zetter\" 目录下的服务器根目录中。 如果您正在单人游戏世界中玩，结果将是相同的。 但对于专用服务器\"服务器\"结果只能为有权访问服务器计算机文件系统的人访问。",
     "description": "Explanation of the first parameter of export command"
   },
   "wiki.zetter.advanced.console.export.param2": {
-    "defaultMessage": "The second parameter is painting lookup rule. It could be either the name of the painting you are looking for in double quotes, like \"My Painting\", or you can refer to your painting by its numeric ID. Another option is to use its canvas name, typically it's a string like zetter_painting_14 (14 is the numeric ID).",
+    "defaultMessage": "第二个参数是绘制查找规则。 它可以是你正在寻找的双引号中画作的名称， 例如\"我的画作\"，或者你可以用数字ID来引用你的画作。 另一个选项是使用它的画布名称，通常是像 zetter_painting_14 那样的字符串(14是数字ID)。",
     "description": "Explanation of the second parameter of export command"
   },
   "wiki.zetter.advanced.console.export.pre": {
-    "defaultMessage": "If you would like to share your work outside Minecraft and do not want to use Zetter Gallery, you can use a special export command. This command will allow you to save your painting to PNG file to your game folder or to server folder.",
+    "defaultMessage": "如果您想要在 Minecraft 之外分享您的作品且不想使用 Zeter 画廊，您可以使用特殊的导出命令。 此命令将允许您的绘画保存到 PNG 文件到您的游戏文件夹或服务器文件夹。",
     "description": "Explain what is export command"
   },
   "wiki.zetter.advanced.console.export.title": {
-    "defaultMessage": "Export command"
+    "defaultMessage": "导出命令"
   },
   "wiki.zetter.advanced.console.restore.notice": {
-    "defaultMessage": "Keep in mind, though, that this only applies to the signed paintings. Non-signed canvases can be easily lost forever or overwritten by Zetter when canvas item is removed from the world. So remember to sign your painting when you're done and avoid using easels as a decoration if the result is important to you.",
+    "defaultMessage": "但要记住，这只适用于经签名的画作。 当画布从世界上移走时，无签名的画布可能很容易永久丢失或被 Zetter 覆盖。 所以请记住在您完成后在您的画作上签名，如果结果对您很重要，则避免简易作装饰使用。",
     "description": "Explain requirements for the restore command"
   },
   "wiki.zetter.advanced.console.restore.post": {
-    "defaultMessage": "Instead of [painting] you should use the title of your painting, like \"My Painting\". But you can also use painting id (number) or even canvas code, if you're more into technical stuff. This command should give you a copy of the painting if it was found by provided parameter.",
+    "defaultMessage": "不是 [painting] ，您应该使用您的画作的标题，如“我的画作”。 但如果你更喜欢技术性的东西，你也可以使用画作id (数字)，甚至画布代码。 如果通过提供的参数找到绘画，此命令应该给您一份副本。",
     "description": "Explain what restore command parameters and results"
   },
   "wiki.zetter.advanced.console.restore.pre": {
-    "defaultMessage": "Losing results of your work can be devastating, when you put a lot of love in it. It is especially devastating if that is happened because some guy uploaded ill-tested version of the mod and some terrible bug happened... oh well. For that reason, Zetter does never remove a painting (though it could be blocked by server admin, but not removed unless physically deleted), and there is a special 'Restore' command, which can be used as following:",
+    "defaultMessage": "你的工作结果丢失可能是毁灭性的，当你对它充满爱意。 如果发生这种情况，特别具有破坏性，因为有些人上传了测试错误的模组版本，出现了一些可怕的错误……好吧。因此，Zetter 永远不会删除一幅绘画（尽管它可以被服务器管理员阻止除非被物理意义上移除否则不会删除），还有一个特殊的“恢复”命令，可用作以下内容：",
     "description": "Explain what is restore command"
   },
   "wiki.zetter.advanced.console.restore.title": {
-    "defaultMessage": "Restore command"
+    "defaultMessage": "恢复命令"
   },
   "wiki.zetter.advanced.console.section": {
-    "defaultMessage": "Console Commands"
+    "defaultMessage": "控制台命令"
   },
   "wiki.zetter.advanced.console.title": {
-    "defaultMessage": "Console Commands"
+    "defaultMessage": "控制台命令"
   },
   "wiki.zetter.advanced.hotkeys": {
-    "defaultMessage": "Hotkeys are keyboard shortcuts that should make your work easier and quicker. Learning them will improve your experience a lot.",
+    "defaultMessage": "快捷键是键盘快捷键，可以使您的工作更简单、更快。学习这些快捷键将大大提高您的体验。",
     "description": "Explain what is hotkeys"
   },
   "wiki.zetter.advanced.hotkeys.colors.down": {
-    "defaultMessage": "Use palette slot below the current one"
+    "defaultMessage": "使用当前调色板下面的槽"
   },
   "wiki.zetter.advanced.hotkeys.colors.swap": {
-    "defaultMessage": "Swap color: use palette slot next to current one."
+    "defaultMessage": "交换颜色：在当前位置旁边使用调色板槽。"
   },
   "wiki.zetter.advanced.hotkeys.colors.up": {
-    "defaultMessage": "Use palette slot above the current one"
+    "defaultMessage": "使用当前调色板上面的槽"
   },
   "wiki.zetter.advanced.hotkeys.history.redo": {
-    "defaultMessage": "Redo: restore last canceled action"
+    "defaultMessage": "重做：还原上次取消的操作"
   },
   "wiki.zetter.advanced.hotkeys.history.undo": {
-    "defaultMessage": "Undo: cancel last non-canceled action"
+    "defaultMessage": "撤销：取消上次未取消的操作"
   },
   "wiki.zetter.advanced.hotkeys.section": {
-    "defaultMessage": "Hotkeys"
+    "defaultMessage": "快捷键"
   },
   "wiki.zetter.advanced.hotkeys.title": {
-    "defaultMessage": "Hotkeys"
+    "defaultMessage": "快捷键"
   },
   "wiki.zetter.advanced.hotkeys.tools.brush": {
-    "defaultMessage": "Brush tool"
+    "defaultMessage": "笔刷工具"
   },
   "wiki.zetter.advanced.hotkeys.tools.bucket": {
-    "defaultMessage": "Bucket or fill tool"
+    "defaultMessage": "桶或填充工具"
   },
   "wiki.zetter.advanced.hotkeys.tools.colors": {
-    "defaultMessage": "Colors"
+    "defaultMessage": "颜色"
   },
   "wiki.zetter.advanced.hotkeys.tools.hand": {
-    "defaultMessage": "Hand tool"
+    "defaultMessage": "抓手工具"
   },
   "wiki.zetter.advanced.hotkeys.tools.history": {
-    "defaultMessage": "History"
+    "defaultMessage": "历史"
   },
   "wiki.zetter.advanced.hotkeys.tools.pencil": {
-    "defaultMessage": "Pencil tool"
+    "defaultMessage": "铅笔工具"
   },
   "wiki.zetter.advanced.hotkeys.tools.picker": {
-    "defaultMessage": "Color picker tool"
+    "defaultMessage": "拾色器"
   },
   "wiki.zetter.advanced.hotkeys.tools.title": {
-    "defaultMessage": "Tools"
+    "defaultMessage": "工具"
   },
   "wiki.zetter.advanced.hotkeys.tools.zoom-in": {
-    "defaultMessage": "Zoom in"
+    "defaultMessage": "放大"
   },
   "wiki.zetter.advanced.hotkeys.tools.zoom-out": {
-    "defaultMessage": "Zoom out"
+    "defaultMessage": "缩小"
   },
   "wiki.zetter.advanced.page": {
-    "defaultMessage": "Advanced",
+    "defaultMessage": "高级",
     "description": "Sidebar navigation, advanced techniques page"
   },
   "wiki.zetter.advanced.page.description": {
-    "defaultMessage": "Learn about advanced techniques in Zetter Mod for Minecraft",
+    "defaultMessage": "在 Zetter 模组中学习有关 Minecraft 的先进技术",
     "description": "Zetter Advanced Wiki page description"
   },
   "wiki.zetter.advanced.page.title": {
-    "defaultMessage": "Zetter Advanced Topics Wiki",
+    "defaultMessage": "Zetter 高级主题 Wiki",
     "description": "Zetter Advanced Topics Wiki page title"
   },
   "wiki.zetter.advanced.title": {
-    "defaultMessage": "Zetter Wiki Advanced Topics",
+    "defaultMessage": "Zetter Wiki 高级主题",
     "description": "Title for Zetter Wiki Advanced Page"
   },
   "wiki.zetter.combining.interface.combine.grid-dd": {
-    "defaultMessage": "Place your canvases here in order to merge them together."
+    "defaultMessage": "将您的画布放在这里，以便将它们合并在一起。"
   },
   "wiki.zetter.combining.interface.combine.grid-dt": {
-    "defaultMessage": "1) Canvas combination grid"
+    "defaultMessage": "1) 画布组合网格"
   },
   "wiki.zetter.combining.interface.combine.mode-dd": {
-    "defaultMessage": "Press to switch to split mode. Combination grid should be empty."
+    "defaultMessage": "点击切换到分割模式。组合网格应该为空。"
   },
   "wiki.zetter.combining.interface.combine.mode-dt": {
-    "defaultMessage": "4) Change mode"
+    "defaultMessage": "4) 更改模式"
   },
   "wiki.zetter.combining.interface.combine.preview-dd": {
-    "defaultMessage": "Shows how combined canvas will look like."
+    "defaultMessage": "显示合并画布的外观。"
   },
   "wiki.zetter.combining.interface.combine.preview-dt": {
-    "defaultMessage": "2) Preview"
+    "defaultMessage": "2) 预览"
   },
   "wiki.zetter.combining.interface.combine.result-dd": {
-    "defaultMessage": "When you're happy with the result, grab your merged canvas from there."
+    "defaultMessage": "当你对结果感到满意时，从那里获得你合并的画布。"
   },
   "wiki.zetter.combining.interface.combine.result-dt": {
-    "defaultMessage": "3) Result slot"
+    "defaultMessage": "3) 结果槽"
   },
   "wiki.zetter.combining.interface.split.grid-dd": {
-    "defaultMessage": "Place your canvas here in order to split it."
+    "defaultMessage": "把你的画布放在这里来分割它。"
   },
   "wiki.zetter.combining.interface.split.grid-dt": {
-    "defaultMessage": "1) Canvas split slot"
+    "defaultMessage": "1) 画布拆分槽"
   },
   "wiki.zetter.combining.interface.split.mode-dd": {
-    "defaultMessage": "Press to switch to combine mode. Split slot should be empty."
+    "defaultMessage": "点击切换到组合模式。分割网格应该为空。"
   },
   "wiki.zetter.combining.interface.split.mode-dt": {
-    "defaultMessage": "4) Change mode"
+    "defaultMessage": "4) 更改模式"
   },
   "wiki.zetter.combining.interface.split.preview-dd": {
-    "defaultMessage": "Shows what current split canvas look like."
+    "defaultMessage": "显示当前分割画布的外观。"
   },
   "wiki.zetter.combining.interface.split.preview-dt": {
-    "defaultMessage": "2) Preview"
+    "defaultMessage": "2) 预览"
   },
   "wiki.zetter.combining.interface.split.result-dd": {
-    "defaultMessage": "When you're happy with the result, grab your canvases from there."
+    "defaultMessage": "当你对结果感到满意时，从那里获得你分割的画布。"
   },
   "wiki.zetter.combining.interface.split.result-dt": {
-    "defaultMessage": "3) Result slots"
+    "defaultMessage": "3) 结果槽"
   },
   "wiki.zetter.combining.interface.split.slot-dt": {
-    "defaultMessage": "1) Canvas split slot"
+    "defaultMessage": "1) 画布拆分槽"
   },
   "wiki.zetter.combining.mode": {
-    "defaultMessage": "Artist Table mode"
+    "defaultMessage": "艺术家桌面模式"
   },
   "wiki.zetter.combining.mode.combine": {
-    "defaultMessage": "Combine Mode"
+    "defaultMessage": "合并模式"
   },
   "wiki.zetter.combining.mode.combine.instruction.image": {
-    "defaultMessage": "Combine Mode instruction image"
+    "defaultMessage": "合并模式指导图像"
   },
   "wiki.zetter.combining.mode.split": {
-    "defaultMessage": "Split Mode"
+    "defaultMessage": "分割模式"
   },
   "wiki.zetter.combining.mode.split.instruction.image": {
-    "defaultMessage": "Split Mode instruction image"
+    "defaultMessage": "分割模式指导图像"
   },
   "wiki.zetter.combining.section": {
-    "defaultMessage": "Combining"
+    "defaultMessage": "合并中"
   },
   "wiki.zetter.combining.signing.no-clearing": {
-    "defaultMessage": "You do not need to clear default painting name. Just start typing your name."
+    "defaultMessage": "您无需清除默认画作名称。只需开始输入您的名称。"
   },
   "wiki.zetter.combining.signing.text": {
-    "defaultMessage": "This is the preview and sign screen for your painting. On the bottom left hand side you will see the name for painting (default is Unnamed) and your nickname. On the right hand-side there's Sign button. Press it when you are happy with your painting and given it a name."
+    "defaultMessage": "这是您绘画的预览和签名屏幕。 在左下方您将看到绘画的名称 (默认是未命名) 和您的昵称。 在右边的标志按钮上，当你对绘画感到满意并给它命名时按下它。"
   },
   "wiki.zetter.combining.text-intro": {
-    "defaultMessage": "To prepare a canvas which is larger than 1 block, place the newly crafted Artist Table and right-click it to open combine & split interface:",
+    "defaultMessage": "要准备一个大于1个方块的画布，放置新制作的艺术家桌面，右键点击它打开合并和分割界面：",
     "description": "Intro before combining interface explanation"
   },
   "wiki.zetter.combining.title": {
-    "defaultMessage": "Combining and splitting canvases"
+    "defaultMessage": "合并和分割画布"
   },
   "wiki.zetter.copying.section": {
-    "defaultMessage": "Copying"
+    "defaultMessage": "复制中"
   },
   "wiki.zetter.copying.text": {
-    "defaultMessage": "If you would like to duplicate your painting, you would need to combine the signed painting without a frame with the blank canvas of the same size and a palette with sufficient paints. You will have a copy in a result slot, and the painting will be kept in the original slot, as well as the palette, with reduced paints amount. Like books, paintings have three generations: original, copy and copy of copy.",
+    "defaultMessage": "如果您想要复制您的画作， 您需要将已签名的画与相同大小的空白画布和色板与足够的画放在一起。 您将在结果栏位中找到一份副本，画作将保留在原栏位中， 和调色板一样，油漆数量也有所减少。 像书一样，绘画有三代：原作、复制品和复制品的复制品。",
     "description": "Tell about copying recipe and generations"
   },
   "wiki.zetter.copying.title": {
-    "defaultMessage": "Copying a painting"
+    "defaultMessage": "复制一幅画作"
   },
   "wiki.zetter.framing.result.image": {
-    "defaultMessage": "Painting in a frame on the wall"
+    "defaultMessage": "在墙上的框架内绘画"
   },
   "wiki.zetter.framing.section": {
     "defaultMessage": "Framing"
