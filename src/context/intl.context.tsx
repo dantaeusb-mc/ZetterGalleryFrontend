@@ -1,6 +1,7 @@
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
+import React, { PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import English from '../../content/compiled-locales/en.json';
+import Chinese from '../../content/compiled-locales/zh.json';
 import Russian from '../../content/compiled-locales/ru.json';
 import Polish from '../../content/compiled-locales/pl.json';
 import French from '../../content/compiled-locales/fr.json';
@@ -8,14 +9,15 @@ import German from '../../content/compiled-locales/de.json';
 import Portuguese from '../../content/compiled-locales/pt.json';
 import Ukrainian from '../../content/compiled-locales/uk.json';
 import Turkish from '../../content/compiled-locales/tr.json';
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
 export const languages = {
   en: 'English',
-  fr: 'Français (traduit automatiquement)',
+  zh: '中文',
+  pl: 'Polski',
   ru: 'Русский',
   uk: 'Українська (автоматичний переклад)',
-  pl: 'Polski',
+  fr: 'Français (traduit automatiquement)',
   de: 'Deutsch (automatisch übersetzt)',
   pt: 'Portuguese (traduzido automaticamente)',
   tr: 'Türkçe (çoğunlukla otomatik olarak çevrildi)',
@@ -53,6 +55,8 @@ function IntlProviderWrapper(props: PropsWithChildren<IIntlProps>) {
     switch (locale) {
       case 'ru':
         return Russian;
+      case 'zh':
+        return Chinese;
       case 'fr':
         return French;
       case 'uk':

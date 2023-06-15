@@ -34,7 +34,7 @@ module.exports = withBundleAnalyzer({
     domains: ['[::1]', 'localhost', 'zetter.gallery'],
   },
   i18n: {
-    locales: ['en', 'ru', 'pl', 'fr', 'de', 'tr', 'uk', 'pt'],
+    locales: ['en', 'ru', 'zh', 'pl', 'fr', 'de', 'tr', 'uk', 'pt'],
     defaultLocale: 'en',
     localeDetection: true,
   },
