@@ -12,4 +12,13 @@
   margin: 1rem;
   text-align: center;
   width: auto;
+
+  &:focus {
+    outline: .2rem solid colors.color('green');
+  }
+
+  &:hover {
+    background: colors.color('green');
+    box-shadow: var(--shadow);
+  }
 }

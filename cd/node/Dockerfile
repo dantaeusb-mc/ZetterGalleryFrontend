@@ -1,6 +1,9 @@
 # Common build stage
 FROM node:18 as init-stage
 
+ARG BUILD_UID=0
+USER $BUILD_UID
+
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 # But we're on using debian base container, so we dobn't need it
 # Also we install musl below lol
@@ -22,7 +25,7 @@ FROM init-stage as prepare-stage
 RUN mkdir -p /app
 WORKDIR /app
 
-COPY package*.json ./
+COPY --chown=$BUILD_UID package*.json ./
 
 # Production install stage
 FROM prepare-stage as production-install-stage
@@ -34,7 +37,7 @@ RUN npm ci
 FROM production-install-stage as production-build-stage
 
 WORKDIR /app
-COPY . .
+COPY --chown=$BUILD_UID . .
 RUN npm run build
 
 # Production run stage
@@ -43,9 +46,9 @@ FROM production-build-stage as production-run-stage
 WORKDIR /app
 ENV NODE_ENV production
 
-COPY --from=production-build-stage /app/public ./public
-COPY --from=production-build-stage /app/.next/standalone ./
-COPY --from=production-build-stage /app/.next/static ./.next/static
+COPY --from=production-build-stage --chown=$BUILD_UID /app/public ./public
+COPY --from=production-build-stage --chown=$BUILD_UID /app/.next/standalone ./
+COPY --from=production-build-stage --chown=$BUILD_UID /app/.next/static ./.next/static
 
 CMD ["node", "server.js"]
 

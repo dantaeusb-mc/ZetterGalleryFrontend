@@ -8,6 +8,7 @@ import DiscordIcon from '@assets/icons/logos/discord.png';
 import CurseForgeIcon from '@assets/icons/logos/curseforge.png';
 import WikiIcon from '@assets/icons/logos/wiki.png';
 import { NextPageWithLayout } from '@pages/_app';
+import { MessagePool } from '@components/message';
 
 const AboutPage: NextPageWithLayout<Record<never, unknown>> = () => {
   const intl = useIntl();

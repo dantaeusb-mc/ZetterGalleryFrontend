@@ -7,6 +7,8 @@ services:
       context: .
       target: ${CONTAINER_TARGET}
       dockerfile: ./cd/node/Dockerfile
+      args:
+        BUILD_USER: ${RUNNING_USER}
     container_name: zg-frontend-app
     ports:
       - ${PORT}:${PORT}

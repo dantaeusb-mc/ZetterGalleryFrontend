@@ -12,6 +12,7 @@ import {
 import Quest from '@components/contest/quest/quest.component';
 import TextPost from '@components/post/text-post.component';
 import styles from './hall.module.scss';
+import HallOfFameLogo from '@assets/hall-of-fame.svg';
 
 const SearchPage: NextPageWithLayout<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
@@ -22,7 +23,9 @@ const SearchPage: NextPageWithLayout<Record<string, unknown>> = (
         <title>Search | Zetter Gallery</title>
         <meta name="description" content="Zetter Gallery About Page" />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="noindex,nofollow" />
       </Head>
+      <HallOfFameLogo />
       <h1 className={styles['title']}>Hall of Fame</h1>
       <h2 className={styles['sub-title']}>Contests and winners</h2>
       <Contest
