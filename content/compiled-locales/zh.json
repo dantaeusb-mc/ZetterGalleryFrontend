@@ -1,124 +1,124 @@
 {
   "about.page.description": {
-    "defaultMessage": "What is Zetter and Zetter Gallery",
+    "defaultMessage": "什么是 Zetter 和 Zetter 画廊",
     "description": "About page description"
   },
   "about.page.title": {
-    "defaultMessage": "About",
+    "defaultMessage": "关于",
     "description": "About page title"
   },
   "about.title": {
-    "defaultMessage": "Minefont test page",
+    "defaultMessage": "MineFont 测试页面",
     "description": "Test page for in-house international Minecraft font based on Monocraft font"
   },
   "about.zetter-gallery.button.download": {
-    "defaultMessage": "Download Zetter Gallery from CurseForge"
+    "defaultMessage": "从 CurseForge 下载 Zeter 画廊"
   },
   "about.zetter-gallery.button.download.from": {
-    "defaultMessage": "from CurseForge"
+    "defaultMessage": "从 CurseForge"
   },
   "about.zetter-gallery.button.download.what": {
-    "defaultMessage": "Download Zetter Gallery"
+    "defaultMessage": "下载 Zeter 画廊"
   },
   "about.zetter-gallery.button.wiki": {
-    "defaultMessage": "Check out Zetter Gallery Wiki"
+    "defaultMessage": "查看 Zetter 画廊 Wiki"
   },
   "about.zetter-gallery.button.wiki.check": {
-    "defaultMessage": "Check out"
+    "defaultMessage": "查看"
   },
   "about.zetter-gallery.button.wiki.what": {
-    "defaultMessage": "Zetter Gallery Wiki"
+    "defaultMessage": "Zetter 画廊 Wiki"
   },
   "about.zetter.button.download": {
-    "defaultMessage": "Download Zetter from CurseForge"
+    "defaultMessage": "从 CurseForge 下载 Zeter"
   },
   "about.zetter.button.download.from": {
-    "defaultMessage": "from CurseForge"
+    "defaultMessage": "从 CurseForge"
   },
   "about.zetter.button.download.what": {
-    "defaultMessage": "Download Zetter"
+    "defaultMessage": "下载 Zetter"
   },
   "about.zetter.button.wiki": {
-    "defaultMessage": "Check out Zetter Wiki"
+    "defaultMessage": "查看 Zetter Wiki"
   },
   "about.zetter.button.wiki.check": {
-    "defaultMessage": "Check out"
+    "defaultMessage": "查看"
   },
   "about.zetter.button.wiki.what": {
     "defaultMessage": "Zetter Wiki"
   },
   "about.zetter.description.what": {
-    "defaultMessage": "Zetter is a Minecraft mod for creating paintings in Minecraft. It allows players to draw paintings in game with tools-rich and easy to use UI. Paintings can be combined for up to 4x4 blocks, wrapped in a frame and put on the wall.",
+    "defaultMessage": "Zetter 是一个用于在 Minecraft 中创建画作的 Minecraft 模组。它允许玩家使用丰富的工具和简单的界面绘制画作。 画作可以合并至多 4x4 方块大小，包装在框架内并放在墙上。",
     "description": "Zetter Description"
   },
   "about.zetter.description.what-for": {
-    "defaultMessage": "Whether you want to make your virtual home more comfortable, add some thematic posters or painting, or just fool around - it's a great addition to the game.",
+    "defaultMessage": "您是否想让虚拟房间更舒适， 添加一些主题海报或画作，或只是在游戏里装蠢——这是对游戏的极大补充。",
     "description": "Zetter Description"
   },
   "about.zetter.discord.description": {
-    "defaultMessage": "Share your ideas and know about the updates first! We also look for community managers and moderators who can rate paintings.",
+    "defaultMessage": "分享你的想法并持续获知新消息！我们还在寻找能够给画作打分的社区管理者和版主。",
     "description": "Zetter Discord Description"
   },
   "about.zetter.discord.title": {
-    "defaultMessage": "Join our community",
+    "defaultMessage": "加入我们的社区",
     "description": "Title for Zetter Discord About Section"
   },
   "about.zetter.gallery.description": {
-    "defaultMessage": "Zetter Gallery is a mod and a place to share your Zetter artworks with the world. With Zetter Gallery mod, the Painting Merchant is added, that allows you to upload and download popular paintings on Zetter Gallery",
+    "defaultMessage": "Zetter 画廊是与世界分享你的 Zetter 作品之地。有了 Zetter 画廊模组，画作商人便加入了游戏，使得您可以上传和下载 Zetter 画廊上的流行作品。",
     "description": "Zetter Gallery Description"
   },
   "about.zetter.gallery.mod-wiki-link": {
-    "defaultMessage": "Check out Zetter Gallery mod wiki page with recipes and manuals",
+    "defaultMessage": "查看 Zeter 画廊模组 Wiki 页面的合成表和手册",
     "description": "Link to Zetter Gallery wiki from About Zetter page"
   },
   "about.zetter.gallery.title": {
-    "defaultMessage": "What is Zetter Gallery",
+    "defaultMessage": "什么是 Zetter 画廊",
     "description": "Title for Zetter Gallery About Section"
   },
   "about.zetter.mod-wiki-link": {
-    "defaultMessage": "Check out Zetter mod wiki page with recipes and manuals",
+    "defaultMessage": "查看 Zeter 模组 Wiki 页面的合成表和手册",
     "description": "Link to Zetter wiki from About Zetter page"
   },
   "about.zetter.name": {
-    "defaultMessage": "Zetter is named after {Kristoffer}, author of the original Minecraft paintings.",
+    "defaultMessage": "Zetter是以 {Kristoffer} 命名的，一位原版 Minecraft 画家。",
     "description": "Zetter Gallery Description"
   },
   "about.zetter.title": {
-    "defaultMessage": "What is Zetter",
+    "defaultMessage": "什么是 Zetter",
     "description": "Title for Zetter About Section"
   },
   "auth-prompt.check.title": {
-    "defaultMessage": "How to make sure I am safe?",
+    "defaultMessage": "如何确保我是安全的？",
     "description": "Title for security warning"
   },
   "auth-prompt.deprecated.disclaimer.what-for": {
-    "defaultMessage": "Your version is no longer supported, sorry. Updating to a new version will allow anonymous usage (painting purchase) and easier painting upload."
+    "defaultMessage": "对不起，您的版本不再受支持。更新到新版本将允许匿名使用(画作购买)和更简单的画作上传。"
   },
   "auth-prompt.deprecated.disclaimer.why": {
-    "defaultMessage": "Since the release of your version we have updated Zetter Gallery to be more secure and futureproof."
+    "defaultMessage": "自你所使用的的版本发布以来，我们已再度更新了 Zeter 画廊以使其更加安全和可维护。"
   },
   "auth-prompt.deprecated.title": {
-    "defaultMessage": "Why do I need that?",
+    "defaultMessage": "为什么我需要那样？",
     "description": "Title for request explanation"
   },
   "auth-prompt.disclaimer.title": {
-    "defaultMessage": "Why do I need that?",
+    "defaultMessage": "为什么我需要那样？",
     "description": "Title for request explanation"
   },
   "auth-prompt.microsoft.disclaimer.what-for": {
-    "defaultMessage": "This allows server to download and submit paintings on your behalf when you trading with painting merchant.",
+    "defaultMessage": "这允许服务器在您与画作商人交易时代表您下载和提交画作。",
     "description": "Why do we need player to authorize us with Microsoft account"
   },
   "auth-prompt.microsoft.disclaimer.why": {
-    "defaultMessage": "To prove that you are the real player playing on a real server and it's not just automated requests.",
+    "defaultMessage": "为了证明您是在真正的服务器上游玩的真人玩家，而不是自动请求。",
     "description": "Why do we need player to authorize us with Microsoft account"
   },
   "auth.microsoft.button.agreement": {
-    "defaultMessage": "By pressing the button, you confirm that you are in legal age and agree to the terms of service.",
+    "defaultMessage": "按下按钮即代表您确认您处于法定年龄内并同意服务条款。",
     "description": "Explain what do you agree when starting using the service"
   },
   "auth.microsoft.callout.same-account": {
-    "defaultMessage": "Please use the same Microsoft account you use to login into Minecraft."
+    "defaultMessage": "请使用您用来登录Minecraft的相同的微软账户。"
   },
   "auth.microsoft.check.advice": {
     "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright.",
