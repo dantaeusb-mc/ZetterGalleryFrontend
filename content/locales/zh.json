@@ -8,8 +8,8 @@
     "description": "About page title"
   },
   "about.title": {
-    "defaultMessage": "MineFont 测试页面",
-    "description": "Test page for in-house international Minecraft font based on Monocraft font"
+    "defaultMessage": "关于 Zetter 项目",
+    "description": "Title for the About Project page"
   },
   "about.zetter-gallery.button.download": {
     "defaultMessage": "从 CurseForge 下载 Zeter 画廊"

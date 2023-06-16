@@ -8,8 +8,8 @@
     "description": "About page title"
   },
   "about.title": {
-    "defaultMessage": "Minefont test page",
-    "description": "Test page for in-house international Minecraft font based on Monocraft font"
+    "defaultMessage": "About Zetter Project",
+    "description": "Title for the About Project page"
   },
   "about.zetter-gallery.button.download": {
     "defaultMessage": "Download Zetter Gallery from CurseForge"
