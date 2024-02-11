@@ -223,7 +223,7 @@ export async function getServerSideProps(
       nextActions = [];
     }
 
-    nextActions.push({
+    nextActions.unshift({
       url: '/players/me/preferences',
       messageId: updatePreferencesMessage.id,
     });
