@@ -14,16 +14,20 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { Callout, CalloutSeverity } from '@components/widgets/callout';
 import lodash from 'lodash';
 import { PlayerPreferencesBodyDto } from '@/dto/request/player/preferences.body.dto';
-import { NextActionProps, parseNextAction } from '@/const/next-action.type';
 import { useRouter } from 'next/router';
-import { NextPageWithLayout } from "@pages/_app";
+import { NextPageWithLayout } from '@pages/_app';
+import {
+  getCombinedNextAction,
+  searchParamToNextActions,
+  TNextActions,
+} from '@/utils/nextAction';
 
 export interface PreferencesProps {
   playerUuid: string;
   isProfilePublic: boolean;
   playerRatings: string[];
   allRatings: PaintingRatingResponseDto[];
-  nextAction?: NextActionProps;
+  nextActions?: TNextActions;
 }
 
 interface PreferencesState {
@@ -31,9 +35,12 @@ interface PreferencesState {
   playerRatings: string[];
 }
 
-const PreferencesPage: NextPageWithLayout<PreferencesProps> = (props: PreferencesProps) => {
+const PreferencesPage: NextPageWithLayout<PreferencesProps> = (
+  props: PreferencesProps,
+) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { playerUuid, allRatings, ...defaultState } = props;
+  const nextAction = getCombinedNextAction(props.nextActions);
 
   const [savedPreferences, setSavedPreferences] = useState<PreferencesState>(
     lodash.cloneDeep(defaultState),
@@ -58,8 +65,8 @@ const PreferencesPage: NextPageWithLayout<PreferencesProps> = (props: Preference
       .then(() => {
         setSavedPreferences(preferences);
 
-        if (props.nextAction) {
-          router.push(props.nextAction.path);
+        if (nextAction) {
+          router.push(nextAction.url);
         }
       })
       .catch((e) => {
@@ -195,7 +202,7 @@ const PreferencesPage: NextPageWithLayout<PreferencesProps> = (props: Preference
               </Button>
             </div>
             <div className={styles['right']}>
-              {props.nextAction ? (
+              {nextAction ? (
                 <Button
                   title={intl.formatMessage({
                     id: 'player.preferences.button.save',
@@ -234,18 +241,14 @@ const PreferencesPage: NextPageWithLayout<PreferencesProps> = (props: Preference
   );
 };
 
-PreferencesPage.getLayout = (page) => (
-  <DefaultLayout>{page}</DefaultLayout>
-);
+PreferencesPage.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 
 export default PreferencesPage;
 
 export async function getServerSideProps(
   context: NextPageContext,
-): Promise<
-  GetServerSidePropsResult<PreferencesProps & Partial<NextActionProps>>
-> {
-  const nextAction = parseNextAction(context);
+): Promise<GetServerSidePropsResult<PreferencesProps>> {
+  const nextActions = searchParamToNextActions(context.query.next);
 
   let preferences: PlayerPreferencesResponseDto;
   let ratings: PaintingRatingResponseDto[];
@@ -283,7 +286,7 @@ export async function getServerSideProps(
       isProfilePublic: preferences.isProfilePublic,
       playerRatings: preferences.paintingRatings,
       allRatings: ratings,
-      ...(nextAction ? { nextAction: nextAction } : {}),
+      ...(nextActions ? { nextActions } : {}),
     },
   };
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { ServerWidget } from '@components/widgets/server';
 import Head from 'next/head';
 import CleanLayout from '@components/layouts/clean';
-import { FormattedMessage } from 'react-intl';
+import { defineMessage, FormattedMessage } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
 import ConsentButton from '@components/auth/consentButton';
@@ -13,6 +13,7 @@ import { HttpCodeError } from '@/utils/request/api-get';
 import { ConsentInfoResponseDto } from '@/dto/response/auth/consent-info.dto';
 import { getCookie } from 'cookies-next';
 import { ActionResponseDto } from '@/dto/response/action.dto';
+import { nextActionsToSearchParam, TNextAction } from '@/utils/nextAction';
 
 interface AuthConsentProps {
   code: string;
@@ -112,9 +113,14 @@ export default function AuthConsent(props: AuthConsentProps): JSX.Element {
   );
 }
 
+const returnMessage = defineMessage({
+  id: 'auth.zetter.cross.callback.description',
+  description:
+    'User will need to return to this page after authorization to allow server to connect to their Zetter account.',
+  defaultMessage: 'Allow Minecraft server to connect to your Zetter account.',
+});
+
 /**
- * WebStorm is dumb as fuck
- *
  * @param context
  */
 export const getServerSideProps: GetServerSideProps<AuthConsentProps> = async (
@@ -125,8 +131,15 @@ export const getServerSideProps: GetServerSideProps<AuthConsentProps> = async (
   // @todo: notify if code outdated
   const token = getCookie('token', { req: context.req, res: context.res });
 
-  if (!token) {
-    const callbackQuery = buildQuery({ from: context.req?.url });
+  if (!token && context.req?.url) {
+    const returnAction: TNextAction = {
+      url: context.req?.url,
+      messageId: returnMessage.id,
+    };
+
+    const callbackQuery = buildQuery({
+      next: nextActionsToSearchParam([returnAction]),
+    });
 
     return {
       redirect: {

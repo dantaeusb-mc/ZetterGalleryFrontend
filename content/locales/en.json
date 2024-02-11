@@ -9,7 +9,7 @@
   },
   "about.title": {
     "defaultMessage": "About Zetter Project",
-    "description": "Title for the About Project page"
+    "description": "Title for Zetter Gallery About Page"
   },
   "about.zetter-gallery.button.download": {
     "defaultMessage": "Download Zetter Gallery from CurseForge"
@@ -136,6 +136,10 @@
     "defaultMessage": "We will redirect you soon to continue your action.",
     "description": "Title for finish auth page"
   },
+  "auth.microsoft.finish.description.callback.known_description": {
+    "defaultMessage": "We will redirect you soon to continue your action:",
+    "description": "Title for finish auth page"
+  },
   "auth.microsoft.finish.description.callback.title": {
     "defaultMessage": "Please do not close this page",
     "description": "Title for finish auth page"
@@ -156,6 +160,10 @@
     "defaultMessage": "Authenticate with Microsoft Account",
     "description": "Auth start page title"
   },
+  "auth.zetter.cross.callback.description": {
+    "defaultMessage": "Allow Minecraft server to connect to your Zetter account.",
+    "description": "User will need to return to this page after authorization to allow server to connect to their Zetter account."
+  },
   "badge.epic": {
     "defaultMessage": "Epic"
   },
@@ -170,6 +178,12 @@
   },
   "badge.uncommon": {
     "defaultMessage": "Uncommon"
+  },
+  "common.off": {
+    "defaultMessage": "Off"
+  },
+  "common.on": {
+    "defaultMessage": "On"
   },
   "common.post.painting.action.favorite": {
     "defaultMessage": "Add this painting to favorites"
@@ -191,6 +205,12 @@
   },
   "common.post.painting.size.detailed": {
     "defaultMessage": "This painting is {width} {width, plural,one {block}other {blocks}} width and {height} {height, plural, one {block}other {blocks}} tall"
+  },
+  "common.post.text.expand-button.collapse": {
+    "defaultMessage": "Collapse"
+  },
+  "common.post.text.expand-button.expand": {
+    "defaultMessage": "Expand"
   },
   "components.player.plaintings.list.empty": {
     "defaultMessage": "This player didn't submit any paintings yet!"
@@ -228,11 +248,26 @@
     "defaultMessage": "Credits",
     "description": "Title for Zetter Gallery Credits Page"
   },
+  "cycle.auto-reload": {
+    "defaultMessage": "Automatically reload the page at the end of the cycle."
+  },
+  "cycle.auto-reload.label": {
+    "defaultMessage": "Auto-reload: {status}"
+  },
   "cycle.batch.no": {
     "defaultMessage": "Batch no"
   },
   "cycle.merchant.icon": {
     "defaultMessage": "Some of those paintings are available for purchase from Painting Merchant in game right now!"
+  },
+  "cycle.merchant.timeout.icon": {
+    "defaultMessage": "Some of those paintings are available for purchase from Painting Merchant in game right now!"
+  },
+  "cycle.refresh.button": {
+    "defaultMessage": "Refresh available paintings, rotation happens every 5 minutes"
+  },
+  "cycle.refresh.button.icon": {
+    "defaultMessage": "Refresh available paintings icon"
   },
   "cycle.seed": {
     "defaultMessage": "Seed phrase, used to select which paintings you will get from Merchant! Exact set of paintings is determined by this phrase, Merchant level and your settings."
@@ -240,8 +275,8 @@
   "cycle.timeout.expired": {
     "defaultMessage": "Cycle expired!"
   },
-  "cycle.timeout.left": {
-    "defaultMessage": "Expires in"
+  "cycle.timeout.left-time": {
+    "defaultMessage": "Expires in {time}"
   },
   "error.401.page.description": {
     "defaultMessage": "You are not logged in to access this resource",
@@ -317,6 +352,14 @@
   "feed.new.title": {
     "defaultMessage": "New"
   },
+  "feed.page.description": {
+    "defaultMessage": "Feed is ever updating list of paintings, which are available from Painting Merchant in game",
+    "description": "Feed page description"
+  },
+  "feed.page.title": {
+    "defaultMessage": "Feed",
+    "description": "Feed page title"
+  },
   "feed.personal.info": {
     "defaultMessage": "Your personal selection: random picks from favorites"
   },
@@ -336,6 +379,10 @@
   "font.page.title": {
     "defaultMessage": "Minefont test page",
     "description": "Minefont test page title"
+  },
+  "font.title": {
+    "defaultMessage": "Minefont test page",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
   },
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter Gallery is not affiliated with Minecraft, Microsoft and Mojang AB."
@@ -457,6 +504,9 @@
   "introduction.first-time.learn-more": {
     "defaultMessage": "Learn more!"
   },
+  "language-selector.icon": {
+    "defaultMessage": "Language selector globe icon"
+  },
   "microsoft-auth-check-advice": {
     "defaultMessage": "Good you asked! Just check that server described below is the one that you're playing on right now.",
     "description": "Explain how to make sure it's not a phishing page"
@@ -508,6 +558,10 @@
   },
   "player.preferences.button.save-and-continue": {
     "defaultMessage": "Save and continue"
+  },
+  "player.preferences.callback.description": {
+    "defaultMessage": "Update your account preferences.",
+    "description": "User will need to got to Preferences page to update new preferences."
   },
   "player.preferences.callout.alpha-warning": {
     "defaultMessage": "This does not affect your feed in alpha version (but will at some point in future)! Art moderation is difficult, so be warned that you may see different things!"

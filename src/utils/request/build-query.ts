@@ -23,6 +23,10 @@ const buildQuery = (queryParams?: QueryParams, originalUri?: string): string => 
             return key + '=' + encodeURIComponent(value.toString());
           })
           .join('&');
+      } else if (typeof queryParams[key] === 'object') {
+        return key + '=' + encodeURIComponent(JSON.stringify(queryParams[key]));
+      } else if (queryParams[key] === undefined || queryParams[key] === null) {
+        return '';
       }
 
       return key + '=' + queryParams[key].toString();

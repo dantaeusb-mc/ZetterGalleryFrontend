@@ -4,7 +4,6 @@ import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage } from 'react-intl';
 import { NextPageWithLayout } from "@pages/_app";
-import InternalServerErrorPage from "@pages/500";
 
 const BadRequestPage: NextPageWithLayout<Record<string, unknown>> = () => {
   return (

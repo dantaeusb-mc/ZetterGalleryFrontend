@@ -6,24 +6,27 @@ import { setCookie } from 'cookies-next';
 import { apiGet } from '@/utils/request';
 import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
-import { FormattedMessage } from 'react-intl';
+import { defineMessage, FormattedMessage } from 'react-intl';
 import { Button } from '@components/button';
 import { RedirectTimer } from '@components/widgets/redirect-timer';
-import { TokenResponseDto } from '@/dto/response/auth/token.dto';
-import { ActionResponseDto } from '@/dto/response/action.dto';
-import { MessageResponseDto } from '@/dto/response/message.dto';
-import { NextActionProps } from '@/const/next-action.type';
 import { useRouter } from 'next/router';
-import buildQuery from '@/utils/request/build-query';
+import { MessageResponseDto } from '@/dto/response/message.dto';
+import { PlayerPreferencesUpToDateResponseDto } from '@/dto/response/player/preferences.dto';
+import {
+  TNextActions,
+  searchParamToNextActions,
+  getCombinedNextAction,
+} from '@/utils/nextAction';
 
 export interface AuthFinishProps {
-  nextAction?: NextActionProps;
+  nextActions?: TNextActions;
 }
 
-export default function AuthFinish(
-  props: PropsWithChildren<AuthFinishProps>,
-): JSX.Element {
+export default function AuthFinish({
+  nextActions,
+}: PropsWithChildren<AuthFinishProps>): JSX.Element {
   const router = useRouter();
+  const nextAction = getCombinedNextAction(nextActions);
 
   return (
     <CleanLayout>
@@ -35,12 +38,18 @@ export default function AuthFinish(
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
+      <section
+        className={injectClassNames(
+          'block',
+          'sans-serif-font',
+          styles['auth-prompt'],
+        )}
+      >
         <header className={styles['heading']}>
           <h1>Successfully authorized Zetter to view your Minecraft account</h1>
         </header>
         <div className={styles['description-wrapper']}>
-          {props.nextAction ? (
+          {nextAction ? (
             <>
               <h2>
                 <FormattedMessage
@@ -49,13 +58,28 @@ export default function AuthFinish(
                   description="Title for finish auth page"
                 />
               </h2>
-              <p>
-                <FormattedMessage
-                  id="auth.microsoft.finish.description.callback.description"
-                  defaultMessage="We will redirect you soon to continue your action."
-                  description="Title for finish auth page"
-                />
-              </p>
+              {nextAction.messageId ? (
+                <>
+                  <p>
+                    <FormattedMessage
+                      id="auth.microsoft.finish.description.callback.known_description"
+                      defaultMessage="We will redirect you soon to continue your action:"
+                      description="Title for finish auth page"
+                    />
+                  </p>
+                  <p>
+                    <FormattedMessage id={nextAction.messageId} />
+                  </p>
+                </>
+              ) : (
+                <p>
+                  <FormattedMessage
+                    id="auth.microsoft.finish.description.callback.description"
+                    defaultMessage="We will redirect you soon to continue your action."
+                    description="Title for finish auth page"
+                  />
+                </p>
+              )}
             </>
           ) : (
             <>
@@ -77,13 +101,17 @@ export default function AuthFinish(
           )}
         </div>
         <div className={styles['action-wrapper']}>
-          {props.nextAction ? (
+          {nextAction !== undefined ? (
             <>
-              <RedirectTimer redirect={props.nextAction.path} />
+              <RedirectTimer redirect={nextAction.url} />
               <Button
                 title="Continue"
                 action={() => {
-                  router.push((props.nextAction as NextActionProps).path);
+                  if (nextAction) {
+                    router.push(nextAction.url);
+                  } else {
+                    router.push('/players/me');
+                  }
                 }}
                 className={styles['action-button']}
               >
@@ -110,29 +138,77 @@ export default function AuthFinish(
   );
 }
 
+const updatePreferencesMessage = defineMessage({
+  id: 'player.preferences.callback.description',
+  description:
+    'User will need to got to Preferences page to update new preferences.',
+  defaultMessage: 'Update your account preferences.',
+});
+
+/**
+ * This page does not work with the `next` query directly, as the
+ * oAuth callback should be static. It uses the state from the query
+ * callback from oAuth to get the next actions.
+ * @param context
+ */
 export async function getServerSideProps(
   context: NextPageContext,
 ): Promise<GetServerSidePropsResult<AuthFinishProps>> {
-  let response: MessageResponseDto &
-    TokenResponseDto &
-    Partial<ActionResponseDto>;
+  const token = context.query.token;
+  let nextActions: TNextActions | undefined;
+  let preferencesUpToDate = true;
+
+  if (!token) {
+    console.log('No token', context.query.token);
+
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/400',
+      },
+      props: {},
+    };
+  }
 
   try {
-    response = await apiGet<
-      MessageResponseDto & TokenResponseDto & Partial<ActionResponseDto>
-    >(
-      '/auth/microsoft/finish',
-      {
-        code: context.query.code,
-        state: context.query.state,
-        callbackTarget: 'frontend',
-      },
-      context,
-    );
+    if (context.query.state) {
+      if (typeof context.query.state !== 'string') {
+        console.log('Invalid state', context.query.state);
 
-    const expireDate = new Date(response.notAfter);
-    setCookie('token', response.token, { req: context.req, res: context.res, expires: expireDate });
+        return {
+          redirect: {
+            permanent: false,
+            destination: '/400',
+          },
+          props: {},
+        };
+      }
+
+      const state = JSON.parse(context.query.state);
+
+      if (state.hasOwnProperty('next')) {
+        nextActions = state.next;
+      }
+    }
+
+    // @todo: [MID] Get token info from the server
+    const now = new Date();
+    const expiry = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+
+    setCookie('token', context.query.token, {
+      req: context.req,
+      res: context.res,
+      expires: expiry,
+    });
+
+    const preferencesUpToDateResponse = await apiGet<
+      MessageResponseDto & PlayerPreferencesUpToDateResponseDto
+    >('/players/me/preferences/up-to-date', {}, context);
+
+    preferencesUpToDate = preferencesUpToDateResponse.upToDate;
   } catch (e) {
+    console.error(e);
+
     return {
       redirect: {
         permanent: false,
@@ -142,24 +218,20 @@ export async function getServerSideProps(
     };
   }
 
-  let nextAction;
+  if (!preferencesUpToDate) {
+    if (!nextActions) {
+      nextActions = [];
+    }
 
-  if (response.redirect) {
-    nextAction = {
-      path:
-        response.redirect + buildQuery({ then: '/players/me/preferences/' }, response.redirect),
-      description: 'Authorize server',
-    };
-  } else {
-    nextAction = {
-      path: '/players/me/preferences/',
-      description: 'Set up your account',
-    };
+    nextActions.push({
+      url: '/players/me/preferences',
+      messageId: updatePreferencesMessage.id,
+    });
   }
 
   return {
     props: {
-      nextAction: nextAction,
+      ...(nextActions ? { nextActions: nextActions } : {}),
     },
   };
 }

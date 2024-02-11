@@ -3,3 +3,7 @@ export class PlayerPreferencesResponseDto {
   isProfilePublic: boolean;
   paintingRatings: string[];
 }
+
+export class PlayerPreferencesUpToDateResponseDto {
+  upToDate: boolean;
+}

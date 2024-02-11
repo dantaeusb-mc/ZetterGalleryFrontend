@@ -8,12 +8,20 @@ import Callout, {
   CalloutSeverity,
 } from '../../components/widgets/callout/callout.component';
 import { injectClassNames } from '@/utils/css';
-import { useRouter } from 'next/router';
 import { NextPageContext } from 'next';
 import getTitle from '@/utils/page/get-title';
+import {
+  searchParamToNextActions,
+  TNextActions,
+} from '@/utils/nextAction';
 
-export default function AuthStart(): JSX.Element {
-  const route = useRouter();
+export type AuthStartProps = {
+  nextActions?: TNextActions;
+};
+
+export default function AuthStart({
+  nextActions,
+}: AuthStartProps): JSX.Element {
   const intl = useIntl();
 
   const title = getTitle(
@@ -30,11 +38,6 @@ export default function AuthStart(): JSX.Element {
     description: 'Auth start page description',
   });
 
-  /**
-   * Pass redirect route to button, so we will remember where we started
-   */
-  const redirect = route.query.from ? route.query.from.toString() : undefined;
-
   return (
     <>
       <Head>
@@ -49,7 +52,13 @@ export default function AuthStart(): JSX.Element {
             defaultMessage="Please use the same Microsoft account you use to login into Minecraft."
           />
         </Callout>
-        <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
+        <section
+          className={injectClassNames(
+            'block',
+            'sans-serif-font',
+            styles['auth-prompt'],
+          )}
+        >
           <header className={styles['heading']}>
             <h1>
               You are going to allow <wbr />
@@ -105,7 +114,7 @@ export default function AuthStart(): JSX.Element {
             </div>
           </div>
           <div className={styles['action-wrapper']}>
-            <MicrosoftSignUpButton redirect={redirect} />
+            <MicrosoftSignUpButton nextActions={nextActions} />
             <p>
               <FormattedMessage
                 id="auth.microsoft.button.agreement"
@@ -124,15 +133,14 @@ export default function AuthStart(): JSX.Element {
 }
 
 /**
- * @todo: no we dont?
- * We have to do that in order to disable static caching
- * Which will provide empty query by default and
- * that will cause <MicrosoftSignUpButton /> to make useless
- * request to the API server
  * @param context
  */
 export async function getServerSideProps(context: NextPageContext) {
+  const nextActions = searchParamToNextActions(context.query.next);
+
   return {
-    props: {},
+    props: {
+      ...(nextActions ? { nextActions } : {}),
+    },
   };
 }

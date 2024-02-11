@@ -2,7 +2,7 @@
   "name": "zg-frontend-2",
   "private": true,
   "scripts": {
-    "dev": "NODE_ENV=development next dev -p 8080",
+    "dev": "env-cmd -f ./.env.development next dev -p 8080",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -37,8 +37,8 @@
     "react-transition-group": "^4.4.5",
     "reflect-metadata": "^0.1.13",
     "sass": "^1.43.4",
-    "sharp": "^0.31.2",
-    "ua-parser-js": "^1.0.32"
+    "sharp": "^0.32.6",
+    "ua-parser-js": "^1.0.33"
   },
   "devDependencies": {
     "@formatjs/cli": "^4.4.0",
@@ -50,6 +50,7 @@
     "@types/sass": "^1.43.0",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
+    "env-cmd": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
