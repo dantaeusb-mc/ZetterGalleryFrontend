@@ -32,9 +32,7 @@ export default function MicrosoftSignUpButton({
   useEffect(() => {
     const requestParams = {
       redirect_uri: redirect_uri.toString(),
-      state: {
-        next: nextActions,
-      },
+      ...(nextActions && { state: { next: nextActions } }),
     };
 
     apiGet<ActionResponseDto>('/auth/microsoft/start', requestParams)

@@ -22,12 +22,12 @@ jobs:
       - name: 'Prepare ENV variables'
         run: set -a && . .env.production && set +a
       - name: 'Build app container'
-        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml build app
+        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
       - name: 'Push API container to local registry'
-        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml push app
+        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend push app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
