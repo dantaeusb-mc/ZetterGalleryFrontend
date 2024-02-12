@@ -36,6 +36,9 @@ FROM dependencies-stage as production-install-stage
 
 ARG RUNNING_USER=1000
 WORKDIR /app
+
+USER $RUNNING_USER
+
 RUN npm ci
 
 # Production build stage
@@ -43,7 +46,10 @@ FROM production-install-stage as production-build-stage
 
 ARG RUNNING_USER=1000
 WORKDIR /app
+
+USER $RUNNING_USER
 ADD --chown=$RUNNING_USER ./ ./
+
 RUN npm run build
 
 # Production run stage
@@ -51,6 +57,8 @@ FROM production-build-stage as production-run-stage
 
 WORKDIR /app
 ENV NODE_ENV production
+
+USER $RUNNING_USER
 
 COPY --from=production-build-stage --chown=$BUILD_UID /app/public ./public
 COPY --from=production-build-stage --chown=$BUILD_UID /app/.next/standalone ./
@@ -64,6 +72,8 @@ FROM dependencies-stage as development-run-stage
 ARG RUNNING_USER=1000
 WORKDIR /app
 ADD --chown=$RUNNING_USER ./ ./
+
+USER $RUNNING_USER
 
 ENV NODE_ENV development
 

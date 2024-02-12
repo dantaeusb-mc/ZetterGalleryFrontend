@@ -1,6 +1,5 @@
 import React from 'react';
 import DefaultLayout from '@components/layouts/default';
-import Post from '@components/post';
 import Head from 'next/head';
 import {
   GetServerSideProps,
@@ -14,6 +13,7 @@ import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
 import { mapPaintingResponseToProps } from "@/utils/mappers";
 import { PaintingPostProps } from '@components/post/painting-post.component';
+import { PaintingPost } from "@components/post";
 
 export default function Painting(props: PaintingPostProps): JSX.Element {
   const intl = useIntl();
@@ -49,7 +49,7 @@ export default function Painting(props: PaintingPostProps): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <DefaultLayout>
-        <Post {...props} />
+        <PaintingPost {...props} />
       </DefaultLayout>
     </>
   );
