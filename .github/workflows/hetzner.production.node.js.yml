@@ -23,12 +23,12 @@ jobs:
       - name: 'Prepare ENV variables'
         run: set -a && . .env.production && set +a
       - name: 'Build app container'
-        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
+        run: docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
       - name: 'Push API container to local registry'
-        run: docker-compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend push app
+        run: docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend push app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
@@ -39,7 +39,7 @@ jobs:
       - build-app
     steps:
       - name: Deploy to swarm
-        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker-compose -f docker-compose.prod.yml --env-file .env.production config) --with-registry-auth zg-frontend
+        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker compose -f docker-compose.prod.yml --env-file .env.production config) --with-registry-auth zg-frontend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
