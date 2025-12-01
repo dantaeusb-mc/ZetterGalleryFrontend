@@ -20,10 +20,12 @@ jobs:
         run: 'echo "$PRODUCTION_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{secrets.PRODUCTION_ENV}}
-      - name: 'Prepare ENV variables'
-        run: set -a && . .env.production && set +a
       - name: 'Build app container'
-        run: docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
+        run: |
+          set -a 
+          . .production.env 
+          set +a
+          docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
@@ -42,10 +44,12 @@ jobs:
         run: 'echo "$PRODUCTION_ENV" > .production.env'
         env:
           PRODUCTION_ENV: ${{ secrets.PRODUCTION_ENV }}
-      - name: 'Prepare ENV variables'
-        run: set -a && . .production.env && set +a
       - name: Deploy to swarm
-        run: docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-frontend
+        run: |
+          set -a 
+          . .production.env 
+          set +a
+          docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-frontend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
