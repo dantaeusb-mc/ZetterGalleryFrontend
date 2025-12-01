@@ -38,8 +38,14 @@ jobs:
     needs:
       - build-app
     steps:
+      - name: Update secrets
+        run: 'echo "$PRODUCTION_ENV" > .production.env'
+        env:
+          PRODUCTION_ENV: ${{ secrets.PRODUCTION_ENV }}
+      - name: 'Prepare ENV variables'
+        run: set -a && . .production.env && set +a
       - name: Deploy to swarm
-        run: VERSION=$VERSION RUNNING_USER=$RUNNING_USER docker stack deploy -c <(docker compose -f docker-compose.prod.yml --env-file .env.production config) --with-registry-auth zg-frontend
+        run: docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-backend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
