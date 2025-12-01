@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   app:
     image: localhost:5000/zetter-frontend-app:${VERSION}

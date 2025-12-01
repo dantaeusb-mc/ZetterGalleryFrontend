@@ -45,7 +45,7 @@ jobs:
       - name: 'Prepare ENV variables'
         run: set -a && . .production.env && set +a
       - name: Deploy to swarm
-        run: docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-backend
+        run: docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-frontend
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
