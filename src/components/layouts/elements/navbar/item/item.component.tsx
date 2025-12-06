@@ -8,12 +8,12 @@ import { StaticImageData } from 'next/image';
 
 export interface ItemProps {
   active: boolean;
-  loading: boolean;
+  loading?: boolean;
   title: string;
   asset: StaticImageData;
   uri: string;
   className: string;
-  large: boolean;
+  large?: boolean;
 }
 
 const NavbarItem = ({

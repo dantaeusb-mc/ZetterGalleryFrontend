@@ -75,7 +75,7 @@ const WikiLayout = ({ children, pages }: WikiLayoutProps): JSX.Element => {
         threshold: 0.5,
       };
 
-      const observer = new IntersectionObserver((entries, observer) => {
+      observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (sections.has(entry.target.id)) {
             // My dudes, a map function for a Map object is too much to ask about?

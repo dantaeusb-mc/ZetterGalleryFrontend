@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
 export interface HeaderProps {
-  type: 'thin' | 'wide' | 'thin-plus-sidebar' | 'wide-plus-sidebar';
+  type?: 'thin' | 'wide' | 'thin-plus-sidebar' | 'wide-plus-sidebar';
 }
 
 const Header = ({ type = 'thin' }: HeaderProps): JSX.Element => {
