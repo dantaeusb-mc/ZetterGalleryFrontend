@@ -1,23 +1,14 @@
 var path = require('path');
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
 
-/** @type {import("next").NextConfig} */
-module.exports = withBundleAnalyzer({
-  // This is needed to get dynamic SVG import working
-  turbopack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    // @see https://formatjs.io/docs/guides/advanced-usage/
-    /*config.module.resolve.alias = {
-      '@formatjs/icu-messageformat-parser': '@formatjs/icu-messageformat-parser/no-parser'
-    }*/
-
-    return config;
+/** @type {import('next').NextConfig} */
+module.exports = {
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
@@ -40,4 +31,4 @@ module.exports = withBundleAnalyzer({
   },
   output: 'standalone',
   reactStrictMode: true,
-});
+};

@@ -18,18 +18,22 @@ FROM init-build-stage as dependencies-stage
 ARG RUNNING_USER=1000
 WORKDIR /app
 
+RUN chown -R $RUNNING_USER:$RUNNING_USER /app
 COPY --chown=$RUNNING_USER package*.json .npmrc* ./
+
+USER $RUNNING_USER
 
 RUN npm ci
 
 # Production build stage
-FROM production-install-stage as production-build-stage
+FROM dependencies-stage as production-build-stage
 
 ARG RUNNING_USER=1000
 WORKDIR /app
-USER $RUNNING_USER
 COPY --from=dependencies-stage /app/node_modules ./node_modules
 COPY --chown=$RUNNING_USER ./ ./
+
+USER $RUNNING_USER
 
 RUN npm run build
 
@@ -38,12 +42,13 @@ FROM production-build-stage as production-run-stage
 
 ARG RUNNING_USER=1000
 WORKDIR /app
-USER $RUNNING_USER
 ENV NODE_ENV production
 
 COPY --from=production-build-stage --chown=$RUNNING_USER /app/public ./public
 COPY --from=production-build-stage --chown=$RUNNING_USER /app/.next/standalone ./
 COPY --from=production-build-stage --chown=$RUNNING_USER /app/.next/static ./.next/static
+
+USER $RUNNING_USER
 
 CMD ["node", "server.js"]
 
