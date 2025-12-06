@@ -53,3 +53,4 @@ jobs:
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
+          HOSTNAME: 0.0.0.0
