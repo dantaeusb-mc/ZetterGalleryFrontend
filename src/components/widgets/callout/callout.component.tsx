@@ -3,7 +3,7 @@ import { injectClassNames } from 'utils/css';
 import styles from './callout.module.scss';
 
 type CalloutProps = {
-  severity: CalloutSeverity;
+  severity?: CalloutSeverity;
   children: ReactNode | string;
   className?: string;
 };
@@ -20,24 +20,22 @@ const severityClasses = {
   [CalloutSeverity.Alert]: styles['severity-alert'],
 };
 
-function Callout(props: CalloutProps): JSX.Element {
-  const { className } = props;
-
+function Callout({
+  className,
+  severity = CalloutSeverity.Info,
+  children,
+}: CalloutProps): JSX.Element {
   return (
     <div
       className={injectClassNames(
         styles['callout'],
-        severityClasses[props.severity],
+        severityClasses[severity],
         className,
       )}
     >
-      {props.children}
+      {children}
     </div>
   );
 }
-
-Callout.defaultProps = {
-  size: CalloutSeverity.Info,
-};
 
 export default Callout;

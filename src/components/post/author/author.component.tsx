@@ -37,56 +37,56 @@ export default function PostAuthor({
   }, [badges]);
 
   return (
-    <Link href={`/players/${uuid}`}>
-      <a className={styles['post-header-link']}>
-        <header className={styles['post-header']}>
-          <div className={styles['profile-picture-wrapper']}>
-            <span
-              className={styles['profile-picture']}
-              style={{
-                backgroundImage: `url(${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${uuid}/avatar.png)`,
-              }}
-            >
-              {`${nickname}'s Profile Picture`}
-            </span>
-          </div>
-          <h2 className={styles['profile-name']}>{nickname}</h2>
-          {topBadges && (
-            <div className={styles['badges']}>
-              {badges && badges.length > 3 && (<div className={styles['badges-count-wrapper']}>
-                  <div className={styles['badges-count']}>{`+${
-                    badges.length - 3
-                  }`}</div>
-              </div>)}
-              <div className={styles['badges-wrapper']}>
-                <div className={styles['badges-background']}>
+    <Link href={`/players/${uuid}`} className={styles['post-header-link']}>
+
+      <header className={styles['post-header']}>
+        <div className={styles['profile-picture-wrapper']}>
+          <span
+            className={styles['profile-picture']}
+            style={{
+              backgroundImage: `url(${process.env.NEXT_PUBLIC_STATIC_URI}/generated/players/${uuid}/avatar.png)`,
+            }}
+          >
+            {`${nickname}'s Profile Picture`}
+          </span>
+        </div>
+        <h2 className={styles['profile-name']}>{nickname}</h2>
+        {topBadges && (
+          <div className={styles['badges']}>
+            {badges && badges.length > 3 && (<div className={styles['badges-count-wrapper']}>
+                <div className={styles['badges-count']}>{`+${
+                  badges.length - 3
+                }`}</div>
+            </div>)}
+            <div className={styles['badges-wrapper']}>
+              <div className={styles['badges-background']}>
+                {topBadges.map((badge, i) => (
+                  <span
+                    key={`badge-glow-${i}`}
+                    className={injectClassNames(
+                      styles['badge-glow'],
+                      styles[badge.tier],
+                    )}
+                  ></span>
+                ))}
+              </div>
+              <div className={styles['badges-list-wrapper']}>
+                <div className={styles['badges-list']}>
                   {topBadges.map((badge, i) => (
-                    <span
-                      key={`badge-glow-${i}`}
-                      className={injectClassNames(
-                        styles['badge-glow'],
-                        styles[badge.tier],
-                      )}
-                    ></span>
+                    <TooltipBadge
+                      key={`badge-${i}`}
+                      badge={badge}
+                      placement="bottom"
+                      className={styles['post-author-badge']}
+                    />
                   ))}
-                </div>
-                <div className={styles['badges-list-wrapper']}>
-                  <div className={styles['badges-list']}>
-                    {topBadges.map((badge, i) => (
-                      <TooltipBadge
-                        key={`badge-${i}`}
-                        badge={badge}
-                        placement="bottom"
-                        className={styles['post-author-badge']}
-                      />
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
-          )}
-        </header>
-      </a>
+          </div>
+        )}
+      </header>
+
     </Link>
   );
 }

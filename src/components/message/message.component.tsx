@@ -12,7 +12,10 @@ export interface MessageProps {
 }
 
 const Message = forwardRef(
-  ({ level, text, state }: MessageProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
+  (
+    { level = 'info', text, state }: MessageProps,
+    ref: ForwardedRef<HTMLDivElement>,
+  ): JSX.Element => {
     const icons: Record<MessageLevel, JSX.Element> = {
       info: <div className={styles['icon']}></div>,
       success: <div className={styles['icon']}></div>,
@@ -36,9 +39,5 @@ const Message = forwardRef(
     );
   },
 );
-
-Message.defaultProps = {
-  level: 'info',
-};
 
 export default Message;

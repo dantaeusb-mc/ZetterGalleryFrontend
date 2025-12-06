@@ -16,8 +16,8 @@ export enum EStatisticsButtonActiveColor {
 
 export interface IStatisticsButtonProps {
   action?: () => void;
-  active: boolean;
-  activeColor: EStatisticsButtonActiveColor;
+  active?: boolean;
+  activeColor?: EStatisticsButtonActiveColor;
   title: string;
   icon: StaticImageData;
   className?: string;
@@ -33,8 +33,8 @@ const colorClasses = {
 
 function StatisticsButton({
   action,
-  active,
-  activeColor,
+  active = false,
+  activeColor = EStatisticsButtonActiveColor.Green,
   title,
   className,
   icon,
@@ -42,7 +42,7 @@ function StatisticsButton({
 }: PropsWithChildren<IStatisticsButtonProps>): JSX.Element {
   return (
     <Tippy content={title} theme="minecraft">
-      { /* Disabled elements do not trigger events, such as hover, so for popup we need to have a wrapper block */}
+      {/* Disabled elements do not trigger events, such as hover, so for popup we need to have a wrapper block */}
       <div>
         <button
           type="button"
@@ -55,7 +55,11 @@ function StatisticsButton({
           disabled={!action}
           onClick={action}
         >
-          <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
+          <Icon
+            title={title}
+            asset={icon}
+            className={injectClassNames(styles['icon'])}
+          />
           {active && <Sparkles color={`var(--zetter-color-yellow)`} />}
           {children}
         </button>
@@ -63,10 +67,5 @@ function StatisticsButton({
     </Tippy>
   );
 }
-
-StatisticsButton.defaultProps = {
-  active: false,
-  activeColor: EStatisticsButtonActiveColor.Green,
-};
 
 export default StatisticsButton;

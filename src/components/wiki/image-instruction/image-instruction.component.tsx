@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './image-instruction.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';
+import { followCursor } from 'tippy.js';
 import Image from 'next/image';
 
 export interface Instruction {
@@ -31,10 +32,13 @@ export default function ImageInstruction({
   instructions,
 }: ImageInstructionProps): JSX.Element {
   return (
-    <div className={injectClassNames(styles['instruction-wrapper'])} style={{
-      height,
-      width,
-    }}>
+    <div
+      className={injectClassNames(styles['instruction-wrapper'])}
+      style={{
+        height,
+        width,
+      }}
+    >
       <div className={styles['instruction-overlay']}>
         {instructions.map((instruction) => {
           return (
@@ -42,6 +46,7 @@ export default function ImageInstruction({
               key={`instruction-${instruction.number}`}
               content={instruction.title}
               followCursor={true}
+              plugins={[followCursor]}
               theme="minecraft"
             >
               <div

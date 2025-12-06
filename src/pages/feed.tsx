@@ -1,6 +1,11 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
-import React, { PropsWithChildren, ReactElement, ReactNode, useEffect, useState } from "react";
+import React, {
+  PropsWithChildren,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useState,
+} from 'react';
 import DefaultLayout from '@components/layouts/default';
 import 'reflect-metadata';
 import Introduction from '@components/widgets/introduction/introduction.component';
@@ -15,18 +20,23 @@ import { useRouter } from 'next/router';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
 import { apiGet } from '@/utils/request';
 import { PaintingFeedResponseDto } from '@/dto/response/paintings/feed.dto';
-import FeedSeparator from "@components/feed/seaprator";
-import { FeedTypes } from "@/const/feed-types";
-import CycleInfo from "@components/cycle";
-import { mapPaintingResponseToProps } from "@/utils/mappers";
-import HomePage from "@pages/index";
-import { NextPageWithLayout } from "@pages/_app";
-import PaintingPost, { PaintingPostProps } from "@components/post/painting-post.component";
+import FeedSeparator from '@components/feed/seaprator';
+import { FeedTypes } from '@/const/feed-types';
+import CycleInfo from '@components/cycle';
+import { mapPaintingResponseToProps } from '@/utils/mappers';
+import { NextPageWithLayout } from '@pages/_app';
+import PaintingPost, {
+  PaintingPostProps,
+} from '@components/post/painting-post.component';
 
 const fetchFeed = async (
   context?: NextPageContext,
 ): Promise<CycleFeedProps> => {
-  const response = await apiGet<PaintingFeedResponseDto>('/paintings/feed', undefined, context);
+  const response = await apiGet<PaintingFeedResponseDto>(
+    '/paintings/feed',
+    undefined,
+    context,
+  );
 
   const feeds: FeedProps[] = [];
 
@@ -122,13 +132,26 @@ const FeedPage: NextPageWithLayout<FeedPageProps> = (
           />
         </Introduction>
       )}
-      <CycleInfo id={props.cycle.id} seed={props.cycle.seed} startsAt={new Date(props.cycle.startsAt)} endsAt={new Date(props.cycle.endsAt)} />
+      <CycleInfo
+        id={props.cycle.id}
+        seed={props.cycle.seed}
+        startsAt={new Date(props.cycle.startsAt)}
+        endsAt={new Date(props.cycle.endsAt)}
+      />
       {props.feeds.map((feed) => {
         return (
           <>
-            <FeedSeparator key={`feed-${feed.code}`} code={feed.code as FeedTypes} />
-            {feed.paintings.map((painting, index) => {
-              return <PaintingPost key={`painting-${index}`} {...painting} />;
+            <FeedSeparator
+              key={`feed-${feed.code}`}
+              code={feed.code as FeedTypes}
+            />
+            {feed.paintings.map((painting) => {
+              return (
+                <PaintingPost
+                  key={`painting-${feed.code}-${painting.uuid}`}
+                  {...painting}
+                />
+              );
             })}
           </>
         );
@@ -138,9 +161,7 @@ const FeedPage: NextPageWithLayout<FeedPageProps> = (
 };
 
 FeedPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export async function getServerSideProps(

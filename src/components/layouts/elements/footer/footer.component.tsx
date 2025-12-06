@@ -47,18 +47,17 @@ const Footer = (): JSX.Element => {
               </a>
             ),
             contributors: (
-              <Link href="/contributors">
-                <a
-                  title={intl.formatMessage({
-                    id: 'footer.legal.developer.contributors',
-                    defaultMessage: 'Contributors',
-                  })}
-                >
-                  <FormattedMessage
-                    id="footer.legal.developer.contributors"
-                    defaultMessage="Contributors"
-                  />
-                </a>
+              <Link
+                href="/contributors"
+                title={intl.formatMessage({
+                  id: 'footer.legal.developer.contributors',
+                  defaultMessage: 'Contributors',
+                })}
+              >
+                <FormattedMessage
+                  id="footer.legal.developer.contributors"
+                  defaultMessage="Contributors"
+                />
               </Link>
             ),
           }}
@@ -66,21 +65,17 @@ const Footer = (): JSX.Element => {
       </small>
       <small className={'sans-serif-font'}>
         <Link href="/faq">
-          <a>
-            <FormattedMessage
-              id="footer.legal.learn-more"
-              defaultMessage="Learn more"
-            />
-          </a>
+          <FormattedMessage
+            id="footer.legal.learn-more"
+            defaultMessage="Learn more"
+          />
         </Link>
         <span> | </span>
         <Link href="/terms">
-          <a>
-            <FormattedMessage
-              id="footer.legal.tos"
-              defaultMessage="Terms of service"
-            />
-          </a>
+          <FormattedMessage
+            id="footer.legal.tos"
+            defaultMessage="Terms of service"
+          />
         </Link>
       </small>
     </footer>

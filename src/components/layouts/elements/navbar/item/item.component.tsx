@@ -16,34 +16,35 @@ export interface ItemProps {
   large: boolean;
 }
 
-const NavbarItem = (props: PropsWithChildren<ItemProps>): JSX.Element => {
+const NavbarItem = ({
+  active,
+  loading = false,
+  title,
+  asset,
+  uri,
+  className,
+  large = false,
+  children,
+}: PropsWithChildren<ItemProps>): JSX.Element => {
   return (
     <li>
-      <Link href={props.uri}>
-        <button
-          title={props.title}
-          className={injectClassNames(props.className)}
-        >
-          {props.active && <Sparkles />}
+      <Link href={uri}>
+        <button title={title} className={injectClassNames(className)}>
+          {active && <Sparkles />}
           <Icon
-            asset={props.asset}
-            title={props.title}
-            size={props.large ? IconSize.Large : IconSize.Regular}
+            asset={asset}
+            title={title}
+            size={large ? IconSize.Large : IconSize.Regular}
             className={injectClassNames(styles['icon'], [
               styles['loading'],
-              props.loading,
+              loading,
             ])}
           />
-          {props.children}
+          {children}
         </button>
       </Link>
     </li>
   );
-};
-
-NavbarItem.defaultProps = {
-  large: false,
-  loading: false,
 };
 
 export default memo(NavbarItem);

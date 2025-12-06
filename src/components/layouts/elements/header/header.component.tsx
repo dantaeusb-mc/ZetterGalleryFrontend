@@ -9,7 +9,7 @@ export interface HeaderProps {
   type: 'thin' | 'wide' | 'thin-plus-sidebar' | 'wide-plus-sidebar';
 }
 
-const Header = (props: HeaderProps): JSX.Element => {
+const Header = ({ type = 'thin' }: HeaderProps): JSX.Element => {
   const intl = useIntl();
 
   const homeLinkTitle = intl.formatMessage({
@@ -23,28 +23,20 @@ const Header = (props: HeaderProps): JSX.Element => {
   });
 
   return (
-    <header
-      className={injectClassNames(`content-${props.type}`, styles['header'])}
-    >
-      <Link href="/">
-        <a title={homeLinkTitle}>
-          <figure className={styles['logo-wrapper']}>
-            <img
-              src={'/assets/logo.png'}
-              className={styles['logo']}
-              alt={logoAlt}
-            />
-            <figcaption>{logoAlt}</figcaption>
-          </figure>
-        </a>
+    <header className={injectClassNames(`content-${type}`, styles['header'])}>
+      <Link href="/" title={homeLinkTitle}>
+        <figure className={styles['logo-wrapper']}>
+          <img
+            src={'/assets/logo.png'}
+            className={styles['logo']}
+            alt={logoAlt}
+          />
+          <figcaption>{logoAlt}</figcaption>
+        </figure>
       </Link>
       <LanguageSelector />
     </header>
   );
-};
-
-Header.defaultProps = {
-  type: 'thin',
 };
 
 export default memo(Header);

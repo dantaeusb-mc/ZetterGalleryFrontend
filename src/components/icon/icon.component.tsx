@@ -6,7 +6,7 @@ import { StaticImageData } from 'next/image';
 export type IconProps = {
   asset: StaticImageData;
   title: string;
-  size: IconSize;
+  size?: IconSize;
   className?: string;
 };
 
@@ -24,17 +24,20 @@ const sizeClasses = {
   [IconSize.ExtraLarge]: styles['xl-size'],
 };
 
-function Icon(props: IconProps): JSX.Element {
-  const { className, title, size, asset } = props;
-
-  return (<i style={{backgroundImage: `url(${asset.src})`}}
-           className={injectClassNames(styles.icon, sizeClasses[size], className)}>
+function Icon({
+  className,
+  title,
+  size = IconSize.Regular,
+  asset,
+}: IconProps): JSX.Element {
+  return (
+    <i
+      style={{ backgroundImage: `url(${asset.src})` }}
+      className={injectClassNames(styles.icon, sizeClasses[size], className)}
+    >
       {title}
-  </i>);
+    </i>
+  );
 }
-
-Icon.defaultProps = {
-  size: IconSize.Regular,
-};
 
 export default memo(Icon);

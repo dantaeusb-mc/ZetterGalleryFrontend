@@ -33,17 +33,17 @@ function SliceLink({
     : false;
 
   return (
-    <Link href={uri}>
-      <a
-        className={injectClassNames(styles['slice-button'], className)}
-        title={title}
-        {...(external ? { target: '_blank' } : {})}
-      >
-        <div className={styles['slice-button-inner']}>
-          <Icon asset={icon} title={title} className={styles['icon']} size={IconSize.Large} />
-          <div className={styles['slice-button-text']}>{children}</div>
-        </div>
-      </a>
+    <Link
+      href={uri}
+      className={injectClassNames(styles['slice-button'], className)}
+      title={title}
+      {...(external ? { target: '_blank' } : {})}>
+
+      <div className={styles['slice-button-inner']}>
+        <Icon asset={icon} title={title} className={styles['icon']} size={IconSize.Large} />
+        <div className={styles['slice-button-text']}>{children}</div>
+      </div>
+
     </Link>
   );
 }

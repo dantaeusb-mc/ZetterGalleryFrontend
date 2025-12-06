@@ -42,7 +42,7 @@ export default function LayeredNavigation({
               : undefined,
           )}
           type="button"
-          onClick={(e) => updateLayer('sort', PaintingSorting.SCORE)}
+          onClick={() => updateLayer('sort', PaintingSorting.SCORE)}
         >
           <Icon className={styles['sort-icon']} asset={HotIcon} title="Hot" />
           <span className={styles['sort-text']}>
@@ -63,7 +63,7 @@ export default function LayeredNavigation({
               : undefined,
           )}
           type="button"
-          onClick={(e) => updateLayer('sort', PaintingSorting.SALES_TOTAL)}
+          onClick={() => updateLayer('sort', PaintingSorting.SALES_TOTAL)}
         >
           <Icon className={styles['sort-icon']} asset={TopIcon} title="Top" />
           <span className={styles['sort-text']}>
@@ -84,7 +84,7 @@ export default function LayeredNavigation({
               : undefined,
           )}
           type="button"
-          onClick={(e) => updateLayer('sort', PaintingSorting.NEWEST)}
+          onClick={() => updateLayer('sort', PaintingSorting.NEWEST)}
         >
           <Icon className={styles['sort-icon']} asset={NewIcon} title="New" />
           <span className={styles['sort-text']}>
@@ -97,14 +97,26 @@ export default function LayeredNavigation({
         </button>
         <div
           className={styles['sort-by-dir']}
-          onClick={(e) =>
+          onClick={() =>
             updateLayer(
               'dir',
               isActive('dir', Direction.ASC) ? Direction.DESC : Direction.ASC,
             )
           }
         >
-          {isActive('dir', Direction.ASC) ? <SortAscIcon /> : <SortDescIcon />}
+          {isActive('dir', Direction.ASC) ? (
+            <Icon
+              className={styles['sort-icon']}
+              asset={SortAscIcon}
+              title="Ascending"
+            />
+          ) : (
+            <Icon
+              className={styles['sort-icon']}
+              asset={SortDescIcon}
+              title="Descending"
+            />
+          )}
         </div>
       </div>
       {/*<div className={styles['layered-navigation-resolution']}>

@@ -5,16 +5,16 @@ import { injectClassNames } from '@/utils/css';
 import { Transition } from 'react-transition-group';
 
 interface SparklesProps {
-  color: string;
-  count: number;
-  duration: number;
+  color?: string;
+  count?: number;
+  duration?: number;
 }
 
 const Sparkles = ({
   children,
-  color,
-  count,
-  duration,
+  color = 'currentColor',
+  count = 0,
+  duration = 600,
 }: PropsWithChildren<SparklesProps>): JSX.Element | null => {
   const nodeRef = useRef(null);
 
@@ -59,12 +59,6 @@ const Sparkles = ({
       )}
     </Transition>
   );
-};
-
-Sparkles.defaultProps = {
-  color: 'currentColor',
-  count: 8,
-  duration: 600,
 };
 
 export default Sparkles;

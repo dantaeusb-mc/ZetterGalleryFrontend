@@ -11,14 +11,22 @@ import { StaticImageData } from 'next/image';
 export interface ItemProps {
   name: string;
   active: boolean;
-  loading: boolean;
+  loading?: boolean;
   asset: StaticImageData;
   uri: string;
   className: string;
-  large: boolean;
+  large?: boolean;
 }
 
-const NavbarProfileItem = (props: ItemProps): JSX.Element => {
+const NavbarProfileItem = ({
+  name,
+  active,
+  loading = false,
+  asset,
+  uri,
+  className,
+  large = false,
+}: ItemProps): JSX.Element => {
   const intl = useIntl();
 
   return (
@@ -29,18 +37,18 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
             <Link href="/players/me">
               <button
                 title={player.nickname}
-                className={injectClassNames(props.className)}
+                className={injectClassNames(className)}
               >
-                {props.active && <Sparkles />}
+                {active && <Sparkles />}
                 <div className={styles['profile-wrapper']}>
                   <Icon
-                    asset={props.asset}
-                    title={props.name}
+                    asset={asset}
+                    title={name}
                     className={injectClassNames(styles['icon'], [
                       styles['loading'],
-                      props.loading,
+                      loading,
                     ])}
-                    size={props.large ? IconSize.Large : IconSize.Regular}
+                    size={large ? IconSize.Large : IconSize.Regular}
                   />
                   <img
                     alt={intl.formatMessage({
@@ -58,20 +66,20 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
               </button>
             </Link>
           ) : (
-            <Link href={props.uri}>
+            <Link href={uri}>
               <button
-                title={props.name}
-                className={injectClassNames(props.className)}
+                title={name}
+                className={injectClassNames(className)}
               >
                 <div className={styles['profile-wrapper']}>
                   <Icon
-                    asset={props.asset}
-                    title={props.name}
+                    asset={asset}
+                    title={name}
                     className={injectClassNames(styles['icon'], [
                       styles['loading'],
-                      props.loading,
+                      loading,
                     ])}
-                    size={props.large ? IconSize.Large : IconSize.Regular}
+                    size={large ? IconSize.Large : IconSize.Regular}
                   />
                   <img
                     alt={intl.formatMessage({
@@ -92,11 +100,6 @@ const NavbarProfileItem = (props: ItemProps): JSX.Element => {
       </AuthContext.Consumer>
     </li>
   );
-};
-
-NavbarProfileItem.defaultProps = {
-  large: false,
-  loading: false,
 };
 
 export default memo(NavbarProfileItem);

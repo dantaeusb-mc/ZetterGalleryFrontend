@@ -23,7 +23,7 @@ const tierClasses = {
 
 const TooltipBadge: React.FunctionComponent<BadgeProps> = ({
   badge,
-  placement,
+  placement = 'top-end',
   className,
 }: BadgeProps): JSX.Element => {
   const intl = useIntl();
@@ -91,11 +91,5 @@ const TooltipBadge: React.FunctionComponent<BadgeProps> = ({
     </Tippy>
   );
 };
-
-const defaultProps: Partial<BadgeProps> = {
-  placement: 'top-end',
-};
-
-TooltipBadge.defaultProps = defaultProps;
 
 export default TooltipBadge;

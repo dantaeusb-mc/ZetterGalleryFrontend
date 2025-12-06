@@ -21,16 +21,17 @@ const WikiNavigation = ({
       <nav className={styles['wiki-navigation']}>
         {pages.map((page, index) => {
           const link = (
-            <Link href={page.path} key={`wiki-page-${index}`}>
-              <a
-                className={injectClassNames(
-                  styles['link'],
-                  styles['page-link'],
-                  [styles['active'], page.path === currentPage],
-                )}
-              >
-                <FormattedMessage id={page.title} />
-              </a>
+            <Link
+              href={page.path}
+              key={`wiki-page-${index}`}
+              className={injectClassNames(
+                styles['link'],
+                styles['page-link'],
+                [styles['active'], page.path === currentPage],
+              )}>
+
+              <FormattedMessage id={page.title} />
+
             </Link>
           );
 

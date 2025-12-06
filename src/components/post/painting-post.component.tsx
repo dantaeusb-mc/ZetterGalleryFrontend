@@ -62,19 +62,19 @@ const PaintingPost = ({
   return (
     <Post author={author} className={injectClassNames('pixelated-images')}>
       {uri ? (
-        <Link href={uri}>
-          <a title={title}>
-            <div className={styles['painting-wrapper']}>
-              <img
-                src={image}
-                alt={imageAlt}
-                className={styles['painting']}
-                style={{
-                  aspectRatio: `${originalSize.width} / ${originalSize.height}`,
-                }}
-              />
-            </div>
-          </a>
+        <Link href={uri} title={title}>
+
+          <div className={styles['painting-wrapper']}>
+            <img
+              src={image}
+              alt={imageAlt}
+              className={styles['painting']}
+              style={{
+                aspectRatio: `${originalSize.width} / ${originalSize.height}`,
+              }}
+            />
+          </div>
+
         </Link>
       ) : (
         <div className={styles['painting-wrapper']}>

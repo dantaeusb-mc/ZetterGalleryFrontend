@@ -15,15 +15,15 @@ export type ButtonProps = {
   action?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   type?: 'submit' | 'reset' | 'button';
-  style: ButtonStyle;
+  style?: ButtonStyle;
 };
 
 function Button({
   title,
   action,
   className,
-  type,
-  style,
+  type = 'button',
+  style = ButtonStyle.SUCCESS,
   children,
 }: PropsWithChildren<ButtonProps>): JSX.Element {
   return (
@@ -41,10 +41,5 @@ function Button({
     </button>
   );
 }
-
-Button.defaultProps = {
-  type: 'button',
-  style: ButtonStyle.SUCCESS,
-};
 
 export default Button;

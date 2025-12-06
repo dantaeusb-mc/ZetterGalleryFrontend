@@ -4,9 +4,8 @@ import { Button } from '@components/button';
 import Loader from '../../widgets/loader/loader.component';
 import { apiGet } from '@/utils/request';
 import { ActionResponseDto } from '@/dto/response/action.dto';
-import { URL } from 'next/dist/compiled/@edge-runtime/primitives/url';
 import { getAbsoluteUrl } from '@/utils/url/getAbsoluteUrl';
-import { TNextActions } from "@/utils/nextAction";
+import { TNextActions } from '@/utils/nextAction';
 
 export type TMicrosoftSignUpButtonProps = {
   /**

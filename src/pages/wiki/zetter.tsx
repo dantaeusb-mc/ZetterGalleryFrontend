@@ -238,22 +238,22 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                     description="Hint about recipes page"
                     values={{
                       recipesLocation: (
-                        <Link href="/wiki/zetter/recipes">
-                          <a
-                            title={intl.formatMessage({
-                              id: 'wiki.zetter.preparing.callout-recipes.location',
-                              defaultMessage: 'on this page',
-                              description: 'Hint recipes page location',
-                            })}
-                          >
-                            <FormattedMessage
-                              id={
-                                'wiki.zetter.preparing.callout-recipes.location'
-                              }
-                              defaultMessage="on this page"
-                              description="Hint recipes page location"
-                            />
-                          </a>
+                        <Link
+                          href="/wiki/zetter/recipes"
+                          title={intl.formatMessage({
+                            id: 'wiki.zetter.preparing.callout-recipes.location',
+                            defaultMessage: 'on this page',
+                            description: 'Hint recipes page location',
+                          })}>
+
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.preparing.callout-recipes.location'
+                            }
+                            defaultMessage="on this page"
+                            description="Hint recipes page location"
+                          />
+
                         </Link>
                       ),
                     }}
@@ -891,22 +891,22 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                     description="Hint about hotkeys page"
                     values={{
                       recipesLocation: (
-                        <Link href="/wiki/zetter/advanced">
-                          <a
-                            title={intl.formatMessage({
-                              id: 'wiki.zetter.painting.callout-advanced.location',
-                              defaultMessage: 'on this page',
-                              description: 'Hint advanced page location',
-                            })}
-                          >
-                            <FormattedMessage
-                              id={
-                                'wiki.zetter.painting.callout-advanced.location'
-                              }
-                              defaultMessage="on this page"
-                              description="Hint advanced page location"
-                            />
-                          </a>
+                        <Link
+                          href="/wiki/zetter/advanced"
+                          title={intl.formatMessage({
+                            id: 'wiki.zetter.painting.callout-advanced.location',
+                            defaultMessage: 'on this page',
+                            description: 'Hint advanced page location',
+                          })}>
+
+                          <FormattedMessage
+                            id={
+                              'wiki.zetter.painting.callout-advanced.location'
+                            }
+                            defaultMessage="on this page"
+                            description="Hint advanced page location"
+                          />
+
                         </Link>
                       ),
                     }}

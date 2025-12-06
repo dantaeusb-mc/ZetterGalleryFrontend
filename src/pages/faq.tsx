@@ -50,10 +50,13 @@ const TermsPage: NextPageWithLayout<Record<string, unknown>> = (
           description="Zetter Gallery Description"
           values={{
             Kristoffer: (
-              <Link href="https://zetterstrand.com/">
-                <a title="Kristoffer Zetterstrand website" target="_blank">
+              <Link
+                href="https://zetterstrand.com/"
+                title="Kristoffer Zetterstrand website"
+                target="_blank">
+                
                   Kristoffer Zetterstrand
-                </a>
+                
               </Link>
             ),
           }}

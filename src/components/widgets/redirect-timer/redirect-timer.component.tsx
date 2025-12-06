@@ -4,10 +4,13 @@ import styles from './redirect-timer.module.scss';
 
 type RedirectTimerProps = {
   redirect: string;
-  timeout: number;
+  timeout?: number;
 };
 
-function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
+function RedirectTimer({
+  redirect,
+  timeout = 5,
+}: RedirectTimerProps): JSX.Element {
   const [isActive, setIsActive] = useState(true);
   const [timeLeft, setTimeLeft] = useState(timeout);
 
@@ -32,14 +35,23 @@ function RedirectTimer({ redirect, timeout }: RedirectTimerProps): JSX.Element {
     launchTimeout();
   };
 
-  return (<div className={ styles['wrapper'] }>
-    <div className={ injectClassNames(styles['redirect-timer'])}>{ timeLeft }</div>
-    { isActive ? (<small className={ styles['stop-text'] } onClick={ () => setIsActive(false) }>Cancel</small>) : (<small onClick={ () => activate() }>Continue</small>) }
-  </div>);
+  return (
+    <div className={styles['wrapper']}>
+      <div className={injectClassNames(styles['redirect-timer'])}>
+        {timeLeft}
+      </div>
+      {isActive ? (
+        <small
+          className={styles['stop-text']}
+          onClick={() => setIsActive(false)}
+        >
+          Cancel
+        </small>
+      ) : (
+        <small onClick={() => activate()}>Continue</small>
+      )}
+    </div>
+  );
 }
-
-RedirectTimer.defaultProps = {
-  timeout: 5
-};
 
 export default RedirectTimer;
