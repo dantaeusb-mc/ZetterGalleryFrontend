@@ -30,7 +30,11 @@ jobs:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
       - name: 'Push API container to local registry'
-        run: docker compose --env-file=.production.env -f docker-compose.prod.yml -p zg-frontend push app
+        run: |
+          set -a 
+          . .production.env 
+          set +a
+          docker compose --env-file=.production.env -f docker-compose.prod.yml -p zg-frontend push app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}

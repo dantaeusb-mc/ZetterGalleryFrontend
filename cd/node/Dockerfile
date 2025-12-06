@@ -30,6 +30,11 @@ FROM dependencies-stage as production-build-stage
 
 ARG RUNNING_USER=1000
 WORKDIR /app
+
+ENV NEXT_PUBLIC_API_URI=$NEXT_PUBLIC_API_URI
+ENV NEXT_PUBLIC_STATIC_URI=$NEXT_PUBLIC_STATIC_URI
+ENV NEXT_PUBLIC_FRONTEND_URI=$NEXT_PUBLIC_FRONTEND_URI
+
 COPY --from=dependencies-stage /app/node_modules ./node_modules
 COPY --chown=$RUNNING_USER ./ ./
 
