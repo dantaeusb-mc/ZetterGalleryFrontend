@@ -1,5 +1,5 @@
-@use '/src/styles/variables/placeholder' as *;
-@use '/src/styles/variables/colors' as colors;
+@use 'src/styles/variables/placeholder' as *;
+@use 'src/styles/variables/colors' as colors;
 
 .server-widget {
   border: .25rem solid colors.color("green");

@@ -1,5 +1,5 @@
 # Common build stage
-FROM node:18.19 as init-build-stage
+FROM node:24.11 as init-build-stage
 
 ARG RUNNING_USER=1000
 

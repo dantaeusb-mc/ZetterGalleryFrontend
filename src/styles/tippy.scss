@@ -1,6 +1,6 @@
 @use 'fonts/index' as *;
-@use '/src/styles/variables/colors' as colors;
-@use '/src/styles/variables/media';
+@use 'variables/colors' as colors;
+@use 'variables/media';
 
 @include fonts;
 

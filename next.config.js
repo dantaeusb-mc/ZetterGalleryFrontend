@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import("next").NextConfig} */
 module.exports = withBundleAnalyzer({
   // This is needed to get dynamic SVG import working
-  webpack(config) {
+  turbopack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],

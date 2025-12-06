@@ -42,32 +42,30 @@ export default function Profile({
           <h1 className={styles['nickname']}>{nickname}</h1>
           {me ? (
             <>
-              <Link href="/players/me/preferences">
-                <a
-                  title={intl.formatMessage({
-                    id: 'components.player.profile.preferences-link',
-                    defaultMessage: 'Preferences',
-                  })}
-                >
-                  <FormattedMessage
-                    id="components.player.profile.preferences-link"
-                    defaultMessage="Preferences"
-                  />
-                </a>
+              <Link
+                title={intl.formatMessage({
+                  id: 'components.player.profile.preferences-link',
+                  defaultMessage: 'Preferences',
+                })}
+                href="/players/me/preferences"
+              >
+                <FormattedMessage
+                  id="components.player.profile.preferences-link"
+                  defaultMessage="Preferences"
+                />
               </Link>
               <span> | </span>
-              <Link href="/players/me/logout">
-                <a
-                  title={intl.formatMessage({
-                    id: 'components.player.profile.logout-link',
-                    defaultMessage: 'Log Out',
-                  })}
-                >
-                  <FormattedMessage
-                    id="components.player.profile.logout-link"
-                    defaultMessage="Log Out"
-                  />
-                </a>
+              <Link
+                title={intl.formatMessage({
+                  id: 'components.player.profile.logout-link',
+                  defaultMessage: 'Log Out',
+                })}
+                href="/players/me/logout"
+              >
+                <FormattedMessage
+                  id="components.player.profile.logout-link"
+                  defaultMessage="Log Out"
+                />
               </Link>
             </>
           ) : null}

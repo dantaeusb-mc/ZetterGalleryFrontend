@@ -1,4 +1,4 @@
-@use '/src/styles/variables/colors' as colors;
+@use 'src/styles/variables/colors' as colors;
 
 .slice-button {
   border-image-source: url("/assets/buttons/button-9slices.png");
