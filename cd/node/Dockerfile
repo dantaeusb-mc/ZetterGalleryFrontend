@@ -50,6 +50,7 @@ COPY --from=production-build-stage --chown=$RUNNING_USER /app/.next/static ./.ne
 
 USER $RUNNING_USER
 
+ENV HOSTNAME="0.0.0.0"
 CMD ["node", "server.js"]
 
 # Dvelopment single stage

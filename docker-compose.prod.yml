@@ -14,6 +14,10 @@ services:
       - ${PORT}:${PORT}
     environment:
       - PORT=${PORT}
+      - NEXT_INTERNAL_API_URI=${NEXT_INTERNAL_API_URI}
+      - NEXT_PUBLIC_API_URI=${NEXT_PUBLIC_API_URI}
+      - NEXT_PUBLIC_STATIC_URI=${NEXT_PUBLIC_STATIC_URI}
+      - NEXT_PUBLIC_FRONTEND_URI=${NEXT_PUBLIC_FRONTEND_URI}
     user: ${RUNNING_USER}
     volumes:
       - /var/log/zetter-frontend:/logs:rw

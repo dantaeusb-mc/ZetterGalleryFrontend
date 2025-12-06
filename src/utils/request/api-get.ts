@@ -37,13 +37,10 @@ const apiGet = <T>(
     requestHeaders.set('Authorization', 'Bearer ' + token);
   }
 
-  return fetch(
-    uri,
-    {
-      method: 'GET',
-      headers: requestHeaders,
-    },
-  ).then((res) => {
+  return fetch(uri, {
+    method: 'GET',
+    headers: requestHeaders,
+  }).then((res) => {
     if (!res.ok) {
       throw new HttpCodeError(res);
     }
