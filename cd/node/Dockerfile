@@ -29,11 +29,9 @@ RUN npm ci
 FROM dependencies-stage as production-build-stage
 
 ARG RUNNING_USER=1000
+ARG NODE_ENV=production
 WORKDIR /app
-
-ENV NEXT_PUBLIC_API_URI=$NEXT_PUBLIC_API_URI
-ENV NEXT_PUBLIC_STATIC_URI=$NEXT_PUBLIC_STATIC_URI
-ENV NEXT_PUBLIC_FRONTEND_URI=$NEXT_PUBLIC_FRONTEND_URI
+ENV NODE_ENV $NODE_ENV
 
 COPY --from=dependencies-stage /app/node_modules ./node_modules
 COPY --chown=$RUNNING_USER ./ ./
@@ -46,8 +44,9 @@ RUN npm run build
 FROM production-build-stage as production-run-stage
 
 ARG RUNNING_USER=1000
+ARG NODE_ENV=production
 WORKDIR /app
-ENV NODE_ENV production
+ENV NODE_ENV $NODE_ENV
 
 COPY --from=production-build-stage --chown=$RUNNING_USER /app/public ./public
 COPY --from=production-build-stage --chown=$RUNNING_USER /app/.next/standalone ./
@@ -62,7 +61,10 @@ CMD ["node", "server.js"]
 FROM dependencies-stage as development-run-stage
 
 ARG RUNNING_USER=1000
+ARG NODE_ENV=production
 WORKDIR /app
+ENV NODE_ENV $NODE_ENV
+
 ADD --chown=$RUNNING_USER ./ ./
 
 USER $RUNNING_USER

@@ -17,24 +17,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update secrets
-        run: 'echo "$PRODUCTION_ENV" > .production.env'
+        run: 'echo "$PRODUCTION_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{secrets.PRODUCTION_ENV}}
       - name: 'Build app container'
         run: |
           set -a 
-          . .production.env 
+          . .env.production 
           set +a
-          docker compose --env-file=.production.env -f docker-compose.prod.yml -p zg-frontend build app
+          docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend build app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
       - name: 'Push API container to local registry'
         run: |
           set -a 
-          . .production.env 
+          . .env.production 
           set +a
-          docker compose --env-file=.production.env -f docker-compose.prod.yml -p zg-frontend push app
+          docker compose --env-file=.env.production -f docker-compose.prod.yml -p zg-frontend push app
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
@@ -45,13 +45,13 @@ jobs:
       - build-app
     steps:
       - name: Update secrets
-        run: 'echo "$PRODUCTION_ENV" > .production.env'
+        run: 'echo "$PRODUCTION_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{ secrets.PRODUCTION_ENV }}
       - name: Deploy to swarm
         run: |
           set -a 
-          . .production.env 
+          . .env.production 
           set +a
           docker stack deploy -c docker-compose.prod.yml --with-registry-auth zg-frontend
         env:

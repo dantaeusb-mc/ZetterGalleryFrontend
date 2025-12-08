@@ -9,6 +9,7 @@ services:
       dockerfile: ./cd/node/Dockerfile
       args:
         RUNNING_USER: ${RUNNING_USER}
+        NODE_ENV: production
     container_name: zg-frontend-app
     ports:
       - ${PORT}:${PORT}
