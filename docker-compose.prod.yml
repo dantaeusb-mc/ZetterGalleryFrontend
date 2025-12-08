@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   app:
-    image: localhost:5000/zetter-frontend-app:${VERSION}
+    image: ${MANAGER_IP:-127.0.0.1}:5000/zetter-frontend-app:${VERSION:-main}
     build:
       context: .
-      target: ${CONTAINER_TARGET}
+      target: ${CONTAINER_TARGET:-production-run-stage}
       dockerfile: ./cd/node/Dockerfile
       args:
         RUNNING_USER: ${RUNNING_USER}

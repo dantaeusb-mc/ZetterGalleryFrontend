@@ -9,17 +9,20 @@ on:
     types: [ published ]
 
 jobs:
-  build-app:
+  build-and-push:
     runs-on: [ self-hosted, production ]
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [ 24.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Update secrets
         run: 'echo "$PRODUCTION_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{secrets.PRODUCTION_ENV}}
+      - name: Get Manager IP
+        id: manager_ip
+        run: echo "IP=$(hostname -I | awk '{print $1}')" >> $GITHUB_OUTPUT
       - name: 'Build app container'
         run: |
           set -a 
@@ -38,16 +41,20 @@ jobs:
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
+          MANAGER_IP: ${{ steps.manager_ip.outputs.IP }}
 
   deploy:
     runs-on: self-hosted
     needs:
-      - build-app
+      - build-and-push
     steps:
       - name: Update secrets
         run: 'echo "$PRODUCTION_ENV" > .env.production'
         env:
           PRODUCTION_ENV: ${{ secrets.PRODUCTION_ENV }}
+      - name: Get Manager IP
+        id: manager_ip
+        run: echo "IP=$(hostname -I | awk '{print $1}')" >> $GITHUB_OUTPUT
       - name: Deploy to swarm
         run: |
           set -a 
@@ -57,3 +64,4 @@ jobs:
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
+          MANAGER_IP: ${{ steps.manager_ip.outputs.IP }}
