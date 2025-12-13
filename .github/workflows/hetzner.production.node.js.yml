@@ -32,6 +32,7 @@ jobs:
         env:
           VERSION: ${{ github.ref_name }}
           RUNNING_USER: ${{ secrets.HETZNER_RUNNING_USER }}
+          MANAGER_IP: ${{ steps.manager_ip.outputs.IP }}
       - name: 'Push API container to local registry'
         run: |
           set -a 
