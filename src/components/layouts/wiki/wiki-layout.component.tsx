@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState, type JSX } from 'react';
 import styles from './wiki-layout.module.scss';
 import WikiNavigation from '@components/layouts/wiki/navigation';
 import Header from '@components/layouts/elements/header';

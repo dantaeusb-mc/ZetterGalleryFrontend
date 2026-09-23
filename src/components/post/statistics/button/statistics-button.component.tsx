@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import { injectClassNames } from '../../../../utils/css';
 import styles from './statistics-button.module.scss';
 import Sparkles from '@components/vanity/sparkles';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import {

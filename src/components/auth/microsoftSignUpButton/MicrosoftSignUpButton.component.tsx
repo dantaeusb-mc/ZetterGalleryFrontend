@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import styles from './MicrosoftSignUpButton.module.scss';
 import { Button } from '@components/button';
 import Loader from '../../widgets/loader/loader.component';

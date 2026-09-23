@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import Tippy from '@tippyjs/react';
 import { useIntl } from 'react-intl';
 import { FeedTypes } from '@/const/feed-types';

@@ -1,7 +1,7 @@
 import styles from './button.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { FormattedMessage } from 'react-intl';
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, type JSX } from 'react';
 
 export interface TextPostExpandButtonProps {
   expanded: boolean;

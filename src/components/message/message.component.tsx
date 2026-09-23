@@ -1,6 +1,6 @@
 import styles from './message.module.scss';
 import { injectClassNames } from '@/utils/css';
-import React, { ForwardedRef, forwardRef } from 'react';
+import React, { ForwardedRef, forwardRef, type JSX } from 'react';
 import { TransitionStatus } from 'react-transition-group';
 
 export type MessageLevel = 'info' | 'success' | 'warning' | 'error';

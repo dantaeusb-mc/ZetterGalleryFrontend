@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import styles from './cycle-info.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icon, IconSize } from '@components/icon';

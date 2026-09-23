@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
 import { GetServerSidePropsResult, NextPageContext } from 'next';

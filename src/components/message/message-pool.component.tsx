@@ -1,7 +1,13 @@
 import styles from './message-pool.module.scss';
 import { Message } from '@components/message/index';
 import { injectClassNames } from '@/utils/css';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type JSX,
+} from 'react';
 import {
   MessageLevel,
   MessageProps,
@@ -14,7 +20,7 @@ import {
 
 interface MessageTransitionProps extends MessageProps {
   id: number;
-  nodeRef?: React.RefObject<HTMLDivElement>;
+  nodeRef?: React.RefObject<HTMLDivElement | null>;
 }
 
 const MessagePool = (): JSX.Element => {

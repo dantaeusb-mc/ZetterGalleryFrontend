@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { ServerWidget } from '@components/widgets/server';
 import Head from 'next/head';
 import CleanLayout from '@components/layouts/clean';

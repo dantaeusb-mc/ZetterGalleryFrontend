@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './loader.module.scss';
 

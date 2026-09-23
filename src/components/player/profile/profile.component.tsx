@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, type JSX } from 'react';
 import styles from './profile.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { injectClassNames } from '@/utils/css';

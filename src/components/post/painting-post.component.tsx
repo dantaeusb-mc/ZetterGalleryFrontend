@@ -7,7 +7,7 @@ import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto'
 import Post, { PostProps } from '@components/post/post.component';
 import Link from 'next/link';
 import PaintingMetadata from '@components/post/meta/metadata.component';
-import React from 'react';
+import React, { type JSX } from 'react';
 import { useIntl } from 'react-intl';
 
 export interface PaintingPostProps extends PostProps {

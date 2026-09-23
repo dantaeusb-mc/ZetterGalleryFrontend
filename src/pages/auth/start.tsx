@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
