@@ -2,14 +2,6 @@ var path = require('path');
 
 /** @type {import('next').NextConfig} */
 module.exports = {
-  turbopack: {
-    rules: {
-      '*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
-  },
   sassOptions: {
     // Project root is needed for `src/styles/...` imports, which legacy Sass resolved from cwd
     loadPaths: [__dirname, path.join(__dirname, 'src/styles')],
