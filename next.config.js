@@ -15,12 +15,10 @@ module.exports = {
         pathname: '/**',
       },
     ],
-    domains: ['[::1]', 'localhost', 'zetter.gallery'],
   },
   i18n: {
     locales: ['en', 'ru', 'zh', 'pl', 'fr', 'de', 'tr', 'uk', 'pt'],
     defaultLocale: 'en',
-    localeDetection: true,
   },
   output: 'standalone',
   reactStrictMode: true,

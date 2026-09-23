@@ -1,10 +1,5 @@
 import { defineMessages, MessageDescriptor } from 'react-intl';
 
-/**
- * Messages that can be referenced by `TNextAction.messageId`.
- * Only the id travels in the URL, so pages rendering a next action
- * look up the full descriptor here to get a default message fallback.
- */
 export const nextActionMessages = defineMessages({
   updatePreferences: {
     id: 'player.preferences.callback.description',
