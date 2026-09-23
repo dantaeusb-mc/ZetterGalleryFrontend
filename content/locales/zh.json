@@ -136,6 +136,10 @@
     "defaultMessage": "我们将很快重定向你，使你继续你的行为。",
     "description": "Title for finish auth page"
   },
+  "auth.microsoft.finish.description.callback.known_description": {
+    "defaultMessage": "我们将很快重定向你，以继续你的操作：",
+    "description": "Title for finish auth page"
+  },
   "auth.microsoft.finish.description.callback.title": {
     "defaultMessage": "请勿关闭此页面。",
     "description": "Title for finish auth page"
@@ -156,6 +160,10 @@
     "defaultMessage": "通过 Microsoft 帐户登录",
     "description": "Auth start page title"
   },
+  "auth.zetter.cross.callback.description": {
+    "defaultMessage": "允许 Minecraft 服务器连接到您的 Zetter 账户。",
+    "description": "User will need to return to this page after authorization to allow server to connect to their Zetter account."
+  },
   "badge.epic": {
     "defaultMessage": "史诗的"
   },
@@ -170,6 +178,12 @@
   },
   "badge.uncommon": {
     "defaultMessage": "不寻常的"
+  },
+  "common.off": {
+    "defaultMessage": "关"
+  },
+  "common.on": {
+    "defaultMessage": "开"
   },
   "common.post.painting.action.favorite": {
     "defaultMessage": "添加这幅画到收藏夹"
@@ -190,7 +204,13 @@
     "defaultMessage": "{paintingName} 由 {username} 创作"
   },
   "common.post.painting.size.detailed": {
-    "defaultMessage": "这幅绘画是 {width} {width, plural,one {block}other {blocks}} 宽， {height} {height, plural, one {block}other {blocks}}长"
+    "defaultMessage": "这幅画宽 {width} 格，高 {height} 格"
+  },
+  "common.post.text.expand-button.collapse": {
+    "defaultMessage": "收起"
+  },
+  "common.post.text.expand-button.expand": {
+    "defaultMessage": "展开"
   },
   "components.player.plaintings.list.empty": {
     "defaultMessage": "这位玩家尚未提交任何画作！"
@@ -228,11 +248,26 @@
     "defaultMessage": "版权",
     "description": "Title for Zetter Gallery Credits Page"
   },
+  "cycle.auto-reload": {
+    "defaultMessage": "在循环结束时自动重新加载页面。"
+  },
+  "cycle.auto-reload.label": {
+    "defaultMessage": "自动重新加载：{status}"
+  },
   "cycle.batch.no": {
     "defaultMessage": "批"
   },
   "cycle.merchant.icon": {
     "defaultMessage": "其中一些绘画现在可以从游戏中的画作商人处购买！"
+  },
+  "cycle.merchant.timeout.icon": {
+    "defaultMessage": "其中一些绘画现在可以从游戏中的画作商人处购买！"
+  },
+  "cycle.refresh.button": {
+    "defaultMessage": "刷新可用的画作，每 5 分钟轮换一次"
+  },
+  "cycle.refresh.button.icon": {
+    "defaultMessage": "刷新可用画作图标"
   },
   "cycle.seed": {
     "defaultMessage": "种子短语，用来选择从商人那里获取哪些画作！ 精确的画作集是由这个短语，商人级别和您的设置决定的。"
@@ -240,8 +275,8 @@
   "cycle.timeout.expired": {
     "defaultMessage": "循环已过期！"
   },
-  "cycle.timeout.left": {
-    "defaultMessage": "有效期至"
+  "cycle.timeout.left-time": {
+    "defaultMessage": "{time} 后过期"
   },
   "error.401.page.description": {
     "defaultMessage": "您尚未登录以访问此资源",
@@ -317,6 +352,14 @@
   "feed.new.title": {
     "defaultMessage": "新增"
   },
+  "feed.page.description": {
+    "defaultMessage": "兴趣流是不断更新的画作列表，这些画作可以从游戏中的画作商人处获得",
+    "description": "Feed page description"
+  },
+  "feed.page.title": {
+    "defaultMessage": "兴趣流",
+    "description": "Feed page title"
+  },
   "feed.personal.info": {
     "defaultMessage": "您的个人选辑：从收藏夹中随机选择"
   },
@@ -327,7 +370,7 @@
     "defaultMessage": "从最佳中生成小选辑"
   },
   "feed.popular.title": {
-    "defaultMessage": "热门"
+    "defaultMessage": "最受欢迎"
   },
   "font.page.description": {
     "defaultMessage": "基于 Monocraft 字体的内部 Minecraft 字体测试页面",
@@ -336,6 +379,10 @@
   "font.page.title": {
     "defaultMessage": "Minefont 测试页面",
     "description": "Minefont test page title"
+  },
+  "font.title": {
+    "defaultMessage": "Minefont 测试页面",
+    "description": "Test page for in-house international Minecraft font based on Monocraft font"
   },
   "footer.legal.affiliation": {
     "defaultMessage": "Zetter 画廊不隶属于Minecraft, Microsoft and Mojang AB。"
@@ -457,6 +504,9 @@
   "introduction.first-time.learn-more": {
     "defaultMessage": "了解更多！"
   },
+  "language-selector.icon": {
+    "defaultMessage": "语言选择器地球图标"
+  },
   "microsoft-auth-check-advice": {
     "defaultMessage": "问得好！只要检查下述的服务器是你正在玩的服务器即可。",
     "description": "Explain how to make sure it's not a phishing page"
@@ -508,6 +558,10 @@
   },
   "player.preferences.button.save-and-continue": {
     "defaultMessage": "保存并继续"
+  },
+  "player.preferences.callback.description": {
+    "defaultMessage": "更新您的账户偏好设置。",
+    "description": "User will need to got to Preferences page to update new preferences."
   },
   "player.preferences.callout.alpha-warning": {
     "defaultMessage": "这不会影响您在 Alpha 版本中的兴趣流(但将影响今后某个时候的兴趣流)！ 调整艺术是很困难的，所以你可能会看到不同的东西！"
@@ -675,7 +729,7 @@
     "description": "About feed description"
   },
   "wiki.zetter-gallery.about-feed.description.3": {
-    "defaultMessage": "此外，您可以在此网站上使用星标标记您发现有趣的绘画。 这些绘画会在您的兴趣流中出现更高的变化，只供您购买。",
+    "defaultMessage": "此外，您可以在本网站上使用星标标记您感兴趣的画作。这些画作将更有机会出现在您的个人兴趣流中，且只供您购买。",
     "description": "Personal feed"
   },
   "wiki.zetter-gallery.about-feed.section": {
@@ -704,6 +758,9 @@
     "defaultMessage": "默认情况下，您可以在 Minecraft 中打开链接。如果您看不到此按钮，您需要 Minecraft 允许您打开链接。 它可以在主菜单 -> 选项 -> 聊天设置 -> 链接",
     "description": "Login requirements"
   },
+  "wiki.zetter-gallery.login.highlight.image": {
+    "defaultMessage": "突出显示登录按钮的商人界面"
+  },
   "wiki.zetter-gallery.login.prompt.image": {
     "defaultMessage": "登录提示消息"
   },
@@ -730,7 +787,7 @@
     "description": "What you need to start trading paintings"
   },
   "wiki.zetter-gallery.painting-merchant.description.2": {
-    "defaultMessage": "请参阅 Minecraft Wiki，了解村民如何工作。",
+    "defaultMessage": "请参阅 Minecraft Wiki，了解村民职业的运作方式。",
     "description": "Check out Minecraft wiki about villager occupation"
   },
   "wiki.zetter-gallery.painting-merchant.section": {
@@ -1398,4 +1455,3 @@
     "defaultMessage": "准备工作区"
   }
 }
-

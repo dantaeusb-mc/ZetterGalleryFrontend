@@ -121,7 +121,7 @@
     "defaultMessage": "Please use the same Microsoft account you use to login into Minecraft."
   },
   "auth.microsoft.check.advice": {
-    "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you&apos;re not logged into microsoft account. If domain matches, everything is alright.",
+    "defaultMessage": "Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to \"zettergallery.onmicrosoft.com\" or \"login.live.com\" first if you're not logged into microsoft account. If domain matches, everything is alright.",
     "description": "Explain how to make sure it's not a phishing page"
   },
   "auth.microsoft.disclaimer.track": {
@@ -729,7 +729,7 @@
     "description": "About feed description"
   },
   "wiki.zetter-gallery.about-feed.description.3": {
-    "defaultMessage": "Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher changes to appear in your personal feed, that is available for purchase only to you.",
+    "defaultMessage": "Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher chances to appear in your personal feed, that is available for purchase only to you.",
     "description": "Personal feed"
   },
   "wiki.zetter-gallery.about-feed.section": {
@@ -757,6 +757,9 @@
   "wiki.zetter-gallery.login.description.zg-requirements": {
     "defaultMessage": "By default, you can open links in Minecraft. If you do not see this button, you would need Minecraft to allow you to open links. It can be done in Main Menu -> Options -> Chat Settings -> Links.",
     "description": "Login requirements"
+  },
+  "wiki.zetter-gallery.login.highlight.image": {
+    "defaultMessage": "Merchant screen with login button highlighted"
   },
   "wiki.zetter-gallery.login.prompt.image": {
     "defaultMessage": "Log in prompt message"

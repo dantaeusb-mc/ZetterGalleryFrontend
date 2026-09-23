@@ -419,7 +419,7 @@ const ZetterGalleryWikiPage: NextPageWithLayout<
                 <Image
                   src="/assets/wiki/zetter-gallery/login-highlight.png"
                   alt={intl.formatMessage({
-                    id: 'wiki.zetter-gallery.login.prompt.image',
+                    id: 'wiki.zetter-gallery.login.highlight.image',
                     defaultMessage:
                       'Merchant screen with login button highlighted',
                   })}
@@ -511,7 +511,7 @@ const ZetterGalleryWikiPage: NextPageWithLayout<
                 <p>
                   <FormattedMessage
                     id={'wiki.zetter-gallery.about-feed.description.3'}
-                    defaultMessage="Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher changes to appear in your personal feed, that is available for purchase only to you."
+                    defaultMessage="Also, you can use stars on this website to mark paintings you find interesting. Those paintings will have higher chances to appear in your personal feed, that is available for purchase only to you."
                     description="Personal feed"
                   />
                 </p>

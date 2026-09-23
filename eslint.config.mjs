@@ -23,6 +23,5 @@ export default defineConfig([
     'next-env.d.ts',
     'next.config.js',
     'next-sitemap.js',
-    'translation-runner.js',
   ]),
 ]);

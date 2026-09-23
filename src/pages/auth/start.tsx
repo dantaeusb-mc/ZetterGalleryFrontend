@@ -102,9 +102,9 @@ export default function AuthStart({
               <p>
                 <FormattedMessage
                   id="auth.microsoft.check.advice"
-                  defaultMessage='Good you asked! Always check the domain in your browser when writing passwords. On this step,
-            you can be redirected to "zettergallery.onmicrosoft.com" or "login.live.com" first if
-            you&apos;re not logged into microsoft account. If domain matches, everything is alright.'
+                  defaultMessage={
+                    'Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to "zettergallery.onmicrosoft.com" or "login.live.com" first if you\'re not logged into microsoft account. If domain matches, everything is alright.'
+                  }
                   description="Explain how to make sure it's not a phishing page"
                 />
               </p>

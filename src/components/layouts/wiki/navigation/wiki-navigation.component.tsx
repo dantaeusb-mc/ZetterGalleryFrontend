@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from './wiki-navigation.module.scss';
 import { WikiPageProps, WikiPageSections } from '@components/layouts/wiki';
 import { injectClassNames } from '@/utils/css';
-import { FormattedMessage } from 'react-intl';
 
 export interface IWikiNavigationProps {
   pages: WikiPageProps[];
@@ -29,7 +28,7 @@ const WikiNavigation = ({
                 page.path === currentPage,
               ])}
             >
-              <FormattedMessage id={page.title} />
+              {page.title}
             </Link>
           );
 
