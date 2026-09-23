@@ -4,7 +4,7 @@ import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
-import { NextPageWithLayout } from "@pages/_app";
+import { NextPageWithLayout } from '@pages/_app';
 
 const InternalServerErrorPage: NextPageWithLayout<
   Record<string, unknown>

@@ -1,24 +1,20 @@
-type Args = Array<string | undefined | [
-    string,
-    any
-]>;
+type Args = Array<string | undefined | [string, any]>;
 
-const injectClassNames = (...args: Args): string => (
-  args.reduce((classes: string[], entry) => {
-    if (typeof entry === 'undefined') {
-      return classes;
-    }
+const injectClassNames = (...args: Args): string =>
+  args
+    .reduce((classes: string[], entry) => {
+      if (typeof entry === 'undefined') {
+        return classes;
+      }
 
-    if (typeof entry === 'string') {
-      return [...classes, entry];
-    }
+      if (typeof entry === 'string') {
+        return [...classes, entry];
+      }
 
-    const [className, value] = entry;
+      const [className, value] = entry;
 
-    return value && className
-      ? [...classes, className]
-      : classes;
-  }, []).join(' ')
-);
+      return value && className ? [...classes, className] : classes;
+    }, [])
+    .join(' ');
 
 export default injectClassNames;

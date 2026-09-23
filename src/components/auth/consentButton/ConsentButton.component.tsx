@@ -68,8 +68,8 @@ export default function ConsentButton({
     case ECrossAuthStatus.CONFIRMED:
       return (
         <p>
-          You authorized {clientName}. Feel free to close this window and
-          get back to game.
+          You authorized {clientName}. Feel free to close this window and get
+          back to game.
         </p>
       );
     case ECrossAuthStatus.ERROR:

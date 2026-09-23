@@ -10,10 +10,7 @@ import Callout, {
 import { injectClassNames } from '@/utils/css';
 import { NextPageContext } from 'next';
 import getTitle from '@/utils/page/get-title';
-import {
-  searchParamToNextActions,
-  TNextActions,
-} from '@/utils/nextAction';
+import { searchParamToNextActions, TNextActions } from '@/utils/nextAction';
 
 export type AuthStartProps = {
   nextActions?: TNextActions;

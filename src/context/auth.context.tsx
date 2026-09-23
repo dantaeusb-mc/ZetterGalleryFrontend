@@ -108,7 +108,10 @@ const AuthProviderWrapper = (props: PropsWithChildren<AuthProviderProps>) => {
 
   useEffect(() => {
     if (refreshToken !== undefined) {
-      localStorage.setItem(REFRESH_TOKEN_STORAGE_KEY, JSON.stringify(refreshToken));
+      localStorage.setItem(
+        REFRESH_TOKEN_STORAGE_KEY,
+        JSON.stringify(refreshToken),
+      );
     } else {
       localStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
     }

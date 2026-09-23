@@ -7,14 +7,17 @@ import lodash from 'lodash';
  */
 const difference = (object: object, base: object): object => {
   function changes(object: object, base: object): object {
-    return lodash.transform(object, function(result: any, value, key) {
+    return lodash.transform(object, function (result: any, value, key) {
       if (!lodash.isEqual(value, base[key])) {
-        result[key] = (lodash.isObject(value) && lodash.isObject(base[key])) ? changes(value, base[key]) : value;
+        result[key] =
+          lodash.isObject(value) && lodash.isObject(base[key])
+            ? changes(value, base[key])
+            : value;
       }
     });
   }
 
   return changes(object, base);
-}
+};
 
 export default difference;

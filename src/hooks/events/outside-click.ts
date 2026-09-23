@@ -2,7 +2,7 @@ import { RefObject, useEffect } from 'react';
 
 export const useOutsideClick = (
   ref: RefObject<HTMLElement | null>,
-  callback: () => void
+  callback: () => void,
 ): void => {
   useEffect(() => {
     const handler = (event: MouseEvent): void => {

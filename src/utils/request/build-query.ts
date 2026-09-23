@@ -2,7 +2,10 @@ export interface QueryParams {
   [key: string]: any;
 }
 
-const buildQuery = (queryParams?: QueryParams, originalUri?: string): string => {
+const buildQuery = (
+  queryParams?: QueryParams,
+  originalUri?: string,
+): string => {
   let queryString = '';
 
   if (!queryParams || Object.keys(queryParams).length === 0) {

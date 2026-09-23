@@ -1,11 +1,11 @@
-import React, { PropsWithChildren, ReactElement, ReactNode } from "react";
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NextPage } from 'next';
 import getTitle from '@/utils/page/get-title';
-import HomePage from "@pages/index";
-import { NextPageWithLayout } from "@pages/_app";
+import HomePage from '@pages/index';
+import { NextPageWithLayout } from '@pages/_app';
 
 type CreditsGroups = 'general' | 'translators' | 'thanks'; // | 'bugSmashers'
 
@@ -108,7 +108,8 @@ const CreditsPage: NextPageWithLayout<Record<string, unknown>> = (
         },
         xfacthd: {
           name: '@XFactHD (XFactHD#5288)',
-          description: 'Forge Discord, helped to get through a very rough path of Minecraft modding',
+          description:
+            'Forge Discord, helped to get through a very rough path of Minecraft modding',
         },
         gigaherz: {
           name: 'Gigaherz#9173',
@@ -193,9 +194,7 @@ const CreditsPage: NextPageWithLayout<Record<string, unknown>> = (
 };
 
 CreditsPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export default CreditsPage;

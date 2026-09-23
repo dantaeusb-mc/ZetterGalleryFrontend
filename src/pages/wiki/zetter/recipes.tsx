@@ -43,13 +43,10 @@ import {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from 'next';
-import {
-  WikiLayout,
-  WikiNavigationProps,
-} from '@components/layouts/wiki';
+import { WikiLayout, WikiNavigationProps } from '@components/layouts/wiki';
 import styles from '../wiki.module.scss';
 import getTitle from '@/utils/page/get-title';
-import { getZetterWikiPages } from "@pages/wiki/zetter";
+import { getZetterWikiPages } from '@pages/wiki/zetter';
 
 export default function ZetterWikiRecipes(): JSX.Element {
   const intl = useIntl();

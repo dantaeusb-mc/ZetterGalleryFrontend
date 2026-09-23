@@ -16,13 +16,11 @@ const TextPost = ({
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Post author={author} className={injectClassNames(
-      styles['text-post'],
-      'pixelated-images',
-    )}>
-      <div className={styles['content']}>
-        {expanded ? children : short}
-      </div>
+    <Post
+      author={author}
+      className={injectClassNames(styles['text-post'], 'pixelated-images')}
+    >
+      <div className={styles['content']}>{expanded ? children : short}</div>
       <TextPostExpandButton
         expanded={expanded}
         onClick={(e) => {

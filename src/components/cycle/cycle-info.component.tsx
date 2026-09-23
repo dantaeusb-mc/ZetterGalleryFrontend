@@ -115,10 +115,10 @@ export default function CycleInfo({
                     'Some of those paintings are available for purchase from Painting Merchant in game right now!',
                 })}
                 asset={TimeoutIcon}
-                className={injectClassNames(
-                  styles['cycle-timeout-icon'],
-                  [styles['expired'], expired],
-                )}
+                className={injectClassNames(styles['cycle-timeout-icon'], [
+                  styles['expired'],
+                  expired,
+                ])}
               />
             </div>
             {expired ? (

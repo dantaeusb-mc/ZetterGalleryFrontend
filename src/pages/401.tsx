@@ -49,8 +49,6 @@ const UnauthorizedPage: NextPageWithLayout<Record<string, unknown>> = () => {
   );
 };
 
-UnauthorizedPage.getLayout = (page) => (
-  <DefaultLayout>{page}</DefaultLayout>
-);
+UnauthorizedPage.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 
 export default UnauthorizedPage;

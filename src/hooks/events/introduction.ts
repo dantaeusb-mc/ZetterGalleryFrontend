@@ -34,6 +34,6 @@ export const setStageIntroduced = (
 export const resetIntroduction = (req?: IncomingMessage): void => {
   setCookie(cookieKey, 0, {
     expires: new Date(new Date().getTime() + 7 * 86400000),
-    req
+    req,
   });
 };

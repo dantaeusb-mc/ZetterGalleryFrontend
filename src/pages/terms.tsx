@@ -188,9 +188,7 @@ const TermsPage: NextPageWithLayout<Record<string, unknown>> = (
 };
 
 TermsPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export default TermsPage;

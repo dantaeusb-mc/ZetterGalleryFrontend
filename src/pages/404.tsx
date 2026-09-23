@@ -4,7 +4,7 @@ import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage, useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
-import { NextPageWithLayout } from "@pages/_app";
+import { NextPageWithLayout } from '@pages/_app';
 
 const NotFoundPage: NextPageWithLayout<Record<string, unknown>> = () => {
   const intl = useIntl();
@@ -49,8 +49,6 @@ const NotFoundPage: NextPageWithLayout<Record<string, unknown>> = () => {
   );
 };
 
-NotFoundPage.getLayout = (page) => (
-  <DefaultLayout>{page}</DefaultLayout>
-);
+NotFoundPage.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 
 export default NotFoundPage;

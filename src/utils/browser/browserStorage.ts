@@ -6,9 +6,9 @@ type BrowserStorageEntryTTL = number;
 type BrowserStorageEntryCreatedAt = number;
 
 interface BrowserStorageEntry {
-    value: BrowserStorageEntryValue,
-    ttl: BrowserStorageEntryTTL,
-    createdAt: BrowserStorageEntryCreatedAt 
+  value: BrowserStorageEntryValue;
+  ttl: BrowserStorageEntryTTL;
+  createdAt: BrowserStorageEntryCreatedAt;
 }
 
 export class BrowserStorage {
@@ -36,7 +36,7 @@ export class BrowserStorage {
   setItem(
     name: BrowserStorageEntryName,
     value: BrowserStorageEntryValue,
-    ttl: BrowserStorageEntryTTL = 0
+    ttl: BrowserStorageEntryTTL = 0,
   ): void | Error {
     if (!this._storage) {
       throw new Error('setItem called outside of window scope!');
@@ -44,11 +44,14 @@ export class BrowserStorage {
 
     const createdAt = Date.now() as BrowserStorageEntryCreatedAt;
 
-    this._storage.setItem(name, JSON.stringify({
-      value,
-      ttl,
-      createdAt
-    }));
+    this._storage.setItem(
+      name,
+      JSON.stringify({
+        value,
+        ttl,
+        createdAt,
+      }),
+    );
   }
 }
 

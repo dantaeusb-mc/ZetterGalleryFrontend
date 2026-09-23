@@ -18,34 +18,70 @@ export default function FeedSeparator({
   code,
 }: FeedSeparatorProps): JSX.Element {
   const intl = useIntl();
-  const feedInfo: Record<FeedTypes, { title: string, info: string, icon: StaticImageData }> = {
+  const feedInfo: Record<
+    FeedTypes,
+    { title: string; info: string; icon: StaticImageData }
+  > = {
     popular: {
-      title: intl.formatMessage({id: 'feed.popular.title', defaultMessage: 'Popular'}),
-      info: intl.formatMessage({id: 'feed.popular.info', defaultMessage: 'Small selection from best of the best'}),
+      title: intl.formatMessage({
+        id: 'feed.popular.title',
+        defaultMessage: 'Popular',
+      }),
+      info: intl.formatMessage({
+        id: 'feed.popular.info',
+        defaultMessage: 'Small selection from best of the best',
+      }),
       icon: TopIcon,
     },
     hot: {
-      title: intl.formatMessage({id: 'feed.hot.title', defaultMessage: 'Hot'}),
-      info: intl.formatMessage({id: 'feed.hot.info', defaultMessage: 'Trending paintings that got attention in the previous batches'}),
+      title: intl.formatMessage({
+        id: 'feed.hot.title',
+        defaultMessage: 'Hot',
+      }),
+      info: intl.formatMessage({
+        id: 'feed.hot.info',
+        defaultMessage:
+          'Trending paintings that got attention in the previous batches',
+      }),
       icon: HotIcon,
     },
     new: {
-      title: intl.formatMessage({id: 'feed.new.title', defaultMessage: 'New'}),
-      info: intl.formatMessage({id: 'feed.new.info', defaultMessage: 'Freshly baked, just submitted to the Gallery'}),
+      title: intl.formatMessage({
+        id: 'feed.new.title',
+        defaultMessage: 'New',
+      }),
+      info: intl.formatMessage({
+        id: 'feed.new.info',
+        defaultMessage: 'Freshly baked, just submitted to the Gallery',
+      }),
       icon: NewIcon,
     },
     personal: {
-      title: intl.formatMessage({id: 'feed.personal.title', defaultMessage: 'Personal'}),
-      info: intl.formatMessage({id: 'feed.personal.info', defaultMessage: 'Your personal selection: random picks from favorites'}),
+      title: intl.formatMessage({
+        id: 'feed.personal.title',
+        defaultMessage: 'Personal',
+      }),
+      info: intl.formatMessage({
+        id: 'feed.personal.info',
+        defaultMessage: 'Your personal selection: random picks from favorites',
+      }),
       icon: PersonalIcon,
     },
   };
 
   return (
-    <Tippy content={feedInfo[code].info} theme="minecraft" placement={'bottom-end'}>
+    <Tippy
+      content={feedInfo[code].info}
+      theme="minecraft"
+      placement={'bottom-end'}
+    >
       <div className={styles['feed-separator']}>
         <h2 className={styles['feed-title']}>{feedInfo[code].title}</h2>
-        <Icon title={feedInfo[code].title} asset={feedInfo[code].icon} className={styles['feed-icon']} />
+        <Icon
+          title={feedInfo[code].title}
+          asset={feedInfo[code].icon}
+          className={styles['feed-icon']}
+        />
       </div>
     </Tippy>
   );

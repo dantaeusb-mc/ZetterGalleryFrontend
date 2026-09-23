@@ -63,7 +63,6 @@ const PaintingPost = ({
     <Post author={author} className={injectClassNames('pixelated-images')}>
       {uri ? (
         <Link href={uri} title={title}>
-
           <div className={styles['painting-wrapper']}>
             <img
               src={image}
@@ -74,7 +73,6 @@ const PaintingPost = ({
               }}
             />
           </div>
-
         </Link>
       ) : (
         <div className={styles['painting-wrapper']}>

@@ -3,7 +3,7 @@ import DefaultLayout from '@components/layouts/default';
 import React from 'react';
 import ErrorMessage from '@components/widgets/error-message';
 import { FormattedMessage } from 'react-intl';
-import { NextPageWithLayout } from "@pages/_app";
+import { NextPageWithLayout } from '@pages/_app';
 
 const BadRequestPage: NextPageWithLayout<Record<string, unknown>> = () => {
   return (
@@ -31,8 +31,6 @@ const BadRequestPage: NextPageWithLayout<Record<string, unknown>> = () => {
   );
 };
 
-BadRequestPage.getLayout = (page) => (
-  <DefaultLayout>{page}</DefaultLayout>
-);
+BadRequestPage.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 
 export default BadRequestPage;

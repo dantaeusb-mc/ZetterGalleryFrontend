@@ -36,7 +36,10 @@ const cast = (what: any, to: any): any => {
   }
 };
 
-const conform = <T extends Record<string, unknown>>(defaultObject: T, object: Record<string, unknown>): T => {
+const conform = <T extends Record<string, unknown>>(
+  defaultObject: T,
+  object: Record<string, unknown>,
+): T => {
   const newObject: Record<string, unknown> = {};
 
   Object.keys(defaultObject).map(function (key) {

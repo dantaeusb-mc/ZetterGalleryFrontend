@@ -20,7 +20,11 @@ export default function Post({
 }: PropsWithChildren<PostProps>): JSX.Element {
   return (
     <article className={injectClassNames('block', styles['post'], className)}>
-      <Author uuid={author.uuid} nickname={author.nickname} badges={author.badges} />
+      <Author
+        uuid={author.uuid}
+        nickname={author.nickname}
+        badges={author.badges}
+      />
       {children}
     </article>
   );

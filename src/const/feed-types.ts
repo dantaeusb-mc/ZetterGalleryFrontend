@@ -3,4 +3,4 @@ export enum FeedTypes {
   POPULAR = 'popular',
   NEW = 'new',
   PERSONAL = 'personal',
-};
+}

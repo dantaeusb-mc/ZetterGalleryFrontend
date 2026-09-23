@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 interface FirstTimeNoticeProps {
   hide: () => void;
   learnMoreLink: string;
-};
+}
 
 const Introduction = ({
   hide,

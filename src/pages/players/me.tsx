@@ -1,14 +1,18 @@
 import React from 'react';
-import { GetServerSideProps, GetServerSidePropsContext, NextPageContext } from "next";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  NextPageContext,
+} from 'next';
 import { apiGet } from '@/utils/request';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { HttpCodeError } from '@/utils/request/api-get';
-import PlayerPage, { PlayerPageProps } from "@pages/players/[uuid]";
-import { ProfileProps } from "@components/player/profile/profile.component";
-import handleRequestErrors from "@/utils/response/handleRequestErrors";
-import { PaintingResponseDto } from "@/dto/response/paintings/painting.dto";
-import { mapPaintingResponseToProps } from "@/utils/mappers";
-import { PlayerStatisticsResponseDto } from "@/dto/response/player/player-statistics.dto";
+import PlayerPage, { PlayerPageProps } from '@pages/players/[uuid]';
+import { ProfileProps } from '@components/player/profile/profile.component';
+import handleRequestErrors from '@/utils/response/handleRequestErrors';
+import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
+import { mapPaintingResponseToProps } from '@/utils/mappers';
+import { PlayerStatisticsResponseDto } from '@/dto/response/player/player-statistics.dto';
 
 const CurrentPlayerPage = PlayerPage;
 export default CurrentPlayerPage;
@@ -43,7 +47,11 @@ export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
   let profile: PlayerResponseDto;
 
   try {
-    profile = await apiGet<PlayerResponseDto>(`/players/${response.uuid}`, {}, context);
+    profile = await apiGet<PlayerResponseDto>(
+      `/players/${response.uuid}`,
+      {},
+      context,
+    );
   } catch (e) {
     return handleRequestErrors(e);
   }
@@ -51,7 +59,11 @@ export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
   let profileStatistics: PlayerStatisticsResponseDto;
 
   try {
-    profileStatistics = await apiGet<PlayerStatisticsResponseDto>(`/players/${response.uuid}/statistics`, {}, context);
+    profileStatistics = await apiGet<PlayerStatisticsResponseDto>(
+      `/players/${response.uuid}/statistics`,
+      {},
+      context,
+    );
   } catch (e) {
     return handleRequestErrors(e);
   }
@@ -83,7 +95,9 @@ export const getServerSideProps: GetServerSideProps<PlayerPageProps> = async (
           salesTotal: profileStatistics.statistics.total.salesTotal,
         },
       },
-      paintings: paintings.map((painting) => mapPaintingResponseToProps(painting, false)),
+      paintings: paintings.map((painting) =>
+        mapPaintingResponseToProps(painting, false),
+      ),
     },
   };
 };

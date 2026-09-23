@@ -67,10 +67,7 @@ const NavbarProfileItem = ({
             </Link>
           ) : (
             <Link href={uri}>
-              <button
-                title={name}
-                className={injectClassNames(className)}
-              >
+              <button title={name} className={injectClassNames(className)}>
                 <div className={styles['profile-wrapper']}>
                   <Icon
                     asset={asset}

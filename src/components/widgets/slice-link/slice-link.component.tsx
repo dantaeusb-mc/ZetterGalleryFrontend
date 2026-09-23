@@ -37,13 +37,17 @@ function SliceLink({
       href={uri}
       className={injectClassNames(styles['slice-button'], className)}
       title={title}
-      {...(external ? { target: '_blank' } : {})}>
-
+      {...(external ? { target: '_blank' } : {})}
+    >
       <div className={styles['slice-button-inner']}>
-        <Icon asset={icon} title={title} className={styles['icon']} size={IconSize.Large} />
+        <Icon
+          asset={icon}
+          title={title}
+          className={styles['icon']}
+          size={IconSize.Large}
+        />
         <div className={styles['slice-button-text']}>{children}</div>
       </div>
-
     </Link>
   );
 }

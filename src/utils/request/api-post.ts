@@ -31,14 +31,11 @@ const apiPost = <T>(
     requestHeaders.set('Authorization', 'Bearer ' + token);
   }
 
-  return fetch(
-    uri,
-    {
-      method: 'POST',
-      headers: requestHeaders,
-      body: JSON.stringify(body),
-    },
-  ).then((res) => {
+  return fetch(uri, {
+    method: 'POST',
+    headers: requestHeaders,
+    body: JSON.stringify(body),
+  }).then((res) => {
     if (!res.ok) {
       throw new HttpCodeError(res);
     }

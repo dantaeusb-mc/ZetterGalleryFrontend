@@ -72,9 +72,7 @@ const LogoutPage: NextPageWithLayout<Record<never, unknown>> = () => {
   );
 };
 
-LogoutPage.getLayout = (page) => (
-  <CleanLayout>{page}</CleanLayout>
-);
+LogoutPage.getLayout = (page) => <CleanLayout>{page}</CleanLayout>;
 
 export default LogoutPage;
 

@@ -2,7 +2,7 @@ import styles from './metadata.module.scss';
 import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto';
 import Tippy from '@tippyjs/react';
 import { useIntl } from 'react-intl';
-import { injectClassNames } from "@/utils/css";
+import { injectClassNames } from '@/utils/css';
 
 enum PaintingRatingEnum {
   FANTASY_VIOLENCE = 'FV',
@@ -31,7 +31,8 @@ const paintingRatingsSeverity: Record<
   PaintingRatingSeverityEnum
 > = {
   [PaintingRatingEnum.FANTASY_VIOLENCE]: PaintingRatingSeverityEnum.NOTICE,
-  [PaintingRatingEnum.NON_REALISTIC_VIOLENCE]: PaintingRatingSeverityEnum.NOTICE,
+  [PaintingRatingEnum.NON_REALISTIC_VIOLENCE]:
+    PaintingRatingSeverityEnum.NOTICE,
   [PaintingRatingEnum.REALISTIC_VIOLENCE]: PaintingRatingSeverityEnum.WARNING,
   [PaintingRatingEnum.FEAR]: PaintingRatingSeverityEnum.NOTICE,
   [PaintingRatingEnum.HORROR]: PaintingRatingSeverityEnum.WARNING,
@@ -43,7 +44,7 @@ const paintingRatingsSeverity: Record<
   [PaintingRatingEnum.GORE]: PaintingRatingSeverityEnum.DANGER,
   [PaintingRatingEnum.NUDITY]: PaintingRatingSeverityEnum.NOTICE,
   [PaintingRatingEnum.LOW_EFFORT]: PaintingRatingSeverityEnum.NOTICE,
-}
+};
 
 export interface PaintingMetadataProps {
   originalSize: {
@@ -90,10 +91,16 @@ const PaintingMetadata = ({
         {ratings.map((rating, index) => {
           return (
             <Tippy key={index} content={rating.description} theme="minecraft">
-              <div className={injectClassNames(
-                styles['rating'],
-                styles[`rating-${paintingRatingsSeverity[rating.code as PaintingRatingEnum]}`],
-              )}>{rating.code}</div>
+              <div
+                className={injectClassNames(
+                  styles['rating'],
+                  styles[
+                    `rating-${paintingRatingsSeverity[rating.code as PaintingRatingEnum]}`
+                  ],
+                )}
+              >
+                {rating.code}
+              </div>
             </Tippy>
           );
         })}

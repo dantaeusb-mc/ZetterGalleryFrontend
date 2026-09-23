@@ -13,16 +13,13 @@ const Contest = ({ badge, title, type }: ContestProps): JSX.Element => {
   return (
     <div className={styles['container']}>
       <div className={styles['icon-wrapper']}>
-        <BadgeIcon badge={badge} className={injectClassNames(
-          styles['icon'],
-          styles[badge.tier],
-        )} />
+        <BadgeIcon
+          badge={badge}
+          className={injectClassNames(styles['icon'], styles[badge.tier])}
+        />
       </div>
       <div className={styles['description-wrapper']}>
-        <h2 className={injectClassNames(
-          styles['title'],
-          styles[badge.tier]
-        )}>
+        <h2 className={injectClassNames(styles['title'], styles[badge.tier])}>
           {title}
         </h2>
         <p className={injectClassNames(styles['type'])}>{type}</p>

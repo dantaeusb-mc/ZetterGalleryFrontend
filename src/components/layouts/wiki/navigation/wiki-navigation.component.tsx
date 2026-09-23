@@ -24,14 +24,12 @@ const WikiNavigation = ({
             <Link
               href={page.path}
               key={`wiki-page-${index}`}
-              className={injectClassNames(
-                styles['link'],
-                styles['page-link'],
-                [styles['active'], page.path === currentPage],
-              )}>
-
+              className={injectClassNames(styles['link'], styles['page-link'], [
+                styles['active'],
+                page.path === currentPage,
+              ])}
+            >
               <FormattedMessage id={page.title} />
-
             </Link>
           );
 
