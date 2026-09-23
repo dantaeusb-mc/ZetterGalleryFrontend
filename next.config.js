@@ -11,7 +11,8 @@ module.exports = {
     },
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'src/styles')],
+    // Project root is needed for `src/styles/...` imports, which legacy Sass resolved from cwd
+    loadPaths: [__dirname, path.join(__dirname, 'src/styles')],
   },
   images: {
     remotePatterns: [
