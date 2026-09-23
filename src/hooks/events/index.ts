@@ -1,3 +1,3 @@
-export { outsideClick } from './outside-click';
-export { windowSize } from './window-size';
-export { pageWidth } from './page-width';
+export { useOutsideClick } from './outside-click';
+export { useWindowSize } from './window-size';
+export { usePageWidth } from './page-width';

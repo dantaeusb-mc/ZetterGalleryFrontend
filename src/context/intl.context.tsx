@@ -32,7 +32,6 @@ export interface LocaleContextProps {
 
 const LocaleContext = React.createContext<LocaleContextProps>({
   locale: 'en',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   changeLocale: () => {},
 });
 

@@ -40,4 +40,6 @@ const Message = forwardRef(
   },
 );
 
+Message.displayName = 'Message';
+
 export default Message;

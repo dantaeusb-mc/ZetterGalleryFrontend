@@ -29,10 +29,8 @@ export interface AuthContextProps {
 
 export const AuthContext = React.createContext<AuthContextProps>({
   player: undefined,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setPlayer: (player) => {},
   refreshToken: undefined,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setRefreshToken: (token) => {},
 });
 
