@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import styles from './navbar.module.scss';
 import { useRouter } from 'next/router';
 import { NavbarItem, NavbarProfileItem } from './item';
@@ -25,7 +25,7 @@ const navigationButtonCodes = [
   'profile',
 ] as const;
 
-type NavigationButtonsEnum = typeof navigationButtonCodes[number];
+type NavigationButtonsEnum = (typeof navigationButtonCodes)[number];
 const NavigationButtonValues: ReadonlyArray<NavigationButtonsEnum> =
   navigationButtonCodes;
 
@@ -38,7 +38,8 @@ const navigationButtons: Record<
   NavigationButtonMetaProps
 > = {
   about: {
-    isCurrentPath: (pathname) => pathname === '/about' || pathname.startsWith('/wiki'),
+    isCurrentPath: (pathname) =>
+      pathname === '/about' || pathname.startsWith('/wiki'),
   },
   search: {
     isCurrentPath: (pathname) => pathname === '/search',

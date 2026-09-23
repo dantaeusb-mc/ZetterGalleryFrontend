@@ -1,4 +1,10 @@
-import React, { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import React, {
+  PropsWithChildren,
+  useEffect,
+  useRef,
+  useState,
+  type JSX,
+} from 'react';
 import styles from './sparkles.module.scss';
 import { range } from 'lodash';
 import { injectClassNames } from '@/utils/css';
@@ -19,7 +25,7 @@ const Sparkles = ({
   const nodeRef = useRef(null);
 
   const [show, setShow] = useState(false);
-  const baseRotation = 2 * Math.PI / count;
+  const baseRotation = (2 * Math.PI) / count;
 
   useEffect(() => {
     setShow(true);
@@ -30,14 +36,20 @@ const Sparkles = ({
   }, []);
 
   return (
-    <Transition nodeRef={nodeRef} in={show} timeout={duration} mountOnEnter unmountOnExit>
+    <Transition
+      nodeRef={nodeRef}
+      in={show}
+      timeout={duration}
+      mountOnEnter
+      unmountOnExit
+    >
       {(state) => (
         <div
           ref={nodeRef}
           className={injectClassNames(
             styles['sparkles'],
             [styles['active'], state === 'entering'],
-            state
+            state,
           )}
         >
           {range(1, count).map((i) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './language-selector.module.scss';
 import GlobeIcon from '@assets/icons/globe.png';
 import { languages, Locale, LocaleContext } from '@/context/intl.context';
@@ -19,13 +19,10 @@ export default function LanguageSelector(): JSX.Element {
                 <Icon
                   title={intl.formatMessage({
                     id: 'language-selector.icon',
-                    defaultMessage:
-                      'Language selector globe icon'
+                    defaultMessage: 'Language selector globe icon',
                   })}
                   asset={GlobeIcon}
-                  className={injectClassNames(
-                    styles['globe-icon'],
-                  )}
+                  className={injectClassNames(styles['globe-icon'])}
                   size={IconSize.Large}
                 />
               </i>

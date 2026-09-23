@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './author-statistics.module.scss';
 import { FormattedMessage } from 'react-intl';
 

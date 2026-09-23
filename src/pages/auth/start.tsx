@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -10,10 +10,7 @@ import Callout, {
 import { injectClassNames } from '@/utils/css';
 import { NextPageContext } from 'next';
 import getTitle from '@/utils/page/get-title';
-import {
-  searchParamToNextActions,
-  TNextActions,
-} from '@/utils/nextAction';
+import { searchParamToNextActions, TNextActions } from '@/utils/nextAction';
 
 export type AuthStartProps = {
   nextActions?: TNextActions;
@@ -105,9 +102,9 @@ export default function AuthStart({
               <p>
                 <FormattedMessage
                   id="auth.microsoft.check.advice"
-                  defaultMessage='Good you asked! Always check the domain in your browser when writing passwords. On this step,
-            you can be redirected to "zettergallery.onmicrosoft.com" or "login.live.com" first if
-            you&apos;re not logged into microsoft account. If domain matches, everything is alright.'
+                  defaultMessage={
+                    'Good you asked! Always check the domain in your browser when writing passwords. On this step, you can be redirected to "zettergallery.onmicrosoft.com" or "login.live.com" first if you\'re not logged into microsoft account. If domain matches, everything is alright.'
+                  }
                   description="Explain how to make sure it's not a phishing page"
                 />
               </p>

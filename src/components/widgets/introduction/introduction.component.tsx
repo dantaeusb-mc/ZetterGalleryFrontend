@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './introduction.module.scss';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 interface FirstTimeNoticeProps {
   hide: () => void;
   learnMoreLink: string;
-};
+}
 
 const Introduction = ({
   hide,

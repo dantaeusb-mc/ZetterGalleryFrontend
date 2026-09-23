@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import Footer from '@components/layouts/elements/footer';
 import Header from '@components/layouts/elements/header';
 import LayoutWrapper from '@components/layouts/wrapper/layout-wrapper.component';

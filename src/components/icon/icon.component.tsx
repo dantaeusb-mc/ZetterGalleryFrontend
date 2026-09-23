@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, type JSX } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './icon.module.scss';
 import { StaticImageData } from 'next/image';

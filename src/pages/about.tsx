@@ -204,9 +204,7 @@ const AboutPage: NextPageWithLayout<Record<never, unknown>> = () => {
 };
 
 AboutPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export default AboutPage;

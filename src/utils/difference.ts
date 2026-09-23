@@ -5,18 +5,19 @@ import lodash from 'lodash';
  * @param object
  * @param base
  */
-// eslint-disable-next-line @typescript-eslint/ban-types
-const difference = (object: Object, base: Object): Object => {
-// eslint-disable-next-line @typescript-eslint/ban-types
-  function changes(object: Object, base: Object): Object {
-    return lodash.transform(object, function(result: any, value, key) {
+const difference = (object: object, base: object): object => {
+  function changes(object: object, base: object): object {
+    return lodash.transform(object, function (result: any, value, key) {
       if (!lodash.isEqual(value, base[key])) {
-        result[key] = (lodash.isObject(value) && lodash.isObject(base[key])) ? changes(value, base[key]) : value;
+        result[key] =
+          lodash.isObject(value) && lodash.isObject(base[key])
+            ? changes(value, base[key])
+            : value;
       }
     });
   }
 
   return changes(object, base);
-}
+};
 
 export default difference;

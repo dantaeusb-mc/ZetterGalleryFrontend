@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './footer.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Link from 'next/link';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import styles from './ConsentButton.module.scss';
 import { Button } from '@components/button';
 import { apiGet } from '@/utils/request';
@@ -68,8 +68,8 @@ export default function ConsentButton({
     case ECrossAuthStatus.CONFIRMED:
       return (
         <p>
-          You authorized {clientName}. Feel free to close this window and
-          get back to game.
+          You authorized {clientName}. Feel free to close this window and get
+          back to game.
         </p>
       );
     case ECrossAuthStatus.ERROR:

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import Head from 'next/head';
 import CleanLayout from '@components/layouts/clean';
 import { FormattedMessage } from 'react-intl';
@@ -10,18 +10,19 @@ export default function AuthCross(): JSX.Element {
     <>
       <Head>
         <title>Please update Zetter Gallery</title>
-        <meta
-          name="description"
-          content={`Please update Zetter Gallery`}
-        />
+        <meta name="description" content={`Please update Zetter Gallery`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CleanLayout>
-        <section className={injectClassNames('block', 'sans-serif-font', styles['auth-prompt'])}>
+        <section
+          className={injectClassNames(
+            'block',
+            'sans-serif-font',
+            styles['auth-prompt'],
+          )}
+        >
           <header className={styles['heading']}>
-            <h1>
-              Please update Zetter Gallery
-            </h1>
+            <h1>Please update Zetter Gallery</h1>
           </header>
           <div className={styles['disclaimer-wrapper']}>
             <h2>

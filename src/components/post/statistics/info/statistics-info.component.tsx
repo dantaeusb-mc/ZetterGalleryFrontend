@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import { injectClassNames } from '../../../../utils/css';
 import styles from './statistics-info.module.scss';
 import { Icon } from '@components/icon';
@@ -9,7 +9,7 @@ export interface IStatisticsButtonProps {
   className?: string;
   title: string;
   icon: StaticImageData;
-};
+}
 
 function StatisticsInfo({
   className,
@@ -19,14 +19,13 @@ function StatisticsInfo({
 }: PropsWithChildren<IStatisticsButtonProps>): JSX.Element {
   return (
     <Tippy content={title} theme="minecraft">
-      <div
-        className={injectClassNames(
-          styles['info'],
-          className,
-        )}
-      >
+      <div className={injectClassNames(styles['info'], className)}>
         {children}
-        <Icon title={title} asset={icon} className={injectClassNames(styles['icon'])} />
+        <Icon
+          title={title}
+          asset={icon}
+          className={injectClassNames(styles['icon'])}
+        />
       </div>
     </Tippy>
   );

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, type JSX } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './callout.module.scss';
 

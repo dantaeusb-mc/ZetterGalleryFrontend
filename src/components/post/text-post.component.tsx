@@ -1,7 +1,7 @@
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Post, { PostProps } from '@components/post/post.component';
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren, ReactNode, type JSX } from 'react';
 import TextPostExpandButton from '@components/post/text-expand/button.component';
 
 export interface TextPostProps extends PostProps {
@@ -16,13 +16,11 @@ const TextPost = ({
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Post author={author} className={injectClassNames(
-      styles['text-post'],
-      'pixelated-images',
-    )}>
-      <div className={styles['content']}>
-        {expanded ? children : short}
-      </div>
+    <Post
+      author={author}
+      className={injectClassNames(styles['text-post'], 'pixelated-images')}
+    >
+      <div className={styles['content']}>{expanded ? children : short}</div>
       <TextPostExpandButton
         expanded={expanded}
         onClick={(e) => {

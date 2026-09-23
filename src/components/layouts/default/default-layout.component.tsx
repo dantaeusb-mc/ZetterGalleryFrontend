@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import Navbar from '@components/layouts/elements/navbar';
 import Footer from '@components/layouts/elements/footer';
 import Header from '@components/layouts/elements/header';

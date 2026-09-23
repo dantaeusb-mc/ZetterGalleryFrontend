@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-export const pageWidth = (): number => {
+export const usePageWidth = (): number => {
   const [pageSize, setPageSize] = useState<number>(512);
 
   useEffect(() => {

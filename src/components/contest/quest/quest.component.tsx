@@ -1,7 +1,7 @@
 import styles from './quest.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { Badge } from '@/const/badges';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, type JSX } from 'react';
 import { BadgeIcon } from '@components/badge';
 
 export interface QuestProps {

@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import CleanLayout from '@components/layouts/clean';
 import Head from 'next/head';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
@@ -6,7 +6,7 @@ import { setCookie } from 'cookies-next';
 import { apiGet } from '@/utils/request';
 import { injectClassNames } from '@/utils/css';
 import styles from './auth.module.scss';
-import { defineMessage, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { Button } from '@components/button';
 import { RedirectTimer } from '@components/widgets/redirect-timer';
 import { useRouter } from 'next/router';
@@ -16,6 +16,8 @@ import {
   TNextActions,
   searchParamToNextActions,
   getCombinedNextAction,
+  getNextActionMessage,
+  nextActionMessages,
 } from '@/utils/nextAction';
 
 export interface AuthFinishProps {
@@ -68,7 +70,9 @@ export default function AuthFinish({
                     />
                   </p>
                   <p>
-                    <FormattedMessage id={nextAction.messageId} />
+                    <FormattedMessage
+                      {...getNextActionMessage(nextAction.messageId)}
+                    />
                   </p>
                 </>
               ) : (
@@ -137,13 +141,6 @@ export default function AuthFinish({
     </CleanLayout>
   );
 }
-
-const updatePreferencesMessage = defineMessage({
-  id: 'player.preferences.callback.description',
-  description:
-    'User will need to got to Preferences page to update new preferences.',
-  defaultMessage: 'Update your account preferences.',
-});
 
 /**
  * This page does not work with the `next` query directly, as the
@@ -225,7 +222,7 @@ export async function getServerSideProps(
 
     nextActions.unshift({
       url: '/players/me/preferences',
-      messageId: updatePreferencesMessage.id,
+      messageId: nextActionMessages.updatePreferences.id,
     });
   }
 

@@ -1,21 +1,21 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 interface IWindowSize {
-  width?: number,
-  height?: number
+  width?: number;
+  height?: number;
 }
 
-export const windowSize = (): IWindowSize => {
+export const useWindowSize = (): IWindowSize => {
   const [windowSize, setWindowSize] = useState<IWindowSize>({
     width: undefined,
-    height: undefined
+    height: undefined,
   });
 
   useEffect(() => {
     const handleResize = (): void => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 

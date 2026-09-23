@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useMemo } from 'react';
+import React, { useMemo, type JSX } from 'react';
 import styles from './author.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { Badge, BadgeTier } from '@/const/badges';
@@ -38,7 +38,6 @@ export default function PostAuthor({
 
   return (
     <Link href={`/players/${uuid}`} className={styles['post-header-link']}>
-
       <header className={styles['post-header']}>
         <div className={styles['profile-picture-wrapper']}>
           <span
@@ -53,11 +52,13 @@ export default function PostAuthor({
         <h2 className={styles['profile-name']}>{nickname}</h2>
         {topBadges && (
           <div className={styles['badges']}>
-            {badges && badges.length > 3 && (<div className={styles['badges-count-wrapper']}>
+            {badges && badges.length > 3 && (
+              <div className={styles['badges-count-wrapper']}>
                 <div className={styles['badges-count']}>{`+${
                   badges.length - 3
                 }`}</div>
-            </div>)}
+              </div>
+            )}
             <div className={styles['badges-wrapper']}>
               <div className={styles['badges-background']}>
                 {topBadges.map((badge, i) => (
@@ -86,7 +87,6 @@ export default function PostAuthor({
           </div>
         )}
       </header>
-
     </Link>
   );
 }

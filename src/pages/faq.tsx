@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactElement, ReactNode } from "react";
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -7,9 +7,9 @@ import getTitle from '@/utils/page/get-title';
 import Callout, {
   CalloutSeverity,
 } from '../components/widgets/callout/callout.component';
-import Link from "next/link";
-import FeedPage from "@pages/feed";
-import { NextPageWithLayout } from "@pages/_app";
+import Link from 'next/link';
+import FeedPage from '@pages/feed';
+import { NextPageWithLayout } from '@pages/_app';
 
 const TermsPage: NextPageWithLayout<Record<string, unknown>> = (
   props: PropsWithChildren<Record<string, unknown>>,
@@ -53,20 +53,16 @@ const TermsPage: NextPageWithLayout<Record<string, unknown>> = (
               <Link
                 href="https://zetterstrand.com/"
                 title="Kristoffer Zetterstrand website"
-                target="_blank">
-                
-                  Kristoffer Zetterstrand
-                
+                target="_blank"
+              >
+                Kristoffer Zetterstrand
               </Link>
             ),
           }}
         />
       </Callout>
       <h1>
-        <FormattedMessage
-          id="human-terms.title"
-          defaultMessage="Greetings,"
-        />
+        <FormattedMessage id="human-terms.title" defaultMessage="Greetings," />
       </h1>
       <h2>
         <FormattedMessage
@@ -176,9 +172,7 @@ const TermsPage: NextPageWithLayout<Record<string, unknown>> = (
 };
 
 TermsPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export default TermsPage;

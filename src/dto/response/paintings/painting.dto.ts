@@ -1,5 +1,5 @@
-import { PaintingRatingResponseDto } from "@/dto/response/paintings/ratings.dto";
-import { PaintingStatisticsResponseDto } from "@/dto/response/paintings/statistics.dto";
+import { PaintingRatingResponseDto } from '@/dto/response/paintings/ratings.dto';
+import { PaintingStatisticsResponseDto } from '@/dto/response/paintings/statistics.dto';
 import { PlayerBadgeResponseDto } from '@/dto/response/player/badge.dto';
 
 export class PaintingResponseDto {
@@ -12,7 +12,7 @@ export class PaintingResponseDto {
   favorite?: boolean;
   favorites?: number;
   ratings?: PaintingRatingResponseDto[];
-  statistics?:PaintingStatisticsResponseDto;
+  statistics?: PaintingStatisticsResponseDto;
   author: {
     uuid: string;
     nickname: string;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import DefaultLayout from '@components/layouts/default';
 import Head from 'next/head';
 import {
@@ -11,9 +11,9 @@ import { PaintingResponseDto } from '@/dto/response/paintings/painting.dto';
 import handleRequestErrors from '@/utils/response/handleRequestErrors';
 import { useIntl } from 'react-intl';
 import getTitle from '@/utils/page/get-title';
-import { mapPaintingResponseToProps } from "@/utils/mappers";
+import { mapPaintingResponseToProps } from '@/utils/mappers';
 import { PaintingPostProps } from '@components/post/painting-post.component';
-import { PaintingPost } from "@components/post";
+import { PaintingPost } from '@components/post';
 
 export default function Painting(props: PaintingPostProps): JSX.Element {
   const intl = useIntl();

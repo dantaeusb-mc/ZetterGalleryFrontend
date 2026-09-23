@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import numeral from 'numeral';
 import StatisticsButton from './button';
 import { EStatisticsButtonActiveColor } from './button/statistics-button.component';

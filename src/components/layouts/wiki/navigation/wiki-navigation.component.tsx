@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import Link from 'next/link';
 import styles from './wiki-navigation.module.scss';
 import { WikiPageProps, WikiPageSections } from '@components/layouts/wiki';
 import { injectClassNames } from '@/utils/css';
-import { FormattedMessage } from 'react-intl';
 
 export interface IWikiNavigationProps {
   pages: WikiPageProps[];
@@ -24,14 +23,12 @@ const WikiNavigation = ({
             <Link
               href={page.path}
               key={`wiki-page-${index}`}
-              className={injectClassNames(
-                styles['link'],
-                styles['page-link'],
-                [styles['active'], page.path === currentPage],
-              )}>
-
-              <FormattedMessage id={page.title} />
-
+              className={injectClassNames(styles['link'], styles['page-link'], [
+                styles['active'],
+                page.path === currentPage,
+              ])}
+            >
+              {page.title}
             </Link>
           );
 

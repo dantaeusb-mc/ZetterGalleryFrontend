@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import styles from './cycle-info.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Icon, IconSize } from '@components/icon';
@@ -115,10 +115,10 @@ export default function CycleInfo({
                     'Some of those paintings are available for purchase from Painting Merchant in game right now!',
                 })}
                 asset={TimeoutIcon}
-                className={injectClassNames(
-                  styles['cycle-timeout-icon'],
-                  [styles['expired'], expired],
-                )}
+                className={injectClassNames(styles['cycle-timeout-icon'], [
+                  styles['expired'],
+                  expired,
+                ])}
               />
             </div>
             {expired ? (

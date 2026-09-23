@@ -62,9 +62,7 @@ const FontPage: NextPageWithLayout<Record<never, unknown>> = () => {
       <p>
         Sидарски пејзаж: шугав билмез со чудење џвака ќофте и кељ на туѓ цех.
       </p>
-      <p>
-        Vår sære Zulu fra badeøya spilte jo whist og quickstep i min taxi.
-      </p>
+      <p>Vår sære Zulu fra badeøya spilte jo whist og quickstep i min taxi.</p>
       <p>Jeżu klątw, spłódź Finom część gry hańb!</p>
       <p>Pijamalı hasta yağız şoföre çabucak güvendi.</p>
       <p>Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!</p>
@@ -76,9 +74,7 @@ const FontPage: NextPageWithLayout<Record<never, unknown>> = () => {
 };
 
 FontPage.getLayout = (page: ReactElement): ReactNode => (
-  <DefaultLayout>
-    {page}
-  </DefaultLayout>
+  <DefaultLayout>{page}</DefaultLayout>
 );
 
 export default FontPage;

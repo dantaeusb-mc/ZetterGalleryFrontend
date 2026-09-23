@@ -244,8 +244,8 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                             id: 'wiki.zetter.preparing.callout-recipes.location',
                             defaultMessage: 'on this page',
                             description: 'Hint recipes page location',
-                          })}>
-
+                          })}
+                        >
                           <FormattedMessage
                             id={
                               'wiki.zetter.preparing.callout-recipes.location'
@@ -253,7 +253,6 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                             defaultMessage="on this page"
                             description="Hint recipes page location"
                           />
-
                         </Link>
                       ),
                     }}
@@ -897,8 +896,8 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                             id: 'wiki.zetter.painting.callout-advanced.location',
                             defaultMessage: 'on this page',
                             description: 'Hint advanced page location',
-                          })}>
-
+                          })}
+                        >
                           <FormattedMessage
                             id={
                               'wiki.zetter.painting.callout-advanced.location'
@@ -906,7 +905,6 @@ const ZetterWikiPage: NextPageWithLayout<Record<string, unknown>> = () => {
                             defaultMessage="on this page"
                             description="Hint advanced page location"
                           />
-
                         </Link>
                       ),
                     }}

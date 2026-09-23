@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import Author from './author';
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';
@@ -20,7 +20,11 @@ export default function Post({
 }: PropsWithChildren<PostProps>): JSX.Element {
   return (
     <article className={injectClassNames('block', styles['post'], className)}>
-      <Author uuid={author.uuid} nickname={author.nickname} badges={author.badges} />
+      <Author
+        uuid={author.uuid}
+        nickname={author.nickname}
+        badges={author.badges}
+      />
       {children}
     </article>
   );

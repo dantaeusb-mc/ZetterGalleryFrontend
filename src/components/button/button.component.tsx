@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, PropsWithChildren } from 'react';
+import React, { MouseEventHandler, PropsWithChildren, type JSX } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './button.module.scss';
 

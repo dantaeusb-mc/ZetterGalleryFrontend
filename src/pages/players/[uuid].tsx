@@ -14,7 +14,7 @@ import PlayerPaintingList from '@components/player/paintings/list';
 import { PlayerResponseDto } from '@/dto/response/player/player.dto';
 import { PlayerStatisticsResponseDto } from '@/dto/response/player/player-statistics.dto';
 import { NextPageWithLayout } from '@pages/_app';
-import { PaintingPostProps } from "@components/post/painting-post.component";
+import { PaintingPostProps } from '@components/post/painting-post.component';
 
 export interface PlayerPageProps {
   profile: ProfileProps;
@@ -61,9 +61,7 @@ const PlayerPage: NextPageWithLayout<PlayerPageProps> = ({
   );
 };
 
-PlayerPage.getLayout = (page) => (
-  <DefaultLayout>{page}</DefaultLayout>
-);
+PlayerPage.getLayout = (page) => <DefaultLayout>{page}</DefaultLayout>;
 
 export default PlayerPage;
 

@@ -1,7 +1,7 @@
 import styles from './icon.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { Badge, BadgeTier } from '@/const/badges';
-import React from 'react';
+import React, { type JSX } from 'react';
 
 export interface BadgeIconProps {
   badge: Badge;

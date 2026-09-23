@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { injectClassNames } from '@/utils/css';
 import styles from './construction-placeholder.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl';

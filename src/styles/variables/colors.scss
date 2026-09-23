@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $colors: (
         text: (
                 base: #fff,
@@ -24,28 +26,28 @@ $colors: (
         ),
         red: (
                 base: #ed4245,
-                light: lighten(#ed4245, 15%),
-                dark: darken(#ed4245, 25%)
+                light: color.adjust(#ed4245, $lightness: 15%),
+                dark: color.adjust(#ed4245, $lightness: -25%)
         ),
         yellow: (
                 base: #fee75c,
-                light: lighten(#fee75c, 15%),
-                dark: darken(#fee75c, 35%)
+                light: color.adjust(#fee75c, $lightness: 15%),
+                dark: color.adjust(#fee75c, $lightness: -35%)
         ),
         green: (
                 base: #57f287,
-                light: lighten(#57f287, 15%),
-                dark: darken(#57f287, 25%)
+                light: color.adjust(#57f287, $lightness: 15%),
+                dark: color.adjust(#57f287, $lightness: -25%)
         ),
         blue: (
                 base: #5865f2,
-                light: lighten(#5865f2, 15%),
-                dark: darken(#5865f2, 25%)
+                light: color.adjust(#5865f2, $lightness: 15%),
+                dark: color.adjust(#5865f2, $lightness: -25%)
         ),
         pink: (
                 base: #eb459e,
-                light: lighten(#eb459e, 15%),
-                dark: darken(#eb459e, 25%)
+                light: color.adjust(#eb459e, $lightness: 15%),
+                dark: color.adjust(#eb459e, $lightness: -25%)
         ),
         badge-uncommon: (
                 base: #1982c4,

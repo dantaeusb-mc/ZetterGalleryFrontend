@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import { FormattedMessage } from 'react-intl';
-import PaintingPost, { PaintingPostProps } from "@components/post/painting-post.component";
+import PaintingPost, {
+  PaintingPostProps,
+} from '@components/post/painting-post.component';
 
 export interface PlayerPaintingListProps {
   paintings: PaintingPostProps[];

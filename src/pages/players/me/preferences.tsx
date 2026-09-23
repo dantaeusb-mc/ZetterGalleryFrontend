@@ -81,7 +81,7 @@ const PreferencesPage: NextPageWithLayout<PreferencesProps> = (
   return (
     <>
       <Head>
-        <title>Player's Preferences | Zetter Gallery</title>
+        <title>Player&apos;s Preferences | Zetter Gallery</title>
         <meta name="description" content="Your preferences on Zetter Gallery" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

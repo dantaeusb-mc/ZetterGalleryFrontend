@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, type JSX } from 'react';
 import styles from './item.module.scss';
 import Link from 'next/link';
 import { Icon, IconSize } from '@components/icon';
@@ -67,10 +67,7 @@ const NavbarProfileItem = ({
             </Link>
           ) : (
             <Link href={uri}>
-              <button
-                title={name}
-                className={injectClassNames(className)}
-              >
+              <button title={name} className={injectClassNames(className)}>
                 <div className={styles['profile-wrapper']}>
                   <Icon
                     asset={asset}

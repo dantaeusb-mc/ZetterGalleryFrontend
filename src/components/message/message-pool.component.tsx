@@ -1,7 +1,13 @@
 import styles from './message-pool.module.scss';
 import { Message } from '@components/message/index';
 import { injectClassNames } from '@/utils/css';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type JSX,
+} from 'react';
 import {
   MessageLevel,
   MessageProps,
@@ -14,7 +20,7 @@ import {
 
 interface MessageTransitionProps extends MessageProps {
   id: number;
-  nodeRef?: React.RefObject<HTMLDivElement>;
+  nodeRef?: React.RefObject<HTMLDivElement | null>;
 }
 
 const MessagePool = (): JSX.Element => {
@@ -22,27 +28,32 @@ const MessagePool = (): JSX.Element => {
   const [messages, setMessages] = useState<MessageTransitionProps[]>([]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setMessages((prevMessages) => {
-        const level: MessageLevel = ['info', 'success', 'warning', 'error'][
-          Math.floor(Math.random() * 4)
-        ] as MessageLevel;
-        const text =
-          'This is a random message ' + Math.floor(Math.random() * 100);
+    const timeout = setTimeout(
+      () => {
+        setMessages((prevMessages) => {
+          const level: MessageLevel = ['info', 'success', 'warning', 'error'][
+            Math.floor(Math.random() * 4)
+          ] as MessageLevel;
+          const text =
+            'This is a random message ' + Math.floor(Math.random() * 100);
 
-        setId((prevId) => prevId + 1);
+          setId((prevId) => prevId + 1);
 
-        return [
-          ...(prevMessages.length >= 3 ? prevMessages.slice(1, 3) : prevMessages),
-          {
-            id: id,
-            level,
-            text,
-            nodeRef: React.createRef<HTMLDivElement>(),
-          },
-        ];
-      });
-    }, 2000 + 5000 * Math.random());
+          return [
+            ...(prevMessages.length >= 3
+              ? prevMessages.slice(1, 3)
+              : prevMessages),
+            {
+              id: id,
+              level,
+              text,
+              nodeRef: React.createRef<HTMLDivElement>(),
+            },
+          ];
+        });
+      },
+      2000 + 5000 * Math.random(),
+    );
 
     return () => {
       clearTimeout(timeout);
@@ -55,10 +66,14 @@ const MessagePool = (): JSX.Element => {
     >
       <TransitionGroup>
         {messages.map(({ nodeRef, id, ...message }) => (
-          <Transition key={`message-${id}-transition`}  nodeRef={nodeRef} timeout={{
-            enter: 700,
-            exit: 300,
-          }}>
+          <Transition
+            key={`message-${id}-transition`}
+            nodeRef={nodeRef}
+            timeout={{
+              enter: 700,
+              exit: 300,
+            }}
+          >
             {(state) => (
               <Message
                 key={`message-${id}`}
