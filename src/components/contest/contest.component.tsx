@@ -3,6 +3,8 @@ import { injectClassNames } from '@/utils/css';
 import { Badge } from '@/const/badges';
 import { BadgeIcon } from '@components/badge';
 
+import type { JSX } from 'react';
+
 export interface ContestProps {
   badge: Badge;
   title: string;

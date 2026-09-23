@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useMemo } from 'react';
+import React, { useMemo, type JSX } from 'react';
 import styles from './author.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { Badge, BadgeTier } from '@/const/badges';

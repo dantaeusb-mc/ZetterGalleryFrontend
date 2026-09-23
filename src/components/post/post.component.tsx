@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, type JSX } from 'react';
 import Author from './author';
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';

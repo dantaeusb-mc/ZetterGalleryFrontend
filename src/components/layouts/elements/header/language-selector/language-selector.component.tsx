@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './language-selector.module.scss';
 import GlobeIcon from '@assets/icons/globe.png';
 import { languages, Locale, LocaleContext } from '@/context/intl.context';

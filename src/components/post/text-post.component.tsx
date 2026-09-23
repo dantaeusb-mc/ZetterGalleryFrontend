@@ -1,7 +1,7 @@
 import styles from './post.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Post, { PostProps } from '@components/post/post.component';
-import React, { PropsWithChildren, ReactNode } from 'react';
+import React, { PropsWithChildren, ReactNode, type JSX } from 'react';
 import TextPostExpandButton from '@components/post/text-expand/button.component';
 
 export interface TextPostProps extends PostProps {

@@ -1,6 +1,6 @@
 import { injectClassNames } from '@/utils/css';
 import styles from './error-message.module.scss';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, type JSX } from 'react';
 
 interface ErrorMessageProps {
   title: string | ReactNode;

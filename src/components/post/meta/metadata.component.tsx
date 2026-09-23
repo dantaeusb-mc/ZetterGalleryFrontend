@@ -4,6 +4,8 @@ import Tippy from '@tippyjs/react';
 import { useIntl } from 'react-intl';
 import { injectClassNames } from '@/utils/css';
 
+import type { JSX } from 'react';
+
 enum PaintingRatingEnum {
   FANTASY_VIOLENCE = 'FV',
   NON_REALISTIC_VIOLENCE = 'NRV',

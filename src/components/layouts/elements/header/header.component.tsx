@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, type JSX } from 'react';
 import styles from './header.module.scss';
 import LanguageSelector from '@components/layouts/elements/header/language-selector';
 import { injectClassNames } from '@/utils/css';

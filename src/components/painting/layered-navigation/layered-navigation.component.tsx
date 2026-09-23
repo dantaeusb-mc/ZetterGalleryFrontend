@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './layered-navigation.module.scss';
 import { injectClassNames } from '@/utils/css';
 import { Direction, PaintingQueryUpdateFn, PaintingSorting } from '@/pages';

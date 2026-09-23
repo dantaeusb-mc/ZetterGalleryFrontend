@@ -3,6 +3,7 @@ import React, {
   PropsWithChildren,
   ReactNode,
   useRef,
+  type JSX,
 } from 'react';
 import { injectClassNames } from 'utils/css';
 import styles from './toggle.module.scss';

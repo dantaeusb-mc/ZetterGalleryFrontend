@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, type JSX } from 'react';
 import styles from './navbar.module.scss';
 import { useRouter } from 'next/router';
 import { NavbarItem, NavbarProfileItem } from './item';

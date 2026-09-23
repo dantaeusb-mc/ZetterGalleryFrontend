@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import styles from './craft-item.module.scss';
 import { injectClassNames } from '@/utils/css';
 import Tippy from '@tippyjs/react';

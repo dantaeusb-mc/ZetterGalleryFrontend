@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import Head from 'next/head';
 import UAParser from 'ua-parser-js';
 import { FormattedMessage, useIntl } from 'react-intl';

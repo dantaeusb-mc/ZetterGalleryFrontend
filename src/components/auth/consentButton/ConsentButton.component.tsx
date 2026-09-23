@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type JSX } from 'react';
 import styles from './ConsentButton.module.scss';
 import { Button } from '@components/button';
 import { apiGet } from '@/utils/request';

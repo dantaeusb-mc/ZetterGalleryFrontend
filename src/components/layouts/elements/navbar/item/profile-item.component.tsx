@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, type JSX } from 'react';
 import styles from './item.module.scss';
 import Link from 'next/link';
 import { Icon, IconSize } from '@components/icon';
